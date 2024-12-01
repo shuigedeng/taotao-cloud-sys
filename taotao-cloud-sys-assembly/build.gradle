@@ -12,17 +12,17 @@ apply from: rootProject.file('gradle/swagger.gradle')
 apply from: rootProject.file('gradle/test.gradle')
 apply from: rootProject.file('gradle/mybatis-generator.gradle')
 
-mainClassName = "com.taotao.cloud.goods.TaoTaoCloudGoodsApplication"
+mainClassName = "com.taotao.cloud.sys.TaoTaoCloudsysApplication"
 description = "商品中心"
-archivesBaseName = 'taotao-cloud-goods'
+archivesBaseName = 'taotao-cloud-sys'
 
 dependencies {
-    implementation project(":taotao-cloud-goods-application")
-    implementation project(":taotao-cloud-goods-facade")
-    implementation project(":taotao-cloud-goods-domain")
-    implementation project(":taotao-cloud-goods-integration")
-    implementation project(":taotao-cloud-goods-infrastructure")
-    implementation project(":taotao-cloud-goods-common")
+    implementation project(":taotao-cloud-sys-application")
+    implementation project(":taotao-cloud-sys-facade")
+    implementation project(":taotao-cloud-sys-domain")
+    implementation project(":taotao-cloud-sys-integration")
+    implementation project(":taotao-cloud-sys-infrastructure")
+    implementation project(":taotao-cloud-sys-common")
 
     //developmentOnly "org.springframework.boot:spring-boot-devtools"
     //developmentOnly "org.springframework.boot:spring-boot-docker-compose"

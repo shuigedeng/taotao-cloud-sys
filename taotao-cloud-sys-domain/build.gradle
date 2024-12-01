@@ -55,8 +55,8 @@
 
 
 dependencies {
-    api project(":taotao-cloud-goods-common")
-    api project(":taotao-cloud-goods-integration")
+    api project(":taotao-cloud-sys-common")
+    api project(":taotao-cloud-sys-integration")
 
     //cloud
     api "io.github.shuigedeng:taotao-cloud-starter-seata"

@@ -18,7 +18,7 @@ spring:
     banner-mode: OFF
     register-shutdown-hook: true
   application:
-    name: taotao-cloud-goods
+    name: taotao-cloud-sys
   cloud:
     circuitbreaker:
       sentinel:
@@ -84,7 +84,7 @@ spring:
       #        system:
       #          nacos:
       #            server-addr: 192.168.218.2:8848
-      #            dataId: ${spring.application.name}-goodstem-rules.json
+      #            dataId: ${spring.application.name}-system-rules.json
       #            namespace: 4c21599b-c836-4f1a-a72f-1260d5474f0f
       #            username: nacos
       #            password: nacos
@@ -138,7 +138,7 @@ logging:
   level:
     root: INFO
     org.apache.zookeeper.ZooKeeper: info
-    com.taotao.cloud.goods.api.feign: debug
+    com.taotao.cloud.sys.api.feign: debug
     net.ttddyy.dsproxy.listener: debug
     net.ttddyy.dsproxy.listener.logging.SLF4JQueryLoggingListener: debug
     org.springframework.core.log.LogAccessor: error

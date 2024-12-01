@@ -194,7 +194,7 @@ elasticjob:
     namespace: taotao-cloud-elasticjob
   jobs:
     taotao-cloud-simple-job:
-      elastic-job-class: com.taotao.cloud.goods.biz.task.elastic.TaoTaoSimpleJob
+      elastic-job-class: com.taotao.cloud.sys.biz.task.elastic.TaoTaoSimpleJob
       jobBootstrapBeanName: taoTaoSimpleBootstrapJob
       cron: 0 0/30 * * * ?
       timeZone: GMT+08:00
@@ -227,7 +227,7 @@ elasticjob:
           bcc:
           debug: false
     taotao-cloud-data-flow-job:
-      elastic-job-class: com.taotao.cloud.goods.biz.task.elastic.TaoTaoDataflowJob
+      elastic-job-class: com.taotao.cloud.sys.biz.task.elastic.TaoTaoDataflowJob
       jobBootstrapBeanName: taoTaoDataflowBootstrapJob
       cron: 0 0/30 * * * ?
       timeZone: GMT+08:00
@@ -261,7 +261,7 @@ arthas:
 
 dubbo:
   scan:
-    base-packages: com.taotao.cloud.goods.biz.service.dubbo
+    base-packages: com.taotao.cloud.sys.biz.service.dubbo
   application:
     id: ${spring.application.name}
     name: ${spring.application.name}
@@ -603,7 +603,7 @@ spring:
     cloud-platform: kubernetes
     web-application-type: servlet
   application:
-    name: taotao-cloud-goods
+    name: taotao-cloud-sys
     admin:
       enabled: true
   jackson:
@@ -1028,7 +1028,7 @@ spring:
             type: INLINE
             props:
               algorithm-expression: ds-master-$->{id % 2}
-          tt-goods-user-inline:
+          tt-sys-user-inline:
             type: INLINE
             props:
               algorithm-expression: tt_sys_user_$->{id % 3}
@@ -1054,7 +1054,7 @@ spring:
             table-strategy:
               standard:
                 sharding-column: id
-                sharding-algorithm-name: tt-goods-user-inline
+                sharding-algorithm-name: tt-sys-user-inline
   rabbitmq:
     addresses: 192.168.218.2:5672,192.168.218.2:5673,192.168.218.2:5674
     username: guest
@@ -1260,7 +1260,7 @@ taotao:
           enabled: false
       jpa:
         enabled: true
-        packages: com.taotao.cloud.goods.biz.model.entity
+        packages: com.taotao.cloud.sys.biz.model.entity
         tenant:
           enabled: false
     core:
@@ -1292,7 +1292,7 @@ taotao:
 
 mybatis-plus:
   #实体扫描 多个package用户逗号或者分号分割
-  typeAliasesPackage: com.taotao.cloud.goods.biz.model.entity
+  typeAliasesPackage: com.taotao.cloud.sys.biz.model.entity
   # mapper xml 地址
   mapperLocations: classpath:mapper/*.xml
   global-config:
@@ -1408,7 +1408,7 @@ logging:
   level:
     root: INFO
     org.apache.zookeeper.ZooKeeper: error
-    com.taotao.cloud.goods.api.feign: debug
+    com.taotao.cloud.sys.api.feign: debug
     #org.springframework.cloud.openfeign: debug
     #org.springframework.web: off
     #org.springframework.security: off

@@ -187,7 +187,7 @@ arthas:
 
 dubbo:
   scan:
-    base-packages: com.taotao.cloud.goods.facade.dubbo
+    base-packages: com.taotao.cloud.sys.facade.dubbo
   application:
     name: ${spring.application.name}     #当前应用名称
     compiler: javassist     #Java字节码编译器，用于动态类的生成，可选：jdk或javassist
@@ -230,13 +230,13 @@ dubbo:
     status: server
     payload: 83886080
     threadpool: fixed
-    threadname: taotao-cloud-goods-dubbo-protocol-executor
+    threadname: taotao-cloud-sys-dubbo-protocol-executor
     threads: 200
   provider:
     timeout: 3000
     version: ${ttcVersion}
     threads: 500
-    group: taotao-cloud-goods-dev
+    group: taotao-cloud-sys-dev
     #delay: 3000     #延时注册服务（毫秒）
     protocol: dubbo
     retries: 3
@@ -245,7 +245,7 @@ dubbo:
     accesslog: ${user.home}/logs/${spring.application.name}/dubbo/provider.log
     owner: 981376577
     threadpool: fixed
-    threadname: taotao-cloud-goods-dubbo-provider-executor
+    threadname: taotao-cloud-sys-dubbo-provider-executor
   consumer:
     check: false
     timeout: 3000
@@ -441,7 +441,7 @@ spring:
       monitorInterval: 5            # 监控时间间隔（报警判断、指标采集），默认5s
       configType: yml               # 配置文件类型，非cloud nacos 和 apollo需配置，其他不用配
       nacos: # nacos配置，不配置有默认值（规则appname-dev.yml这样），cloud应用不需要配置
-        dataId: taotao-cloud-goods-dev.yml
+        dataId: taotao-cloud-sys-dev.yml
         group: SYS_GROUP
         namespace: taotao-cloud-dev
       apollo: # apollo配置，不配置默认拿apollo配置第一个namespace
@@ -460,19 +460,19 @@ spring:
         - platform: email
           receivers: "981376577@qq.com"            # 接受人邮箱 多个逗号连接
       tomcat-tp: # tomcat webserver线程池配置
-        threadPoolName: taotao-cloud-goods-tomcat-executor
+        threadPoolName: taotao-cloud-sys-tomcat-executor
         threadPoolAliasName: tomcat线程池
         corePoolSize: 100
         maximumPoolSize: 200
         keepAliveTime: 60
       jettyTp: # jetty weberver线程池配置
-        threadPoolName: taotao-cloud-goods-jetty-executor
+        threadPoolName: taotao-cloud-sys-jetty-executor
         threadPoolAliasName: jetty线程池
         corePoolSize: 100
         maximumPoolSize: 200
         keepAliveTime: 60
       undertowTp: # undertow webserver线程池配置
-        threadPoolName: taotao-cloud-goods-undertow-executor
+        threadPoolName: taotao-cloud-sys-undertow-executor
         threadPoolAliasName: undertow线程池
         corePoolSize: 100
         maximumPoolSize: 200
@@ -507,8 +507,8 @@ spring:
               platform-ids: [ ding,wechat,email ]             # 可选配置，不配置默认拿上层platforms配置的所以平台
               interval: 120                        # 报警间隔（单位：s）
       executors: # 动态线程池配置，都有默认值，采用默认值的可以不配置该项，减少配置量
-        - threadPoolName: taotao-cloud-goods-executor
-          threadNamePrefix: taotao-cloud-goods-executor  # 线程名前缀
+        - threadPoolName: taotao-cloud-sys-executor
+          threadNamePrefix: taotao-cloud-sys-executor  # 线程名前缀
           threadPoolAliasName: 测试线程池             # 线程池别名
           executorType: common                     # 线程池类型common、eager：适用于io密集型
           corePoolSize: 6
@@ -596,7 +596,7 @@ spring:
     cloud-platform: kubernetes
     web-application-type: servlet
   application:
-    name: taotao-cloud-goods
+    name: taotao-cloud-sys
     admin:
       enabled: true
   jackson:
@@ -1091,7 +1091,7 @@ spring:
     basename: "messages"               # ResourceBundle 名称，多个用，号隔开，默认是 messages
     #basename: "ballcat-*"               # ResourceBundle 名称，多个用，号隔开，默认是 messages
     #basename: "messages, validation"
-    fallback-to-goodstem-locale: true     # 当找不到对应区域的语言时，是否回退到系统区域的语言，默认 true
+    fallback-to-system-locale: true     # 当找不到对应区域的语言时，是否回退到系统区域的语言，默认 true
     encoding: 'utf-8'                    # ResourceBundle 的 charset
     #cacheDuration: 						# ResourceBundle 加载后的过期时间（s），不设置则不过期，默认不过期
     alwaysUseMessageFormat: false       # 是否始终应用MessageFormat规则，甚至不带参数地解析消息，默认false
@@ -1242,7 +1242,7 @@ taotao:
               types: logger
       jpa:
         enabled: true
-        packages: com.taotao.cloud.goods.infrastructure.persistent.*.po
+        packages: com.taotao.cloud.sys.infrastructure.persistent.*.po
         tenant:
           enabled: false
       shardingsphere:
@@ -1350,7 +1350,7 @@ taotao:
 
 
 mybatis-plus:
-  typeAliasesPackage: com.taotao.cloud.goods.infrastructure.persistent.*.po  #实体扫描 多个package用户逗号或者分号分割
+  typeAliasesPackage: com.taotao.cloud.sys.infrastructure.persistent.*.po  #实体扫描 多个package用户逗号或者分号分割
   mapperLocations: classpath:mapper/*.xml # mapper xml 地址
   global-config:
     banner: true # 关闭mp3.0自带的banner
@@ -1480,7 +1480,7 @@ logging:
     web: TRACE
     root: INFO
     org.apache.zookeeper.ZooKeeper: info
-    com.taotao.cloud.goods.api.feign: debug
+    com.taotao.cloud.sys.api.feign: debug
     net.ttddyy.dsproxy.listener: debug
     net.ttddyy.dsproxy.listener.logging.SLF4JQueryLoggingListener: debug
     org.springframework.core.log.LogAccessor: error

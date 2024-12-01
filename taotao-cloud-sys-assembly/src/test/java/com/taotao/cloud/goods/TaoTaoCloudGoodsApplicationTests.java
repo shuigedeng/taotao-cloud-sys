@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.goods;
+package com.taotao.cloud.sys;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class TaoTaoCloudGoodsApplicationTests {
+public class TaoTaoCloudsysApplicationTests {
 
 }

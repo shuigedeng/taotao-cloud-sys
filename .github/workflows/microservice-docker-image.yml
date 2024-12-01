@@ -1,7 +1,7 @@
 # 构建docker image
 #### https://github.com/marketplace?type=actions
 #### https://github.com/sdras/awesome-actions
-name: Goods Docker Image
+name: Sys Docker Image
 
 on:
   push:
