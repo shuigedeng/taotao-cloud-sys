@@ -33,11 +33,8 @@
  */
 
 dependencies {
+    api project(":taotao-cloud-sys-api")
     api project(":taotao-cloud-sys-application")
-    api project(":taotao-cloud-sys-domain")
-    api project(":taotao-cloud-sys-infrastructure")
-    api project(":taotao-cloud-sys-integration")
-    api project(":taotao-cloud-sys-common")
 }
 
 
