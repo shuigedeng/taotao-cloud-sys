@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.constant;
 
+
 /** 代码生成通用常量 */
 public interface FileConstants {
 
