@@ -55,6 +55,7 @@
 
 
 dependencies {
+    api project(":taotao-cloud-sys-api")
     api project(":taotao-cloud-sys-common")
     api project(":taotao-cloud-sys-integration")
 
@@ -80,7 +81,6 @@ dependencies {
     api "io.github.shuigedeng:taotao-boot-starter-elk"
     api "io.github.shuigedeng:taotao-boot-starter-captcha"
     api "io.github.shuigedeng:taotao-boot-starter-office"
-    api "io.github.shuigedeng:taotao-boot-starter-third-client"
     //api "io.github.shuigedeng:taotao-boot-starter-data-elasticsearch"
     // api "io.github.shuigedeng:taotao-boot-starter-data-mongodb"
     api "io.github.shuigedeng:taotao-boot-starter-oss-minio"
@@ -94,6 +94,7 @@ dependencies {
     api "io.github.shuigedeng:taotao-boot-starter-statemachine"
     api "io.github.shuigedeng:taotao-boot-starter-flowengine"
     api "io.github.shuigedeng:taotao-boot-starter-web"
+    api "io.github.shuigedeng:taotao-boot-starter-webagg"
 
     //AVIATOR——轻量级JAVA表达式求值引擎 https://blog.csdn.net/ZhangQingmu/article/details/125087255
     //https://code.google.com/p/aviator/

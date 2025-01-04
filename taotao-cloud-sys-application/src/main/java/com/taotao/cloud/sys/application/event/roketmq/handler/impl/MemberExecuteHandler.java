@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.event.roketmq.handler.impl;
 
-import com.taotao.cloud.sys.application.event.roketmq.handler.MemberLoginEventHandler;
+import com.taotao.cloud.goods.application.event.roketmq.handler.MemberLoginEventHandler;
 import org.springframework.stereotype.Service;
 
 /** 会员自身业务 */
