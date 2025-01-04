@@ -18,7 +18,6 @@ package com.taotao.cloud.sys.api.feign;
 
 import com.taotao.boot.common.constant.ServiceName;
 import com.taotao.cloud.sys.api.feign.fallback.QuartzJobApiFallback;
-import com.taotao.cloud.sys.api.model.dto.QuartzJobDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,5 +33,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface QuartzJobApi {
 
     @PostMapping("/job/addQuartzJobDTOTestSeata")
-    public Boolean addQuartzJobDTOTestSeata(@Validated @RequestBody QuartzJobDTO quartzJobDTO);
+    public Boolean addQuartzJobDTOTestSeata(@Validated @RequestBody Long quartzJobDTO);
 }
