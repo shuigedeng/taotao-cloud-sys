@@ -30,7 +30,7 @@ import org.springframework.data.repository.query.Param;
  */
 public interface IDeptRepository extends BaseInterfaceSuperRepository<Dept, Long> {
 
-    @Query("select d from Dept d where d.version <> ?1")
+    @Query("select d from DeptPO d where d.version <> ?1")
     Dept findByVersionNot(Integer version);
 
     @Query(

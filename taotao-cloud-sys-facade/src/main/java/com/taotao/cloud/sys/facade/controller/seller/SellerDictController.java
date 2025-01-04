@@ -16,7 +16,9 @@
 
 package com.taotao.cloud.sys.facade.controller.seller;
 
-import com.taotao.boot.web.base.controller.BaseBusinessController;
+import com.taotao.boot.webagg.controller.BaseBusinessController;
+import com.taotao.cloud.sys.biz.model.entity.dict.Dict;
+import com.taotao.cloud.sys.biz.service.business.IDictService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/seller/dict")
 @Tag(name = "商户管理端-字典管理API", description = "商户管理端-字典管理API")
-public class SellerDictController  {
-
-}
+public class SellerDictController extends BaseBusinessController<IDictService, Dict, Long> {}

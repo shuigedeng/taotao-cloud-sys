@@ -44,7 +44,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = SmsReach.TABLE_NAME)
 public class SmsReach extends BaseSuperEntity<SmsReach, Long> {
 
-    public static final String TABLE_NAME = "tt_tt_sms_reach";
+    public static final String TABLE_NAME = "ttc_sms_reach";
 
     @Column(name = "sign_name", columnDefinition = "varchar(2000) not null comment '签名名称'")
     private String signName;
