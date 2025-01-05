@@ -28,7 +28,7 @@ import org.springframework.data.repository.query.Param;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IDeptRepository extends BaseInterfaceSuperRepository<Dept, Long> {
+public interface IDeptRepository extends BaseInterfaceSuperRepository<DeptPO, Long> {
 
     @Query("select d from DeptPO d where d.version <> ?1")
     Dept findByVersionNot(Integer version);

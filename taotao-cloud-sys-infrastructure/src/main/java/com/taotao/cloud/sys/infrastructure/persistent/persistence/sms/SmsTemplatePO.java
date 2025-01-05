@@ -39,10 +39,10 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = SmsTemplate.TABLE_NAME)
-@TableName(SmsTemplate.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = SmsTemplate.TABLE_NAME, comment = "短信模板表")
-public class SmsTemplate extends BaseSuperEntity<SmsTemplate, Long> {
+@Table(name = SmsTemplatePO.TABLE_NAME)
+@TableName(SmsTemplatePO.TABLE_NAME)
+@org.springframework.data.relational.core.mapping.Table(name = SmsTemplatePO.TABLE_NAME)
+public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
 
     public static final String TABLE_NAME = "tt_tt_sms_template";
 
@@ -72,7 +72,7 @@ public class SmsTemplate extends BaseSuperEntity<SmsTemplate, Long> {
     private String reason;
 
     @Builder
-    public SmsTemplate(
+    public SmsTemplatePO(
             Long id,
             LocalDateTime createTime,
             Long createBy,
@@ -105,7 +105,7 @@ public class SmsTemplate extends BaseSuperEntity<SmsTemplate, Long> {
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
             return false;
         }
-        SmsTemplate that = (SmsTemplate) o;
+        SmsTemplatePO that = (SmsTemplatePO) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 

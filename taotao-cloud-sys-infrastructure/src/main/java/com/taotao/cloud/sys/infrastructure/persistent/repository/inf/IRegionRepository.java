@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.region.Region;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IRegionRepository extends BaseInterfaceSuperRepository<Region, Long> {}
+public interface IRegionRepository extends BaseInterfaceSuperRepository<RegionPO, Long> {}

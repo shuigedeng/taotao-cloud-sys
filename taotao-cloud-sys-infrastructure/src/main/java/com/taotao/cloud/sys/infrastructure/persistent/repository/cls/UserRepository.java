@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
 import com.taotao.cloud.sys.biz.model.entity.system.User;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
@@ -29,9 +30,9 @@ import org.springframework.stereotype.Repository;
  * @since 2023-02-10 17:00:04
  */
 @Repository
-public class UserRepository extends BaseClassSuperRepository<User, Long> {
+public class UserRepository extends BaseClassSuperRepository<UserPO, Long> {
 
     public UserRepository(EntityManager em) {
-        super(User.class, em);
+        super(UserPO.class, em);
     }
 }

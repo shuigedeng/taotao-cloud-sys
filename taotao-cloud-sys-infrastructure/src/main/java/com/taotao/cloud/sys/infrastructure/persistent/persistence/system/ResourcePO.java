@@ -48,7 +48,7 @@ import java.util.Objects;
 @Entity
 @Table(name = ResourcePO.TABLE_NAME)
 @TableName(ResourcePO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = ResourcePO.TABLE_NAME, comment = "资源表")
+@org.springframework.data.relational.core.mapping.Table(name = ResourcePO.TABLE_NAME)
 public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
 
     public static final String TABLE_NAME = "tt_resource";

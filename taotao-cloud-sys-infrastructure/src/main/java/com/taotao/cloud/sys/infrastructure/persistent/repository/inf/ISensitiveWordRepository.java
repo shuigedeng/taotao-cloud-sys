@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISensitiveWordRepository extends BaseInterfaceSuperRepository<SensitiveWord, Long> {}
+public interface ISensitiveWordRepository extends BaseInterfaceSuperRepository<SensitiveWordPO, Long> {}

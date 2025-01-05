@@ -47,7 +47,7 @@ import java.util.Objects;
 @Entity
 @Table(name = UserRelationPO.TABLE_NAME)
 @TableName(UserRelationPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = UserRelationPO.TABLE_NAME, comment = "用户-关系第三方表")
+@org.springframework.data.relational.core.mapping.Table(name = UserRelationPO.TABLE_NAME)
 public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
 
     public static final String TABLE_NAME = "tt_user_relation";

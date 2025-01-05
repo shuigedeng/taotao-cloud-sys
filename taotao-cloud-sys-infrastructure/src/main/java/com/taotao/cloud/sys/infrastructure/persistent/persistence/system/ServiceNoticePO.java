@@ -41,7 +41,7 @@ import java.util.Objects;
 @Entity
 @Table(name = ServiceNoticePO.TABLE_NAME)
 @TableName(ServiceNoticePO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = ServiceNoticePO.TABLE_NAME, comment = "服务订阅消息表")
+@org.springframework.data.relational.core.mapping.Table(name = ServiceNoticePO.TABLE_NAME)
 public class ServiceNoticePO extends BaseSuperEntity<ServiceNoticePO, Long> {
 
     public static final String TABLE_NAME = "tt_service_notice";

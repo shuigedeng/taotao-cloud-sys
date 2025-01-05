@@ -29,9 +29,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class FileRepository extends BaseClassSuperRepository<File, Long> {
+public class FileRepository extends BaseClassSuperRepository<FilePO, Long> {
 
     public FileRepository(EntityManager em) {
-        super(File.class, em);
+        super(FilePO.class, em);
     }
 }

@@ -36,7 +36,7 @@ import lombok.Setter;
 @Entity
 @Table(name = LogisticsConfigPO.TABLE_NAME)
 @TableName(LogisticsConfigPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = LogisticsConfigPO.TABLE_NAME, comment = "物流公司表")
+@org.springframework.data.relational.core.mapping.Table(name = LogisticsConfigPO.TABLE_NAME)
 public class LogisticsConfigPO extends BaseSuperEntity<LogisticsConfigPO, Long> {
 
     public static final String TABLE_NAME = "tt_logistics_config";

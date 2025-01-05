@@ -26,4 +26,4 @@ import com.taotao.cloud.file.biz.entity.File;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IFileRepository extends BaseInterfaceSuperRepository<File, Long> {}
+public interface IFileRepository extends BaseInterfaceSuperRepository<FilePO, Long> {}

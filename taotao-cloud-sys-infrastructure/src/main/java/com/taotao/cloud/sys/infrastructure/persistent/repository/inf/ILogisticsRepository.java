@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.config.LogisticsConfig;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ILogisticsRepository extends BaseInterfaceSuperRepository<LogisticsConfig, Long> {}
+public interface ILogisticsRepository extends BaseInterfaceSuperRepository<LogisticsConfigPO, Long> {}

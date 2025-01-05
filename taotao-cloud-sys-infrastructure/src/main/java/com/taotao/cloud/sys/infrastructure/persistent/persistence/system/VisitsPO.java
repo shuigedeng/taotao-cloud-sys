@@ -47,7 +47,7 @@ import java.util.Objects;
 @Entity
 @Table(name = VisitsPO.TABLE_NAME)
 @TableName(VisitsPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = VisitsPO.TABLE_NAME, comment = "pv与ip统计")
+@org.springframework.data.relational.core.mapping.Table(name = VisitsPO.TABLE_NAME)
 public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
 
     public static final String TABLE_NAME = "tt_visits";

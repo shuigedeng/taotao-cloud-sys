@@ -29,9 +29,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class SmsReachRepository extends BaseClassSuperRepository<SmsReach, Long> {
+public class SmsReachRepository extends BaseClassSuperRepository<SmsReachPO, Long> {
 
     public SmsReachRepository(EntityManager em) {
-        super(SmsReach.class, em);
+        super(SmsReachPO.class, em);
     }
 }

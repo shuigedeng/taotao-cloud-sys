@@ -53,7 +53,7 @@ import java.util.Objects;
 @Entity
 @Table(name = SettingPO.TABLE_NAME)
 @TableName(value = SettingPO.TABLE_NAME, autoResultMap = true)
-@org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME, comment = "配置表")
+@org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME)
 public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
 
     public static final String TABLE_NAME = "tt_setting";

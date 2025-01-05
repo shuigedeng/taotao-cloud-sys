@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.RoleResource;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IRoleResourceRepository extends BaseInterfaceSuperRepository<RoleResource, Long> {}
+public interface IRoleResourceRepository extends BaseInterfaceSuperRepository<RoleResourcePO, Long> {}

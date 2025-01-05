@@ -52,7 +52,7 @@ import java.util.Objects;
 @Entity
 @Table(name = RegionPO.TABLE_NAME)
 @TableName(value = RegionPO.TABLE_NAME, autoResultMap = true)
-@org.springframework.data.relational.core.mapping.Table(name = RegionPO.TABLE_NAME, comment = "地区表")
+@org.springframework.data.relational.core.mapping.Table(name = RegionPO.TABLE_NAME)
 public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
 
     public static final String TABLE_NAME = "tt_region";

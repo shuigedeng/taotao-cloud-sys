@@ -47,7 +47,7 @@ import java.util.Objects;
 @Entity
 @Table(name = FileLogPO.TABLE_NAME)
 @TableName(FileLogPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = FileLogPO.TABLE_NAME, comment = "文件表")
+@org.springframework.data.relational.core.mapping.Table(name = FileLogPO.TABLE_NAME)
 public class FileLogPO extends BaseSuperEntity<FileLogPO, Long> {
 
     public static final String TABLE_NAME = "tt_file_log";

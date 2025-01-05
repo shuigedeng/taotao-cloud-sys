@@ -42,7 +42,7 @@ import lombok.Setter;
 @Entity
 @Table(name = EmailConfigPO.TABLE_NAME)
 @TableName(EmailConfigPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = EmailConfigPO.TABLE_NAME, comment = "邮件配置表")
+@org.springframework.data.relational.core.mapping.Table(name = EmailConfigPO.TABLE_NAME)
 public class EmailConfigPO extends BaseSuperEntity<EmailConfigPO, Long> {
 
     public static final String TABLE_NAME = "tt_email_config";

@@ -30,7 +30,7 @@ import java.util.Optional;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IResourceRepository extends BaseInterfaceSuperRepository<Resource, Long> {
+public interface IResourceRepository extends BaseInterfaceSuperRepository<ResourcePO, Long> {
 
 	public List<Resource> searchByComponent(String component);
 

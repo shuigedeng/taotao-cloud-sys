@@ -26,4 +26,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISmsReachRepository extends JpaRepository<SmsReach, Long> {}
+public interface ISmsReachRepository extends JpaRepository<SmsReachPO, Long> {}

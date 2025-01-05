@@ -29,9 +29,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class SensitiveWordRepository extends BaseClassSuperRepository<SensitiveWord, Long> {
+public class SensitiveWordRepository extends BaseClassSuperRepository<SensitiveWordPO, Long> {
 
     public SensitiveWordRepository(EntityManager em) {
-        super(SensitiveWord.class, em);
+        super(SensitiveWordPO.class, em);
     }
 }

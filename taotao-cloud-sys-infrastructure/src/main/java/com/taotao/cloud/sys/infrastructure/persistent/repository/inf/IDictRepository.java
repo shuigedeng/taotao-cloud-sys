@@ -28,7 +28,7 @@ import org.springframework.data.jpa.repository.QueryRewriter;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IDictRepository extends BaseInterfaceSuperRepository<Dict, Long>, QueryRewriter {
+public interface IDictRepository extends BaseInterfaceSuperRepository<DictPO, Long>, QueryRewriter {
 
 	@Override
 	default String rewrite(String query, Sort sort) {

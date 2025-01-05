@@ -39,10 +39,10 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = SmsReach.TABLE_NAME)
-@TableName(SmsReach.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = SmsReach.TABLE_NAME)
-public class SmsReach extends BaseSuperEntity<SmsReach, Long> {
+@Table(name = SmsReachPO.TABLE_NAME)
+@TableName(SmsReachPO.TABLE_NAME)
+@org.springframework.data.relational.core.mapping.Table(name = SmsReachPO.TABLE_NAME)
+public class SmsReachPO extends BaseSuperEntity<SmsReachPO, Long> {
 
     public static final String TABLE_NAME = "ttc_sms_reach";
 
@@ -65,7 +65,7 @@ public class SmsReach extends BaseSuperEntity<SmsReach, Long> {
     private String num;
 
     @Builder
-    public SmsReach(
+    public SmsReachPO(
             Long id,
             LocalDateTime createTime,
             Long createBy,
@@ -96,8 +96,8 @@ public class SmsReach extends BaseSuperEntity<SmsReach, Long> {
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
             return false;
         }
-        SmsReach smsReach = (SmsReach) o;
-        return getId() != null && Objects.equals(getId(), smsReach.getId());
+        SmsReachPO smsReachPO = (SmsReachPO) o;
+        return getId() != null && Objects.equals(getId(), smsReachPO.getId());
     }
 
     @Override

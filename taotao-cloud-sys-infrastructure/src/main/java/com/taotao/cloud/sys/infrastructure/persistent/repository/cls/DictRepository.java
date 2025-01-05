@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.biz.model.entity.dict.Dict;
 import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
@@ -32,10 +31,10 @@ import java.util.Optional;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class DictRepository extends BaseClassSuperRepository<Dict, Long> {
+public class DictRepository extends BaseClassSuperRepository<DictPO, Long> {
 
     public DictRepository(EntityManager em) {
-        super(Dict.class, em);
+        super(DictPO.class, em);
     }
 
     public Optional<Dict> findByCode(String code) {

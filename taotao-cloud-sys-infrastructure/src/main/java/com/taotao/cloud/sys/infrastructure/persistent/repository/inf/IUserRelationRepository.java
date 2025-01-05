@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.UserRelation;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IUserRelationRepository extends BaseInterfaceSuperRepository<UserRelation, Long> {}
+public interface IUserRelationRepository extends BaseInterfaceSuperRepository<UserRelationPO, Long> {}

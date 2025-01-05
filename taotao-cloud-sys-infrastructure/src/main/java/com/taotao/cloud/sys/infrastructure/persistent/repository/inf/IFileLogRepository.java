@@ -26,4 +26,4 @@ import com.taotao.cloud.file.biz.entity.FileLog;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IFileLogRepository extends BaseInterfaceSuperRepository<FileLog, Long> {}
+public interface IFileLogRepository extends BaseInterfaceSuperRepository<FileLogPO, Long> {}

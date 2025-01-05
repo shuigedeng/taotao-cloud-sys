@@ -30,11 +30,11 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class ServiceNoticeRepository extends BaseClassSuperRepository<ServiceNotice, Long> {
+public class ServiceNoticeRepository extends BaseClassSuperRepository<ServiceNoticePO, Long> {
 	@PersistenceContext
 	private EntityManager em;
 
 	public ServiceNoticeRepository(EntityManager em) {
-		super(ServiceNotice.class, em);
+		super(ServiceNoticePO.class, em);
 	}
 }

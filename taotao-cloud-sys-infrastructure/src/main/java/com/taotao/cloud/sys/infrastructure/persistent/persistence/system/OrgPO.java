@@ -54,7 +54,7 @@ import java.util.Objects;
 @Entity
 @Table(name = OrgPO.TABLE_NAME)
 @TableName(value = OrgPO.TABLE_NAME, autoResultMap = true)
-@org.springframework.data.relational.core.mapping.Table(name = OrgPO.TABLE_NAME, comment = "组织信息表")
+@org.springframework.data.relational.core.mapping.Table(name = OrgPO.TABLE_NAME)
 public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
 
     public static final String TABLE_NAME = "tt_org";

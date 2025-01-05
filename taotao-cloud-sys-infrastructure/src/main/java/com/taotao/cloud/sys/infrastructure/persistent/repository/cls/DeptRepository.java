@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
 import com.taotao.cloud.sys.biz.model.entity.system.Dept;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
@@ -29,9 +30,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class DeptRepository extends BaseClassSuperRepository<Dept, Long> {
+public class DeptRepository extends BaseClassSuperRepository<DeptPO, Long> {
 
     public DeptRepository(EntityManager em) {
-        super(Dept.class, em);
+        super(DeptPO.class, em);
     }
 }

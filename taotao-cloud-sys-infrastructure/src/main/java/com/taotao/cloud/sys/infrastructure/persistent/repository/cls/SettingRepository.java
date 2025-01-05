@@ -29,9 +29,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class SettingRepository extends BaseClassSuperRepository<Setting, Long> {
+public class SettingRepository extends BaseClassSuperRepository<SettingPO, Long> {
 
     public SettingRepository(EntityManager em) {
-        super(Setting.class, em);
+        super(SettingPO.class, em);
     }
 }

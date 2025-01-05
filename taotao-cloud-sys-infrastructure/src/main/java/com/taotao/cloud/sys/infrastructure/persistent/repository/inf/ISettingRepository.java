@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISettingRepository extends BaseInterfaceSuperRepository<Setting, Long> {}
+public interface ISettingRepository extends BaseInterfaceSuperRepository<SettingPO, Long> {}

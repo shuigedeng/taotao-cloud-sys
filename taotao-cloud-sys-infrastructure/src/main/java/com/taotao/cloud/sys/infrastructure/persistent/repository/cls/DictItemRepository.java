@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
 import com.taotao.cloud.sys.biz.model.entity.dict.DictItem;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictItemPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
@@ -29,9 +30,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class DictItemRepository extends BaseClassSuperRepository<DictItem, Long> {
+public class DictItemRepository extends BaseClassSuperRepository<DictItemPO, Long> {
 
     public DictItemRepository(EntityManager em) {
-        super(DictItem.class, em);
+        super(DictItemPO.class, em);
     }
 }

@@ -45,7 +45,7 @@ import java.util.Objects;
 @Entity
 @Table(name = RequestPathPO.TABLE_NAME)
 @TableName(RequestPathPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = RequestPathPO.TABLE_NAME, comment = "权限资源表(url请求)")
+@org.springframework.data.relational.core.mapping.Table(name = RequestPathPO.TABLE_NAME)
 public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
 
     public static final String TABLE_NAME = "tt_request_path";

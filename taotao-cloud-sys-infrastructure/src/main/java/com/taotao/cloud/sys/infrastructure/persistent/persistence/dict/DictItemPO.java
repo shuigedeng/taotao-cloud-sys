@@ -48,7 +48,7 @@ import java.util.Objects;
 @Entity
 @Table(name = DictItemPO.TABLE_NAME)
 @TableName(DictItemPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = DictItemPO.TABLE_NAME, comment = "字典项表")
+@org.springframework.data.relational.core.mapping.Table(name = DictItemPO.TABLE_NAME)
 public class DictItemPO extends BaseSuperEntity<DictItemPO, Long> {
 
     public static final String TABLE_NAME = "tt_dict_item";

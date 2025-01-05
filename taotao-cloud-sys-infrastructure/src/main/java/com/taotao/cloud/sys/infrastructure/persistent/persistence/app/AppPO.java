@@ -40,7 +40,7 @@ import lombok.Setter;
 @Entity
 @Table(name = AppPO.TABLE_NAME)
 @TableName(AppPO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = AppPO.TABLE_NAME, comment = "app配置表")
+@org.springframework.data.relational.core.mapping.Table(name = AppPO.TABLE_NAME)
 public class AppPO extends BaseSuperEntity<AppPO, Long> {
 
     public static final String TABLE_NAME = "tt_app";

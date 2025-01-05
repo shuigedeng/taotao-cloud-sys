@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.Position;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IJobRepository extends BaseInterfaceSuperRepository<Position, Long> {}
+public interface IJobRepository extends BaseInterfaceSuperRepository<PositionPO, Long> {}

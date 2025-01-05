@@ -47,7 +47,7 @@ import java.util.Objects;
 @Entity
 @Table(name = RolePO.TABLE_NAME)
 @TableName(RolePO.TABLE_NAME)
-@org.springframework.data.relational.core.mapping.Table(name = RolePO.TABLE_NAME, comment = "角色表")
+@org.springframework.data.relational.core.mapping.Table(name = RolePO.TABLE_NAME)
 public class RolePO extends BaseSuperEntity<RolePO, Long> {
 
     public static final String TABLE_NAME = "tt_role";

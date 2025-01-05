@@ -29,9 +29,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class SmsSignRepository extends BaseClassSuperRepository<SmsSign, Long> {
+public class SmsSignRepository extends BaseClassSuperRepository<SmsSignPO, Long> {
 
     public SmsSignRepository(EntityManager em) {
-        super(SmsSign.class, em);
+        super(SmsSignPO.class, em);
     }
 }

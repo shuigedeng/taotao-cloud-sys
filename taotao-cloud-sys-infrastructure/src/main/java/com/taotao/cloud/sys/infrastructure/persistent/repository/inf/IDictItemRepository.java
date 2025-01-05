@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.dict.DictItem;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IDictItemRepository extends BaseInterfaceSuperRepository<DictItem, Long> {}
+public interface IDictItemRepository extends BaseInterfaceSuperRepository<DictItemPO, Long> {}

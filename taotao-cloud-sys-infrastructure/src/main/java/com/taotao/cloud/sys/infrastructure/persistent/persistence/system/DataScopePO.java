@@ -51,7 +51,7 @@ import java.util.Objects;
 @Entity
 @Table(name = DataScopePO.TABLE_NAME)
 @TableName(value = DataScopePO.TABLE_NAME, autoResultMap = true)
-@org.springframework.data.relational.core.mapping.Table(name = DataScopePO.TABLE_NAME, comment = "数据权限表")
+@org.springframework.data.relational.core.mapping.Table(name = DataScopePO.TABLE_NAME)
 public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
 
     public static final String TABLE_NAME = "tt_data_scope";

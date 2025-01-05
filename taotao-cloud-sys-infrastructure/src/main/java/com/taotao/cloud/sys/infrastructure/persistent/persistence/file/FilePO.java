@@ -47,7 +47,7 @@ import java.util.Objects;
 @Entity
 @Table(name = FilePO.TABLE_NAME)
 @TableName(FilePO.TABLE_NAME)
-//@jakarta.persistence.Table(appliesTo = File.TABLE_NAME, comment = "文件表")
+//@jakarta.persistence.Table(appliesTo = File.TABLE_NAME)
 public class FilePO extends BaseSuperEntity<FilePO, Long> {
 
     public static final String TABLE_NAME = "tt_file";

@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
 import com.taotao.cloud.sys.biz.model.entity.region.Region;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
@@ -29,9 +30,9 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public class RegionRepository extends BaseClassSuperRepository<Region, Long> {
+public class RegionRepository extends BaseClassSuperRepository<RegionPO, Long> {
 
     public RegionRepository(EntityManager em) {
-        super(Region.class, em);
+        super(RegionPO.class, em);
     }
 }
