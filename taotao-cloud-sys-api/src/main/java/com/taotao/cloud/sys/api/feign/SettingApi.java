@@ -58,7 +58,7 @@ public interface SettingApi {
 	SettingApiResponse get(@RequestParam(value = "key") String key);
 
     @GetMapping("/sys/feign/tools/setting/base")
-	BaseSettingApiResponse getBaseSetting(String name);
+	BaseSettingApiResponse getBaseSetting(@RequestParam(value = "name")String name);
 
     /**
      * 获得商品设置
@@ -68,29 +68,29 @@ public interface SettingApi {
      * @since 2022-04-25 16:47:40
      */
     @GetMapping("/sys/feign/tools/setting/goods")
-	GoodsSettingApiResponse getGoodsSetting(String name);
+	GoodsSettingApiResponse getGoodsSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/order")
-	OrderSettingApiResponse getOrderSetting(String name);
+	OrderSettingApiResponse getOrderSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/experience")
-	ExperienceSettingApiResponse getExperienceSetting(String name);
+	ExperienceSettingApiResponse getExperienceSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/point")
-	PointSettingApiResponse getPointSetting(String name);
+	PointSettingApiResponse getPointSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/qq/connect")
-	QQConnectSettingApiResponse getQQConnectSetting(String name);
+	QQConnectSettingApiResponse getQQConnectSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/wechat/connect")
-	WechatConnectSettingApiResponse getWechatConnectSetting(String name);
+	WechatConnectSettingApiResponse getWechatConnectSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/seckill")
-	SeckillSettingApiResponse getSeckillSetting(String name);
+	SeckillSettingApiResponse getSeckillSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/ali")
-		AlipayPaymentSettingApiResponse getAlipayPaymentSetting(String name);
+		AlipayPaymentSettingApiResponse getAlipayPaymentSetting(@RequestParam(value = "name")String name);
 
     @GetMapping("/sys/feign/tools/setting/wechat")
-	WechatPaymentSettingApiResponse getWechatPaymentSetting(String name);
+	WechatPaymentSettingApiResponse getWechatPaymentSetting(@RequestParam(value = "name")String name);
 }

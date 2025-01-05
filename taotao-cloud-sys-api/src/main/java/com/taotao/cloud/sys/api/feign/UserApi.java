@@ -77,7 +77,8 @@ public interface UserApi {
 		value = "/sys/feign/user/info/social/{social}",
 		headers = {"from=in"})
 	BaseSecurityUser getUserInfoBySocial(
-		@RequestParam("providerId") String providerId, @RequestParam("providerUserId") int providerUserId);
+		@RequestParam("providerId") String providerId,
+		@RequestParam("providerUserId") int providerUserId);
 
 	/**
 	 * 通过用户名查询用户包括角色权限等
@@ -93,5 +94,5 @@ public interface UserApi {
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
 	@GetMapping(value = "/sys/feign/info/security")
-	BaseSecurityUser getSysSecurityUser(String nicknameOrUserNameOrPhoneOrEmail);
+	BaseSecurityUser getSysSecurityUser(@RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail") String nicknameOrUserNameOrPhoneOrEmail);
 }

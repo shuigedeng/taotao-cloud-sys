@@ -47,7 +47,7 @@ public interface LogisticsApi {
 	 * @since 2022-04-25 16:47:29
 	 */
 	@GetMapping("/sys/feign/logistic/codes")
-	LogisticsApiResponse getById(@RequestParam Long logisticsId);
+	LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
 
 	/**
 	 * 得到物流
@@ -58,8 +58,8 @@ public interface LogisticsApi {
 	 * @since 2022-04-25 16:47:32
 	 */
 	@GetMapping("/sys/feign/logistic/info")
-	TracesApiResponse getLogistic(@RequestParam Long logisticsId,
-		@RequestParam String logisticsNo);
+	TracesApiResponse getLogistic(@RequestParam(value = "logisticsId") Long logisticsId,
+								  @RequestParam(value = "logisticsNo") String logisticsNo);
 
 	@GetMapping("/sys/feign/logistic/list")
 	List<LogisticsApiResponse> list();
