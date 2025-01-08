@@ -6,7 +6,6 @@
 dependencies {
     api project(":taotao-cloud-sys-common")
 
-
     api "io.github.shuigedeng:taotao-cloud-starter-alibaba"
 
     //api "io.github.shuigedeng:taotao-boot-starter-grpc"

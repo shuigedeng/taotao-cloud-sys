@@ -53,7 +53,6 @@
  * 并且可以增加流控、监控、日志、权限，分布式锁，相较于领域层功能更为丰富。
  */
 
-
 dependencies {
     api project(":taotao-cloud-sys-api")
     api project(":taotao-cloud-sys-common")
