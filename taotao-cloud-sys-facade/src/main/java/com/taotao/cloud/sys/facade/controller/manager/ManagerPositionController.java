@@ -18,11 +18,6 @@ package com.taotao.cloud.sys.facade.controller.manager;
 
 import com.taotao.boot.common.model.BaseQuery;
 import com.taotao.boot.webagg.controller.BaseSuperController;
-import com.taotao.cloud.sys.biz.model.dto.position.PositionSaveDTO;
-import com.taotao.cloud.sys.biz.model.dto.position.PositionUpdateDTO;
-import com.taotao.cloud.sys.biz.model.entity.system.Position;
-import com.taotao.cloud.sys.biz.model.vo.position.PositionQueryVO;
-import com.taotao.cloud.sys.biz.service.business.IPositionService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +34,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/position")
 @Tag(name = "管理端-岗位管理API", description = "管理端-岗位管理API")
-public class ManagerPositionController
-        extends BaseSuperController<
-                IPositionService, Position, Long, BaseQuery, PositionSaveDTO, PositionUpdateDTO, PositionQueryVO> {}
+public class ManagerPositionController{}

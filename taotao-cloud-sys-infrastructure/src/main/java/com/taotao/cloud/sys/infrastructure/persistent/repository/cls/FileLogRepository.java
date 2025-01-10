@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.file.biz.entity.FileLog;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 

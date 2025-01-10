@@ -17,11 +17,12 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.file.biz.entity.FileLog;
-import com.taotao.cloud.file.biz.mapper.IFileLogMapper;
-import com.taotao.cloud.file.biz.repository.cls.FileLogRepository;
-import com.taotao.cloud.file.biz.repository.inf.IFileLogRepository;
-import com.taotao.cloud.file.biz.service.IFileLogService;
+import com.taotao.cloud.sys.application.service.FileLogService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.FileLogMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.FileLogRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IFileLogRepository;
+import org.springframework.stereotype.Service;
 
 /**
  * 文件上传服务
@@ -30,8 +31,8 @@ import com.taotao.cloud.file.biz.service.IFileLogService;
  * @version 2022.03
  * @since 2020/11/12 17:43
  */
-//@Service
-public class FileLogServiceImpl extends BaseSuperServiceImpl< FileLog, Long, IFileLogMapper,FileLogRepository, IFileLogRepository>
-        implements IFileLogService {
+@Service
+public class FileLogServiceImpl extends BaseSuperServiceImpl<FileLogPO, Long, FileLogMapper, FileLogRepository, IFileLogRepository>
+        implements FileLogService {
 
 }

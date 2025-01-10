@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.config.LogisticsConfig;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
 
 /**
  * ILogisticsMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.config.LogisticsConfig;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface LogisticsMapper extends BaseSuperMapper<LogisticsConfig, Long> {}
+public interface LogisticsMapper extends BaseSuperMapper<LogisticsConfigPO, Long> {}

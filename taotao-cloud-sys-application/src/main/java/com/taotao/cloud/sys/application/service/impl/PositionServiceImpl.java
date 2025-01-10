@@ -17,11 +17,11 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.IPositionMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.Position;
-import com.taotao.cloud.sys.biz.repository.cls.JobRepository;
-import com.taotao.cloud.sys.biz.repository.inf.IJobRepository;
-import com.taotao.cloud.sys.biz.service.business.IPositionService;
+import com.taotao.cloud.sys.application.service.PositionService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.PositionMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.JobRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IJobRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -33,5 +33,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PositionServiceImpl
-        extends BaseSuperServiceImpl<Position, Long, IPositionMapper, JobRepository, IJobRepository>
-        implements IPositionService {}
+        extends BaseSuperServiceImpl<PositionPO, Long, PositionMapper, JobRepository, IJobRepository>
+        implements PositionService {}

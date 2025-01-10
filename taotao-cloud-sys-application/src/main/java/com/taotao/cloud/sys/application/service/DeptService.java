@@ -17,9 +17,8 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.biz.model.entity.system.Dept;
-import com.taotao.cloud.sys.biz.model.vo.dept.DeptTreeVO;
 
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import java.util.List;
 
 /**
@@ -29,7 +28,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-25 14:24:48
  */
-public interface DeptService extends BaseSuperService<Dept, Long> {
+public interface DeptService extends BaseSuperService<DeptPO, Long> {
 
     /**
      * 获取部门树
@@ -37,5 +36,5 @@ public interface DeptService extends BaseSuperService<Dept, Long> {
      * @return 部门树列表
      * @since 2022-03-23 08:52:34
      */
-    List<DeptTreeVO> tree();
+//    List<DeptTreeVO> tree();
 }

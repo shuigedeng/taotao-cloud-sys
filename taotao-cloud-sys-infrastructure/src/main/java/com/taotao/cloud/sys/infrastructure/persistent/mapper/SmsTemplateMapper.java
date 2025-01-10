@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.sms.SmsTemplate;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsTemplatePO;
 
 /**
  * ISmsTemplateMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.sms.SmsTemplate;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface SmsTemplateMapper extends BaseSuperMapper<SmsTemplate, Long> {}
+public interface SmsTemplateMapper extends BaseSuperMapper<SmsTemplatePO, Long> {}

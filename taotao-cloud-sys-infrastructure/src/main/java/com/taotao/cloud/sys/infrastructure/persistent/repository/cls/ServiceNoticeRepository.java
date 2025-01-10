@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.biz.model.entity.system.ServiceNotice;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ServiceNoticePO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;

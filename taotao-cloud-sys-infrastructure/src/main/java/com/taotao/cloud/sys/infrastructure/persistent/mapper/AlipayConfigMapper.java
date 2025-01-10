@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.config.AlipayConfig;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.AlipayConfigPO;
 
 /**
  * IAlipayConfigMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.config.AlipayConfig;
  * @version 2022.03
  * @since 2022-03-29 09:01:48
  */
-public interface AlipayConfigMapper extends BaseSuperMapper<AlipayConfig, Long> {}
+public interface AlipayConfigMapper extends BaseSuperMapper<AlipayConfigPO, Long> {}

@@ -17,11 +17,10 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.Visits;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.VisitsPO;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 /**
  * IVisitsMapper
@@ -30,8 +29,9 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-29 08:57:49
  */
-public interface VisitsMapper extends BaseSuperMapper<Visits, Long> {
+public interface VisitsMapper extends BaseSuperMapper<VisitsPO, Long> {
 
-    @Select("select * FROM visits where create_time between #{time1} and #{time2}")
-    List<Visits> findAllVisits(@Param("time1") String time1, @Param("time2") String time2);
+	@Select("select * FROM visits where create_time between #{time1} and #{time2}")
+	List<VisitsPO> findAllVisits(@Param("time1") String time1,
+		@Param("time2") String time2);
 }

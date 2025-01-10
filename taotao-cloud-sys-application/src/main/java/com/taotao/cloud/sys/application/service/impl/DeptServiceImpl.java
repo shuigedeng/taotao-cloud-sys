@@ -18,13 +18,12 @@ package com.taotao.cloud.sys.application.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.IDeptMapper;
-import com.taotao.cloud.sys.biz.model.convert.DeptConvert;
-import com.taotao.cloud.sys.biz.model.entity.system.Dept;
-import com.taotao.cloud.sys.biz.model.vo.dept.DeptTreeVO;
-import com.taotao.cloud.sys.biz.repository.cls.DeptRepository;
-import com.taotao.cloud.sys.biz.repository.inf.IDeptRepository;
-import com.taotao.cloud.sys.biz.service.business.IDeptService;
+import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeVO;
+import com.taotao.cloud.sys.application.service.DeptService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.DeptMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.DeptRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IDeptRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,23 +37,23 @@ import java.util.Objects;
  * @since 1.0
  */
 @Service
-public class DeptServiceImpl extends BaseSuperServiceImpl< Dept, Long,IDeptMapper, DeptRepository, IDeptRepository>
-	implements IDeptService {
+public class DeptServiceImpl extends BaseSuperServiceImpl<DeptPO, Long, DeptMapper, DeptRepository, IDeptRepository>
+	implements DeptService {
 
-	@Override
-	public List<DeptTreeVO> tree() {
-		LambdaQueryWrapper<Dept> queryWrapper = new LambdaQueryWrapper<>();
-		queryWrapper.orderByDesc(Dept::getSortNum);
-		List<Dept> list = list(queryWrapper);
-
-		return DeptConvert.INSTANCE.convertTree(list)
-			.stream()
-			.filter(Objects::nonNull)
-			.peek(e -> {
-				e.setKey(e.getId());
-				e.setValue(e.getId());
-				e.setTitle(e.getName());
-			})
-			.toList();
-	}
+//	@Override
+//	public List<DeptTreeVO> tree() {
+//		LambdaQueryWrapper<Dept> queryWrapper = new LambdaQueryWrapper<>();
+//		queryWrapper.orderByDesc(Dept::getSortNum);
+//		List<Dept> list = list(queryWrapper);
+//
+//		return DeptConvert.INSTANCE.convertTree(list)
+//			.stream()
+//			.filter(Objects::nonNull)
+//			.peek(e -> {
+//				e.setKey(e.getId());
+//				e.setValue(e.getId());
+//				e.setTitle(e.getName());
+//			})
+//			.toList();
+//	}
 }

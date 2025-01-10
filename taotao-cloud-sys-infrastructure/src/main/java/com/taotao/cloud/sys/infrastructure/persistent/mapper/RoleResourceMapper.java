@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.RoleResource;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RoleResourcePO;
 
 /**
  * IRoleMenuMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.RoleResource;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface RoleResourceMapper extends BaseSuperMapper<RoleResource, Long> {}
+public interface RoleResourceMapper extends BaseSuperMapper<RoleResourcePO, Long> {}

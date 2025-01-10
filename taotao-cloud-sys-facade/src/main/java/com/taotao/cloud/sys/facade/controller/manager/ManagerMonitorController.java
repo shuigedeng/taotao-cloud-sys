@@ -23,62 +23,62 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ManagerMonitorController {
 
-	@NonNull
-	private MonitorApplicationService monitorApplicationService;
-
-	@Operation(summary = "Redis信息")
-	@PreAuthorize("@permission.has('monitor:cache:list')")
-	@GetMapping("/cacheInfo")
-	public Result<RedisCacheInfoDTO> getRedisCacheInfo() {
-		RedisCacheInfoDTO redisCacheInfo = monitorApplicationService.getRedisCacheInfo();
-		return Result.success(redisCacheInfo);
-	}
-
-
-	@Operation(summary = "服务器信息")
-	@PreAuthorize("@permission.has('monitor:server:list')")
-	@GetMapping("/serverInfo")
-	public Result<ServerInfo> getServerInfo() {
-		ServerInfo serverInfo = monitorApplicationService.getServerInfo();
-		return Result.success(serverInfo);
-	}
-
-	/**
-	 * 获取在线用户列表
-	 *
-	 * @param ipaddr
-	 * @param userName
-	 * @return
-	 */
-	@Operation(summary = "在线用户列表")
-	@PreAuthorize("@permission.has('monitor:online:list')")
-	@GetMapping("/onlineUser/list")
-	public Result<List<OnlineUserInfo>> list(String ipaddr, String userName) {
-		List<OnlineUserInfo> onlineUserList = monitorApplicationService.getOnlineUserList(userName, ipaddr);
-		return Result.success(onlineUserList);
-	}
-
-	/**
-	 * 强退用户
-	 */
-//	@Operation(summary = "强退用户")
-//	@PreAuthorize("@permission.has('monitor:online:forceLogout')")
-//	//@AccessLog(title = "在线用户", businessType = BusinessTypeEnum.FORCE_LOGOUT)
-//	@DeleteMapping("/onlineUser/{tokenId}")
-//	public Result<Void> forceLogout(@PathVariable String tokenId) {
-//		CacheCenter.loginUserCache.delete(tokenId);
-//		return ResponseDTO.ok();
+//	@NonNull
+//	private MonitorApplicationService monitorApplicationService;
+//
+//	@Operation(summary = "Redis信息")
+//	@PreAuthorize("@permission.has('monitor:cache:list')")
+//	@GetMapping("/cacheInfo")
+//	public Result<RedisCacheInfoDTO> getRedisCacheInfo() {
+//		RedisCacheInfoDTO redisCacheInfo = monitorApplicationService.getRedisCacheInfo();
+//		return Result.success(redisCacheInfo);
 //	}
-
-	//***********************
-	@Operation(summary = "查询服务器监控信息")
-	@GetMapping
-//	@SaCheckPermission("upms:sysserver:get")
-	public Result<Server> getServerInfo111() throws Exception {
-		Server server = new Server();
-		server.copyTo();
-		return Result.success(server);
-	}
+//
+//
+//	@Operation(summary = "服务器信息")
+//	@PreAuthorize("@permission.has('monitor:server:list')")
+//	@GetMapping("/serverInfo")
+//	public Result<ServerInfo> getServerInfo() {
+//		ServerInfo serverInfo = monitorApplicationService.getServerInfo();
+//		return Result.success(serverInfo);
+//	}
+//
+//	/**
+//	 * 获取在线用户列表
+//	 *
+//	 * @param ipaddr
+//	 * @param userName
+//	 * @return
+//	 */
+//	@Operation(summary = "在线用户列表")
+//	@PreAuthorize("@permission.has('monitor:online:list')")
+//	@GetMapping("/onlineUser/list")
+//	public Result<List<OnlineUserInfo>> list(String ipaddr, String userName) {
+//		List<OnlineUserInfo> onlineUserList = monitorApplicationService.getOnlineUserList(userName, ipaddr);
+//		return Result.success(onlineUserList);
+//	}
+//
+//	/**
+//	 * 强退用户
+//	 */
+////	@Operation(summary = "强退用户")
+////	@PreAuthorize("@permission.has('monitor:online:forceLogout')")
+////	//@AccessLog(title = "在线用户", businessType = BusinessTypeEnum.FORCE_LOGOUT)
+////	@DeleteMapping("/onlineUser/{tokenId}")
+////	public Result<Void> forceLogout(@PathVariable String tokenId) {
+////		CacheCenter.loginUserCache.delete(tokenId);
+////		return ResponseDTO.ok();
+////	}
+//
+//	//***********************
+//	@Operation(summary = "查询服务器监控信息")
+//	@GetMapping
+////	@SaCheckPermission("upms:sysserver:get")
+//	public Result<Server> getServerInfo111() throws Exception {
+//		Server server = new Server();
+//		server.copyTo();
+//		return Result.success(server);
+//	}
 
 	//*************
 //	@At("/redis/info")

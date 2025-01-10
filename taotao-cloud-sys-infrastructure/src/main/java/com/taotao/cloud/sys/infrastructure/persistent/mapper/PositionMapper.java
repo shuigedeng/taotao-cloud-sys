@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.Position;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
 
 /**
  * IJobMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.Position;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface PositionMapper extends BaseSuperMapper<Position, Long> {}
+public interface PositionMapper extends BaseSuperMapper<PositionPO, Long> {}

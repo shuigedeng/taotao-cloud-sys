@@ -20,11 +20,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.taotao.boot.common.model.PageQuery;
 import com.taotao.boot.data.mybatis.mybatisplus.query.LambdaQueryWrapperX;
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.Resource;
-import org.apache.ibatis.annotations.Select;
-
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
 import java.util.List;
 import java.util.Set;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * IMenuMapper
@@ -33,24 +32,26 @@ import java.util.Set;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ResourceMapper extends BaseSuperMapper<Resource, Long> {
+public interface ResourceMapper extends BaseSuperMapper<ResourcePO, Long> {
 
-    @Select("""
+	@Select("""
 		select * from tt_resource where id in #{roleIds}
 		""")
-    List<Resource> findMenuByRoleIds(Set<Long> roleIds);
+	List<ResourcePO> findMenuByRoleIds(Set<Long> roleIds);
 
-    @Select("""
+	@Select("""
 		select id from tt_resource where parent_id in #{roleIds}
 		""")
-    List<Long> selectIdList(List<Long> pidList);
+	List<Long> selectIdList(List<Long> pidList);
 
-    /** 查询资源列表 */
-    default IPage<Resource> selectResourceList(Resource resource, PageQuery pageQuery) {
-        return this.selectPage(
-                new LambdaQueryWrapperX<Resource>()
-                        .likeIfPresent(Resource::getName, resource.getName())
-                        .eqIfPresent(Resource::getParentId, resource.getParentId()),
+	/**
+	 * 查询资源列表
+	 */
+	default IPage<ResourcePO> selectResourceList(ResourcePO resource, PageQuery pageQuery) {
+		return this.selectPage(
+			new LambdaQueryWrapperX<ResourcePO>()
+				.likeIfPresent(ResourcePO::getName, resource.getName())
+				.eqIfPresent(ResourcePO::getParentId, resource.getParentId()),
 			pageQuery);
-    }
+	}
 }

@@ -16,20 +16,15 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.IRoleResourceMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.QRoleResource;
-import com.taotao.cloud.sys.biz.model.entity.system.RoleResource;
-import com.taotao.cloud.sys.biz.repository.cls.RoleResourceRepository;
-import com.taotao.cloud.sys.biz.repository.inf.IRoleResourceRepository;
-import com.taotao.cloud.sys.biz.service.business.IRoleResourceService;
-import lombok.AllArgsConstructor;
-import org.dromara.hutool.core.collection.CollUtil;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.taotao.cloud.sys.application.service.RoleResourceService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.RoleResourceMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RoleResourcePO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.RoleResourceRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IRoleResourceRepository;
 import java.util.Set;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 /**
  * @author shuigedeng
@@ -39,11 +34,16 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class RoleResourceServiceImpl
-        extends BaseSuperServiceImpl<
-                 RoleResource, Long,IRoleResourceMapper, RoleResourceRepository, IRoleResourceRepository>
-        implements IRoleResourceService {
+	extends BaseSuperServiceImpl<
+	RoleResourcePO, Long, RoleResourceMapper, RoleResourceRepository, IRoleResourceRepository>
+	implements RoleResourceService {
 
-    private static final QRoleResource ROLE_RESOURCE = QRoleResource.roleResource;
+	@Override
+	public Boolean saveRoleMenu(Long roleId, Set<Long> menuIds) {
+		return null;
+	}
+
+/*    private static final QRoleResource ROLE_RESOURCE = QRoleResource.roleResource;
 
     @Override
     public Boolean saveRoleMenu(Long roleId, Set<Long> menuIds) {
@@ -63,5 +63,5 @@ public class RoleResourceServiceImpl
         // cr().saveAll(collect);
 
         return true;
-    }
+    }*/
 }

@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.biz.model.entity.region.Region;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;

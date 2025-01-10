@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.log.LogPO;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -30,7 +31,7 @@ import java.util.List;
  * @version 2021.10
  * @since 2022-02-11 16:33:34
  */
-public interface LogMapper extends BaseSuperMapper<Log, Long> {
+public interface LogMapper extends BaseSuperMapper<LogPO, Long> {
 
     @Delete("delete from log where log_type = #{logType}")
     void deleteByLogType(@Param("logType") String logType);
@@ -51,16 +52,16 @@ public interface LogMapper extends BaseSuperMapper<Log, Long> {
 		order by l.id desc
 		</script>
 		""")
-    List<Log> findAllByPageable(@Param("nickname") String nickname);
+    List<LogPO> findAllByPageable(@Param("nickname") String nickname);
 
     @Select(
             """
-		select count(*)
-		FROM (select request_ip
-					 FROM log
-					 where create_time between #{date1} and #{date2}
-					 GROUP BY request_ip
-			 ) as s
-		""")
+				select count(*)
+				FROM (select request_ip
+							 FROM log
+							 where create_time between #{date1} and #{date2}
+							 GROUP BY request_ip
+					 ) as s
+				""")
     long findIp(@Param("date1") String date1, @Param("date2") String date2);
 }

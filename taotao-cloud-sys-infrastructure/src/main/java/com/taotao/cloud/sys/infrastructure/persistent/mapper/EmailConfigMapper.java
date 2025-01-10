@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.config.EmailConfig;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.EmailConfigPO;
 
 /**
  * IEmailConfigMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.config.EmailConfig;
  * @version 2022.03
  * @since 2022-03-29 09:01:48
  */
-public interface EmailConfigMapper extends BaseSuperMapper<EmailConfig, Long> {}
+public interface EmailConfigMapper extends BaseSuperMapper<EmailConfigPO, Long> {}

@@ -18,12 +18,13 @@ package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.boot.cache.redis.repository.RedisRepository;
 import com.taotao.boot.common.constant.RedisConstant;
+import com.taotao.boot.sensitive.houbb.core.SensitiveWord;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.ISensitiveWordMapper;
-import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
-import com.taotao.cloud.sys.biz.repository.cls.SensitiveWordRepository;
-import com.taotao.cloud.sys.biz.repository.inf.ISensitiveWordRepository;
-import com.taotao.cloud.sys.biz.service.business.ISensitiveWordService;
+import com.taotao.cloud.sys.application.service.SensitiveWordService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.SensitiveWordMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.SensitiveWordRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.ISensitiveWordRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,28 +35,33 @@ import java.util.List;
 @AllArgsConstructor
 public class SensitiveWordServiceImpl
         extends BaseSuperServiceImpl<
-                 SensitiveWord, Long, ISensitiveWordMapper,SensitiveWordRepository, ISensitiveWordRepository>
-        implements ISensitiveWordService {
+	SensitiveWordPO, Long, SensitiveWordMapper, SensitiveWordRepository, ISensitiveWordRepository>
+        implements SensitiveWordService {
 
-    private final RedisRepository redisRepository;
+	@Override
+	public void resetCache() {
 
-    @Override
-    public void resetCache() {
-        List<SensitiveWord> sensitiveWordsList = this.list();
-        if (sensitiveWordsList == null || sensitiveWordsList.isEmpty()) {
-            return;
-        }
-		new SensitiveWord()
-			.setSensitiveWord("afd")
-			.setCreateBy(1L)
-			.setDelFlag(false)
-			.setId(1L);
-        List<String> sensitiveWords =
-                sensitiveWordsList
-					.stream()
-					.map(SensitiveWord::getSensitiveWord)
-					.toList();
+	}
 
-        redisRepository.set(RedisConstant.SENSITIVE_WORDS_KEY, sensitiveWords);
-    }
+//    private final RedisRepository redisRepository;
+//
+//    @Override
+//    public void resetCache() {
+//        List<SensitiveWord> sensitiveWordsList = this.list();
+//        if (sensitiveWordsList == null || sensitiveWordsList.isEmpty()) {
+//            return;
+//        }
+//		new SensitiveWord()
+//			.setSensitiveWord("afd")
+//			.setCreateBy(1L)
+//			.setDelFlag(false)
+//			.setId(1L);
+//        List<String> sensitiveWords =
+//                sensitiveWordsList
+//					.stream()
+//					.map(SensitiveWord::getSensitiveWord)
+//					.toList();
+//
+//        redisRepository.set(RedisConstant.SENSITIVE_WORDS_KEY, sensitiveWords);
+//    }
 }

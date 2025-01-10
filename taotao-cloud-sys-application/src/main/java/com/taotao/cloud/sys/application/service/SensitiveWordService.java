@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
 
 /**
  * 敏感词业务层
@@ -26,7 +26,7 @@ import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
  * @version 2022.03
  * @since 2022-03-25 14:33:20
  */
-public interface SensitiveWordService extends IService<SensitiveWord> {
+public interface SensitiveWordService extends IService<SensitiveWordPO> {
 
     /**
      * 重新写入缓存

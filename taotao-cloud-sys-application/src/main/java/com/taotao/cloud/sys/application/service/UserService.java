@@ -17,9 +17,8 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.biz.model.dto.user.RestPasswordUserDTO;
-import com.taotao.cloud.sys.biz.model.entity.system.User;
 
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import java.util.List;
 import java.util.Set;
 
@@ -30,65 +29,65 @@ import java.util.Set;
  * @version 2023.01
  * @since 2023-02-15 14:43:45
  */
-public interface UserService extends BaseSuperService<User, Long> {
+public interface UserService extends BaseSuperService<UserPO, Long> {
 
-    /**
-     * 保存用户
-     *
-     * @param user 用户
-     * @return {@link User }
-     * @since 2023-02-15 14:43:47
-     */
-    User saveUser(User user);
-
-    /**
-     * 更新用户
-     *
-     * @param user 用户
-     * @return {@link User }
-     * @since 2023-02-15 14:43:50
-     */
-    User updateUser(User user);
-
-    /**
-     * 重置密码
-     *
-     * @param restPasswordDTO 重置密码对象
-     * @return 重置结果
-     * @since 2021-10-09 20:49:02
-     */
-    Boolean restPass(Long userId, RestPasswordUserDTO restPasswordDTO);
-
-    /**
-     * 更新用户角色信息
-     *
-     * @param userId userId
-     * @param roleIds roleIds
-     * @return 更新结果
-     * @since 2021-10-09 20:49:19
-     */
-    Boolean updateUserRoles(Long userId, Set<Long> roleIds);
-
-    /**
-     * 根据手机号码查询用户是否存在
-     *
-     * @param phone phone
-     * @return 是否存在
-     * @since 2021-10-09 20:49:35
-     */
-    Boolean existsByPhone(String phone);
-
-    /**
-     * 根据用户id查询用户是否存在
-     *
-     * @param id id
-     * @return 是否存在
-     * @since 2021-10-09 20:49:40
-     */
-    Boolean existsById(Long id);
-
-    User registe(User user);
-
-    List<User> getPersonList(String phoneVal);
+//    /**
+//     * 保存用户
+//     *
+//     * @param user 用户
+//     * @return {@link User }
+//     * @since 2023-02-15 14:43:47
+//     */
+//    User saveUser(User user);
+//
+//    /**
+//     * 更新用户
+//     *
+//     * @param user 用户
+//     * @return {@link User }
+//     * @since 2023-02-15 14:43:50
+//     */
+//    User updateUser(User user);
+//
+//    /**
+//     * 重置密码
+//     *
+//     * @param restPasswordDTO 重置密码对象
+//     * @return 重置结果
+//     * @since 2021-10-09 20:49:02
+//     */
+//    Boolean restPass(Long userId, RestPasswordUserDTO restPasswordDTO);
+//
+//    /**
+//     * 更新用户角色信息
+//     *
+//     * @param userId userId
+//     * @param roleIds roleIds
+//     * @return 更新结果
+//     * @since 2021-10-09 20:49:19
+//     */
+//    Boolean updateUserRoles(Long userId, Set<Long> roleIds);
+//
+//    /**
+//     * 根据手机号码查询用户是否存在
+//     *
+//     * @param phone phone
+//     * @return 是否存在
+//     * @since 2021-10-09 20:49:35
+//     */
+//    Boolean existsByPhone(String phone);
+//
+//    /**
+//     * 根据用户id查询用户是否存在
+//     *
+//     * @param id id
+//     * @return 是否存在
+//     * @since 2021-10-09 20:49:40
+//     */
+//    Boolean existsById(Long id);
+//
+//    User registe(User user);
+//
+//    List<User> getPersonList(String phoneVal);
 
 }

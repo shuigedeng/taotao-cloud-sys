@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
-import com.taotao.cloud.sys.biz.model.entity.sms.SmsReach;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsReachPO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

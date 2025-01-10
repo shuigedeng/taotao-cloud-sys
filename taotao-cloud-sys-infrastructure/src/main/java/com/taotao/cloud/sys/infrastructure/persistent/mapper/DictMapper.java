@@ -17,9 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.bo.DictDeptBO;
-import com.taotao.cloud.sys.biz.model.entity.dict.Dict;
-import com.taotao.cloud.sys.biz.model.params.DictDeptParams;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -32,15 +30,15 @@ import java.util.List;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface DictMapper extends BaseSuperMapper<Dict, Long> {
+public interface DictMapper extends BaseSuperMapper<DictPO, Long> {
 
-    @Select(
-            """
-		select dictPO.id as id,
-		dictPO.description as description,
-		dictPO.dict_name as itemValue,
-		dictPO.dict_code as itemText
-		from tt_dict dictPO
-		""")
-    List<DictDeptBO> testMybatisQueryStructure(@Param("params") DictDeptParams params);
+//    @Select(
+//            """
+//		select dictPO.id as id,
+//		dictPO.description as description,
+//		dictPO.dict_name as itemValue,
+//		dictPO.dict_code as itemText
+//		from tt_dict dictPO
+//		""")
+//    List<DictPO> testMybatisQueryStructure(@Param("params") DictDeptParams params);
 }

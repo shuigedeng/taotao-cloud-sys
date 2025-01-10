@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.Dept;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 
 /**
  * CompanyMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.Dept;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface DeptMapper extends BaseSuperMapper<Dept, Long> {}
+public interface DeptMapper extends BaseSuperMapper<DeptPO, Long> {}

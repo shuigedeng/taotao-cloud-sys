@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.system.UserRelation;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
 
 /**
  * IUserRoleMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.system.UserRelation;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface UserRelationMapper extends BaseSuperMapper<UserRelation, Long> {}
+public interface UserRelationMapper extends BaseSuperMapper<UserRelationPO, Long> {}

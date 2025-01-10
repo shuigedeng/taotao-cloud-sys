@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
-import com.taotao.cloud.sys.biz.model.entity.sms.SmsSign;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsSignPO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

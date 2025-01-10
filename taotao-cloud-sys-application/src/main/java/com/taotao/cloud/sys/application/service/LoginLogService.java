@@ -17,8 +17,6 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.common.model.PageResult;
-import com.taotao.cloud.log.biz.log.dto.LoginLogDto;
-import com.taotao.cloud.log.biz.log.param.LoginLogParam;
 
 /**
  * 登陆日志
@@ -27,23 +25,23 @@ import com.taotao.cloud.log.biz.log.param.LoginLogParam;
  */
 public interface LoginLogService {
 
-    /**
-     * 添加
-     */
-    void add(LoginLogParam loginLog);
-
-    /**
-     * 获取
-     */
-    LoginLogDto findById(Long id);
-
-    /**
-     * 分页
-     */
-    PageResult<LoginLogDto> page(LoginLogParam loginLogParam);
-
-    /**
-     * 删除
-     */
-    void delete(Long id);
+//    /**
+//     * 添加
+//     */
+//    void add(LoginLogParam loginLog);
+//
+//    /**
+//     * 获取
+//     */
+//    LoginLogDto findById(Long id);
+//
+//    /**
+//     * 分页
+//     */
+//    PageResult<LoginLogDto> page(LoginLogParam loginLogParam);
+//
+//    /**
+//     * 删除
+//     */
+//    void delete(Long id);
 }

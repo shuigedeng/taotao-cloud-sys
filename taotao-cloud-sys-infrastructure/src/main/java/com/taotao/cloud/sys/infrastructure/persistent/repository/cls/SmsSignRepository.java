@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.biz.model.entity.sms.SmsSign;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsSignPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 

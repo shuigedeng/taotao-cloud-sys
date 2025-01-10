@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.facade.controller.tools;
 
-import com.taotao.cloud.sys.biz.service.business.ISystemService;
+import com.taotao.cloud.sys.application.service.SystemService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/tools/system")
 public class SystemController {
 
-    private final ISystemService systemService;
+    private final SystemService systemService;
 
     /// **
     // * 下载公钥

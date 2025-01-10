@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.taotao.cloud.sys.biz.model.entity.config.LogisticsConfig;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
 
 /**
  * ILogisticsService
@@ -34,5 +34,5 @@ public interface LogisticsService {
      * @return 物流公司信息
      * @since 2020/11/20 下午1:08
      */
-    LogisticsConfig findLogisticsById(Long id);
+    LogisticsConfigPO findLogisticsById(Long id);
 }

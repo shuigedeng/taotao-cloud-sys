@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
 
 /**
  * ISensitiveWordMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface SensitiveWordMapper extends BaseSuperMapper<SensitiveWord, Long> {}
+public interface SensitiveWordMapper extends BaseSuperMapper<SensitiveWordPO, Long> {}

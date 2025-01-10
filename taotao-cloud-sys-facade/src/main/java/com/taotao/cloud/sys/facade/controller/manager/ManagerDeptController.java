@@ -51,11 +51,11 @@ import java.util.List;
 public class ManagerDeptController
         extends BaseSuperController<IDeptService, Dept, Long, BaseQuery, DeptSaveDTO, DeptUpdateDTO, DeptQueryVO> {
 
-    @Operation(summary = "获取部门树", description = "获取部门树")
-    @RequestLogger
-    @PreAuthorize("hasAuthority('dept:tree:data')")
-    @GetMapping("/tree")
-    public Result<List<DeptTreeVO>> tree() {
-        return Result.success(ForestNodeMerger.merge(service().tree()));
-    }
+//    @Operation(summary = "获取部门树", description = "获取部门树")
+//    @RequestLogger
+//    @PreAuthorize("hasAuthority('dept:tree:data')")
+//    @GetMapping("/tree")
+//    public Result<List<DeptTreeVO>> tree() {
+//        return Result.success(ForestNodeMerger.merge(service().tree()));
+//    }
 }

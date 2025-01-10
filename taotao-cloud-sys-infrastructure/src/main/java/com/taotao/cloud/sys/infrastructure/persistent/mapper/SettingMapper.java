@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
-import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.SettingPO;
 
 /**
  * ISettingMapper
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface SettingMapper extends BaseSuperMapper<Setting, Long> {}
+public interface SettingMapper extends BaseSuperMapper<SettingPO, Long> {}

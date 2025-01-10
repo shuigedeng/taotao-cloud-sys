@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
 import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
-import com.taotao.cloud.file.biz.entity.File;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FilePO;
 
 /**
  * CompanyMapper

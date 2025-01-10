@@ -16,7 +16,6 @@
 
 package com.taotao.cloud.sys.infrastructure.utils;
 
-import com.taotao.cloud.sys.biz.model.entity.config.AlipayConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 
@@ -60,29 +59,29 @@ public class AlipayUtils {
      * @param alipay 阿里云配置
      * @return 签名结果
      */
-    public boolean rsaCheck(HttpServletRequest request, AlipayConfig alipay) {
-        // 获取支付宝POST过来反馈信息
-        Map<String, String> params = new HashMap<>(1);
-        Map requestParams = request.getParameterMap();
-        for (Object o : requestParams.keySet()) {
-            String name = (String) o;
-            String[] values = (String[]) requestParams.get(name);
-            String valueStr = "";
-            for (int i = 0; i < values.length; i++) {
-                valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
-            }
-            params.put(name, valueStr);
-        }
-
-        // try {
-        //    return AlipaySignature.rsaCheckV1(params,
-        //            alipay.getPublicKey(),
-        //            alipay.getCharset(),
-        //            alipay.getSignType());
-        // } catch (AlipayApiException e) {
-        //    return false;
-        // }
-
-        return true;
-    }
+//    public boolean rsaCheck(HttpServletRequest request, AlipayConfig alipay) {
+//        // 获取支付宝POST过来反馈信息
+//        Map<String, String> params = new HashMap<>(1);
+//        Map requestParams = request.getParameterMap();
+//        for (Object o : requestParams.keySet()) {
+//            String name = (String) o;
+//            String[] values = (String[]) requestParams.get(name);
+//            String valueStr = "";
+//            for (int i = 0; i < values.length; i++) {
+//                valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
+//            }
+//            params.put(name, valueStr);
+//        }
+//
+//        // try {
+//        //    return AlipaySignature.rsaCheckV1(params,
+//        //            alipay.getPublicKey(),
+//        //            alipay.getCharset(),
+//        //            alipay.getSignType());
+//        // } catch (AlipayApiException e) {
+//        //    return false;
+//        // }
+//
+//        return true;
+//    }
 }

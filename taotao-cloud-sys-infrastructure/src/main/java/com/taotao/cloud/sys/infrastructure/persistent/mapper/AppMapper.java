@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.taotao.cloud.sys.biz.model.entity.app.App;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.app.AppPO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -27,4 +27,4 @@ import org.springframework.stereotype.Repository;
  * @since 2022-09-12
  */
 @Repository
-public interface AppMapper extends BaseMapper<App> {}
+public interface AppMapper extends BaseMapper<AppPO> {}

@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.SettingPO;
 
 /**
  * ISettingService
@@ -26,19 +26,19 @@ import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
  * @version v1.0
  * @since 2022/03/10 10:31
  */
-public interface SettingService extends BaseSuperService<Setting, Long> {
+public interface SettingService extends BaseSuperService<SettingPO, Long> {
 
-    /**
-     * 通过key获取
-     *
-     * @param key
-     */
-    Setting get(String key);
-
-    /**
-     * 修改
-     *
-     * @param setting
-     */
-    boolean saveUpdate(Setting setting);
+//    /**
+//     * 通过key获取
+//     *
+//     * @param key
+//     */
+//    Setting get(String key);
+//
+//    /**
+//     * 修改
+//     *
+//     * @param setting
+//     */
+//    boolean saveUpdate(Setting setting);
 }

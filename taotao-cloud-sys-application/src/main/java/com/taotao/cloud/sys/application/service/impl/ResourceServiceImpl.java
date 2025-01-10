@@ -20,18 +20,11 @@ import com.taotao.boot.common.constant.CommonConstant;
 import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.api.dubbo.request.MenuQueryRpcRequest;
-import com.taotao.cloud.sys.biz.mapper.IResourceMapper;
-import com.taotao.cloud.sys.biz.model.bo.MenuBO;
-import com.taotao.cloud.sys.biz.model.bo.RoleBO;
-import com.taotao.cloud.sys.biz.model.convert.ResourceConvert;
-import com.taotao.cloud.sys.biz.model.entity.system.Resource;
-import com.taotao.cloud.sys.biz.model.vo.menu.MenuQueryVO;
-import com.taotao.cloud.sys.biz.model.vo.menu.MenuTreeVO;
-import com.taotao.cloud.sys.biz.repository.cls.ResourceRepository;
-import com.taotao.cloud.sys.biz.repository.inf.IResourceRepository;
-import com.taotao.cloud.sys.biz.service.business.IResourceService;
-import com.taotao.cloud.sys.biz.service.business.IRoleService;
-import com.taotao.cloud.sys.biz.utils.TreeUtil;
+import com.taotao.cloud.sys.application.service.ResourceService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.ResourceMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.ResourceRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IResourceRepository;
 import lombok.AllArgsConstructor;
 import org.dromara.hutool.core.collection.CollUtil;
 import org.springframework.stereotype.Service;
@@ -52,112 +45,112 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class ResourceServiceImpl
-	extends BaseSuperServiceImpl< Resource, Long,IResourceMapper, ResourceRepository, IResourceRepository>
-	implements IResourceService {
+	extends BaseSuperServiceImpl<ResourcePO, Long, ResourceMapper, ResourceRepository, IResourceRepository>
+	implements ResourceService {
 
-	private final IRoleService roleService;
-
-	@Override
-	public List<MenuBO> findMenuByIdList(List<Long> idList) {
-		List<Resource> resources = cr().findAllById(idList);
-		return ResourceConvert.INSTANCE.convertListBO(resources);
-	}
-
-	@Override
-	public List<MenuBO> findAllMenus() {
-		List<Resource> resources = ir().findAll();
-		return ResourceConvert.INSTANCE.convertListBO(resources);
-	}
-
-	@Override
-	public List<MenuQueryRpcRequest> findAllById(Long id) {
-		// List<Menu> menus = ir().findAll();
-		// List<Menu> menus =im().selectList(new QueryWrapper<>());
-
-		List<Resource> resources = cr().findAll();
-		return ResourceConvert.INSTANCE.convertListRequest(resources);
-	}
-
-	@Override
-	public List<MenuBO> findMenuByRoleIds(Set<Long> roleIds) {
-		List<Resource> resources = im().findMenuByRoleIds(roleIds);
-		return ResourceConvert.INSTANCE.convertListBO(resources)
-			.stream()
-			.sorted(Comparator.comparing(MenuBO::id))
-			.toList();
-	}
-
-	@Override
-	public List<MenuBO> findMenuByCodes(Set<String> codes) {
-		List<RoleBO> sysRoles = roleService.findRoleByCodes(codes);
-		if (CollUtil.isEmpty(sysRoles)) {
-			throw new BusinessException("未查询到角色信息");
-		}
-		List<Long> roleIds = sysRoles
-			.stream()
-			.map(RoleBO::id)
-			.toList();
-		return findMenuByRoleIds(new HashSet<>(roleIds));
-	}
-
-	@Override
-	public List<MenuBO> findMenuByParentId(Long parentId) {
-		List<Long> pidList = new ArrayList<>();
-		pidList.add(parentId);
-		List<Long> sumList = new ArrayList<>();
-		List<Long> allChildrenIdList = recursion(pidList, sumList);
-		return findMenuByIdList(allChildrenIdList);
-	}
-
-	/**
-	 * 根据parentId递归查询
-	 *
-	 * @param pidList 初始化的父级ID
-	 * @param sumList 保存的全部ID
-	 * @return {@link List&lt;java.lang.Long&gt; }
-	 * @since 2021-10-09 20:41:41
-	 */
-	public List<Long> recursion(List<Long> pidList, List<Long> sumList) {
-		List<Long> sonIdList = im().selectIdList(pidList);
-		if (sonIdList.size() == 0) {
-			return sumList;
-		}
-		sumList.addAll(sonIdList);
-		return recursion(sonIdList, sumList);
-	}
-
-	@Override
-	public List<MenuTreeVO> findMenuTree(boolean lazy, Long parentId) {
-		if (!lazy) {
-			List<MenuBO> bos = findAllMenus();
-			return TreeUtil.buildTree(bos, CommonConstant.MENU_TREE_ROOT_ID);
-		}
-
-		Long parent = parentId == null ? CommonConstant.MENU_TREE_ROOT_ID : parentId;
-		List<MenuBO> bos = findMenuByParentId(parent);
-		return TreeUtil.buildTree(bos, parent);
-	}
-
-	@Override
-	public List<MenuTreeVO> findCurrentUserMenuTree(List<MenuQueryVO> vos, Long parentId) {
-		// List<MenuTreeVO> menuTreeList = vos.stream()
-		//	.filter(vo -> MenuTypeEnum.DIR.getCode() == vo.type())
-		//	.map(e -> MenuTreeVO.builder()
-		//		.id(e.id())
-		//		.name(e.name())
-		//		.title(e.name())
-		//		.key(e.id())
-		//		.value(e.id())
-		//		// 此处还需要设置其他属性
-		//		.build())
-		//	.sorted(Comparator.comparingInt(MenuTreeVO::getSort))
-		//	.toList();
-
-		// Long parent = parentId == null ? CommonConstant.MENU_TREE_ROOT_ID : parentId;
-		// return TreeUtil.build(menuTreeList, parent);
-		return null;
-		// return ForestNodeMerger.merge(TreeUtil.buildTree(menus));
-	}
+//	private final IRoleService roleService;
+//
+//	@Override
+//	public List<MenuBO> findMenuByIdList(List<Long> idList) {
+//		List<Resource> resources = cr().findAllById(idList);
+//		return ResourceConvert.INSTANCE.convertListBO(resources);
+//	}
+//
+//	@Override
+//	public List<MenuBO> findAllMenus() {
+//		List<Resource> resources = ir().findAll();
+//		return ResourceConvert.INSTANCE.convertListBO(resources);
+//	}
+//
+//	@Override
+//	public List<MenuQueryRpcRequest> findAllById(Long id) {
+//		// List<Menu> menus = ir().findAll();
+//		// List<Menu> menus =im().selectList(new QueryWrapper<>());
+//
+//		List<Resource> resources = cr().findAll();
+//		return ResourceConvert.INSTANCE.convertListRequest(resources);
+//	}
+//
+//	@Override
+//	public List<MenuBO> findMenuByRoleIds(Set<Long> roleIds) {
+//		List<Resource> resources = im().findMenuByRoleIds(roleIds);
+//		return ResourceConvert.INSTANCE.convertListBO(resources)
+//			.stream()
+//			.sorted(Comparator.comparing(MenuBO::id))
+//			.toList();
+//	}
+//
+//	@Override
+//	public List<MenuBO> findMenuByCodes(Set<String> codes) {
+//		List<RoleBO> sysRoles = roleService.findRoleByCodes(codes);
+//		if (CollUtil.isEmpty(sysRoles)) {
+//			throw new BusinessException("未查询到角色信息");
+//		}
+//		List<Long> roleIds = sysRoles
+//			.stream()
+//			.map(RoleBO::id)
+//			.toList();
+//		return findMenuByRoleIds(new HashSet<>(roleIds));
+//	}
+//
+//	@Override
+//	public List<MenuBO> findMenuByParentId(Long parentId) {
+//		List<Long> pidList = new ArrayList<>();
+//		pidList.add(parentId);
+//		List<Long> sumList = new ArrayList<>();
+//		List<Long> allChildrenIdList = recursion(pidList, sumList);
+//		return findMenuByIdList(allChildrenIdList);
+//	}
+//
+//	/**
+//	 * 根据parentId递归查询
+//	 *
+//	 * @param pidList 初始化的父级ID
+//	 * @param sumList 保存的全部ID
+//	 * @return {@link List&lt;java.lang.Long&gt; }
+//	 * @since 2021-10-09 20:41:41
+//	 */
+//	public List<Long> recursion(List<Long> pidList, List<Long> sumList) {
+//		List<Long> sonIdList = im().selectIdList(pidList);
+//		if (sonIdList.size() == 0) {
+//			return sumList;
+//		}
+//		sumList.addAll(sonIdList);
+//		return recursion(sonIdList, sumList);
+//	}
+//
+//	@Override
+//	public List<MenuTreeVO> findMenuTree(boolean lazy, Long parentId) {
+//		if (!lazy) {
+//			List<MenuBO> bos = findAllMenus();
+//			return TreeUtil.buildTree(bos, CommonConstant.MENU_TREE_ROOT_ID);
+//		}
+//
+//		Long parent = parentId == null ? CommonConstant.MENU_TREE_ROOT_ID : parentId;
+//		List<MenuBO> bos = findMenuByParentId(parent);
+//		return TreeUtil.buildTree(bos, parent);
+//	}
+//
+//	@Override
+//	public List<MenuTreeVO> findCurrentUserMenuTree(List<MenuQueryVO> vos, Long parentId) {
+//		// List<MenuTreeVO> menuTreeList = vos.stream()
+//		//	.filter(vo -> MenuTypeEnum.DIR.getCode() == vo.type())
+//		//	.map(e -> MenuTreeVO.builder()
+//		//		.id(e.id())
+//		//		.name(e.name())
+//		//		.title(e.name())
+//		//		.key(e.id())
+//		//		.value(e.id())
+//		//		// 此处还需要设置其他属性
+//		//		.build())
+//		//	.sorted(Comparator.comparingInt(MenuTreeVO::getSort))
+//		//	.toList();
+//
+//		// Long parent = parentId == null ? CommonConstant.MENU_TREE_ROOT_ID : parentId;
+//		// return TreeUtil.build(menuTreeList, parent);
+//		return null;
+//		// return ForestNodeMerger.merge(TreeUtil.buildTree(menus));
+//	}
 
 	// @Override
 	// @Transactional(rollbackFor = Exception.class)

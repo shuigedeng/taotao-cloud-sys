@@ -17,14 +17,12 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.ISettingMapper;
-import com.taotao.cloud.sys.biz.model.entity.setting.Setting;
-import com.taotao.cloud.sys.biz.repository.cls.SettingRepository;
-import com.taotao.cloud.sys.biz.repository.inf.ISettingRepository;
-import com.taotao.cloud.sys.biz.service.business.ISettingService;
+import com.taotao.cloud.sys.application.service.SettingService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.SettingMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.SettingPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.SettingRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.ISettingRepository;
 import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -37,18 +35,19 @@ import org.springframework.stereotype.Service;
 @Service
 @CacheConfig(cacheNames = "{setting}")
 public class SettingServiceImpl
-        extends BaseSuperServiceImpl< Setting, Long, ISettingMapper,SettingRepository, ISettingRepository>
-        implements ISettingService {
+	extends
+	BaseSuperServiceImpl<SettingPO, Long, SettingMapper, SettingRepository, ISettingRepository>
+	implements SettingService {
 
-    @Override
-    @Cacheable(key = "#key")
-    public Setting get(String key) {
-        return this.getById(key);
-    }
-
-    @Override
-    @CacheEvict(key = "#setting.id")
-    public boolean saveUpdate(Setting setting) {
-        return this.saveOrUpdate(setting);
-    }
+//    @Override
+//    @Cacheable(key = "#key")
+//    public Setting get(String key) {
+//        return this.getById(key);
+//    }
+//
+//    @Override
+//    @CacheEvict(key = "#setting.id")
+//    public boolean saveUpdate(Setting setting) {
+//        return this.saveOrUpdate(setting);
+//    }
 }

@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
-import com.taotao.cloud.sys.biz.model.entity.system.ServiceNotice;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ServiceNoticePO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

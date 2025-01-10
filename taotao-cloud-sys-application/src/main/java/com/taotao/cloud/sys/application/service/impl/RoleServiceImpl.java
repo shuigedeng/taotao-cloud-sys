@@ -18,15 +18,11 @@ package com.taotao.cloud.sys.application.service.impl;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.IRoleMapper;
-import com.taotao.cloud.sys.biz.model.bo.RoleBO;
-import com.taotao.cloud.sys.biz.model.convert.RoleConvert;
-import com.taotao.cloud.sys.biz.model.entity.system.QRole;
-import com.taotao.cloud.sys.biz.model.entity.system.Role;
-import com.taotao.cloud.sys.biz.repository.cls.RoleRepository;
-import com.taotao.cloud.sys.biz.repository.inf.IRoleRepository;
-import com.taotao.cloud.sys.biz.service.business.IRoleResourceService;
-import com.taotao.cloud.sys.biz.service.business.IRoleService;
+import com.taotao.cloud.sys.application.service.RoleService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.RoleMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.RoleRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IRoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,42 +40,42 @@ import java.util.Set;
  */
 @Service
 @AllArgsConstructor
-public class RoleServiceImpl extends BaseSuperServiceImpl<Role, Long,IRoleMapper,  RoleRepository, IRoleRepository>
-        implements IRoleService {
+public class RoleServiceImpl extends BaseSuperServiceImpl<RolePO, Long, RoleMapper, RoleRepository, IRoleRepository>
+        implements RoleService {
 
-    private static final QRole SYS_ROLE = QRole.role;
-
-    private final IRoleResourceService roleResourceService;
-
-    @Override
-    public Boolean existRoleByCode(String code) {
-        BooleanExpression predicate = SYS_ROLE.code.eq(code);
-        return cr().exists(predicate);
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public Boolean saveRoleMenus(Long roleId, Set<Long> menuIds) {
-        return roleResourceService.saveRoleMenu(roleId, menuIds);
-    }
-
-    @Override
-    public List<RoleBO> findAllRoles() {
-        List<Role> roles = ir().findAll();
-        return RoleConvert.INSTANCE.convertListBO(roles);
-    }
-
-    @Override
-    public List<RoleBO> findRoleByUserIds(Set<Long> userIds) {
-        // List<Role> roles = cr().findRoleByUserIds(userIds);
-        List<Role> roles = new ArrayList<>();
-        return RoleConvert.INSTANCE.convertListBO(roles);
-    }
-
-    @Override
-    public List<RoleBO> findRoleByCodes(Set<String> codes) {
-        // List<Role> roles = cr().findRoleByCodes(codes);
-        List<Role> roles = new ArrayList<>();
-        return RoleConvert.INSTANCE.convertListBO(roles);
-    }
+//    private static final QRole SYS_ROLE = QRole.role;
+//
+//    private final IRoleResourceService roleResourceService;
+//
+//    @Override
+//    public Boolean existRoleByCode(String code) {
+//        BooleanExpression predicate = SYS_ROLE.code.eq(code);
+//        return cr().exists(predicate);
+//    }
+//
+//    @Override
+//    @Transactional(rollbackFor = Exception.class)
+//    public Boolean saveRoleMenus(Long roleId, Set<Long> menuIds) {
+//        return roleResourceService.saveRoleMenu(roleId, menuIds);
+//    }
+//
+//    @Override
+//    public List<RoleBO> findAllRoles() {
+//        List<Role> roles = ir().findAll();
+//        return RoleConvert.INSTANCE.convertListBO(roles);
+//    }
+//
+//    @Override
+//    public List<RoleBO> findRoleByUserIds(Set<Long> userIds) {
+//        // List<Role> roles = cr().findRoleByUserIds(userIds);
+//        List<Role> roles = new ArrayList<>();
+//        return RoleConvert.INSTANCE.convertListBO(roles);
+//    }
+//
+//    @Override
+//    public List<RoleBO> findRoleByCodes(Set<String> codes) {
+//        // List<Role> roles = cr().findRoleByCodes(codes);
+//        List<Role> roles = new ArrayList<>();
+//        return RoleConvert.INSTANCE.convertListBO(roles);
+//    }
 }

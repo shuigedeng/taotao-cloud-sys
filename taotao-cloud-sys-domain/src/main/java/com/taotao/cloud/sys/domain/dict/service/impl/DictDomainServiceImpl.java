@@ -3,7 +3,7 @@ package com.taotao.cloud.sys.domain.dict.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.taotao.boot.common.model.PageQuery;
 import com.taotao.cloud.sys.domain.dict.entity.DictEntity;
-import com.taotao.cloud.sys.domain.dict.repository.DictRepository;
+import com.taotao.cloud.sys.domain.dict.repository.DictDomainRepository;
 import com.taotao.cloud.sys.domain.dict.service.DictDomainService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class DictDomainServiceImpl implements DictDomainService {
 
-	private DictRepository dictRepository;
+	private DictDomainRepository dictDomainRepository;
 
 	@Override
 	public Boolean insert(DictEntity dictEntity) {

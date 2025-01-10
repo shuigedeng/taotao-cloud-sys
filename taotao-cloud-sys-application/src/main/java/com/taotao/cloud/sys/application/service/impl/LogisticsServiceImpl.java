@@ -19,11 +19,11 @@ package com.taotao.cloud.sys.application.service.impl;
 import com.taotao.boot.common.enums.ResultEnum;
 import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.biz.mapper.ILogisticsMapper;
-import com.taotao.cloud.sys.biz.model.entity.config.LogisticsConfig;
-import com.taotao.cloud.sys.biz.repository.cls.LogisticsRepository;
-import com.taotao.cloud.sys.biz.repository.inf.ILogisticsRepository;
-import com.taotao.cloud.sys.biz.service.business.ILogisticsService;
+import com.taotao.cloud.sys.application.service.LogisticsService;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.LogisticsMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.LogisticsRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.ILogisticsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -37,12 +37,17 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class LogisticsServiceImpl
-        extends BaseSuperServiceImpl<LogisticsConfig, Long, ILogisticsMapper, LogisticsRepository, ILogisticsRepository>
-        implements ILogisticsService {
+        extends BaseSuperServiceImpl<LogisticsConfigPO, Long, LogisticsMapper, LogisticsRepository, ILogisticsRepository>
+        implements LogisticsService {
 
-    @Override
-    public LogisticsConfig findLogisticsById(Long id) {
-        Optional<LogisticsConfig> optionalExpressCompany = ir().findById(id);
-        return optionalExpressCompany.orElseThrow(() -> new BusinessException(ResultEnum.FILE_NOT_EXIST));
-    }
+	@Override
+	public LogisticsConfigPO findLogisticsById(Long id) {
+		return null;
+	}
+
+//    @Override
+//    public LogisticsConfig findLogisticsById(Long id) {
+//        Optional<LogisticsConfig> optionalExpressCompany = ir().findById(id);
+//        return optionalExpressCompany.orElseThrow(() -> new BusinessException(ResultEnum.FILE_NOT_EXIST));
+//    }
 }

@@ -17,9 +17,7 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.taotao.cloud.log.biz.entity.SysLogLogin;
-import com.taotao.cloud.log.biz.mapper.SysLogLoginMapper;
-import com.taotao.cloud.log.biz.service.SysLogLoginService;
+import com.taotao.cloud.sys.application.service.SysLogLoginService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -29,4 +27,5 @@ import org.springframework.stereotype.Service;
  * @create: 2022-03-19 20:42:34
  */
 @Service
-public class SysLogLoginServiceImpl extends ServiceImpl<SysLogLoginMapper, SysLogLogin> implements SysLogLoginService {}
+public class SysLogLoginServiceImpl  implements
+	SysLogLoginService {}

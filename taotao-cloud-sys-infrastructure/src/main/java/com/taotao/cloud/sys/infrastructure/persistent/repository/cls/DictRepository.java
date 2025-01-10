@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
@@ -37,13 +38,13 @@ public class DictRepository extends BaseClassSuperRepository<DictPO, Long> {
         super(DictPO.class, em);
     }
 
-    public Optional<Dict> findByCode(String code) {
+    public Optional<DictPO> findByCode(String code) {
         // ExampleMatcher exampleMatcher = ExampleMatcher.matching()
         //	.withMatcher("dictCode", GenericPropertyMatcher::exact);
         // Optional<Dict> one = findOne(
         //	Example.of(Dict.builder().dictCode(code).build(), exampleMatcher));
 
-        return findOne((Specification<Dict>) (root, query, builder) ->
+        return findOne((Specification<DictPO>) (root, query, builder) ->
                 query.where(builder.equal(root.get("dictCode"), code)).getRestriction());
     }
 

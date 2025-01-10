@@ -41,15 +41,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class OperateLogController {
     private final OperateLogService operateLogService;
 
-    @Operation(summary = "分页")
-    @GetMapping("/page")
-    public Result<PageResult<OperateLogDto>> page(OperateLogParam operateLogParam) {
-        return Result.success(operateLogService.page(operateLogParam));
-    }
-
-    @Operation(summary = "获取")
-    @GetMapping("/findById")
-    public Result<OperateLogDto> findById(Long id) {
-        return Result.success(operateLogService.findById(id));
-    }
+//    @Operation(summary = "分页")
+//    @GetMapping("/page")
+//    public Result<PageResult<OperateLogDto>> page(OperateLogParam operateLogParam) {
+//        return Result.success(operateLogService.page(operateLogParam));
+//    }
+//
+//    @Operation(summary = "获取")
+//    @GetMapping("/findById")
+//    public Result<OperateLogDto> findById(Long id) {
+//        return Result.success(operateLogService.findById(id));
+//    }
 }

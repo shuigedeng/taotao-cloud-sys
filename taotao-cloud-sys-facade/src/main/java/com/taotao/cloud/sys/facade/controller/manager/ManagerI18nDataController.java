@@ -1,6 +1,6 @@
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.cloud.sys.biz.service.business.I18nDataService;
+import com.taotao.cloud.sys.application.service.I18nDataService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;

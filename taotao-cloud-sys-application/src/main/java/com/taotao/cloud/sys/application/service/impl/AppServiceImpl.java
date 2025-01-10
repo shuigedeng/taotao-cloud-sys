@@ -17,11 +17,7 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.taotao.cloud.sys.biz.manager.AppManager;
-import com.taotao.cloud.sys.biz.model.convert.AppConvert;
-import com.taotao.cloud.sys.biz.model.dto.app.AppDTO;
-import com.taotao.cloud.sys.biz.model.dto.app.AppPageDTO;
-import com.taotao.cloud.sys.biz.service.business.AppService;
+import com.taotao.cloud.sys.application.service.AppService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -39,41 +35,41 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AppServiceImpl implements AppService {
 
-    private final AppManager appManager;
-
-    /** 添加 */
-    @Override
-    public Boolean addApp(AppDTO appDTO) {
-        return appManager.addApp(appDTO) > 0;
-    }
-
-    /** 修改 */
-    @Override
-    public Boolean updateApp(AppDTO appDTO) {
-        return appManager.updateAppById(appDTO) > 0;
-    }
-
-    /** 分页 */
-    @Override
-    public IPage<AppDTO> pageApp(AppPageDTO appPageDTO) {
-        return AppConvert.INSTANCE.convertPage(appManager.pageApp(appPageDTO));
-    }
-
-    /** 获取单条 */
-    @Override
-    public AppDTO findById(Long id) {
-        return AppConvert.INSTANCE.convert(appManager.findById(id));
-    }
-
-    /** 获取全部 */
-    @Override
-    public List<AppDTO> findAll() {
-        return AppConvert.INSTANCE.convertList(appManager.listApp());
-    }
-
-    /** 删除 */
-    @Override
-    public Boolean deleteApp(Long id) {
-        return appManager.deleteAppById(id) > 0;
-    }
+//    private final AppManager appManager;
+//
+//    /** 添加 */
+//    @Override
+//    public Boolean addApp(AppDTO appDTO) {
+//        return appManager.addApp(appDTO) > 0;
+//    }
+//
+//    /** 修改 */
+//    @Override
+//    public Boolean updateApp(AppDTO appDTO) {
+//        return appManager.updateAppById(appDTO) > 0;
+//    }
+//
+//    /** 分页 */
+//    @Override
+//    public IPage<AppDTO> pageApp(AppPageDTO appPageDTO) {
+//        return AppConvert.INSTANCE.convertPage(appManager.pageApp(appPageDTO));
+//    }
+//
+//    /** 获取单条 */
+//    @Override
+//    public AppDTO findById(Long id) {
+//        return AppConvert.INSTANCE.convert(appManager.findById(id));
+//    }
+//
+//    /** 获取全部 */
+//    @Override
+//    public List<AppDTO> findAll() {
+//        return AppConvert.INSTANCE.convertList(appManager.listApp());
+//    }
+//
+//    /** 删除 */
+//    @Override
+//    public Boolean deleteApp(Long id) {
+//        return appManager.deleteAppById(id) > 0;
+//    }
 }

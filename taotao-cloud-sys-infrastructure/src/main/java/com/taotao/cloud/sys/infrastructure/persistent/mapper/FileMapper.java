@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FilePO;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface FileMapper extends BaseSuperMapper<File, Long> {
+public interface FileMapper extends BaseSuperMapper<FilePO, Long> {
 	@Select("""
 		select url
 		from tt_file

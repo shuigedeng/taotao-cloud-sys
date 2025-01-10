@@ -17,8 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.taotao.cloud.sys.biz.model.entity.config.EmailConfig;
-import com.taotao.cloud.sys.biz.model.vo.alipay.EmailVO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.EmailConfigPO;
 import org.springframework.scheduling.annotation.Async;
 
 /**
@@ -28,31 +27,31 @@ import org.springframework.scheduling.annotation.Async;
  * @version 2022.03
  * @since 2022-03-25 14:25:28
  */
-public interface EmailConfigService extends IService<EmailConfig> {
+public interface EmailConfigService extends IService<EmailConfigPO> {
 
-    /**
-     * 更新邮件配置
-     *
-     * @param emailConfig 邮件配置
-     * @param old 旧的配置
-     * @return 是否更新完成
-     */
-    Boolean update(EmailConfig emailConfig, EmailConfig old);
-
-    /**
-     * 查询配置
-     *
-     * @return EmailConfig 邮件配置
-     */
-    EmailConfig find();
-
-    /**
-     * 发送邮件
-     *
-     * @param emailVo 邮件发送的内容
-     * @param emailConfig 邮件配置
-     * @throws Exception 异常信息
-     */
-    @Async
-    void send(EmailVO emailVo, EmailConfig emailConfig) throws Exception;
+//    /**
+//     * 更新邮件配置
+//     *
+//     * @param emailConfig 邮件配置
+//     * @param old 旧的配置
+//     * @return 是否更新完成
+//     */
+//    Boolean update(EmailConfig emailConfig, EmailConfig old);
+//
+//    /**
+//     * 查询配置
+//     *
+//     * @return EmailConfig 邮件配置
+//     */
+//    EmailConfig find();
+//
+//    /**
+//     * 发送邮件
+//     *
+//     * @param emailVo 邮件发送的内容
+//     * @param emailConfig 邮件配置
+//     * @throws Exception 异常信息
+//     */
+//    @Async
+//    void send(EmailVO emailVo, EmailConfig emailConfig) throws Exception;
 }

@@ -1,6 +1,6 @@
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.cloud.file.biz.service.IBussinessService;
+import com.taotao.cloud.sys.application.service.BussinessService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.seata.core.context.RootContext;
 import org.apache.seata.spring.annotation.GlobalTransactional;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 //https://blog.csdn.net/weixin_46209120/article/details/132223385
 @Service
 @Slf4j
-public class BusinessServiceImpl implements IBussinessService {
+public class BusinessServiceImpl implements BussinessService {
 
 //    @Autowired
 //    private AccountFeignService accountFeignService;
