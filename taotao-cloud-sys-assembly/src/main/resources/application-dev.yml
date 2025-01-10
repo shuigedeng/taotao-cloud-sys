@@ -905,90 +905,90 @@ spring:
       #nacos:
       #  enabled: true
       enabled: true
-    function:
-      # functionName对应服务中的Bean
-      definition: inputKafka1;inputKafka2;demo;example;test
-    stream:
-      #instance-count: 2       #该参数指定了当前消费者的总实例数量；
-      #instance-index: 0       #该参数设置当前实例的索引号，从0开始，最大值为
-      bindings: #消费者
-        demo-in-0:
-          binder: rocketmq
-          destination: dtopic #topic
-          content-type: application/json
-          group: demo1-group #group
-        demo-out-0:
-          binder: rocketmq
-          destination: dtopic #topic
-          group: pd-group
-        example-in-0:
-          binder: rocketmq
-          destination: extopic #topic
-          content-type: application/json
-          group: example-group #group
-        example-out-0:
-          binder: rocketmq
-          destination: extopic #topic
-          group: px-group
-        test-in-0:
-          binder: rocketmq
-          destination: ttopic #topic
-          content-type: application/json
-          group: t-group #group
-        test-out-0:
-          binder: rocketmq
-          destination: ttopic #topic
-          group: pt-group #group
-        # kafka
-        order-output:
-          destination: order-topic
-          content-type: application/json
-          binder: kafka
-        order-input:
-          destination: order-topic
-          group: order-group
-          binder: kafka
-      rocketmq:
-        binder:
-          name-server: 192.168.218.2:9876
-          vip-channel-enabled: false
-          group: demo
-        #RocketMQSpecificPropertiesProvider
-        bindings:
-          demo-in-0:
-            consumer:
-              tags: s1||s2  #消费tag
-              broadcasting: false # 是否使用广播消费，默认为 false 使用集群消费
-          demo-out-0:
-            producer:
-              #开启同步发送
-              sync: true
-          example-in-0:
-            consumer:
-              tags:   #消费tag
-              broadcasting: true # 是否使用广播消费，默认为 false 使用集群消费
-          example-out-0:
-            producer:
-              sync: false #默认异步
-          test-in-0:
-            consumer:
-              tags:   #消费tag
-              broadcasting: false # 是否使用广播消费，默认为 false 使用集群消费
-          test-out-0:
-            producer:
-              sync: true
-      kafka:
-        binder:
-          brokers: 192.168.218.2:9092
-          auto-create-topics: true
-        bindings:
-          order-output:
-            producer:
-              sync: true
-              bufferSize: 16384
-          order-input:
-            consumer:
-              txCommitRecovered: true
+#    function:
+#      # functionName对应服务中的Bean
+#      definition: inputKafka1;inputKafka2;demo;example;test
+#    stream:
+#      #instance-count: 2       #该参数指定了当前消费者的总实例数量；
+#      #instance-index: 0       #该参数设置当前实例的索引号，从0开始，最大值为
+#      bindings: #消费者
+#        demo-in-0:
+#          binder: rocketmq
+#          destination: dtopic #topic
+#          content-type: application/json
+#          group: demo1-group #group
+#        demo-out-0:
+#          binder: rocketmq
+#          destination: dtopic #topic
+#          group: pd-group
+#        example-in-0:
+#          binder: rocketmq
+#          destination: extopic #topic
+#          content-type: application/json
+#          group: example-group #group
+#        example-out-0:
+#          binder: rocketmq
+#          destination: extopic #topic
+#          group: px-group
+#        test-in-0:
+#          binder: rocketmq
+#          destination: ttopic #topic
+#          content-type: application/json
+#          group: t-group #group
+#        test-out-0:
+#          binder: rocketmq
+#          destination: ttopic #topic
+#          group: pt-group #group
+#        # kafka
+#        order-output:
+#          destination: order-topic
+#          content-type: application/json
+#          binder: kafka
+#        order-input:
+#          destination: order-topic
+#          group: order-group
+#          binder: kafka
+#      rocketmq:
+#        binder:
+#          name-server: 192.168.218.2:9876
+#          vip-channel-enabled: false
+#          group: demo
+#        #RocketMQSpecificPropertiesProvider
+#        bindings:
+#          demo-in-0:
+#            consumer:
+#              tags: s1||s2  #消费tag
+#              broadcasting: false # 是否使用广播消费，默认为 false 使用集群消费
+#          demo-out-0:
+#            producer:
+#              #开启同步发送
+#              sync: true
+#          example-in-0:
+#            consumer:
+#              tags:   #消费tag
+#              broadcasting: true # 是否使用广播消费，默认为 false 使用集群消费
+#          example-out-0:
+#            producer:
+#              sync: false #默认异步
+#          test-in-0:
+#            consumer:
+#              tags:   #消费tag
+#              broadcasting: false # 是否使用广播消费，默认为 false 使用集群消费
+#          test-out-0:
+#            producer:
+#              sync: true
+#      kafka:
+#        binder:
+#          brokers: 192.168.218.2:9092
+#          auto-create-topics: true
+#        bindings:
+#          order-output:
+#            producer:
+#              sync: true
+#              bufferSize: 16384
+#          order-input:
+#            consumer:
+#              txCommitRecovered: true
   messages:
     basename: "messages"               # ResourceBundle 名称，多个用，号隔开，默认是 messages
     #basename: "ballcat-*"               # ResourceBundle 名称，多个用，号隔开，默认是 messages

@@ -38,7 +38,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DataVersionLogController {
 
-	private final DataVersionLogService service;
+	//private final DataVersionLogService service;
 
 //	@Operation(summary = "分页")
 //	@GetMapping("/page")

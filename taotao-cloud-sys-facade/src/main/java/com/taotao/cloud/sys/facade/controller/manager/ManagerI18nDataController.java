@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "国际化信息管理")
 public class ManagerI18nDataController {
 
-	private final I18nDataService i18nDataService;
+	//private final I18nDataService i18nDataService;
 
 //	@GetMapping("/page")
 //	@PreAuthorize("@per.hasPermission('i18n:i18n-data:read')")

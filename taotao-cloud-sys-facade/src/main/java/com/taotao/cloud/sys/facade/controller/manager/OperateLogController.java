@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/log/operate")
 @RequiredArgsConstructor
 public class OperateLogController {
-    private final OperateLogService operateLogService;
+    //private final OperateLogService operateLogService;
 
 //    @Operation(summary = "分页")
 //    @GetMapping("/page")
