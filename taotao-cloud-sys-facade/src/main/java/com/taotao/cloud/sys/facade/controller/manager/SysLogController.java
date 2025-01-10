@@ -19,8 +19,6 @@ package com.taotao.cloud.sys.facade.controller.manager;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.taotao.boot.common.model.Result;
-import com.taotao.cloud.sys.biz.model.entity.SysLog;
-import com.taotao.cloud.sys.biz.service.SysLogService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

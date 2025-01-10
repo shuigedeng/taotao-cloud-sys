@@ -20,13 +20,6 @@ import com.taotao.boot.common.model.BaseQuery;
 import com.taotao.boot.common.model.Result;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BaseSuperController;
-import com.taotao.cloud.sys.biz.model.bo.RoleBO;
-import com.taotao.cloud.sys.biz.model.convert.RoleConvert;
-import com.taotao.cloud.sys.biz.model.dto.role.RoleSaveDTO;
-import com.taotao.cloud.sys.biz.model.dto.role.RoleUpdateDTO;
-import com.taotao.cloud.sys.biz.model.entity.system.Role;
-import com.taotao.cloud.sys.biz.model.vo.role.RoleQueryVO;
-import com.taotao.cloud.sys.biz.service.business.IRoleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -58,8 +51,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/sys/manager/role")
 @Tag(name = "管理端-角色管理API", description = "管理端-角色管理API")
-public class ManagerRoleController
-        extends BaseSuperController<IRoleService, Role, Long, BaseQuery, RoleSaveDTO, RoleUpdateDTO, RoleQueryVO> {
+public class ManagerRoleController{
 
 //    @Operation(summary = "根据用户id获取角色列表", description = "根据用户id获取角色列表")
 //    @Parameters({

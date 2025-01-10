@@ -21,7 +21,6 @@ import com.taotao.boot.data.mybatis.interceptor.easylog.common.audit.DataAuditLo
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.security.spring.utils.SecurityUtils;
 import com.taotao.boot.web.request.annotation.RequestLogger;
-import com.taotao.cloud.sys.api.model.dto.LogQueryCriteria;
 import com.taotao.cloud.sys.application.service.LogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

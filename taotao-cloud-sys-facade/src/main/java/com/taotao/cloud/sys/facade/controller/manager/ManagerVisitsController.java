@@ -19,7 +19,6 @@ package com.taotao.cloud.sys.facade.controller.manager;
 import com.taotao.boot.common.model.Result;
 import com.taotao.boot.common.utils.servlet.RequestUtils;
 import com.taotao.boot.web.request.annotation.RequestLogger;
-import com.taotao.cloud.sys.biz.service.business.IVisitsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

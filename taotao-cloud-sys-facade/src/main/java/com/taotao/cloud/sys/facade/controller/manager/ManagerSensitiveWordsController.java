@@ -17,8 +17,6 @@
 package com.taotao.cloud.sys.facade.controller.manager;
 
 import com.taotao.boot.common.model.Result;
-import com.taotao.cloud.sys.biz.model.entity.sensitive.SensitiveWord;
-import com.taotao.cloud.sys.biz.service.business.ISensitiveWordService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -26,13 +26,6 @@ import com.taotao.boot.security.spring.core.userdetails.TtcUser;
 import com.taotao.boot.security.spring.utils.SecurityUtils;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BaseSuperController;
-import com.taotao.cloud.sys.biz.model.convert.UserConvert;
-import com.taotao.cloud.sys.biz.model.dto.user.RestPasswordUserDTO;
-import com.taotao.cloud.sys.biz.model.dto.user.UserSaveDTO;
-import com.taotao.cloud.sys.biz.model.dto.user.UserUpdateDTO;
-import com.taotao.cloud.sys.biz.model.entity.system.User;
-import com.taotao.cloud.sys.biz.model.vo.user.UserQueryVO;
-import com.taotao.cloud.sys.biz.service.business.IUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -71,9 +64,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/sys/manager/user")
 @Tag(name = "管理端-用户管理API", description = "管理端-用户管理API")
-public class ManagerUserController
-	extends
-	BaseSuperController<IUserService, User, Long, BaseQuery, UserSaveDTO, UserUpdateDTO, UserQueryVO> {
+public class ManagerUserController {
 
 //	//敏感字段加密、解密、脱敏
 //	@PostMapping("/addUser")

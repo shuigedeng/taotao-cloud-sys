@@ -18,8 +18,6 @@ package com.taotao.cloud.sys.facade.controller.manager;
 
 import com.taotao.boot.common.model.Result;
 import com.taotao.boot.security.spring.annotation.NotAuth;
-import com.taotao.cloud.sys.api.model.vo.FileVO;
-import com.taotao.cloud.sys.biz.service.IFileService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

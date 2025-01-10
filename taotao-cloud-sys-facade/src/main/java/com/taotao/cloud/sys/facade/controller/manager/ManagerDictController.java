@@ -21,12 +21,6 @@ import com.taotao.boot.common.model.BaseQuery;
 import com.taotao.boot.common.model.Result;
 import com.taotao.boot.web.utils.CollectionUtil;
 import com.taotao.boot.webagg.controller.BaseSuperController;
-import com.taotao.cloud.sys.biz.model.dto.dict.DictSaveDTO;
-import com.taotao.cloud.sys.biz.model.dto.dict.DictUpdateDTO;
-import com.taotao.cloud.sys.biz.model.entity.dict.Dict;
-import com.taotao.cloud.sys.biz.model.query.DictQuery;
-import com.taotao.cloud.sys.biz.model.vo.dict.DictQueryVO;
-import com.taotao.cloud.sys.biz.service.business.IDictService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
@@ -49,8 +43,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/sys/manager/dict")
 @Tag(name = "管理端-字典管理API", description = "管理端-字典管理API")
-public class ManagerDictController
-        extends BaseSuperController<IDictService, Dict, Long, BaseQuery, DictSaveDTO, DictUpdateDTO, DictQueryVO> {
+public class ManagerDictController {
 
 //    @GetMapping("/list-code")
 //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")

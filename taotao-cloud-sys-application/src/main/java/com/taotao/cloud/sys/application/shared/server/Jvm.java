@@ -1,12 +1,14 @@
 package com.taotao.cloud.sys.application.shared.server;
 
 
-import org.dromara.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DatePattern;
 import org.dromara.hutool.core.date.DateUnit;
 import org.dromara.hutool.core.date.DateUtil;
 
 import java.lang.management.ManagementFactory;
 import java.util.Date;
+
+import static org.dromara.hutool.core.date.DateFormatPool.NORM_DATETIME_FORMAT;
 
 /**
  * JVM相关信息
@@ -99,7 +101,7 @@ public class Jvm {
 	/** JDK启动时间 */
 	public String getStartTime() {
 		return DateUtil.format(new Date(ManagementFactory.getRuntimeMXBean().getStartTime()),
-				DatePattern.NORM_DATETIME_FORMAT);
+				NORM_DATETIME_FORMAT);
 	}
 
 	/** JDK运行时间 */

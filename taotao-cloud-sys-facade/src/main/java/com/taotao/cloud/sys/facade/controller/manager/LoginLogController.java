@@ -18,9 +18,6 @@ package com.taotao.cloud.sys.facade.controller.manager;
 
 import com.taotao.boot.common.model.PageResult;
 import com.taotao.boot.common.model.Result;
-import com.taotao.cloud.sys.biz.model.dto.LoginLogDto;
-import com.taotao.cloud.sys.biz.model.param.LoginLogParam;
-import com.taotao.cloud.sys.biz.service.LoginLogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

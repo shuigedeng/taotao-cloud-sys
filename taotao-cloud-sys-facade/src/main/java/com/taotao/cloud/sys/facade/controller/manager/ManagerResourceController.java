@@ -26,14 +26,6 @@ import com.taotao.boot.security.spring.utils.SecurityUtils;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BaseSuperController;
 import com.taotao.cloud.sys.api.dubbo.request.MenuQueryRpcRequest;
-import com.taotao.cloud.sys.biz.model.bo.MenuBO;
-import com.taotao.cloud.sys.biz.model.convert.ResourceConvert;
-import com.taotao.cloud.sys.biz.model.dto.resource.ResourceSaveDTO;
-import com.taotao.cloud.sys.biz.model.dto.resource.ResourceUpdateDTO;
-import com.taotao.cloud.sys.biz.model.entity.system.Resource;
-import com.taotao.cloud.sys.biz.model.vo.menu.MenuQueryVO;
-import com.taotao.cloud.sys.biz.model.vo.menu.MenuTreeVO;
-import com.taotao.cloud.sys.biz.service.business.IResourceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -68,9 +60,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/sys/manager/resource")
 @Tag(name = "管理端-资源管理API", description = "管理端-资源管理API")
-public class ManagerResourceController
-        extends BaseSuperController<
-        IResourceService, Resource, Long, BaseQuery, ResourceSaveDTO, ResourceUpdateDTO, MenuQueryVO> {
+public class ManagerResourceController {
 
 //    // ************************************************菜单*************************************************************
 //
