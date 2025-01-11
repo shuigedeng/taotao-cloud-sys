@@ -16,47 +16,18 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.blazebit.persistence.CriteriaBuilderFactory;
-import com.blazebit.persistence.PagedList;
-import com.blazebit.persistence.querydsl.BlazeJPAQuery;
-import com.google.common.collect.Lists;
-import com.querydsl.core.BooleanBuilder;
-import com.querydsl.core.types.OrderSpecifier;
-import com.querydsl.core.types.dsl.BooleanExpression;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.taotao.boot.common.enums.ResultEnum;
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.common.utils.common.RandomUtils;
-import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.common.utils.servlet.MdcUtils;
-import com.taotao.boot.data.jpa.model.SelectBooleanBuilder;
-import com.taotao.boot.data.jpa.model.SelectBuilder;
 import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.application.dto.dict.query.DictPageQuery;
-import com.taotao.cloud.sys.application.dto.dict.query.DictQuery;
 import com.taotao.cloud.sys.application.service.DictService;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.DictRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IDictRepository;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import org.apache.seata.spring.annotation.GlobalTransactional;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 
 /**
  * DictServiceImpl
@@ -69,6 +40,7 @@ import java.util.concurrent.Future;
 @Service
 public class DictServiceImpl extends BaseSuperServiceImpl<DictPO, Long, DictMapper, DictRepository, IDictRepository>
 	implements DictService {
+
 //
 //	private final IDictItemService dictItemService;
 //	private final CriteriaBuilderFactory criteriaBuilderFactory;
@@ -136,21 +108,21 @@ public class DictServiceImpl extends BaseSuperServiceImpl<DictPO, Long, DictMapp
 //	public Dict update(Dict dict) {
 //		return cr().saveAndFlush(dict);
 //	}
-//
-//	@Override
-//	public Dict findByCode(String code) {
-//		// List<Dict> all = ir().findAll();
-//		// List<Dict> all1 = cr().findAll();
-//
-//		Optional<Dict> optionalDict = cr().findByCode(code);
-//		return optionalDict.orElseThrow(() -> new BusinessException(ResultEnum.DICT_NOT_EXIST));
-//		// return Dict.builder().id(2L).createBy(2L).createTime(LocalDateTime.now())
-//		//	.dictCode("123123123").dictName("lsdfjaslf")
-//		//	.remark("sdfasfd")
-//		//	.description("sdflasjdfl")
-//		//	.build();
-//	}
-//
+
+	@Override
+	public DictPO findByCode(String code) {
+		// List<Dict> all = ir().findAll();
+		// List<Dict> all1 = cr().findAll();
+
+		Optional<DictPO> optionalDict = cr().findByCode(code);
+		return optionalDict.orElseThrow(() -> new BusinessException(ResultEnum.DICT_NOT_EXIST));
+		// return Dict.builder().id(2L).createBy(2L).createTime(LocalDateTime.now())
+		//	.dictCode("123123123").dictName("lsdfjaslf")
+		//	.remark("sdfasfd")
+		//	.description("sdflasjdfl")
+		//	.build();
+	}
+
 //	@Override
 //	@Async
 //	public Future<Dict> findAsyncByCode(String code) {

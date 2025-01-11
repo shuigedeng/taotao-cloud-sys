@@ -96,15 +96,15 @@ public interface DictService extends BaseSuperService<DictPO, Long> {
 //     * @since 2021-10-09 20:25:13
 //     */
 //    Dict findById(Long id);
-//
-//    /**
-//     * 根据code查找字典
-//     *
-//     * @param code code
-//     * @return {@link Dict }
-//     * @since 2021-10-09 20:25:30
-//     */
-//    Dict findByCode(String code);
+
+    /**
+     * 根据code查找字典
+     *
+     * @param code code
+     * @return {@link Dict }
+     * @since 2021-10-09 20:25:30
+     */
+    DictPO findByCode(String code);
 //
 //    Future<Dict> findAsyncByCode(String code);
 //

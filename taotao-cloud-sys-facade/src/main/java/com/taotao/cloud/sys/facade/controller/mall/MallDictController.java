@@ -16,13 +16,20 @@
 
 package com.taotao.cloud.sys.facade.controller.mall;
 
+import com.taotao.boot.common.model.Result;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BaseBusinessController;
 import com.taotao.cloud.sys.application.service.DictService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 移动端-字典API
@@ -35,4 +42,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/mall/dict")
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
-public class MallDictController extends BaseBusinessController<DictService, DictPO, Long> {}
+public class MallDictController extends BaseBusinessController<DictService, DictPO, Long> {
+
+	@NotAuth
+	@Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
+	@GetMapping("/testMybatisQueryStructure")
+	public Result<List<String>> testMybatisQueryStructure() {
+		return Result.success(new ArrayList<>());
+	}
+}
