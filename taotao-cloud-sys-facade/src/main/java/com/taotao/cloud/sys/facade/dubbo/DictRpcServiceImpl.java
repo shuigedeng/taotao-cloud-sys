@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.facade.dubbo;
 
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.dubbo.DictRpcService;
 import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,9 @@ public class DictRpcServiceImpl implements DictRpcService {
 
     @Override
     public DictRpcResponse findByCode(Integer code) {
+
+		LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", code);
+
         return new DictRpcResponse();
     }
 }
