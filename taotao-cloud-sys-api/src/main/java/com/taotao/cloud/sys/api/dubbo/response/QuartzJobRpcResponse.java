@@ -31,11 +31,18 @@ public record QuartzJobRpcResponse(
         /** 租户id */
         String tenantId,
 
+
+
+
         /** 租户密钥 */
         String tenantSecret,
 
         /** 公司名称 */
         String name,
+
+
+
+
 
         /** 企业全称 */
         String fullName,

@@ -71,7 +71,7 @@ public class SmsSignPO extends BaseSuperEntity<SmsSignPO, Long> {
     @Column(name = "reason", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-    @Builder
+    @Accessors(fluent = true)
     public SmsSignPO(
             Long id,
             LocalDateTime createTime,

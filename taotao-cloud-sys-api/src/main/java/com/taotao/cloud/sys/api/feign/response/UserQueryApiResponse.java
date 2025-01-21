@@ -22,6 +22,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
  * 用户查询VO
@@ -31,8 +32,7 @@ import lombok.*;
  * @since 2021-10-09 15:19:37
  */
 @Data
-@Builder
-@EqualsAndHashCode
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "用户查询VO")

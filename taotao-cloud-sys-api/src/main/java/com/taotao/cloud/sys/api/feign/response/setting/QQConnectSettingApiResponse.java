@@ -17,10 +17,16 @@
 package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /** QQ联合登录设置 */
 @Data
+@Accessors(fluent = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class QQConnectSettingApiResponse {
 
     /** qq联合登陆配置 */

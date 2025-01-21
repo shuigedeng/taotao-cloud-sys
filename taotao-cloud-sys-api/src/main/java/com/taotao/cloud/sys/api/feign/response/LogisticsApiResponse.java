@@ -23,6 +23,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * LogisticsVO
@@ -32,8 +33,7 @@ import lombok.NoArgsConstructor;
  * @since 2021/12/20 14:06
  */
 @Data
-@Builder
-@EqualsAndHashCode
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class LogisticsApiResponse implements Serializable {

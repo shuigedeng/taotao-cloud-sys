@@ -29,7 +29,7 @@ import java.util.List;
 
 /** 地区VO */
 @Data
-@Builder
+@Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor

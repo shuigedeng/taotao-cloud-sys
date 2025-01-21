@@ -34,7 +34,7 @@ import java.time.LocalDateTime;
  * @since 2020/5/14 10:44
  */
 @Data
-@Builder
+@Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor

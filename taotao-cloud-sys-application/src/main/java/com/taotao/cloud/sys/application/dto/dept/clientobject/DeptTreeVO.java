@@ -37,7 +37,7 @@ import java.util.List;
  * @since 2021-12-22 20:59:37
  */
 @Data
-@Builder
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

@@ -21,6 +21,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
  * 菜单查询对象
@@ -30,8 +31,7 @@ import lombok.*;
  * @since 2021-10-09 15:27:42
  */
 @Data
-@Builder
-@EqualsAndHashCode
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "菜单查询对象")

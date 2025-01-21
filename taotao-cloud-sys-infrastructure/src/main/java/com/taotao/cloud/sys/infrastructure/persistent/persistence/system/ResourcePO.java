@@ -113,7 +113,7 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    @Builder
+    @Accessors(fluent = true)
     public ResourcePO(
             Long id,
             LocalDateTime createTime,

@@ -97,7 +97,7 @@ public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
     @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    @Builder
+    @Accessors(fluent = true)
     public OrgPO(
             Long id,
             LocalDateTime createTime,

@@ -22,11 +22,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /** 配置表 */
 @Data
-@Builder
-@EqualsAndHashCode
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class SettingApiResponse {

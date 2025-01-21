@@ -117,7 +117,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     // @Column(name = "job_id", columnDefinition = "bigint not null comment '岗位ID'")
     // private Long jobId;
 
-    @Builder
+    @Accessors(fluent = true)
     public UserPO(
             Long id,
             LocalDateTime createTime,

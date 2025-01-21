@@ -29,7 +29,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
+@Accessors(fluent = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(title = "系统应用")

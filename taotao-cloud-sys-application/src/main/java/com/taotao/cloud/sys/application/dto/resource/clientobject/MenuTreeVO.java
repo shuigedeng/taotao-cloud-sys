@@ -36,7 +36,7 @@ import java.time.LocalDateTime;
  * @since 2020/10/21 11:09
  */
 @Data
-@Builder
+@Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

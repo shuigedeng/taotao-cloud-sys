@@ -33,7 +33,7 @@ import java.io.Serializable;
  * @since 2020/5/2 16:40
  */
 @Data
-@Builder
+@Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor

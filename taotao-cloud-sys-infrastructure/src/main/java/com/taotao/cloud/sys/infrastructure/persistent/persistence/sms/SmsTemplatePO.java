@@ -71,7 +71,7 @@ public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
     @Column(name = "reason", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-    @Builder
+    @Accessors(fluent = true)
     public SmsTemplatePO(
             Long id,
             LocalDateTime createTime,

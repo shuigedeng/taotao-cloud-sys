@@ -36,7 +36,7 @@ import java.util.Set;
  * @since 2021-10-09 15:19:37
  */
 @Data
-@Builder
+@Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor

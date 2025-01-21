@@ -54,7 +54,7 @@ public class SensitiveWordPO extends BaseSuperEntity<SensitiveWordPO, Long> {
     @Column(name = "sensitive_word", columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
     private String sensitiveWord;
 
-//    @Builder
+//    @Accessors(fluent = true)
 //    public SensitiveWord(
 //            Long id,
 //            LocalDateTime createTime,

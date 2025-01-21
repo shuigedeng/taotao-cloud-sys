@@ -68,7 +68,7 @@ public class RolePO extends BaseSuperEntity<RolePO, Long> {
     @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    @Builder
+    @Accessors(fluent = true)
     public RolePO(
             Long id,
             LocalDateTime createTime,

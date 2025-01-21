@@ -100,7 +100,7 @@ public class FileLogPO extends BaseSuperEntity<FileLogPO, Long> {
     @Column(name = "size", columnDefinition = "bigint not null comment '大小'")
     private Long size;
 
-    @Builder
+    @Accessors(fluent = true)
     public FileLogPO(
             Long id,
             LocalDateTime createTime,
