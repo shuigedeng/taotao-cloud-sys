@@ -41,11 +41,9 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:09:21
  */
-@Getter
-@Setter
-@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = DictItemPO.TABLE_NAME)
 @TableName(DictItemPO.TABLE_NAME)
@@ -82,43 +80,51 @@ public class DictItemPO extends BaseSuperEntity<DictItemPO, Long> {
     @Column(name = "sort_num", columnDefinition = "int not null default 1 comment '排序值'")
     private Integer sortNum;
 
-    public DictItemPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            Long dictId,
-            String itemText,
-            String itemValue,
-            String description,
-            Integer status,
-            Integer sortNum) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.dictId = dictId;
-        this.itemText = itemText;
-        this.itemValue = itemValue;
-        this.description = description;
-        this.status = status;
-        this.sortNum = sortNum;
-    }
+	public Long getDictId() {
+		return dictId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        DictItemPO dictItem = (DictItemPO) o;
-        return getId() != null && Objects.equals(getId(), dictItem.getId());
-    }
+	public void setDictId(Long dictId) {
+		this.dictId = dictId;
+	}
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+	public String getItemText() {
+		return itemText;
+	}
+
+	public void setItemText(String itemText) {
+		this.itemText = itemText;
+	}
+
+	public String getItemValue() {
+		return itemValue;
+	}
+
+	public void setItemValue(String itemValue) {
+		this.itemValue = itemValue;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Integer getSortNum() {
+		return sortNum;
+	}
+
+	public void setSortNum(Integer sortNum) {
+		this.sortNum = sortNum;
+	}
 }

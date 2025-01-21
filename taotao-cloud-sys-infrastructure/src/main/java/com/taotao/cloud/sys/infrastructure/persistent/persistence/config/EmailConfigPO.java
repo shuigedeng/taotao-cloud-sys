@@ -38,8 +38,6 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)
-@Getter
-@Setter
 @Entity
 @Table(name = EmailConfigPO.TABLE_NAME)
 @TableName(EmailConfigPO.TABLE_NAME)
@@ -67,4 +65,44 @@ public class EmailConfigPO extends BaseSuperEntity<EmailConfigPO, Long> {
     /** 发件者用户名 */
     @Column(name = "user", columnDefinition = "varchar(64) not null comment '发件者用户名'")
     private String user;
+
+	public String getFromUser() {
+		return fromUser;
+	}
+
+	public void setFromUser(String fromUser) {
+		this.fromUser = fromUser;
+	}
+
+	public String getHost() {
+		return host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
 }

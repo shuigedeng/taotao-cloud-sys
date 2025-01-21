@@ -37,6 +37,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -126,11 +127,9 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:04
  */
-@Getter
-@Setter
-@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = DictPO.TABLE_NAME)
 @TableName(DictPO.TABLE_NAME)
@@ -162,45 +161,47 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
     @Column(name = "remark", columnDefinition = "varchar(255) comment '备注信息'")
     private String remark;
 
-    public DictPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String dictName,
-            String dictCode,
-            String description,
-            Integer sortNum,
-            String remark) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.dictName = dictName;
-        this.dictCode = dictCode;
-        this.description = description;
-        this.sortNum = sortNum;
-        this.remark = remark;
-    }
+	public String getDictName() {
+		return dictName;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        DictPO dict = (DictPO) o;
-        return getId() != null && Objects.equals(getId(), dict.getId());
-    }
+	public void setDictName(String dictName) {
+		this.dictName = dictName;
+	}
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+	public String getDictCode() {
+		return dictCode;
+	}
 
-    public static class DictEntityListener {
+	public void setDictCode(String dictCode) {
+		this.dictCode = dictCode;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getSortNum() {
+		return sortNum;
+	}
+
+	public void setSortNum(Integer sortNum) {
+		this.sortNum = sortNum;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public static class DictEntityListener {
 
         /**
          * 在新实体持久化之前（添加到EntityManager）

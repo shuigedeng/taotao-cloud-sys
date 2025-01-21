@@ -38,8 +38,6 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)
-@Getter
-@Setter
 @Entity
 @Table(name = AlipayConfigPO.TABLE_NAME)
 @TableName(AlipayConfigPO.TABLE_NAME)
@@ -87,4 +85,84 @@ public class AlipayConfigPO extends BaseSuperEntity<AlipayConfigPO, Long> {
     /** 商户号 */
     @Column(name = "service_provider_id", columnDefinition = "varchar(32) not null comment '商户号'")
     private String serviceProviderId;
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	public String getCharset() {
+		return charset;
+	}
+
+	public void setCharset(String charset) {
+		this.charset = charset;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	public String getGatewayUrl() {
+		return gatewayUrl;
+	}
+
+	public void setGatewayUrl(String gatewayUrl) {
+		this.gatewayUrl = gatewayUrl;
+	}
+
+	public String getNotifyUrl() {
+		return notifyUrl;
+	}
+
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
+
+	public String getPrivateKey() {
+		return privateKey;
+	}
+
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
+	}
+
+	public String getPublicKey() {
+		return publicKey;
+	}
+
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
+	}
+
+	public String getReturnUrl() {
+		return returnUrl;
+	}
+
+	public void setReturnUrl(String returnUrl) {
+		this.returnUrl = returnUrl;
+	}
+
+	public String getSignType() {
+		return signType;
+	}
+
+	public void setSignType(String signType) {
+		this.signType = signType;
+	}
+
+	public String getServiceProviderId() {
+		return serviceProviderId;
+	}
+
+	public void setServiceProviderId(String serviceProviderId) {
+		this.serviceProviderId = serviceProviderId;
+	}
 }

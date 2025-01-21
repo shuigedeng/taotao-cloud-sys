@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -39,11 +40,9 @@ import java.util.Objects;
  * @version 2022.03
  * @since 2020/11/12 15:33
  */
-@Getter
-@Setter
-@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = FileLogPO.TABLE_NAME)
 @TableName(FileLogPO.TABLE_NAME)
@@ -100,51 +99,83 @@ public class FileLogPO extends BaseSuperEntity<FileLogPO, Long> {
     @Column(name = "size", columnDefinition = "bigint not null comment '大小'")
     private Long size;
 
-    public FileLogPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            Long bizId,
-            String bizType,
-            String dataType,
-            String originalFileName,
-            String url,
-            String fileMd5,
-            String contextType,
-            String filename,
-            String ext,
-            Long size) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.bizId = bizId;
-        this.bizType = bizType;
-        this.dataType = dataType;
-        this.originalFileName = originalFileName;
-        this.url = url;
-        this.fileMd5 = fileMd5;
-        this.contextType = contextType;
-        this.filename = filename;
-        this.ext = ext;
-        this.size = size;
-    }
+	public Long getBizId() {
+		return bizId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        FileLogPO fileLog = (FileLogPO) o;
-        return getId() != null && Objects.equals(getId(), fileLog.getId());
-    }
+	public void setBizId(Long bizId) {
+		this.bizId = bizId;
+	}
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+	public String getBizType() {
+		return bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
+
+	public String getDataType() {
+		return dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+
+	public String getOriginalFileName() {
+		return originalFileName;
+	}
+
+	public void setOriginalFileName(String originalFileName) {
+		this.originalFileName = originalFileName;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getFileMd5() {
+		return fileMd5;
+	}
+
+	public void setFileMd5(String fileMd5) {
+		this.fileMd5 = fileMd5;
+	}
+
+	public String getContextType() {
+		return contextType;
+	}
+
+	public void setContextType(String contextType) {
+		this.contextType = contextType;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getExt() {
+		return ext;
+	}
+
+	public void setExt(String ext) {
+		this.ext = ext;
+	}
+
+	public Long getSize() {
+		return size;
+	}
+
+	public void setSize(Long size) {
+		this.size = size;
+	}
 }

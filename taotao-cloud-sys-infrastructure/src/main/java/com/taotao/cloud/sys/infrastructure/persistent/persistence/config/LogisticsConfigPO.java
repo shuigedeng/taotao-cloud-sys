@@ -32,8 +32,6 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)
-@Getter
-@Setter
 @Entity
 @Table(name = LogisticsConfigPO.TABLE_NAME)
 @TableName(LogisticsConfigPO.TABLE_NAME)
@@ -69,4 +67,60 @@ public class LogisticsConfigPO extends BaseSuperEntity<LogisticsConfigPO, Long> 
     /** 禁用状态 OPEN：开启，CLOSE：禁用 */
     @Column(name = "disabled", columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
     private String disabled;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public String getContactMobile() {
+		return contactMobile;
+	}
+
+	public void setContactMobile(String contactMobile) {
+		this.contactMobile = contactMobile;
+	}
+
+	public String getStandBy() {
+		return standBy;
+	}
+
+	public void setStandBy(String standBy) {
+		this.standBy = standBy;
+	}
+
+	public String getFormItems() {
+		return formItems;
+	}
+
+	public void setFormItems(String formItems) {
+		this.formItems = formItems;
+	}
+
+	public String getDisabled() {
+		return disabled;
+	}
+
+	public void setDisabled(String disabled) {
+		this.disabled = disabled;
+	}
 }

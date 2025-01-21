@@ -36,8 +36,6 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)
-@Getter
-@Setter
 @Entity
 @Table(name = AppPO.TABLE_NAME)
 @TableName(AppPO.TABLE_NAME)
@@ -57,4 +55,36 @@ public class AppPO extends BaseSuperEntity<AppPO, Long> {
 
     /** 排序 */
     private Integer sort;
+
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
