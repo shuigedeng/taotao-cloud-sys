@@ -78,7 +78,6 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
         super.setId(id);
     }
 
-    @Accessors(fluent = true)
     public SettingPO(
             Long id,
             LocalDateTime createTime,

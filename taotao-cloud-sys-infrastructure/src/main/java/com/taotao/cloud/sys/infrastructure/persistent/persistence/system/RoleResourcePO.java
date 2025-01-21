@@ -59,7 +59,6 @@ public class RoleResourcePO extends SuperEntity<RoleResourcePO, Long> {
     @Column(name = "resource_id", columnDefinition = "bigint not null comment '菜单ID'")
     private Long resourceId;
 
-    @Accessors(fluent = true)
     public RoleResourcePO(Long id, Long roleId, Long resourceId) {
         super(id);
         this.roleId = roleId;

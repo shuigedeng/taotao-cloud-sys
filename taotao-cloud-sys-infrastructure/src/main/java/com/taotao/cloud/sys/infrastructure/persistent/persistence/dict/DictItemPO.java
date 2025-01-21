@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -81,7 +82,6 @@ public class DictItemPO extends BaseSuperEntity<DictItemPO, Long> {
     @Column(name = "sort_num", columnDefinition = "int not null default 1 comment '排序值'")
     private Integer sortNum;
 
-    @Accessors(fluent = true)
     public DictItemPO(
             Long id,
             LocalDateTime createTime,

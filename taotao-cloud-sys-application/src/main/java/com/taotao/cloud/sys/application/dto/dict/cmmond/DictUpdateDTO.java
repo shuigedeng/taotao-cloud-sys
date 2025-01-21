@@ -24,6 +24,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+import lombok.experimental.Accessors;
 
 import java.io.Serial;
 import java.io.Serializable;

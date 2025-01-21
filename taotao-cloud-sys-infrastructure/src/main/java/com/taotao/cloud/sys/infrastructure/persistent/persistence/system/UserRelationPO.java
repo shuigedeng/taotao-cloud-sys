@@ -72,7 +72,6 @@ public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
     @Column(name = "sort_code", columnDefinition = "int null comment '排序值'")
     private Integer sortCode;
 
-    @Accessors(fluent = true)
     public UserRelationPO(Long id, Long userId, String objectType, Long objectId, Integer sortCode) {
         super(id);
         this.userId = userId;

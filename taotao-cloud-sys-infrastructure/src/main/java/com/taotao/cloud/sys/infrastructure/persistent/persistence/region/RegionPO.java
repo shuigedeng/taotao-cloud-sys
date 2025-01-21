@@ -116,7 +116,6 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
     @Column(name = "depth", columnDefinition = "int not null default 0 comment '当前深度 已1开始'")
     private Integer depth;
 
-    @Accessors(fluent = true)
     public RegionPO(
             Long id,
             LocalDateTime createTime,

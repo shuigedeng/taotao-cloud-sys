@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -84,7 +85,6 @@ public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
     @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    @Accessors(fluent = true)
     public DeptPO(
             Long id,
             LocalDateTime createTime,

@@ -64,7 +64,6 @@ public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
     @Column(name = "week_day", columnDefinition = "varchar(64) not null comment '天'")
     private String weekDay;
 
-    @Accessors(fluent = true)
     public VisitsPO(
             Long id,
             LocalDateTime createTime,

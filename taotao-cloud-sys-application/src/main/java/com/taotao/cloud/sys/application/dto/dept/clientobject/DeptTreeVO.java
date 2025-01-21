@@ -24,6 +24,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+import lombok.experimental.Accessors;
 
 import java.io.Serial;
 import java.time.LocalDateTime;
@@ -36,11 +38,11 @@ import java.util.List;
  * @version 2021.10
  * @since 2021-12-22 20:59:37
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Schema(description = "部门树VO")
 public class DeptTreeVO extends MapperNode implements INode {
 

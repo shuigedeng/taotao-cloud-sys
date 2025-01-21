@@ -64,7 +64,6 @@ public class SmsReachPO extends BaseSuperEntity<SmsReachPO, Long> {
     @Column(name = "num", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
     private String num;
 
-    @Accessors(fluent = true)
     public SmsReachPO(
             Long id,
             LocalDateTime createTime,
