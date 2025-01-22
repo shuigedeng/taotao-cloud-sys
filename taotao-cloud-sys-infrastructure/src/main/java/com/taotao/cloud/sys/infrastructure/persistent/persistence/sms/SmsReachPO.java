@@ -32,12 +32,8 @@ import org.hibernate.Hibernate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/** 短信任务 */
-@Getter
-@Setter
-@ToString(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
+/** 短信任务
+ * @author 57222*/
 @Entity
 @Table(name = SmsReachPO.TABLE_NAME)
 @TableName(SmsReachPO.TABLE_NAME)
@@ -64,43 +60,4 @@ public class SmsReachPO extends BaseSuperEntity<SmsReachPO, Long> {
     @Column(name = "num", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
     private String num;
 
-    public SmsReachPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String signName,
-            String smsName,
-            String messageCode,
-            String context,
-            String smsRange,
-            String num) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.signName = signName;
-        this.smsName = smsName;
-        this.messageCode = messageCode;
-        this.context = context;
-        this.smsRange = smsRange;
-        this.num = num;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        SmsReachPO smsReachPO = (SmsReachPO) o;
-        return getId() != null && Objects.equals(getId(), smsReachPO.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

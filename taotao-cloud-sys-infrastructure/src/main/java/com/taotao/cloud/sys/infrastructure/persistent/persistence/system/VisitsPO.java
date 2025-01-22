@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -39,11 +40,10 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
-@Getter
-@Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = VisitsPO.TABLE_NAME)
 @TableName(VisitsPO.TABLE_NAME)
@@ -63,40 +63,4 @@ public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
 
     @Column(name = "week_day", columnDefinition = "varchar(64) not null comment '天'")
     private String weekDay;
-
-    public VisitsPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String date,
-            Long pvCounts,
-            Long ipCounts,
-            String weekDay) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.date = date;
-        this.pvCounts = pvCounts;
-        this.ipCounts = ipCounts;
-        this.weekDay = weekDay;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        VisitsPO visits = (VisitsPO) o;
-        return getId() != null && Objects.equals(getId(), visits.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

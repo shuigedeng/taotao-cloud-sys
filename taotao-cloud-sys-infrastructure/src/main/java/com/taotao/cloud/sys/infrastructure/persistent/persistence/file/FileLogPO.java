@@ -40,6 +40,7 @@ import java.util.Objects;
  * @version 2022.03
  * @since 2020/11/12 15:33
  */
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)

@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -39,11 +40,10 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:52:30
  */
-@Getter
-@Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = PositionPO.TABLE_NAME)
 @TableName(PositionPO.TABLE_NAME)
@@ -76,41 +76,4 @@ public class PositionPO extends BaseSuperEntity<PositionPO, Long> {
     @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    public PositionPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String name,
-            Long deptId,
-            String remark,
-            Integer sortNum,
-            String tenantId) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.name = name;
-        this.deptId = deptId;
-        this.remark = remark;
-        this.sortNum = sortNum;
-        this.tenantId = tenantId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        PositionPO position = (PositionPO) o;
-        return getId() != null && Objects.equals(getId(), position.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

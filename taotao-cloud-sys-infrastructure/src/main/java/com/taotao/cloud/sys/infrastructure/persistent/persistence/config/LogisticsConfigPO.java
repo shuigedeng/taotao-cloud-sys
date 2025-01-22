@@ -26,9 +26,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /** 物流公司设置 */
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)

@@ -26,6 +26,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
@@ -35,6 +36,7 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)

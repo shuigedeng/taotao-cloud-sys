@@ -44,8 +44,7 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:52:30
  */
-@Getter
-@Setter
+
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

@@ -30,6 +30,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
 
@@ -43,11 +44,10 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
-@Getter
-@Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = DataScopePO.TABLE_NAME)
 @TableName(value = DataScopePO.TABLE_NAME, autoResultMap = true)
@@ -55,13 +55,6 @@ import java.util.Objects;
 public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
 
     public static final String TABLE_NAME = "tt_data_scope";
-
-    /** 部门范围限制的字段名称 */
-    private String scopeDeptFiledName = "dept_id";
-    /** 公司范围限制的字段名称 */
-    private String scopeOrgFiledName = "org_id";
-    /** 个人范围限制的字段名称 */
-    private String scopeSelfFiledName = "create_by";
 
     /** 编码 */
     @Column(name = "code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")

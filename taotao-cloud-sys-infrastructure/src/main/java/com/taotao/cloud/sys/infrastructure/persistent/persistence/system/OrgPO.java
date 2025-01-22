@@ -30,6 +30,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.Type;
@@ -46,11 +47,10 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
-@Getter
-@Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(fluent = true)
 @Entity
 @Table(name = OrgPO.TABLE_NAME)
 @TableName(value = OrgPO.TABLE_NAME, autoResultMap = true)

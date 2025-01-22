@@ -41,6 +41,7 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:09:21
  */
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(fluent = true)

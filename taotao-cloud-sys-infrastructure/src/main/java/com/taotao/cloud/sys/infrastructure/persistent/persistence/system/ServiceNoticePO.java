@@ -33,8 +33,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /** 服务订阅消息 */
-@Getter
-@Setter
+
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

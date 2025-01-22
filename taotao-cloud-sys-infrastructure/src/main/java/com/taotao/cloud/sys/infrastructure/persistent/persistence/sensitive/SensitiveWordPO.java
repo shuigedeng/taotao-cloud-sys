@@ -36,8 +36,7 @@ import java.util.Objects;
  *
  * @author shuigedeng
  */
-@Getter
-@Setter
+
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

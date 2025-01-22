@@ -33,8 +33,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /** 短信签名 */
-@Getter
-@Setter
+
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor

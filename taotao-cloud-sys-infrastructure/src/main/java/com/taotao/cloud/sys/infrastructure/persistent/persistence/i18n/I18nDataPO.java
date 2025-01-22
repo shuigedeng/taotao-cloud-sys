@@ -12,8 +12,7 @@ import java.util.Objects;
 /**
  * 国际化信息
  */
-@Getter
-@Setter
+
 @ToString
 @TableName("i18n_data")
 @Schema(title = "国际化信息")

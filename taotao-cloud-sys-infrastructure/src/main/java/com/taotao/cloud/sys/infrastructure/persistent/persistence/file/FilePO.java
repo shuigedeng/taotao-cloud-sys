@@ -39,8 +39,7 @@ import java.util.Objects;
  * @version 2022.03
  * @since 2020/11/12 15:33
  */
-@Getter
-@Setter
+
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -129,20 +128,5 @@ public class FilePO extends BaseSuperEntity<FilePO, Long> {
         this.length = length;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        FilePO file = (FilePO) o;
-        return getId() != null && Objects.equals(getId(), file.getId());
-    }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
