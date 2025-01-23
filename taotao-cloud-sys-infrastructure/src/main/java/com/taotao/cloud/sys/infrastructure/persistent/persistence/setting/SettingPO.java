@@ -32,6 +32,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
 
@@ -45,10 +46,12 @@ import java.util.Objects;
  * @version 2022.03
  * @since 2022-03-21 21:54:40
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = SettingPO.TABLE_NAME)
 @TableName(value = SettingPO.TABLE_NAME, autoResultMap = true)
@@ -57,18 +60,18 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
 
     public static final String TABLE_NAME = "tt_setting";
 
-    @Column(name = "name", columnDefinition = "varchar(255) not null comment '名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(255) not null comment '名称'")
     private String name;
 
-    @Column(name = "category", columnDefinition = "varchar(255) not null comment '分类'")
+    @Column(name = "`category`", columnDefinition = "varchar(255) not null comment '分类'")
     private String category;
 
-    @Column(name = "en_code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(name = "`en_code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
     private String enCode;
 
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonTypeHandler.class)
-    @Column(name = "value", columnDefinition = "json not null comment 'json数据'")
+    @Column(name = "`value`", columnDefinition = "json not null comment 'json数据'")
     private String value;
 
     @Override
@@ -77,26 +80,39 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
         super.setId(id);
     }
 
-    public SettingPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String name,
-            String category,
-            String enCode,
-            String value) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.name = name;
-        this.category = category;
-        this.enCode = enCode;
-        this.value = value;
-    }
+	public String getName() {
+		return name;
+	}
 
-    @Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getEnCode() {
+		return enCode;
+	}
+
+	public void setEnCode(String enCode) {
+		this.enCode = enCode;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

@@ -127,9 +127,11 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:04
  */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = DictPO.TABLE_NAME)
@@ -143,23 +145,23 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
     public static final String TABLE_NAME = "tt_dict";
 
     /** 字典名称 */
-    @Column(name = "dict_name", columnDefinition = "varchar(255) not null  comment '字典名称'")
+    @Column(name = "`dict_name`", columnDefinition = "varchar(255) not null  comment '字典名称'")
     private String dictName;
 
     /** 字典编码 */
-    @Column(name = "dict_code", unique = true, columnDefinition = "varchar(255) not null comment '字典编码'")
+    @Column(name = "`dict_code", unique = true, columnDefinition = "varchar(255) not null comment '字典编码'")
     private String dictCode;
 
     /** 描述 */
-    @Column(name = "description", columnDefinition = "varchar(255) comment '描述'")
+    @Column(name = "`description`", columnDefinition = "varchar(255) comment '描述'")
     private String description;
 
     /** 排序值 */
-    @Column(name = "sort_num", columnDefinition = "int(11) not null default 0 comment '排序值'")
+    @Column(name = "`sort_num`", columnDefinition = "int(11) not null default 0 comment '排序值'")
     private Integer sortNum;
 
     /** 备注信息 */
-    @Column(name = "remark", columnDefinition = "varchar(255) comment '备注信息'")
+    @Column(name = "`remark`", columnDefinition = "varchar(255) comment '备注信息'")
     private String remark;
 
 	public String getDictName() {

@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -34,6 +35,12 @@ import java.util.Objects;
 
 /** 短信任务
  * @author 57222*/
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = SmsReachPO.TABLE_NAME)
 @TableName(SmsReachPO.TABLE_NAME)
@@ -42,22 +49,69 @@ public class SmsReachPO extends BaseSuperEntity<SmsReachPO, Long> {
 
     public static final String TABLE_NAME = "ttc_sms_reach";
 
-    @Column(name = "sign_name", columnDefinition = "varchar(2000) not null comment '签名名称'")
+    @Column(name = "`sign_name`", columnDefinition = "varchar(2000) not null comment '签名名称'")
     private String signName;
 
-    @Column(name = "sms_name", columnDefinition = "varchar(2000) not null comment '模板名称'")
+    @Column(name = "`sms_name`", columnDefinition = "varchar(2000) not null comment '模板名称'")
     private String smsName;
 
-    @Column(name = "message_code", columnDefinition = "varchar(2000) not null comment '消息CODE'")
+    @Column(name = "`message_code`", columnDefinition = "varchar(2000) not null comment '消息CODE'")
     private String messageCode;
 
-    @Column(name = "context", columnDefinition = "varchar(2000) not null comment '消息内容'")
+    @Column(name = "`context`", columnDefinition = "varchar(2000) not null comment '消息内容'")
     private String context;
 
-    @Column(name = "sms_range", columnDefinition = "varchar(2000) not null comment '接收人 1:全部会员，2：选择会员 '")
+    @Column(name = "`sms_range`", columnDefinition = "varchar(2000) not null comment '接收人 1:全部会员，2：选择会员 '")
     private String smsRange;
 
-    @Column(name = "num", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
+    @Column(name = "`num`", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
     private String num;
 
+	public String getSignName() {
+		return signName;
+	}
+
+	public void setSignName(String signName) {
+		this.signName = signName;
+	}
+
+	public String getSmsName() {
+		return smsName;
+	}
+
+	public void setSmsName(String smsName) {
+		this.smsName = smsName;
+	}
+
+	public String getMessageCode() {
+		return messageCode;
+	}
+
+	public void setMessageCode(String messageCode) {
+		this.messageCode = messageCode;
+	}
+
+	public String getContext() {
+		return context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
+	}
+
+	public String getSmsRange() {
+		return smsRange;
+	}
+
+	public void setSmsRange(String smsRange) {
+		this.smsRange = smsRange;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
 }

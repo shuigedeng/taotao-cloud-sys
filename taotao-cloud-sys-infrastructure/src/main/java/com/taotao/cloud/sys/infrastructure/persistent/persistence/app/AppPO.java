@@ -22,8 +22,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.proxy.HibernateProxy;
@@ -34,9 +37,11 @@ import org.hibernate.proxy.HibernateProxy;
  * @author shuigedeng
  * @since 2025-01-22 11:21
  */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = AppPO.TABLE_NAME)

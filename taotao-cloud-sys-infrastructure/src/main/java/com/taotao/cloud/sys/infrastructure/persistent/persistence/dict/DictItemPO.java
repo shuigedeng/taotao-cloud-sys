@@ -41,9 +41,11 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:09:21
  */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = DictItemPO.TABLE_NAME)
@@ -58,27 +60,27 @@ public class DictItemPO extends BaseSuperEntity<DictItemPO, Long> {
      *
      * @see DictPO
      */
-    @Column(name = "dict_id", columnDefinition = "bigint not null comment '字典id'")
+    @Column(name = "`dict_id`", columnDefinition = "bigint not null comment '字典id'")
     private Long dictId;
 
     /** 字典项文本 */
-    @Column(name = "item_text", columnDefinition = "varchar(2000) not null comment '字典项文本'")
+    @Column(name = "`item_text`", columnDefinition = "varchar(2000) not null comment '字典项文本'")
     private String itemText;
 
     /** 字典项值 */
-    @Column(name = "item_value", columnDefinition = "varchar(2000) not null comment '字典项文本'")
+    @Column(name = "`item_value`", columnDefinition = "varchar(2000) not null comment '字典项文本'")
     private String itemValue;
 
     /** 描述 */
-    @Column(name = "description", columnDefinition = "varchar(255) comment '描述'")
+    @Column(name = "`description`", columnDefinition = "varchar(255) comment '描述'")
     private String description;
 
     /** 状态 0不启用 1启用 */
-    @Column(name = "status", columnDefinition = "int NOT NULL DEFAULT 1 comment ' 状态 0不启用 1启用'")
+    @Column(name = "`status`", columnDefinition = "int NOT NULL DEFAULT 1 comment ' 状态 0不启用 1启用'")
     private Integer status;
 
     /** 排序值 */
-    @Column(name = "sort_num", columnDefinition = "int not null default 1 comment '排序值'")
+    @Column(name = "`sort_num`", columnDefinition = "int not null default 1 comment '排序值'")
     private Integer sortNum;
 
 	public Long getDictId() {

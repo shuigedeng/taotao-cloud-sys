@@ -20,86 +20,121 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
-/** 服务订阅消息 */
-
-@ToString(callSuper = true)
+/**
+ * 服务订阅消息
+ */
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
-@Table(name = ServiceNoticePO.TABLE_NAME)
+@Table(name = ServiceNoticePO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_goods_no", columnNames = "`goods_no`"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "`create_date`"),
+	})
 @TableName(ServiceNoticePO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = ServiceNoticePO.TABLE_NAME)
 public class ServiceNoticePO extends BaseSuperEntity<ServiceNoticePO, Long> {
 
-    public static final String TABLE_NAME = "tt_service_notice";
+	public static final String TABLE_NAME = "tt_service_notice";
 
-    @Column(name = "store_id", columnDefinition = "varchar(255) not null default '' comment '商家id，为-1时，代表是平台发布的消息'")
-    private String storeId;
+	@Column(name = "`store_id`", columnDefinition = "varchar(255) not null default '' comment '商家id，为-1时，代表是平台发布的消息'")
+	private String storeId;
 
-    @Column(name = "banner_image", columnDefinition = "varchar(255) not null default '' comment 'banner图'")
-    private String bannerImage;
+	@Column(name = "`banner_image`", columnDefinition = "varchar(255) not null default '' comment 'banner图'")
+	private String bannerImage;
 
-    @Column(name = "title", columnDefinition = "varchar(255) not null default '' comment '标题'")
-    private String title;
+	@Column(name = "`title`", columnDefinition = "varchar(255) not null default '' comment '标题'")
+	private String title;
 
-    @Column(name = "sub_title", columnDefinition = "varchar(255) not null default '' comment '副标题'")
-    private String subTitle;
+	@Column(name = "`sub_title`", columnDefinition = "varchar(255) not null default '' comment '副标题'")
+	private String subTitle;
 
-    @Column(name = "to_url", columnDefinition = "varchar(255) not null default '' comment '点击跳转（此内容与站内信内容只能有一个生效）'")
-    private String toUrl;
+	@Column(name = "`to_url`", columnDefinition = "varchar(255) not null default '' comment '点击跳转(此内容与站内信内容只能有一个生效)'")
+	private String toUrl;
 
-    @Column(name = "content", columnDefinition = "varchar(255) not null default '' comment '站内信内容(富文本框编辑，可以上传图片的html)'")
-    private String content;
+	@Column(name = "`content`", columnDefinition = "varchar(255) not null default '' comment '站内信内容(富文本框编辑，可以上传图片的html)'")
+	private String content;
 
-    public ServiceNoticePO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String storeId,
-            String bannerImage,
-            String title,
-            String subTitle,
-            String toUrl,
-            String content) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.storeId = storeId;
-        this.bannerImage = bannerImage;
-        this.title = title;
-        this.subTitle = subTitle;
-        this.toUrl = toUrl;
-        this.content = content;
-    }
+	public String getStoreId() {
+		return storeId;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-            return false;
-        }
-        ServiceNoticePO that = (ServiceNoticePO) o;
-        return getId() != null && Objects.equals(getId(), that.getId());
-    }
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+	public String getBannerImage() {
+		return bannerImage;
+	}
+
+	public void setBannerImage(String bannerImage) {
+		this.bannerImage = bannerImage;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSubTitle() {
+		return subTitle;
+	}
+
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
+	}
+
+	public String getToUrl() {
+		return toUrl;
+	}
+
+	public void setToUrl(String toUrl) {
+		this.toUrl = toUrl;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+			return false;
+		}
+		ServiceNoticePO that = (ServiceNoticePO) o;
+		return getId() != null && Objects.equals(getId(), that.getId());
+	}
+
+	@Override
+	public int hashCode() {
+		return getClass().hashCode();
+	}
 }

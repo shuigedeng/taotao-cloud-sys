@@ -27,16 +27,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 /** 短信模板 */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = SmsTemplatePO.TABLE_NAME)
 @TableName(SmsTemplatePO.TABLE_NAME)
@@ -45,16 +48,16 @@ public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
 
     public static final String TABLE_NAME = "tt_tt_sms_template";
 
-    @Column(name = "template_name", columnDefinition = "varchar(2000) not null comment '模板名称'")
+    @Column(name = "`template_name`", columnDefinition = "varchar(2000) not null comment '模板名称'")
     private String templateName;
 
-    @Column(name = "template_type", columnDefinition = "varchar(2000) not null comment '短信类型'")
+    @Column(name = "`template_type`", columnDefinition = "varchar(2000) not null comment '短信类型'")
     private Integer templateType;
 
-    @Column(name = "remark", columnDefinition = "varchar(2000) not null comment '短信模板申请说明'")
+    @Column(name = "`remark`", columnDefinition = "varchar(2000) not null comment '短信模板申请说明'")
     private String remark;
 
-    @Column(name = "template_content", columnDefinition = "varchar(2000) not null comment '模板内容'")
+    @Column(name = "`template_content`", columnDefinition = "varchar(2000) not null comment '模板内容'")
     private String templateContent;
 
     @Column(
@@ -64,38 +67,69 @@ public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
                     + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
     private Integer templateStatus;
 
-    @Column(name = "template_code", columnDefinition = "varchar(2000) not null comment '短信模板CODE'")
+    @Column(name = "`template_code`", columnDefinition = "varchar(2000) not null comment '短信模板CODE'")
     private String templateCode;
 
-    @Column(name = "reason", columnDefinition = "varchar(2000) not null comment '审核备注'")
+    @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-    public SmsTemplatePO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String templateName,
-            Integer templateType,
-            String remark,
-            String templateContent,
-            Integer templateStatus,
-            String templateCode,
-            String reason) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.templateName = templateName;
-        this.templateType = templateType;
-        this.remark = remark;
-        this.templateContent = templateContent;
-        this.templateStatus = templateStatus;
-        this.templateCode = templateCode;
-        this.reason = reason;
-    }
+	public String getTemplateName() {
+		return templateName;
+	}
 
-    @Override
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+	}
+
+	public Integer getTemplateType() {
+		return templateType;
+	}
+
+	public void setTemplateType(Integer templateType) {
+		this.templateType = templateType;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getTemplateContent() {
+		return templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
+	}
+
+	public Integer getTemplateStatus() {
+		return templateStatus;
+	}
+
+	public void setTemplateStatus(Integer templateStatus) {
+		this.templateStatus = templateStatus;
+	}
+
+	public String getTemplateCode() {
+		return templateCode;
+	}
+
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

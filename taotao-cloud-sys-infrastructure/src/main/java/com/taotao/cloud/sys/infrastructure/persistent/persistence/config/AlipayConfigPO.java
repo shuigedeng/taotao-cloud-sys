@@ -36,9 +36,11 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = AlipayConfigPO.TABLE_NAME)
@@ -49,43 +51,43 @@ public class AlipayConfigPO extends BaseSuperEntity<AlipayConfigPO, Long> {
     public static final String TABLE_NAME = "tt_alipay_config";
 
     /** 应用ID */
-    @Column(name = "app_id", columnDefinition = "varchar(64) not null comment '应用ID'")
+    @Column(name = "`app_id`", columnDefinition = "varchar(64) not null comment '应用ID'")
     private String appId;
 
     /** 编码 */
-    @Column(name = "charset", columnDefinition = "varchar(32) not null comment '编码'")
+    @Column(name = "`charset`", columnDefinition = "varchar(32) not null comment '编码'")
     private String charset;
 
     /** 类型 固定格式json */
-    @Column(name = "format", columnDefinition = "json not null comment '类型 固定格式json'")
+    @Column(name = "`format`", columnDefinition = "json not null comment '类型 固定格式json'")
     private String format;
 
     /** 网关地址 */
-    @Column(name = "gateway_url", columnDefinition = "varchar(256) not null comment '网关地址'")
+    @Column(name = "`gateway_url`", columnDefinition = "varchar(256) not null comment '网关地址'")
     private String gatewayUrl;
 
     /** 异步回调 */
-    @Column(name = "notify_url", columnDefinition = "varchar(256) not null comment '异步回调'")
+    @Column(name = "`notify_url`", columnDefinition = "varchar(256) not null comment '异步回调'")
     private String notifyUrl;
 
     /** 私钥 */
-    @Column(name = "private_key", columnDefinition = "varchar(64) not null comment '私钥'")
+    @Column(name = "`private_key`", columnDefinition = "varchar(64) not null comment '私钥'")
     private String privateKey;
 
     /** 公钥 */
-    @Column(name = "public_key", columnDefinition = "varchar(64) not null comment '公钥'")
+    @Column(name = "`public_key`", columnDefinition = "varchar(64) not null comment '公钥'")
     private String publicKey;
 
     /** 回调地址 */
-    @Column(name = "return_url", columnDefinition = "varchar(256) not null comment '回调地址'")
+    @Column(name = "`return_url`", columnDefinition = "varchar(256) not null comment '回调地址'")
     private String returnUrl;
 
     /** 签名方式 */
-    @Column(name = "sign_type", columnDefinition = "varchar(32) not null comment '签名方式'")
+    @Column(name = "`sign_type`", columnDefinition = "varchar(32) not null comment '签名方式'")
     private String signType;
 
     /** 商户号 */
-    @Column(name = "service_provider_id", columnDefinition = "varchar(32) not null comment '商户号'")
+    @Column(name = "`service_provider_id`", columnDefinition = "varchar(32) not null comment '商户号'")
     private String serviceProviderId;
 
 	public String getAppId() {

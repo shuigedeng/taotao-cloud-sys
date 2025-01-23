@@ -55,11 +55,6 @@ public class FileRpcResponse implements Serializable {
     /** 描述 */
     private String description;
 
-
-
-
-
-
     /** 排序值 */
     private Integer sortNum;
 

@@ -30,9 +30,11 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /** 物流公司设置 */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = LogisticsConfigPO.TABLE_NAME)
@@ -43,31 +45,31 @@ public class LogisticsConfigPO extends BaseSuperEntity<LogisticsConfigPO, Long> 
     public static final String TABLE_NAME = "tt_logistics_config";
 
     /** 物流公司名称 */
-    @Column(name = "name", columnDefinition = "varchar(255) not null COMMENT '物流公司名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(255) not null COMMENT '物流公司名称'")
     private String name;
 
     /** 物流公司code */
-    @Column(name = "code", columnDefinition = "varchar(255) not null COMMENT '物流公司code'")
+    @Column(name = "`code`", columnDefinition = "varchar(255) not null COMMENT '物流公司code'")
     private String code;
 
     /** 物流公司联系人 */
-    @Column(name = "contact_name", columnDefinition = "varchar(32) not null COMMENT '物流公司联系人'")
+    @Column(name = "`contact_name`", columnDefinition = "varchar(32) not null COMMENT '物流公司联系人'")
     private String contactName;
 
     /** 物流公司联系电话 */
-    @Column(name = "contact_mobile", columnDefinition = "varchar(32) not null COMMENT '物流公司联系电话'")
+    @Column(name = "`contact_mobile`", columnDefinition = "varchar(32) not null COMMENT '物流公司联系电话'")
     private String contactMobile;
 
     /** 支持电子面单 */
-    @Column(name = "stand_by", columnDefinition = "varchar(255) not null COMMENT '支持电子面单'")
+    @Column(name = "`stand_by`", columnDefinition = "varchar(255) not null COMMENT '支持电子面单'")
     private String standBy;
 
     /** 物流公司电子面单表单 */
-    @Column(name = "form_items", columnDefinition = "varchar(255) not null COMMENT '物流公司电子面单表单'")
+    @Column(name = "`form_items`", columnDefinition = "varchar(255) not null COMMENT '物流公司电子面单表单'")
     private String formItems;
 
     /** 禁用状态 OPEN：开启，CLOSE：禁用 */
-    @Column(name = "disabled", columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
+    @Column(name = "`disabled`", columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
     private String disabled;
 
 	public String getName() {

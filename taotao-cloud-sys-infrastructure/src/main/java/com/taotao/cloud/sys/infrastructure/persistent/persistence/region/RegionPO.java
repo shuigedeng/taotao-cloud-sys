@@ -30,6 +30,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
 
@@ -44,10 +45,12 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:52:30
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = RegionPO.TABLE_NAME)
 @TableName(value = RegionPO.TABLE_NAME, autoResultMap = true)
@@ -57,15 +60,15 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
     public static final String TABLE_NAME = "tt_region";
 
     /** 地区父节点 */
-    @Column(name = "parent_id", columnDefinition = "bigint comment '地区父节点'")
+    @Column(name = "`parent_id`", columnDefinition = "bigint comment '地区父节点'")
     private Long parentId;
 
     /** 地区编码 */
-    @Column(name = "code", columnDefinition = "varchar(255) not null comment '地区编码'")
+    @Column(name = "`code`", columnDefinition = "varchar(255) not null comment '地区编码'")
     private String code;
 
     /** 地区名称 */
-    @Column(name = "name", columnDefinition = "varchar(255) not null default '' comment '地区名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(255) not null default '' comment '地区名称'")
     private String name;
 
     /**
@@ -79,21 +82,21 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
     private String level;
 
     /** 城市编码 */
-    @Column(name = "city_code", columnDefinition = "varchar(255) null comment '城市编码'")
+    @Column(name = "`city_code`", columnDefinition = "varchar(255) null comment '城市编码'")
     private String cityCode;
 
     /** 城市中心经度 */
-    @Column(name = "lng", columnDefinition = "varchar(255) null comment '城市中心经度'")
+    @Column(name = "`lng`", columnDefinition = "varchar(255) null comment '城市中心经度'")
     private String lng;
 
     /** 城市中心纬度 */
-    @Column(name = "lat", columnDefinition = "varchar(255) null comment '城市中心纬度'")
+    @Column(name = "`lat`", columnDefinition = "varchar(255) null comment '城市中心纬度'")
     private String lat;
 
-    // @Column(name = "path", columnDefinition = "varchar(255) null comment '行政地区路径，类似：1，2，3'")
+    // @Column(name = "`path`", columnDefinition = "varchar(255) null comment '行政地区路径，类似：1，2，3'")
     // private String path;
 
-    @Column(name = "order_num", columnDefinition = "int not null default 0 comment '排序'")
+    @Column(name = "`order_num`", columnDefinition = "int not null default 0 comment '排序'")
     private Integer orderNum;
 
     /**
@@ -103,46 +106,107 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
      */
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "id_tree", columnDefinition = "json null comment 'id树'")
+    @Column(name = "`id_tree`", columnDefinition = "json null comment 'id树'")
     private List<Long> idTree;
 
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "code_tree", columnDefinition = "json null comment 'id树'")
+    @Column(name = "`code_tree`", columnDefinition = "json null comment 'id树'")
     private List<String> codeTree;
 
     /** 当前深度 */
-    @Column(name = "depth", columnDefinition = "int not null default 0 comment '当前深度 已1开始'")
+    @Column(name = "`depth`", columnDefinition = "int not null default 0 comment '当前深度 已1开始'")
     private Integer depth;
 
-    public RegionPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            Long parentId,
-            String code,
-            String name,
-            String level,
-            String cityCode,
-            String lng,
-            String lat,
-            Integer orderNum) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.parentId = parentId;
-        this.code = code;
-        this.name = name;
-        this.level = level;
-        this.cityCode = cityCode;
-        this.lng = lng;
-        this.lat = lat;
-        this.orderNum = orderNum;
-    }
+	public Long getParentId() {
+		return parentId;
+	}
 
-    @Override
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public String getCityCode() {
+		return cityCode;
+	}
+
+	public void setCityCode(String cityCode) {
+		this.cityCode = cityCode;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public Integer getOrderNum() {
+		return orderNum;
+	}
+
+	public void setOrderNum(Integer orderNum) {
+		this.orderNum = orderNum;
+	}
+
+	public List<Long> getIdTree() {
+		return idTree;
+	}
+
+	public void setIdTree(List<Long> idTree) {
+		this.idTree = idTree;
+	}
+
+	public List<String> getCodeTree() {
+		return codeTree;
+	}
+
+	public void setCodeTree(List<String> codeTree) {
+		this.codeTree = codeTree;
+	}
+
+	public Integer getDepth() {
+		return depth;
+	}
+
+	public void setDepth(Integer depth) {
+		this.depth = depth;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

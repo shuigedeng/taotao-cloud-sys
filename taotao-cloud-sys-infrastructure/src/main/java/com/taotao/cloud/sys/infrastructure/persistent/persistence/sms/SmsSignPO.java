@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -34,9 +35,12 @@ import java.util.Objects;
 
 /** 短信签名 */
 
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = SmsSignPO.TABLE_NAME)
 @TableName(SmsSignPO.TABLE_NAME)
@@ -45,19 +49,19 @@ public class SmsSignPO extends BaseSuperEntity<SmsSignPO, Long> {
 
     public static final String TABLE_NAME = "tt_tt_sms_sign";
 
-    @Column(name = "sign_name", columnDefinition = "varchar(2000) not null comment '签名名称'")
+    @Column(name = "`sign_name`", columnDefinition = "varchar(2000) not null comment '签名名称'")
     private String signName;
 
-    @Column(name = "sign_source", columnDefinition = "varchar(2000) not null comment '签名来源'")
+    @Column(name = "`sign_source`", columnDefinition = "varchar(2000) not null comment '签名来源'")
     private Integer signSource;
 
-    @Column(name = "remark", columnDefinition = "varchar(2000) not null comment '短信签名申请说明'")
+    @Column(name = "`remark`", columnDefinition = "varchar(2000) not null comment '短信签名申请说明'")
     private String remark;
 
-    @Column(name = "business_license", columnDefinition = "varchar(2000) not null comment '营业执照'")
+    @Column(name = "`business_license`", columnDefinition = "varchar(2000) not null comment '营业执照'")
     private String businessLicense;
 
-    @Column(name = "license", columnDefinition = "varchar(2000) not null comment '授权委托书'")
+    @Column(name = "`license`", columnDefinition = "varchar(2000) not null comment '授权委托书'")
     private String license;
 
     @Column(
@@ -67,35 +71,66 @@ public class SmsSignPO extends BaseSuperEntity<SmsSignPO, Long> {
                     + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
     private Integer signStatus;
 
-    @Column(name = "reason", columnDefinition = "varchar(2000) not null comment '审核备注'")
+    @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-    public SmsSignPO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String signName,
-            Integer signSource,
-            String remark,
-            String businessLicense,
-            String license,
-            Integer signStatus,
-            String reason) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.signName = signName;
-        this.signSource = signSource;
-        this.remark = remark;
-        this.businessLicense = businessLicense;
-        this.license = license;
-        this.signStatus = signStatus;
-        this.reason = reason;
-    }
+	public String getSignName() {
+		return signName;
+	}
 
-    @Override
+	public void setSignName(String signName) {
+		this.signName = signName;
+	}
+
+	public Integer getSignSource() {
+		return signSource;
+	}
+
+	public void setSignSource(Integer signSource) {
+		this.signSource = signSource;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getBusinessLicense() {
+		return businessLicense;
+	}
+
+	public void setBusinessLicense(String businessLicense) {
+		this.businessLicense = businessLicense;
+	}
+
+	public String getLicense() {
+		return license;
+	}
+
+	public void setLicense(String license) {
+		this.license = license;
+	}
+
+	public Integer getSignStatus() {
+		return signStatus;
+	}
+
+	public void setSignStatus(Integer signStatus) {
+		this.signStatus = signStatus;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

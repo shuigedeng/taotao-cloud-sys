@@ -44,9 +44,11 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:10:22
  */
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
 @Table(name = DataScopePO.TABLE_NAME)
@@ -57,11 +59,11 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
     public static final String TABLE_NAME = "tt_data_scope";
 
     /** 编码 */
-    @Column(name = "code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(name = "`code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
     private String code;
 
     /** 名称 */
-    @Column(name = "名称", unique = true, columnDefinition = "varchar(255) not null comment '名称'")
+    @Column(name = "`name", unique = true, columnDefinition = "varchar(255) not null comment '名称'")
     private String name;
 
     /**
@@ -69,36 +71,100 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
      *
      * @see DataScopeEnum
      */
-    @Column(name = "type", columnDefinition = "int not null comment '数据范围类型'")
+    @Column(name = "`type`", columnDefinition = "int not null comment '数据范围类型'")
     private Integer type;
 
     /** 备注 */
-    @Column(name = "备注", columnDefinition = "varchar(1024) null comment '备注'")
+    @Column(name = "`remark`", columnDefinition = "varchar(1024) null comment '备注'")
     private String remark;
 
     /** 组织id列表 */
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "org_ids", columnDefinition = "json null comment '组织id列表'")
+    @Column(name = "`org_ids`", columnDefinition = "json null comment '组织id列表'")
     private List<Long> orgIds;
 
     /** 部门id */
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "dept_ids", columnDefinition = "json null comment '部门id列表'")
+    @Column(name = "`dept_ids`", columnDefinition = "json null comment '部门id列表'")
     private List<Long> deptIds;
 
     /** 用户id */
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "user_ids", columnDefinition = "json null comment '用户id列表'")
+    @Column(name = "`user_ids`", columnDefinition = "json null comment '用户id列表'")
     private List<Long> userIds;
 
     /** 租户id */
-    @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    @Override
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public List<Long> getOrgIds() {
+		return orgIds;
+	}
+
+	public void setOrgIds(List<Long> orgIds) {
+		this.orgIds = orgIds;
+	}
+
+	public List<Long> getDeptIds() {
+		return deptIds;
+	}
+
+	public void setDeptIds(List<Long> deptIds) {
+		this.deptIds = deptIds;
+	}
+
+	public List<Long> getUserIds() {
+		return userIds;
+	}
+
+	public void setUserIds(List<Long> userIds) {
+		this.userIds = userIds;
+	}
+
+	public String getTenantId() {
+		return tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

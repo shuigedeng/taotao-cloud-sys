@@ -36,11 +36,12 @@ import java.util.Objects;
  *
  * @author shuigedeng
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(chain = true, fluent = false)
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = SensitiveWordPO.TABLE_NAME)
 @TableName(SensitiveWordPO.TABLE_NAME)
@@ -50,24 +51,18 @@ public class SensitiveWordPO extends BaseSuperEntity<SensitiveWordPO, Long> {
     public static final String TABLE_NAME = "tt_sensitive_words";
 
     /** 敏感词名称 */
-    @Column(name = "sensitive_word", columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
+    @Column(name = "`sensitive_word`", columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
     private String sensitiveWord;
 
-//    @Accessors(fluent = true)
-//    public SensitiveWord(
-//            Long id,
-//            LocalDateTime createTime,
-//            Long createBy,
-//            LocalDateTime updateTime,
-//            Long updateBy,
-//            Integer version,
-//            Boolean delFlag,
-//            String sensitiveWord) {
-//        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-//        this.sensitiveWord = sensitiveWord;
-//    }
+	public String getSensitiveWord() {
+		return sensitiveWord;
+	}
 
-    @Override
+	public void setSensitiveWord(String sensitiveWord) {
+		this.sensitiveWord = sensitiveWord;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

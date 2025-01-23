@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -39,10 +40,12 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:52:30
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = RolePO.TABLE_NAME)
 @TableName(RolePO.TABLE_NAME)
@@ -52,41 +55,54 @@ public class RolePO extends BaseSuperEntity<RolePO, Long> {
     public static final String TABLE_NAME = "tt_role";
 
     /** 角色名称 */
-    @Column(name = "name", columnDefinition = "varchar(32) not null comment '角色名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(32) not null comment '角色名称'")
     private String name;
 
     /** 角色标识 */
-    @Column(name = "code", unique = true, columnDefinition = "varchar(32) not null comment '角色标识'")
+    @Column(name = "`code", unique = true, columnDefinition = "varchar(32) not null comment '角色标识'")
     private String code;
 
     /** 备注 */
-    @Column(name = "remark", columnDefinition = "varchar(255) comment '备注'")
+    @Column(name = "`remark`", columnDefinition = "varchar(255) comment '备注'")
     private String remark;
 
     /** 租户id */
-    @Column(name = "tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-    public RolePO(
-            Long id,
-            LocalDateTime createTime,
-            Long createBy,
-            LocalDateTime updateTime,
-            Long updateBy,
-            Integer version,
-            Boolean delFlag,
-            String name,
-            String code,
-            String remark,
-            String tenantId) {
-        super(id, createTime, createBy, updateTime, updateBy, version, delFlag);
-        this.name = name;
-        this.code = code;
-        this.remark = remark;
-        this.tenantId = tenantId;
-    }
+	public String getName() {
+		return name;
+	}
 
-    @Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getTenantId() {
+		return tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

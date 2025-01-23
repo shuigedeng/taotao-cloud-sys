@@ -27,6 +27,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.util.Objects;
@@ -38,10 +39,12 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:07:31
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
 @Table(name = RoleResourcePO.TABLE_NAME)
 @TableName(RoleResourcePO.TABLE_NAME)
@@ -51,20 +54,30 @@ public class RoleResourcePO extends SuperEntity<RoleResourcePO, Long> {
     public static final String TABLE_NAME = "tt_role_resource";
 
     /** 角色ID */
-    @Column(name = "role_id", columnDefinition = "bigint not null comment '角色ID'")
+    @Column(name = "`role_id`", columnDefinition = "bigint not null comment '角色ID'")
     private Long roleId;
 
     /** 菜单ID */
-    @Column(name = "resource_id", columnDefinition = "bigint not null comment '菜单ID'")
+    @Column(name = "`resource_id`", columnDefinition = "bigint not null comment '菜单ID'")
     private Long resourceId;
 
-    public RoleResourcePO(Long id, Long roleId, Long resourceId) {
-        super(id);
-        this.roleId = roleId;
-        this.resourceId = resourceId;
-    }
+	public Long getRoleId() {
+		return roleId;
+	}
 
-    @Override
+	public void setRoleId(Long roleId) {
+		this.roleId = roleId;
+	}
+
+	public Long getResourceId() {
+		return resourceId;
+	}
+
+	public void setResourceId(Long resourceId) {
+		this.resourceId = resourceId;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

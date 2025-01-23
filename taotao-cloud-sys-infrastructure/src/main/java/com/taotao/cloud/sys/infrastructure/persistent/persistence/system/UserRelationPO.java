@@ -21,13 +21,16 @@ import com.taotao.boot.common.enums.UserObjectEnum;
 import com.taotao.boot.webagg.entity.SuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
 import java.util.Objects;
@@ -39,12 +42,20 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2021-10-09 21:04:45
  */
-
-@ToString(callSuper = true)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(callSuper = true)
+@Accessors(fluent = true)
 @Entity
-@Table(name = UserRelationPO.TABLE_NAME)
+@Table(name = UserRelationPO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(UserRelationPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = UserRelationPO.TABLE_NAME)
 public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
@@ -52,7 +63,7 @@ public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
     public static final String TABLE_NAME = "tt_user_relation";
 
     /** 用户ID */
-    @Column(name = "user_id", columnDefinition = "bigint not null comment '用户ID'")
+    @Column(name = "`user_id`", columnDefinition = "bigint not null comment '用户ID'")
     private Long userId;
 
     /**
@@ -60,24 +71,48 @@ public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
      *
      * @see UserObjectEnum
      */
-    @Column(name = "object_type", columnDefinition = "varchar(255) not null comment '对象类型'")
+    @Column(name = "`object_type`", columnDefinition = "varchar(255) not null comment '对象类型'")
     private String objectType;
 
     /** 对象id orgId deptId positionId roleId dataScopeId */
-    @Column(name = "object_id", columnDefinition = "bigint not null comment '对象id'")
+    @Column(name = "`object_id`", columnDefinition = "bigint not null comment '对象id'")
     private Long objectId;
 
     /** 排序值 */
-    @Column(name = "sort_code", columnDefinition = "int null comment '排序值'")
+    @Column(name = "`sort_code`", columnDefinition = "int null comment '排序值'")
     private Integer sortCode;
 
-    public UserRelationPO(Long id, Long userId, String objectType, Long objectId, Integer sortCode) {
-        super(id);
-        this.userId = userId;
-        this.objectId = objectId;
-        this.sortCode = sortCode;
-        this.objectType = objectType;
-    }
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getObjectType() {
+		return objectType;
+	}
+
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
+	}
+
+	public Long getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(Long objectId) {
+		this.objectId = objectId;
+	}
+
+	public Integer getSortCode() {
+		return sortCode;
+	}
+
+	public void setSortCode(Integer sortCode) {
+		this.sortCode = sortCode;
+	}
 
     @Override
     public boolean equals(Object o) {
