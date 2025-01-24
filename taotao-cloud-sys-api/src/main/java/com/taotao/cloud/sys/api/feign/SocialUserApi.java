@@ -17,19 +17,22 @@
 package com.taotao.cloud.sys.api.feign;
 
 
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
+
 import com.taotao.boot.common.constant.ServiceName;
 import com.taotao.boot.common.model.BaseSecurityUser;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.sys.api.feign.fallback.UserApiFallback;
+import com.taotao.cloud.sys.api.feign.response.SocialUserApiResponse;
 import com.taotao.cloud.sys.api.feign.response.UserQueryApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 /**
  * 远程调用后台用户模块
@@ -39,9 +42,25 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  */
 @FeignClient(
 	name = ServiceName.TAOTAO_CLOUD_SYS,
-	contextId = "IFeignUserApi",
+	contextId = "ISocialUserApi",
 	fallbackFactory = UserApiFallback.class)
-public interface UserApi {
+public interface SocialUserApi {
+
+	/**
+	 * 添加用户信息
+	 *
+	 * @param socialUserApiResponse 用户名称
+	 * @return 用户信息
+	 * @since 2020/10/21 15:06
+	 */
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
+			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
+		})
+	@PostMapping(value = "/sys/feign/social-user")
+	SocialUserApiResponse saveAndFlush(@RequestBody SocialUserApiResponse socialUserApiResponse);
 
 	/**
 	 * 获取用户信息
@@ -56,8 +75,8 @@ public interface UserApi {
 			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
-	@GetMapping(value = "/sys/feign/user/info/username")
-	UserQueryApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
+	@GetMapping(value = "/sys/feign/social-user/info/username")
+	SocialUserApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
 
 	/**
 	 * 通过第三方查询用户包括角色权限等
@@ -74,9 +93,9 @@ public interface UserApi {
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
 	@GetMapping(
-		value = "/sys/feign/user/info/social/{social}",
+		value = "/sys/feign/social-user/info/social/{social}",
 		headers = {"from=in"})
-	BaseSecurityUser getUserInfoBySocial(
+	SocialUserApiResponse getUserInfoBySocial(
 		@RequestParam("providerId") String providerId,
 		@RequestParam("providerUserId") int providerUserId);
 
@@ -93,6 +112,6 @@ public interface UserApi {
 			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
 			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
 		})
-	@GetMapping(value = "/sys/feign/user/info")
-	BaseSecurityUser getSysSecurityUser(@RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail") String nicknameOrUserNameOrPhoneOrEmail);
+	@GetMapping(value = "/sys/feign/social-user/info/security")
+	SocialUserApiResponse getSysSecurityUser(@RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail") String nicknameOrUserNameOrPhoneOrEmail);
 }
