@@ -34,25 +34,25 @@ public class I18nDataPO extends BaseSuperEntity<I18nDataPO, Long> {
 	/**
 	 * 语言标签
 	 */
-	@Column(name = "`create_name`", columnDefinition = "varchar(255) not null comment '语言标签'")
+	@Column(name = "`language_tag`", columnDefinition = "varchar(255) not null comment '语言标签'")
 	private String languageTag;
 
 	/**
 	 * 国际化标识
 	 */
-	@Column(name = "`create_name`", columnDefinition = "varchar(255) not null comment '国际化标识'")
+	@Column(name = "`code`", columnDefinition = "varchar(255) not null comment '国际化标识'")
 	private String code;
 
 	/**
 	 * 文本值，可以使用 { } 加角标，作为占位符
 	 */
-	@Column(name = "`create_name`", columnDefinition = "varchar(255) not null comment '文本值，可以使用 { } 加角标，作为占位符'")
+	@Column(name = "`message`", columnDefinition = "varchar(255) not null comment '文本值，可以使用 { } 加角标，作为占位符'")
 	private String message;
 
 	/**
 	 * 备注
 	 */
-	@Column(name = "`create_name`", columnDefinition = "varchar(255) not null comment '备注'")
+	@Column(name = "`remarks`", columnDefinition = "varchar(255) not null comment '备注'")
 	private String remarks;
 
 	public String getLanguageTag() {
