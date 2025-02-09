@@ -59,7 +59,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = OrgPO.TABLE_NAME)
 public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
 
-    public static final String TABLE_NAME = "tt_org";
+    public static final String TABLE_NAME = "ttc_org";
 
     /** 部门名称 */
     @Column(name = "`name`", columnDefinition = "varchar(32) not null comment '公司名称'")
@@ -96,7 +96,7 @@ public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
     private Integer sortNum;
 
     /** 租户id */
-    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
 	public String getName() {

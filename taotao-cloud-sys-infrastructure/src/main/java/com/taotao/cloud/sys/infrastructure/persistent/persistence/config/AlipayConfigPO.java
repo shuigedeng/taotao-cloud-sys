@@ -48,7 +48,7 @@ import lombok.experimental.Accessors;
 @org.springframework.data.relational.core.mapping.Table(name = AlipayConfigPO.TABLE_NAME)
 public class AlipayConfigPO extends BaseSuperEntity<AlipayConfigPO, Long> {
 
-    public static final String TABLE_NAME = "tt_alipay_config";
+    public static final String TABLE_NAME = "ttc_alipay_config";
 
     /** 应用ID */
     @Column(name = "`app_id`", columnDefinition = "varchar(64) not null comment '应用ID'")

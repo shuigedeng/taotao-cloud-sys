@@ -29,7 +29,7 @@ import lombok.experimental.Accessors;
 @org.springframework.data.relational.core.mapping.Table(name = I18nDataPO.TABLE_NAME)
 public class I18nDataPO extends BaseSuperEntity<I18nDataPO, Long> {
 
-	public static final String TABLE_NAME = "tt_i18n_data";
+	public static final String TABLE_NAME = "ttc_i18n_data";
 
 	/**
 	 * 语言标签

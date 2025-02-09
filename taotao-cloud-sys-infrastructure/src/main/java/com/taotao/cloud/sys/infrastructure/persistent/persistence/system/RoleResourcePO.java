@@ -51,7 +51,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = RoleResourcePO.TABLE_NAME)
 public class RoleResourcePO extends SuperEntity<RoleResourcePO, Long> {
 
-    public static final String TABLE_NAME = "tt_role_resource";
+    public static final String TABLE_NAME = "ttc_role_resource";
 
     /** 角色ID */
     @Column(name = "`role_id`", columnDefinition = "bigint not null comment '角色ID'")

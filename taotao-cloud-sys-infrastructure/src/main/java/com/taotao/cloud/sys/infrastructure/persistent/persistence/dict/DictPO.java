@@ -142,14 +142,14 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = DictPO.TABLE_NAME)
 public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
-    public static final String TABLE_NAME = "tt_dict";
+    public static final String TABLE_NAME = "ttc_dict";
 
     /** 字典名称 */
     @Column(name = "`dict_name`", columnDefinition = "varchar(255) not null  comment '字典名称'")
     private String dictName;
 
     /** 字典编码 */
-    @Column(name = "`dict_code", unique = true, columnDefinition = "varchar(255) not null comment '字典编码'")
+    @Column(name = "`dict_code`", unique = true, columnDefinition = "varchar(255) not null comment '字典编码'")
     private String dictCode;
 
     /** 描述 */

@@ -52,14 +52,14 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = RolePO.TABLE_NAME)
 public class RolePO extends BaseSuperEntity<RolePO, Long> {
 
-    public static final String TABLE_NAME = "tt_role";
+    public static final String TABLE_NAME = "ttc_role";
 
     /** 角色名称 */
     @Column(name = "`name`", columnDefinition = "varchar(32) not null comment '角色名称'")
     private String name;
 
     /** 角色标识 */
-    @Column(name = "`code", unique = true, columnDefinition = "varchar(32) not null comment '角色标识'")
+    @Column(name = "`code`", unique = true, columnDefinition = "varchar(32) not null comment '角色标识'")
     private String code;
 
     /** 备注 */
@@ -67,7 +67,7 @@ public class RolePO extends BaseSuperEntity<RolePO, Long> {
     private String remark;
 
     /** 租户id */
-    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
 	public String getName() {

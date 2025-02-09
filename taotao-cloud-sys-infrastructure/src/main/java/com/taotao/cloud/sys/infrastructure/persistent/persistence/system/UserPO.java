@@ -61,7 +61,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = UserPO.TABLE_NAME)
 public class UserPO extends BaseSuperEntity<UserPO, Long> {
 
-    public static final String TABLE_NAME = "tt_user";
+    public static final String TABLE_NAME = "ttc_user";
 
     /** 账号 */
     @Column(name = "`account`", columnDefinition = "varchar(255) not null comment '账号'")
@@ -80,7 +80,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     private String password;
 
     /** 手机号 */
-    @Column(name = "`mobile", unique = true, columnDefinition = "varchar(11) not null comment '手机号'")
+    @Column(name = "`mobile`", unique = true, columnDefinition = "varchar(11) not null comment '手机号'")
     private String mobile;
 
     /** 电话号码 */
@@ -112,7 +112,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     private Integer status;
 
     /** 租户id */
-    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     /// **

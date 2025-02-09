@@ -53,10 +53,10 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = ResourcePO.TABLE_NAME)
 public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
 
-    public static final String TABLE_NAME = "tt_resource";
+    public static final String TABLE_NAME = "ttc_resource";
 
     /** 菜单标题 */
-    @Column(name = "`name", unique = true, columnDefinition = "varchar(32) not null comment '菜单名称'")
+    @Column(name = "`name`", unique = true, columnDefinition = "varchar(32) not null comment '菜单名称'")
     private String name;
 
     /** 权限标识 */
@@ -112,7 +112,7 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     private String target;
 
     /** 租户id */
-    @Column(name = "`tenant_id", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
 	public String getName() {

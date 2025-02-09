@@ -53,7 +53,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = LogPO.TABLE_NAME)
 public class LogPO extends BaseSuperEntity<LogPO, Long> {
 
-    public static final String TABLE_NAME = "tt_log";
+    public static final String TABLE_NAME = "ttc_log";
 
     /** 请求日志id */
     @Column(name = "`trace_id`", columnDefinition = "varchar(64) null comment '请求日志id'")

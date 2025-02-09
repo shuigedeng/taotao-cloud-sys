@@ -49,7 +49,7 @@ import org.hibernate.proxy.HibernateProxy;
 @org.springframework.data.relational.core.mapping.Table(name = AppPO.TABLE_NAME)
 public class AppPO extends BaseSuperEntity<AppPO, Long> {
 
-	public static final String TABLE_NAME = "tt_app";
+	public static final String TABLE_NAME = "ttc_app";
 
 	/**
 	 * 应用名称

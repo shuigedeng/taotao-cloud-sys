@@ -42,7 +42,7 @@ import lombok.experimental.Accessors;
 @org.springframework.data.relational.core.mapping.Table(name = LogisticsConfigPO.TABLE_NAME)
 public class LogisticsConfigPO extends BaseSuperEntity<LogisticsConfigPO, Long> {
 
-    public static final String TABLE_NAME = "tt_logistics_config";
+    public static final String TABLE_NAME = "ttc_logistics_config";
 
     /** 物流公司名称 */
     @Column(name = "`name`", columnDefinition = "varchar(255) not null COMMENT '物流公司名称'")

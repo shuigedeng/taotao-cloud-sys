@@ -65,7 +65,7 @@ import org.hibernate.annotations.FetchMode;
 @org.springframework.data.relational.core.mapping.Table(name = SocialUserPO.TABLE_NAME)
 public class SocialUserPO extends BaseSuperEntity<SocialUserPO, Long> {
 
-	public static final String TABLE_NAME = "tt_social_user";
+	public static final String TABLE_NAME = "ttc_social_user";
 
 	@Schema(title = "社会用户ID")
 	@Column(name = "social_id", length = 64)

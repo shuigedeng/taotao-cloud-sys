@@ -60,7 +60,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = UserRelationPO.TABLE_NAME)
 public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
 
-    public static final String TABLE_NAME = "tt_user_relation";
+    public static final String TABLE_NAME = "ttc_user_relation";
 
     /** 用户ID */
     @Column(name = "`user_id`", columnDefinition = "bigint not null comment '用户ID'")

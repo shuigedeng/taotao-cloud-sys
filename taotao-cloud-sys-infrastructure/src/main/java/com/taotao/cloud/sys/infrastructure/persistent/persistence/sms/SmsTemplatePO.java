@@ -46,7 +46,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = SmsTemplatePO.TABLE_NAME)
 public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
 
-    public static final String TABLE_NAME = "tt_tt_sms_template";
+    public static final String TABLE_NAME = "ttc_sms_template";
 
     @Column(name = "`template_name`", columnDefinition = "varchar(2000) not null comment '模板名称'")
     private String templateName;

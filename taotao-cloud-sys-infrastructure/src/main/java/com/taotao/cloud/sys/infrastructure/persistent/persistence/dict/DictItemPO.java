@@ -53,7 +53,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = DictItemPO.TABLE_NAME)
 public class DictItemPO extends BaseSuperEntity<DictItemPO, Long> {
 
-    public static final String TABLE_NAME = "tt_dict_item";
+    public static final String TABLE_NAME = "ttc_dict_item";
 
     /**
      * 字典id

@@ -48,7 +48,7 @@ import lombok.experimental.Accessors;
 @org.springframework.data.relational.core.mapping.Table(name = EmailConfigPO.TABLE_NAME)
 public class EmailConfigPO extends BaseSuperEntity<EmailConfigPO, Long> {
 
-    public static final String TABLE_NAME = "tt_email_config";
+    public static final String TABLE_NAME = "ttc_email_config";
 
     /** 收件人 */
     @Column(name = "`from_user`", columnDefinition = "varchar(64) not null comment '收件人'")

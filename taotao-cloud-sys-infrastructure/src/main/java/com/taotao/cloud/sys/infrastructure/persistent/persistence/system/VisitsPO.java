@@ -60,7 +60,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = VisitsPO.TABLE_NAME)
 public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
 
-    public static final String TABLE_NAME = "tt_visits";
+    public static final String TABLE_NAME = "ttc_visits";
 
     @Column(name = "`date`", columnDefinition = "varchar(64) not null comment '日期'")
     private String date;

@@ -52,7 +52,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = FileLogPO.TABLE_NAME)
 public class FileLogPO extends BaseSuperEntity<FileLogPO, Long> {
 
-    public static final String TABLE_NAME = "tt_file_log";
+    public static final String TABLE_NAME = "ttc_file_log";
 
     /** 业务ID */
     @Column(name = "`biz_id`", columnDefinition = "bigint comment '业务ID'")

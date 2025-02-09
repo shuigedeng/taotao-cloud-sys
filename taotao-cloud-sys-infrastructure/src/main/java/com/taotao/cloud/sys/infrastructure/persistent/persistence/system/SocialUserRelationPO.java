@@ -49,7 +49,7 @@ import org.hibernate.Hibernate;
 @org.springframework.data.relational.core.mapping.Table(name = SocialUserRelationPO.TABLE_NAME)
 public class SocialUserRelationPO extends SuperEntity<SocialUserRelationPO, Long> {
 
-	public static final String TABLE_NAME = "tt_social_user_relation";
+	public static final String TABLE_NAME = "ttc_social_user_relation";
 
 	/**
 	 * 角色ID

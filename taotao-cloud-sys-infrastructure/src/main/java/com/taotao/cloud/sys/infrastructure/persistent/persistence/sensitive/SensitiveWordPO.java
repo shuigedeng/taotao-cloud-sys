@@ -48,7 +48,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = SensitiveWordPO.TABLE_NAME)
 public class SensitiveWordPO extends BaseSuperEntity<SensitiveWordPO, Long> {
 
-    public static final String TABLE_NAME = "tt_sensitive_words";
+    public static final String TABLE_NAME = "ttc_sensitive_words";
 
     /** 敏感词名称 */
     @Column(name = "`sensitive_word`", columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")

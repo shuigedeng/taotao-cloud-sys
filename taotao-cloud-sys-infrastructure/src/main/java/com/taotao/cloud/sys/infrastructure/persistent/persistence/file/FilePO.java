@@ -53,7 +53,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = FilePO.TABLE_NAME)
 public class FilePO extends BaseSuperEntity<FilePO, Long> {
 
-    public static final String TABLE_NAME = "tt_file";
+    public static final String TABLE_NAME = "ttc_file";
 
     /** 创建人 */
     @Column(name = "`create_name`", columnDefinition = "varchar(255) not null comment '创建人'")

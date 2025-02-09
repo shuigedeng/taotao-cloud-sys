@@ -57,7 +57,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = RegionPO.TABLE_NAME)
 public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
 
-    public static final String TABLE_NAME = "tt_region";
+    public static final String TABLE_NAME = "ttc_region";
 
     /** 地区父节点 */
     @Column(name = "`parent_id`", columnDefinition = "bigint comment '地区父节点'")

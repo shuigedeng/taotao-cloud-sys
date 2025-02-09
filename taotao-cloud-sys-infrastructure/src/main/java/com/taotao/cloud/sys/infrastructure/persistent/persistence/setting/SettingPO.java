@@ -58,7 +58,7 @@ import java.util.Objects;
 @org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME)
 public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
 
-    public static final String TABLE_NAME = "tt_setting";
+    public static final String TABLE_NAME = "ttc_setting";
 
     @Column(name = "`name`", columnDefinition = "varchar(255) not null comment '名称'")
     private String name;
@@ -66,7 +66,7 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
     @Column(name = "`category`", columnDefinition = "varchar(255) not null comment '分类'")
     private String category;
 
-    @Column(name = "`en_code", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(name = "`en_code`", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
     private String enCode;
 
     @Type(value = JsonType.class)
