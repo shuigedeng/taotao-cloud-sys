@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 国际化信息
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/i18n/i18n-data")
 @Tag(name = "国际化信息管理")
-public class ManagerI18nDataController {
+public class ManagerI18nDataController extends BusinessController {
 
 	//private final I18nDataService i18nDataService;
 

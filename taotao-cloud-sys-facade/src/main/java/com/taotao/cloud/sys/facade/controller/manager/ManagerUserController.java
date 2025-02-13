@@ -46,6 +46,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.List;
 import java.util.Objects;
@@ -64,7 +65,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/sys/manager/user")
 @Tag(name = "管理端-用户管理API", description = "管理端-用户管理API")
-public class ManagerUserController {
+public class ManagerUserController extends BusinessController {
 
 //	//敏感字段加密、解密、脱敏
 //	@PostMapping("/addUser")

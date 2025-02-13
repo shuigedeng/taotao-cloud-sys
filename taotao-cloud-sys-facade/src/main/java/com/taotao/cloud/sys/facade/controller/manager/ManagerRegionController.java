@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.List;
 
@@ -48,7 +49,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sys/manager/region")
 @Tag(name = "管理端-地区管理API", description = "管理端-地区管理API")
-public class ManagerRegionController {
+public class ManagerRegionController extends BusinessController {
 
 //    @Operation(summary = "根据父id查询地区数据", description = "根据父id查询地区数据")
 //    @Parameters({

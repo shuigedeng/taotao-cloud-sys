@@ -9,6 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/monitor")
 @RequiredArgsConstructor
-public class ManagerMonitorController {
+public class ManagerMonitorController extends BusinessController {
 
 //	@NonNull
 //	private MonitorApplicationService monitorApplicationService;

@@ -16,21 +16,12 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.taotao.boot.common.model.BaseQuery;
-import com.taotao.boot.common.model.Result;
-import com.taotao.boot.web.utils.CollectionUtil;
-import com.taotao.boot.webagg.controller.BaseSuperController;
-import io.swagger.v3.oas.annotations.Operation;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Collection;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 管理端-字典管理API
@@ -43,7 +34,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/sys/manager/dict")
 @Tag(name = "管理端-字典管理API", description = "管理端-字典管理API")
-public class ManagerDictController {
+public class ManagerDictController extends BusinessController {
 
 //    @GetMapping("/list-code")
 //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")

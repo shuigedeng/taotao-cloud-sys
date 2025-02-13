@@ -23,13 +23,14 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 @RestController
 @Tag(name = "管理端-TestRediscontroller", description = "管理端-测试redis")
-public class TestRedisController {
+public class TestRedisController extends BusinessController {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;

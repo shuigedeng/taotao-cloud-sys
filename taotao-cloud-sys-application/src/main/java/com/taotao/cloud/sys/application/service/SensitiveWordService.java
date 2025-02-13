@@ -26,7 +26,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.Sens
  * @version 2022.03
  * @since 2022-03-25 14:33:20
  */
-public interface SensitiveWordService extends IService<SensitiveWordPO> {
+public interface SensitiveWordService extends CommandService<SensitiveWordPO> {
 
     /**
      * 重新写入缓存

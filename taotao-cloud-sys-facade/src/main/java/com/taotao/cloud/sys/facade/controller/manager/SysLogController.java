@@ -26,12 +26,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 @RestController
 @RequestMapping("/sys/log")
 @AllArgsConstructor
 @Tag(name = "工具管理端-日志管理模块", description = "工具管理端-日志管理模块")
-public class SysLogController {
+public class SysLogController extends BusinessController {
 //
 //    private final SysLogService sysLogService;
 //

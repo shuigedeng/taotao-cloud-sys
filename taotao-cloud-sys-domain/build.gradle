@@ -54,7 +54,6 @@
  */
 
 dependencies {
-    api project(":taotao-cloud-sys-api")
     api project(":taotao-cloud-sys-common")
     api project(":taotao-cloud-sys-integration")
 

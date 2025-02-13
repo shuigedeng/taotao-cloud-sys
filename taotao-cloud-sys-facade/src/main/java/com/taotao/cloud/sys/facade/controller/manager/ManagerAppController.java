@@ -16,20 +16,11 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.boot.common.model.PageResult;
-import com.taotao.boot.common.model.Result;
-import com.taotao.boot.data.mybatis.mybatisplus.MpUtils;
-import io.swagger.v3.oas.annotations.Operation;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * 系统应用表
@@ -42,7 +33,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/app")
 @RequiredArgsConstructor
-public class ManagerAppController {
+public class ManagerAppController extends BusinessController {
 
 //    private final AppService appService;
 //

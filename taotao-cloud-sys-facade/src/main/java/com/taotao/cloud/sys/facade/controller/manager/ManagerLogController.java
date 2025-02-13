@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.io.IOException;
 
@@ -52,7 +53,7 @@ import java.io.IOException;
 @RestController
 @Tag(name = "工具管理端-日志管理API", description = "工具管理端-日志管理API")
 @RequestMapping("/log")
-public class ManagerLogController {
+public class ManagerLogController extends BusinessController {
 
 //    private final LogService logService;
 //

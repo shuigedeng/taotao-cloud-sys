@@ -16,12 +16,12 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.boot.common.model.BaseQuery;
-import com.taotao.boot.webagg.controller.BaseSuperController;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 管理端-字典项管理API
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/dict/item")
 @Tag(name = "管理端-字典项管理API", description = "管理端-字典项管理API")
-public class ManagerDictItemController{
+public class ManagerDictItemController  extends BusinessController {
 
     /// **
     // * 根据code查询字典项列表

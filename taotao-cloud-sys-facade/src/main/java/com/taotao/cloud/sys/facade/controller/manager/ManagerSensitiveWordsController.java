@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sys/manager/sensitive/word")
 @Tag(name = "管理端-敏感词管理API", description = "管理端-敏感词管理API")
-public class ManagerSensitiveWordsController {
+public class ManagerSensitiveWordsController extends BusinessController {
 
 //    private final ISensitiveWordService sensitiveWordService;
 //

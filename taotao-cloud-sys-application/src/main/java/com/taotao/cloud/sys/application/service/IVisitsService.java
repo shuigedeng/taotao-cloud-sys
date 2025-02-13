@@ -28,7 +28,7 @@ import org.springframework.scheduling.annotation.Async;
  * @version 2021.10
  * @since 2022-02-11 16:22:47
  */
-public interface IVisitsService extends IService<VisitsPO> {
+public interface IVisitsService extends CommandService<VisitsPO> {
 
     /** 提供给定时任务，每天0点执行 */
     void save();

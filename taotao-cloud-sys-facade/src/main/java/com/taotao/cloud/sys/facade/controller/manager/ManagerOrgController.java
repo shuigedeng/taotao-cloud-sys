@@ -28,6 +28,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/sys/manager/org")
 @Tag(name = "管理端-部门管理API", description = "管理端-部门管理API")
-public class ManagerOrgController {
+public class ManagerOrgController extends BusinessController {
 //
 //    @Operation(summary = "获取部门树", description = "获取部门树")
 //    @RequestLogger

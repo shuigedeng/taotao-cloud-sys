@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.facade.controller.tools;
 
+import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.application.service.SystemService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * SystemController
@@ -35,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "工具管理端-system管理API", description = "工具管理端-system管理API")
 @RequestMapping("/sys/tools/system")
-public class SystemController {
+public class SystemController  extends BusinessController {
 
     private final SystemService systemService;
 

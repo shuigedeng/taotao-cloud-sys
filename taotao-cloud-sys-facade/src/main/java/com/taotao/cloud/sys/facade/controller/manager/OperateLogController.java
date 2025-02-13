@@ -27,6 +27,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 操作日志
@@ -38,7 +39,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/log/operate")
 @RequiredArgsConstructor
-public class OperateLogController {
+public class OperateLogController extends BusinessController {
     //private final OperateLogService operateLogService;
 
 //    @Operation(summary = "分页")

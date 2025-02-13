@@ -16,23 +16,12 @@
 
 package com.taotao.cloud.sys.facade.controller.buyer;
 
-import com.taotao.boot.common.model.Result;
-import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.security.spring.annotation.NotAuth;
-import com.taotao.boot.webagg.controller.BaseBusinessController;
-import com.taotao.cloud.sys.application.service.DictService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
-import io.swagger.v3.oas.annotations.Operation;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.sql.SQLIntegrityConstraintViolationException;
 
 /**
  * pc端-字典API
@@ -46,7 +35,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 @RestController
 @RequestMapping("/sys/buyer/dict")
 @Tag(name = "pc端-字典API", description = "pc端-字典API")
-public class BuyerDictController extends BaseBusinessController<DictService, DictPO, Long> {
+public class BuyerDictController extends BusinessController  {
 
     // @Autowired
     // private ProducerService producerService;

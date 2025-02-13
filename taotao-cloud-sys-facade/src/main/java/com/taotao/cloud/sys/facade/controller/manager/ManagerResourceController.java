@@ -43,6 +43,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,7 +61,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/sys/manager/resource")
 @Tag(name = "管理端-资源管理API", description = "管理端-资源管理API")
-public class ManagerResourceController {
+public class ManagerResourceController extends BusinessController {
 
 //    // ************************************************菜单*************************************************************
 //

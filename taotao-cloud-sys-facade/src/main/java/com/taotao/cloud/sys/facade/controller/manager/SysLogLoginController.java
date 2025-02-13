@@ -16,29 +16,18 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.baomidou.mybatisplus.core.metadata.OrderItem;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.taotao.boot.common.model.Result;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Arrays;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/sysLogLogin")
 @Tag(name = "工具管理端-登录记录管理", description = "工具管理端-登录记录管理")
-public class SysLogLoginController {
+public class SysLogLoginController extends BusinessController {
 
 //    private final SysLogLoginService sysLogLoginService;
 //

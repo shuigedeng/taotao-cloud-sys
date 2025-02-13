@@ -26,7 +26,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.AlipayC
  * @version 2022.03
  * @since 2022-03-25 14:24:04
  */
-public interface AlipayConfigService extends IService<AlipayConfigPO> {
+public interface AlipayConfigService extends CommandService<AlipayConfigPO> {
 //
 //    /**
 //     * 处理来自PC的交易请求

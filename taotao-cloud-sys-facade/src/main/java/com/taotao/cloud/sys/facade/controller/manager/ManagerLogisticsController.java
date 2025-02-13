@@ -16,18 +16,10 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.boot.common.model.Result;
-import com.taotao.boot.web.request.annotation.RequestLogger;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/logistics")
 @Tag(name = "管理端-物流公司管理API", description = "管理端-物流公司管理API")
-public class ManagerLogisticsController {
+public class ManagerLogisticsController extends BusinessController {
 
 //    private final ILogisticsService logisticsService;
 //

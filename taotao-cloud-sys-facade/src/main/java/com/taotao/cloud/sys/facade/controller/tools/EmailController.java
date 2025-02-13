@@ -39,6 +39,7 @@
 //import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 //
 //import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 //import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
@@ -55,7 +56,7 @@
 //@RestController
 //@Tag(name = "工具管理端-邮件管理API", description = "工具管理端-邮件管理API")
 //@RequestMapping("/sys/tools/email")
-//public class EmailController {
+//public class EmailController extends BusinessController {
 //
 ////	private final RedisDelayQueue redisDelayQueue;
 ////	private final RedissonTemplate redissonTemplate;

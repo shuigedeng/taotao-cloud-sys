@@ -40,6 +40,7 @@
 //import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 //
 //import java.nio.charset.StandardCharsets;
 //import java.util.Map;
@@ -56,7 +57,7 @@
 //@RestController
 //@Tag(name = "工具管理端-支付宝管理API", description = "工具管理端-支付宝管理API")
 //@RequestMapping("/sys/tools/aliPay")
-//public class AliPayController {
+//public class AliPayController extends BusinessController {
 //
 //    private final AlipayUtils alipayUtils;
 //    private final IAlipayConfigService alipayService;

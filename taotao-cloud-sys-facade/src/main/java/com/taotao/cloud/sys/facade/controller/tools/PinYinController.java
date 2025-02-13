@@ -22,6 +22,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * PinYinController
@@ -35,7 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "工具管理端-拼音管理API", description = "工具管理端-拼音管理API")
 @RequestMapping("/sys/tools/pinyin")
-public class PinYinController {
+public class PinYinController extends BusinessController {
 
     private final PinYinService pinYinService;
 }

@@ -22,6 +22,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.taotao.boot.webagg.controller.BusinessController;
 
 /**
  * 管理端-岗位管理API
@@ -34,4 +35,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/position")
 @Tag(name = "管理端-岗位管理API", description = "管理端-岗位管理API")
-public class ManagerPositionController{}
+public class ManagerPositionController  extends BusinessController{}

@@ -16,19 +16,12 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.boot.common.model.Result;
-import com.taotao.boot.security.spring.annotation.NotAuth;
-import io.swagger.v3.oas.annotations.Operation;
+import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
 /**
  * 文件管理API
  *
@@ -41,7 +34,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/file/manager")
 @Tag(name = "文件管理API", description = "文件管理API")
-public class ManagerFileController {
+public class ManagerFileController extends BusinessController {
 
 //    private final IFileService fileService;
 ////
