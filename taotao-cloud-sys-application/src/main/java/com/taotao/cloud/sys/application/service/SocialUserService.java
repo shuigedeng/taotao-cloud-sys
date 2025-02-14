@@ -16,7 +16,6 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserPO;
 import org.springframework.stereotype.Service;
 
 /**
@@ -33,11 +32,11 @@ public class SocialUserService {
 	//        this.sysSocialUserRepository = sysSocialUserRepository;
 	//    }
 
-	public SocialUserPO findByUuidAndSource(String uuid, String source) {
-		//        return sysSocialUserRepository.findSysSocialUserByUuidAndSource(uuid, source);
-		return null;
-	}
-
-	public void saveAndFlush(SocialUserPO sysSocialUser) {
-	}
+//	public SocialUserPO findByUuidAndSource(String uuid, String source) {
+//		//        return sysSocialUserRepository.findSysSocialUserByUuidAndSource(uuid, source);
+//		return null;
+//	}
+//
+//	public void saveAndFlush(SocialUserPO sysSocialUser) {
+//	}
 }

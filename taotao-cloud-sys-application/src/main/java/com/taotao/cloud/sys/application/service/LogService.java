@@ -16,16 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.log.LogPO;
-import jakarta.servlet.http.HttpServletResponse;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.springframework.data.domain.Pageable;
-import org.springframework.scheduling.annotation.Async;
-
-import java.io.IOException;
-import java.util.List;
 
 /**
  * LogService

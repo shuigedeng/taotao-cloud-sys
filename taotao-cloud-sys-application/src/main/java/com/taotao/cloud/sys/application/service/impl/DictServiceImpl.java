@@ -18,12 +18,7 @@ package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.boot.common.enums.ResultEnum;
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.DictService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.DictRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IDictRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -109,19 +104,19 @@ public class DictServiceImpl
 //		return cr().saveAndFlush(dict);
 //	}
 
-	@Override
-	public DictPO findByCode(String code) {
-		// List<Dict> all = ir().findAll();
-		// List<Dict> all1 = cr().findAll();
-
-		Optional<DictPO> optionalDict = cr().findByCode(code);
-		return optionalDict.orElseThrow(() -> new BusinessException(ResultEnum.DICT_NOT_EXIST));
-		// return Dict.builder().id(2L).createBy(2L).createTime(LocalDateTime.now())
-		//	.dictCode("123123123").dictName("lsdfjaslf")
-		//	.remark("sdfasfd")
-		//	.description("sdflasjdfl")
-		//	.build();
-	}
+//	@Override
+//	public DictPO findByCode(String code) {
+//		// List<Dict> all = ir().findAll();
+//		// List<Dict> all1 = cr().findAll();
+//
+//		Optional<DictPO> optionalDict = cr().findByCode(code);
+//		return optionalDict.orElseThrow(() -> new BusinessException(ResultEnum.DICT_NOT_EXIST));
+//		// return Dict.builder().id(2L).createBy(2L).createTime(LocalDateTime.now())
+//		//	.dictCode("123123123").dictName("lsdfjaslf")
+//		//	.remark("sdfasfd")
+//		//	.description("sdflasjdfl")
+//		//	.build();
+//	}
 
 //	@Override
 //	@Async

@@ -16,36 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.taotao.boot.cache.redis.repository.RedisRepository;
-import com.taotao.boot.common.constant.RedisConstant;
-import com.taotao.boot.common.http.HttpRequest;
-import com.taotao.boot.common.utils.common.IdGeneratorUtils;
-import com.taotao.boot.common.utils.common.OrikaUtils;
-import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.common.utils.secure.SignUtils;
-import com.taotao.boot.core.configuration.OkhttpAutoConfiguration.OkHttpService;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.RegionService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.RegionMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.RegionRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IRegionRepository;
 import lombok.AllArgsConstructor;
-import org.dromara.hutool.core.collection.CollUtil;
-import org.dromara.hutool.core.text.StrUtil;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 /**
  * RegionServiceImpl

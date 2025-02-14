@@ -16,12 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.FileLogService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.FileLogMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.FileLogRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IFileLogRepository;
 import org.springframework.stereotype.Service;
 
 /**

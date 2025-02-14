@@ -16,19 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.cache.redis.repository.RedisRepository;
-import com.taotao.boot.common.constant.RedisConstant;
-import com.taotao.boot.sensitive.houbb.core.SensitiveWord;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.SensitiveWordService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.SensitiveWordMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.SensitiveWordRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.ISensitiveWordRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /** 敏感词业务层实现 */
 @Service

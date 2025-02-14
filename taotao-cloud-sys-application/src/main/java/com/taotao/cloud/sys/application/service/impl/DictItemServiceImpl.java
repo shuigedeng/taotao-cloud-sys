@@ -16,27 +16,8 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.querydsl.core.types.OrderSpecifier;
-import com.querydsl.core.types.dsl.BooleanExpression;
-import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.common.utils.bean.BeanUtils;
-import com.taotao.boot.translation.other.cache.TranslationCacheLocal.DictItem;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.application.dto.dictItem.query.DictItemPageQuery;
-import com.taotao.cloud.sys.application.dto.dictItem.query.DictItemQuery;
 import com.taotao.cloud.sys.application.service.DictItemService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictItemMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictItemPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.DictItemRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IDictItemRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * DictItemServiceImpl

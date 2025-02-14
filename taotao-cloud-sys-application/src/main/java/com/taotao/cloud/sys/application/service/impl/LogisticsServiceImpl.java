@@ -16,18 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.common.enums.ResultEnum;
-import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.LogisticsService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.LogisticsMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.LogisticsRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.ILogisticsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 /**
  * @author shuigedeng
@@ -39,10 +30,10 @@ import java.util.Optional;
 public class LogisticsServiceImpl
         implements LogisticsService {
 
-	@Override
-	public LogisticsConfigPO findLogisticsById(Long id) {
-		return null;
-	}
+//	@Override
+//	public LogisticsConfigPO findLogisticsById(Long id) {
+//		return null;
+//	}
 
 //    @Override
 //    public LogisticsConfig findLogisticsById(Long id) {

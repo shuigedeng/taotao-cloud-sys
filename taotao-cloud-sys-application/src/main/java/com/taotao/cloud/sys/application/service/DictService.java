@@ -17,14 +17,6 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.List;
-import java.util.concurrent.Future;
 
 /**
  * IDictService
@@ -105,7 +97,7 @@ public interface DictService extends CommandService {
      * @return {@link Dict }
      * @since 2021-10-09 20:25:30
      */
-    DictPO findByCode(String code);
+//    DictPO findByCode(String code);
 //
 //    Future<Dict> findAsyncByCode(String code);
 //

@@ -16,20 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.RoleService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.RoleMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.RoleRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IRoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 /**
  * RoleServiceImpl

@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.RoleResourceService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.RoleResourceMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RoleResourcePO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.RoleResourceRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IRoleResourceRepository;
-import java.util.Set;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Set;
 
 /**
  * @author shuigedeng

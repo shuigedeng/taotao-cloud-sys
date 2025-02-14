@@ -16,10 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.taotao.cloud.sys.application.service.EmailConfigService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.EmailConfigMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.EmailConfigPO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;

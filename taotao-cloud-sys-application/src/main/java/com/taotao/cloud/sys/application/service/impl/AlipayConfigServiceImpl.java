@@ -16,10 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.taotao.cloud.sys.application.service.AlipayConfigService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.AlipayConfigMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.AlipayConfigPO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;

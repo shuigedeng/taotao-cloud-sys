@@ -16,12 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.PositionService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.PositionMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.JobRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IJobRepository;
 import org.springframework.stereotype.Service;
 
 /**

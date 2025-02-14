@@ -16,18 +16,8 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeVO;
 import com.taotao.cloud.sys.application.service.DeptService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.DeptMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.DeptRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IDeptRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Objects;
 
 /**
  * DeptServiceImpl

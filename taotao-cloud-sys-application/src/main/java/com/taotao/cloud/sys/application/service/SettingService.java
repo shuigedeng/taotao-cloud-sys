@@ -17,8 +17,6 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.SettingPO;
 
 /**
  * ISettingService

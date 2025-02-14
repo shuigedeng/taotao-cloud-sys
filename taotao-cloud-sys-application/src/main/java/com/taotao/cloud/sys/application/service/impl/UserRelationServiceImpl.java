@@ -16,18 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
 import com.taotao.cloud.sys.application.service.UserRelationService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.UserRelationMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.UserRelationRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IUserRelationRepository;
-import org.dromara.hutool.core.collection.CollUtil;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Set;
 
 /**

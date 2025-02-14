@@ -16,15 +16,8 @@
 
 package com.taotao.cloud.sys.facade.controller.manager;
 
-import com.taotao.boot.common.model.PageResult;
-import com.taotao.boot.common.model.Result;
-import com.taotao.cloud.sys.application.dto.operate.cmmond.OperateLogDto;
-import com.taotao.cloud.sys.application.dto.operate.cmmond.OperateLogParam;
-import com.taotao.cloud.sys.application.service.OperateLogService;
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.taotao.boot.webagg.controller.BusinessController;

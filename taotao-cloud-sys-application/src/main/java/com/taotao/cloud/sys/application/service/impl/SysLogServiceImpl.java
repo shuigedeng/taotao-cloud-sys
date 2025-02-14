@@ -16,7 +16,6 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.taotao.cloud.sys.application.service.SysLogService;
 import org.springframework.stereotype.Service;
 

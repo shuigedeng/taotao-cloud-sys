@@ -16,9 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.VisitsPO;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.scheduling.annotation.Async;
 

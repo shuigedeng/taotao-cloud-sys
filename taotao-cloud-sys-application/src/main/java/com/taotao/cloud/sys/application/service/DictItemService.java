@@ -17,12 +17,6 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.boot.webagg.service.BaseSuperService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictItemPO;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
-import java.util.List;
 
 /**
  * IDictItemService

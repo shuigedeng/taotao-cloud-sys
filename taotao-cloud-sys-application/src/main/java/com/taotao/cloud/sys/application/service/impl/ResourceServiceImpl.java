@@ -16,24 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.taotao.boot.common.constant.CommonConstant;
-import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.api.dubbo.request.MenuQueryRpcRequest;
 import com.taotao.cloud.sys.application.service.ResourceService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.ResourceMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.ResourceRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IResourceRepository;
 import lombok.AllArgsConstructor;
-import org.dromara.hutool.core.collection.CollUtil;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * MenuServiceImpl

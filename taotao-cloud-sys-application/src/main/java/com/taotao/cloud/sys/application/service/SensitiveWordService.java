@@ -16,9 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
 
 /**
  * 敏感词业务层
@@ -29,10 +27,10 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.Sens
  */
 public interface SensitiveWordService extends CommandService {
 
-    /**
-     * 重新写入缓存
-     *
-     * @since 2022-03-25 14:33:25
-     */
-    void resetCache();
+	/**
+	 * 重新写入缓存
+	 *
+	 * @since 2022-03-25 14:33:25
+	 */
+	void resetCache();
 }
