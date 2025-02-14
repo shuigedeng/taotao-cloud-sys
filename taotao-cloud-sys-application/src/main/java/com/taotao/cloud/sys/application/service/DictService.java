@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import org.springframework.data.domain.Page;
@@ -32,7 +33,7 @@ import java.util.concurrent.Future;
  * @version 2021.10
  * @since 2021-10-09 20:32:36
  */
-public interface DictService extends BaseSuperService<DictPO, Long> {
+public interface DictService extends CommandService {
 
 //    /**
 //     * 添加字典

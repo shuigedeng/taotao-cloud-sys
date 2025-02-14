@@ -33,5 +33,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PositionServiceImpl
-        extends BaseSuperServiceImpl<PositionPO, Long, PositionMapper, JobRepository, IJobRepository>
         implements PositionService {}

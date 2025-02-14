@@ -16,6 +16,8 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
+
 /**
  * 拼音转化接口
  *
@@ -23,7 +25,7 @@ package com.taotao.cloud.sys.application.service;
  * @version 2022.03
  * @since 2022-03-23 08:59:36
  */
-public interface PinYinService {
+public interface PinYinService extends CommandService {
 
     /**
      * 获取姓氏的首字母大写

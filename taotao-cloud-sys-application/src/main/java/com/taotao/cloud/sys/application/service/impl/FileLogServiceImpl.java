@@ -32,7 +32,7 @@ import org.springframework.stereotype.Service;
  * @since 2020/11/12 17:43
  */
 @Service
-public class FileLogServiceImpl extends BaseSuperServiceImpl<FileLogPO, Long, FileLogMapper, FileLogRepository, IFileLogRepository>
+public class FileLogServiceImpl
         implements FileLogService {
 
 }

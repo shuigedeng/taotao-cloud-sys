@@ -45,7 +45,6 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class ResourceServiceImpl
-	extends BaseSuperServiceImpl<ResourcePO, Long, ResourceMapper, ResourceRepository, IResourceRepository>
 	implements ResourceService {
 
 //	private final IRoleService roleService;

@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictItemPO;
 import org.springframework.data.domain.Page;
@@ -30,7 +31,7 @@ import java.util.List;
  * @version 2021.10
  * @since 2021-10-09 20:32:47
  */
-public interface DictItemService extends BaseSuperService<DictItemPO, Long> {
+public interface DictItemService extends CommandService {
 
     /**
      * 根据字典id删除字典项

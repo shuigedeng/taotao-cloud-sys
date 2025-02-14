@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
 
 /**
@@ -25,7 +26,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.Logisti
  * @version 2022.03
  * @since 2022-03-25 14:58:48
  */
-public interface LogisticsService {
+public interface LogisticsService extends CommandService {
 
     /**
      * 根据id查询物流公司信息

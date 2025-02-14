@@ -32,7 +32,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 // @CacheConfig(cacheNames = "alipayConfig")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class AlipayConfigServiceImpl extends ServiceImpl<AlipayConfigMapper, AlipayConfigPO>
+public class AlipayConfigServiceImpl
 	implements AlipayConfigService {
 
 //	@Override

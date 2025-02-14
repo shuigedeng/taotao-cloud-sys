@@ -1,4 +1,4 @@
 package com.taotao.cloud.sys.application.executor.resource.query;
 
-public class UserPageQry {
+public class ResourcePageQry {
 }

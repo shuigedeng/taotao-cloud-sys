@@ -37,7 +37,7 @@ import java.util.Objects;
  * @since 1.0
  */
 @Service
-public class DeptServiceImpl extends BaseSuperServiceImpl<DeptPO, Long, DeptMapper, DeptRepository, IDeptRepository>
+public class DeptServiceImpl
 	implements DeptService {
 
 //	@Override

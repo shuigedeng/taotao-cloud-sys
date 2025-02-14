@@ -16,31 +16,10 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import cn.hutool.crypto.SecureUtil;
-import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
-import cn.hutool.crypto.symmetric.SymmetricCrypto;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.taotao.boot.common.enums.ResultEnum;
-import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.webagg.service.impl.BaseSuperServiceImpl;
-import com.taotao.cloud.sys.application.dto.user.cmmond.RestPasswordUserDTO;
 import com.taotao.cloud.sys.application.service.UserService;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.UserMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.cls.UserRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.inf.IUserRepository;
 import lombok.AllArgsConstructor;
-import org.dromara.hutool.core.text.StrUtil;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
 /**
  * UserServiceImpl
  *
@@ -50,7 +29,7 @@ import java.util.Set;
  */
 @Service
 @AllArgsConstructor
-public class UserServiceImpl extends BaseSuperServiceImpl<UserPO, Long, UserMapper, UserRepository, IUserRepository>
+public class UserServiceImpl
 	implements UserService {
 
 //	private static final QUser USER = QUser.user;

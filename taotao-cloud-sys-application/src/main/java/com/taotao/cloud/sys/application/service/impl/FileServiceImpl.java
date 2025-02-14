@@ -42,7 +42,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @Service
-public class FileServiceImpl extends BaseSuperServiceImpl<FilePO, Long, FileMapper, FileRepository, IFileRepository>
+public class FileServiceImpl
         implements FileService {
 //
 ////    @Autowired

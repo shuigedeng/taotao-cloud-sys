@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
@@ -28,7 +29,7 @@ import java.util.Set;
  * @version 2022.03
  * @since 2022-03-25 14:33:42
  */
-public interface UserRelationService extends BaseSuperService<UserRelationPO, Long> {
+public interface UserRelationService extends CommandService {
 
     /**
      * 添加用户-角色对应关系

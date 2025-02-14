@@ -17,13 +17,14 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.common.model.PageResult;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * 登陆日志
  * @author shuigedeng
  * @since 2021/12/2
  */
-public interface LoginLogService {
+public interface LoginLogService extends CommandService {
 
 //    /**
 //     * 添加

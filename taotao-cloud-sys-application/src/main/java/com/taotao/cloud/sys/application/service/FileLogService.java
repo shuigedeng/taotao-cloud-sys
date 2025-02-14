@@ -16,6 +16,8 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
+
 /**
  * 文件服务信息
  *
@@ -23,7 +25,7 @@ package com.taotao.cloud.sys.application.service;
  * @version 2022.03
  * @since 2020/11/12 21:26
  */
-public interface FileLogService {
+public interface FileLogService extends CommandService {
 
 
 }

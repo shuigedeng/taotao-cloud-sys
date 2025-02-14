@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RoleResourcePO;
@@ -28,7 +29,7 @@ import java.util.Set;
  * @version 2022.03
  * @since 2022-03-25 15:01:39
  */
-public interface RoleResourceService extends BaseSuperService<RoleResourcePO, Long> {
+public interface RoleResourceService extends CommandService {
 
     /**
      * 添加角色-菜单对应关系

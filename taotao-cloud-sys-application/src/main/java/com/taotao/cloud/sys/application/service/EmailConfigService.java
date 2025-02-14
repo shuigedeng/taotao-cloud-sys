@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.EmailConfigPO;
 import org.springframework.scheduling.annotation.Async;
 
@@ -27,7 +28,7 @@ import org.springframework.scheduling.annotation.Async;
  * @version 2022.03
  * @since 2022-03-25 14:25:28
  */
-public interface EmailConfigService extends CommandService<EmailConfigPO> {
+public interface EmailConfigService extends CommandService {
 
 //    /**
 //     * 更新邮件配置

@@ -16,14 +16,14 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.taotao.boot.common.model.PageResult;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * 数据版本日志
  * @author shuigedeng
  * @since 2022/1/10
  */
-public interface DataVersionLogService {
+public interface DataVersionLogService extends CommandService {
 //    /**
 //     * 添加
 //     */

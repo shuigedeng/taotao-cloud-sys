@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.VisitsPO;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.scheduling.annotation.Async;
@@ -28,7 +29,7 @@ import org.springframework.scheduling.annotation.Async;
  * @version 2021.10
  * @since 2022-02-11 16:22:47
  */
-public interface IVisitsService extends CommandService<VisitsPO> {
+public interface IVisitsService extends CommandService {
 
     /** 提供给定时任务，每天0点执行 */
     void save();

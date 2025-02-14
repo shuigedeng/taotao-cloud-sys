@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ import java.util.List;
  * @author
  * @since 2022-09-12
  */
-public interface AppService {
+public interface AppService extends CommandService {
 
 //    /** 添加 */
 //    Boolean addApp(AppDTO appDTO);

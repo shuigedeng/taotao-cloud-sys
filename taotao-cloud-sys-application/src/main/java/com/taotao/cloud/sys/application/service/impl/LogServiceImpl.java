@@ -51,7 +51,7 @@ import java.util.Map;
  */
 @Service
 @AllArgsConstructor
-public class LogServiceImpl extends ServiceImpl<LogMapper, LogPO> implements LogService {
+public class LogServiceImpl  implements LogService {
 
 //    @Override
 //    public Object findAllByPageable(String nickname, Pageable pageable) {

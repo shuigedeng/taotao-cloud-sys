@@ -16,6 +16,8 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
+
 /**
  * ISystemService
  *
@@ -23,4 +25,4 @@ package com.taotao.cloud.sys.application.service;
  * @version 2021.10
  * @since 2022-03-03 14:34:17
  */
-public interface SystemService {}
+public interface SystemService extends CommandService {}

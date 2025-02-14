@@ -47,7 +47,6 @@ import java.util.Optional;
  */
 @Service
 public class DictItemServiceImpl
-        extends BaseSuperServiceImpl<DictItemPO, Long, DictItemMapper, DictItemRepository, IDictItemRepository>
         implements DictItemService {
 
 	@Override

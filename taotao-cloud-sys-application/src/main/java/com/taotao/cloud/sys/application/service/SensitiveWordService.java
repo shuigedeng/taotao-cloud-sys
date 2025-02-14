@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
 
 /**
@@ -26,7 +27,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.Sens
  * @version 2022.03
  * @since 2022-03-25 14:33:20
  */
-public interface SensitiveWordService extends CommandService<SensitiveWordPO> {
+public interface SensitiveWordService extends CommandService {
 
     /**
      * 重新写入缓存

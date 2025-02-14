@@ -38,7 +38,7 @@ import java.util.Optional;
  */
 @AllArgsConstructor
 @Service
-public class DictServiceImpl extends BaseSuperServiceImpl<DictPO, Long, DictMapper, DictRepository, IDictRepository>
+public class DictServiceImpl
 	implements DictService {
 
 //

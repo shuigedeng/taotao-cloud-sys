@@ -33,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 // @CacheConfig(cacheNames = "emailConfig")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class EmailConfigServiceImpl extends ServiceImpl<EmailConfigMapper, EmailConfigPO>
+public class EmailConfigServiceImpl
         implements EmailConfigService {
 
 //    // private final IGenerator generator;

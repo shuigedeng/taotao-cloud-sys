@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.log.LogPO;
 import jakarta.servlet.http.HttpServletResponse;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -33,7 +34,7 @@ import java.util.List;
  * @version 2021.10
  * @since 2022-02-15 09:19:55
  */
-public interface LogService extends CommandService<LogPO> {
+public interface LogService extends CommandService {
 
 //    /**
 //     * 分页获取日志数据

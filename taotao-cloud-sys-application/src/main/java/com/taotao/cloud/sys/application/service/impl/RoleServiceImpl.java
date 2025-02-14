@@ -40,7 +40,7 @@ import java.util.Set;
  */
 @Service
 @AllArgsConstructor
-public class RoleServiceImpl extends BaseSuperServiceImpl<RolePO, Long, RoleMapper, RoleRepository, IRoleRepository>
+public class RoleServiceImpl
         implements RoleService {
 
 //    private static final QRole SYS_ROLE = QRole.role;

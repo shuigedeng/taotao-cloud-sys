@@ -34,8 +34,6 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class RoleResourceServiceImpl
-	extends BaseSuperServiceImpl<
-	RoleResourcePO, Long, RoleResourceMapper, RoleResourceRepository, IRoleResourceRepository>
 	implements RoleResourceService {
 
 	@Override

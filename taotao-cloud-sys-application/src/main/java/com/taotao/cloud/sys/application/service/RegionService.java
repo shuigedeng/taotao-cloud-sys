@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
@@ -29,7 +30,7 @@ import java.util.Map;
  * @version 2022.08
  * @since 2022-08-10 10:24:46
  */
-public interface RegionService extends BaseSuperService<RegionPO, Long> {
+public interface RegionService extends CommandService {
 //
 //    /**
 //     * queryRegionByParentId

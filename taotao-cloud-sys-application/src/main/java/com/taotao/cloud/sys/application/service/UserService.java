@@ -16,11 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.taotao.boot.webagg.service.BaseSuperService;
-
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
-import java.util.List;
-import java.util.Set;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * ISysUserService
@@ -29,7 +25,7 @@ import java.util.Set;
  * @version 2023.01
  * @since 2023-02-15 14:43:45
  */
-public interface UserService extends BaseSuperService<UserPO, Long> {
+public interface UserService extends CommandService {
 
 //    /**
 //     * 保存用户

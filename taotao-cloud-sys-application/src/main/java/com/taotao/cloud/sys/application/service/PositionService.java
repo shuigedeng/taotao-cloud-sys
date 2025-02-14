@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
 
@@ -26,4 +27,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.Positio
  * @since 2020-10-16 16:23:05
  * @since 1.0
  */
-public interface PositionService extends BaseSuperService<PositionPO, Long> {}
+public interface PositionService extends CommandService {}

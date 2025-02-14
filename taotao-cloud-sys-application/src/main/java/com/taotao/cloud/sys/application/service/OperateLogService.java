@@ -17,13 +17,14 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.common.model.PageResult;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * 操作日志
  * @author shuigedeng
  * @since 2021/8/12
  */
-public interface OperateLogService {
+public interface OperateLogService extends CommandService {
 
 //    /**
 //     * 添加

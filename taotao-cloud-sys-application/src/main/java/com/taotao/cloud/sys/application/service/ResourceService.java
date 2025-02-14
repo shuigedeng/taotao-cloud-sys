@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 import com.taotao.cloud.sys.api.dubbo.request.MenuQueryRpcRequest;
 
@@ -30,7 +31,7 @@ import java.util.Set;
  * @version 2021.10
  * @since 2021-10-09 20:38:19
  */
-public interface ResourceService extends BaseSuperService<ResourcePO, Long> {
+public interface ResourceService extends CommandService {
 
 //    /**
 //     * 查询所有菜单列表

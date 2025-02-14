@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2020/11/12 21:26
  */
-public interface FileService {
+public interface FileService extends CommandService {
 
 //	/**
 //	 * 上传文件

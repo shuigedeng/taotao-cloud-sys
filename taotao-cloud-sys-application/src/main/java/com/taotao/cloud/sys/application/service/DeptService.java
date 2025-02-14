@@ -16,10 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.taotao.boot.webagg.service.BaseSuperService;
-
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
-import java.util.List;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * 后台部门表服务接口
@@ -28,7 +25,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-25 14:24:48
  */
-public interface DeptService extends BaseSuperService<DeptPO, Long> {
+public interface DeptService extends CommandService {
 
     /**
      * 获取部门树

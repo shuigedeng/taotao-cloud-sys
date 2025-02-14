@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.boot.webagg.service.BaseSuperService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.SettingPO;
 
@@ -26,7 +27,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.setting.Settin
  * @version v1.0
  * @since 2022/03/10 10:31
  */
-public interface SettingService extends BaseSuperService<SettingPO, Long> {
+public interface SettingService extends CommandService {
 
 //    /**
 //     * 通过key获取

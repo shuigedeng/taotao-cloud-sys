@@ -34,8 +34,6 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class SensitiveWordServiceImpl
-        extends BaseSuperServiceImpl<
-	SensitiveWordPO, Long, SensitiveWordMapper, SensitiveWordRepository, ISensitiveWordRepository>
         implements SensitiveWordService {
 
 	@Override

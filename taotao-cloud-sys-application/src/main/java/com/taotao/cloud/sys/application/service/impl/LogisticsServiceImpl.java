@@ -37,7 +37,6 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class LogisticsServiceImpl
-        extends BaseSuperServiceImpl<LogisticsConfigPO, Long, LogisticsMapper, LogisticsRepository, ILogisticsRepository>
         implements LogisticsService {
 
 	@Override

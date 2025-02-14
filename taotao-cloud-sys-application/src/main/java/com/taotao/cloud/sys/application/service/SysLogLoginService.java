@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * @program: logs
@@ -24,4 +25,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author: Sinda
  * @create: 2022-03-19 20:42:34
  */
-public interface SysLogLoginService  {}
+public interface SysLogLoginService  extends CommandService {}

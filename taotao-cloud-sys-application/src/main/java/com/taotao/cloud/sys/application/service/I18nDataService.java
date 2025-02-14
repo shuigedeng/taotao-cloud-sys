@@ -5,13 +5,14 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.taotao.boot.common.model.PageQuery;
 
+import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.i18n.I18nDataPO;
 import java.util.List;
 
 /**
  * 国际化信息
  */
-public interface I18nDataService extends CommandService<I18nDataPO> {
+public interface I18nDataService extends CommandService {
 
 //	/**
 //	 * 根据QueryObeject查询分页数据

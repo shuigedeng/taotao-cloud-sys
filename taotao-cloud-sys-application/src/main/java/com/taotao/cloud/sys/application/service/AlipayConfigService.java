@@ -16,8 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.AlipayConfigPO;
+import com.taotao.boot.ddd.model.application.service.CommandService;
 
 /**
  * ali支付配置服务
@@ -26,7 +25,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.AlipayC
  * @version 2022.03
  * @since 2022-03-25 14:24:04
  */
-public interface AlipayConfigService extends CommandService<AlipayConfigPO> {
+public interface AlipayConfigService extends CommandService {
 //
 //    /**
 //     * 处理来自PC的交易请求

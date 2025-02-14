@@ -57,7 +57,6 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class RegionServiceImpl
-	extends BaseSuperServiceImpl<RegionPO, Long, RegionMapper, RegionRepository, IRegionRepository>
 	implements RegionService {
 
 //	private final OkHttpService okHttpService;

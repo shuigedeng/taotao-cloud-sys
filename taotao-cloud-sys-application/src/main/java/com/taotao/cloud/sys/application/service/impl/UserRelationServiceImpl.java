@@ -37,8 +37,6 @@ import java.util.Set;
  */
 @Service
 public class UserRelationServiceImpl
-	extends BaseSuperServiceImpl<
-	UserRelationPO, Long, UserRelationMapper, UserRelationRepository, IUserRelationRepository>
 	implements UserRelationService {
 
 	@Override
