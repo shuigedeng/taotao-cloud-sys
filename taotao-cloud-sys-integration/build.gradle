@@ -4,7 +4,7 @@
  * 本层调用外部服务，转换外部DTO成为本项目可以理解对象。
  */
 dependencies {
-    api project(":taotao-cloud-sys-common")
+    api project(":taotao-cloud-sys-application")
 
     api "io.github.shuigedeng:taotao-cloud-starter-alibaba"
 

@@ -16,6 +16,7 @@
 
 dependencies {
     api project(":taotao-cloud-sys-application")
+    api project(":taotao-cloud-sys-domain")
 
     annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
     api "com.querydsl:querydsl-jpa:5.1.0:jakarta"
