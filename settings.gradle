@@ -113,7 +113,7 @@ include "taotao-cloud-sys-common"
 include "taotao-cloud-sys-domain"
 include "taotao-cloud-sys-facade"
 include "taotao-cloud-sys-infrastructure"
-include "taotao-cloud-sys-integration"
+include "taotao-cloud-sys-interfaces"
 
 
 gradle.settingsEvaluated {
