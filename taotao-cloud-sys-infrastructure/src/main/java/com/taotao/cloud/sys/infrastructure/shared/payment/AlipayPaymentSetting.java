@@ -16,11 +16,13 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.payment;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /** 支付宝支付设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 public class AlipayPaymentSetting {
 

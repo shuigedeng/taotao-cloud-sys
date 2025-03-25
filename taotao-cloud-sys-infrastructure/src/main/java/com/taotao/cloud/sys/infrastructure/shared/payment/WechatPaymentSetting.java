@@ -16,11 +16,13 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.payment;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /** 微信支付设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 public class WechatPaymentSetting {
 

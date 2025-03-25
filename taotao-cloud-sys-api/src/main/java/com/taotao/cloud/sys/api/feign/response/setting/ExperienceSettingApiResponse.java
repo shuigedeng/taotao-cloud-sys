@@ -20,12 +20,14 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /** 经验值设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

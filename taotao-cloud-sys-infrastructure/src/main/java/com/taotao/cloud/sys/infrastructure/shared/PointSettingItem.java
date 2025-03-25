@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 积分签到设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class PointSettingItem implements Comparable<PointSettingItem>, Serializable {
 
     /** 签到天数 */

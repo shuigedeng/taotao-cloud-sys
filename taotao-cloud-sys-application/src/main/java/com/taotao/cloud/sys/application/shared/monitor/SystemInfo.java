@@ -1,11 +1,13 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
-import lombok.Data;
+import lombok.*;
 
 /**
  * 系统相关信息
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class SystemInfo {
 
     /**

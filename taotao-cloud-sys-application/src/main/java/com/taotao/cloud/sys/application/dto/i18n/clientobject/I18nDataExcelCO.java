@@ -2,12 +2,14 @@ package com.taotao.cloud.sys.application.dto.i18n.clientobject;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
 /**
  * 国际化信息Excel映射对象
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "国际化信息Excel映射对象")
 public class I18nDataExcelCO {
 

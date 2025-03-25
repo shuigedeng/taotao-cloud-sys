@@ -16,10 +16,12 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.connect;
 
-import lombok.Data;
+import lombok.*;
 
 /** QQ联合登录具体配置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class QQConnectSettingItem {
 
     private String clientType;

@@ -18,10 +18,12 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
-import lombok.Data;
+import lombok.*;
 
 /** 基础设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class BaseSettingApiResponse implements Serializable {
 
     private static final long serialVersionUID = -3138023944444671722L;

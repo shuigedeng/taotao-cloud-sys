@@ -5,14 +5,16 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 /**
  * 国际化信息传输对象
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "国际化信息传输对象")
 public class I18nDataCreateCmd {
 
@@ -43,7 +45,9 @@ public class I18nDataCreateCmd {
 	/**
 	 * 语言文本
 	 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	@Schema(title = "语言文本信息")
 	public static class LanguageText {
 

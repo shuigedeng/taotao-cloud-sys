@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.dto.dataVersion.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
@@ -27,7 +27,9 @@ import java.time.LocalDateTime;
  * @author shuigedeng
  * @since 2022/1/10
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 @Schema(title = "数据版本日志")
 public class DataVersionLogAddCmd {

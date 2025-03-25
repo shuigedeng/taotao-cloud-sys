@@ -22,7 +22,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -37,7 +37,9 @@ import java.util.List;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor

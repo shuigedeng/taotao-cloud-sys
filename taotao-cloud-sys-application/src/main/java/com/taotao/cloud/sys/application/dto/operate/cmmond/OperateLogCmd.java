@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.dto.operate.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
@@ -30,7 +30,9 @@ import java.time.LocalDateTime;
  * @since 2021/8/12
  */
 @EqualsAndHashCode(callSuper = false)
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 public class OperateLogCmd {
 

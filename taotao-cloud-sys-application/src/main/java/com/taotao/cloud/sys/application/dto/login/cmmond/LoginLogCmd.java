@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.dto.login.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -28,7 +28,9 @@ import java.time.LocalDateTime;
  * @author shuigedeng
  * @since 2021/8/12
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 @Schema(title = "登录日志")
 public class LoginLogCmd implements Serializable {

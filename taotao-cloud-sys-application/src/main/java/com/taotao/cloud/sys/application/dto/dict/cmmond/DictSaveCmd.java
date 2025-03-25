@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -35,7 +35,9 @@ import java.io.Serializable;
  * @version 2022.03
  * @since 2022-03-23 08:50:33
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor

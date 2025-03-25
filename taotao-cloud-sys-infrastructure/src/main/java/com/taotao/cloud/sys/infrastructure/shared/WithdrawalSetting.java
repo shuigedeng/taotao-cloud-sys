@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 提现配置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class WithdrawalSetting implements Serializable {
 
     private static final long serialVersionUID = -3872782530832122976L;

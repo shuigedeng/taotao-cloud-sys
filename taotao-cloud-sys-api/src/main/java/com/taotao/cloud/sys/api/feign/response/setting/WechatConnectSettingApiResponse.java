@@ -18,12 +18,14 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /** 微信设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -33,7 +35,9 @@ public class WechatConnectSettingApiResponse {
     List<WechatConnectSettingItemVO> wechatConnectSettingItemVOS;
 
 	/** 微信设置 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	public static class WechatConnectSettingItemVO {
 
 		/**

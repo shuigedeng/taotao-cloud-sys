@@ -1,14 +1,16 @@
 package com.taotao.cloud.sys.application.dto.i18n.clientobject;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 /**
  * 国际化信息分页视图对象
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "国际化信息分页视图对象")
 public class I18nDataPageCO {
 

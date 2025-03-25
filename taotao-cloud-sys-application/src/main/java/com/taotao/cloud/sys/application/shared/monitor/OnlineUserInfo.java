@@ -1,11 +1,13 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
-import lombok.Data;
+import lombok.*;
 
 /**
  * 当前在线会话
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class OnlineUserInfo {
 
     /**

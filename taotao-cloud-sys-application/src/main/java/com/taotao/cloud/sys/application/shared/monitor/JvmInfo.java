@@ -2,7 +2,7 @@ package com.taotao.cloud.sys.application.shared.monitor;
 
 import cn.hutool.core.date.DatePattern;
 import com.taotao.boot.common.constant.CommonConstant;
-import lombok.Data;
+import lombok.*;
 import org.dromara.hutool.core.date.DateUtil;
 import org.dromara.hutool.core.math.NumberUtil;
 
@@ -12,7 +12,9 @@ import java.math.BigDecimal;
 /**
  * JVM相关信息
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class JvmInfo {
 
     /**

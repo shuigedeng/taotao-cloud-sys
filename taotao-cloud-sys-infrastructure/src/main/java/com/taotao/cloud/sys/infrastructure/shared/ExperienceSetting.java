@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 经验值设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class ExperienceSetting implements Serializable {
 
     private static final long serialVersionUID = -4261856614779031745L;

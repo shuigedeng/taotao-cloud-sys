@@ -20,7 +20,7 @@ import com.taotao.boot.common.tree.INode;
 import com.taotao.boot.common.tree.MapperNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -37,7 +37,9 @@ import java.util.List;
  * @since 2021-12-22 20:59:37
  */
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

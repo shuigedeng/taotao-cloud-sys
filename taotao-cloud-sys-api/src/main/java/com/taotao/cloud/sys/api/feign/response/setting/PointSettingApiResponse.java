@@ -20,14 +20,16 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
  * 积分设置
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
@@ -99,7 +101,9 @@ public class PointSettingApiResponse implements Serializable {
 	/**
 	 * 积分签到设置
 	 */
-	@Data
+	@Setter
+@Getter
+@ToString
 	public static class PointSettingItemVO implements
 		Comparable<PointSettingItemVO>,
 		Serializable {

@@ -16,11 +16,13 @@
 
 package com.taotao.cloud.sys.infrastructure.dataparam;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class DeptParams {
 
     private List<Long> ids;

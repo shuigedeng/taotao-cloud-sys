@@ -1,6 +1,6 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
-import lombok.Data;
+import lombok.*;
 import org.dromara.hutool.core.math.NumberUtil;
 
 import java.math.BigDecimal;
@@ -8,7 +8,9 @@ import java.math.BigDecimal;
 /**
  * CPU相关信息
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class CpuInfo {
 
     /**

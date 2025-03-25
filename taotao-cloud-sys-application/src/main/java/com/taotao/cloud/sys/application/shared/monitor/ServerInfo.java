@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
 import com.taotao.boot.common.constant.CommonConstant;
-import lombok.Data;
+import lombok.*;
 import org.dromara.hutool.core.math.NumberUtil;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.CentralProcessor.TickType;
@@ -21,7 +21,9 @@ import java.util.Properties;
  * 服务器相关信息
  *
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class ServerInfo {
 
     private static final int OSHI_WAIT_SECOND = 1000;

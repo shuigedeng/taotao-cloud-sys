@@ -2,7 +2,9 @@ package com.taotao.cloud.sys.infrastructure.utils;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.Serializable;
@@ -95,7 +97,9 @@ public class TreeOtherUtils {
 	}
 
 
-	@Data
+	@Setter
+	@Getter
+	@ToString
 	public class RegionCascadeVO {
 		/**
 		 * 子节点 list 集合
@@ -144,7 +148,9 @@ public class TreeOtherUtils {
 	}
 
 
-	@Data
+	@Setter
+	@Getter
+	@ToString
 	public class PmTenant {
 		/**
 		 * 主键Id
@@ -169,7 +175,9 @@ public class TreeOtherUtils {
 		private Integer status;
 	}
 
-	@Data
+	@Setter
+	@Getter
+	@ToString
 	public class PmDept {
 		/**
 		 * 主键id
@@ -214,7 +222,9 @@ public class TreeOtherUtils {
 		}
 	}
 
-	@Data
+	@Setter
+	@Getter
+	@ToString
 	public class DeptTreeNodeVO implements Serializable {
 		/**
 		 * 子节点 list 集合，封装自己

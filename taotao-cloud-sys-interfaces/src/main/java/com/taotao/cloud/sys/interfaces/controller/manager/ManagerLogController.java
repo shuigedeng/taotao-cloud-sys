@@ -130,7 +130,9 @@ public class ManagerLogController extends BusinessController {
 //
 //    @PostMapping(value = "/testUpdate")
 //    @NotAuth
-//    @DataAuditLogging
+//    @Setter
+//@Getter
+//@ToStringAuditLogging
 //    public Result<Boolean> testUpdate(@RequestBody Log log) {
 //        boolean save = logService.updateById(log);
 //        return Result.success(save);

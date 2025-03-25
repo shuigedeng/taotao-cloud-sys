@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.application.dto.operate.cmmond;
 
 import com.taotao.boot.common.model.PageQuery;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
@@ -30,7 +30,9 @@ import java.time.LocalDateTime;
  * @since 2021/8/12
  */
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 @Schema(description = "操作日志")
 public class OperateLogAddCmd extends PageQuery {

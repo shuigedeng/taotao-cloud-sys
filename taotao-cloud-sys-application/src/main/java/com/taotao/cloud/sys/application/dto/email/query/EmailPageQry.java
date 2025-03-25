@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.application.dto.email.query;
 
 import com.taotao.boot.common.model.PageQuery;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -32,7 +32,9 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-22 09:25:30
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor

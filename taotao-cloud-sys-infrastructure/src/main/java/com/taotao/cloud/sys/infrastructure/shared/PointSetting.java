@@ -16,14 +16,16 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /** 积分设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class PointSetting implements Serializable {
 
     private static final long serialVersionUID = -4261856614779031745L;

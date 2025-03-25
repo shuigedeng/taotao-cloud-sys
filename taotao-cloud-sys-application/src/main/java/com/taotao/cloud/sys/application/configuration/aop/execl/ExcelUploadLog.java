@@ -16,11 +16,13 @@
 
 package com.taotao.cloud.sys.application.configuration.aop.execl;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class ExcelUploadLog {
     private Integer id;
     // 唯一编码

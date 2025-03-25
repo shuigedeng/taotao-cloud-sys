@@ -17,14 +17,16 @@
 package com.taotao.cloud.sys.infrastructure.shared.payment;
 
 import com.taotao.boot.common.enums.ClientTypeEnum;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /** 支持的支付方式表单 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 public class PaymentSupportForm {
 

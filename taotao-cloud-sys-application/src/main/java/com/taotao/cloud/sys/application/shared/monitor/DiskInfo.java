@@ -1,13 +1,15 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 /**
  * 系统文件相关信息
  */
-@Data
+@Setter
+@Getter
+@ToString
 public class DiskInfo {
 
     /**

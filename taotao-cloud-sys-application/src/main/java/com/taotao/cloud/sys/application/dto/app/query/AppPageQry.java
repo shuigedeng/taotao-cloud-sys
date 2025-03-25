@@ -22,14 +22,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(title = "系统应用分页查询")

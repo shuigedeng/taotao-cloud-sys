@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.application.dto.dataVersion.query;
 
 import com.taotao.boot.common.model.PageQuery;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
@@ -27,7 +27,9 @@ import lombok.experimental.Accessors;
  * @since 2022/1/10
  */
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(chain = true)
 @Schema(title = "数据版本日志")
 public class DataVersionQry extends PageQuery {

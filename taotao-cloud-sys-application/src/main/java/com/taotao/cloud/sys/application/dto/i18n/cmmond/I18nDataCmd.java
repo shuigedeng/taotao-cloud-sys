@@ -1,12 +1,14 @@
 package com.taotao.cloud.sys.application.dto.i18n.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
+import lombok.*;
 
 /**
  * 国际化信息传输对象
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Schema(title = "国际化信息传输对象")
 public class I18nDataCmd {
 

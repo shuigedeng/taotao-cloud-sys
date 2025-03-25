@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 快递设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class KuaidiSetting implements Serializable {
     private static final long serialVersionUID = 3520379500723173689L;
     /** 企业id */

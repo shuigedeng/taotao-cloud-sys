@@ -40,9 +40,9 @@ import java.util.Objects;
  * @version 2021.10
  * @since 2022-02-15 09:25:26
  */
-@DataVersionLog(title = "系统日志变更数据")
-@Getter
 @Setter
+@Getter
+@DataVersionLog(title = "系统日志变更数据")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)

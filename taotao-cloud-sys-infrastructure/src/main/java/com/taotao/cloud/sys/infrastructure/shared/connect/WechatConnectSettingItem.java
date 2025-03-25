@@ -16,10 +16,12 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.connect;
 
-import lombok.Data;
+import lombok.*;
 
 /** 微信设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class WechatConnectSettingItem {
 
     /**

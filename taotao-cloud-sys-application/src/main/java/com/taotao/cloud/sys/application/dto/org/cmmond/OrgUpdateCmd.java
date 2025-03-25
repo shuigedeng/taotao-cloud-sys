@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.application.dto.org.cmmond;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -34,7 +34,9 @@ import java.io.Serializable;
  * @version 2021.10
  * @since 2021-10-09 16:31:52
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @EqualsAndHashCode
 @AllArgsConstructor

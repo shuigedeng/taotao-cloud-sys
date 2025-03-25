@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 分销配置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class DistributionSetting implements Serializable {
 
     private static final long serialVersionUID = 2099524659914361438L;

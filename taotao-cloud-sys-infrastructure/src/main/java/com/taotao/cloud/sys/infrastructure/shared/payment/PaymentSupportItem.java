@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.payment;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 /** 支持的支付方式属性 */
-@Data
+@Setter
+@Getter
+@ToString
 public class PaymentSupportItem {
 
     /** 客户端 h5/app/小程序/pc */

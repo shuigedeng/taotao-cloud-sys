@@ -16,9 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.dict.query;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
+@ToString
 public class DictQry {
 
     private Long dictId;

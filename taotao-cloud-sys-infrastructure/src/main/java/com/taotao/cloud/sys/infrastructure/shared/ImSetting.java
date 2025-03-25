@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** IM设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class ImSetting implements Serializable {
 
     /** 平台地址 */

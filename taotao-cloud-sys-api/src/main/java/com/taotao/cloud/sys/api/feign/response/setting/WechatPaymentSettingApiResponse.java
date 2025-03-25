@@ -17,12 +17,14 @@
 package com.taotao.cloud.sys.api.feign.response.setting;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /** 微信支付设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

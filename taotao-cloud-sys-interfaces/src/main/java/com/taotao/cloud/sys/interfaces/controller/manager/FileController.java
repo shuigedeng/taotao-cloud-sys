@@ -231,7 +231,9 @@ public class FileController extends BusinessController {
 ////        return Result.success(new PageResult<Integer>());
 ////    }
 //
-//    @Data
+//    @Setter
+//@Getter
+//@ToString
 //    @Schema(description = "Page参数")
 //    public static class Page {
 //        @Schema(name = "pageSize", type = "integer", description = "当前页", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -241,7 +243,9 @@ public class FileController extends BusinessController {
 //        private Integer size;
 //    }
 //
-//    @Data
+//    @Setter
+//@Getter
+//@ToString
 //    public static class Student {
 //        @NotEmpty(message = "名称不能为空")
 //        @Schema(name = "name", title = "名称")

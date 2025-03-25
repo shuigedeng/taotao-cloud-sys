@@ -19,12 +19,14 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /** 秒杀活动设置 */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

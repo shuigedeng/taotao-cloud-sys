@@ -5,7 +5,7 @@ package com.taotao.cloud.sys.domain.dept.event;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
@@ -13,7 +13,9 @@ import lombok.experimental.SuperBuilder;
 /**
  * 
  */
-@Data
+@Setter
+@Getter
+@ToString
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor

@@ -18,12 +18,14 @@ package com.taotao.cloud.sys.application.dto.dictItem.query;
 
 import com.taotao.boot.common.model.PageQuery;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor

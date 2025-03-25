@@ -30,7 +30,9 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 15:23:58
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

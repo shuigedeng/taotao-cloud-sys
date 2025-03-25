@@ -16,12 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /** 秒杀活动设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class SeckillSetting implements Serializable {
 
     /** 开启几点场 例如：6,8,12 */

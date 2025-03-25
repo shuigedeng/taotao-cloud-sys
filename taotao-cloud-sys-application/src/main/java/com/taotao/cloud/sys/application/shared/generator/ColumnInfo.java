@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.application.shared.generator;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -29,7 +29,9 @@ import lombok.experimental.Accessors;
  * @version 2022.03
  * @since 2022-03-25 14:05:32
  */
-@Data
+@Setter
+@Getter
+@ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor

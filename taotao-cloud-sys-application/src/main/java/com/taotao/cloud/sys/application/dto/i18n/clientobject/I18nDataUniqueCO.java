@@ -2,14 +2,16 @@ package com.taotao.cloud.sys.application.dto.i18n.clientobject;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 /**
  * 国际化信息唯一值 = 国际化标识 + 语言标签
  *
  */
-@Data
+@Setter
+@Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(title = "国际化信息唯一值")

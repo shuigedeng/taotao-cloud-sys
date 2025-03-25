@@ -16,13 +16,15 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 /** 邮箱设置 */
-@Data
+@Setter
+@Getter
+@ToString
 public class EmailSetting implements Serializable {
 
     @Serial
