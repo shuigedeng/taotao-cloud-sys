@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
 import cn.hutool.core.date.DatePattern;
-import com.taotao.boot.common.constant.CommonConstant;
+import com.taotao.boot.common.constant.CommonConstants;
 import lombok.*;
 import org.dromara.hutool.core.date.DateUtil;
 import org.dromara.hutool.core.math.NumberUtil;
@@ -43,19 +43,19 @@ public class JvmInfo {
     private String home;
 
     public BigDecimal getTotal() {
-        return NumberUtil.div(total, CommonConstant.MB, 2);
+        return NumberUtil.div(total, CommonConstants.MB, 2);
     }
 
     public BigDecimal getMax() {
-        return NumberUtil.div(max, CommonConstant.MB, 2);
+        return NumberUtil.div(max, CommonConstants.MB, 2);
     }
 
     public BigDecimal getFree() {
-        return NumberUtil.div(free, CommonConstant.MB, 2);
+        return NumberUtil.div(free, CommonConstants.MB, 2);
     }
 
     public BigDecimal getUsed() {
-        return NumberUtil.div(total - free, CommonConstant.MB, 2);
+        return NumberUtil.div(total - free, CommonConstants.MB, 2);
     }
 
     public BigDecimal getUsage() {

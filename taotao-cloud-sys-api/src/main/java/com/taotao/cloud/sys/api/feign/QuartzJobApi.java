@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign;
 
-import com.taotao.boot.common.constant.ServiceName;
+import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.cloud.sys.api.feign.fallback.QuartzJobApiFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.validation.annotation.Validated;
@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@FeignClient(value = ServiceName.TAOTAO_CLOUD_JOB, fallbackFactory = QuartzJobApiFallback.class)
+@FeignClient(value = ServiceNameConstants.TAOTAO_CLOUD_JOB, fallbackFactory = QuartzJobApiFallback.class)
 public interface QuartzJobApi {
 
     @PostMapping("/job/addQuartzJobDTOTestSeata")

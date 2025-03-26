@@ -16,15 +16,16 @@
 
 package com.taotao.cloud.sys.api.feign;
 
-import com.taotao.boot.common.constant.ServiceName;
+import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.model.Result;
 import com.taotao.cloud.sys.api.feign.fallback.LogisticsApiFallback;
 import com.taotao.cloud.sys.api.feign.response.LogisticsApiResponse;
 import com.taotao.cloud.sys.api.feign.response.TracesApiResponse;
-import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
  * 远程调用物流公司模块
@@ -34,7 +35,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @since 2022-03-25 14:09:10
  */
 @FeignClient(
-	name = ServiceName.TAOTAO_CLOUD_SYS,
+	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
 	contextId = "IFeignLogisticsApi",
 	fallbackFactory = LogisticsApiFallback.class)
 public interface LogisticsApi {

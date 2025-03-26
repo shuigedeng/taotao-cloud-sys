@@ -1,6 +1,6 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
-import com.taotao.boot.common.constant.CommonConstant;
+import com.taotao.boot.common.constant.CommonConstants;
 import lombok.*;
 import org.dromara.hutool.core.math.NumberUtil;
 import oshi.hardware.CentralProcessor;
@@ -163,14 +163,14 @@ public class ServerInfo {
     public String convertFileSize(long size) {
         float castedSize = (float) size;
 
-        if (size >= CommonConstant.GB) {
-            return String.format("%.1f GB", castedSize / CommonConstant.GB);
+        if (size >= CommonConstants.GB) {
+            return String.format("%.1f GB", castedSize / CommonConstants.GB);
         }
 
-        if (size >= CommonConstant.MB) {
-            return String.format("%.1f MB", castedSize / CommonConstant.MB);
+        if (size >= CommonConstants.MB) {
+            return String.format("%.1f MB", castedSize / CommonConstants.MB);
         }
 
-        return String.format("%.1f KB", castedSize / CommonConstant.KB);
+        return String.format("%.1f KB", castedSize / CommonConstants.KB);
     }
 }
