@@ -5,9 +5,9 @@ name: Sys Docker Image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test ]
   pull_request:
-    branches: [ main ]
+    branches: [ test ]
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
@@ -53,7 +53,7 @@ jobs:
 
       #https://github.com/marketplace/actions/cache
       - name: Cache Gradle Packages
-        uses: actions/cache@v4.1.2
+        uses: actions/cache@v4.2.3
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
