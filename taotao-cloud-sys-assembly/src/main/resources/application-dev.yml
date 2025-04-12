@@ -1485,6 +1485,7 @@ springdoc:
   #  - group: 'default'
   #    paths-to-match: '/**'
   #    packages-to-scan: com.xiaominfo.knife4j.demo.web
+  show-spring-cloud-functions: false
 
 knife4j:
   production: false
