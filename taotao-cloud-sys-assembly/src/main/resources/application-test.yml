@@ -1366,6 +1366,9 @@ feign:
       enabled: true
 
 management:
+  httpexchanges:
+    recording:
+      enabled: true
   info:
     java:
       enabled: true
