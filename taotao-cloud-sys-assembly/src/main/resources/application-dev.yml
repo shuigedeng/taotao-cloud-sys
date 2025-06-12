@@ -1075,6 +1075,8 @@ taotao:
       request-log: true
     core:
       enabled: true
+      async:
+        enabled: false
     captcha:
       enabled: false
     security:
