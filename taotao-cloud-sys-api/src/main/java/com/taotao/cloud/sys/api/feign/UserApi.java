@@ -39,7 +39,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  */
 @FeignClient(
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	contextId = "IFeignUserApi",
+	contextId = "UserApi",
 	fallbackFactory = UserApiFallback.class)
 public interface UserApi {
 

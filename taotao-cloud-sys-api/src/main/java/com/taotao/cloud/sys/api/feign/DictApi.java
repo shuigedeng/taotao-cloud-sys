@@ -40,6 +40,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  */
 @FeignClient(
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
+	contextId = "DictApi",
 	fallbackFactory = DictApiFallback.class)
 public interface DictApi {
 

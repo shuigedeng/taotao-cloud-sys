@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(
         name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-        contextId = "IFeignRoleApi",
+        contextId = "RoleApi",
         fallbackFactory = RoleApiFallback.class)
 public interface RoleApi {
 

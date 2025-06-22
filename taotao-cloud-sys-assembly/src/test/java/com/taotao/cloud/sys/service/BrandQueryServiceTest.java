@@ -14,27 +14,26 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service;
+package com.taotao.cloud.sys.service;
 
-import com.taotao.boot.ddd.model.application.service.CommandService;
+import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
 import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
+import com.taotao.cloud.sys.application.service.DeptService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-/**
- * 后台部门表服务接口
- *
- * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-25 14:24:48
- */
-public interface DeptService extends CommandService {
+public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
-	/**
-	 * 获取部门树
-	 *
-	 * @return 部门树列表
-	 * @since 2022-03-23 08:52:34
-	 */
-	List<DeptTreeCO> tree();
+	@Autowired
+	private DeptService deptService;
+
+	//@TtcTest(duration = 1000, reporter = HtmlReporter.class)
+	@Test
+	public void treeTest() throws InterruptedException {
+
+		List<DeptTreeCO> tree = deptService.tree();
+		System.out.println("asdfasdfsadfsadf");
+	}
 }

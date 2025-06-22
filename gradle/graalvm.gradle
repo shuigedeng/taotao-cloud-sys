@@ -1,4 +1,5 @@
 apply plugin: "org.graalvm.buildtools.native"
+apply from: rootProject.file('gradle/opens.gradle')
 
 def projectName = project.name
 
@@ -59,9 +60,9 @@ graalvmNative {
             buildArgs.add('--verbose')
             buildArgs.add('--no-fallback')
 
-            buildArgs.add('--add-opens=java.base/java.nio=ALL-UNNAMED')
-            buildArgs.add('--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED')
-            buildArgs.add('--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED')
+            equalsOpensList.each { open ->
+                buildArgs.add(open)
+            }
 
             buildArgs.add('--trace-class-initialization=ch.qos.logback.classic.Logger')
             buildArgs.add('--trace-class-initialization=java.net.Inet4Address')

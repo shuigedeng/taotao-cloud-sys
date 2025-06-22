@@ -16,8 +16,11 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
+import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
 import com.taotao.cloud.sys.application.service.DeptService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * DeptServiceImpl
@@ -27,8 +30,11 @@ import org.springframework.stereotype.Service;
  * @since 1.0
  */
 @Service
-public class DeptServiceImpl
-	implements DeptService {
+public class DeptServiceImpl implements DeptService {
+	@Override
+	public List<DeptTreeCO> tree() {
+		return List.of();
+	}
 
 //	@Override
 //	public List<DeptTreeVO> tree() {

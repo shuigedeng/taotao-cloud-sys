@@ -36,7 +36,7 @@ import java.util.List;
  */
 @FeignClient(
 	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	contextId = "IFeignLogisticsApi",
+	contextId = "LogisticsApi",
 	fallbackFactory = LogisticsApiFallback.class)
 public interface LogisticsApi {
 

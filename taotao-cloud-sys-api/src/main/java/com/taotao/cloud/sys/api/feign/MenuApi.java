@@ -35,7 +35,7 @@ import java.util.Set;
  */
 @FeignClient(
         name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-        contextId = "IFeignMenuApi",
+        contextId = "MenuApi",
         fallbackFactory = MenuApiFallback.class)
 public interface MenuApi {
 

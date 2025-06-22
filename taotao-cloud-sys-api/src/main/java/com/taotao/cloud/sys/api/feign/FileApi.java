@@ -38,7 +38,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  */
 @FeignClient(
         name = ServiceNameConstants.TAOTAO_CLOUD_FILE,
-        contextId = "feignDictApi",
+        contextId = "FileApi",
         fallbackFactory = FileApiFallback.class)
 public interface FileApi {
 
