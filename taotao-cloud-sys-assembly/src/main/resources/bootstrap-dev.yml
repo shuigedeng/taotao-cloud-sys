@@ -125,6 +125,10 @@ spring:
       log:
         dir: ${user.home}/logs/${spring.application.name}/sentinel
         switch-pid: false
+    function:
+      web:
+        export:
+          enabled: false
 
 logging:
   file:
