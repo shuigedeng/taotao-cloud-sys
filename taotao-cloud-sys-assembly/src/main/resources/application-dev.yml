@@ -203,6 +203,10 @@ dubbo:
     logger: slf4j
     shutwait: 3000
     dump-directory: ${user.home}/logs/${spring.application.name}/dubbo/
+    #https://cn.dubbo.apache.org/zh-cn/overview/mannual/java-sdk/tasks/security/class-check/
+    check-serializable: false
+    #STRICT 严格检查，WARN 告警，DISABLE 禁用
+    serialize-check-status: DISABLE
   registry:
     address: nacos://192.168.218.2:8848
     group: DUBBO_REGISTRY_GROUP
@@ -235,7 +239,6 @@ dubbo:
     queues: 200
   provider:
     host: 192.168.1.4
-    port: 50052
     timeout: 3000
     version: ${ttcVersion}
     threads: 500
@@ -288,7 +291,12 @@ dubbo:
     parameters:
       namespace: 213336af-bf44-45ce-850d-6ae563173799
       cluster-name: CQ
+      # 为了在测试时nacos未启动一直阻塞线程
+      nacos.retry: 1
+      nacos.retry-wait: 1000
+      nacos.check: false
   config-center:
+    check: false
     id: ${spring.application.name}
     address: nacos://192.168.218.2:8848
     username: nacos
@@ -296,7 +304,6 @@ dubbo:
     group: DUBBO_REGISTRY_GROUP
     parameters:
       namespace: 213336af-bf44-45ce-850d-6ae563173799
-    check: false
   #tracing:
   #  enabled: true # 默认为false
   #  sampling:
