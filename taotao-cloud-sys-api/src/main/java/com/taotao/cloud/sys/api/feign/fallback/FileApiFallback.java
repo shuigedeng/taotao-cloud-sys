@@ -19,10 +19,6 @@ package com.taotao.cloud.sys.api.feign.fallback;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.feign.FileApi;
 import com.taotao.cloud.sys.api.feign.response.FileApiResponse;
-import org.apache.seata.core.context.RootContext;
-import org.apache.seata.core.exception.TransactionException;
-import org.apache.seata.tm.api.GlobalTransactionContext;
-import org.dromara.hutool.core.text.StrUtil;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
 /**
@@ -41,13 +37,13 @@ public class FileApiFallback implements FallbackFactory<FileApi> {
             @Override
             public FileApiResponse findByCode(String code) {
 
-                if (StrUtil.isNotBlank(RootContext.getXID())) {
-                    try {
-                        GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-                    } catch (TransactionException e) {
-                        LogUtils.error(e);
-                    }
-                }
+                //if (StrUtil.isNotBlank(RootContext.getXID())) {
+                //    try {
+                //        GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+                //    } catch (TransactionException e) {
+                //        LogUtils.error(e);
+                //    }
+                //}
 
                 return null;
             }
