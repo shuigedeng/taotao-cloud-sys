@@ -20,16 +20,21 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
+import com.taotao.boot.common.model.FeignRequest;
+import com.taotao.boot.common.model.FeignResponse;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.openfeign.annotation.FeignInner;
 import com.taotao.cloud.openfeign.annotation.FeignRetry;
 import com.taotao.cloud.sys.api.feign.fallback.DictApiFallback;
+import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * 远程调用后台用户模块
@@ -66,8 +71,8 @@ public interface DictApi {
             maxAttempt = 6,
             backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
     @FeignInner
-    @GetMapping("/sys/feign/dict/code")
-    DictApiResponse findByCode(@RequestParam(value = "code") String code);
+    @PostMapping("/sys/feign/dict/code")
+	FeignResponse<DictApiResponse> findByCode(@Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
@@ -88,6 +93,6 @@ public interface DictApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetMapping("/sys/feign/dict/test")
-    DictApiResponse test(@RequestParam(value = "id") String id);
+    @PostMapping("/sys/feign/dict/test")
+    FeignResponse<DictApiResponse> test(@Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest );
 }

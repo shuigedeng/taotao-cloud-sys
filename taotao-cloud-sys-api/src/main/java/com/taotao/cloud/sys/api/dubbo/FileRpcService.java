@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcResponse;
 import com.taotao.cloud.sys.api.dubbo.response.FileRpcResponse;
 
 /**
@@ -34,5 +35,5 @@ public interface FileRpcService {
      * @return {@link FileRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-    FileRpcResponse findByCode(Integer code);
+	RpcResponse<FileRpcResponse> findByCode(Integer code);
 }

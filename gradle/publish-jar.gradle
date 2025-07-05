@@ -31,6 +31,7 @@ gradle.projectsEvaluated {
     }
     tasks.withType(JavaExec).configureEach {
         jvmArgs += "--enable-preview"
+        jvmArgs += "-XX:+EnableDynamicAgentLoading"
     }
 
     tasks.withType(JavaCompile) {

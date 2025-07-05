@@ -16,6 +16,9 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcRequest;
+import com.taotao.boot.common.model.RpcResponse;
+import com.taotao.cloud.sys.api.dubbo.request.DictQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
 
 /**
@@ -27,12 +30,12 @@ import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
  */
 public interface DictRpcService {
 
-    /**
-     * 字典code查询
-     *
-     * @param code 代码
-     * @return {@link DictRpcResponse }
-     * @since 2022-06-29 21:45:44
-     */
-    DictRpcResponse findByCode(Integer code);
+	/**
+	 * 字典code查询
+	 *
+	 * @param code 代码
+	 * @return {@link DictRpcResponse }
+	 * @since 2022-06-29 21:45:44
+	 */
+	RpcResponse<DictRpcResponse> findByCode(RpcRequest<DictQueryRpcRequest> dictQueryRpcRequest);
 }

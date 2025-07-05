@@ -18,6 +18,8 @@ package com.taotao.cloud.sys.interfaces.feign;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.common.model.FeignRequest;
+import com.taotao.boot.common.model.FeignResponse;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.guava.GuavaLimit;
@@ -26,6 +28,7 @@ import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.FeignController;
 import com.taotao.cloud.sys.api.feign.DictApi;
+import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import com.taotao.cloud.sys.application.service.DictService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
@@ -33,7 +36,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -42,7 +44,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping
-public class DictApiImpl extends FeignController implements DictApi {
+public class DictFeignController extends FeignController implements DictApi {
 
     @Autowired private DictService dictService;
 
@@ -51,8 +53,8 @@ public class DictApiImpl extends FeignController implements DictApi {
     @Idempotent(perFix = "findByCode")
     @Limit(key = "limitTest", period = 10, count = 3)
     @SentinelResource("findByCode")
-    public DictApiResponse findByCode(@RequestParam(value = "code") String code) {
-        if ("sd".equals(code)) {
+	public FeignResponse<DictApiResponse> findByCode(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+        if ("sd".equals(dictQueryApiRequest.getData().code())) {
             throw new BusinessException("我出错了");
             // try {
             //	Thread.sleep(100000000000L);
@@ -78,7 +80,7 @@ public class DictApiImpl extends FeignController implements DictApi {
     @Limit(key = "limitTest", period = 10, count = 3)
     @GuavaLimit
     @SentinelResource("test")
-    public DictApiResponse test(@RequestParam(value = "id") String id) {
+	public FeignResponse<DictApiResponse> test(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
         LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
         //		Dict dict = service().findByCode(id);
         //
@@ -96,4 +98,5 @@ public class DictApiImpl extends FeignController implements DictApi {
         return null;
         // return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
     }
+
 }

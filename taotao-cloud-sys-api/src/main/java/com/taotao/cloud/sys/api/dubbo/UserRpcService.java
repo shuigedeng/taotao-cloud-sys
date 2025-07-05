@@ -16,6 +16,11 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcRequest;
+import com.taotao.boot.common.model.RpcResponse;
+import com.taotao.cloud.sys.api.dubbo.request.DeptQueryRpcRequest;
+import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
+
 /**
  * IDubboUserService
  *
@@ -23,4 +28,6 @@ package com.taotao.cloud.sys.api.dubbo;
  * @version 2022.03
  * @since 2022-03-25 14:22:32
  */
-public interface UserRpcService {}
+public interface UserRpcService {
+	RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
+}

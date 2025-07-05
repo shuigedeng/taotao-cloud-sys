@@ -251,9 +251,11 @@ allprojects {
     }
     tasks.withType(Test).configureEach {
         jvmArgs += "--enable-preview"
+        jvmArgs += "-XX:+EnableDynamicAgentLoading"
     }
     tasks.withType(JavaExec).configureEach {
         jvmArgs += "--enable-preview"
+        jvmArgs += "-XX:+EnableDynamicAgentLoading"
     }
     javadoc.options {
         addBooleanOption('-enable-preview', true)
@@ -463,11 +465,13 @@ subprojects {
     def enablePreview = '--enable-preview'
     tasks.withType(JavaExec).configureEach {
         jvmArgs += enablePreview
+        jvmArgs += "-XX:+EnableDynamicAgentLoading"
     }
 
     // 测试
     tasks.withType(Test).configureEach {
         jvmArgs += enablePreview
+        jvmArgs += "-XX:+EnableDynamicAgentLoading"
     }
 
     apply plugin: 'com.vanniktech.maven.publish'
@@ -499,6 +503,7 @@ subprojects {
         }
         tasks.withType(JavaExec).configureEach {
             jvmArgs += "--enable-preview"
+            jvmArgs += "-XX:+EnableDynamicAgentLoading"
         }
 
         tasks.withType(JavaCompile) {

@@ -190,6 +190,7 @@ dubbo:
     base-packages: com.taotao.cloud.sys.interfaces.dubbo
   application:
     name: ${spring.application.name}     #当前应用名称
+    protocol: tri
     compiler: javassist     #Java字节码编译器，用于动态类的生成，可选：jdk或javassist
     version: ${ttcVersion}
     owner: 981376577

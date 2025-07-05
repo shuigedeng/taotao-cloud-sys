@@ -16,6 +16,11 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcRequest;
+import com.taotao.boot.common.model.RpcResponse;
+import com.taotao.cloud.sys.api.dubbo.request.DeptQueryRpcRequest;
+import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
+
 /**
  * IDubboOrderService
  *
@@ -23,4 +28,6 @@ package com.taotao.cloud.sys.api.dubbo;
  * @version 2022.04
  * @since 2022-04-28 09:21:20
  */
-public interface QuartzJobRpcService {}
+public interface QuartzJobRpcService {
+	RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
+}

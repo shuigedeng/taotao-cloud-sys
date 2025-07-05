@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcResponse;
 import com.taotao.cloud.sys.api.dubbo.request.LogsQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.LogsRpcResponse;
 
@@ -35,5 +36,5 @@ public interface LogsRpcService {
      * @return {@link LogsRpcResponse }
      * @since 2022-04-28 09:21:20
      */
-    LogsRpcResponse query(LogsQueryRpcRequest request);
+	RpcResponse<LogsRpcResponse> query(LogsQueryRpcRequest request);
 }

@@ -16,8 +16,11 @@
 
 package com.taotao.cloud.sys.api.feign.fallback;
 
+import com.taotao.boot.common.model.FeignRequest;
+import com.taotao.boot.common.model.FeignResponse;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.feign.DictApi;
+import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
@@ -33,25 +36,15 @@ public class DictApiFallback implements FallbackFactory<DictApi> {
         LogUtils.info("throwablethrowablethrowablethrowablethrowable");
 
         return new DictApi() {
-            @Override
-            public DictApiResponse findByCode(String code) {
+			@Override
+			public FeignResponse<DictApiResponse> findByCode(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+				return null;
+			}
 
-                //                if (StrUtil.isNotBlank(RootContext.getXID())) {
-                //                    try {
-                //
-                // GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-                //                    } catch (TransactionException e) {
-                //                        LogUtils.error(e);
-                //                    }
-                //                }
-
-                return null;
-            }
-
-            @Override
-            public DictApiResponse test(String id) {
-                return null;
-            }
-        };
+			@Override
+			public FeignResponse<DictApiResponse> test(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+				return null;
+			}
+		};
     }
 }

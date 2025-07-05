@@ -16,8 +16,11 @@
 
 package com.taotao.cloud.sys.interfaces.dubbo;
 
+import com.taotao.boot.common.model.RpcRequest;
+import com.taotao.boot.common.model.RpcResponse;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.dubbo.DictRpcService;
+import com.taotao.cloud.sys.api.dubbo.request.DictQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
 import lombok.AllArgsConstructor;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -36,10 +39,10 @@ import org.springframework.stereotype.Service;
 public class DictRpcServiceImpl implements DictRpcService {
 
     @Override
-    public DictRpcResponse findByCode(Integer code) {
+	public RpcResponse<DictRpcResponse> findByCode(RpcRequest<DictQueryRpcRequest> dictQueryRpcRequest){
 
-        LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", code);
+        LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", dictQueryRpcRequest);
 
-        return new DictRpcResponse();
+        return RpcResponse.success(new DictRpcResponse());
     }
 }

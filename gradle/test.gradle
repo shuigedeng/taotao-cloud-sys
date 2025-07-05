@@ -25,6 +25,7 @@ test {
     def jvmArgsList = [
             "-Xshare:off",
             '--enable-preview',
+            '-XX:+EnableDynamicAgentLoading',
             '--add-exports=java.desktop/sun.font=ALL-UNNAMED',
             '--add-exports=java.base/sun.reflect.generics.tree=ALL-UNNAMED',
             '--add-exports=java.base/sun.net.www.protocol.ftp=ALL-UNNAMED',
@@ -78,6 +79,7 @@ test {
     ]
 
     jvmArgs = jvmArgsList + equalsOpensList
+    jvmArgs += "-XX:+EnableDynamicAgentLoading"
 
     //编译时自动执行jacocoTestReport，生成报告；报告路径build/reports/jacoco/test/html/index.html
     finalizedBy jacocoTestReport // report is always generated after tests run

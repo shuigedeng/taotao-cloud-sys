@@ -16,6 +16,11 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
+import com.taotao.boot.common.model.RpcRequest;
+import com.taotao.boot.common.model.RpcResponse;
+import com.taotao.cloud.sys.api.dubbo.request.DeptQueryRpcRequest;
+import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
+
 /**
  * ISysDictItemService
  *
@@ -23,4 +28,6 @@ package com.taotao.cloud.sys.api.dubbo;
  * @version 2021.10
  * @since 2021-10-09 20:32:47
  */
-public interface DictItemRpcService {}
+public interface DictItemRpcService {
+	RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
+}
