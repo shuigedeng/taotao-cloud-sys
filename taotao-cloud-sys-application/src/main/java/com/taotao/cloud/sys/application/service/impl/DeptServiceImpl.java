@@ -16,9 +16,11 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
 import com.taotao.cloud.sys.application.service.DeptService;
 import java.util.List;
+import java.util.Objects;
 import org.springframework.stereotype.Service;
 
 /**
@@ -35,20 +37,4 @@ public class DeptServiceImpl implements DeptService {
         return List.of();
     }
 
-    //	@Override
-    //	public List<DeptTreeVO> tree() {
-    //		LambdaQueryWrapper<Dept> queryWrapper = new LambdaQueryWrapper<>();
-    //		queryWrapper.orderByDesc(Dept::getSortNum);
-    //		List<Dept> list = list(queryWrapper);
-    //
-    //		return DeptConvert.INSTANCE.convertTree(list)
-    //			.stream()
-    //			.filter(Objects::nonNull)
-    //			.peek(e -> {
-    //				e.setKey(e.getId());
-    //				e.setValue(e.getId());
-    //				e.setTitle(e.getName());
-    //			})
-    //			.toList();
-    //	}
 }

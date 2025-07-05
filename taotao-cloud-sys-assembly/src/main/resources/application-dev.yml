@@ -49,48 +49,6 @@ jasypt:
       prefix: "ENC@["
       suffix: "]"
 
-#jetcache:
-#  statIntervalMinutes: 1
-#  areaInCacheName: false
-#  local:
-#    default:
-#      type: linkedhashmap
-#      keyConvertor: jacksonKeyConvertor
-#  remote:
-#    default:
-#      type: redis
-#      keyConvertor: jacksonKeyConvertor
-#      valueEncoder: jacksonValueEncoder
-#      valueDecoder: jacksonValueDecoder
-#      poolConfig:
-#        minIdle: 5
-#        maxIdle: 20
-#        maxTotal: 50
-#      host: 192.168.218.2
-#      port: 6379
-
-pulsar:
-  service-url: pulsar://192.168.218.2:6650
-  io-threads: 10
-  listener-threads: 10
-  enable-tcp-no-delay: false
-  keep-alive-interval-sec: 20
-  connection-timeout-sec: 10
-  operation-timeout-sec: 15
-  starting-backoff-interval-ms: 100
-  max-backoff-interval-sec: 10
-  consumer-name-delimiter:
-  namespace: taotao-cloud-namespace
-  tenant: taotao-cloud-tenant
-  auto-start: true
-  allow-interceptor: true
-  #token-auth-value: 43th4398gh340gf34gj349gh304ghryj34fh
-  consumer:
-    default:
-      dead-letter-policy-max-redeliver-count: -1
-      ack-timeout-ms: 3000
-      subscription-type: Exclusive
-
 redisson:
   client-name: ${spring.application.name}   #在Redis节点里显示的客户端名称。
   #password: taotao-cloud   #用于节点身份验证的密码
@@ -426,8 +384,10 @@ rocketmq:
   producer:
     # 发送同一类消息的设置为同一个group，保证唯一
     group: ${spring.application.name}     # 组名称
-    #access-key:     # 阿里云购买的rocketmq
-    #secret-key:    # 阿里云购买的rocketmq
+    # 阿里云购买的rocketmq
+    #access-key:
+    # 阿里云购买的rocketmq
+    #secret-key:
     # 发送消息超时时间，默认3000
     sendMessageTimeout: 10000
     # 发送消息失败重试次数，默认2
@@ -446,6 +406,18 @@ rocketmq:
     pull-batch-size: 10
 
 spring:
+  task:
+    execution:
+      pool:
+        keep-alive: 60s
+        core-size: 20
+        queue-capacity: 100
+        max-size: 50
+      mode: auto
+      thread-name-prefix: ttc-task
+      shutdown:
+        await-termination: true
+        await-termination-period: 30s
   threads:
     virtual:
       #1.Tomcat将使用虚拟线程来处理HTTP请求。这意味着处理Web请求的应用程序代码（例如控制器中的方法）将在虚拟线程上运行。
@@ -971,8 +943,6 @@ taotao:
       pulsar:
         enabled: false
     cache:
-      caffeine:
-        enabled: false
       redis:
         enabled: true
         cache-manager:
@@ -987,8 +957,6 @@ taotao:
       datasource:
         dynamic:
           enabled: false
-      elasticsearch:
-        enabled: true
       mybatis:
         enabled: true
         interceptor:
@@ -1052,6 +1020,8 @@ taotao:
       group: ${spring.application.name}
       version: ${ttcVersion}
       title: 系统管理模块
+      packages-to-scan:
+        - com.taotao.cloud.sys.interfaces.controller.**
     metrics:
       enabled: true
       druid:
@@ -1281,22 +1251,6 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
-kylin:
-  lock:
-    acquire-timeout: 3000       #获取锁超时时间 默认值3000L 单位：毫秒
-    expire: 30000               #过期时间，默认值30000L 单位：毫秒
-    retry-interval: 100         #获取锁失败时重试时间间隔，默认值100L 单位：毫秒
-    lock-key-prefix: kylin-lock #锁前缀 默认配置
-    primary-executor: com.taotao.boot.lock.kylin.executor.redisson.RedissonLockExecutor #默认执行器。默认redisson>zookeeper
-    redisson: true              #是否开启redisson 默认true
-    #zookeeper:
-    #  zk-servers: 192.168.218.2:2181 #zk的server地址，多个server之间使用英文逗号分隔开 。配置地址则开启zookeeper
-    #  session-timeout: 60000     #会话超时时间，默认值60000 单位：毫秒
-    #  connection-timeout: 15000  #连接超时时间，默认值15000 单位：毫秒
-    #  base-sleep-time-ms: 5000   #初始sleep时间，默认值5000 单位：毫秒
-    #  max-retries: 3             #最大失败重试次数
-    #  namespace: curator/kylin/lock #命名空间
-
 gobrs:
   async:
     config:
@@ -1376,33 +1330,33 @@ knife4j:
     username: admin
     password: 123456
   cors: false
-  documents:
-    - group: 1.2.x
-      name: 测试自定义标题分组
-      locations: classpath:md/*
-    - name: 标题2
-      locations: classpath:markdown1/*
-      group: 用户模块
-  setting:
-    swagger-model-name: 实体类列表
-    enableSwaggerModels: true
-    enableDocumentManage: true
-    enableHost: false
-    enableHostText: http://192.168.218.2:18568
-    enableRequestCache: true
-    enableFilterMultipartApis: false
-    enableFilterMultipartApiMethodType: POST
-    language: zh-CN
-    enableAfterScript: false
-    enableHomeCustom: true
-    homeCustomLocation: classpath:test/home.md
-    enableFooter: false
-    enableFooterCustom: true
-    footerCustomContent: 八一菜刀研究中心
-    enableSearch: true
-    enableDebug: true
-    enableOpenApi: true
-    enableGroup: true
+  #documents:
+  #  - group: 1.2.x
+  #    name: 测试自定义标题分组
+  #    locations: classpath:md/*
+  #  - name: 标题2
+  #    locations: classpath:markdown1/*
+  #    group: 用户模块
+  #setting:
+  #  swagger-model-name: 实体类列表
+  #  enableSwaggerModels: true
+  #  enableDocumentManage: true
+  #  enableHost: false
+  #  enableHostText: http://192.168.218.2:18568
+  #  enableRequestCache: true
+  #  enableFilterMultipartApis: false
+  #  enableFilterMultipartApiMethodType: POST
+  #  language: zh-CN
+  #  enableAfterScript: false
+  #  enableHomeCustom: true
+  #  homeCustomLocation: classpath:test/home.md
+  #  enableFooter: false
+  #  enableFooterCustom: true
+  #  footerCustomContent: 八一菜刀研究中心
+  #  enableSearch: true
+  #  enableDebug: true
+  #  enableOpenApi: true
+  #  enableGroup: true
 
 grpc:
   port: 6565

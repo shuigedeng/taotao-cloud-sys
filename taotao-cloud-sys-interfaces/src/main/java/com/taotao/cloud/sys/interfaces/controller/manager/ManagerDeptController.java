@@ -16,9 +16,20 @@
 
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.taotao.boot.common.model.Result;
+import com.taotao.boot.common.tree.ForestNodeMerger;
+import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BusinessController;
+import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
+import com.taotao.cloud.sys.application.service.DeptService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,11 +46,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "管理端-部门管理API", description = "管理端-部门管理API")
 public class ManagerDeptController extends BusinessController {
 
-    //    @Operation(summary = "获取部门树", description = "获取部门树")
-    //    @RequestLogger
-    //    @PreAuthorize("hasAuthority('dept:tree:data')")
-    //    @GetMapping("/tree")
-    //    public Result<List<DeptTreeVO>> tree() {
-    //        return Result.success(ForestNodeMerger.merge(service().tree()));
-    //    }
+	@Autowired
+	private DeptService deptService;
+
+	@Operation(summary = "获取部门树", description = "获取部门树")
+	@RequestLogger
+	@GetMapping("/tree")
+	@SentinelResource("tree")
+	public Result<List<DeptTreeCO>> tree() {
+		return Result.success(ForestNodeMerger.merge(deptService.tree()));
+	}
 }
