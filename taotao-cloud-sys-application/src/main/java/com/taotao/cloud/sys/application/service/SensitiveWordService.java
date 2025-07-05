@@ -27,10 +27,10 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  */
 public interface SensitiveWordService extends CommandService {
 
-	/**
-	 * 重新写入缓存
-	 *
-	 * @since 2022-03-25 14:33:25
-	 */
-	void resetCache();
+    /**
+     * 重新写入缓存
+     *
+     * @since 2022-03-25 14:33:25
+     */
+    void resetCache();
 }

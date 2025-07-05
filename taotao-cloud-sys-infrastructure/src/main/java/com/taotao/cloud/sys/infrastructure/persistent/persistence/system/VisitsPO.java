@@ -23,17 +23,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * pv 与 ip 统计
@@ -49,13 +46,14 @@ import java.util.Objects;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = VisitsPO.TABLE_NAME,
-	uniqueConstraints = {
-		@UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
-	},
-	indexes = {
-		@Index(name = "idx_create_date", columnList = "create_date"),
-	})
+@Table(
+        name = VisitsPO.TABLE_NAME,
+        uniqueConstraints = {
+            @UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
+        },
+        indexes = {
+            @Index(name = "idx_create_date", columnList = "create_date"),
+        })
 @TableName(VisitsPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = VisitsPO.TABLE_NAME)
 public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
@@ -74,52 +72,52 @@ public class VisitsPO extends BaseSuperEntity<VisitsPO, Long> {
     @Column(name = "`week_day`", columnDefinition = "varchar(64) not null comment '天'")
     private String weekDay;
 
-	public String getDate() {
-		return date;
-	}
+    public String getDate() {
+        return date;
+    }
 
-	public void setDate(String date) {
-		this.date = date;
-	}
+    public void setDate(String date) {
+        this.date = date;
+    }
 
-	public Long getPvCounts() {
-		return pvCounts;
-	}
+    public Long getPvCounts() {
+        return pvCounts;
+    }
 
-	public void setPvCounts(Long pvCounts) {
-		this.pvCounts = pvCounts;
-	}
+    public void setPvCounts(Long pvCounts) {
+        this.pvCounts = pvCounts;
+    }
 
-	public Long getIpCounts() {
-		return ipCounts;
-	}
+    public Long getIpCounts() {
+        return ipCounts;
+    }
 
-	public void setIpCounts(Long ipCounts) {
-		this.ipCounts = ipCounts;
-	}
+    public void setIpCounts(Long ipCounts) {
+        this.ipCounts = ipCounts;
+    }
 
-	public String getWeekDay() {
-		return weekDay;
-	}
+    public String getWeekDay() {
+        return weekDay;
+    }
 
-	public void setWeekDay(String weekDay) {
-		this.weekDay = weekDay;
-	}
+    public void setWeekDay(String weekDay) {
+        this.weekDay = weekDay;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-			return false;
-		}
-		VisitsPO visitsPO = (VisitsPO) o;
-		return getId() != null && Objects.equals(getId(), visitsPO.getId());
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+            return false;
+        }
+        VisitsPO visitsPO = (VisitsPO) o;
+        return getId() != null && Objects.equals(getId(), visitsPO.getId());
+    }
 
-	@Override
-	public int hashCode() {
-		return getClass().hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

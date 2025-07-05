@@ -24,8 +24,9 @@ import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.List;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,10 +36,6 @@ import org.hibernate.Hibernate;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.Type;
 import org.hibernate.type.SqlTypes;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * 组织信息表
@@ -77,11 +74,11 @@ public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
      * 备注
      * 设置了ResultMap为`mybatis-plus_Person`后就可以拿到正确的值. @ResultMap("mybatis-plus_Person") @Select("SELECT
      * * FROM person WHERE id=#{id}") Person selectOneById(int id);
-	 *
-	 * //pgsql json定义语句
-	 * @Column(name = "`jsonb_content`", columnDefinition = "jsonb")
+     *
+     * //pgsql json定义语句
+     * @Column(name = "`jsonb_content`", columnDefinition = "jsonb")
      */
-	@JdbcTypeCode(SqlTypes.JSON)
+    @JdbcTypeCode(SqlTypes.JSON)
     @Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`id_tree`", columnDefinition = "json null comment 'id树'")
@@ -99,63 +96,63 @@ public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
     @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Long getParentId() {
-		return parentId;
-	}
+    public Long getParentId() {
+        return parentId;
+    }
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public List<String> getIdTree() {
-		return idTree;
-	}
+    public List<String> getIdTree() {
+        return idTree;
+    }
 
-	public void setIdTree(List<String> idTree) {
-		this.idTree = idTree;
-	}
+    public void setIdTree(List<String> idTree) {
+        this.idTree = idTree;
+    }
 
-	public Integer getDepth() {
-		return depth;
-	}
+    public Integer getDepth() {
+        return depth;
+    }
 
-	public void setDepth(Integer depth) {
-		this.depth = depth;
-	}
+    public void setDepth(Integer depth) {
+        this.depth = depth;
+    }
 
-	public Integer getSortNum() {
-		return sortNum;
-	}
+    public Integer getSortNum() {
+        return sortNum;
+    }
 
-	public void setSortNum(Integer sortNum) {
-		this.sortNum = sortNum;
-	}
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

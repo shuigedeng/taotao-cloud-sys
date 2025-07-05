@@ -49,50 +49,50 @@ import org.hibernate.Hibernate;
 @org.springframework.data.relational.core.mapping.Table(name = SocialUserRelationPO.TABLE_NAME)
 public class SocialUserRelationPO extends SuperEntity<SocialUserRelationPO, Long> {
 
-	public static final String TABLE_NAME = "ttc_social_user_relation";
+    public static final String TABLE_NAME = "ttc_social_user_relation";
 
-	/**
-	 * 角色ID
-	 */
-	@Column(name = "`user_id`", columnDefinition = "bigint not null comment '角色ID'")
-	private Long userId;
+    /**
+     * 角色ID
+     */
+    @Column(name = "`user_id`", columnDefinition = "bigint not null comment '角色ID'")
+    private Long userId;
 
-	/**
-	 * 菜单ID
-	 */
-	@Column(name = "`social_user_id`", columnDefinition = "bigint not null comment '菜单ID'")
-	private Long socialUserId;
+    /**
+     * 菜单ID
+     */
+    @Column(name = "`social_user_id`", columnDefinition = "bigint not null comment '菜单ID'")
+    private Long socialUserId;
 
-	public Long getUserId() {
-		return userId;
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public void setUserId(Long roleId) {
-		this.userId = roleId;
-	}
+    public void setUserId(Long roleId) {
+        this.userId = roleId;
+    }
 
-	public Long getSocialUserId() {
-		return socialUserId;
-	}
+    public Long getSocialUserId() {
+        return socialUserId;
+    }
 
-	public void setSocialUserId(Long resourceId) {
-		this.socialUserId = resourceId;
-	}
+    public void setSocialUserId(Long resourceId) {
+        this.socialUserId = resourceId;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
-			return false;
-		}
-		SocialUserRelationPO roleResource = (SocialUserRelationPO) o;
-		return getId() != null && Objects.equals(getId(), roleResource.getId());
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) {
+            return false;
+        }
+        SocialUserRelationPO roleResource = (SocialUserRelationPO) o;
+        return getId() != null && Objects.equals(getId(), roleResource.getId());
+    }
 
-	@Override
-	public int hashCode() {
-		return getClass().hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

@@ -25,6 +25,8 @@ import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.List;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,9 +35,6 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
-
-import java.util.List;
-import java.util.Objects;
 
 /**
  * 数据权限表
@@ -100,71 +99,71 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
     @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public List<Long> getOrgIds() {
-		return orgIds;
-	}
+    public List<Long> getOrgIds() {
+        return orgIds;
+    }
 
-	public void setOrgIds(List<Long> orgIds) {
-		this.orgIds = orgIds;
-	}
+    public void setOrgIds(List<Long> orgIds) {
+        this.orgIds = orgIds;
+    }
 
-	public List<Long> getDeptIds() {
-		return deptIds;
-	}
+    public List<Long> getDeptIds() {
+        return deptIds;
+    }
 
-	public void setDeptIds(List<Long> deptIds) {
-		this.deptIds = deptIds;
-	}
+    public void setDeptIds(List<Long> deptIds) {
+        this.deptIds = deptIds;
+    }
 
-	public List<Long> getUserIds() {
-		return userIds;
-	}
+    public List<Long> getUserIds() {
+        return userIds;
+    }
 
-	public void setUserIds(List<Long> userIds) {
-		this.userIds = userIds;
-	}
+    public void setUserIds(List<Long> userIds) {
+        this.userIds = userIds;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

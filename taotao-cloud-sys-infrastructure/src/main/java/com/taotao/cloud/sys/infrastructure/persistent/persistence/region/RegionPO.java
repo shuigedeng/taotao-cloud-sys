@@ -24,8 +24,9 @@ import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.List;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,10 +34,6 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * 地区表
@@ -78,7 +75,9 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
      */
     @Column(
             name = "level",
-            columnDefinition = "varchar(255) null comment" + " '地区级别（1:省份province,2:市city,3:区县district,4:街道street）'")
+            columnDefinition =
+                    "varchar(255) null comment"
+                            + " '地区级别（1:省份province,2:市city,3:区县district,4:街道street）'")
     private String level;
 
     /** 城市编码 */
@@ -118,95 +117,95 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
     @Column(name = "`depth`", columnDefinition = "int not null default 0 comment '当前深度 已1开始'")
     private Integer depth;
 
-	public Long getParentId() {
-		return parentId;
-	}
+    public Long getParentId() {
+        return parentId;
+    }
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getLevel() {
-		return level;
-	}
+    public String getLevel() {
+        return level;
+    }
 
-	public void setLevel(String level) {
-		this.level = level;
-	}
+    public void setLevel(String level) {
+        this.level = level;
+    }
 
-	public String getCityCode() {
-		return cityCode;
-	}
+    public String getCityCode() {
+        return cityCode;
+    }
 
-	public void setCityCode(String cityCode) {
-		this.cityCode = cityCode;
-	}
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
 
-	public String getLng() {
-		return lng;
-	}
+    public String getLng() {
+        return lng;
+    }
 
-	public void setLng(String lng) {
-		this.lng = lng;
-	}
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
 
-	public String getLat() {
-		return lat;
-	}
+    public String getLat() {
+        return lat;
+    }
 
-	public void setLat(String lat) {
-		this.lat = lat;
-	}
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
 
-	public Integer getOrderNum() {
-		return orderNum;
-	}
+    public Integer getOrderNum() {
+        return orderNum;
+    }
 
-	public void setOrderNum(Integer orderNum) {
-		this.orderNum = orderNum;
-	}
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+    }
 
-	public List<Long> getIdTree() {
-		return idTree;
-	}
+    public List<Long> getIdTree() {
+        return idTree;
+    }
 
-	public void setIdTree(List<Long> idTree) {
-		this.idTree = idTree;
-	}
+    public void setIdTree(List<Long> idTree) {
+        this.idTree = idTree;
+    }
 
-	public List<String> getCodeTree() {
-		return codeTree;
-	}
+    public List<String> getCodeTree() {
+        return codeTree;
+    }
 
-	public void setCodeTree(List<String> codeTree) {
-		this.codeTree = codeTree;
-	}
+    public void setCodeTree(List<String> codeTree) {
+        this.codeTree = codeTree;
+    }
 
-	public Integer getDepth() {
-		return depth;
-	}
+    public Integer getDepth() {
+        return depth;
+    }
 
-	public void setDepth(Integer depth) {
-		this.depth = depth;
-	}
+    public void setDepth(Integer depth) {
+        this.depth = depth;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

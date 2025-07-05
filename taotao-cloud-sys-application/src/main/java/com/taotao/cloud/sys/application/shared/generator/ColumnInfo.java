@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.application.shared.generator;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 

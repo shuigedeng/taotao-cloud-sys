@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
 import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
-
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
 import java.util.List;
 import java.util.Objects;
@@ -32,14 +31,13 @@ import java.util.Optional;
  */
 public interface IResourceRepository extends BaseInterfaceSuperRepository<ResourcePO, Long> {
 
-	public List<ResourcePO> searchByComponent(String component);
+    public List<ResourcePO> searchByComponent(String component);
 
-	default List<Long> selectByComponent(String component) {
-		List<ResourcePO> resources = searchByComponent(component);
-		return Optional.ofNullable(resources)
-			.stream()
-			.filter(Objects::nonNull)
-			.map(e -> e.get(0).getId())
-			.toList();
-	}
+    default List<Long> selectByComponent(String component) {
+        List<ResourcePO> resources = searchByComponent(component);
+        return Optional.ofNullable(resources).stream()
+                .filter(Objects::nonNull)
+                .map(e -> e.get(0).getId())
+                .toList();
+    }
 }

@@ -37,13 +37,13 @@ public class FileApiFallback implements FallbackFactory<FileApi> {
             @Override
             public FileApiResponse findByCode(String code) {
 
-                //if (StrUtil.isNotBlank(RootContext.getXID())) {
+                // if (StrUtil.isNotBlank(RootContext.getXID())) {
                 //    try {
                 //        GlobalTransactionContext.reload(RootContext.getXID()).rollback();
                 //    } catch (TransactionException e) {
                 //        LogUtils.error(e);
                 //    }
-                //}
+                // }
 
                 return null;
             }

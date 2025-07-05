@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serializable;
+import lombok.*;
 
 /** 短信配置 这里在前台不做调整，方便客户直接把服务商的内容配置在我们平台 */
 @Setter

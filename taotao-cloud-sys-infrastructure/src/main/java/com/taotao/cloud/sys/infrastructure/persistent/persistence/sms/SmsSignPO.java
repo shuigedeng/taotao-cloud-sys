@@ -21,8 +21,8 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,11 +30,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
 /** 短信签名 */
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -66,71 +62,72 @@ public class SmsSignPO extends BaseSuperEntity<SmsSignPO, Long> {
 
     @Column(
             name = "sign_status",
-            columnDefinition = "int not null default 0 comment '签名审核状态  0：审核中。"
-                    + "     * 1：审核通过。"
-                    + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
+            columnDefinition =
+                    "int not null default 0 comment '签名审核状态  0：审核中。"
+                            + "     * 1：审核通过。"
+                            + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
     private Integer signStatus;
 
     @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-	public String getSignName() {
-		return signName;
-	}
+    public String getSignName() {
+        return signName;
+    }
 
-	public void setSignName(String signName) {
-		this.signName = signName;
-	}
+    public void setSignName(String signName) {
+        this.signName = signName;
+    }
 
-	public Integer getSignSource() {
-		return signSource;
-	}
+    public Integer getSignSource() {
+        return signSource;
+    }
 
-	public void setSignSource(Integer signSource) {
-		this.signSource = signSource;
-	}
+    public void setSignSource(Integer signSource) {
+        this.signSource = signSource;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public String getBusinessLicense() {
-		return businessLicense;
-	}
+    public String getBusinessLicense() {
+        return businessLicense;
+    }
 
-	public void setBusinessLicense(String businessLicense) {
-		this.businessLicense = businessLicense;
-	}
+    public void setBusinessLicense(String businessLicense) {
+        this.businessLicense = businessLicense;
+    }
 
-	public String getLicense() {
-		return license;
-	}
+    public String getLicense() {
+        return license;
+    }
 
-	public void setLicense(String license) {
-		this.license = license;
-	}
+    public void setLicense(String license) {
+        this.license = license;
+    }
 
-	public Integer getSignStatus() {
-		return signStatus;
-	}
+    public Integer getSignStatus() {
+        return signStatus;
+    }
 
-	public void setSignStatus(Integer signStatus) {
-		this.signStatus = signStatus;
-	}
+    public void setSignStatus(Integer signStatus) {
+        this.signStatus = signStatus;
+    }
 
-	public String getReason() {
-		return reason;
-	}
+    public String getReason() {
+        return reason;
+    }
 
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

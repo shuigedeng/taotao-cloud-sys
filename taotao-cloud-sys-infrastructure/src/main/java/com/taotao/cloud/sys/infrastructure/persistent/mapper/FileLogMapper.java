@@ -18,9 +18,8 @@ package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
-import org.apache.ibatis.annotations.Select;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * IFileMapper
@@ -30,9 +29,10 @@ import java.util.List;
  * @since 2021/10/13 22:50
  */
 public interface FileLogMapper extends BaseSuperMapper<FileLogPO, Long> {
-	@Select("""
-		select biz_type
-		from tt_file_log
-		""")
-	List<String> testQueryFileLog();
+    @Select(
+            """
+        select biz_type
+        from tt_file_log
+        """)
+    List<String> testQueryFileLog();
 }

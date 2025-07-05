@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.api.feign.response.setting;
 
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 

@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serializable;
+import lombok.*;
 
 /** 商品设置 */
 @Setter
@@ -30,16 +29,22 @@ public class GoodsSetting implements Serializable {
 
     /** 是否开启商品审核 */
     private Boolean goodsCheck;
+
     /** 小图宽 */
     private Integer smallPictureWidth;
+
     /** 小图高 */
     private Integer smallPictureHeight;
+
     /** 缩略图宽 */
     private Integer abbreviationPictureWidth;
+
     /** 缩略图高 */
     private Integer abbreviationPictureHeight;
+
     /** 原图宽 */
     private Integer originalPictureWidth;
+
     /** 原图高 */
     private Integer originalPictureHeight;
 }

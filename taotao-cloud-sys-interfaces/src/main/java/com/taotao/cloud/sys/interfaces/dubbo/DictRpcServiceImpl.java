@@ -38,7 +38,7 @@ public class DictRpcServiceImpl implements DictRpcService {
     @Override
     public DictRpcResponse findByCode(Integer code) {
 
-		LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", code);
+        LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", code);
 
         return new DictRpcResponse();
     }

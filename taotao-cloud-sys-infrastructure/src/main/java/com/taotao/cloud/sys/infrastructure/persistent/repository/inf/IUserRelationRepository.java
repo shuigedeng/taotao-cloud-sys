@@ -26,4 +26,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRel
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IUserRelationRepository extends BaseInterfaceSuperRepository<UserRelationPO, Long> {}
+public interface IUserRelationRepository
+        extends BaseInterfaceSuperRepository<UserRelationPO, Long> {}

@@ -19,12 +19,9 @@ package com.taotao.cloud.sys.api.dubbo.response;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.Accessors;
 
 /**
@@ -43,8 +40,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "公司查询VO")
 public class LogsRpcResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     private Long id;
 
@@ -60,57 +56,54 @@ public class LogsRpcResponse implements Serializable {
     /** 排序值 */
     private Integer sortNum;
 
-
-
-
     /** 备注信息 */
     private String remark;
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getDictName() {
-		return dictName;
-	}
+    public String getDictName() {
+        return dictName;
+    }
 
-	public void setDictName(String dictName) {
-		this.dictName = dictName;
-	}
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
+    }
 
-	public String getDictCode() {
-		return dictCode;
-	}
+    public String getDictCode() {
+        return dictCode;
+    }
 
-	public void setDictCode(String dictCode) {
-		this.dictCode = dictCode;
-	}
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public Integer getSortNum() {
-		return sortNum;
-	}
+    public Integer getSortNum() {
+        return sortNum;
+    }
 
-	public void setSortNum(Integer sortNum) {
-		this.sortNum = sortNum;
-	}
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

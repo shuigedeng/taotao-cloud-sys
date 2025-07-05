@@ -18,12 +18,9 @@ package com.taotao.cloud.sys.api.feign.response;
 
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.Accessors;
 
 /**
@@ -41,8 +38,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class LogisticsApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     private Long id;
 

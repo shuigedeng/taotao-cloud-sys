@@ -21,16 +21,14 @@ import com.taotao.boot.webagg.entity.SuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 /**
  * 角色-菜单第三方表
@@ -61,23 +59,23 @@ public class RoleResourcePO extends SuperEntity<RoleResourcePO, Long> {
     @Column(name = "`resource_id`", columnDefinition = "bigint not null comment '菜单ID'")
     private Long resourceId;
 
-	public Long getRoleId() {
-		return roleId;
-	}
+    public Long getRoleId() {
+        return roleId;
+    }
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 
-	public Long getResourceId() {
-		return resourceId;
-	}
+    public Long getResourceId() {
+        return resourceId;
+    }
 
-	public void setResourceId(Long resourceId) {
-		this.resourceId = resourceId;
-	}
+    public void setResourceId(Long resourceId) {
+        this.resourceId = resourceId;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

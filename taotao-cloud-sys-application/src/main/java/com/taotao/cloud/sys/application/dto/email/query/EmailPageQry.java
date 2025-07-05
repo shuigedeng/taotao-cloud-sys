@@ -17,13 +17,12 @@
 package com.taotao.cloud.sys.application.dto.email.query;
 
 import com.taotao.boot.common.model.PageQuery;
-import lombok.AllArgsConstructor;
+import java.util.List;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import java.util.List;
 
 /**
  * EmailVo

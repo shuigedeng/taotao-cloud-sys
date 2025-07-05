@@ -34,24 +34,25 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper extends BaseSuperMapper<UserPO, Long> {
 
+    /**
+     * create table if not exists sys_person_phone_encrypt ( id bigint auto_increment comment '主键'
+     * primary key, person_id int not null comment '关联人员信息表主键', phone_key varchar(500) not null
+     * comment '手机号码分词密文' ) comment '人员的手机号码分词密文映射表';
+     *
+     * @param personId
+     * @param phoneKey
+     * @return
+     */
+    @Update(
+            value =
+                    """
+          insert into sys_person_phone_encrypt (person_id, phone_key) value(#{personId},#{phoneKey})
+        """)
+    Integer insertPhoneKeyworkds(Long personId, String phoneKey);
 
-	/**
-	 * create table if not exists sys_person_phone_encrypt ( id bigint auto_increment comment '主键'
-	 * primary key, person_id int not null comment '关联人员信息表主键', phone_key varchar(500) not null
-	 * comment '手机号码分词密文' ) comment '人员的手机号码分词密文映射表';
-	 *
-	 * @param personId
-	 * @param phoneKey
-	 * @return
-	 */
-	@Update(value = """
-		  insert into sys_person_phone_encrypt (person_id, phone_key) value(#{personId},#{phoneKey})
-		""")
-	Integer insertPhoneKeyworkds(Long personId, String phoneKey);
-
-
-	@Select("""
-		select * from sys_person where id in (select person_id from sys_person_phone_encrypt where phone_key like concat('%',#{phoneVal},'%'))
-		""")
-	List<UserPO> queryByPhoneEncrypt(@Param("phoneVal") String phoneVal);
+    @Select(
+            """
+        select * from sys_person where id in (select person_id from sys_person_phone_encrypt where phone_key like concat('%',#{phoneVal},'%'))
+        """)
+    List<UserPO> queryByPhoneEncrypt(@Param("phoneVal") String phoneVal);
 }

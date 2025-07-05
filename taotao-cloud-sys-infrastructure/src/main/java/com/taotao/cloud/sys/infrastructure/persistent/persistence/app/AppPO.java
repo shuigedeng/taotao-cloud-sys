@@ -21,11 +21,10 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.util.Objects;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -49,85 +48,90 @@ import org.hibernate.proxy.HibernateProxy;
 @org.springframework.data.relational.core.mapping.Table(name = AppPO.TABLE_NAME)
 public class AppPO extends BaseSuperEntity<AppPO, Long> {
 
-	public static final String TABLE_NAME = "ttc_app";
+    public static final String TABLE_NAME = "ttc_app";
 
-	/**
-	 * 应用名称
-	 */
-	private String name;
+    /**
+     * 应用名称
+     */
+    private String name;
 
-	/**
-	 * 应用编码
-	 */
-	private String code;
+    /**
+     * 应用编码
+     */
+    private String code;
 
-	/**
-	 * 图标
-	 */
-	private String icon;
+    /**
+     * 图标
+     */
+    private String icon;
 
-	/**
-	 * 排序
-	 */
-	private Integer sort;
+    /**
+     * 排序
+     */
+    private Integer sort;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public String getIcon() {
-		return icon;
-	}
+    public String getIcon() {
+        return icon;
+    }
 
-	public Integer getSort() {
-		return sort;
-	}
+    public Integer getSort() {
+        return sort;
+    }
 
-	public void setSort(Integer sort) {
-		this.sort = sort;
-	}
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
 
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public final boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null) {
-			return false;
-		}
-		Class<?> oEffectiveClass = o instanceof HibernateProxy
-			? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass()
-			: o.getClass();
-		Class<?> thisEffectiveClass = this instanceof HibernateProxy
-			? ((HibernateProxy) this).getHibernateLazyInitializer()
-			.getPersistentClass() : this.getClass();
-		if (thisEffectiveClass != oEffectiveClass) {
-			return false;
-		}
-		AppPO appPO = (AppPO) o;
-		return getId() != null && Objects.equals(getId(), appPO.getId());
-	}
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        Class<?> oEffectiveClass =
+                o instanceof HibernateProxy
+                        ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass()
+                        : o.getClass();
+        Class<?> thisEffectiveClass =
+                this instanceof HibernateProxy
+                        ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass()
+                        : this.getClass();
+        if (thisEffectiveClass != oEffectiveClass) {
+            return false;
+        }
+        AppPO appPO = (AppPO) o;
+        return getId() != null && Objects.equals(getId(), appPO.getId());
+    }
 
-	@Override
-	public final int hashCode() {
-		return this instanceof HibernateProxy
-			? ((HibernateProxy) this).getHibernateLazyInitializer()
-			.getPersistentClass().hashCode() : getClass().hashCode();
-	}
+    @Override
+    public final int hashCode() {
+        return this instanceof HibernateProxy
+                ? ((HibernateProxy) this)
+                        .getHibernateLazyInitializer()
+                        .getPersistentClass()
+                        .hashCode()
+                : getClass().hashCode();
+    }
 }

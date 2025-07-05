@@ -33,43 +33,51 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/role")
 @Tag(name = "管理端-角色管理API", description = "管理端-角色管理API")
-public class ManagerRoleController  extends BusinessController {
+public class ManagerRoleController extends BusinessController {
 
-//    @Operation(summary = "根据用户id获取角色列表", description = "根据用户id获取角色列表")
-//    @Parameters({
-//            @Parameter(name = "userId", description = "用户id", required = true, example = "123", in = ParameterIn.PATH)
-//    })
-//    @RequestLogger
-//    @PreAuthorize("hasAuthority('sys:role:info:userId')")
-//    @GetMapping("/userId/{userId}")
-//    public Result<List<RoleQueryVO>> findRoleByUserId(@NotNull(message = "用户id不能为空") @PathVariable(name = "userId") Long userId) {
-//        List<RoleBO> roles = service().findRoleByUserIds(Set.of(userId));
-//        List<RoleQueryVO> result = RoleConvert.INSTANCE.convertListVO(roles);
-//        return success(result);
-//    }
-//
-//    @Operation(summary = "根据用户id列表获取角色列表", description = "后台页面-用户信息页面-根据用户id列表获取角色列表")
-//    @Parameters({
-//            @Parameter(name = "userIds", description = "用户id列表", required = true, example = "1,2,3")
-//    })
-//    @RequestLogger
-//    @PreAuthorize("hasAuthority('sys:role:info:userIds')")
-//    @GetMapping("/userId")
-//    public Result<List<RoleQueryVO>> findRoleByUserIds(@NotEmpty(message = "用户id列表不能为空") @RequestParam("userIds") Set<Long> userIds) {
-//        List<RoleBO> roles = service().findRoleByUserIds(userIds);
-//        List<RoleQueryVO> result = RoleConvert.INSTANCE.convertListVO(roles);
-//        return success(result);
-//    }
-//
-//    @Operation(summary = "根据角色id更新菜单信息(角色分配菜单)", description = "后台页面-用户信息页面-根据角色id更新菜单信息(角色分配菜单)")
-//    @Parameters({
-//            @Parameter(name = "roleId", description = "角色id", required = true, example = "1", in = ParameterIn.PATH),
-//    })
-//    @RequestLogger
-//    @PreAuthorize("hasAuthority('sys:role:menu')")
-//    @PutMapping("/resources/{roleId}")
-//    public Result<Boolean> saveRoleMenus(@NotNull(message = "角色id不能为空") @PathVariable(name = "roleId") Long roleId,
-//                                         @Validated @NotEmpty(message = "菜单id列表不能为空") @RequestBody Set<Long> menuIds) {
-//        return success(service().saveRoleMenus(roleId, menuIds));
-//    }
+    //    @Operation(summary = "根据用户id获取角色列表", description = "根据用户id获取角色列表")
+    //    @Parameters({
+    //            @Parameter(name = "userId", description = "用户id", required = true, example =
+    // "123", in = ParameterIn.PATH)
+    //    })
+    //    @RequestLogger
+    //    @PreAuthorize("hasAuthority('sys:role:info:userId')")
+    //    @GetMapping("/userId/{userId}")
+    //    public Result<List<RoleQueryVO>> findRoleByUserId(@NotNull(message = "用户id不能为空")
+    // @PathVariable(name = "userId") Long userId) {
+    //        List<RoleBO> roles = service().findRoleByUserIds(Set.of(userId));
+    //        List<RoleQueryVO> result = RoleConvert.INSTANCE.convertListVO(roles);
+    //        return success(result);
+    //    }
+    //
+    //    @Operation(summary = "根据用户id列表获取角色列表", description = "后台页面-用户信息页面-根据用户id列表获取角色列表")
+    //    @Parameters({
+    //            @Parameter(name = "userIds", description = "用户id列表", required = true, example =
+    // "1,2,3")
+    //    })
+    //    @RequestLogger
+    //    @PreAuthorize("hasAuthority('sys:role:info:userIds')")
+    //    @GetMapping("/userId")
+    //    public Result<List<RoleQueryVO>> findRoleByUserIds(@NotEmpty(message = "用户id列表不能为空")
+    // @RequestParam("userIds") Set<Long> userIds) {
+    //        List<RoleBO> roles = service().findRoleByUserIds(userIds);
+    //        List<RoleQueryVO> result = RoleConvert.INSTANCE.convertListVO(roles);
+    //        return success(result);
+    //    }
+    //
+    //    @Operation(summary = "根据角色id更新菜单信息(角色分配菜单)", description =
+    // "后台页面-用户信息页面-根据角色id更新菜单信息(角色分配菜单)")
+    //    @Parameters({
+    //            @Parameter(name = "roleId", description = "角色id", required = true, example = "1",
+    // in = ParameterIn.PATH),
+    //    })
+    //    @RequestLogger
+    //    @PreAuthorize("hasAuthority('sys:role:menu')")
+    //    @PutMapping("/resources/{roleId}")
+    //    public Result<Boolean> saveRoleMenus(@NotNull(message = "角色id不能为空") @PathVariable(name =
+    // "roleId") Long roleId,
+    //                                         @Validated @NotEmpty(message = "菜单id列表不能为空")
+    // @RequestBody Set<Long> menuIds) {
+    //        return success(service().saveRoleMenus(roleId, menuIds));
+    //    }
 }

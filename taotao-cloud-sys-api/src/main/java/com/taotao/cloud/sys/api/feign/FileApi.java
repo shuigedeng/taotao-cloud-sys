@@ -16,6 +16,8 @@
 
 package com.taotao.cloud.sys.api.feign;
 
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.support.info.ApiInfo;
@@ -26,9 +28,6 @@ import com.taotao.cloud.sys.api.feign.response.FileApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 /**
  * 远程调用后台用户模块
@@ -52,9 +51,15 @@ public interface FileApi {
     @ApiInfo(
             create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
             update = {
-                @Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-                @Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
             })
     @GetMapping("/file/feign/file/code")
-		FileApiResponse findByCode(@RequestParam(value = "code") String code);
+    FileApiResponse findByCode(@RequestParam(value = "code") String code);
 }

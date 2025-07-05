@@ -35,48 +35,49 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/buyer/dict")
 @Tag(name = "pc端-字典API", description = "pc端-字典API")
-public class BuyerDictController extends BusinessController  {
+public class BuyerDictController extends BusinessController {
 
     // @Autowired
     // private ProducerService producerService;
 
-//    @NotAuth
-//    @GetMapping("/add/{type}")
-//    @Operation( summary="通过code查询所有字典列表")
-//    public Result<Boolean> add(@PathVariable String type) throws SQLIntegrityConstraintViolationException {
-//        Boolean result = service().add(type);
-//        return success(result);
-//    }
-//
-//    @NotAuth
-//    @GetMapping("/add1")
-//    @Operation(summary="通过code查询所有字典列表")
-//    public Result<Boolean> add1() {
-//        Boolean result = service().add1();
-//        return success(result);
-//    }
-//
-//    @GetMapping("/test/codexxxxx")
-//    @Operation(summary="通过code查询所有字典列表")
-//    public Result<Boolean> testCode(@RequestParam String code) {
-//        // try {
-//        //	producerService.sendStringMsg();
-//        //	producerService.sendClassMsg();
-//        // } catch (PulsarClientException e) {
-//        //	LogUtils.error(e);
-//        // }
-//
-//        Dict byCode = service().findByCode(code);
-//        LogUtils.info(String.valueOf(byCode));
-//        return Result.success(true);
-//    }
-//
-//    @NotAuth
-//    @GetMapping("/testMybatisQueryStructure")
-//    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
-//    public Result<Dict> testMybatisQueryStructure(@RequestParam Long dictId) {
-//        DictQuery dictQuery = new DictQuery();
-//        dictQuery.setDictId(dictId);
-//        return Result.success(service().testMybatisQueryStructure(dictQuery));
-//    }
+    //    @NotAuth
+    //    @GetMapping("/add/{type}")
+    //    @Operation( summary="通过code查询所有字典列表")
+    //    public Result<Boolean> add(@PathVariable String type) throws
+    // SQLIntegrityConstraintViolationException {
+    //        Boolean result = service().add(type);
+    //        return success(result);
+    //    }
+    //
+    //    @NotAuth
+    //    @GetMapping("/add1")
+    //    @Operation(summary="通过code查询所有字典列表")
+    //    public Result<Boolean> add1() {
+    //        Boolean result = service().add1();
+    //        return success(result);
+    //    }
+    //
+    //    @GetMapping("/test/codexxxxx")
+    //    @Operation(summary="通过code查询所有字典列表")
+    //    public Result<Boolean> testCode(@RequestParam String code) {
+    //        // try {
+    //        //	producerService.sendStringMsg();
+    //        //	producerService.sendClassMsg();
+    //        // } catch (PulsarClientException e) {
+    //        //	LogUtils.error(e);
+    //        // }
+    //
+    //        Dict byCode = service().findByCode(code);
+    //        LogUtils.info(String.valueOf(byCode));
+    //        return Result.success(true);
+    //    }
+    //
+    //    @NotAuth
+    //    @GetMapping("/testMybatisQueryStructure")
+    //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
+    //    public Result<Dict> testMybatisQueryStructure(@RequestParam Long dictId) {
+    //        DictQuery dictQuery = new DictQuery();
+    //        dictQuery.setDictId(dictId);
+    //        return Result.success(service().testMybatisQueryStructure(dictQuery));
+    //    }
 }

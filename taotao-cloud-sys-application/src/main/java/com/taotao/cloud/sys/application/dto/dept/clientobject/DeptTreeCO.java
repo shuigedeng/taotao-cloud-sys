@@ -19,15 +19,14 @@ package com.taotao.cloud.sys.application.dto.dept.clientobject;
 import com.taotao.boot.common.tree.INode;
 import com.taotao.boot.common.tree.MapperNode;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.*;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
-
 import java.io.Serial;
 import java.time.LocalDateTime;
 import java.util.List;
+import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * DepartVO
@@ -46,8 +45,7 @@ import java.util.List;
 @Schema(description = "部门树VO")
 public class DeptTreeCO extends MapperNode implements INode {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     /// **
     // * 主键ID
@@ -71,12 +69,14 @@ public class DeptTreeCO extends MapperNode implements INode {
 
     /** 部门名称 */
     private String name;
+
     /// **
     // * 排序
     // */
     // private Integer sort;
     /** 删除标识 */
     private String isDeleted;
+
     /** 租户ID */
     private Long tenantId;
 

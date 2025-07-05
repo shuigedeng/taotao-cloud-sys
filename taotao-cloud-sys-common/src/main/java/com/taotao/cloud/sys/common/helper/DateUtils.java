@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.taotao.cloud.sys.common.helper;
 
 import java.time.LocalDate;
@@ -14,26 +30,31 @@ import org.springframework.lang.NonNull;
  * 日期工具类
  */
 public enum DateUtils {
-
     ;
 
     private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
     private static final String DEFAULT_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private static final ZoneId DEFAULT_ZONE_ID = ZoneId.systemDefault();
-    private static final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT);
-    private static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT);
+    private static final DateTimeFormatter DEFAULT_DATE_FORMATTER =
+            DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT);
+    private static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER =
+            DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT);
+
     /**
      * S 秒
      */
     private static final int S = 1000;
+
     /**
      * MIN 分钟
      */
     private static final int MIN = S * 60;
+
     /**
      * H 小时
      */
     private static final int H = MIN * 60;
+
     /**
      * D 天
      */
@@ -50,7 +71,6 @@ public enum DateUtils {
         }
     }
 
-
     /**
      * @param date   日期
      * @param format 日期格式 (至少要精确到天)
@@ -60,7 +80,8 @@ public enum DateUtils {
     }
 
     public static Date ofDate(String date, ZoneId zoneId, DateTimeFormatter formatter) {
-        return Date.from(LocalDate.parse(date, formatter).atStartOfDay().atZone(zoneId).toInstant());
+        return Date.from(
+                LocalDate.parse(date, formatter).atStartOfDay().atZone(zoneId).toInstant());
     }
 
     public static String formatDate(@NonNull Date date) {
@@ -128,8 +149,13 @@ public enum DateUtils {
      * 日期是否是今天
      */
     public static boolean isCurrentDate(@NonNull Date date) {
-        return date.after(Date.from(LocalDate.now().atStartOfDay(DEFAULT_ZONE_ID).toInstant())) &&
-                date.before(Date.from(LocalDate.now().plusDays(1).atStartOfDay(DEFAULT_ZONE_ID).toInstant()));
+        return date.after(Date.from(LocalDate.now().atStartOfDay(DEFAULT_ZONE_ID).toInstant()))
+                && date.before(
+                        Date.from(
+                                LocalDate.now()
+                                        .plusDays(1)
+                                        .atStartOfDay(DEFAULT_ZONE_ID)
+                                        .toInstant()));
     }
 
     /**
@@ -140,7 +166,9 @@ public enum DateUtils {
      * @return 获取任意时间
      */
     public static String anyTimeByDay(Date date, int calendarEnum, int count) {
-        return LocalDateTime.ofInstant(getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID).format(DEFAULT_DATE_TIME_FORMATTER);
+        return LocalDateTime.ofInstant(
+                        getYourCalendar(date, calendarEnum, count).toInstant(), DEFAULT_ZONE_ID)
+                .format(DEFAULT_DATE_TIME_FORMATTER);
     }
 
     /**
@@ -186,13 +214,13 @@ public enum DateUtils {
         long milliSecond = costTime - day * D - hour * H - minute * MIN - second * S;
         StringBuilder result = new StringBuilder();
         if (day != 0) {
-            //每年按平均365天算
+            // 每年按平均365天算
             if (day >= yearDay) {
                 long year = day / yearDay;
                 result.append(year).append("year ");
                 day = day - year * yearDay;
             }
-            //每月按平均30天算
+            // 每月按平均30天算
             if (day < yearDay && day >= monthDay) {
                 long month = day / monthDay;
                 result.append(month).append("month ");
@@ -229,7 +257,6 @@ public enum DateUtils {
         return calendar;
     }
 
-
     /**
      * 设置calender 时间
      *
@@ -239,7 +266,8 @@ public enum DateUtils {
      * @param second      秒
      * @param millisecond 毫秒
      */
-    private static void setCalendarTime(Calendar calendar, int hour, int minute, int second, int millisecond) {
+    private static void setCalendarTime(
+            Calendar calendar, int hour, int minute, int second, int millisecond) {
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, minute);
         calendar.set(Calendar.SECOND, second);

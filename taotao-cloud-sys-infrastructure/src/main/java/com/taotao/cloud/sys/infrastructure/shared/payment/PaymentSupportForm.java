@@ -17,11 +17,10 @@
 package com.taotao.cloud.sys.infrastructure.shared.payment;
 
 import com.taotao.boot.common.enums.ClientTypeEnum;
-import lombok.*;
-import lombok.experimental.Accessors;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 /** 支持的支付方式表单 */
 @Setter

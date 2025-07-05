@@ -24,6 +24,4 @@ import org.mapstruct.Mapper;
  * @since 2022/11/23 00:45
  */
 @Mapper
-public interface AppConverter {
-
-}
+public interface AppConverter {}

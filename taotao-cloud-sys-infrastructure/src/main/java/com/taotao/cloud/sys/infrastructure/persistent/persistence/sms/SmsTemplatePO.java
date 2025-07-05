@@ -21,17 +21,14 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /** 短信模板 */
 @Getter
@@ -62,74 +59,77 @@ public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
 
     @Column(
             name = "template_status",
-            columnDefinition = "int not null default 0 comment '模板审核状态  0：审核中。"
-                    + "     * 1：审核通过。"
-                    + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
+            columnDefinition =
+                    "int not null default 0 comment '模板审核状态  0：审核中。"
+                            + "     * 1：审核通过。"
+                            + "     * 2：审核失败，请在返回参数Reason中查看审核失败原因。'")
     private Integer templateStatus;
 
-    @Column(name = "`template_code`", columnDefinition = "varchar(2000) not null comment '短信模板CODE'")
+    @Column(
+            name = "`template_code`",
+            columnDefinition = "varchar(2000) not null comment '短信模板CODE'")
     private String templateCode;
 
     @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-	public String getTemplateName() {
-		return templateName;
-	}
+    public String getTemplateName() {
+        return templateName;
+    }
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-	}
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
 
-	public Integer getTemplateType() {
-		return templateType;
-	}
+    public Integer getTemplateType() {
+        return templateType;
+    }
 
-	public void setTemplateType(Integer templateType) {
-		this.templateType = templateType;
-	}
+    public void setTemplateType(Integer templateType) {
+        this.templateType = templateType;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public String getTemplateContent() {
-		return templateContent;
-	}
+    public String getTemplateContent() {
+        return templateContent;
+    }
 
-	public void setTemplateContent(String templateContent) {
-		this.templateContent = templateContent;
-	}
+    public void setTemplateContent(String templateContent) {
+        this.templateContent = templateContent;
+    }
 
-	public Integer getTemplateStatus() {
-		return templateStatus;
-	}
+    public Integer getTemplateStatus() {
+        return templateStatus;
+    }
 
-	public void setTemplateStatus(Integer templateStatus) {
-		this.templateStatus = templateStatus;
-	}
+    public void setTemplateStatus(Integer templateStatus) {
+        this.templateStatus = templateStatus;
+    }
 
-	public String getTemplateCode() {
-		return templateCode;
-	}
+    public String getTemplateCode() {
+        return templateCode;
+    }
 
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-	}
+    public void setTemplateCode(String templateCode) {
+        this.templateCode = templateCode;
+    }
 
-	public String getReason() {
-		return reason;
-	}
+    public String getReason() {
+        return reason;
+    }
 
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

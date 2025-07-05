@@ -19,7 +19,6 @@ package com.taotao.cloud.sys.infrastructure.assembler;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -73,5 +72,5 @@ public interface DictAssembler {
      * @param dict dict
      * @since 2022-04-28 13:39:25
      */
-//    void copy(DictSaveDTO dictSaveDTO, @MappingTarget Dict dict);
+    //    void copy(DictSaveDTO dictSaveDTO, @MappingTarget Dict dict);
 }

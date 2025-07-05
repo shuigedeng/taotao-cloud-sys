@@ -17,14 +17,13 @@
 package com.taotao.cloud.sys.application.dto.user.query;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 用户查询对象
@@ -43,8 +42,7 @@ import java.io.Serializable;
 @Schema(description = "用户查询对象")
 public class UserQry implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "用户昵称")
     private String nickname;

@@ -17,8 +17,8 @@
 package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -34,19 +34,19 @@ public class WechatConnectSettingApiResponse {
     /** 微信联合登陆配置 */
     List<WechatConnectSettingItemVO> wechatConnectSettingItemVOS;
 
-	/** 微信设置 */
-	@Setter
-@Getter
-@ToString
-	public static class WechatConnectSettingItemVO {
+    /** 微信设置 */
+    @Setter
+    @Getter
+    @ToString
+    public static class WechatConnectSettingItemVO {
 
-		/**
-		 * @See ClientType
-		 */
-		private String clientType;
+        /**
+         * @See ClientType
+         */
+        private String clientType;
 
-		private String appId;
+        private String appId;
 
-		private String appSecret;
-	}
+        private String appSecret;
+    }
 }

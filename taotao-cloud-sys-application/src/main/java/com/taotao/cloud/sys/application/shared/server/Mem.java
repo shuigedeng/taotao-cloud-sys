@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.taotao.cloud.sys.application.shared.server;
 
 /**
@@ -7,48 +23,47 @@ package com.taotao.cloud.sys.application.shared.server;
  */
 public class Mem {
 
-	/** 内存总量 */
-	private double total;
+    /** 内存总量 */
+    private double total;
 
-	/** 已用内存 */
-	private double used;
+    /** 已用内存 */
+    private double used;
 
-	/** 剩余内存 */
-	private double free;
+    /** 剩余内存 */
+    private double free;
 
-	public double getTotal() {
+    public double getTotal() {
 
-		return total / (1024 * 1024 * 1024);
-	}
+        return total / (1024 * 1024 * 1024);
+    }
 
-	public void setTotal(long total) {
+    public void setTotal(long total) {
 
-		this.total = total;
-	}
+        this.total = total;
+    }
 
-	public double getUsed() {
+    public double getUsed() {
 
-		return used / (1024 * 1024 * 1024);
-	}
+        return used / (1024 * 1024 * 1024);
+    }
 
-	public void setUsed(long used) {
+    public void setUsed(long used) {
 
-		this.used = used;
-	}
+        this.used = used;
+    }
 
-	public double getFree() {
+    public double getFree() {
 
-		return free / (1024 * 1024 * 1024);
-	}
+        return free / (1024 * 1024 * 1024);
+    }
 
-	public void setFree(long free) {
+    public void setFree(long free) {
 
-		this.free = free;
-	}
+        this.free = free;
+    }
 
-	public double getUsage() {
+    public double getUsage() {
 
-		return (used / total) * 100;
-	}
-
+        return (used / total) * 100;
+    }
 }

@@ -16,10 +16,9 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serial;
 import java.io.Serializable;
+import lombok.*;
 
 /** 邮箱设置 */
 @Setter
@@ -27,8 +26,7 @@ import java.io.Serializable;
 @ToString
 public class EmailSetting implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 7261037221941716140L;
+    @Serial private static final long serialVersionUID = 7261037221941716140L;
 
     /** 邮箱服务器 */
     private String host;

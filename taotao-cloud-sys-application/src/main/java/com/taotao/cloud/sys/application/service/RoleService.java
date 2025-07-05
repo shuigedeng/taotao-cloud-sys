@@ -27,48 +27,48 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  */
 public interface RoleService extends CommandService {
 
-//    /**
-//     * 根据用户id列表获取角色列表
-//     *
-//     * @param userIds userIds
-//     * @return 角色列表
-//     * @since 2021-10-09 20:43:25
-//     */
-//    List<RoleBO> findRoleByUserIds(Set<Long> userIds);
-//
-//    /**
-//     * 查询所有角色列表
-//     *
-//     * @return 角色列表
-//     * @since 2021-10-09 20:45:23
-//     */
-//    List<RoleBO> findAllRoles();
-//
-//    /**
-//     * 根据code列表获取角色信息
-//     *
-//     * @param codes codes
-//     * @return 角色列表
-//     * @since 2021-10-09 20:45:41
-//     */
-//    List<RoleBO> findRoleByCodes(Set<String> codes);
-//
-//    /**
-//     * 根据code查询角色是否存在
-//     *
-//     * @param code code
-//     * @return 是否存在
-//     * @since 2021-10-09 20:43:33
-//     */
-//    Boolean existRoleByCode(String code);
-//
-//    /**
-//     * 根据角色id更新菜单信息(角色分配菜单)
-//     *
-//     * @param roleId 角色id
-//     * @param menuIds 菜单id列表
-//     * @return 更新接口
-//     * @since 2021-10-09 20:45:35
-//     */
-//    Boolean saveRoleMenus(Long roleId, Set<Long> menuIds);
+    //    /**
+    //     * 根据用户id列表获取角色列表
+    //     *
+    //     * @param userIds userIds
+    //     * @return 角色列表
+    //     * @since 2021-10-09 20:43:25
+    //     */
+    //    List<RoleBO> findRoleByUserIds(Set<Long> userIds);
+    //
+    //    /**
+    //     * 查询所有角色列表
+    //     *
+    //     * @return 角色列表
+    //     * @since 2021-10-09 20:45:23
+    //     */
+    //    List<RoleBO> findAllRoles();
+    //
+    //    /**
+    //     * 根据code列表获取角色信息
+    //     *
+    //     * @param codes codes
+    //     * @return 角色列表
+    //     * @since 2021-10-09 20:45:41
+    //     */
+    //    List<RoleBO> findRoleByCodes(Set<String> codes);
+    //
+    //    /**
+    //     * 根据code查询角色是否存在
+    //     *
+    //     * @param code code
+    //     * @return 是否存在
+    //     * @since 2021-10-09 20:43:33
+    //     */
+    //    Boolean existRoleByCode(String code);
+    //
+    //    /**
+    //     * 根据角色id更新菜单信息(角色分配菜单)
+    //     *
+    //     * @param roleId 角色id
+    //     * @param menuIds 菜单id列表
+    //     * @return 更新接口
+    //     * @since 2021-10-09 20:45:35
+    //     */
+    //    Boolean saveRoleMenus(Long roleId, Set<Long> menuIds);
 }

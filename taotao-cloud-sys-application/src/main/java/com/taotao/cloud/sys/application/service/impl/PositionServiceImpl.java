@@ -27,5 +27,4 @@ import org.springframework.stereotype.Service;
  * @since 1.0
  */
 @Service
-public class PositionServiceImpl
-        implements PositionService {}
+public class PositionServiceImpl implements PositionService {}

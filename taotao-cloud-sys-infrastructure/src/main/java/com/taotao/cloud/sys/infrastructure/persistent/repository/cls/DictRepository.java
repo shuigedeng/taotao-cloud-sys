@@ -19,10 +19,9 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
 import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import jakarta.persistence.EntityManager;
+import java.util.Optional;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 /**
  * CompanyMapper
@@ -44,8 +43,11 @@ public class DictRepository extends BaseClassSuperRepository<DictPO, Long> {
         // Optional<Dict> one = findOne(
         //	Example.of(Dict.builder().dictCode(code).build(), exampleMatcher));
 
-        return findOne((Specification<DictPO>) (root, query, builder) ->
-                query.where(builder.equal(root.get("dictCode"), code)).getRestriction());
+        return findOne(
+                (Specification<DictPO>)
+                        (root, query, builder) ->
+                                query.where(builder.equal(root.get("dictCode"), code))
+                                        .getRestriction());
     }
 
     public boolean existsByDictCode(String dictCode) {

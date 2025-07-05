@@ -15,6 +15,7 @@
  */
 
 package com.taotao.cloud.sys.application.configuration.aware;
+
 import com.taotao.boot.common.utils.log.LogUtils;
 import org.springframework.boot.CommandLineRunner;
 

@@ -21,13 +21,12 @@ import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 移动端-字典API
@@ -42,10 +41,10 @@ import java.util.List;
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
 public class MallDictController extends BusinessController {
 
-	@NotAuth
-	@Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
-	@GetMapping("/testMybatisQueryStructure")
-	public Result<List<String>> testMybatisQueryStructure() {
-		return Result.success(new ArrayList<>());
-	}
+    @NotAuth
+    @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
+    @GetMapping("/testMybatisQueryStructure")
+    public Result<List<String>> testMybatisQueryStructure() {
+        return Result.success(new ArrayList<>());
+    }
 }

@@ -17,11 +17,10 @@
 package com.taotao.cloud.sys.infrastructure.utils;
 
 import com.taotao.boot.common.utils.log.LogUtils;
-import org.apache.commons.lang3.StringUtils;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * ToolUtils
@@ -77,7 +76,8 @@ public class ToolUtils {
                                     && !"OR".equalsIgnoreCase(keywordArray[i])
                                     && !"OR".equalsIgnoreCase(keywordArray[i])) {
                                 if (keywordArray[i].startsWith("(")) {
-                                    if (keywordArray[i].contains("NOT") || keywordArray[i].contains("not")) {
+                                    if (keywordArray[i].contains("NOT")
+                                            || keywordArray[i].contains("not")) {
                                         handleKeyWords.append(keywordArray[i].toUpperCase());
                                         continue;
                                     }
@@ -108,7 +108,8 @@ public class ToolUtils {
                                     && !"OR".equalsIgnoreCase(keywordArray[i])
                                     && !"NOT".equalsIgnoreCase(keywordArray[i])) {
                                 if (keywordArray[i].startsWith("(")) {
-                                    if (keywordArray[i].contains("NOT") || keywordArray[i].contains("not")) {
+                                    if (keywordArray[i].contains("NOT")
+                                            || keywordArray[i].contains("not")) {
                                         handleKeyWords
                                                 .append(keywordArray[i].toUpperCase())
                                                 .append(" ");
@@ -135,9 +136,7 @@ public class ToolUtils {
                                             .append("\" ");
                                 }
                             } else {
-                                handleKeyWords
-                                        .append(keywordArray[i].toUpperCase())
-                                        .append(" ");
+                                handleKeyWords.append(keywordArray[i].toUpperCase()).append(" ");
                             }
                         }
                     }

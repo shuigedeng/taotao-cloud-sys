@@ -27,29 +27,29 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  */
 public interface EmailConfigService extends CommandService {
 
-//    /**
-//     * 更新邮件配置
-//     *
-//     * @param emailConfig 邮件配置
-//     * @param old 旧的配置
-//     * @return 是否更新完成
-//     */
-//    Boolean update(EmailConfig emailConfig, EmailConfig old);
-//
-//    /**
-//     * 查询配置
-//     *
-//     * @return EmailConfig 邮件配置
-//     */
-//    EmailConfig find();
-//
-//    /**
-//     * 发送邮件
-//     *
-//     * @param emailVo 邮件发送的内容
-//     * @param emailConfig 邮件配置
-//     * @throws Exception 异常信息
-//     */
-//    @Async
-//    void send(EmailVO emailVo, EmailConfig emailConfig) throws Exception;
+    //    /**
+    //     * 更新邮件配置
+    //     *
+    //     * @param emailConfig 邮件配置
+    //     * @param old 旧的配置
+    //     * @return 是否更新完成
+    //     */
+    //    Boolean update(EmailConfig emailConfig, EmailConfig old);
+    //
+    //    /**
+    //     * 查询配置
+    //     *
+    //     * @return EmailConfig 邮件配置
+    //     */
+    //    EmailConfig find();
+    //
+    //    /**
+    //     * 发送邮件
+    //     *
+    //     * @param emailVo 邮件发送的内容
+    //     * @param emailConfig 邮件配置
+    //     * @throws Exception 异常信息
+    //     */
+    //    @Async
+    //    void send(EmailVO emailVo, EmailConfig emailConfig) throws Exception;
 }

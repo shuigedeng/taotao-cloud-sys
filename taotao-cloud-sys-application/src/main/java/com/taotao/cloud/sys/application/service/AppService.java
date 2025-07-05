@@ -16,10 +16,7 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.taotao.boot.ddd.model.application.service.CommandService;
-
-import java.util.List;
 
 /**
  * 系统应用表
@@ -29,21 +26,21 @@ import java.util.List;
  */
 public interface AppService extends CommandService {
 
-//    /** 添加 */
-//    Boolean addApp(AppDTO appDTO);
-//
-//    /** 修改 */
-//    Boolean updateApp(AppDTO appDTO);
-//
-//    /** 分页 */
-//    IPage<AppDTO> pageApp(AppPageDTO appPageDTO);
-//
-//    /** 获取单条 */
-//    AppDTO findById(Long id);
-//
-//    /** 获取全部 */
-//    List<AppDTO> findAll();
-//
-//    /** 删除 */
-//    Boolean deleteApp(Long id);
+    //    /** 添加 */
+    //    Boolean addApp(AppDTO appDTO);
+    //
+    //    /** 修改 */
+    //    Boolean updateApp(AppDTO appDTO);
+    //
+    //    /** 分页 */
+    //    IPage<AppDTO> pageApp(AppPageDTO appPageDTO);
+    //
+    //    /** 获取单条 */
+    //    AppDTO findById(Long id);
+    //
+    //    /** 获取全部 */
+    //    List<AppDTO> findAll();
+    //
+    //    /** 删除 */
+    //    Boolean deleteApp(Long id);
 }

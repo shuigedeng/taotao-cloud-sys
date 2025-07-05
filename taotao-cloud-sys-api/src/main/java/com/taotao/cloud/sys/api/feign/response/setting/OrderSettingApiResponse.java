@@ -18,8 +18,8 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -32,8 +32,8 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class OrderSettingApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -2628613596000114786L;
+    @Serial private static final long serialVersionUID = -2628613596000114786L;
+
     /** 自动取消 分钟 */
     private Integer autoCancel;
 

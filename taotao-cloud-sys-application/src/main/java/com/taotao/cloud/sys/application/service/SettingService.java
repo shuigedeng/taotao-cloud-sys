@@ -27,17 +27,17 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  */
 public interface SettingService extends CommandService {
 
-//    /**
-//     * 通过key获取
-//     *
-//     * @param key
-//     */
-//    Setting get(String key);
-//
-//    /**
-//     * 修改
-//     *
-//     * @param setting
-//     */
-//    boolean saveUpdate(Setting setting);
+    //    /**
+    //     * 通过key获取
+    //     *
+    //     * @param key
+    //     */
+    //    Setting get(String key);
+    //
+    //    /**
+    //     * 修改
+    //     *
+    //     * @param setting
+    //     */
+    //    boolean saveUpdate(Setting setting);
 }

@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,14 +32,14 @@ public interface FileAssembler {
     /** 实例 */
     FileAssembler INSTANCE = Mappers.getMapper(FileAssembler.class);
 
-//    /**
-//     * 文件文件签证官
-//     *
-//     * @param file 文件
-//     * @return {@link FileVO }
-//     * @since 2022-04-28 13:39:30
-//     */
-//    FileVO convert(File file);
+    //    /**
+    //     * 文件文件签证官
+    //     *
+    //     * @param file 文件
+    //     * @return {@link FileVO }
+    //     * @since 2022-04-28 13:39:30
+    //     */
+    //    FileVO convert(File file);
 
     // /**
     //  * SysUser转AddUserVO

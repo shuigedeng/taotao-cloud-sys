@@ -32,16 +32,11 @@ import jakarta.persistence.PreRemove;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * @Entity：
@@ -137,7 +132,7 @@ import java.util.Objects;
 @Table(name = DictPO.TABLE_NAME)
 @TableName(DictPO.TABLE_NAME)
 @EntityListeners({DictPO.DictEntityListener.class})
-//@NamedQuery(name = "User.findByEmailAddress",
+// @NamedQuery(name = "User.findByEmailAddress",
 //	query = "select u from User u where u.emailAddress = ?1")
 @org.springframework.data.relational.core.mapping.Table(name = DictPO.TABLE_NAME)
 public class DictPO extends BaseSuperEntity<DictPO, Long> {
@@ -149,7 +144,10 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
     private String dictName;
 
     /** 字典编码 */
-    @Column(name = "`dict_code`", unique = true, columnDefinition = "varchar(255) not null comment '字典编码'")
+    @Column(
+            name = "`dict_code`",
+            unique = true,
+            columnDefinition = "varchar(255) not null comment '字典编码'")
     private String dictCode;
 
     /** 描述 */
@@ -164,51 +162,51 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
     @Column(name = "`remark`", columnDefinition = "varchar(255) comment '备注信息'")
     private String remark;
 
-	public String getDictName() {
-		return dictName;
-	}
+    public String getDictName() {
+        return dictName;
+    }
 
-	public void setDictName(String dictName) {
-		this.dictName = dictName;
-	}
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
+    }
 
-	public String getDictCode() {
-		return dictCode;
-	}
+    public String getDictCode() {
+        return dictCode;
+    }
 
-	public void setDictCode(String dictCode) {
-		this.dictCode = dictCode;
-	}
+    public void setDictCode(String dictCode) {
+        this.dictCode = dictCode;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public Integer getSortNum() {
-		return sortNum;
-	}
+    public Integer getSortNum() {
+        return sortNum;
+    }
 
-	public void setSortNum(Integer sortNum) {
-		this.sortNum = sortNum;
-	}
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public static class DictEntityListener {
+    public static class DictEntityListener {
 
         /**
          * 在新实体持久化之前（添加到EntityManager）
-		 * EntityManager 保存记录前回调方法
+         * EntityManager 保存记录前回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:54
@@ -220,7 +218,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 在数据库中存储新实体（在commit或期间flush）
-		 * EntityManager 保存记录后被回调方法
+         * EntityManager 保存记录后被回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:54
@@ -232,7 +230,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 从数据库中检索实体后。
-		 * 实体加载到 Entity 后回调方法
+         * 实体加载到 Entity 后回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:55
@@ -244,7 +242,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 当一个实体被识别为被修改时EntityManager
-		 * 数据库记录修改前回调方法
+         * 数据库记录修改前回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:54
@@ -256,7 +254,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 更新数据库中的实体（在commit或期间flush）
-		 * 数据库记录修改后回调方法
+         * 数据库记录修改后回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:54
@@ -268,7 +266,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 在EntityManager中标记要删除的实体时
-		 * EntityManager 删除记录前被回调方法
+         * EntityManager 删除记录前被回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:54
@@ -280,7 +278,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
 
         /**
          * 从数据库中删除实体（在commit或期间flush）
-		 * EntityManager 删除记录后回调方法
+         * EntityManager 删除记录后回调方法
          *
          * @param object 对象
          * @since 2022-10-21 11:59:55

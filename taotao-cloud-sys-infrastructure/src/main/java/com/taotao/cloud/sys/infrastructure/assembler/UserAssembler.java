@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,39 +32,39 @@ public interface UserAssembler {
     /** 实例 */
     UserAssembler INSTANCE = Mappers.getMapper(UserAssembler.class);
 
-//    /**
-//     * 系统用户用户查询签证官
-//     *
-//     * @param sysUser 系统用户
-//     * @return {@link UserQueryVO }
-//     * @since 2022-04-28 13:39:56
-//     */
-//    UserQueryVO convert(User sysUser);
-//
-//    /**
-//     * 系统用户添加用户签证官
-//     *
-//     * @param sysUser 系统用户
-//     * @return {@link UserRegisterVO }
-//     * @since 2022-04-28 13:39:57
-//     */
-//    UserRegisterVO convertRegisterVO(User sysUser);
-//
-//    /**
-//     * 系统用户用户查询签证官
-//     *
-//     * @param userList 用户列表
-//     * @return {@link List }<{@link UserQueryVO }>
-//     * @since 2022-04-28 13:39:57
-//     */
-//    List<UserQueryVO> convertList(List<User> userList);
-//
-//    /**
-//     * 用户dto复制到系统用户
-//     *
-//     * @param userQueryDTO 用户查询dto
-//     * @param user 用户
-//     * @since 2022-04-28 13:39:57
-//     */
-//    void copy(UserQueryDTO userQueryDTO, @MappingTarget User user);
+    //    /**
+    //     * 系统用户用户查询签证官
+    //     *
+    //     * @param sysUser 系统用户
+    //     * @return {@link UserQueryVO }
+    //     * @since 2022-04-28 13:39:56
+    //     */
+    //    UserQueryVO convert(User sysUser);
+    //
+    //    /**
+    //     * 系统用户添加用户签证官
+    //     *
+    //     * @param sysUser 系统用户
+    //     * @return {@link UserRegisterVO }
+    //     * @since 2022-04-28 13:39:57
+    //     */
+    //    UserRegisterVO convertRegisterVO(User sysUser);
+    //
+    //    /**
+    //     * 系统用户用户查询签证官
+    //     *
+    //     * @param userList 用户列表
+    //     * @return {@link List }<{@link UserQueryVO }>
+    //     * @since 2022-04-28 13:39:57
+    //     */
+    //    List<UserQueryVO> convertList(List<User> userList);
+    //
+    //    /**
+    //     * 用户dto复制到系统用户
+    //     *
+    //     * @param userQueryDTO 用户查询dto
+    //     * @param user 用户
+    //     * @since 2022-04-28 13:39:57
+    //     */
+    //    void copy(UserQueryDTO userQueryDTO, @MappingTarget User user);
 }

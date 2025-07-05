@@ -39,8 +39,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "角色查询对象")
 public class RoleQueryApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 5126530068827085130L;
+    @Serial private static final long serialVersionUID = 5126530068827085130L;
 
     @Schema(description = "id")
     private Long id;

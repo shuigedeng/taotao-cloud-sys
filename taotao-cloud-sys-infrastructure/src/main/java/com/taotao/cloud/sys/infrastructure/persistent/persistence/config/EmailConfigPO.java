@@ -22,7 +22,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -70,43 +69,43 @@ public class EmailConfigPO extends BaseSuperEntity<EmailConfigPO, Long> {
     @Column(name = "`user`", columnDefinition = "varchar(64) not null comment '发件者用户名'")
     private String user;
 
-	public String getFromUser() {
-		return fromUser;
-	}
+    public String getFromUser() {
+        return fromUser;
+    }
 
-	public void setFromUser(String fromUser) {
-		this.fromUser = fromUser;
-	}
+    public void setFromUser(String fromUser) {
+        this.fromUser = fromUser;
+    }
 
-	public String getHost() {
-		return host;
-	}
+    public String getHost() {
+        return host;
+    }
 
-	public void setHost(String host) {
-		this.host = host;
-	}
+    public void setHost(String host) {
+        this.host = host;
+    }
 
-	public String getPass() {
-		return pass;
-	}
+    public String getPass() {
+        return pass;
+    }
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
-	public String getPort() {
-		return port;
-	}
+    public String getPort() {
+        return port;
+    }
 
-	public void setPort(String port) {
-		this.port = port;
-	}
+    public void setPort(String port) {
+        this.port = port;
+    }
 
-	public String getUser() {
-		return user;
-	}
+    public String getUser() {
+        return user;
+    }
 
-	public void setUser(String user) {
-		this.user = user;
-	}
+    public void setUser(String user) {
+        this.user = user;
+    }
 }

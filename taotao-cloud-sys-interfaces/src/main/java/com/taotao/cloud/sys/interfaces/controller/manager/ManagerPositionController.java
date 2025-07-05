@@ -33,4 +33,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/sys/manager/position")
 @Tag(name = "管理端-岗位管理API", description = "管理端-岗位管理API")
-public class ManagerPositionController  extends BusinessController{}
+public class ManagerPositionController extends BusinessController {}

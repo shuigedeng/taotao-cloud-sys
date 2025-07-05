@@ -18,15 +18,14 @@ package com.taotao.cloud.sys.application.dto.resource.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Length;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 菜单更新对象
@@ -45,8 +44,7 @@ import java.io.Serializable;
 @Schema(description = "菜单更新对象")
 public class ResourceUpdateCmd implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "菜单名称", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotBlank(message = "菜单名称不能超过为空")

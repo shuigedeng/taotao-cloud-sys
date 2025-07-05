@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,5 +32,5 @@ public interface EmailAssembler {
     /** 实例 */
     EmailAssembler INSTANCE = Mappers.getMapper(EmailAssembler.class);
 
-//    EmailConfig convert(EmailDTO emailDTO);
+    //    EmailConfig convert(EmailDTO emailDTO);
 }

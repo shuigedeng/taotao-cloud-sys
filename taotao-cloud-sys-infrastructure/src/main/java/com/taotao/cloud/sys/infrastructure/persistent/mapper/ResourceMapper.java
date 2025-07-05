@@ -34,24 +34,26 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ResourceMapper extends BaseSuperMapper<ResourcePO, Long> {
 
-	@Select("""
-		select * from tt_resource where id in #{roleIds}
-		""")
-	List<ResourcePO> findMenuByRoleIds(Set<Long> roleIds);
+    @Select(
+            """
+        select * from tt_resource where id in #{roleIds}
+        """)
+    List<ResourcePO> findMenuByRoleIds(Set<Long> roleIds);
 
-	@Select("""
-		select id from tt_resource where parent_id in #{roleIds}
-		""")
-	List<Long> selectIdList(List<Long> pidList);
+    @Select(
+            """
+        select id from tt_resource where parent_id in #{roleIds}
+        """)
+    List<Long> selectIdList(List<Long> pidList);
 
-	/**
-	 * 查询资源列表
-	 */
-	default IPage<ResourcePO> selectResourceList(ResourcePO resource, PageQuery pageQuery) {
-		return this.selectPage(
-			new LambdaQueryWrapperX<ResourcePO>()
-				.likeIfPresent(ResourcePO::getName, resource.getName())
-				.eqIfPresent(ResourcePO::getParentId, resource.getParentId()),
-			pageQuery);
-	}
+    /**
+     * 查询资源列表
+     */
+    default IPage<ResourcePO> selectResourceList(ResourcePO resource, PageQuery pageQuery) {
+        return this.selectPage(
+                new LambdaQueryWrapperX<ResourcePO>()
+                        .likeIfPresent(ResourcePO::getName, resource.getName())
+                        .eqIfPresent(ResourcePO::getParentId, resource.getParentId()),
+                pageQuery);
+    }
 }

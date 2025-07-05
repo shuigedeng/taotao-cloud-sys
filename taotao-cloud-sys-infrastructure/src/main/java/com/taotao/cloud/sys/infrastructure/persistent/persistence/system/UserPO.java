@@ -24,17 +24,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * 系统用户表
@@ -50,13 +47,14 @@ import java.util.Objects;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = UserPO.TABLE_NAME,
-	uniqueConstraints = {
-		@UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
-	},
-	indexes = {
-		@Index(name = "idx_create_date", columnList = "create_date"),
-	})
+@Table(
+        name = UserPO.TABLE_NAME,
+        uniqueConstraints = {
+            @UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
+        },
+        indexes = {
+            @Index(name = "idx_create_date", columnList = "create_date"),
+        })
 @TableName(UserPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = UserPO.TABLE_NAME)
 public class UserPO extends BaseSuperEntity<UserPO, Long> {
@@ -80,7 +78,10 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     private String password;
 
     /** 手机号 */
-    @Column(name = "`mobile`", unique = true, columnDefinition = "varchar(11) not null comment '手机号'")
+    @Column(
+            name = "`mobile`",
+            unique = true,
+            columnDefinition = "varchar(11) not null comment '手机号'")
     private String mobile;
 
     /** 电话号码 */
@@ -122,110 +123,107 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     // private Long deptId;
     //
 
-	/// **
-	// * 岗位ID
-	// */
-	// @Column(name = "`job_id`", columnDefinition = "bigint not null comment '岗位ID'")
-	// private Long jobId;
+    /// **
+    // * 岗位ID
+    // */
+    // @Column(name = "`job_id`", columnDefinition = "bigint not null comment '岗位ID'")
+    // private Long jobId;
 
+    public String getAccount() {
+        return account;
+    }
 
-	public String getAccount() {
-		return account;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public String getNickname() {
+        return nickname;
+    }
 
-	public String getNickname() {
-		return nickname;
-	}
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public String getMobile() {
-		return mobile;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public Integer getSex() {
+        return sex;
+    }
 
-	public Integer getSex() {
-		return sex;
-	}
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
 
-	public void setSex(Integer sex) {
-		this.sex = sex;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getBirthday() {
+        return birthday;
+    }
 
-	public String getBirthday() {
-		return birthday;
-	}
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
+    public String getAvatar() {
+        return avatar;
+    }
 
-	public String getAvatar() {
-		return avatar;
-	}
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
-
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
-
-
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
     @Override
     public boolean equals(Object o) {

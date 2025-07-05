@@ -29,18 +29,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @CacheConfig(cacheNames = "{setting}")
-public class SettingServiceImpl
-	implements SettingService {
+public class SettingServiceImpl implements SettingService {
 
-//    @Override
-//    @Cacheable(key = "#key")
-//    public Setting get(String key) {
-//        return this.getById(key);
-//    }
-//
-//    @Override
-//    @CacheEvict(key = "#setting.id")
-//    public boolean saveUpdate(Setting setting) {
-//        return this.saveOrUpdate(setting);
-//    }
+    //    @Override
+    //    @Cacheable(key = "#key")
+    //    public Setting get(String key) {
+    //        return this.getById(key);
+    //    }
+    //
+    //    @Override
+    //    @CacheEvict(key = "#setting.id")
+    //    public boolean saveUpdate(Setting setting) {
+    //        return this.saveOrUpdate(setting);
+    //    }
 }

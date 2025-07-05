@@ -35,38 +35,38 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "管理端-字典管理API", description = "管理端-字典管理API")
 public class ManagerDictController extends BusinessController {
 
-//    @GetMapping("/list-code")
-//    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
-//    public Result<Dict> listCode(String code) {
-//        return Result.success(service().findByCode(code));
-//    }
-//
-//    @GetMapping("/get-dict-value")
-//    // @ApiOperation(value = "字典列表key查询", notes = "字典列表key查询")
-//    public Result<Dict> getDictValue(String code, String dictKey) {
-//        return Result.success(service().getById(code));
-//    }
-//
-//    @PostMapping("/del")
-//    @Operation(summary= "字典删除")
-//    // @ApiImplicitParams({
-//    //	@ApiImplicitParam(name = "ids", required = true, value = "多个用,号隔开", paramType = "form")
-//    // })
-//    public Result<?> del(@RequestParam String ids) {
-//        Collection<?> idsCollection = CollectionUtil.stringToCollection(ids);
-//        if (service().removeByIds(idsCollection)) {
-//            // 批量删除字典列表的同时，也要删除字典项的内容
-//            for (Object obj : idsCollection) {
-//                service().remove(new LambdaQueryWrapper<Dict>().eq(Dict::getId, obj));
-//            }
-//            return Result.success("删除成功");
-//        }
-//        return Result.fail("删除失败");
-//    }
-//
-//    @GetMapping("/testMybatisQueryStructure")
-//    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
-//    public Result<Dict> testMybatisQueryStructure(DictQuery dictQuery) {
-//        return Result.success(service().testMybatisQueryStructure(dictQuery));
-//    }
+    //    @GetMapping("/list-code")
+    //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
+    //    public Result<Dict> listCode(String code) {
+    //        return Result.success(service().findByCode(code));
+    //    }
+    //
+    //    @GetMapping("/get-dict-value")
+    //    // @ApiOperation(value = "字典列表key查询", notes = "字典列表key查询")
+    //    public Result<Dict> getDictValue(String code, String dictKey) {
+    //        return Result.success(service().getById(code));
+    //    }
+    //
+    //    @PostMapping("/del")
+    //    @Operation(summary= "字典删除")
+    //    // @ApiImplicitParams({
+    //    //	@ApiImplicitParam(name = "ids", required = true, value = "多个用,号隔开", paramType = "form")
+    //    // })
+    //    public Result<?> del(@RequestParam String ids) {
+    //        Collection<?> idsCollection = CollectionUtil.stringToCollection(ids);
+    //        if (service().removeByIds(idsCollection)) {
+    //            // 批量删除字典列表的同时，也要删除字典项的内容
+    //            for (Object obj : idsCollection) {
+    //                service().remove(new LambdaQueryWrapper<Dict>().eq(Dict::getId, obj));
+    //            }
+    //            return Result.success("删除成功");
+    //        }
+    //        return Result.fail("删除失败");
+    //    }
+    //
+    //    @GetMapping("/testMybatisQueryStructure")
+    //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
+    //    public Result<Dict> testMybatisQueryStructure(DictQuery dictQuery) {
+    //        return Result.success(service().testMybatisQueryStructure(dictQuery));
+    //    }
 }

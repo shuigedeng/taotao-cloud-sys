@@ -22,16 +22,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * 岗位表
@@ -78,51 +73,51 @@ public class PositionPO extends BaseSuperEntity<PositionPO, Long> {
     @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Long getDeptId() {
-		return deptId;
-	}
+    public Long getDeptId() {
+        return deptId;
+    }
 
-	public void setDeptId(Long deptId) {
-		this.deptId = deptId;
-	}
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
 
-	public Long getOrgId() {
-		return orgId;
-	}
+    public Long getOrgId() {
+        return orgId;
+    }
 
-	public void setOrgId(Long orgId) {
-		this.orgId = orgId;
-	}
+    public void setOrgId(Long orgId) {
+        this.orgId = orgId;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public Integer getSortNum() {
-		return sortNum;
-	}
+    public Integer getSortNum() {
+        return sortNum;
+    }
 
-	public void setSortNum(Integer sortNum) {
-		this.sortNum = sortNum;
-	}
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 }

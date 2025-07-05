@@ -21,6 +21,7 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,8 +29,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 /**
  * 敏感词实体
@@ -51,18 +50,20 @@ public class SensitiveWordPO extends BaseSuperEntity<SensitiveWordPO, Long> {
     public static final String TABLE_NAME = "ttc_sensitive_words";
 
     /** 敏感词名称 */
-    @Column(name = "`sensitive_word`", columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
+    @Column(
+            name = "`sensitive_word`",
+            columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
     private String sensitiveWord;
 
-	public String getSensitiveWord() {
-		return sensitiveWord;
-	}
+    public String getSensitiveWord() {
+        return sensitiveWord;
+    }
 
-	public void setSensitiveWord(String sensitiveWord) {
-		this.sensitiveWord = sensitiveWord;
-	}
+    public void setSensitiveWord(String sensitiveWord) {
+        this.sensitiveWord = sensitiveWord;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

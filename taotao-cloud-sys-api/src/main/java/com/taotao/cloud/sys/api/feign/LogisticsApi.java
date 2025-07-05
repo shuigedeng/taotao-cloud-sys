@@ -21,11 +21,10 @@ import com.taotao.boot.common.model.Result;
 import com.taotao.cloud.sys.api.feign.fallback.LogisticsApiFallback;
 import com.taotao.cloud.sys.api.feign.response.LogisticsApiResponse;
 import com.taotao.cloud.sys.api.feign.response.TracesApiResponse;
+import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 /**
  * 远程调用物流公司模块
@@ -35,33 +34,34 @@ import java.util.List;
  * @since 2022-03-25 14:09:10
  */
 @FeignClient(
-	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	contextId = "LogisticsApi",
-	fallbackFactory = LogisticsApiFallback.class)
+        name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
+        contextId = "LogisticsApi",
+        fallbackFactory = LogisticsApiFallback.class)
 public interface LogisticsApi {
 
-	/**
-	 * 通过id
-	 *
-	 * @param logisticsId 物流id
-	 * @return {@link Result }<{@link LogisticsApiResponse }>
-	 * @since 2022-04-25 16:47:29
-	 */
-	@GetMapping("/sys/feign/logistic/codes")
-	LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
+    /**
+     * 通过id
+     *
+     * @param logisticsId 物流id
+     * @return {@link Result }<{@link LogisticsApiResponse }>
+     * @since 2022-04-25 16:47:29
+     */
+    @GetMapping("/sys/feign/logistic/codes")
+    LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
 
-	/**
-	 * 得到物流
-	 *
-	 * @param logisticsId 物流id
-	 * @param logisticsNo 物流编码
-	 * @return {@link Result }<{@link TracesApiResponse }>
-	 * @since 2022-04-25 16:47:32
-	 */
-	@GetMapping("/sys/feign/logistic/info")
-	TracesApiResponse getLogistic(@RequestParam(value = "logisticsId") Long logisticsId,
-								  @RequestParam(value = "logisticsNo") String logisticsNo);
+    /**
+     * 得到物流
+     *
+     * @param logisticsId 物流id
+     * @param logisticsNo 物流编码
+     * @return {@link Result }<{@link TracesApiResponse }>
+     * @since 2022-04-25 16:47:32
+     */
+    @GetMapping("/sys/feign/logistic/info")
+    TracesApiResponse getLogistic(
+            @RequestParam(value = "logisticsId") Long logisticsId,
+            @RequestParam(value = "logisticsNo") String logisticsNo);
 
-	@GetMapping("/sys/feign/logistic/list")
-	List<LogisticsApiResponse> list();
+    @GetMapping("/sys/feign/logistic/list")
+    List<LogisticsApiResponse> list();
 }

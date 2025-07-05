@@ -16,7 +16,6 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
-
 import com.taotao.cloud.sys.api.dubbo.request.LogsQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.LogsRpcResponse;
 

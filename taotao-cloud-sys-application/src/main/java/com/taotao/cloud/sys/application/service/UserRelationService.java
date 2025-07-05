@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-
 import java.util.Set;
 
 /**
@@ -29,12 +28,12 @@ import java.util.Set;
  */
 public interface UserRelationService extends CommandService {
 
-	/**
-	 * 添加用户-角色对应关系
-	 *
-	 * @param userId  用户id
-	 * @param roleIds 角色id列表
-	 * @return 修改结果
-	 */
-	Boolean saveUserRoles(Long userId, Set<Long> roleIds);
+    /**
+     * 添加用户-角色对应关系
+     *
+     * @param userId  用户id
+     * @param roleIds 角色id列表
+     * @return 修改结果
+     */
+    Boolean saveUserRoles(Long userId, Set<Long> roleIds);
 }

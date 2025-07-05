@@ -16,7 +16,6 @@
 
 package com.taotao.cloud.sys.application.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.taotao.boot.ddd.model.application.service.CommandService;
 
 public interface SysLogService extends CommandService {}

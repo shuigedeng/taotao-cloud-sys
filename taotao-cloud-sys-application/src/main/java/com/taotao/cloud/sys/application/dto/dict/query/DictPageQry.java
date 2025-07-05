@@ -17,8 +17,8 @@
 package com.taotao.cloud.sys.application.dto.dict.query;
 
 import com.taotao.boot.common.model.PageQuery;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;

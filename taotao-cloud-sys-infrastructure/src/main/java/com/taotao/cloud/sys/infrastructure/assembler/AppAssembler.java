@@ -26,14 +26,14 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface AppAssembler {
 
-//	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
-//
-//	Page<AppDTO> convertPage(Page<App> appDO);
-//
-//	List<AppDTO> convertList(List<App> app);
-//
-//	AppDTO convert(App app);
-//
-//	App convert(AppDTO appDTO);
+    //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
+    //
+    //	Page<AppDTO> convertPage(Page<App> appDO);
+    //
+    //	List<AppDTO> convertList(List<App> app);
+    //
+    //	AppDTO convert(App app);
+    //
+    //	App convert(AppDTO appDTO);
 
 }

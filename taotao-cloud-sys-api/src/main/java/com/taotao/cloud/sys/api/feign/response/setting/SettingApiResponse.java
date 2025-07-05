@@ -17,12 +17,9 @@
 package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.time.LocalDateTime;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.Accessors;
 
 /** 配置表 */

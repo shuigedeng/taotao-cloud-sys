@@ -16,12 +16,8 @@
 
 package com.taotao.cloud.sys.api.feign.fallback;
 
-import com.taotao.boot.common.model.BaseSecurityUser;
-import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.feign.SocialUserApi;
-import com.taotao.cloud.sys.api.feign.UserApi;
 import com.taotao.cloud.sys.api.feign.response.SocialUserApiResponse;
-import com.taotao.cloud.sys.api.feign.response.UserQueryApiResponse;
 import org.springframework.cloud.openfeign.FallbackFactory;
 
 /**
@@ -32,30 +28,30 @@ import org.springframework.cloud.openfeign.FallbackFactory;
  */
 public class SocialUserApiFallback implements FallbackFactory<SocialUserApi> {
 
-	@Override
-	public SocialUserApi create(Throwable cause) {
-		return new SocialUserApi() {
-			@Override
-			public SocialUserApiResponse saveAndFlush(SocialUserApiResponse socialUserApiResponse) {
-				return null;
-			}
+    @Override
+    public SocialUserApi create(Throwable cause) {
+        return new SocialUserApi() {
+            @Override
+            public SocialUserApiResponse saveAndFlush(SocialUserApiResponse socialUserApiResponse) {
+                return null;
+            }
 
-			@Override
-			public SocialUserApiResponse findUserInfoByUsername(String username) {
-				return null;
-			}
+            @Override
+            public SocialUserApiResponse findUserInfoByUsername(String username) {
+                return null;
+            }
 
-			@Override
-			public SocialUserApiResponse getUserInfoBySocial(String providerId,
-				int providerUserId) {
-				return null;
-			}
+            @Override
+            public SocialUserApiResponse getUserInfoBySocial(
+                    String providerId, int providerUserId) {
+                return null;
+            }
 
-			@Override
-			public SocialUserApiResponse getSysSecurityUser(
-				String nicknameOrUserNameOrPhoneOrEmail) {
-				return null;
-			}
-		};
-	}
+            @Override
+            public SocialUserApiResponse getSysSecurityUser(
+                    String nicknameOrUserNameOrPhoneOrEmail) {
+                return null;
+            }
+        };
+    }
 }

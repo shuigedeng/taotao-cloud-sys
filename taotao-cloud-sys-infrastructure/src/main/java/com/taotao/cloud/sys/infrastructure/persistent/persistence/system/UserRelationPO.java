@@ -24,16 +24,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 /**
  * 用户-角色第三方表
@@ -49,13 +47,14 @@ import java.util.Objects;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = UserRelationPO.TABLE_NAME,
-	uniqueConstraints = {
-		@UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
-	},
-	indexes = {
-		@Index(name = "idx_create_date", columnList = "create_date"),
-	})
+@Table(
+        name = UserRelationPO.TABLE_NAME,
+        uniqueConstraints = {
+            @UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
+        },
+        indexes = {
+            @Index(name = "idx_create_date", columnList = "create_date"),
+        })
 @TableName(UserRelationPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = UserRelationPO.TABLE_NAME)
 public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
@@ -82,37 +81,37 @@ public class UserRelationPO extends SuperEntity<UserRelationPO, Long> {
     @Column(name = "`sort_code`", columnDefinition = "int null comment '排序值'")
     private Integer sortCode;
 
-	public Long getUserId() {
-		return userId;
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-	public String getObjectType() {
-		return objectType;
-	}
+    public String getObjectType() {
+        return objectType;
+    }
 
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-	}
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
+    }
 
-	public Long getObjectId() {
-		return objectId;
-	}
+    public Long getObjectId() {
+        return objectId;
+    }
 
-	public void setObjectId(Long objectId) {
-		this.objectId = objectId;
-	}
+    public void setObjectId(Long objectId) {
+        this.objectId = objectId;
+    }
 
-	public Integer getSortCode() {
-		return sortCode;
-	}
+    public Integer getSortCode() {
+        return sortCode;
+    }
 
-	public void setSortCode(Integer sortCode) {
-		this.sortCode = sortCode;
-	}
+    public void setSortCode(Integer sortCode) {
+        this.sortCode = sortCode;
+    }
 
     @Override
     public boolean equals(Object o) {

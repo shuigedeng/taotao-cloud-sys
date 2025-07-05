@@ -23,33 +23,30 @@ import org.springframework.stereotype.Service;
 /** 敏感词业务层实现 */
 @Service
 @AllArgsConstructor
-public class SensitiveWordServiceImpl
-        implements SensitiveWordService {
+public class SensitiveWordServiceImpl implements SensitiveWordService {
 
-	@Override
-	public void resetCache() {
+    @Override
+    public void resetCache() {}
 
-	}
-
-//    private final RedisRepository redisRepository;
-//
-//    @Override
-//    public void resetCache() {
-//        List<SensitiveWord> sensitiveWordsList = this.list();
-//        if (sensitiveWordsList == null || sensitiveWordsList.isEmpty()) {
-//            return;
-//        }
-//		new SensitiveWord()
-//			.setSensitiveWord("afd")
-//			.setCreateBy(1L)
-//			.setDelFlag(false)
-//			.setId(1L);
-//        List<String> sensitiveWords =
-//                sensitiveWordsList
-//					.stream()
-//					.map(SensitiveWord::getSensitiveWord)
-//					.toList();
-//
-//        redisRepository.set(RedisConstant.SENSITIVE_WORDS_KEY, sensitiveWords);
-//    }
+    //    private final RedisRepository redisRepository;
+    //
+    //    @Override
+    //    public void resetCache() {
+    //        List<SensitiveWord> sensitiveWordsList = this.list();
+    //        if (sensitiveWordsList == null || sensitiveWordsList.isEmpty()) {
+    //            return;
+    //        }
+    //		new SensitiveWord()
+    //			.setSensitiveWord("afd")
+    //			.setCreateBy(1L)
+    //			.setDelFlag(false)
+    //			.setId(1L);
+    //        List<String> sensitiveWords =
+    //                sensitiveWordsList
+    //					.stream()
+    //					.map(SensitiveWord::getSensitiveWord)
+    //					.toList();
+    //
+    //        redisRepository.set(RedisConstant.SENSITIVE_WORDS_KEY, sensitiveWords);
+    //    }
 }

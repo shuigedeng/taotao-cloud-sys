@@ -17,14 +17,13 @@
 package com.taotao.cloud.sys.application.dto.dept.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 部门更新对象
@@ -43,8 +42,7 @@ import java.io.Serializable;
 @Schema(description = "部门更新对象")
 public class DeptUpdateCmd implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "部门id", requiredMode = Schema.RequiredMode.REQUIRED)
     private Integer deptId;

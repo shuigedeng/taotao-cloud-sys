@@ -25,7 +25,4 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2020/11/12 21:26
  */
-public interface FileLogService extends CommandService {
-
-
-}
+public interface FileLogService extends CommandService {}

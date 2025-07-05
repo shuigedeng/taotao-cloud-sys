@@ -19,15 +19,14 @@ package com.taotao.cloud.sys.application.dto.user.cmmond;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Length;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 用户重置密码DTO
@@ -46,8 +45,7 @@ import java.io.Serializable;
 @Schema(description = "用户重置密码DTO")
 public class RestPasswordCmd implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "手机号", requiredMode = Schema.RequiredMode.REQUIRED)
     @NotBlank(message = "手机号不能为空")

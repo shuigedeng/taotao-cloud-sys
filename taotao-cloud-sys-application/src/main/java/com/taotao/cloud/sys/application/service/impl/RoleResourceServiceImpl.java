@@ -17,10 +17,9 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.cloud.sys.application.service.RoleResourceService;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 /**
  * @author shuigedeng
@@ -29,15 +28,14 @@ import java.util.Set;
  */
 @Service
 @AllArgsConstructor
-public class RoleResourceServiceImpl
-	implements RoleResourceService {
+public class RoleResourceServiceImpl implements RoleResourceService {
 
-	@Override
-	public Boolean saveRoleMenu(Long roleId, Set<Long> menuIds) {
-		return null;
-	}
+    @Override
+    public Boolean saveRoleMenu(Long roleId, Set<Long> menuIds) {
+        return null;
+    }
 
-/*    private static final QRoleResource ROLE_RESOURCE = QRoleResource.roleResource;
+    /*    private static final QRoleResource ROLE_RESOURCE = QRoleResource.roleResource;
 
     @Override
     public Boolean saveRoleMenu(Long roleId, Set<Long> menuIds) {

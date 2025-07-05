@@ -39,8 +39,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "菜单查询对象")
 public class MenuQueryApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "id")
     private Long id;

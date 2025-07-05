@@ -1,13 +1,28 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.taotao.cloud.sys.application.shared.monitor;
 
 import cn.hutool.core.date.DatePattern;
 import com.taotao.boot.common.constant.CommonConstants;
+import java.lang.management.ManagementFactory;
+import java.math.BigDecimal;
 import lombok.*;
 import org.dromara.hutool.core.date.DateUtil;
 import org.dromara.hutool.core.math.NumberUtil;
-
-import java.lang.management.ManagementFactory;
-import java.math.BigDecimal;
 
 /**
  * JVM相关信息
@@ -73,16 +88,17 @@ public class JvmInfo {
      * JDK启动时间
      */
     public String getStartTime() {
-        return DateUtil.format(DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()),
-            DatePattern.NORM_DATETIME_PATTERN);
+        return DateUtil.format(
+                DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()),
+                DatePattern.NORM_DATETIME_PATTERN);
     }
 
     /**
      * JDK运行时间
      */
     public String getRunTime() {
-        return DateUtil.formatBetween(DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()),
-            DateUtil.now());
+        return DateUtil.formatBetween(
+                DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()), DateUtil.now());
     }
 
     /**

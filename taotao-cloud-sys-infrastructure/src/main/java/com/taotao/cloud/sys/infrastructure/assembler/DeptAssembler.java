@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,12 +32,12 @@ public interface DeptAssembler {
     /** 实例 */
     DeptAssembler INSTANCE = Mappers.getMapper(DeptAssembler.class);
 
-//    /**
-//     * 部门列表给签证官
-//     *
-//     * @param deptList 部门列表
-//     * @return {@link List }<{@link DeptTreeVO }>
-//     * @since 2022-04-28 13:39:18
-//     */
-//    List<DeptTreeVO> convertTree(List<Dept> deptList);
+    //    /**
+    //     * 部门列表给签证官
+    //     *
+    //     * @param deptList 部门列表
+    //     * @return {@link List }<{@link DeptTreeVO }>
+    //     * @since 2022-04-28 13:39:18
+    //     */
+    //    List<DeptTreeVO> convertTree(List<Dept> deptList);
 }

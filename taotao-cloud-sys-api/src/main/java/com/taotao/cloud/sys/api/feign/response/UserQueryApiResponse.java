@@ -40,8 +40,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "用户查询VO")
 public class UserQueryApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 5126530068827085130L;
+    @Serial private static final long serialVersionUID = 5126530068827085130L;
 
     @Schema(description = "id")
     private Long id;

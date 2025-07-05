@@ -20,12 +20,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.Accessors;
 
 /**
@@ -44,8 +41,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "公司查询对象")
 public class FileQueryApiRequest implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "租户id")
     private String tenantId;
@@ -87,107 +83,107 @@ public class FileQueryApiRequest implements Serializable {
     @Schema(description = "公司类型")
     private Integer type;
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	public String getTenantSecret() {
-		return tenantSecret;
-	}
+    public String getTenantSecret() {
+        return tenantSecret;
+    }
 
-	public void setTenantSecret(String tenantSecret) {
-		this.tenantSecret = tenantSecret;
-	}
+    public void setTenantSecret(String tenantSecret) {
+        this.tenantSecret = tenantSecret;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getFullName() {
-		return fullName;
-	}
+    public String getFullName() {
+        return fullName;
+    }
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-	public String getCreditCode() {
-		return creditCode;
-	}
+    public String getCreditCode() {
+        return creditCode;
+    }
 
-	public void setCreditCode(String creditCode) {
-		this.creditCode = creditCode;
-	}
+    public void setCreditCode(String creditCode) {
+        this.creditCode = creditCode;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public String getDomain() {
-		return domain;
-	}
+    public String getDomain() {
+        return domain;
+    }
 
-	public void setDomain(String domain) {
-		this.domain = domain;
-	}
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 
-	public String getWebSite() {
-		return webSite;
-	}
+    public String getWebSite() {
+        return webSite;
+    }
 
-	public void setWebSite(String webSite) {
-		this.webSite = webSite;
-	}
+    public void setWebSite(String webSite) {
+        this.webSite = webSite;
+    }
 
-	public String getRegionInfo() {
-		return regionInfo;
-	}
+    public String getRegionInfo() {
+        return regionInfo;
+    }
 
-	public void setRegionInfo(String regionInfo) {
-		this.regionInfo = regionInfo;
-	}
+    public void setRegionInfo(String regionInfo) {
+        this.regionInfo = regionInfo;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 }

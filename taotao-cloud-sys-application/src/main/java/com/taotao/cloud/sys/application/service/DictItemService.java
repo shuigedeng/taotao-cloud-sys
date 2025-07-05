@@ -35,51 +35,51 @@ public interface DictItemService extends CommandService {
      * @since 2021-10-09 20:33:32
      */
     Boolean deleteByDictId(Long dictId);
-//
-//    /**
-//     * 添加字典项详情
-//     *
-//     * @param dictItemDTO dictItemDTO
-//     * @return {@link DictItem }
-//     * @since 2021-10-09 20:33:40
-//     */
-//    DictItem save(DictItemDTO dictItemDTO);
-//
-//    /**
-//     * 更新字典项详情
-//     *
-//     * @param id id
-//     * @param dictItemDTO dictItemDTO
-//     * @return {@link DictItem }
-//     * @since 2021-10-09 20:33:47
-//     */
-//    DictItem updateById(Long id, DictItemDTO dictItemDTO);
-//
-//    /**
-//     * 根据id删除字典项详情
-//     *
-//     * @param id id
-//     * @return {@link Boolean }
-//     * @since 2021-10-09 20:33:54
-//     */
-//    Boolean deleteById(Long id);
-//
-//    /**
-//     * 分页查询字典详情内容
-//     *
-//     * @param page page
-//     * @param dictItemPageQuery dictItemPageQuery
-//     * @return {@link Page&lt;com.taotao.cloud.sys.biz.entity.DictItem&gt; }
-//     * @since 2021-10-09 20:34:02
-//     */
-//    Page<DictItem> getPage(Pageable page, DictItemPageQuery dictItemPageQuery);
-//
-//    /**
-//     * 查询字典详情内容
-//     *
-//     * @param dictItemQuery dictItemQuery
-//     * @return {@link List&lt;com.taotao.cloud.sys.biz.entity.DictItem&gt; }
-//     * @since 2021-10-09 20:34:10
-//     */
-//    List<DictItem> getInfo(DictItemQuery dictItemQuery);
+    //
+    //    /**
+    //     * 添加字典项详情
+    //     *
+    //     * @param dictItemDTO dictItemDTO
+    //     * @return {@link DictItem }
+    //     * @since 2021-10-09 20:33:40
+    //     */
+    //    DictItem save(DictItemDTO dictItemDTO);
+    //
+    //    /**
+    //     * 更新字典项详情
+    //     *
+    //     * @param id id
+    //     * @param dictItemDTO dictItemDTO
+    //     * @return {@link DictItem }
+    //     * @since 2021-10-09 20:33:47
+    //     */
+    //    DictItem updateById(Long id, DictItemDTO dictItemDTO);
+    //
+    //    /**
+    //     * 根据id删除字典项详情
+    //     *
+    //     * @param id id
+    //     * @return {@link Boolean }
+    //     * @since 2021-10-09 20:33:54
+    //     */
+    //    Boolean deleteById(Long id);
+    //
+    //    /**
+    //     * 分页查询字典详情内容
+    //     *
+    //     * @param page page
+    //     * @param dictItemPageQuery dictItemPageQuery
+    //     * @return {@link Page&lt;com.taotao.cloud.sys.biz.entity.DictItem&gt; }
+    //     * @since 2021-10-09 20:34:02
+    //     */
+    //    Page<DictItem> getPage(Pageable page, DictItemPageQuery dictItemPageQuery);
+    //
+    //    /**
+    //     * 查询字典详情内容
+    //     *
+    //     * @param dictItemQuery dictItemQuery
+    //     * @return {@link List&lt;com.taotao.cloud.sys.biz.entity.DictItem&gt; }
+    //     * @since 2021-10-09 20:34:10
+    //     */
+    //    List<DictItem> getInfo(DictItemQuery dictItemQuery);
 }

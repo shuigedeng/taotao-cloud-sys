@@ -22,16 +22,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /** 短信任务
  * @author 57222*/
@@ -61,57 +56,59 @@ public class SmsReachPO extends BaseSuperEntity<SmsReachPO, Long> {
     @Column(name = "`context`", columnDefinition = "varchar(2000) not null comment '消息内容'")
     private String context;
 
-    @Column(name = "`sms_range`", columnDefinition = "varchar(2000) not null comment '接收人 1:全部会员，2：选择会员 '")
+    @Column(
+            name = "`sms_range`",
+            columnDefinition = "varchar(2000) not null comment '接收人 1:全部会员，2：选择会员 '")
     private String smsRange;
 
     @Column(name = "`num`", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
     private String num;
 
-	public String getSignName() {
-		return signName;
-	}
+    public String getSignName() {
+        return signName;
+    }
 
-	public void setSignName(String signName) {
-		this.signName = signName;
-	}
+    public void setSignName(String signName) {
+        this.signName = signName;
+    }
 
-	public String getSmsName() {
-		return smsName;
-	}
+    public String getSmsName() {
+        return smsName;
+    }
 
-	public void setSmsName(String smsName) {
-		this.smsName = smsName;
-	}
+    public void setSmsName(String smsName) {
+        this.smsName = smsName;
+    }
 
-	public String getMessageCode() {
-		return messageCode;
-	}
+    public String getMessageCode() {
+        return messageCode;
+    }
 
-	public void setMessageCode(String messageCode) {
-		this.messageCode = messageCode;
-	}
+    public void setMessageCode(String messageCode) {
+        this.messageCode = messageCode;
+    }
 
-	public String getContext() {
-		return context;
-	}
+    public String getContext() {
+        return context;
+    }
 
-	public void setContext(String context) {
-		this.context = context;
-	}
+    public void setContext(String context) {
+        this.context = context;
+    }
 
-	public String getSmsRange() {
-		return smsRange;
-	}
+    public String getSmsRange() {
+        return smsRange;
+    }
 
-	public void setSmsRange(String smsRange) {
-		this.smsRange = smsRange;
-	}
+    public void setSmsRange(String smsRange) {
+        this.smsRange = smsRange;
+    }
 
-	public String getNum() {
-		return num;
-	}
+    public String getNum() {
+        return num;
+    }
 
-	public void setNum(String num) {
-		this.num = num;
-	}
+    public void setNum(String num) {
+        this.num = num;
+    }
 }

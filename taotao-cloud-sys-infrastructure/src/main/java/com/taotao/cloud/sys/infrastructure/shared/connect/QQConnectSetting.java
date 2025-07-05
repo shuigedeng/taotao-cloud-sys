@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared.connect;
 
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 /** QQ联合登录设置 */
 @Setter

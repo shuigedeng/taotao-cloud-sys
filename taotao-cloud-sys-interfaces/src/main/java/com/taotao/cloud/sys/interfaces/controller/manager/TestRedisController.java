@@ -18,6 +18,8 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -25,15 +27,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-
 @RestController
 @Tag(name = "管理端-TestRediscontroller", description = "管理端-测试redis")
 public class TestRedisController extends BusinessController {
 
-    @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    @Autowired private RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 什么是缓存穿透 缓存穿透指的是一个缓存系统无法缓存某个查询的数据，从而导致这个查询每一次都要访问数据库。
@@ -87,7 +85,10 @@ public class TestRedisController extends BusinessController {
             String lockKey = "lock_user_" + id.toString();
             String lockValue = UUID.randomUUID().toString();
             try {
-                Boolean lockResult = redisTemplate.opsForValue().setIfAbsent(lockKey, lockValue, 60, TimeUnit.SECONDS);
+                Boolean lockResult =
+                        redisTemplate
+                                .opsForValue()
+                                .setIfAbsent(lockKey, lockValue, 60, TimeUnit.SECONDS);
                 if (lockResult != null && lockResult) {
                     // 查询数据库
                     // user = userRepository.findById(id).orElse(null);
@@ -118,7 +119,7 @@ public class TestRedisController extends BusinessController {
      *
      * <p>在遇到缓存雪崩时，我们可以使用两种方法：一种是将缓存过期时间分散开，即为不同的数据设置不同的过期时间；另一种是使用Redis的多级缓存架构，通过增加一层代理层来解决
      */
-    //@Autowired
+    // @Autowired
     // private CacheManager ehCacheManager;
 
     @GetMapping("/getUserById2/{id}")

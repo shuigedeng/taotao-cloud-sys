@@ -1,48 +1,30 @@
-///*
-// * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
-// *
-// * Licensed under the Apache License, Version 2.0 (the "License");
-// * you may not use this file except in compliance with the License.
-// * You may obtain a copy of the License at
-// *
-// *      https://www.apache.org/licenses/LICENSE-2.0
-// *
-// * Unless required by applicable law or agreed to in writing, software
-// * distributed under the License is distributed on an "AS IS" BASIS,
-// * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// * See the License for the specific language governing permissions and
-// * limitations under the License.
-// */
+package com.taotao.cloud.sys.application.configuration.stream;// import com.taotao.boot.common.utils.log.LogUtils;
+// import org.apache.rocketmq.common.message.MessageConst;
+// import org.apache.rocketmq.spring.support.RocketMQHeaders;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.cloud.stream.function.StreamBridge;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.integration.support.MessageBuilder;
+// import org.springframework.messaging.Message;
+// import org.springframework.messaging.MessageHeaders;
+// import org.springframework.stereotype.Component;
+// import reactor.core.publisher.Flux;
+// import reactor.core.publisher.Mono;
 //
-//package com.taotao.cloud.sys.application.configuration.stream;
+// import java.util.HashMap;
+// import java.util.Map;
+// import java.util.function.Consumer;
+// import java.util.function.Function;
 //
-//import com.taotao.boot.common.utils.log.LogUtils;
-//import org.apache.rocketmq.common.message.MessageConst;
-//import org.apache.rocketmq.spring.support.RocketMQHeaders;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.cloud.stream.function.StreamBridge;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.integration.support.MessageBuilder;
-//import org.springframework.messaging.Message;
-//import org.springframework.messaging.MessageHeaders;
-//import org.springframework.stereotype.Component;
-//import reactor.core.publisher.Flux;
-//import reactor.core.publisher.Mono;
-//
-//import java.util.HashMap;
-//import java.util.Map;
-//import java.util.function.Consumer;
-//import java.util.function.Function;
-//
-///**
+/// **
 // * 流函数服务
 // *
 // * @author shuigedeng
 // * @version 2022.04
 // * @since 2022-04-28 11:54:07
 // */
-//@Component
-//public class StreamFunctionService {
+// @Component
+ public class StreamFunctionService {
 //
 //    @Autowired
 //    private StreamBridge bridge;
@@ -125,7 +107,8 @@
 //    @Bean
 //    public Consumer<Message<String>> demo() {
 //        return message -> {
-//            LogUtils.info("demo1获取消息tag:{}", message.getHeaders().get(RocketMQHeaders.PREFIX + RocketMQHeaders.TAGS));
+//            LogUtils.info("demo1获取消息tag:{}", message.getHeaders().get(RocketMQHeaders.PREFIX +
+// RocketMQHeaders.TAGS));
 //            LogUtils.info("demo1接收数据:{}", message.getPayload());
 //        };
 //    }
@@ -192,4 +175,4 @@
 //    //		.branch(isEnglish, isFrench, isSpanish);
 //    // }
 //
-//}
+ }

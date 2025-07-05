@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,12 +32,12 @@ public interface RegionAssembler {
     /** 实例 */
     RegionAssembler INSTANCE = Mappers.getMapper(RegionAssembler.class);
 
-//    /**
-//     * 区域列表给签证官
-//     *
-//     * @param regionList 区域列表
-//     * @return {@link List }<{@link RegionTreeVO }>
-//     * @since 2022-04-28 13:39:46
-//     */
-//    List<RegionTreeVO> convertTree(List<Region> regionList);
+    //    /**
+    //     * 区域列表给签证官
+    //     *
+    //     * @param regionList 区域列表
+    //     * @return {@link List }<{@link RegionTreeVO }>
+    //     * @since 2022-04-28 13:39:46
+    //     */
+    //    List<RegionTreeVO> convertTree(List<Region> regionList);
 }

@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serializable;
+import lombok.*;
 
 /** 积分签到设置 */
 @Setter

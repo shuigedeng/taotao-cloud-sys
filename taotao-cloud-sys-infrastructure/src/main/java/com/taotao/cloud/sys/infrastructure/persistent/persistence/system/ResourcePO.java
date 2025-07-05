@@ -22,17 +22,14 @@ import com.taotao.cloud.sys.api.enums.ResourceTypeEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * 菜单表
@@ -56,7 +53,10 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     public static final String TABLE_NAME = "ttc_resource";
 
     /** 菜单标题 */
-    @Column(name = "`name`", unique = true, columnDefinition = "varchar(32) not null comment '菜单名称'")
+    @Column(
+            name = "`name`",
+            unique = true,
+            columnDefinition = "varchar(32) not null comment '菜单名称'")
     private String name;
 
     /** 权限标识 */
@@ -84,7 +84,9 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     private Integer sortNum;
 
     /** 是否缓存页面: 0:否 1:是 (默认值0) */
-    @Column(name = "`keep_alive`", columnDefinition = "tinyint(1) NOT NULL DEFAULT 0 comment '是否缓存页面: 0:否 1:是 (默认值0)'")
+    @Column(
+            name = "`keep_alive`",
+            columnDefinition = "tinyint(1) NOT NULL DEFAULT 0 comment '是否缓存页面: 0:否 1:是 (默认值0)'")
     private Boolean keepAlive;
 
     /**
@@ -96,11 +98,15 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     private Integer type;
 
     /** url请求Id (type=3 时, 此id有值) */
-    @Column(name = "`request_path_id`", columnDefinition = "bigint null comment 'url请求Id (type=3时, 此id有值)'")
+    @Column(
+            name = "`request_path_id`",
+            columnDefinition = "bigint null comment 'url请求Id (type=3时, 此id有值)'")
     private Long requestPathId;
 
     /** 是否隐藏路由菜单: 0否,1是（默认值0） */
-    @Column(name = "`hidden`", columnDefinition = "boolean DEFAULT false comment '是否隐藏路由菜单: 0否,1是（默认值0)'")
+    @Column(
+            name = "`hidden`",
+            columnDefinition = "boolean DEFAULT false comment '是否隐藏路由菜单: 0否,1是（默认值0)'")
     private Boolean hidden;
 
     /** 重定向 */
@@ -115,119 +121,119 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPermission() {
-		return permission;
-	}
+    public String getPermission() {
+        return permission;
+    }
 
-	public void setPermission(String permission) {
-		this.permission = permission;
-	}
+    public void setPermission(String permission) {
+        this.permission = permission;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public String getPath() {
+        return path;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-	public String getComponent() {
-		return component;
-	}
+    public String getComponent() {
+        return component;
+    }
 
-	public void setComponent(String component) {
-		this.component = component;
-	}
+    public void setComponent(String component) {
+        this.component = component;
+    }
 
-	public Long getParentId() {
-		return parentId;
-	}
+    public Long getParentId() {
+        return parentId;
+    }
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-	}
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
 
-	public String getIcon() {
-		return icon;
-	}
+    public String getIcon() {
+        return icon;
+    }
 
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-	public Integer getSortNum() {
-		return sortNum;
-	}
+    public Integer getSortNum() {
+        return sortNum;
+    }
 
-	public void setSortNum(Integer sortNum) {
-		this.sortNum = sortNum;
-	}
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
 
-	public Boolean getKeepAlive() {
-		return keepAlive;
-	}
+    public Boolean getKeepAlive() {
+        return keepAlive;
+    }
 
-	public void setKeepAlive(Boolean keepAlive) {
-		this.keepAlive = keepAlive;
-	}
+    public void setKeepAlive(Boolean keepAlive) {
+        this.keepAlive = keepAlive;
+    }
 
-	public Integer getType() {
-		return type;
-	}
+    public Integer getType() {
+        return type;
+    }
 
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-	public Long getRequestPathId() {
-		return requestPathId;
-	}
+    public Long getRequestPathId() {
+        return requestPathId;
+    }
 
-	public void setRequestPathId(Long requestPathId) {
-		this.requestPathId = requestPathId;
-	}
+    public void setRequestPathId(Long requestPathId) {
+        this.requestPathId = requestPathId;
+    }
 
-	public Boolean getHidden() {
-		return hidden;
-	}
+    public Boolean getHidden() {
+        return hidden;
+    }
 
-	public void setHidden(Boolean hidden) {
-		this.hidden = hidden;
-	}
+    public void setHidden(Boolean hidden) {
+        this.hidden = hidden;
+    }
 
-	public String getRedirect() {
-		return redirect;
-	}
+    public String getRedirect() {
+        return redirect;
+    }
 
-	public void setRedirect(String redirect) {
-		this.redirect = redirect;
-	}
+    public void setRedirect(String redirect) {
+        this.redirect = redirect;
+    }
 
-	public String getTarget() {
-		return target;
-	}
+    public String getTarget() {
+        return target;
+    }
 
-	public void setTarget(String target) {
-		this.target = target;
-	}
+    public void setTarget(String target) {
+        this.target = target;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

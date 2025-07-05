@@ -30,19 +30,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/log/dataVersion")
 @RequiredArgsConstructor
-public class DataVersionLogController extends BusinessController  {
+public class DataVersionLogController extends BusinessController {
 
-	//private final DataVersionLogService service;
+    // private final DataVersionLogService service;
 
-//	@Operation(summary = "分页")
-//	@GetMapping("/page")
-//	public Result<PageResult<DataVersionLogDto>> page(DataVersionLogParam param) {
-//		return Result.success(service.page(param));
-//	}
-//
-//	@Operation(summary = "获取")
-//	@GetMapping("/findById")
-//	public Result<DataVersionLogDto> findById(Long id) {
-//		return Result.success(service.findById(id));
-//	}
+    //	@Operation(summary = "分页")
+    //	@GetMapping("/page")
+    //	public Result<PageResult<DataVersionLogDto>> page(DataVersionLogParam param) {
+    //		return Result.success(service.page(param));
+    //	}
+    //
+    //	@Operation(summary = "获取")
+    //	@GetMapping("/findById")
+    //	public Result<DataVersionLogDto> findById(Long id) {
+    //		return Result.success(service.findById(id));
+    //	}
 }

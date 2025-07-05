@@ -19,21 +19,19 @@ package com.taotao.cloud.sys.service;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
 import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
 import com.taotao.cloud.sys.application.service.DeptService;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
-
 public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
-	@Autowired
-	private DeptService deptService;
+    @Autowired private DeptService deptService;
 
-	//@TtcTest(duration = 1000, reporter = HtmlReporter.class)
-	@Test
-	public void treeTest() throws InterruptedException {
+    // @TtcTest(duration = 1000, reporter = HtmlReporter.class)
+    @Test
+    public void treeTest() throws InterruptedException {
 
-		List<DeptTreeCO> tree = deptService.tree();
-		System.out.println("asdfasdfsadfsadf");
-	}
+        List<DeptTreeCO> tree = deptService.tree();
+        System.out.println("asdfasdfsadfsadf");
+    }
 }

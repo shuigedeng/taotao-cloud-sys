@@ -27,7 +27,4 @@ import org.springframework.stereotype.Service;
  * @since 2020/11/12 17:43
  */
 @Service
-public class FileLogServiceImpl
-        implements FileLogService {
-
-}
+public class FileLogServiceImpl implements FileLogService {}

@@ -27,25 +27,26 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @Tag(name = "工具管理端-日志管理模块", description = "工具管理端-日志管理模块")
 public class SysLogController extends BusinessController {
-//
-//    private final SysLogService sysLogService;
-//
-//    /**
-//     * 分页查询
-//     *
-//     * @param page 分页对象
-//     * @param sysLog 系统日志
-//     * @return Response
-//     */
-//    @GetMapping("/page")
-//    // @ApiOperation(value = "分页查询", notes = "分页查询")
-//    public Result<Page> page(Page page, SysLog sysLog) {
-//        return Result.success(sysLogService.page(page, Wrappers.query(sysLog).orderByDesc("id")));
-//    }
-//
-//    // @Anonymous
-//    @PostMapping("/save")
-//    public Result save(@RequestBody SysLog sysLog) {
-//        return Result.success(sysLogService.save(sysLog));
-//    }
+    //
+    //    private final SysLogService sysLogService;
+    //
+    //    /**
+    //     * 分页查询
+    //     *
+    //     * @param page 分页对象
+    //     * @param sysLog 系统日志
+    //     * @return Response
+    //     */
+    //    @GetMapping("/page")
+    //    // @ApiOperation(value = "分页查询", notes = "分页查询")
+    //    public Result<Page> page(Page page, SysLog sysLog) {
+    //        return Result.success(sysLogService.page(page,
+    // Wrappers.query(sysLog).orderByDesc("id")));
+    //    }
+    //
+    //    // @Anonymous
+    //    @PostMapping("/save")
+    //    public Result save(@RequestBody SysLog sysLog) {
+    //        return Result.success(sysLogService.save(sysLog));
+    //    }
 }

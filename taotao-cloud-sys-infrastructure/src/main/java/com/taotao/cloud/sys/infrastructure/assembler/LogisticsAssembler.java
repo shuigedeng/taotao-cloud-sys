@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -32,15 +31,15 @@ public interface LogisticsAssembler {
 
     /** 实例 */
     LogisticsAssembler INSTANCE = Mappers.getMapper(LogisticsAssembler.class);
-//
-//    /**
-//     * 物流文件签证官
-//     *
-//     * @param logisticsConfig 物流配置
-//     * @return {@link LogisticsVO }
-//     * @since 2022-04-28 13:39:35
-//     */
-//    LogisticsVO convert(LogisticsConfig logisticsConfig);
+    //
+    //    /**
+    //     * 物流文件签证官
+    //     *
+    //     * @param logisticsConfig 物流配置
+    //     * @return {@link LogisticsVO }
+    //     * @since 2022-04-28 13:39:35
+    //     */
+    //    LogisticsVO convert(LogisticsConfig logisticsConfig);
 
     // /**
     //  * SysUser转AddUserVO

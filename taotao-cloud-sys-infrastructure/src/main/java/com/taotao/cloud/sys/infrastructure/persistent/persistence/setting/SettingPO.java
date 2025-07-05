@@ -26,8 +26,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,9 +35,6 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.Type;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * 配置表
@@ -66,7 +63,10 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
     @Column(name = "`category`", columnDefinition = "varchar(255) not null comment '分类'")
     private String category;
 
-    @Column(name = "`en_code`", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(
+            name = "`en_code`",
+            unique = true,
+            columnDefinition = "varchar(255) not null comment '编码'")
     private String enCode;
 
     @Type(value = JsonType.class)
@@ -80,39 +80,39 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
         super.setId(id);
     }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public String getEnCode() {
-		return enCode;
-	}
+    public String getEnCode() {
+        return enCode;
+    }
 
-	public void setEnCode(String enCode) {
-		this.enCode = enCode;
-	}
+    public void setEnCode(String enCode) {
+        this.enCode = enCode;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

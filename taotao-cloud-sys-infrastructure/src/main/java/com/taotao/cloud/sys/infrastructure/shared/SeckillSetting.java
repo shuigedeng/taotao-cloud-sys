@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serializable;
+import lombok.*;
 
 /** 秒杀活动设置 */
 @Setter

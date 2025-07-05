@@ -17,11 +17,10 @@
 package com.taotao.cloud.sys.application.dto.login.cmmond;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import lombok.experimental.Accessors;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
  * 登录日志

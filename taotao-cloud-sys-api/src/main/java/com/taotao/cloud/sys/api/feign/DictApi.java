@@ -16,6 +16,9 @@
 
 package com.taotao.cloud.sys.api.feign;
 
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
+
 import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
@@ -28,10 +31,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
-
-
 /**
  * 远程调用后台用户模块
  *
@@ -39,42 +38,56 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @since 2020/5/2 16:42
  */
 @FeignClient(
-	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	contextId = "DictApi",
-	fallbackFactory = DictApiFallback.class)
+        name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
+        contextId = "DictApi",
+        fallbackFactory = DictApiFallback.class)
 public interface DictApi {
 
-	/**
-	 * 字典列表code查询
-	 *
-	 * @param code 代码
-	 * @return {@link DictApiResponse }
-	 * @since 2022-06-29 21:40:21
-	 */
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-		})
-	@FeignRetry(maxAttempt=  6, backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
-	@FeignInner
-	@GetMapping("/sys/feign/dict/code")
-	DictApiResponse findByCode(@RequestParam(value = "code") String code);
+    /**
+     * 字典列表code查询
+     *
+     * @param code 代码
+     * @return {@link DictApiResponse }
+     * @since 2022-06-29 21:40:21
+     */
+    @ApiInfo(
+            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+            update = {
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
+            })
+    @FeignRetry(
+            maxAttempt = 6,
+            backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
+    @FeignInner
+    @GetMapping("/sys/feign/dict/code")
+    DictApiResponse findByCode(@RequestParam(value = "code") String code);
 
-	/**
-	 * 字典列表code查询
-	 *
-	 * @param id 代码
-	 * @return {@link DictApiResponse }
-	 * @since 2022-06-29 21:40:21
-	 */
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-		})
-	@GetMapping("/sys/feign/dict/test")
-	DictApiResponse test(@RequestParam(value = "id") String id);
+    /**
+     * 字典列表code查询
+     *
+     * @param id 代码
+     * @return {@link DictApiResponse }
+     * @since 2022-06-29 21:40:21
+     */
+    @ApiInfo(
+            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+            update = {
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
+            })
+    @GetMapping("/sys/feign/dict/test")
+    DictApiResponse test(@RequestParam(value = "id") String id);
 }

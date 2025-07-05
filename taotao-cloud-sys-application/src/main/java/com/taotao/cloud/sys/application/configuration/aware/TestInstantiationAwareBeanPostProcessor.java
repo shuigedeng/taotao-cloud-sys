@@ -15,6 +15,7 @@
  */
 
 package com.taotao.cloud.sys.application.configuration.aware;
+
 import com.taotao.boot.common.utils.log.LogUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
@@ -33,28 +34,34 @@ import org.springframework.beans.factory.config.InstantiationAwareBeanPostProces
  * postProcessBeforeInitialization：初始化bean之前，相当于把bean注入spring上下文之前
  * postProcessAfterInitialization：初始化bean之后，相当于把bean注入spring上下文之后
  */
-public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
+public class TestInstantiationAwareBeanPostProcessor
+        implements InstantiationAwareBeanPostProcessor {
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        LogUtils.info("[TestInstantiationAwareBeanPostProcessor] before initialization " + beanName);
+    public Object postProcessBeforeInitialization(Object bean, String beanName)
+            throws BeansException {
+        LogUtils.info(
+                "[TestInstantiationAwareBeanPostProcessor] before initialization " + beanName);
         return bean;
     }
 
     @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessAfterInitialization(Object bean, String beanName)
+            throws BeansException {
         LogUtils.info("[TestInstantiationAwareBeanPostProcessor] after initialization " + beanName);
         return bean;
     }
 
     @Override
-    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+    public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName)
+            throws BeansException {
         LogUtils.info("[TestInstantiationAwareBeanPostProcessor] before instantiation " + beanName);
         return null;
     }
 
     @Override
-    public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+    public boolean postProcessAfterInstantiation(Object bean, String beanName)
+            throws BeansException {
         LogUtils.info("[TestInstantiationAwareBeanPostProcessor] after instantiation " + beanName);
         return true;
     }
@@ -62,7 +69,8 @@ public class TestInstantiationAwareBeanPostProcessor implements InstantiationAwa
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName)
             throws BeansException {
-        LogUtils.info("[TestInstantiationAwareBeanPostProcessor] postProcessPropertyValues " + beanName);
+        LogUtils.info(
+                "[TestInstantiationAwareBeanPostProcessor] postProcessPropertyValues " + beanName);
         return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);
     }
 

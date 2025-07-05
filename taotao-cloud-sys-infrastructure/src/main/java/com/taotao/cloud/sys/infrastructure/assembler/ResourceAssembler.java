@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -33,39 +32,39 @@ public interface ResourceAssembler {
     /** 实例 */
     ResourceAssembler INSTANCE = Mappers.getMapper(ResourceAssembler.class);
 
-//    /**
-//     * 菜单列表树vo列表
-//     *
-//     * @param resourceList 菜单列表
-//     * @return {@link List }<{@link MenuTreeVO }>
-//     * @since 2022-04-28 13:39:41
-//     */
-//    List<MenuTreeVO> convertTree(List<Resource> resourceList);
-//
-//    /**
-//     * 实体查询bos
-//     *
-//     * @param resources 菜单
-//     * @return {@link List }<{@link MenuQueryRpcRequest }>
-//     * @since 2022-04-28 13:39:41
-//     */
-//    List<MenuQueryRpcRequest> convertListRequest(List<Resource> resources);
-//
-//    /**
-//     * 菜单bos
-//     *
-//     * @param resources 菜单
-//     * @return {@link List }<{@link MenuBO }>
-//     * @since 2022-04-28 13:39:41
-//     */
-//    List<MenuBO> convertListBO(List<Resource> resources);
-//
-//    /**
-//     * 菜单bos vos
-//     *
-//     * @param bos bos
-//     * @return {@link List }<{@link MenuQueryVO }>
-//     * @since 2022-04-28 13:39:41
-//     */
-//    List<MenuQueryVO> convertListVO(List<MenuBO> bos);
+    //    /**
+    //     * 菜单列表树vo列表
+    //     *
+    //     * @param resourceList 菜单列表
+    //     * @return {@link List }<{@link MenuTreeVO }>
+    //     * @since 2022-04-28 13:39:41
+    //     */
+    //    List<MenuTreeVO> convertTree(List<Resource> resourceList);
+    //
+    //    /**
+    //     * 实体查询bos
+    //     *
+    //     * @param resources 菜单
+    //     * @return {@link List }<{@link MenuQueryRpcRequest }>
+    //     * @since 2022-04-28 13:39:41
+    //     */
+    //    List<MenuQueryRpcRequest> convertListRequest(List<Resource> resources);
+    //
+    //    /**
+    //     * 菜单bos
+    //     *
+    //     * @param resources 菜单
+    //     * @return {@link List }<{@link MenuBO }>
+    //     * @since 2022-04-28 13:39:41
+    //     */
+    //    List<MenuBO> convertListBO(List<Resource> resources);
+    //
+    //    /**
+    //     * 菜单bos vos
+    //     *
+    //     * @param bos bos
+    //     * @return {@link List }<{@link MenuQueryVO }>
+    //     * @since 2022-04-28 13:39:41
+    //     */
+    //    List<MenuQueryVO> convertListVO(List<MenuBO> bos);
 }

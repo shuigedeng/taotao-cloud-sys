@@ -18,9 +18,8 @@ package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
 import com.taotao.cloud.sys.application.service.DeptService;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  * DeptServiceImpl
@@ -31,25 +30,25 @@ import java.util.List;
  */
 @Service
 public class DeptServiceImpl implements DeptService {
-	@Override
-	public List<DeptTreeCO> tree() {
-		return List.of();
-	}
+    @Override
+    public List<DeptTreeCO> tree() {
+        return List.of();
+    }
 
-//	@Override
-//	public List<DeptTreeVO> tree() {
-//		LambdaQueryWrapper<Dept> queryWrapper = new LambdaQueryWrapper<>();
-//		queryWrapper.orderByDesc(Dept::getSortNum);
-//		List<Dept> list = list(queryWrapper);
-//
-//		return DeptConvert.INSTANCE.convertTree(list)
-//			.stream()
-//			.filter(Objects::nonNull)
-//			.peek(e -> {
-//				e.setKey(e.getId());
-//				e.setValue(e.getId());
-//				e.setTitle(e.getName());
-//			})
-//			.toList();
-//	}
+    //	@Override
+    //	public List<DeptTreeVO> tree() {
+    //		LambdaQueryWrapper<Dept> queryWrapper = new LambdaQueryWrapper<>();
+    //		queryWrapper.orderByDesc(Dept::getSortNum);
+    //		List<Dept> list = list(queryWrapper);
+    //
+    //		return DeptConvert.INSTANCE.convertTree(list)
+    //			.stream()
+    //			.filter(Objects::nonNull)
+    //			.peek(e -> {
+    //				e.setKey(e.getId());
+    //				e.setValue(e.getId());
+    //				e.setTitle(e.getName());
+    //			})
+    //			.toList();
+    //	}
 }

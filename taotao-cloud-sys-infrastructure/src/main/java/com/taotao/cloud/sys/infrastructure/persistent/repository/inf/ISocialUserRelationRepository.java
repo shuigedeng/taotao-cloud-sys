@@ -18,7 +18,6 @@ package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
 
 import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserRelationPO;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 
 /**
  * CompanyMapper
@@ -27,4 +26,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISocialUserRelationRepository extends BaseInterfaceSuperRepository<SocialUserRelationPO, Long> {}
+public interface ISocialUserRelationRepository
+        extends BaseInterfaceSuperRepository<SocialUserRelationPO, Long> {}

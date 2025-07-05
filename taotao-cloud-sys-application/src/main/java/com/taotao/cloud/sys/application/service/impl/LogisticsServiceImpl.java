@@ -27,17 +27,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @AllArgsConstructor
-public class LogisticsServiceImpl
-        implements LogisticsService {
+public class LogisticsServiceImpl implements LogisticsService {
 
-//	@Override
-//	public LogisticsConfigPO findLogisticsById(Long id) {
-//		return null;
-//	}
+    //	@Override
+    //	public LogisticsConfigPO findLogisticsById(Long id) {
+    //		return null;
+    //	}
 
-//    @Override
-//    public LogisticsConfig findLogisticsById(Long id) {
-//        Optional<LogisticsConfig> optionalExpressCompany = ir().findById(id);
-//        return optionalExpressCompany.orElseThrow(() -> new BusinessException(ResultEnum.FILE_NOT_EXIST));
-//    }
+    //    @Override
+    //    public LogisticsConfig findLogisticsById(Long id) {
+    //        Optional<LogisticsConfig> optionalExpressCompany = ir().findById(id);
+    //        return optionalExpressCompany.orElseThrow(() -> new
+    // BusinessException(ResultEnum.FILE_NOT_EXIST));
+    //    }
 }

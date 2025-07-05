@@ -17,14 +17,13 @@
 package com.taotao.cloud.sys.application.dto.user.clientobject;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 用户注册VO
@@ -42,8 +41,7 @@ import java.io.Serializable;
 @Schema(description = "用户注册VO")
 public class UserRegisterCO implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = 5126530068827085130L;
+    @Serial private static final long serialVersionUID = 5126530068827085130L;
 
     @Schema(description = "真实用户名")
     private String username;

@@ -33,7 +33,9 @@ public class QuartzJobApiFallback implements FallbackFactory<QuartzJobApi> {
         return new QuartzJobApi() {
             @Override
             public Boolean addQuartzJobDTOTestSeata(Long quartzJobDTO) {
-                LogUtils.error(throwable, "taotao-cloud-job  IFeignQuartzJobApi addQuartzJobDTOTestSeata feign调用失败 ===============");
+                LogUtils.error(
+                        throwable,
+                        "taotao-cloud-job  IFeignQuartzJobApi addQuartzJobDTOTestSeata feign调用失败 ===============");
 
                 return null;
             }

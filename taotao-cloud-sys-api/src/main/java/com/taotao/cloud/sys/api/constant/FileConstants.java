@@ -16,12 +16,9 @@
 
 package com.taotao.cloud.sys.api.constant;
 
-
 /** 代码生成通用常量 */
 public interface FileConstants {
 
     /** 单表（增删改查） */
     String TPL_CRUD = "crud";
-
-
 }

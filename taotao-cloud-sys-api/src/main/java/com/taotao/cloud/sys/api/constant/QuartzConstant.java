@@ -27,8 +27,4 @@ public interface QuartzConstant {
 
     /** 主状态-待付款 --10 (等待支付) */
     Integer WAIT_PAYMENT = 10;
-
-
-
-
 }

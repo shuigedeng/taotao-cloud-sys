@@ -17,17 +17,11 @@
 package com.taotao.cloud.sys.infrastructure.utils;
 
 import com.taotao.boot.common.tree.TreeNode;
-import com.taotao.boot.common.utils.bean.BeanUtils;
-import com.taotao.boot.common.utils.common.OrikaUtils;
-import com.taotao.cloud.sys.api.enums.ResourceTypeEnum;
-
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * TreeUtil
@@ -103,35 +97,35 @@ public class TreeUtil {
         return treeNode;
     }
 
-//    /**
-//     * 通过SysMenu创建树形节点
-//     *
-//     * @param parentId 父id
-//     * @return 菜单树形节点
-//     * @since 2020/10/21 11:23
-//     */
-//    public static List<MenuTreeVO> buildTree(List<MenuBO> menus, Long parentId) {
-//        List<MenuTreeVO> trees = new ArrayList<>();
-//        MenuTreeVO node;
-//        for (MenuBO menu : menus) {
-//            node = MenuTreeVO.builder()
-//                    .name(menu.name())
-//                    .type(menu.type())
-//                    .keepAlive(menu.keepAlive())
-//                    .path(menu.path())
-//                    .perms(menu.perms())
-//                    .label(menu.name())
-//                    .icon(menu.icon())
-//                    .build();
-//            node.setId(menu.id());
-//            node.setParentId(menu.parentId());
-//            node.setChildren(new ArrayList<>());
-//            node.setHasChildren(false);
-//            node.setSort(menu.sortNum());
-//            trees.add(node);
-//        }
-//        return TreeUtil.build(trees, parentId);
-//    }
+    //    /**
+    //     * 通过SysMenu创建树形节点
+    //     *
+    //     * @param parentId 父id
+    //     * @return 菜单树形节点
+    //     * @since 2020/10/21 11:23
+    //     */
+    //    public static List<MenuTreeVO> buildTree(List<MenuBO> menus, Long parentId) {
+    //        List<MenuTreeVO> trees = new ArrayList<>();
+    //        MenuTreeVO node;
+    //        for (MenuBO menu : menus) {
+    //            node = MenuTreeVO.builder()
+    //                    .name(menu.name())
+    //                    .type(menu.type())
+    //                    .keepAlive(menu.keepAlive())
+    //                    .path(menu.path())
+    //                    .perms(menu.perms())
+    //                    .label(menu.name())
+    //                    .icon(menu.icon())
+    //                    .build();
+    //            node.setId(menu.id());
+    //            node.setParentId(menu.parentId());
+    //            node.setChildren(new ArrayList<>());
+    //            node.setHasChildren(false);
+    //            node.setSort(menu.sortNum());
+    //            trees.add(node);
+    //        }
+    //        return TreeUtil.build(trees, parentId);
+    //    }
 
     /**
      * 对象转树节点
@@ -140,39 +134,40 @@ public class TreeUtil {
      * @return 菜单树形节点
      * @since 2020/10/21 11:23
      */
-//    public static List<MenuTreeVO> buildTree(List<Resource> resources) {
-//        return resources
-//			.stream()
-//                .filter(Objects::nonNull)
-//                .map(sysMenu -> {
-//                    MenuTreeVO tree = OrikaUtils.convert(sysMenu, MenuTreeVO.class);
-//                    tree.setHidden(sysMenu.getHidden());
-//
-//                    MenuMetaVO meta = new MenuMetaVO();
-//                    meta.setIcon(sysMenu.getIcon());
-//                    meta.setTitle(sysMenu.getName());
-//                    tree.setMeta(meta);
-//
-//                    // 只有当菜单类型为目录的时候，如果是顶级，则强制修改为Layout
-//                    if (sysMenu.getParentId() == -1L
-//                            && ResourceTypeEnum.DIR.getCode().equals(sysMenu.getType())) {
-//                        tree.setComponent("Layout");
-//                        tree.setRedirect("noRedirect");
-//                        tree.setAlwaysShow(true);
-//                    }
-//                    tree.setSort(sysMenu.getSortNum());
-//
-//                    if (ResourceTypeEnum.DIR.getCode().equals(sysMenu.getType())) {
-//                        tree.setTypeName(ResourceTypeEnum.DIR.getMessage());
-//                    } else if (ResourceTypeEnum.MENU.getCode().equals(sysMenu.getType())) {
-//                        tree.setTypeName(ResourceTypeEnum.MENU.getMessage());
-//                    } else if (ResourceTypeEnum.RESOURCE.getCode().equals(sysMenu.getType())) {
-//                        tree.setTypeName(ResourceTypeEnum.RESOURCE.getMessage());
-//                    }
-//                    return tree;
-//                })
-//                .toList();
-//    }
+    //    public static List<MenuTreeVO> buildTree(List<Resource> resources) {
+    //        return resources
+    //			.stream()
+    //                .filter(Objects::nonNull)
+    //                .map(sysMenu -> {
+    //                    MenuTreeVO tree = OrikaUtils.convert(sysMenu, MenuTreeVO.class);
+    //                    tree.setHidden(sysMenu.getHidden());
+    //
+    //                    MenuMetaVO meta = new MenuMetaVO();
+    //                    meta.setIcon(sysMenu.getIcon());
+    //                    meta.setTitle(sysMenu.getName());
+    //                    tree.setMeta(meta);
+    //
+    //                    // 只有当菜单类型为目录的时候，如果是顶级，则强制修改为Layout
+    //                    if (sysMenu.getParentId() == -1L
+    //                            && ResourceTypeEnum.DIR.getCode().equals(sysMenu.getType())) {
+    //                        tree.setComponent("Layout");
+    //                        tree.setRedirect("noRedirect");
+    //                        tree.setAlwaysShow(true);
+    //                    }
+    //                    tree.setSort(sysMenu.getSortNum());
+    //
+    //                    if (ResourceTypeEnum.DIR.getCode().equals(sysMenu.getType())) {
+    //                        tree.setTypeName(ResourceTypeEnum.DIR.getMessage());
+    //                    } else if (ResourceTypeEnum.MENU.getCode().equals(sysMenu.getType())) {
+    //                        tree.setTypeName(ResourceTypeEnum.MENU.getMessage());
+    //                    } else if (ResourceTypeEnum.RESOURCE.getCode().equals(sysMenu.getType()))
+    // {
+    //                        tree.setTypeName(ResourceTypeEnum.RESOURCE.getMessage());
+    //                    }
+    //                    return tree;
+    //                })
+    //                .toList();
+    //    }
 
     /**
      * list转树形方法
@@ -183,17 +178,17 @@ public class TreeUtil {
      * @since 2022-04-17 10:29:02
      */
     public static <E extends TreeNode> List<E> streamToTree(List<E> treeList, Long parentId) {
-        return treeList
-			.stream()
+        return treeList.stream()
                 .filter(Objects::nonNull)
                 // 过滤父节点
                 .filter(parent -> parent.getParentId().equals(parentId))
                 // 把父节点children递归赋值成为子节点
-                .peek(child -> {
-                    List<E> list = streamToTree(treeList, child.getId());
-                    list.sort(Comparator.comparing(E::getSort));
-                    child.setChildren(list);
-                })
+                .peek(
+                        child -> {
+                            List<E> list = streamToTree(treeList, child.getId());
+                            list.sort(Comparator.comparing(E::getSort));
+                            child.setChildren(list);
+                        })
                 .toList();
     }
 
@@ -385,37 +380,37 @@ public class TreeUtil {
      * @return {@link Map }<{@link String }, {@link List }<{@link Region }>>
      * @since 2022-10-25 09:05:07
      */
-//    public Map<String, List<Region>> test2() {
-//        Map<String, List<Region>> map = new HashMap<>();
-//        // List<Region> regionList = list();
-//        List<Region> regionList = new ArrayList<>();
-//        List<Region> emptyList = new ArrayList<>();
-//
-//        // 将数组数据转为map结构，pcode为key
-//        Map<String, List<Region>> regionMap = regionList
-//			.stream()
-//                .map(item -> {
-//                    Region region = new Region();
-//                    BeanUtils.copyProperties(item, region);
-//                    return region;
-//                })
-//                .collect(Collectors.groupingBy(Region::getCode, Collectors.toList()));
-//        // 上面的Collectors.groupingBy将数据按Pcode分组，方便下面操作
-//
-//        // 封装树形结构并塞进emptyList数组中
-//        regionMap.forEach((pcode, collect) -> {
-//            if (pcode.equals("0")) {
-//                emptyList.addAll(collect);
-//            }
-//            collect.forEach(item -> {
-//                // item.setCodeTree(regionMap.get(item.getCode()));
-//                // 因为上面根据pcode分组了，所以这里的collect是以pcode为key的map对象
-//                // ,item则是当前遍历的pcode底下的children
-//            });
-//        });
-//        map.put("tree", emptyList);
-//        return map;
-//    }
+    //    public Map<String, List<Region>> test2() {
+    //        Map<String, List<Region>> map = new HashMap<>();
+    //        // List<Region> regionList = list();
+    //        List<Region> regionList = new ArrayList<>();
+    //        List<Region> emptyList = new ArrayList<>();
+    //
+    //        // 将数组数据转为map结构，pcode为key
+    //        Map<String, List<Region>> regionMap = regionList
+    //			.stream()
+    //                .map(item -> {
+    //                    Region region = new Region();
+    //                    BeanUtils.copyProperties(item, region);
+    //                    return region;
+    //                })
+    //                .collect(Collectors.groupingBy(Region::getCode, Collectors.toList()));
+    //        // 上面的Collectors.groupingBy将数据按Pcode分组，方便下面操作
+    //
+    //        // 封装树形结构并塞进emptyList数组中
+    //        regionMap.forEach((pcode, collect) -> {
+    //            if (pcode.equals("0")) {
+    //                emptyList.addAll(collect);
+    //            }
+    //            collect.forEach(item -> {
+    //                // item.setCodeTree(regionMap.get(item.getCode()));
+    //                // 因为上面根据pcode分组了，所以这里的collect是以pcode为key的map对象
+    //                // ,item则是当前遍历的pcode底下的children
+    //            });
+    //        });
+    //        map.put("tree", emptyList);
+    //        return map;
+    //    }
 
     /**
      * java8使用stream流将数据处理成树状结构（非递归） 如果数据是两张表A B，B表的parentId对应A表的id这种形式，可以用下面的方法：

@@ -20,4 +20,4 @@ import com.taotao.cloud.sys.application.service.SysLogService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SysLogServiceImpl  implements SysLogService {}
+public class SysLogServiceImpl implements SysLogService {}

@@ -21,6 +21,7 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,8 +29,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 /**
  * 权限资源表(url请求)
@@ -53,11 +52,17 @@ public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
     public static final String TABLE_NAME = "ttc_request_path";
 
     /** 权限标识 (controller类#方法#请求方式) ManagerUserController#page#post */
-    @Column(name = "`code`", unique = true, columnDefinition = "varchar(255) not null comment '权限标识'")
+    @Column(
+            name = "`code`",
+            unique = true,
+            columnDefinition = "varchar(255) not null comment '权限标识'")
     private String code;
 
     /** 权限名称 (获取用户分页详情) */
-    @Column(name = "`name`", unique = true, columnDefinition = "varchar(255) not null comment '权限名称'")
+    @Column(
+            name = "`name`",
+            unique = true,
+            columnDefinition = "varchar(255) not null comment '权限名称'")
     private String name;
 
     /** 分组名称 (用户管理) */
@@ -77,7 +82,9 @@ public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
     private boolean enable;
 
     /** 是否通过系统生成的权限 */
-    @Column(name = "`generate`", columnDefinition = "boolean not null default false comment '是否通过系统生成的权限'")
+    @Column(
+            name = "`generate`",
+            columnDefinition = "boolean not null default false comment '是否通过系统生成的权限'")
     private boolean generate;
 
     /** 描述 */
@@ -88,79 +95,79 @@ public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
     @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getGroupName() {
-		return groupName;
-	}
+    public String getGroupName() {
+        return groupName;
+    }
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
 
-	public String getRequestType() {
-		return requestType;
-	}
+    public String getRequestType() {
+        return requestType;
+    }
 
-	public void setRequestType(String requestType) {
-		this.requestType = requestType;
-	}
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public String getPath() {
+        return path;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+    public void setPath(String path) {
+        this.path = path;
+    }
 
-	public boolean isEnable() {
-		return enable;
-	}
+    public boolean isEnable() {
+        return enable;
+    }
 
-	public void setEnable(boolean enable) {
-		this.enable = enable;
-	}
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
 
-	public boolean isGenerate() {
-		return generate;
-	}
+    public boolean isGenerate() {
+        return generate;
+    }
 
-	public void setGenerate(boolean generate) {
-		this.generate = generate;
-	}
+    public void setGenerate(boolean generate) {
+        this.generate = generate;
+    }
 
-	public String getRemark() {
-		return remark;
-	}
+    public String getRemark() {
+        return remark;
+    }
 
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

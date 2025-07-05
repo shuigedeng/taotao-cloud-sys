@@ -1,6 +1,26 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.taotao.cloud.sys.application.shared.monitor;
 
 import com.taotao.boot.common.constant.CommonConstants;
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Properties;
 import lombok.*;
 import org.dromara.hutool.core.math.NumberUtil;
 import oshi.hardware.CentralProcessor;
@@ -11,11 +31,6 @@ import oshi.software.os.FileSystem;
 import oshi.software.os.OSFileStore;
 import oshi.software.os.OperatingSystem;
 import oshi.util.Util;
-
-import java.math.BigDecimal;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
 
 /**
  * 服务器相关信息
@@ -108,8 +123,8 @@ public class ServerInfo {
     private void fillSystemInfo() {
         Properties props = System.getProperties();
 
-//        systemInfo.setComputerName(NetUtil.getLocalHostName());
-//        systemInfo.setComputerIp(NetUtil.getLocalhost().getHostAddress());
+        //        systemInfo.setComputerName(NetUtil.getLocalHostName());
+        //        systemInfo.setComputerIp(NetUtil.getLocalhost().getHostAddress());
         systemInfo.setOsName(props.getProperty("os.name"));
         systemInfo.setOsArch(props.getProperty("os.arch"));
         systemInfo.setUserDir(props.getProperty("user.dir"));
@@ -144,10 +159,10 @@ public class ServerInfo {
             diskInfo.setTotal(convertFileSize(total));
             diskInfo.setFree(convertFileSize(free));
             diskInfo.setUsed(convertFileSize(used));
-            if (total != 0){
+            if (total != 0) {
                 diskInfo.setUsage(NumberUtil.div(used * 100, total, 4));
             } else {
-                //Windows下如果有光驱（可能是虚拟光驱），total为0，不能做除数
+                // Windows下如果有光驱（可能是虚拟光驱），total为0，不能做除数
                 diskInfo.setUsage(BigDecimal.valueOf(0));
             }
             diskInfos.add(diskInfo);

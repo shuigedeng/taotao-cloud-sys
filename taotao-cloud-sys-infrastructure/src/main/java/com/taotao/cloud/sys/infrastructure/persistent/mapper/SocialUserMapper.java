@@ -18,7 +18,6 @@ package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.taotao.boot.webagg.mapper.BaseSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserPO;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
 
 /**
  * IUserRoleMapper

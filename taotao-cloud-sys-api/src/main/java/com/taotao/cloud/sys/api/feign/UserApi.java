@@ -16,6 +16,8 @@
 
 package com.taotao.cloud.sys.api.feign;
 
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.model.BaseSecurityUser;
@@ -28,9 +30,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
-
 /**
  * 远程调用后台用户模块
  *
@@ -38,61 +37,81 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @since 2020/5/2 16:42
  */
 @FeignClient(
-	name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
-	contextId = "UserApi",
-	fallbackFactory = UserApiFallback.class)
+        name = ServiceNameConstants.TAOTAO_CLOUD_SYS,
+        contextId = "UserApi",
+        fallbackFactory = UserApiFallback.class)
 public interface UserApi {
 
-	/**
-	 * 获取用户信息
-	 *
-	 * @param username 用户名称
-	 * @return 用户信息
-	 * @since 2020/10/21 15:06
-	 */
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-		})
-	@GetMapping(value = "/sys/feign/user/info/username")
-	UserQueryApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
+    /**
+     * 获取用户信息
+     *
+     * @param username 用户名称
+     * @return 用户信息
+     * @since 2020/10/21 15:06
+     */
+    @ApiInfo(
+            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+            update = {
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
+            })
+    @GetMapping(value = "/sys/feign/user/info/username")
+    UserQueryApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
 
-	/**
-	 * 通过第三方查询用户包括角色权限等
-	 *
-	 * @param providerId     providerId
-	 * @param providerUserId providerUserId
-	 * @return 系统用户信息
-	 * @since 2020/4/29 17:47
-	 */
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-		})
-	@GetMapping(
-		value = "/sys/feign/user/info/social/{social}",
-		headers = {"from=in"})
-	BaseSecurityUser getUserInfoBySocial(
-		@RequestParam("providerId") String providerId,
-		@RequestParam("providerUserId") int providerUserId);
+    /**
+     * 通过第三方查询用户包括角色权限等
+     *
+     * @param providerId     providerId
+     * @param providerUserId providerUserId
+     * @return 系统用户信息
+     * @since 2020/4/29 17:47
+     */
+    @ApiInfo(
+            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+            update = {
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
+            })
+    @GetMapping(
+            value = "/sys/feign/user/info/social/{social}",
+            headers = {"from=in"})
+    BaseSecurityUser getUserInfoBySocial(
+            @RequestParam("providerId") String providerId,
+            @RequestParam("providerUserId") int providerUserId);
 
-	/**
-	 * 通过用户名查询用户包括角色权限等
-	 *
-	 * @param nicknameOrUserNameOrPhoneOrEmail 用户名
-	 * @return 系统用户信息
-	 * @since 2020/4/29 17:48
-	 */
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(version = V2022_07, content = "主要修改了配置信息的接口查询", date = "2022-07-01 17:11:55"),
-			@Update(version = V2022_08, content = "主要修改了配置信息的接口查询08", date = "2022-07-01 17:11:55")
-		})
-	@GetMapping(value = "/sys/feign/user/info")
-	BaseSecurityUser getSysSecurityUser(@RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail") String nicknameOrUserNameOrPhoneOrEmail);
+    /**
+     * 通过用户名查询用户包括角色权限等
+     *
+     * @param nicknameOrUserNameOrPhoneOrEmail 用户名
+     * @return 系统用户信息
+     * @since 2020/4/29 17:48
+     */
+    @ApiInfo(
+            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+            update = {
+                @Update(
+                        version = V2022_07,
+                        content = "主要修改了配置信息的接口查询",
+                        date = "2022-07-01 17:11:55"),
+                @Update(
+                        version = V2022_08,
+                        content = "主要修改了配置信息的接口查询08",
+                        date = "2022-07-01 17:11:55")
+            })
+    @GetMapping(value = "/sys/feign/user/info")
+    BaseSecurityUser getSysSecurityUser(
+            @RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail")
+                    String nicknameOrUserNameOrPhoneOrEmail);
 }

@@ -19,8 +19,8 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -33,8 +33,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class ExperienceSettingApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4261856614779031745L;
+    @Serial private static final long serialVersionUID = -4261856614779031745L;
 
     /** 注册 */
     private Integer register;

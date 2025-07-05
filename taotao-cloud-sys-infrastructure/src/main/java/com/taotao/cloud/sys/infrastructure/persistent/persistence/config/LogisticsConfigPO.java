@@ -22,7 +22,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -69,62 +68,64 @@ public class LogisticsConfigPO extends BaseSuperEntity<LogisticsConfigPO, Long> 
     private String formItems;
 
     /** 禁用状态 OPEN：开启，CLOSE：禁用 */
-    @Column(name = "`disabled`", columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
+    @Column(
+            name = "`disabled`",
+            columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
     private String disabled;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getContactName() {
-		return contactName;
-	}
+    public String getContactName() {
+        return contactName;
+    }
 
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-	}
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
+    }
 
-	public String getContactMobile() {
-		return contactMobile;
-	}
+    public String getContactMobile() {
+        return contactMobile;
+    }
 
-	public void setContactMobile(String contactMobile) {
-		this.contactMobile = contactMobile;
-	}
+    public void setContactMobile(String contactMobile) {
+        this.contactMobile = contactMobile;
+    }
 
-	public String getStandBy() {
-		return standBy;
-	}
+    public String getStandBy() {
+        return standBy;
+    }
 
-	public void setStandBy(String standBy) {
-		this.standBy = standBy;
-	}
+    public void setStandBy(String standBy) {
+        this.standBy = standBy;
+    }
 
-	public String getFormItems() {
-		return formItems;
-	}
+    public String getFormItems() {
+        return formItems;
+    }
 
-	public void setFormItems(String formItems) {
-		this.formItems = formItems;
-	}
+    public void setFormItems(String formItems) {
+        this.formItems = formItems;
+    }
 
-	public String getDisabled() {
-		return disabled;
-	}
+    public String getDisabled() {
+        return disabled;
+    }
 
-	public void setDisabled(String disabled) {
-		this.disabled = disabled;
-	}
+    public void setDisabled(String disabled) {
+        this.disabled = disabled;
+    }
 }

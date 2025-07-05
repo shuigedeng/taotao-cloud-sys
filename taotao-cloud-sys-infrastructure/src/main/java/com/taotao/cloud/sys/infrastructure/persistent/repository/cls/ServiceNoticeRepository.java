@@ -31,10 +31,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class ServiceNoticeRepository extends BaseClassSuperRepository<ServiceNoticePO, Long> {
-	@PersistenceContext
-	private EntityManager em;
+    @PersistenceContext private EntityManager em;
 
-	public ServiceNoticeRepository(EntityManager em) {
-		super(ServiceNoticePO.class, em);
-	}
+    public ServiceNoticeRepository(EntityManager em) {
+        super(ServiceNoticePO.class, em);
+    }
 }

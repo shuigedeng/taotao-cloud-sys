@@ -17,8 +17,8 @@
 package com.taotao.cloud.sys.api.feign.response.setting;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -34,16 +34,16 @@ public class QQConnectSettingApiResponse {
     /** qq联合登陆配置 */
     List<QQConnectSettingItemVO> qqConnectSettingItemList;
 
-	/** QQ联合登录具体配置 */
-	@Setter
-@Getter
-@ToString
-	public static class QQConnectSettingItemVO {
+    /** QQ联合登录具体配置 */
+    @Setter
+    @Getter
+    @ToString
+    public static class QQConnectSettingItemVO {
 
-		private String clientType;
+        private String clientType;
 
-		private String appId;
+        private String appId;
 
-		private String appKey;
-	}
+        private String appKey;
+    }
 }

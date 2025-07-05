@@ -23,6 +23,7 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,8 +31,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 /**
  * 日志表
@@ -88,7 +87,9 @@ public class LogPO extends BaseSuperEntity<LogPO, Long> {
     private Integer operateType;
 
     /** 请求类型（1查询/获取，2添加，3修改，4删除） */
-    @Column(name = "`request_type`", columnDefinition = "int null comment '请求类型（1查询/获取，2添加，3修改，4删除）'")
+    @Column(
+            name = "`request_type`",
+            columnDefinition = "int null comment '请求类型（1查询/获取，2添加，3修改，4删除）'")
     private Integer requestType;
 
     /** 请求方法名称 */
@@ -172,240 +173,239 @@ public class LogPO extends BaseSuperEntity<LogPO, Long> {
     @EncryptField
     private String browser;
 
+    public String getTraceId() {
+        return traceId;
+    }
 
-	public String getTraceId() {
-		return traceId;
-	}
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
+    public String getApplicationName() {
+        return applicationName;
+    }
 
-	public String getApplicationName() {
-		return applicationName;
-	}
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
+    }
 
-	public void setApplicationName(String applicationName) {
-		this.applicationName = applicationName;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public String getClientId() {
+        return clientId;
+    }
 
-	public String getClientId() {
-		return clientId;
-	}
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
 
-	public void setClientId(String clientId) {
-		this.clientId = clientId;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getIp() {
+        return ip;
+    }
 
-	public String getIp() {
-		return ip;
-	}
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
 
-	public void setIp(String ip) {
-		this.ip = ip;
-	}
+    public Integer getOperateType() {
+        return operateType;
+    }
 
-	public Integer getOperateType() {
-		return operateType;
-	}
+    public void setOperateType(Integer operateType) {
+        this.operateType = operateType;
+    }
 
-	public void setOperateType(Integer operateType) {
-		this.operateType = operateType;
-	}
+    public Integer getRequestType() {
+        return requestType;
+    }
 
-	public Integer getRequestType() {
-		return requestType;
-	}
+    public void setRequestType(Integer requestType) {
+        this.requestType = requestType;
+    }
 
-	public void setRequestType(Integer requestType) {
-		this.requestType = requestType;
-	}
+    public String getMethodName() {
+        return methodName;
+    }
 
-	public String getMethodName() {
-		return methodName;
-	}
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
 
-	public void setMethodName(String methodName) {
-		this.methodName = methodName;
-	}
+    public String getMethod() {
+        return method;
+    }
 
-	public String getMethod() {
-		return method;
-	}
+    public void setMethod(String method) {
+        this.method = method;
+    }
 
-	public void setMethod(String method) {
-		this.method = method;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public String getArgs() {
+        return args;
+    }
 
-	public String getArgs() {
-		return args;
-	}
+    public void setArgs(String args) {
+        this.args = args;
+    }
 
-	public void setArgs(String args) {
-		this.args = args;
-	}
+    public String getParams() {
+        return params;
+    }
 
-	public String getParams() {
-		return params;
-	}
+    public void setParams(String params) {
+        this.params = params;
+    }
 
-	public void setParams(String params) {
-		this.params = params;
-	}
+    public String getHeaders() {
+        return headers;
+    }
 
-	public String getHeaders() {
-		return headers;
-	}
+    public void setHeaders(String headers) {
+        this.headers = headers;
+    }
 
-	public void setHeaders(String headers) {
-		this.headers = headers;
-	}
+    public String getClasspath() {
+        return classpath;
+    }
 
-	public String getClasspath() {
-		return classpath;
-	}
+    public void setClasspath(String classpath) {
+        this.classpath = classpath;
+    }
 
-	public void setClasspath(String classpath) {
-		this.classpath = classpath;
-	}
+    public Long getStartTime() {
+        return startTime;
+    }
 
-	public Long getStartTime() {
-		return startTime;
-	}
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
+    }
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-	}
+    public Long getEndTime() {
+        return endTime;
+    }
 
-	public Long getEndTime() {
-		return endTime;
-	}
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
+    }
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-	}
+    public Long getConsumingTime() {
+        return consumingTime;
+    }
 
-	public Long getConsumingTime() {
-		return consumingTime;
-	}
+    public void setConsumingTime(Long consumingTime) {
+        this.consumingTime = consumingTime;
+    }
 
-	public void setConsumingTime(Long consumingTime) {
-		this.consumingTime = consumingTime;
-	}
+    public String getExDetail() {
+        return exDetail;
+    }
 
-	public String getExDetail() {
-		return exDetail;
-	}
+    public void setExDetail(String exDetail) {
+        this.exDetail = exDetail;
+    }
 
-	public void setExDetail(String exDetail) {
-		this.exDetail = exDetail;
-	}
+    public String getExDesc() {
+        return exDesc;
+    }
 
-	public String getExDesc() {
-		return exDesc;
-	}
+    public void setExDesc(String exDesc) {
+        this.exDesc = exDesc;
+    }
 
-	public void setExDesc(String exDesc) {
-		this.exDesc = exDesc;
-	}
+    public String getTenantId() {
+        return tenantId;
+    }
 
-	public String getTenantId() {
-		return tenantId;
-	}
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
-	}
+    public String getSource() {
+        return source;
+    }
 
-	public String getSource() {
-		return source;
-	}
+    public void setSource(String source) {
+        this.source = source;
+    }
 
-	public void setSource(String source) {
-		this.source = source;
-	}
+    public String getCtime() {
+        return ctime;
+    }
 
-	public String getCtime() {
-		return ctime;
-	}
+    public void setCtime(String ctime) {
+        this.ctime = ctime;
+    }
 
-	public void setCtime(String ctime) {
-		this.ctime = ctime;
-	}
+    public String getResult() {
+        return result;
+    }
 
-	public String getResult() {
-		return result;
-	}
+    public void setResult(String result) {
+        this.result = result;
+    }
 
-	public void setResult(String result) {
-		this.result = result;
-	}
+    public String getLogday() {
+        return logday;
+    }
 
-	public String getLogday() {
-		return logday;
-	}
+    public void setLogday(String logday) {
+        this.logday = logday;
+    }
 
-	public void setLogday(String logday) {
-		this.logday = logday;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
-	public void setLocation(String location) {
-		this.location = location;
-	}
+    public String getOs() {
+        return os;
+    }
 
-	public String getOs() {
-		return os;
-	}
+    public void setOs(String os) {
+        this.os = os;
+    }
 
-	public void setOs(String os) {
-		this.os = os;
-	}
+    public String getBrowser() {
+        return browser;
+    }
 
-	public String getBrowser() {
-		return browser;
-	}
+    public void setBrowser(String browser) {
+        this.browser = browser;
+    }
 
-	public void setBrowser(String browser) {
-		this.browser = browser;
-	}
-
-	@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

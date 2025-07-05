@@ -33,5 +33,5 @@ public interface SysLogLoginApi {
     @PostMapping
     // Response save(@RequestBody SysLogLogin sysLogLogin,
     // @RequestHeader(AuthorizationConstants.FROM) String from);
-	LogsApiResponse save(@RequestBody SysLogLoginApiRequest sysLogLoginApiRequest);
+    LogsApiResponse save(@RequestBody SysLogLoginApiRequest sysLogLoginApiRequest);
 }

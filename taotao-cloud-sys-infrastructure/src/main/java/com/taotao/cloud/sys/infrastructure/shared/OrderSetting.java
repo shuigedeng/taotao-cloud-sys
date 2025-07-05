@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.shared;
 
-import lombok.*;
-
 import java.io.Serializable;
+import lombok.*;
 
 /** 订单设置 */
 @Setter
@@ -27,6 +26,7 @@ import java.io.Serializable;
 public class OrderSetting implements Serializable {
 
     private static final long serialVersionUID = -2628613596000114786L;
+
     /** 自动取消 分钟 */
     private Integer autoCancel;
 

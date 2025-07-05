@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class SocialUserService {
 
-	//    private final SysSocialUserRepository sysSocialUserRepository;
+    //    private final SysSocialUserRepository sysSocialUserRepository;
 
-	//    public SysSocialUserService(SysSocialUserRepository sysSocialUserRepository) {
-	//        this.sysSocialUserRepository = sysSocialUserRepository;
-	//    }
+    //    public SysSocialUserService(SysSocialUserRepository sysSocialUserRepository) {
+    //        this.sysSocialUserRepository = sysSocialUserRepository;
+    //    }
 
-//	public SocialUserPO findByUuidAndSource(String uuid, String source) {
-//		//        return sysSocialUserRepository.findSysSocialUserByUuidAndSource(uuid, source);
-//		return null;
-//	}
-//
-//	public void saveAndFlush(SocialUserPO sysSocialUser) {
-//	}
+    //	public SocialUserPO findByUuidAndSource(String uuid, String source) {
+    //		//        return sysSocialUserRepository.findSysSocialUserByUuidAndSource(uuid, source);
+    //		return null;
+    //	}
+    //
+    //	public void saveAndFlush(SocialUserPO sysSocialUser) {
+    //	}
 }

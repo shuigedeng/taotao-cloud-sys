@@ -26,4 +26,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.Sens
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISensitiveWordRepository extends BaseInterfaceSuperRepository<SensitiveWordPO, Long> {}
+public interface ISensitiveWordRepository
+        extends BaseInterfaceSuperRepository<SensitiveWordPO, Long> {}

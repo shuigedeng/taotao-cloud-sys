@@ -18,21 +18,15 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.file;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictItemPO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-import org.hibernate.Hibernate;
-
-import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * 文件表
@@ -99,91 +93,91 @@ public class FilePO extends BaseSuperEntity<FilePO, Long> {
     @Column(name = "`length`", columnDefinition = "bigint null comment '大小'")
     private Long length;
 
-	public String getCreateName() {
-		return createName;
-	}
+    public String getCreateName() {
+        return createName;
+    }
 
-	public void setCreateName(String createName) {
-		this.createName = createName;
-	}
+    public void setCreateName(String createName) {
+        this.createName = createName;
+    }
 
-	public String getBizType() {
-		return bizType;
-	}
+    public String getBizType() {
+        return bizType;
+    }
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-	}
+    public void setBizType(String bizType) {
+        this.bizType = bizType;
+    }
 
-	public String getDataType() {
-		return dataType;
-	}
+    public String getDataType() {
+        return dataType;
+    }
 
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-	}
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
 
-	public String getOriginal() {
-		return original;
-	}
+    public String getOriginal() {
+        return original;
+    }
 
-	public void setOriginal(String original) {
-		this.original = original;
-	}
+    public void setOriginal(String original) {
+        this.original = original;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public String getMd5() {
-		return md5;
-	}
+    public String getMd5() {
+        return md5;
+    }
 
-	public void setMd5(String md5) {
-		this.md5 = md5;
-	}
+    public void setMd5(String md5) {
+        this.md5 = md5;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public String getContextType() {
-		return contextType;
-	}
+    public String getContextType() {
+        return contextType;
+    }
 
-	public void setContextType(String contextType) {
-		this.contextType = contextType;
-	}
+    public void setContextType(String contextType) {
+        this.contextType = contextType;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getExt() {
-		return ext;
-	}
+    public String getExt() {
+        return ext;
+    }
 
-	public void setExt(String ext) {
-		this.ext = ext;
-	}
+    public void setExt(String ext) {
+        this.ext = ext;
+    }
 
-	public Long getLength() {
-		return length;
-	}
+    public Long getLength() {
+        return length;
+    }
 
-	public void setLength(Long length) {
-		this.length = length;
-	}
+    public void setLength(Long length) {
+        this.length = length;
+    }
 }

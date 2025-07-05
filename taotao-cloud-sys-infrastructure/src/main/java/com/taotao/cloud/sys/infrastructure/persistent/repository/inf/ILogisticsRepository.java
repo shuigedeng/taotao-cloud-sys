@@ -26,4 +26,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.Logisti
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ILogisticsRepository extends BaseInterfaceSuperRepository<LogisticsConfigPO, Long> {}
+public interface ILogisticsRepository
+        extends BaseInterfaceSuperRepository<LogisticsConfigPO, Long> {}

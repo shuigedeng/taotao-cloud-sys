@@ -19,8 +19,8 @@ package com.taotao.cloud.sys.api.feign.response.setting;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
-import lombok.AllArgsConstructor;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
@@ -35,106 +35,106 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class PointSettingApiResponse implements Serializable {
 
-	@Serial
-	private static final long serialVersionUID = -4261856614779031745L;
-	/**
-	 * 注册
-	 */
-	private Integer register;
-	/**
-	 * 消费1元赠送多少积分
-	 */
-	private Integer consumer;
-	/**
-	 * 积分付款X积分=1元
-	 */
-	private Integer money;
-	/**
-	 * 每日签到积分
-	 */
-	private Integer signIn;
-	/**
-	 * 订单评价赠送积分
-	 */
-	private Integer comment;
-	/**
-	 * 积分具体设置
-	 */
-	private List<PointSettingItemVO> pointSettingItems;
+    @Serial private static final long serialVersionUID = -4261856614779031745L;
 
-	public Integer getRegister() {
-		if (register == null || register < 0) {
-			return 0;
-		}
-		return register;
-	}
+    /**
+     * 注册
+     */
+    private Integer register;
 
-	public Integer getMoney() {
-		if (money == null || money < 0) {
-			return 0;
-		}
-		return money;
-	}
+    /**
+     * 消费1元赠送多少积分
+     */
+    private Integer consumer;
 
-	public Integer getConsumer() {
-		if (consumer == null || consumer < 0) {
-			return 0;
-		}
-		return consumer;
-	}
+    /**
+     * 积分付款X积分=1元
+     */
+    private Integer money;
 
-	public Integer getSignIn() {
-		if (signIn == null || signIn < 0) {
-			return 0;
-		}
-		return signIn;
-	}
+    /**
+     * 每日签到积分
+     */
+    private Integer signIn;
 
-	public Integer getComment() {
-		if (comment == null || comment < 0) {
-			return 0;
-		}
-		return comment;
-	}
+    /**
+     * 订单评价赠送积分
+     */
+    private Integer comment;
 
+    /**
+     * 积分具体设置
+     */
+    private List<PointSettingItemVO> pointSettingItems;
 
-	/**
-	 * 积分签到设置
-	 */
-	@Setter
-@Getter
-@ToString
-	public static class PointSettingItemVO implements
-		Comparable<PointSettingItemVO>,
-		Serializable {
+    public Integer getRegister() {
+        if (register == null || register < 0) {
+            return 0;
+        }
+        return register;
+    }
 
-		/**
-		 * 签到天数
-		 */
-		private Integer day;
+    public Integer getMoney() {
+        if (money == null || money < 0) {
+            return 0;
+        }
+        return money;
+    }
 
-		/**
-		 * 赠送积分
-		 */
-		private Integer point;
+    public Integer getConsumer() {
+        if (consumer == null || consumer < 0) {
+            return 0;
+        }
+        return consumer;
+    }
 
-		public Integer getPoint() {
-			if (point == null || point < 0) {
-				return 0;
-			}
-			return point;
-		}
+    public Integer getSignIn() {
+        if (signIn == null || signIn < 0) {
+            return 0;
+        }
+        return signIn;
+    }
 
-		public void setPoint(Integer point) {
-			this.point = point;
-		}
+    public Integer getComment() {
+        if (comment == null || comment < 0) {
+            return 0;
+        }
+        return comment;
+    }
 
-		@Override
-		public int compareTo(
-			PointSettingItemVO pointSettingItem) {
-			// return this.day - pointSettingItem.getDay();
-			return 0;
-		}
-	}
+    /**
+     * 积分签到设置
+     */
+    @Setter
+    @Getter
+    @ToString
+    public static class PointSettingItemVO implements Comparable<PointSettingItemVO>, Serializable {
 
+        /**
+         * 签到天数
+         */
+        private Integer day;
+
+        /**
+         * 赠送积分
+         */
+        private Integer point;
+
+        public Integer getPoint() {
+            if (point == null || point < 0) {
+                return 0;
+            }
+            return point;
+        }
+
+        public void setPoint(Integer point) {
+            this.point = point;
+        }
+
+        @Override
+        public int compareTo(PointSettingItemVO pointSettingItem) {
+            // return this.day - pointSettingItem.getDay();
+            return 0;
+        }
+    }
 }

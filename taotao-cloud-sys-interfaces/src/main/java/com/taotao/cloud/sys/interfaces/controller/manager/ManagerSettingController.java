@@ -37,33 +37,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/tools/setting")
 public class ManagerSettingController extends BusinessController {
 
-//    private final ISettingService settingService;
-//
-//    @NotAuth
-//    public Result<SettingVO> getByKey(@RequestParam String key) {
-//        Setting setting = settingService.get(key);
-//        return Result.success(BeanUtils.copy(setting, SettingVO.class));
-//    }
-//
-//    @NotAuth
-//    @GetMapping("/all")
-//    public Result<List<Setting>> getAll() {
-//        List<Setting> list = settingService.list();
-//
-//        List<Setting> settings = settingService.im().selectList(new QueryWrapper<>());
-//        List<Setting> all = settingService.cr().findAll();
-//        List<Setting> all1 = settingService.ir().findAll();
-//        return Result.success(list);
-//    }
-//
-//    @NotAuth
-//    @PostMapping("/save")
-//    public Result<Boolean> save(@RequestBody Setting setting) {
-//
-//        settingService.im().insert(setting);
-//        settingService.cr().save(setting);
-//        settingService.ir().save(setting);
-//
-//        return Result.success(true);
-//    }
+    //    private final ISettingService settingService;
+    //
+    //    @NotAuth
+    //    public Result<SettingVO> getByKey(@RequestParam String key) {
+    //        Setting setting = settingService.get(key);
+    //        return Result.success(BeanUtils.copy(setting, SettingVO.class));
+    //    }
+    //
+    //    @NotAuth
+    //    @GetMapping("/all")
+    //    public Result<List<Setting>> getAll() {
+    //        List<Setting> list = settingService.list();
+    //
+    //        List<Setting> settings = settingService.im().selectList(new QueryWrapper<>());
+    //        List<Setting> all = settingService.cr().findAll();
+    //        List<Setting> all1 = settingService.ir().findAll();
+    //        return Result.success(list);
+    //    }
+    //
+    //    @NotAuth
+    //    @PostMapping("/save")
+    //    public Result<Boolean> save(@RequestBody Setting setting) {
+    //
+    //        settingService.im().insert(setting);
+    //        settingService.cr().save(setting);
+    //        settingService.ir().save(setting);
+    //
+    //        return Result.success(true);
+    //    }
 }

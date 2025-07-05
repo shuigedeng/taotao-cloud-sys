@@ -19,12 +19,9 @@ package com.taotao.cloud.sys.api.feign.response;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.*;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.Accessors;
 
 /**
@@ -43,8 +40,7 @@ import lombok.experimental.Accessors;
 @Schema(description = "公司查询VO")
 public class QuartzApiResponse implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     private Long id;
 

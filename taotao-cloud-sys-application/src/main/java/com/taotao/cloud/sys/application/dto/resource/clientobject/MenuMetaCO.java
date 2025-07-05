@@ -17,14 +17,13 @@
 package com.taotao.cloud.sys.application.dto.resource.clientobject;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
+import java.io.Serial;
+import java.io.Serializable;
 import lombok.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 菜单DTO
@@ -42,8 +41,7 @@ import java.io.Serializable;
 @Schema(description = "菜单元数据VO")
 public class MenuMetaCO implements Serializable {
 
-    @Serial
-    private static final long serialVersionUID = -4132785717179910025L;
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
 
     @Schema(description = "名称")
     private String title;

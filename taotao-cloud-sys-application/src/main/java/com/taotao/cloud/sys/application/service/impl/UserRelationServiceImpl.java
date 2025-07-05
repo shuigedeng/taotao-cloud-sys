@@ -17,9 +17,8 @@
 package com.taotao.cloud.sys.application.service.impl;
 
 import com.taotao.cloud.sys.application.service.UserRelationService;
-import org.springframework.stereotype.Service;
-
 import java.util.Set;
+import org.springframework.stereotype.Service;
 
 /**
  * @author shuigedeng
@@ -27,32 +26,31 @@ import java.util.Set;
  * @since 2020/10/21 09:20
  */
 @Service
-public class UserRelationServiceImpl
-	implements UserRelationService {
+public class UserRelationServiceImpl implements UserRelationService {
 
-	@Override
-	public Boolean saveUserRoles(Long userId, Set<Long> roleIds) {
-		return null;
-	}
+    @Override
+    public Boolean saveUserRoles(Long userId, Set<Long> roleIds) {
+        return null;
+    }
 
-//	private static final QUserRelation USER_RELATION = QUserRelation.userRelation;
-//
-//	@Override
-//	@Transactional(rollbackFor = Exception.class)
-//	public Boolean saveUserRoles(Long userId, Set<Long> roleIds) {
-//		BooleanExpression expression = USER_RELATION.userId.eq(userId);
-//		List<UserRelation> userRoles = cr().fetch(expression);
-//		if (CollUtil.isNotEmpty(userRoles)) {
-//			cr().deleteAll(userRoles);
-//		}
-//
-//		// 批量添加数据
-//		List<UserRelation> collect = roleIds
-//			.stream()
-//			.map(roleId ->
-//				UserRelation.builder().userId(userId).objectId(roleId).build())
-//			.toList();
-//		cr().saveAll(collect);
-//		return true;
-//	}
+    //	private static final QUserRelation USER_RELATION = QUserRelation.userRelation;
+    //
+    //	@Override
+    //	@Transactional(rollbackFor = Exception.class)
+    //	public Boolean saveUserRoles(Long userId, Set<Long> roleIds) {
+    //		BooleanExpression expression = USER_RELATION.userId.eq(userId);
+    //		List<UserRelation> userRoles = cr().fetch(expression);
+    //		if (CollUtil.isNotEmpty(userRoles)) {
+    //			cr().deleteAll(userRoles);
+    //		}
+    //
+    //		// 批量添加数据
+    //		List<UserRelation> collect = roleIds
+    //			.stream()
+    //			.map(roleId ->
+    //				UserRelation.builder().userId(userId).objectId(roleId).build())
+    //			.toList();
+    //		cr().saveAll(collect);
+    //		return true;
+    //	}
 }
