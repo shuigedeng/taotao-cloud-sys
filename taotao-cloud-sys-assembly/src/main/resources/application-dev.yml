@@ -465,9 +465,12 @@ spring:
       minimum-idle: 10 #//最小连接数，默认10
       pool-name: DatebookHikariCP
       register-mbeans: true #是否注册MBean
+      leak-detection-threshold: 60000 # 连接泄漏检测阈值(ms)
       data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
+        cachePrepStmts: true           # 启用预处理语句缓存
+        prepStmtCacheSize: 250         # 预处理语句缓存大小
+        prepStmtCacheSqlLimit: 2048    # 预处理语句最大长度
+        useServerPrepStmts: true       # 使用服务器端预处理
     dynamic:
       enabled: false
       datasource:
@@ -491,18 +494,31 @@ spring:
     database: mysql
     database-platform: mysql
     show-sql: true
-    open-in-view: true
     generate-ddl: true
+    open-in-view: false # 关闭Open Session In View反模式！解决N+1问题和连接泄漏风险
     hibernate:
       #create：每次运行程序时，都会重新创建表，故而数据会丢失
       #create-drop：每次运行程序时会先创建表结构，然后程序结束时清空表
       #update：每次运行程序，没有表时会创建表，如果对象发生改变会更新表结构，原有数据不会清空，只会更新（推荐使用）
       #validate：运行程序会校验数据于数据库的字段类型是否相同，字段不同会报错
       #none：禁用DDL处理
-      ddl-auto: update
+      ddl-auto: update # 生产环境禁用update/create/drop
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        properties:
+          hibernate:
+            jdbc.batch_size: 30               # 批量操作大小
+            order_inserts: true               # 启用插入排序优化批量操作
+            order_updates: true               # 启用更新排序优化批量操作
+            jdbc.batch_versioned_data: true   # 批量操作时处理版本控制
+            show_sql: false                   # 生产环境禁用SQL显示
+            format_sql: false
+            generate_statistics: false         # 生产环境禁用统计
+            cache:
+              use_second_level_cache: true    # 启用二级缓存
+              region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+              use_query_cache: true           # 启用查询缓存
     #properties:
     #  hibernate:
     #    eclipselink.logging.level.sql: FINE
