@@ -32,7 +32,6 @@ import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -72,7 +71,8 @@ public interface DictApi {
             backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
     @FeignInner
     @PostMapping("/sys/feign/dict/code")
-	FeignResponse<DictApiResponse> findByCode(@Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
+    FeignResponse<DictApiResponse> findByCode(
+            @Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
@@ -94,5 +94,6 @@ public interface DictApi {
                         date = "2022-07-01 17:11:55")
             })
     @PostMapping("/sys/feign/dict/test")
-    FeignResponse<DictApiResponse> test(@Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest );
+    FeignResponse<DictApiResponse> test(
+            @Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
 }

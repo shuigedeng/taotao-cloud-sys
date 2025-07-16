@@ -35,5 +35,5 @@ public interface FileRpcService {
      * @return {@link FileRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-	RpcResponse<FileRpcResponse> findByCode(Integer code);
+    RpcResponse<FileRpcResponse> findByCode(Integer code);
 }

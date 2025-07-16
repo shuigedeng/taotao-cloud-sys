@@ -29,5 +29,5 @@ import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
  * @since 2022-03-25 14:22:32
  */
 public interface PositionRpcService {
-	RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
+    RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
 }

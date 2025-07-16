@@ -20,7 +20,6 @@ import com.taotao.boot.common.model.RpcRequest;
 import com.taotao.boot.common.model.RpcResponse;
 import com.taotao.cloud.sys.api.dubbo.request.MenuQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.MenuRpcResponse;
-import java.util.List;
 
 /**
  * 后台菜单服务接口
@@ -38,5 +37,5 @@ public interface ResourceRpcService {
      * @return 菜单信息
      * @since 2022-03-25 14:13:34
      */
-	RpcResponse<MenuRpcResponse> queryAllById(RpcRequest<MenuQueryRpcRequest> menuQueryRpcRequest);
+    RpcResponse<MenuRpcResponse> queryAllById(RpcRequest<MenuQueryRpcRequest> menuQueryRpcRequest);
 }

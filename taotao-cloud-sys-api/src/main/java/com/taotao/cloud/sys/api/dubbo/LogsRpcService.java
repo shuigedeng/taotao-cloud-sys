@@ -36,5 +36,5 @@ public interface LogsRpcService {
      * @return {@link LogsRpcResponse }
      * @since 2022-04-28 09:21:20
      */
-	RpcResponse<LogsRpcResponse> query(LogsQueryRpcRequest request);
+    RpcResponse<LogsRpcResponse> query(LogsQueryRpcRequest request);
 }
