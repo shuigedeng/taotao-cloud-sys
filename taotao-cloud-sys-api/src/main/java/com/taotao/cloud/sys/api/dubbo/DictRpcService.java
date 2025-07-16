@@ -30,12 +30,12 @@ import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
  */
 public interface DictRpcService {
 
-	/**
-	 * 字典code查询
-	 *
-	 * @param code 代码
-	 * @return {@link DictRpcResponse }
-	 * @since 2022-06-29 21:45:44
-	 */
-	RpcResponse<DictRpcResponse> findByCode(RpcRequest<DictQueryRpcRequest> dictQueryRpcRequest);
+    /**
+     * 字典code查询
+     *
+     * @param code 代码
+     * @return {@link DictRpcResponse }
+     * @since 2022-06-29 21:45:44
+     */
+    RpcResponse<DictRpcResponse> findByCode(RpcRequest<DictQueryRpcRequest> dictQueryRpcRequest);
 }

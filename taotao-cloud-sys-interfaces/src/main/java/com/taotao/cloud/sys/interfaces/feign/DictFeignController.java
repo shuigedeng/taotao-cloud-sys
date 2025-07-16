@@ -53,7 +53,8 @@ public class DictFeignController extends FeignController implements DictApi {
     @Idempotent(perFix = "findByCode")
     @Limit(key = "limitTest", period = 10, count = 3)
     @SentinelResource("findByCode")
-	public FeignResponse<DictApiResponse> findByCode(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+    public FeignResponse<DictApiResponse> findByCode(
+            FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
         if ("sd".equals(dictQueryApiRequest.getData().code())) {
             throw new BusinessException("我出错了");
             // try {
@@ -80,7 +81,8 @@ public class DictFeignController extends FeignController implements DictApi {
     @Limit(key = "limitTest", period = 10, count = 3)
     @GuavaLimit
     @SentinelResource("test")
-	public FeignResponse<DictApiResponse> test(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+    public FeignResponse<DictApiResponse> test(
+            FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
         LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
         //		Dict dict = service().findByCode(id);
         //
@@ -98,5 +100,4 @@ public class DictFeignController extends FeignController implements DictApi {
         return null;
         // return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
     }
-
 }

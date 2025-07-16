@@ -36,15 +36,17 @@ public class DictApiFallback implements FallbackFactory<DictApi> {
         LogUtils.info("throwablethrowablethrowablethrowablethrowable");
 
         return new DictApi() {
-			@Override
-			public FeignResponse<DictApiResponse> findByCode(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
-				return null;
-			}
+            @Override
+            public FeignResponse<DictApiResponse> findByCode(
+                    FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+                return null;
+            }
 
-			@Override
-			public FeignResponse<DictApiResponse> test(FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
-				return null;
-			}
-		};
+            @Override
+            public FeignResponse<DictApiResponse> test(
+                    FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+                return null;
+            }
+        };
     }
 }

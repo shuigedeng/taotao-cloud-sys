@@ -16,11 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
 import com.taotao.cloud.sys.application.service.DeptService;
 import java.util.List;
-import java.util.Objects;
 import org.springframework.stereotype.Service;
 
 /**
@@ -36,5 +34,4 @@ public class DeptServiceImpl implements DeptService {
     public List<DeptTreeCO> tree() {
         return List.of();
     }
-
 }

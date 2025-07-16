@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.api.feign.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
@@ -50,5 +49,4 @@ public class DictQueryApiRequest implements Serializable {
 
     @Schema(description = "租户密钥")
     private Long id;
-
 }
