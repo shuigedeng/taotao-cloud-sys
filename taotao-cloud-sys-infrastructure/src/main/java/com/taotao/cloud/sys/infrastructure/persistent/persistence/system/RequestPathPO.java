@@ -20,7 +20,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,7 +46,14 @@ import org.hibernate.Hibernate;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = RequestPathPO.TABLE_NAME)
+@Table(
+	name = RequestPathPO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_code", columnNames = "code"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(RequestPathPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = RequestPathPO.TABLE_NAME)
 public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
@@ -52,17 +61,11 @@ public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
     public static final String TABLE_NAME = "ttc_request_path";
 
     /** 权限标识 (controller类#方法#请求方式) ManagerUserController#page#post */
-    @Column(
-            name = "`code`",
-            unique = true,
-            columnDefinition = "varchar(255) not null comment '权限标识'")
+    @Column(name = "`code`", columnDefinition = "varchar(255) not null comment '权限标识'")
     private String code;
 
     /** 权限名称 (获取用户分页详情) */
-    @Column(
-            name = "`name`",
-            unique = true,
-            columnDefinition = "varchar(255) not null comment '权限名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(255) not null comment '权限名称'")
     private String name;
 
     /** 分组名称 (用户管理) */
@@ -92,7 +95,7 @@ public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
     private String remark;
 
     /** 租户id */
-    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     public String getCode() {

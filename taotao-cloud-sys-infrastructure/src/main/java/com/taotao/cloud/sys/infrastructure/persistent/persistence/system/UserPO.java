@@ -50,7 +50,7 @@ import org.hibernate.Hibernate;
 @Table(
         name = UserPO.TABLE_NAME,
         uniqueConstraints = {
-            @UniqueConstraint(name = "uniq_goods_no", columnNames = "goods_no"),
+            @UniqueConstraint(name = "uniq_mobile", columnNames = "mobile"),
         },
         indexes = {
             @Index(name = "idx_create_date", columnList = "create_date"),
@@ -78,10 +78,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     private String password;
 
     /** 手机号 */
-    @Column(
-            name = "`mobile`",
-            unique = true,
-            columnDefinition = "varchar(11) not null comment '手机号'")
+    @Column(name = "`mobile`", columnDefinition = "varchar(11) not null comment '手机号'")
     private String mobile;
 
     /** 电话号码 */
@@ -113,7 +110,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     private Integer status;
 
     /** 租户id */
-    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     /// **

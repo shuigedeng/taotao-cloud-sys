@@ -24,7 +24,9 @@ import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.util.List;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
@@ -50,7 +52,14 @@ import org.hibernate.annotations.Type;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = DataScopePO.TABLE_NAME)
+@Table(
+	name = DataScopePO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_code", columnNames = "code"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(value = DataScopePO.TABLE_NAME, autoResultMap = true)
 @org.springframework.data.relational.core.mapping.Table(name = DataScopePO.TABLE_NAME)
 public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
@@ -58,11 +67,11 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
     public static final String TABLE_NAME = "ttc_data_scope";
 
     /** 编码 */
-    @Column(name = "`code`", unique = true, columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(name = "`code`", columnDefinition = "varchar(255) not null comment '编码'")
     private String code;
 
     /** 名称 */
-    @Column(name = "`name`", unique = true, columnDefinition = "varchar(255) not null comment '名称'")
+    @Column(name = "`name`", columnDefinition = "varchar(255) not null comment '名称'")
     private String name;
 
     /**
@@ -96,7 +105,7 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
     private List<Long> userIds;
 
     /** 租户id */
-    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     public String getCode() {

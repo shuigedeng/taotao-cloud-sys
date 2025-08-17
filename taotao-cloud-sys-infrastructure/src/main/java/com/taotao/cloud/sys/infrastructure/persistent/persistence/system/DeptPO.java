@@ -20,7 +20,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,7 +46,14 @@ import org.hibernate.Hibernate;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = DeptPO.TABLE_NAME)
+@Table(
+	name = DeptPO.TABLE_NAME,
+	uniqueConstraints = {
+		//@UniqueConstraint(name = "uniq_mobile", columnNames = "mobile"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(DeptPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = DeptPO.TABLE_NAME)
 public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
@@ -80,7 +89,7 @@ public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
     private Integer sortNum;
 
     /** 租户id */
-    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     public String getName() {

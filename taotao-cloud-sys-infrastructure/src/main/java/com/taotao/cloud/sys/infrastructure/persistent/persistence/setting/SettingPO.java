@@ -20,12 +20,15 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,7 +53,14 @@ import org.hibernate.annotations.Type;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = SettingPO.TABLE_NAME)
+@Table(
+	name = SettingPO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_en_code", columnNames = "`en_code`"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(value = SettingPO.TABLE_NAME, autoResultMap = true)
 @org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME)
 public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
@@ -63,10 +73,7 @@ public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
     @Column(name = "`category`", columnDefinition = "varchar(255) not null comment '分类'")
     private String category;
 
-    @Column(
-            name = "`en_code`",
-            unique = true,
-            columnDefinition = "varchar(255) not null comment '编码'")
+    @Column(name = "`en_code`", columnDefinition = "varchar(255) not null comment '编码'")
     private String enCode;
 
     @Type(value = JsonType.class)

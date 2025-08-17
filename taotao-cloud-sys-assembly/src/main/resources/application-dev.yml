@@ -352,9 +352,9 @@ rocketmq:
     # 发送同一类消息的设置为同一个group，保证唯一
     group: ${spring.application.name}     # 组名称
     # 阿里云购买的rocketmq
-    #access-key:
+    access-key: taotaocloud
     # 阿里云购买的rocketmq
-    #secret-key:
+    secret-key: taotaocloud
     # 发送消息超时时间，默认3000
     sendMessageTimeout: 10000
     # 发送消息失败重试次数，默认2
@@ -368,7 +368,10 @@ rocketmq:
     # 是否在内部发送失败时重试另一个broker，默认false
     retryNextServer: false
   consumer:
-    group: springboot_consumer_group
+    access-key: taotaocloud
+    # 阿里云购买的rocketmq
+    secret-key: taotaocloud
+    group: taotao_cloud_sys_consumer_group
     # 一次拉取消息最大值，注意是拉取消息的最大值而非消费最大值
     pull-batch-size: 10
 
@@ -519,37 +522,34 @@ spring:
               use_second_level_cache: true    # 启用二级缓存
               region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
               use_query_cache: true           # 启用查询缓存
-    #properties:
-    #  hibernate:
-    #    eclipselink.logging.level.sql: FINE
-    #    format_sql: true
-    #    hbm2ddl.auto: update
-    #    dialect: org.hibernate.dialect.MySQL8Dialect
-    #properties:
-    #  eclipselink:
-    #    logging:
-    #      level:
-    #        sql=FINE:
-    #  javax:
-    #    persistence:
-    #      sharedCache:
-    #        mode: ENABLE_SELECTIVE
-    #  hibernate:
-    #    use_sql_comments: true
-    #    dialect: mysql
-    #    format_sql: false
-    #    show_sql: false
-    #    generate_statistics: false
-    #    cache:
-    #      use_query_cache: true
-    #      use_second_level_cache: true
-    #      region:
-    #        factory_class: 二级缓存class
-    #    javax:
-    #      cache:
-    #        missing_cache_strategy: create
-    #    temp:
-    #      use_jdbc_metadata_defaults: false
+    properties:
+      eclipselink:
+        logging:
+          level:
+            sql=FINE:
+      javax:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+      hibernate:
+        transaction.jta.platform: none
+        eclipselink.logging.level.sql: FINE
+        format_sql: true
+        hbm2ddl.auto: update
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        use_sql_comments: true
+        show_sql: false
+        generate_statistics: false
+        #cache:
+        #  use_query_cache: true
+        #  use_second_level_cache: true
+        #  region:
+        #    factory_class: 二级缓存class
+        javax:
+          cache:
+            missing_cache_strategy: create
+        temp:
+          use_jdbc_metadata_defaults: false
   data:
     redis:
       host: 192.168.218.2

@@ -74,7 +74,7 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
      * "street:街道"
      */
     @Column(
-            name = "level",
+            name = "`level`",
             columnDefinition =
                     "varchar(255) null comment"
                             + " '地区级别（1:省份province,2:市city,3:区县district,4:街道street）'")

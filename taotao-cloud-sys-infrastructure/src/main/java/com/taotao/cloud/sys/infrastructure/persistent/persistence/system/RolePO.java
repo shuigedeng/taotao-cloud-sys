@@ -20,7 +20,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,7 +46,14 @@ import org.hibernate.Hibernate;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = RolePO.TABLE_NAME)
+@Table(
+	name = RolePO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_code", columnNames = "code"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(RolePO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = RolePO.TABLE_NAME)
 public class RolePO extends BaseSuperEntity<RolePO, Long> {
@@ -56,10 +65,7 @@ public class RolePO extends BaseSuperEntity<RolePO, Long> {
     private String name;
 
     /** 角色标识 */
-    @Column(
-            name = "`code`",
-            unique = true,
-            columnDefinition = "varchar(32) not null comment '角色标识'")
+    @Column(name = "`code`", columnDefinition = "varchar(32) not null comment '角色标识'")
     private String code;
 
     /** 备注 */
@@ -67,7 +73,7 @@ public class RolePO extends BaseSuperEntity<RolePO, Long> {
     private String remark;
 
     /** 租户id */
-    @Column(name = "`tenant_id`", unique = true, columnDefinition = "varchar(32) COMMENT '租户id'")
+    @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
     public String getName() {

@@ -19,10 +19,12 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.dict;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RequestPathPO;
 import jakarta.annotation.PreDestroy;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.Index;
 import jakarta.persistence.PostLoad;
 import jakarta.persistence.PostPersist;
 import jakarta.persistence.PostRemove;
@@ -31,6 +33,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreRemove;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -129,7 +132,14 @@ import lombok.experimental.Accessors;
 @ToString(callSuper = true)
 @Accessors(fluent = true)
 @Entity
-@Table(name = DictPO.TABLE_NAME)
+@Table(
+	name = DictPO.TABLE_NAME,
+	uniqueConstraints = {
+		@UniqueConstraint(name = "uniq_code", columnNames = "dict_code"),
+	},
+	indexes = {
+		@Index(name = "idx_create_date", columnList = "create_date"),
+	})
 @TableName(DictPO.TABLE_NAME)
 @EntityListeners({DictPO.DictEntityListener.class})
 // @NamedQuery(name = "User.findByEmailAddress",
@@ -144,10 +154,7 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
     private String dictName;
 
     /** 字典编码 */
-    @Column(
-            name = "`dict_code`",
-            unique = true,
-            columnDefinition = "varchar(255) not null comment '字典编码'")
+    @Column(name = "`dict_code`", columnDefinition = "varchar(255) not null comment '字典编码'")
     private String dictCode;
 
     /** 描述 */
