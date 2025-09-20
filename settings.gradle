@@ -116,8 +116,8 @@ include "taotao-cloud-sys-infrastructure"
 include "taotao-cloud-sys-interfaces"
 
 
-gradle.settingsEvaluated {
-    if (JavaVersion.current() < JavaVersion.VERSION_21) {
-        throw new GradleException("This build requires JDK 21. It's currently ${JavaVersion.current()}. You can ignore this check by passing '-Dorg.gradle.ignoreBuildJavaVersionCheck'.")
-    }
-}
+//gradle.settingsEvaluated {
+//    if (JavaVersion.current() < JavaVersion.VERSION_21) {
+//        throw new GradleException("This build requires JDK 21. It's currently ${JavaVersion.current()}. You can ignore this check by passing '-Dorg.gradle.ignoreBuildJavaVersionCheck'.")
+//    }
+//}
