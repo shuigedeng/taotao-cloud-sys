@@ -135,7 +135,7 @@ import lombok.experimental.Accessors;
 @Table(
 	name = DictPO.TABLE_NAME,
 	uniqueConstraints = {
-		@UniqueConstraint(name = "uniq_code", columnNames = "dict_code"),
+		@UniqueConstraint(name = "uniq_code", columnNames = "`dict_code`"),
 	},
 	indexes = {
 		@Index(name = "idx_create_date", columnList = "create_date"),
