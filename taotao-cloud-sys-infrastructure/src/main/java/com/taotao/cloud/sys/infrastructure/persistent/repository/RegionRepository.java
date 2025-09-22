@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsReachPO;
-import jakarta.persistence.EntityManager;
-import org.springframework.stereotype.Repository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 
 /**
  * CompanyMapper
@@ -28,10 +28,4 @@ import org.springframework.stereotype.Repository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-@Repository
-public class SmsReachRepository extends BaseClassSuperRepository<SmsReachPO, Long> {
-
-    public SmsReachRepository(EntityManager em) {
-        super(SmsReachPO.class, em);
-    }
-}
+public interface RegionRepository extends JpaSuperRepository<RegionPO, Long>, JpaExtendRepository<RegionPO, Long> {}

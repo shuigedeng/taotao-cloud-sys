@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
-import com.taotao.boot.webagg.mapper.BaseSuperMapper;
+import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ServiceNoticePO;
 
 /**
@@ -26,4 +26,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.Service
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ServiceNoticeMapper extends BaseSuperMapper<ServiceNoticePO, Long> {}
+public interface ServiceNoticeMapper extends MpSuperMapper<ServiceNoticePO, Long> {}

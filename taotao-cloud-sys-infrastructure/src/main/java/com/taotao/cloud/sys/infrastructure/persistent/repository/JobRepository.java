@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserPO;
-import jakarta.persistence.EntityManager;
-import org.springframework.stereotype.Repository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
 
 /**
  * CompanyMapper
  *
  * @author shuigedeng
- * @version 2023.01
- * @since 2023-02-10 17:00:04
+ * @version 2022.03
+ * @since 2021/10/13 22:50
  */
-@Repository
-public class SocialUserRepository extends BaseClassSuperRepository<SocialUserPO, Long> {
-
-    public SocialUserRepository(EntityManager em) {
-        super(SocialUserPO.class, em);
-    }
-}
+public interface JobRepository extends JpaSuperRepository<PositionPO, Long> , JpaExtendRepository<PositionPO, Long> {}

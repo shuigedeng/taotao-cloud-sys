@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
-import com.taotao.boot.webagg.mapper.BaseSuperMapper;
+import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 
 /**
@@ -26,7 +26,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface DictMapper extends BaseSuperMapper<DictPO, Long> {
+public interface DictMapper extends MpSuperMapper<DictPO, Long> {
 
     //    @Select(
     //            """

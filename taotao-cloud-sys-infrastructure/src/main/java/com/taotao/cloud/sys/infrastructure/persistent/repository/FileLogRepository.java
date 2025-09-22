@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsSignPO;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 
 /**
  * CompanyMapper
@@ -26,4 +28,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ISmsSignRepository extends JpaRepository<SmsSignPO, Long> {}
+public interface FileLogRepository extends JpaSuperRepository<FileLogPO, Long> , JpaExtendRepository<FileLogPO, Long> {}

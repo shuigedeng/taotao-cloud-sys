@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
 import java.util.List;
 import java.util.Objects;
@@ -29,7 +31,7 @@ import java.util.Optional;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IResourceRepository extends BaseInterfaceSuperRepository<ResourcePO, Long> {
+public interface ResourceRepository extends JpaSuperRepository<ResourcePO, Long>, JpaExtendRepository<ResourcePO, Long> {
 
     public List<ResourcePO> searchByComponent(String component);
 

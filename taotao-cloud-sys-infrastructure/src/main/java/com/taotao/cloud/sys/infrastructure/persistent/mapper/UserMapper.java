@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
-import com.taotao.boot.webagg.mapper.BaseSuperMapper;
+import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -32,7 +32,7 @@ import org.springframework.stereotype.Repository;
  * @since 2021/10/13 22:50
  */
 @Repository
-public interface UserMapper extends BaseSuperMapper<UserPO, Long> {
+public interface UserMapper extends MpSuperMapper<UserPO, Long> {
 
     /**
      * create table if not exists sys_person_phone_encrypt ( id bigint auto_increment comment '主键'

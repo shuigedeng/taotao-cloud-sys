@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
-import jakarta.persistence.EntityManager;
-import org.springframework.stereotype.Repository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
 
 /**
  * CompanyMapper
@@ -28,10 +28,5 @@ import org.springframework.stereotype.Repository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-@Repository
-public class RegionRepository extends BaseClassSuperRepository<RegionPO, Long> {
-
-    public RegionRepository(EntityManager em) {
-        super(RegionPO.class, em);
-    }
-}
+public interface UserRelationRepository
+        extends JpaSuperRepository<UserRelationPO, Long> , JpaExtendRepository<UserRelationPO, Long> {}

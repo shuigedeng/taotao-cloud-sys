@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.cls;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseClassSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RoleResourcePO;
-import jakarta.persistence.EntityManager;
-import org.springframework.stereotype.Repository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsSignPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * CompanyMapper
@@ -28,10 +28,4 @@ import org.springframework.stereotype.Repository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-@Repository
-public class RoleResourceRepository extends BaseClassSuperRepository<RoleResourcePO, Long> {
-
-    public RoleResourceRepository(EntityManager em) {
-        super(RoleResourcePO.class, em);
-    }
-}
+public interface SmsSignRepository extends JpaRepository<SmsSignPO, Long> , JpaExtendRepository<SmsSignPO, Long> {}

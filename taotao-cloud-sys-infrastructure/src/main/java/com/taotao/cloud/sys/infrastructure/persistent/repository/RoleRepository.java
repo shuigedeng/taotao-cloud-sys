@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionPO;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 
 /**
  * CompanyMapper
@@ -26,4 +28,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.region.RegionP
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IRegionRepository extends BaseInterfaceSuperRepository<RegionPO, Long> {}
+public interface RoleRepository extends JpaSuperRepository<RolePO, Long> , JpaExtendRepository<RolePO, Long> {}

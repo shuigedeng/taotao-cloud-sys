@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ServiceNoticePO;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * CompanyMapper
@@ -26,4 +28,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.file.FileLogPO
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IFileLogRepository extends BaseInterfaceSuperRepository<FileLogPO, Long> {}
+public interface ServiceNoticeRepository extends JpaRepository<ServiceNoticePO, Long> ,
+	JpaExtendRepository<ServiceNoticePO, Long> {}

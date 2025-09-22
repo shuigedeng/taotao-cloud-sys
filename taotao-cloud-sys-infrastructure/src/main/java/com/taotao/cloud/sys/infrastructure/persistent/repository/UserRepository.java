@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 
 /**
@@ -26,4 +28,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IUserRepository extends BaseInterfaceSuperRepository<UserPO, Long> {}
+public interface UserRepository extends JpaSuperRepository<UserPO, Long> , JpaExtendRepository<UserPO, Long> {}

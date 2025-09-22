@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.persistent.repository.inf;
+package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.webagg.repository.BaseInterfaceSuperRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
+import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserPO;
 
 /**
  * CompanyMapper
@@ -26,4 +28,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface IRoleRepository extends BaseInterfaceSuperRepository<RolePO, Long> {}
+public interface SocialUserRepository extends JpaSuperRepository<SocialUserPO, Long> ,
+	JpaExtendRepository<SocialUserPO, Long> {}
