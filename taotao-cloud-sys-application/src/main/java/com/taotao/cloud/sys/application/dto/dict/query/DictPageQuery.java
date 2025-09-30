@@ -14,24 +14,26 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.impl;
+package com.taotao.cloud.sys.application.dto.dict.query;
 
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
-import java.util.List;
-import org.springframework.stereotype.Service;
+import com.taotao.boot.common.model.PageQuery;
+import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
-/**
- * DeptServiceImpl
- *
- * @author shuigedeng
- * @since 2020-10-16 15:54:05
- * @since 1.0
- */
-@Service
-public class DeptServiceImpl implements DeptService {
-    @Override
-    public List<DeptTreeResult> tree() {
-        return List.of();
-    }
+@Setter
+@Getter
+@ToString
+@Accessors(fluent = true)
+@EqualsAndHashCode(callSuper = false)
+@AllArgsConstructor
+@NoArgsConstructor
+public class DictPageQuery extends PageQuery {
+
+    private String dictName;
+    private String dictCode;
+    private String description;
+    private String remark;
 }

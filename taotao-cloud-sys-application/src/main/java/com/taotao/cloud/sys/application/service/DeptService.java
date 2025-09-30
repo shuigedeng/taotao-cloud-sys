@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
+import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
 import java.util.List;
 
 /**
@@ -35,5 +35,5 @@ public interface DeptService extends CommandService {
      * @return 部门树列表
      * @since 2022-03-23 08:52:34
      */
-    List<DeptTreeCO> tree();
+    List<DeptTreeResult> tree();
 }

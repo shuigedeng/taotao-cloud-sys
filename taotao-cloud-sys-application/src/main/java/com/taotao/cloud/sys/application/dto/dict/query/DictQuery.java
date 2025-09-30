@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.impl;
+package com.taotao.cloud.sys.application.dto.dict.query;
 
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
-import java.util.List;
-import org.springframework.stereotype.Service;
+import lombok.*;
 
-/**
- * DeptServiceImpl
- *
- * @author shuigedeng
- * @since 2020-10-16 15:54:05
- * @since 1.0
- */
-@Service
-public class DeptServiceImpl implements DeptService {
-    @Override
-    public List<DeptTreeResult> tree() {
-        return List.of();
-    }
+@Setter
+@Getter
+@ToString
+public class DictQuery {
+
+    private Long dictId;
+    private String itemText;
+    private String itemValue;
+    private String description;
+    private Integer status;
 }

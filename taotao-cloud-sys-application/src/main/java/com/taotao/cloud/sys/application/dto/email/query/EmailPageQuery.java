@@ -14,24 +14,35 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.impl;
+package com.taotao.cloud.sys.application.dto.email.query;
 
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
+import com.taotao.boot.common.model.PageQuery;
 import java.util.List;
-import org.springframework.stereotype.Service;
+import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
- * DeptServiceImpl
+ * EmailVo
  *
  * @author shuigedeng
- * @since 2020-10-16 15:54:05
- * @since 1.0
+ * @version 2022.03
+ * @since 2022-03-22 09:25:30
  */
-@Service
-public class DeptServiceImpl implements DeptService {
-    @Override
-    public List<DeptTreeResult> tree() {
-        return List.of();
-    }
+@Setter
+@Getter
+@ToString
+@Accessors(fluent = true)
+@EqualsAndHashCode(callSuper = false)
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmailPageQuery extends PageQuery {
+
+    /** 收件人，支持多个收件人 */
+    private List<String> tos;
+
+    private String subject;
+    private String content;
 }

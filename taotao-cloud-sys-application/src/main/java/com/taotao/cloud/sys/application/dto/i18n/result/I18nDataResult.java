@@ -14,24 +14,29 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.impl;
+package com.taotao.cloud.sys.application.dto.i18n.result;
 
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
-import java.util.List;
-import org.springframework.stereotype.Service;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.*;
 
 /**
- * DeptServiceImpl
- *
- * @author shuigedeng
- * @since 2020-10-16 15:54:05
- * @since 1.0
+ * 国际化信息 查询对象
  */
-@Service
-public class DeptServiceImpl implements DeptService {
-    @Override
-    public List<DeptTreeResult> tree() {
-        return List.of();
-    }
+@Setter
+@Getter
+@ToString
+@Schema(title = "国际化信息查询对象")
+public class I18nDataResult {
+
+    private static final long serialVersionUID = 1L;
+
+    @Parameter(description = "国际化标识")
+    private String code;
+
+    @Parameter(description = "文本信息")
+    private String message;
+
+    @Parameter(description = "语言标签")
+    private String languageTag;
 }

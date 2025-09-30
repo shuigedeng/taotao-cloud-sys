@@ -21,7 +21,7 @@ import com.taotao.boot.common.model.Result;
 import com.taotao.boot.common.tree.ForestNodeMerger;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.dto.dept.clientobject.DeptTreeCO;
+import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
 import com.taotao.cloud.sys.application.service.DeptService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -51,7 +51,7 @@ public class ManagerDeptController extends BusinessController {
     @RequestLogger
     @GetMapping("/tree")
     @SentinelResource("tree")
-    public Result<List<DeptTreeCO>> tree() {
+    public Result<List<DeptTreeResult>> tree() {
         return Result.success(ForestNodeMerger.merge(deptService.tree()));
     }
 }

@@ -14,24 +14,34 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.impl;
+package com.taotao.cloud.sys.application.dto.email.query;
 
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
-import java.util.List;
-import org.springframework.stereotype.Service;
+import io.soabase.recordbuilder.core.RecordBuilder;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotBlank;
 
 /**
- * DeptServiceImpl
+ * EmailDTO
  *
  * @author shuigedeng
- * @since 2020-10-16 15:54:05
- * @since 1.0
+ * @version 2023.07
+ * @see Record
+ * @since 2023-07-12 17:59:02
  */
-@Service
-public class DeptServiceImpl implements DeptService {
-    @Override
-    public List<DeptTreeResult> tree() {
-        return List.of();
-    }
-}
+@RecordBuilder
+public record EmailQuery(
+
+        /* 收件人 */
+        @NotBlank(message = "收件人不能为空") String fromUser,
+
+        /* 邮件服务器SMTP地址 */
+        String host,
+
+        /* 密码 */
+        String pass,
+
+        /* 端口 */
+        @Max(value = 200, message = "端口不能大于200") Integer port,
+
+        /* 发件者用户名 */
+        String user) {}
