@@ -107,13 +107,12 @@ dubbo:
     base-packages: com.taotao.cloud.sys.interfaces.dubbo
   application:
     name: ${spring.application.name}     #当前应用名称
-    protocol: tri
     compiler: javassist     #Java字节码编译器，用于动态类的生成，可选：jdk或javassist
     version: ${ttcVersion}
     owner: 981376577
     architecture: china
     organization: taotao-cloud
-    metadata-type: local
+    metadata-type: remote
     environment: product
     qos-port: 20882     #禁用qos同一台集群可能会有端口冲突现象
     qos-enable: false
@@ -125,6 +124,7 @@ dubbo:
     check-serializable: false
     #STRICT 严格检查，WARN 告警，DISABLE 禁用
     serialize-check-status: DISABLE
+    protocol: tri
   registry:
     address: nacos://192.168.218.2:8848
     group: DUBBO_REGISTRY_GROUP
@@ -136,6 +136,7 @@ dubbo:
       nacos.retry: 1
       nacos.retry-wait: 1000
       nacos.check: false
+      register-ip: 192.168.218.1
     timeout: 15000
     username: nacos
     password: nacos
@@ -147,7 +148,7 @@ dubbo:
     use-as-config-center: false
     use-as-metadata-center: false
   protocol:
-    host: 192.168.1.4
+    host: 192.168.218.1
     name: tri
     port: 50052
     ssl-enabled: false
@@ -160,13 +161,12 @@ dubbo:
     threads: 20
     queues: 200
   provider:
-    host: 192.168.1.4
+    host: 192.168.218.1
     timeout: 3000
     version: ${ttcVersion}
     threads: 500
     #group: taotao-cloud-sys-dev
     #delay: 3000     #延时注册服务（毫秒）
-    protocol: tri
     retries: 3
     loadbalance: shortestresponse
     async: true
@@ -187,7 +187,6 @@ dubbo:
     actives: 10
     cluster: failover
     validation: true
-    protocol: tri
     #group: taotao-cloud-dev
   module:
     name: ${spring.application.name}
@@ -205,11 +204,13 @@ dubbo:
   #  group: DUBBO_REGISTRY_GROUP
   #  version: ${ttcVersion}
   metadata-report:
+    check: false
     id: ${spring.application.name}
     address: nacos://192.168.218.2:8848
     username: nacos
     password: nacos
     group: DUBBO_REGISTRY_GROUP
+    timeout: 10000
     parameters:
       namespace: 213336af-bf44-45ce-850d-6ae563173799
       cluster-name: CQ

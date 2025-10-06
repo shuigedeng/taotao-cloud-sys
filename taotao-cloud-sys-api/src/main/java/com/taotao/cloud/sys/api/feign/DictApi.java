@@ -66,9 +66,6 @@ public interface DictApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @FeignRetry(
-            maxAttempt = 6,
-            backoff = @FeignRetry.Backoff(delay = 500L, maxDelay = 20000L, multiplier = 4))
     @FeignInner
     @PostMapping("/sys/feign/dict/code")
     FeignResponse<DictApiResponse> findByCode(

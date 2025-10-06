@@ -33,7 +33,8 @@ import org.springframework.cloud.openfeign.FallbackFactory;
 public class DictApiFallback implements FallbackFactory<DictApi> {
     @Override
     public DictApi create(Throwable throwable) {
-        LogUtils.info("throwablethrowablethrowablethrowablethrowable");
+
+        LogUtils.error("DictApiFallback", throwable);
 
         return new DictApi() {
             @Override
