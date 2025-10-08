@@ -69,7 +69,7 @@ public class DictFeignController extends FeignController implements DictApi {
 		}
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return FeignResponse.<DictApiResponse>builder().data(new DictApiResponse()).build();
+		return FeignResponse.success(new DictApiResponse());
 	}
 
 	@Override
