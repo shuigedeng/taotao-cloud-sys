@@ -34,7 +34,7 @@ package com.taotao.cloud.sys.interfaces.controller.tools; /// *
 //
 // import com.taotao.boot.common.constant.CommonConstant;
 // import com.taotao.boot.common.enums.AliPayStatusEnum;
-// import com.taotao.boot.common.model.Result;
+// import com.taotao.boot.common.model.result.Result;
 // import com.taotao.boot.common.utils.log.LogUtils;
 // import com.taotao.boot.security.spring.annotation.NotAuth;
 // import com.taotao.boot.web.request.annotation.RequestLogger;

@@ -18,8 +18,8 @@ package com.taotao.cloud.sys.interfaces.feign;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.common.model.FeignRequest;
-import com.taotao.boot.common.model.FeignResponse;
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
@@ -57,8 +57,8 @@ public class DictFeignController extends FeignController implements DictApi {
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public FeignResponse<DictApiResponse> findByCode(
-		@Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+	public Response<DictApiResponse> findByCode(
+		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
 		if ("sd".equals(dictQueryApiRequest.getData().code())) {
 			throw new BusinessException("我出错了");
 			// try {
@@ -69,7 +69,7 @@ public class DictFeignController extends FeignController implements DictApi {
 		}
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return FeignResponse.success(new DictApiResponse());
+		return Response.success(new DictApiResponse());
 	}
 
 	@Override
@@ -85,8 +85,8 @@ public class DictFeignController extends FeignController implements DictApi {
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
-	public FeignResponse<DictApiResponse> test(
-		FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+	public Response<DictApiResponse> test(
+		Request<DictQueryApiRequest> dictQueryApiRequest) {
 		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
 		//		Dict dict = service().findByCode(id);
 		//

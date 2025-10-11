@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.dataVersion.query;
 
-import com.taotao.boot.common.model.PageQuery;
+import com.taotao.boot.common.model.request.PageQuery;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import lombok.EqualsAndHashCode;

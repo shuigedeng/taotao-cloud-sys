@@ -33,7 +33,7 @@ package com.taotao.cloud.sys.interfaces.controller.tools; /// *
 // package com.taotao.cloud.sys.facade.controller.tools;
 //
 //
-// import com.taotao.boot.common.model.Result;
+// import com.taotao.boot.common.model.result.Result;
 // import com.taotao.boot.common.support.info.ApiInfo;
 // import com.taotao.boot.common.support.info.Create;
 // import com.taotao.boot.common.support.info.Update;

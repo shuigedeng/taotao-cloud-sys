@@ -20,8 +20,8 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
-import com.taotao.boot.common.model.FeignRequest;
-import com.taotao.boot.common.model.FeignResponse;
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
@@ -68,8 +68,8 @@ public interface DictApi {
             })
     @FeignInner
     @PostMapping("/sys/feign/dict/code")
-    FeignResponse<DictApiResponse> findByCode(
-            @Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
+    Response<DictApiResponse> findByCode(
+            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
@@ -91,6 +91,6 @@ public interface DictApi {
                         date = "2022-07-01 17:11:55")
             })
     @PostMapping("/sys/feign/dict/test")
-    FeignResponse<DictApiResponse> test(
-            @Validated @RequestBody FeignRequest<DictQueryApiRequest> dictQueryApiRequest);
+    Response<DictApiResponse> test(
+            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 }

@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.taotao.boot.common.model.Result;
+import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.tree.ForestNodeMerger;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BusinessController;

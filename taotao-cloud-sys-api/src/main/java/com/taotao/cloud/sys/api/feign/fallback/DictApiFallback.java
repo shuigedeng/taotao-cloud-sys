@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.api.feign.fallback;
 
-import com.taotao.boot.common.model.FeignRequest;
-import com.taotao.boot.common.model.FeignResponse;
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.cloud.sys.api.feign.DictApi;
 import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
@@ -38,14 +38,14 @@ public class DictApiFallback implements FallbackFactory<DictApi> {
 
         return new DictApi() {
             @Override
-            public FeignResponse<DictApiResponse> findByCode(
-                    FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+            public Response<DictApiResponse> findByCode(
+                    Request<DictQueryApiRequest> dictQueryApiRequest) {
                 return null;
             }
 
             @Override
-            public FeignResponse<DictApiResponse> test(
-                    FeignRequest<DictQueryApiRequest> dictQueryApiRequest) {
+            public Response<DictApiResponse> test(
+                    Request<DictQueryApiRequest> dictQueryApiRequest) {
                 return null;
             }
         };

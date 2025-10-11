@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.api.dubbo;
 
-import com.taotao.boot.common.model.RpcRequest;
-import com.taotao.boot.common.model.RpcResponse;
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.cloud.sys.api.dubbo.request.DeptQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
 
@@ -30,5 +30,5 @@ import com.taotao.cloud.sys.api.dubbo.response.DeptRpcResponse;
  */
 public interface DeptRpcService {
 
-    RpcResponse<DeptRpcResponse> getDeptById(RpcRequest<DeptQueryRpcRequest> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptQueryRpcRequest> deptQueryRpcRequest);
 }
