@@ -44,6 +44,6 @@ public class DictRpcServiceImpl implements DictRpcService {
 
         LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", dictQueryRpcRequest);
 
-        return RpcResponse.success(new DictRpcResponse());
+        return Response.from(new DictRpcResponse());
     }
 }

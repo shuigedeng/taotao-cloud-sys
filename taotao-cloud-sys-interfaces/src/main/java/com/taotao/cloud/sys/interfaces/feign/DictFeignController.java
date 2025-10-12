@@ -27,16 +27,14 @@ import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.FeignController;
-import com.taotao.cloud.openfeign.annotation.FeignInner;
 import com.taotao.cloud.sys.api.feign.DictApi;
 import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
-import com.taotao.cloud.sys.application.service.DictService;
+import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,7 +48,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DictFeignController extends FeignController implements DictApi {
 
 	@Autowired
-	private DictService dictService;
+	private DictCommandService dictService;
 
 	@Override
 	@NotAuth
@@ -59,7 +57,7 @@ public class DictFeignController extends FeignController implements DictApi {
 	@SentinelResource("findByCode")
 	public Response<DictApiResponse> findByCode(
 		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
-		if ("sd".equals(dictQueryApiRequest.getData().code())) {
+		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
 			//	Thread.sleep(100000000000L);
@@ -69,7 +67,7 @@ public class DictFeignController extends FeignController implements DictApi {
 		}
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return Response.success(new DictApiResponse());
+		return Response.from(new DictApiResponse());
 	}
 
 	@Override

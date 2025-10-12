@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.interfaces.controller.tools;
 
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.service.PinYinService;
+import com.taotao.cloud.sys.application.service.commad.PinYinCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -38,5 +38,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/tools/pinyin")
 public class PinYinController extends BusinessController {
 
-    private final PinYinService pinYinService;
+    private final PinYinCommandService pinYinService;
 }

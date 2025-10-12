@@ -20,13 +20,13 @@ import com.taotao.boot.test.junitperf.core.annotation.TtcTest;
 import com.taotao.boot.test.junitperf.core.report.impl.HtmlReporter;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
 import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.DeptService;
+import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
-    @Autowired private DeptService deptService;
+    @Autowired private DeptCommandService deptService;
 
     //	@Test
     @TtcTest(duration = 1000, reporter = HtmlReporter.class)
