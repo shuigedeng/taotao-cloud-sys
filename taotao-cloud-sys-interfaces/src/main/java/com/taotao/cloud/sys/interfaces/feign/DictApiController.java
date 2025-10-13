@@ -26,13 +26,14 @@ import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
 import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
-import com.taotao.boot.webagg.controller.FeignController;
+import com.taotao.boot.webagg.controller.ApiController;
 import com.taotao.cloud.sys.api.feign.DictApi;
 import com.taotao.cloud.sys.api.feign.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.feign.response.DictApiResponse;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,10 +46,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping
-public class DictFeignController extends FeignController implements DictApi {
+@RequiredArgsConstructor
+public class DictApiController extends ApiController implements DictApi {
 
-	@Autowired
-	private DictCommandService dictService;
+	private final DictCommandService dictCommandService;
 
 	@Override
 	@NotAuth

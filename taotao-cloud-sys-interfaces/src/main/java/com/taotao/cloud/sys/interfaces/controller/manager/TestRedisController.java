@@ -20,6 +20,7 @@ import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -29,9 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Tag(name = "管理端-TestRediscontroller", description = "管理端-测试redis")
+@RequiredArgsConstructor
 public class TestRedisController extends BusinessController {
 
-    @Autowired private RedisTemplate<String, Object> redisTemplate;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 什么是缓存穿透 缓存穿透指的是一个缓存系统无法缓存某个查询的数据，从而导致这个查询每一次都要访问数据库。
