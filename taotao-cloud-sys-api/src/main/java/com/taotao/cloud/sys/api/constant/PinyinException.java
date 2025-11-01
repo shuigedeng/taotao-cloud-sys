@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.api.constant;
 
 import com.taotao.boot.common.enums.ResultEnum;
 import com.taotao.boot.common.exception.BaseException;
+import com.taotao.boot.common.exception.BusinessException;
 
 /**
  * 拼音异常
@@ -26,33 +27,7 @@ import com.taotao.boot.common.exception.BaseException;
  * @version 2022.03
  * @since 2022-03-25 14:22:32
  */
-public class PinyinException extends BaseException {
+public class PinyinException extends BusinessException {
 
-    public PinyinException(String message) {
-        super(message);
-    }
 
-    public PinyinException(Integer code, String message) {
-        super(code, message);
-    }
-
-    public PinyinException(Throwable e) {
-        super(e);
-    }
-
-    public PinyinException(String message, Throwable e) {
-        super(message, e);
-    }
-
-    public PinyinException(Integer code, String message, Throwable e) {
-        super(code, message, e);
-    }
-
-    public PinyinException(ResultEnum result) {
-        super(result);
-    }
-
-    public PinyinException(ResultEnum result, Throwable e) {
-        super(result, e);
-    }
 }

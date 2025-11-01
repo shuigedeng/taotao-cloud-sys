@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import lombok.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogsApiResponse {
+public class LogsApiResponse  extends ResponseBase {
     private Long id;
 }

@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -39,7 +40,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuRpcResponse implements Serializable {
+public class MenuRpcResponse  extends ResponseBase implements Serializable {
 
     @Serial private static final long serialVersionUID = 5126530068827085130L;
 

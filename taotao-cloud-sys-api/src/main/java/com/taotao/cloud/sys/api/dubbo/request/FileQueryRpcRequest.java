@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo.request;
 
+import com.taotao.boot.common.model.request.RequestBase;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -37,7 +38,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileQueryRpcRequest implements Serializable {
+public class FileQueryRpcRequest extends RequestBase implements Serializable {
 
     @Serial private static final long serialVersionUID = 5126530068827085130L;
 

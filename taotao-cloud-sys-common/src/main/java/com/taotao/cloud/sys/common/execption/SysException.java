@@ -21,31 +21,5 @@ import com.taotao.boot.common.exception.BusinessException;
 
 public class SysException extends BusinessException {
 
-    public SysException(String message) {
-        super(message);
-    }
 
-    public SysException(Integer code, String message) {
-        super(code, message);
-    }
-
-    public SysException(String message, Throwable e) {
-        super(message, e);
-    }
-
-    public SysException(Throwable e) {
-        super(e);
-    }
-
-    public SysException(Integer code, String message, Throwable e) {
-        super(code, message, e);
-    }
-
-    public SysException(ResultEnum result) {
-        super(result);
-    }
-
-    public SysException(ResultEnum result, Throwable e) {
-        super(result, e);
-    }
 }

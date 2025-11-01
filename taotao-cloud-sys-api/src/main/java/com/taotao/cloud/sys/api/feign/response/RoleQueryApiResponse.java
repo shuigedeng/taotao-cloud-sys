@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import java.io.Serializable;
@@ -37,7 +38,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "角色查询对象")
-public class RoleQueryApiResponse implements Serializable {
+public class RoleQueryApiResponse  extends ResponseBase implements Serializable {
 
     @Serial private static final long serialVersionUID = 5126530068827085130L;
 

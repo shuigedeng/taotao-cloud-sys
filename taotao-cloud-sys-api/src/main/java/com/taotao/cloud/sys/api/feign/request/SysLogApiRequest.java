@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.request;
 
+import com.taotao.boot.common.model.request.RequestBase;
 import lombok.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysLogApiRequest {
+public class SysLogApiRequest extends RequestBase {
     private Long id;
 }

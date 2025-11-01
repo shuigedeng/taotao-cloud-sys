@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import java.io.Serializable;
@@ -37,7 +38,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "菜单查询对象")
-public class MenuQueryApiResponse implements Serializable {
+public class MenuQueryApiResponse  extends ResponseBase implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

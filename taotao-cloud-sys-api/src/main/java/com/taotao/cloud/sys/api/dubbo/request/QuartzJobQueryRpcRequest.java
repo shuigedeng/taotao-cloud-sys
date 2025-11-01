@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo.request;
 
+import com.taotao.boot.common.model.request.RequestBase;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.*;
@@ -36,7 +37,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuartzJobQueryRpcRequest implements Serializable {
+public class QuartzJobQueryRpcRequest extends RequestBase implements Serializable {
 
     private static final long serialVersionUID = 5126530068827085130L;
 

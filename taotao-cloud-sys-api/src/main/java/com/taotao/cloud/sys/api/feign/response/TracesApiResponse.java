@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -32,7 +33,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TracesApiResponse implements Serializable {
+public class TracesApiResponse  extends ResponseBase implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

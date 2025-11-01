@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.request;
 
+import com.taotao.boot.common.model.request.RequestBase;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
@@ -39,7 +40,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "公司查询对象")
-public class FileQueryApiRequest implements Serializable {
+public class FileQueryApiRequest extends RequestBase implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

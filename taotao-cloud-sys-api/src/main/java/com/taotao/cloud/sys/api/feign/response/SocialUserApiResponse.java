@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.feign.response;
 
+import com.taotao.boot.common.model.response.ResponseBase;
 import com.taotao.cloud.sys.api.enums.AuthUserGender;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -34,7 +35,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @Accessors(fluent = true)
-public class SocialUserApiResponse {
+public class SocialUserApiResponse  extends ResponseBase {
 
     private Long id;
 

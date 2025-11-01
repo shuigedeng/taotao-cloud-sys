@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.dubbo.request;
 
+import com.taotao.boot.common.model.request.RequestBase;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 import java.io.Serializable;
@@ -40,7 +41,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "公司查询VO")
-public class DeptQueryRpcRequest implements Serializable {
+public class DeptQueryRpcRequest extends RequestBase implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 
