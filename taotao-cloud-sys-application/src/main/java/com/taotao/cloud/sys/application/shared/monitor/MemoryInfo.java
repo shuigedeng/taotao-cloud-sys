@@ -16,10 +16,10 @@
 
 package com.taotao.cloud.sys.application.shared.monitor;
 
+import cn.hutool.core.util.NumberUtil;
 import com.taotao.boot.common.constant.CommonConstants;
 import java.math.BigDecimal;
 import lombok.*;
-import org.dromara.hutool.core.math.NumberUtil;
 
 /**
  * 內存相关信息
@@ -45,18 +45,18 @@ public class MemoryInfo {
     private double free;
 
     public BigDecimal getTotal() {
-        return NumberUtil.div(total, CommonConstants.GB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(total, CommonConstants.GB, 2));
     }
 
     public BigDecimal getUsed() {
-        return NumberUtil.div(used, CommonConstants.GB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(used, CommonConstants.GB, 2));
     }
 
     public BigDecimal getFree() {
-        return NumberUtil.div(free, CommonConstants.GB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(free, CommonConstants.GB, 2));
     }
 
     public BigDecimal getUsage() {
-        return NumberUtil.div(used * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div(used * 100, total, 2));
     }
 }

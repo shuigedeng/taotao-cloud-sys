@@ -16,13 +16,13 @@
 
 package com.taotao.cloud.sys.application.shared.monitor;
 
+import cn.hutool.core.util.NumberUtil;
 import com.taotao.boot.common.constant.CommonConstants;
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import lombok.*;
-import org.dromara.hutool.core.math.NumberUtil;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.CentralProcessor.TickType;
 import oshi.hardware.GlobalMemory;
@@ -160,7 +160,7 @@ public class ServerInfo {
             diskInfo.setFree(convertFileSize(free));
             diskInfo.setUsed(convertFileSize(used));
             if (total != 0) {
-                diskInfo.setUsage(NumberUtil.div(used * 100, total, 4));
+                diskInfo.setUsage(BigDecimal.valueOf(NumberUtil.div(used * 100, total, 4)));
             } else {
                 // Windows下如果有光驱（可能是虚拟光驱），total为0，不能做除数
                 diskInfo.setUsage(BigDecimal.valueOf(0));

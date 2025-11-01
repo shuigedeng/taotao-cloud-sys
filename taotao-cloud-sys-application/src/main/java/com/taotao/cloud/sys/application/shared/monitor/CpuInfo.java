@@ -16,9 +16,9 @@
 
 package com.taotao.cloud.sys.application.shared.monitor;
 
+import cn.hutool.core.util.NumberUtil;
 import java.math.BigDecimal;
 import lombok.*;
-import org.dromara.hutool.core.math.NumberUtil;
 
 /**
  * CPU相关信息
@@ -63,18 +63,18 @@ public class CpuInfo {
     }
 
     public BigDecimal getSys() {
-        return NumberUtil.div(sys * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div(sys * 100, total, 2));
     }
 
     public BigDecimal getUsed() {
-        return NumberUtil.div(used * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div(used * 100, total, 2));
     }
 
     public BigDecimal getWait() {
-        return NumberUtil.div(wait * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div(wait * 100, total, 2));
     }
 
     public BigDecimal getFree() {
-        return NumberUtil.div(free * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div(free * 100, total, 2));
     }
 }

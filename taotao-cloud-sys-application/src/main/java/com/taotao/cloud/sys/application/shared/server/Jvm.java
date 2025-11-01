@@ -16,12 +16,13 @@
 
 package com.taotao.cloud.sys.application.shared.server;
 
-import static org.dromara.hutool.core.date.DateFormatPool.NORM_DATETIME_FORMAT;
 
+import static cn.hutool.core.date.DatePattern.NORM_DATETIME_FORMAT;
+
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
 import java.lang.management.ManagementFactory;
 import java.util.Date;
-import org.dromara.hutool.core.date.DateUnit;
-import org.dromara.hutool.core.date.DateUtil;
 
 /**
  * JVM相关信息

@@ -57,7 +57,7 @@ public class DictFeignController extends FeignController implements DictApi {
 	@SentinelResource("findByCode")
 	public Response<DictApiResponse> findByCode(
 		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
-		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
+		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
 			//	Thread.sleep(100000000000L);

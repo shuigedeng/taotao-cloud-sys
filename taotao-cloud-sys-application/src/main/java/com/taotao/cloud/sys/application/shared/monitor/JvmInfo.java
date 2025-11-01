@@ -17,12 +17,12 @@
 package com.taotao.cloud.sys.application.shared.monitor;
 
 import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.NumberUtil;
 import com.taotao.boot.common.constant.CommonConstants;
 import java.lang.management.ManagementFactory;
 import java.math.BigDecimal;
 import lombok.*;
-import org.dromara.hutool.core.date.DateUtil;
-import org.dromara.hutool.core.math.NumberUtil;
 
 /**
  * JVM相关信息
@@ -58,23 +58,23 @@ public class JvmInfo {
     private String home;
 
     public BigDecimal getTotal() {
-        return NumberUtil.div(total, CommonConstants.MB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(total, CommonConstants.MB, 2));
     }
 
     public BigDecimal getMax() {
-        return NumberUtil.div(max, CommonConstants.MB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(max, CommonConstants.MB, 2));
     }
 
     public BigDecimal getFree() {
-        return NumberUtil.div(free, CommonConstants.MB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(free, CommonConstants.MB, 2));
     }
 
     public BigDecimal getUsed() {
-        return NumberUtil.div(total - free, CommonConstants.MB, 2);
+        return BigDecimal.valueOf(NumberUtil.div(total - free, CommonConstants.MB, 2));
     }
 
     public BigDecimal getUsage() {
-        return NumberUtil.div((total - free) * 100, total, 2);
+        return BigDecimal.valueOf(NumberUtil.div((total - free) * 100, total, 2));
     }
 
     /**
@@ -96,10 +96,10 @@ public class JvmInfo {
     /**
      * JDK运行时间
      */
-    public String getRunTime() {
-        return DateUtil.formatBetween(
-                DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()), DateUtil.now());
-    }
+//    public String getRunTime() {
+//        return DateUtil.formatBetween(
+//                DateUtil.date(ManagementFactory.getRuntimeMXBean().getStartTime()), DateUtil.now());
+//    }
 
     /**
      * 运行参数

@@ -119,7 +119,7 @@ public class PinyinCommandServiceImpl implements PinYinCommandService {
             }
             return finalPinyinString.toString();
         } catch (BadHanyuPinyinOutputFormatCombination e1) {
-            throw new PinyinException(500, e1.getMessage());
+            throw new PinyinException();
         }
     }
 
@@ -192,7 +192,7 @@ public class PinyinCommandServiceImpl implements PinYinCommandService {
                 }
             }
         } catch (BadHanyuPinyinOutputFormatCombination e) {
-            throw new PinyinException(500, e.getMessage());
+            throw new PinyinException();
         }
 
         return hanyupinyin.toString();
