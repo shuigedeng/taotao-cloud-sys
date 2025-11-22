@@ -79,7 +79,7 @@ public class OrgPO extends BaseSuperEntity<OrgPO, Long> {
      * @Column(name = "`jsonb_content`", columnDefinition = "jsonb")
      */
     @JdbcTypeCode(SqlTypes.JSON)
-    @Type(value = JsonType.class)
+    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`id_tree`", columnDefinition = "json null comment 'id树'")
     private List<String> idTree;

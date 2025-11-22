@@ -87,19 +87,19 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
     private String remark;
 
     /** 组织id列表 */
-    @Type(value = JsonType.class)
+    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`org_ids`", columnDefinition = "json null comment '组织id列表'")
     private List<Long> orgIds;
 
     /** 部门id */
-    @Type(value = JsonType.class)
+    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`dept_ids`", columnDefinition = "json null comment '部门id列表'")
     private List<Long> deptIds;
 
     /** 用户id */
-    @Type(value = JsonType.class)
+    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`user_ids`", columnDefinition = "json null comment '用户id列表'")
     private List<Long> userIds;

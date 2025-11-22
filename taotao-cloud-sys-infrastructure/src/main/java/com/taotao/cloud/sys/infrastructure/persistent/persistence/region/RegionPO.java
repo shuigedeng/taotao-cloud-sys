@@ -103,12 +103,12 @@ public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
      * 设置了ResultMap为`mybatis-plus_Person`后就可以拿到正确的值. @ResultMap("mybatis-plus_Person") @Select("SELECT
      * * FROM person WHERE id=#{id}") Person selectOneById(int id);
      */
-    @Type(value = JsonType.class)
+//    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`id_tree`", columnDefinition = "json null comment 'id树'")
     private List<Long> idTree;
 
-    @Type(value = JsonType.class)
+//    //@Type(value = JsonType.class)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`code_tree`", columnDefinition = "json null comment 'id树'")
     private List<String> codeTree;
