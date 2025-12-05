@@ -1234,10 +1234,7 @@ taotao:
         enabled: true
       warn:
         enabled: true
-    feign:
-      enabled: true
-      loadbalancer:
-        enabled: true
+
     encrypt:
       enabled: false
       filter:
@@ -1343,27 +1340,7 @@ mybatis-plus:
     CONSTANT_CIPHER_TEXT: taotao-cloud
 
 
-feign:
-  sentinel:
-    enabled: true
-  okhttp:
-    enabled: true
-  httpclient:
-    enabled: false
-    max-connections: 1000
-    max-connections-per-route: 100
-  client:
-    config:
-      feignName:
-        connectTimeout: 30000
-        readTimeout: 30000
-  compression:
-    request:
-      enabled: true
-      mime-types: text/xml,application/xml,application/json
-      min-request-size: 2048
-    response:
-      enabled: true
+
 
 management:
   httpexchanges:
@@ -1411,7 +1388,7 @@ logging:
   level:
     root: INFO
     org.apache.zookeeper.ZooKeeper: error
-    com.taotao.cloud.sys.api.feign: debug
+    com.taotao.cloud.sys.api.client: debug
     #org.springframework.cloud.openfeign: debug
     #org.springframework.web: off
     #org.springframework.security: off
