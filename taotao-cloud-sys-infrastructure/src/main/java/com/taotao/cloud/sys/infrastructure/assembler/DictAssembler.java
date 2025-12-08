@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.assembler;
 
-import com.taotao.cloud.sys.api.client.response.DictApiResponse;
+import com.taotao.cloud.sys.api.inner.response.DictApiResponse;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
