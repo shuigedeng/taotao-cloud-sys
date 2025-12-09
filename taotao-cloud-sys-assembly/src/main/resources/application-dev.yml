@@ -410,7 +410,6 @@ spring:
     suffix: .html
     encoding: UTF-8
     cache: false
-    enabled: true
   main:
     allow-circular-references: false
     allow-bean-definition-overriding: true
@@ -508,7 +507,7 @@ spring:
       #none：禁用DDL处理
       ddl-auto: none # 生产环境禁用update/create/drop
       naming:
-        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
         properties:
           hibernate:
@@ -903,8 +902,6 @@ taotao:
         enabled: true
       kafka:
         enabled: true
-      pulsar:
-        enabled: false
     cache:
       redis:
         enabled: true
@@ -1097,7 +1094,7 @@ mybatis-plus:
 management:
   httpexchanges:
     recording:
-      enabled: true
+      include: request-headers, response-headers, time_taken
   info:
     git:
       mode: simple
@@ -1122,17 +1119,37 @@ management:
   health:
     mail:
       enabled: false
-    elasticsearch:
-      enabled: true
-  zipkin:
+  opentelemetry:
+    logging:
+      export:
+        otlp:
+          compression: none
+          endpoint: http://192.168.218.2:4318/v1/logs
+          timeout: 10s
+          headers:
+            version: 2026.01
     tracing:
-      connect-timeout: 60s
-      read-timeout: 60s
-      endpoint: http://192.168.218.2:9411/api/v2/spans
+      export:
+        otlp:
+          compression: none
+          endpoint: http://192.168.218.2:4318/v1/traces
+          timeout: 10s
+          headers:
+            version: 2026.01
+  otlp:
+    metrics:
+      export:
+        url: http://192.168.218.2:4318/v1/metrics
+        enabled: true
+        batch-size: 10000
+        connect-timeout: 10s
+        headers:
+          version: 2026.01
   tracing:
-    enabled: true
     sampling:
       probability: 1.0
+    export:
+      enabled: true
   observations:
     http:
       client:
@@ -1143,14 +1160,6 @@ management:
           name: taotao-server-name
     key-values:
       application: ${spring.application.name}
-  prometheus:
-    metrics:
-      export:
-        enabled: true
-  appoptics:
-    metrics:
-      export:
-        batch-size: 500
 
 logging:
   file:
