@@ -209,7 +209,14 @@ public class DictPO extends BaseSuperEntity<DictPO, Long> {
         this.remark = remark;
     }
 
-    public static class DictEntityListener {
+    /**
+ * DictEntityListener
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public static class DictEntityListener {
 
         /**
          * 在新实体持久化之前（添加到EntityManager）

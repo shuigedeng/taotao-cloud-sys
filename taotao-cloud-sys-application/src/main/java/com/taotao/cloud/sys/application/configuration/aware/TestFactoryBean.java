@@ -42,5 +42,12 @@ public class TestFactoryBean implements FactoryBean<TestFactoryBean.TestFactoryI
         return true;
     }
 
-    public static class TestFactoryInnerBean {}
+    /**
+ * TestFactoryInnerBean
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public static class TestFactoryInnerBean {}
 }

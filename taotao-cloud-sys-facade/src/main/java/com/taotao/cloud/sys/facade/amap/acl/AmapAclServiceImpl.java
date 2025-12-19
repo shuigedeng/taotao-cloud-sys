@@ -5,7 +5,13 @@ import com.taotao.cloud.sys.application.acl.AmapAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * AmapAclServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @AllArgsConstructor
 @Service
-public class AmapAclServiceImpl extends BaseAclService implements AmapAclService {
-}
+public class AmapAclServiceImpl extends BaseAclService implements AmapAclService {}

@@ -23,16 +23,16 @@ import org.apache.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 // https://blog.csdn.net/weixin_46209120/article/details/132223385
+/**
+ * BusinessCommandServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Service
 @Slf4j
 public class BusinessCommandServiceImpl implements BussinessCommandService {
-
-    //    @Autowired
-    //    private AccountFeignService accountFeignService;
-    //    @Autowired
-    //    private StorageFeignService storageFeignService;
-    //    @Autowired
-    //    private OrderService orderService;
 
     @Override
     @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)

@@ -22,6 +22,13 @@ import com.taotao.cloud.sys.domain.service.DeptDomainService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * DeptDomainServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Service
 @AllArgsConstructor
 public class DeptDomainServiceImpl implements DeptDomainService {

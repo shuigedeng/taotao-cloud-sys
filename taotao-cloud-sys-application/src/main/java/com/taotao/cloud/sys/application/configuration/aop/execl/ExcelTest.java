@@ -186,19 +186,18 @@ public class ExcelTest {
     }
 
     // 事件监听
-    public static class EasyExceGeneralDatalListener
-            extends AnalysisEventListener<Map<Integer, String>> {
-
-        /** 处理业务逻辑的Service,也可以是Mapper */
-        // private ActResultLogService2 actResultLogService2;
+    /**
+ * EasyExceGeneralDatalListener
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public static class EasyExceGeneralDatalListener extends AnalysisEventListener<Map<Integer, String>> {
         /** 用于存储读取的数据 */
         private List<Map<Integer, String>> dataList = new ArrayList<Map<Integer, String>>();
 
         public EasyExceGeneralDatalListener() {}
-
-        // public EasyExceGeneralDatalListener(ActResultLogService2 actResultLogService2) {
-        //	this.actResultLogService2 = actResultLogService2;
-        // }
 
         @Override
         public void invoke(Map<Integer, String> data, AnalysisContext context) {
@@ -238,7 +237,14 @@ public class ExcelTest {
     }
 
     // JDBC工具类
-    public static class JDBCDruidUtils {
+    /**
+ * JDBCDruidUtils
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public static class JDBCDruidUtils {
 
         private static DataSource dataSource;
 

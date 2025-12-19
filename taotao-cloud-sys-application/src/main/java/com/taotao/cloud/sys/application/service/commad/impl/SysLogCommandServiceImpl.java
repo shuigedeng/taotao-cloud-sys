@@ -19,5 +19,12 @@ package com.taotao.cloud.sys.application.service.commad.impl;
 import com.taotao.cloud.sys.application.service.commad.SysLogCommandService;
 import org.springframework.stereotype.Service;
 
+/**
+ * SysLogCommandServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Service
 public class SysLogCommandServiceImpl implements SysLogCommandService {}

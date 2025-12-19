@@ -5,7 +5,13 @@ import com.taotao.cloud.sys.application.acl.WeatherAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * WeatherAclServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @AllArgsConstructor
 @Service
-public class WeatherAclServiceImpl extends BaseAclService implements WeatherAclService {
-}
+public class WeatherAclServiceImpl extends BaseAclService implements WeatherAclService {}

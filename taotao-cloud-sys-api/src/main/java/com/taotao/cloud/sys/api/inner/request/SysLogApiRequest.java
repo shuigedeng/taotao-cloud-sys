@@ -20,6 +20,13 @@ import com.taotao.boot.common.model.request.RequestBase;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+/**
+ * SysLogApiRequest
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Setter
 @Getter
 @ToString

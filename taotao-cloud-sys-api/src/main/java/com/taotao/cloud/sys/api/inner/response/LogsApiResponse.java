@@ -20,12 +20,19 @@ import com.taotao.boot.common.model.response.ResponseBase;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+/**
+ * LogsApiResponse
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Setter
 @Getter
 @ToString
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogsApiResponse  extends ResponseBase {
+public class LogsApiResponse extends ResponseBase {
     private Long id;
 }

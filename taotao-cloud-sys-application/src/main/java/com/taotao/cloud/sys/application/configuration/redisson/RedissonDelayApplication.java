@@ -85,7 +85,14 @@ public class RedissonDelayApplication {
         LogUtils.info("receive " + carLbsDto + ", delayed " + actualDelay + " millis");
     }
 
-    @Setter
+    /**
+ * CarLbsDto
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+@Setter
     @Getter
     @ToString
     public static class CarLbsDto {

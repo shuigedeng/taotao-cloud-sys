@@ -32,12 +32,21 @@ import org.apache.commons.lang3.math.NumberUtils;
 // 组装生成复杂父子树形结构， Stream + Lambda优雅搞定！
 // 一般来说完成这样的需求大多数人会想到递归，但递归的方式弊端过于明显：方法多次自调用效率很低、数据量大容易导致堆栈溢出、随着树深度的增加其时间复杂度会呈指数级增加等。
 
+// 一般来说完成这样的需求大多数人会想到递归，但递归的方式弊端过于明显：方法多次自调用效率很低、数据量大容易导致堆栈溢出、随着树深度的增加其时间复杂度会呈指数级增加等。
+
 // 核心思路如下：
 //
 // 一次数据库查询全部数据（几万条），其它全是内存操作、性能高；
 // 同时熟练使用 stream 流操作、Lambda 表达式、Java 地址引用，完成组装；
 // 使用缓存注解（底层Redis分布式缓存实现），过期后自动更新缓存，再次调用接口则先命中缓存，没有的话再查数据库
 // 使用RocketMQ来做异步通知更新，即当数据有更改时，可以异步将数据先更新，再写入缓存，使业务更合理，考虑更全面
+/**
+ * TreeOtherUtils
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 public class TreeOtherUtils {
 
     public List<DeptTreeNodeVO> assembleTree() {
@@ -101,8 +110,6 @@ public class TreeOtherUtils {
         // 	.eq(PmDept::getStatus, PmDeptStatus.DISABLE.getStatus()));
         return new ArrayList<>();
     }
-
-    // *********************************
 
     public List<RegionCascadeVO> quickAllTree() {
         // 第一步，从数据库中查出所有数据，按照排序条件进行排序，本质上还是这个所有数据的 List 集合

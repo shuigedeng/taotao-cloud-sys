@@ -27,6 +27,13 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * AppQuery
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @EqualsAndHashCode(callSuper = true)
 @Setter
 @Getter
@@ -56,7 +63,4 @@ public class AppQuery extends PageQuery implements Serializable {
     @NotNull(message = "图标不能为空!", groups = ValidationGroups.Create.class)
     private String icon;
 
-    /*@Schema(description = "排序")
-    @NotNull(message = "排序不能为空!", groups = ValidationGroups.Create.class) private Integer sort;*/
-
-}
+    }

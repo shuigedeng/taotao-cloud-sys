@@ -24,6 +24,13 @@ import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * BrandQueryServiceTest
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
     @Autowired private DeptCommandService deptService;

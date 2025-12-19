@@ -19,7 +19,11 @@ package com.taotao.cloud.sys.common.execption;
 import com.taotao.boot.common.enums.ResultEnum;
 import com.taotao.boot.common.exception.BusinessException;
 
-public class SysException extends BusinessException {
-
-
-}
+/**
+ * SysException
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public class SysException extends BusinessException {}

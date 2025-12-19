@@ -19,6 +19,11 @@ package com.taotao.cloud.sys.infrastructure.repository.apliction;
 
 import com.taotao.cloud.sys.application.repository.DictQueryRepository;
 
-public class DictQueryRepositoryImpl implements DictQueryRepository {
-
-}
+/**
+ * DictQueryRepositoryImpl
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
+public class DictQueryRepositoryImpl implements DictQueryRepository {}

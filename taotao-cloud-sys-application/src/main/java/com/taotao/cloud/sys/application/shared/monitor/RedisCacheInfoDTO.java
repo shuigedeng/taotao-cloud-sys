@@ -20,6 +20,13 @@ import java.util.List;
 import java.util.Properties;
 import lombok.*;
 
+/**
+ * RedisCacheInfoDTO
+ *
+ * @author shuigedeng
+ * @version 2026.01
+ * @since 2025-12-19 09:30:45
+ */
 @Setter
 @Getter
 @ToString
