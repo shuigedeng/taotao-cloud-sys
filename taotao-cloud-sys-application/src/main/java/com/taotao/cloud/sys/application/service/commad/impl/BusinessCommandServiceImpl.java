@@ -18,8 +18,8 @@ package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.BussinessCommandService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.seata.core.context.RootContext;
-import org.apache.seata.spring.annotation.GlobalTransactional;
+//import org.apache.seata.core.context.RootContext;
+//import org.apache.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 // https://blog.csdn.net/weixin_46209120/article/details/132223385
@@ -35,10 +35,10 @@ import org.springframework.stereotype.Service;
 public class BusinessCommandServiceImpl implements BussinessCommandService {
 
     @Override
-    @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)
+//    @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)
     public boolean saveOrder() {
         log.info("=============用户下单=================");
-        log.info("当前 XID: {}", RootContext.getXID());
+//        log.info("当前 XID: {}", RootContext.getXID());
 
         //        //获取全局唯一订单号
         //        Long orderId = UUIDGenerator.generateUUID();

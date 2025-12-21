@@ -401,7 +401,7 @@ spring:
   autoconfigure:
     exclude:
       #此处排除掉此配置类  是因为在走api请求或者静态资源请求的时候会走FunctionHandlerMapping 导致出现静态资源获取不到
-      - org.springframework.cloud.function.web.mvc.ReactorAutoConfiguration
+      #- org.springframework.cloud.function.web.mvc.ReactorAutoConfiguration
   lifecycle:
     timeout-per-shutdown-phase: 30s
   thymeleaf:
@@ -1172,12 +1172,12 @@ logging:
       clean-history-on-start: true
       total-size-cap: 20GB
   level:
-    web: TRACE
+    #web: TRACE
     root: INFO
     org.apache.zookeeper.ZooKeeper: info
     com.taotao.cloud.sys.api.inner: debug
-    net.ttddyy.dsproxy.listener: debug
-    net.ttddyy.dsproxy.listener.logging.SLF4JQueryLoggingListener: debug
+    #net.ttddyy.dsproxy.listener: debug
+    #net.ttddyy.dsproxy.listener.logging.SLF4JQueryLoggingListener: debug
     org.springframework.core.log.LogAccessor: error
     com.alibaba.nacos.common.utils.LoggerUtils: error
     org.apache.rocketmq.logging.Slf4jLoggerFactory: error

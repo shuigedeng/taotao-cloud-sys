@@ -33,8 +33,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-25 14:09:10
  */
-@HttpExchange(
-	value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
 public interface LogisticsApi {
 
     /**

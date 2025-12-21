@@ -21,7 +21,6 @@ import com.taotao.boot.job.xxl.executor.annotation.XxlRegister;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import com.xxl.tool.response.Response;
-import org.apache.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
@@ -321,7 +320,6 @@ public class DictJobHandler {
 	/**
 	 * 多服务调用
 	 */
-	@GlobalTransactional(rollbackFor = Exception.class)
 	@XxlJob("multiServiceHandler")
 	public void multiServiceHandler() throws Exception {
 		// LoginUser admin = remoteUserService.getUserInfo("admin");

@@ -23,7 +23,7 @@ import com.taotao.cloud.sys.api.dubbo.DictRpcService;
 import com.taotao.cloud.sys.api.dubbo.request.DictQueryRpcRequest;
 import com.taotao.cloud.sys.api.dubbo.response.DictRpcResponse;
 import lombok.AllArgsConstructor;
-import org.apache.dubbo.config.annotation.DubboService;
+//import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -35,7 +35,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @AllArgsConstructor
-@DubboService(interfaceClass = DictRpcService.class, validation = "true")
+//@DubboService(interfaceClass = DictRpcService.class, validation = "true")
 public class DictRpcServiceImpl implements DictRpcService {
 
     @Override
