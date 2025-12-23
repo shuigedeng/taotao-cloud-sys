@@ -217,7 +217,7 @@ public class TaoTaoCloudSysApplication {
                 .setTtcBanner()
                 .setTtcProfileIfNotExists("dev")
                 .setTtcApplicationProperty("taotao-cloud-sys")
-                .setTtcAllowBeanDefinitionOverriding(true)
+                .setTtcAllowBeanDefinitionOverriding(false)
                 .run(args);
     }
 }

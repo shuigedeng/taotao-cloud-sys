@@ -412,7 +412,7 @@ spring:
     cache: false
   main:
     allow-circular-references: false
-    allow-bean-definition-overriding: true
+    allow-bean-definition-overriding: false
     banner-mode: console
     register-shutdown-hook: true
     cloud-platform: none
@@ -721,7 +721,6 @@ spring:
       web:
         export:
           enabled: false
-
     compatibility-verifier:
       enabled: false
     loadbalancer:
@@ -829,7 +828,6 @@ spring:
 
 taotao:
   cloud:
-
     alibaba:
       nacos:
         enabled: true
@@ -850,9 +848,6 @@ taotao:
         executor:
           access-token: 123456
           ip: 192.168.1.4
-    zookeeper:
-      enabled: false
-      connectString: 192.168.218.2:2181
     sensitive:
       enabled: true
     lock:
