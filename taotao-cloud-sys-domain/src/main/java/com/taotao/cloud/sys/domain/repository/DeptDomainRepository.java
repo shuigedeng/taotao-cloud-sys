@@ -39,4 +39,5 @@ public interface DeptDomainRepository {
      * @param ids IDS
      */
     void remove(Long[] ids);
+    void findById(Long id);
 }

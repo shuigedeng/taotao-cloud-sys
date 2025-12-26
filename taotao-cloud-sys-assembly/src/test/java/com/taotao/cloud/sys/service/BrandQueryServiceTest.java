@@ -19,9 +19,12 @@ package com.taotao.cloud.sys.service;
 import com.taotao.boot.test.junitperf.core.annotation.TtcTest;
 import com.taotao.boot.test.junitperf.core.report.impl.HtmlReporter;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
-import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
+import com.taotao.cloud.sys.application.dto.own.dept.result.DeptTreeResult;
 import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
 import java.util.List;
+
+import com.taotao.cloud.sys.domain.repository.DeptDomainRepository;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -34,7 +37,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
     @Autowired private DeptCommandService deptService;
-
+	@Autowired
+	private DeptCommandService deptCommandService;
+	@Autowired
+	private DeptDomainRepository deptDomainRepository;
     //	@Test
     @TtcTest(duration = 1000, reporter = HtmlReporter.class)
     public void treeTest() throws InterruptedException {
@@ -42,4 +48,9 @@ public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
         List<DeptTreeResult> tree = deptService.tree();
         System.out.println("asdfasdfsadfsadf");
     }
+
+	@Test
+	public void findById(){
+		deptDomainRepository.findById(1L);
+	}
 }
