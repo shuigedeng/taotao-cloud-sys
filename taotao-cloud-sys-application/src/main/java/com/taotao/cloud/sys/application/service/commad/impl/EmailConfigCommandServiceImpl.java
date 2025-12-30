@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.EmailConfigCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @since 2025-12-19 09:30:45
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 // @CacheConfig(cacheNames = "emailConfig")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class EmailConfigCommandServiceImpl implements EmailConfigCommandService {}

@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.interfaces.controller.tools;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.application.service.commad.PinYinCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2022.03
  * @since 2022/03/03 14:57
  */
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
 @RestController
 @Tag(name = "工具管理端-拼音管理API", description = "工具管理端-拼音管理API")

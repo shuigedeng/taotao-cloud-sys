@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.ResourceCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @since 2021-10-09 20:41:23
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ResourceCommandServiceImpl implements ResourceCommandService {
 
     //	private final IRoleService roleService;

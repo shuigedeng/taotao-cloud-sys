@@ -26,6 +26,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.task.AsyncTaskExecutor;
@@ -41,14 +43,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.9
  * @since 2021-10-09 14:24:19
  */
+@RequiredArgsConstructor
 @Validated
 @RestController
 @RequestMapping("/sys/mall/dict")
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
 public class MallDictController extends BusinessController {
-	@Autowired
 	@Qualifier("applicationTaskExecutor")
-	private AsyncTaskExecutor taskExecutor;
+	private final AsyncTaskExecutor taskExecutor;
+
     @NotAuth
     @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
     @GetMapping("/testMybatisQueryStructure")

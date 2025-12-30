@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-12-19 09:30:45
  */
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/sysLogLogin")
 @Tag(name = "工具管理端-登录记录管理", description = "工具管理端-登录记录管理")
 public class SysLogLoginController extends BusinessController {}

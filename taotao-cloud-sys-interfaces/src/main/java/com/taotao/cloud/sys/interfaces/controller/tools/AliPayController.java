@@ -47,7 +47,7 @@ package com.taotao.cloud.sys.interfaces.controller.tools; /// *
 // import io.swagger.v3.oas.annotations.tags.Tag;
 // import jakarta.servlet.http.HttpServletRequest;
 // import jakarta.servlet.http.HttpServletResponse;
-// import lombok.AllArgsConstructor;
+// import lombok.RequiredArgsConstructor;
 // import org.springframework.security.access.prepost.PreAuthorize;
 // import org.springframework.validation.annotation.Validated;
 // import org.springframework.web.bind.annotation.GetMapping;
@@ -67,7 +67,7 @@ package com.taotao.cloud.sys.interfaces.controller.tools; /// *
 // * @version 2021.10
 // * @since 2022-03-02 16:19:02
 // */
-// @AllArgsConstructor
+// @RequiredArgsConstructor
 // @Validated
 // @RestController
 // @Tag(name = "工具管理端-支付宝管理API", description = "工具管理端-支付宝管理API")

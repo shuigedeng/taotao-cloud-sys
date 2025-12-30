@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.interfaces.controller.seller;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021-10-09 14:24:19
  */
 @Validated
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/sys/seller/dict")
 @Tag(name = "商户管理端-字典管理API", description = "商户管理端-字典管理API")

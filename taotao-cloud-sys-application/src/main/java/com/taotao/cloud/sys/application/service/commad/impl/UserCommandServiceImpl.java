@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @since 2021-10-09 20:50:41
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class UserCommandServiceImpl implements UserCommandService {
 
     //	private static final QUser USER = QUser.user;

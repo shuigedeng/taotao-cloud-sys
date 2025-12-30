@@ -22,6 +22,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.mapper.DeptMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.DeptRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,12 +36,10 @@ import java.util.Optional;
  * @since 2025-12-19 09:30:45
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DeptDomainRepositoryImpl implements DeptDomainRepository {
-	@Autowired
-	private DeptMapper deptMapper;
-	@Autowired
-	private DeptRepository deptRepository;
+	private final DeptMapper deptMapper;
+	private final DeptRepository deptRepository;
 
     @Override
     public void create(DeptEntity dept) {

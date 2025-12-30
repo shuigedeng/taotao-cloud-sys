@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.FileCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
  * @version 2022.03
  * @since 2020/11/12 17:43
  */
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class FileCommandServiceImpl implements FileCommandService {
     //

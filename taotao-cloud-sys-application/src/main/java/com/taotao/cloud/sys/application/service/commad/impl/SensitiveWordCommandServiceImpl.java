@@ -17,12 +17,12 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.SensitiveWordCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /** 敏感词业务层实现 */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SensitiveWordCommandServiceImpl implements SensitiveWordCommandService {
 
     @Override

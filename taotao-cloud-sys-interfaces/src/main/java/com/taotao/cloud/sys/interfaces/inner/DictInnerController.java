@@ -33,6 +33,7 @@ import com.taotao.cloud.sys.api.inner.response.DictApiResponse;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,6 +44,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 为远程客户端提供粗粒度的调用接口
  */
 @Validated
+@RequiredArgsConstructor
 @RestController
 @RequestMapping
 public class DictInnerController extends InnerController implements DictApi {

@@ -18,6 +18,8 @@ package com.taotao.cloud.sys.infrastructure.repository.apliction;
 
 
 import com.taotao.cloud.sys.application.repository.DictQueryRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 /**
  * DictQueryRepositoryImpl
@@ -26,4 +28,6 @@ import com.taotao.cloud.sys.application.repository.DictQueryRepository;
  * @version 2026.01
  * @since 2025-12-19 09:30:45
  */
+@Service
+@RequiredArgsConstructor
 public class DictQueryRepositoryImpl implements DictQueryRepository {}

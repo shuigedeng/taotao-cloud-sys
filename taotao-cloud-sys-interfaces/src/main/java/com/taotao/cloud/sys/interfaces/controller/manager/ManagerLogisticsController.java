@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2022.03
  * @since 2020/11/13 09:58
  */
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Validated
 @RestController
 @RequestMapping("/sys/manager/logistics")

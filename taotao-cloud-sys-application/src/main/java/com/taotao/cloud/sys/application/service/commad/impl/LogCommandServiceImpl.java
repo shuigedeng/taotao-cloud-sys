@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.LogCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-02-15 08:55:37
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class LogCommandServiceImpl implements LogCommandService {
 
     //    @Override

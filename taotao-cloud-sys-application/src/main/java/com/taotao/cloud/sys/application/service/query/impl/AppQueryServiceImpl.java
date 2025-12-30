@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.application.service.query.impl;
 
 import com.taotao.cloud.sys.application.service.query.AppQueryService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,5 +12,5 @@ import org.springframework.stereotype.Service;
  * @since 2025-12-19 09:30:45
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AppQueryServiceImpl implements AppQueryService {}

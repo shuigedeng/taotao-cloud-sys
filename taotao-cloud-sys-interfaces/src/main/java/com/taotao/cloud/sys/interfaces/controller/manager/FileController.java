@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 import com.taotao.boot.web.annotation.BusinessApi;
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @BusinessApi
 @Validated
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Tag(name = "文件管理接口11111")
 @RequestMapping("/file/common")
 public class FileController extends BusinessController {

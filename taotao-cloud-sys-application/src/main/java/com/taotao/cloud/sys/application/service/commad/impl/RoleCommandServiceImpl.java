@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.RoleCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @since 2021-10-09 20:46:26
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RoleCommandServiceImpl implements RoleCommandService {
 
     //    private static final QRole SYS_ROLE = QRole.role;

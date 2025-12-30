@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.RoleResourceCommandService;
 import java.util.Set;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
  * @since 2020/10/21 09:48
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RoleResourceCommandServiceImpl implements RoleResourceCommandService {
 
     @Override

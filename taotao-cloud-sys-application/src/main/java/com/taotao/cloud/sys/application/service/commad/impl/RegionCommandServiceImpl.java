@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad.impl;
 
 import com.taotao.cloud.sys.application.service.commad.RegionCommandService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @since 2021-10-09 20:37:52
  */
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RegionCommandServiceImpl implements RegionCommandService {
 
     //	private final OkHttpService okHttpService;
