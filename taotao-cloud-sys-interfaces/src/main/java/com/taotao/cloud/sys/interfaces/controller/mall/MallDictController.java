@@ -49,17 +49,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/mall/dict")
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
 public class MallDictController extends BusinessController {
-	@Qualifier("applicationTaskExecutor")
-	private final AsyncTaskExecutor taskExecutor;
+//	@Qualifier("applicationTaskExecutor")
+//	private final AsyncTaskExecutor taskExecutor;
 
     @NotAuth
     @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
     @GetMapping("/testMybatisQueryStructure")
     public Result<List<String>> testMybatisQueryStructure() {
 		LogUtils.info("asdfasdffffff");
-		taskExecutor.execute(() -> {
-			System.out.println("Running on: " + Thread.currentThread());
-		});
+//		taskExecutor.execute(() -> {
+//			System.out.println("Running on: " + Thread.currentThread());
+//		});
         return Result.success(new ArrayList<>());
     }
 }
