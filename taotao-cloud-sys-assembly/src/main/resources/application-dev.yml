@@ -3,6 +3,22 @@ server:
   shutdown: graceful
   http2:
     enabled: true
+  tomcat:
+    # 当所有可能的请求处理线程都在使用中时，传入连接请求的最大队列长度
+    accept-count: 200
+    # 服务器在任何给定时间接受和处理的最大连接数。一旦达到限制，操作系统仍然可以接受基于“acceptCount”属性的连接。
+    max-connections: 8192
+    threads:
+      # 工作线程的最小数量，初始化时创建的线程数
+      min-spare: 50
+      # 工作线程的最大数量 io密集型建议10倍的cpu数，cpu密集型建议cpu数+1，绝大部分应用都是io密集型
+      max: 800
+    # 连接器在接受连接后等待显示请求 URI 行的时间。
+    connection-timeout: 20000
+    # 在关闭连接之前等待另一个 HTTP 请求的时间。如果未设置，则使用 connectionTimeout。设置为 -1 时不会超时。
+    keep-alive-timeout: 20000
+    # 在连接关闭之前可以进行流水线处理的最大HTTP请求数量。当设置为0或1时，禁用keep-alive和流水线处理。当设置为-1时，允许无限数量的流水线处理或keep-alive请求。 
+    max-keep-alive-requests: 100
   undertow:
     buffer-size: 2048 #每块buffer的空间大小,越小的空间被利用越充分，buffer会用于服务器连接的IO操作,类似netty的池化内存管理
     direct-buffers: true # 是否分配的直接内存
@@ -423,7 +439,7 @@ spring:
       enabled: true
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+    time-zone: Asia/Shanghai
   web:
     resources:
       # pro环境关闭
@@ -442,9 +458,10 @@ spring:
   servlet:
     multipart:
       enabled: true
-      file-size-threshold: 2KB
-      max-file-size: 200MB
-      max-request-size: 200MB
+      file-size-threshold: 2KB # 超过就写磁盘，不全在内存
+      max-file-size: 200MB  # 单文件最大
+      max-request-size: 200MB  # 单次请求最大
+      location: /tmp/upload # 临时目录
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     #url: jdbc:mysql://192.168.218.2:13306/${spring.application.name}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&rewriteBatchedStatements=true&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&allowMultiQueries=true&autoReconnect=true&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor
@@ -458,7 +475,7 @@ spring:
     hikari:
       auto-commit: true # 从池返回的连接的默认自动提交行为 默认true 是否自动提交，默认true
       connection-timeout: 350000 # 客户端等待连接池的最大毫秒数 从连接池获取连接的超时时间，默认30s
-      idle-timeout: 180000 # 允许连接在连接池中空闲的最大时间（毫秒） 连接空闲时间，当最小连接数 < 最大连接数生效。默认10min
+      idle-timeout: 600000 # 允许连接在连接池中空闲的最大时间（毫秒） 连接空闲时间，当最小连接数 < 最大连接数生效。默认10min
       login-timeout: 5
       validation-timeout: 3000   # 连接测试活动的最大时间量 检验连接是否有效的超时时间，默认5s
       max-lifetime: 1800000  # 池中关闭连接后的最长生命周期 连接最大存活时间，默认30min。需要小于数据库wait_timeout，超过这个时间未使用连接都会关闭。
@@ -468,7 +485,7 @@ spring:
       minimum-idle: 10 #//最小连接数，默认10
       pool-name: DatebookHikariCP
       register-mbeans: true #是否注册MBean
-      leak-detection-threshold: 60000 # 连接泄漏检测阈值(ms)
+      leak-detection-threshold: 60000 # 连接泄漏检测阈值(ms) 泄露检测，超过 60s 警告
       data-source-properties:
         cachePrepStmts: true           # 启用预处理语句缓存
         prepStmtCacheSize: 250         # 预处理语句缓存大小
@@ -550,6 +567,51 @@ spring:
             missing_cache_strategy: create
         temp:
           use_jdbc_metadata_defaults: false
+  redis:
+    redisson:
+      config: |
+        singleServerConfig:
+          # 连接空闲超时，单位：毫秒
+          idleConnectionTimeout: 10000
+          # 连接超时，单位：毫秒
+          connectTimeout: 10000
+          # 命令等待超时，单位：毫秒
+          timeout: 3000
+          # 命令失败重试次数,如果尝试达到 retryAttempts（命令失败重试次数） 仍然不能将命令发送至某个指定的节点时，将抛出错误。
+          # 如果尝试在此限制之内发送成功，则开始启用 timeout（命令等待超时） 计时。
+          retryAttempts: 3
+          # 命令重试发送时间间隔，单位：毫秒
+          retryInterval: 1500
+          # 单个连接最大订阅数量
+          subscriptionsPerConnection: 5
+          # 客户端名称
+          clientName: "taotao-cloud-redis-client"
+          # 节点地址
+          address: "redis://192.168.218.2:6379"
+          # 发布和订阅连接的最小空闲连接数
+          subscriptionConnectionMinimumIdleSize: 1
+          # 发布和订阅连接池大小
+          subscriptionConnectionPoolSize: 50
+          # 最小空闲连接数
+          connectionMinimumIdleSize: 32
+          # 连接池大小
+          connectionPoolSize: 64
+          # 数据库编号
+          database: 1
+          # DNS监测时间间隔，单位：毫秒
+          dnsMonitoringInterval: 5000
+        # 密码，没有设置密码时，需要注释掉，否则会报错
+        password: taotao-cloud
+        # 线程池数量,默认值: 当前处理核数量 * 2
+        threads: 16
+        # Netty线程池数量,默认值: 当前处理核数量 * 2
+        nettyThreads: 32
+        # 编码
+        codec: !<org.redisson.codec.JsonJackson3Codec> {}
+        # 传输模式
+        transportMode : "NIO"
+        # 配置看门狗的默认超时时间为30s，这里改为 10s
+        lockWatchdogTimeout: 10000
   data:
     redis:
       host: 192.168.218.2
@@ -570,50 +632,6 @@ spring:
           max-wait: 60000
           max-idle: 500
           min-idle: 100
-      redisson:
-        config: |
-          singleServerConfig:
-            # 连接空闲超时，单位：毫秒
-            idleConnectionTimeout: 10000
-            # 连接超时，单位：毫秒
-            connectTimeout: 10000
-            # 命令等待超时，单位：毫秒
-            timeout: 3000
-            # 命令失败重试次数,如果尝试达到 retryAttempts（命令失败重试次数） 仍然不能将命令发送至某个指定的节点时，将抛出错误。
-            # 如果尝试在此限制之内发送成功，则开始启用 timeout（命令等待超时） 计时。
-            retryAttempts: 3
-            # 命令重试发送时间间隔，单位：毫秒
-            retryInterval: 1500
-            # 密码，没有设置密码时，需要注释掉，否则会报错
-            password: taotao-cloud
-            # 单个连接最大订阅数量
-            subscriptionsPerConnection: 5
-            # 客户端名称
-            clientName: "taotao-cloud-redis-client"
-            # 节点地址
-            address: "redis://192.168.218.2:6379"
-            # 发布和订阅连接的最小空闲连接数
-            subscriptionConnectionMinimumIdleSize: 1
-            # 发布和订阅连接池大小
-            subscriptionConnectionPoolSize: 50
-            # 最小空闲连接数
-            connectionMinimumIdleSize: 32
-            # 连接池大小
-            connectionPoolSize: 64
-            # 数据库编号
-            database: 1
-            # DNS监测时间间隔，单位：毫秒
-            dnsMonitoringInterval: 5000
-          # 线程池数量,默认值: 当前处理核数量 * 2
-          threads: 0
-          # Netty线程池数量,默认值: 当前处理核数量 * 2
-          nettyThreads: 0
-          # 编码
-          codec: !<org.redisson.codec.JsonJacksonCodec> {}
-          # 传输模式
-          transportMode : "NIO"
-          # 配置看门狗的默认超时时间为30s，这里改为 10s
-          lockWatchdogTimeout: 10000
   kafka:
     enabled: true
     bootstrap-servers: 192.168.218.2:9092
@@ -1162,10 +1180,10 @@ logging:
     path: ${user.home}/logs/${spring.application.name}/
   logback:
     rollingpolicy:
-      max-file-size: 10GB
-      max-history: 30
+      max-file-size: 100MB # 单文件大小
+      max-history: 30     # 保留 30 个文件
       clean-history-on-start: true
-      total-size-cap: 20GB
+      total-size-cap: 20GB  # 整体上限
   level:
     #web: TRACE
     root: INFO
