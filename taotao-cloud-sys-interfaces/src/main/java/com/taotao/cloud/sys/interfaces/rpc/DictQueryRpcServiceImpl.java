@@ -39,8 +39,7 @@ import org.springframework.stereotype.Service;
 public class DictQueryRpcServiceImpl implements DictQueryRpcService {
 
     @Override
-    public Response<DictRpcResponse> findByCode(
-            Request<DictQueryRpcRequest> dictQueryRpcRequest) {
+    public Response<DictRpcResponse> findByCode( Request<DictQueryRpcRequest> dictQueryRpcRequest) {
 
         LogUtils.info("DictRpcServiceImpl.findByCode", "code={}", dictQueryRpcRequest);
 
