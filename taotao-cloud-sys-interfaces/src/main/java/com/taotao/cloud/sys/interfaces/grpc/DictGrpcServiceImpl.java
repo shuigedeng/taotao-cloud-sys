@@ -25,11 +25,13 @@ import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.grpc.server.service.GrpcService;
 //import org.lognet.springboot.grpc.GRpcService;
 
 @Slf4j
 @RequiredArgsConstructor
 //@GRpcService
+@GrpcService
 public class DictGrpcServiceImpl extends DictGrpcServiceImplBase {
 
 	private final DictQueryService dictQueryService;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.inner;
+package com.taotao.cloud.sys.interfaces.controller.inner;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.exception.BusinessException;
@@ -27,11 +27,11 @@ import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
-import com.taotao.cloud.sys.api.inner.command.DictCommandApi;
+import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
 import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
+import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -48,17 +48,60 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping
-public class DictCommandApiController extends InnerController implements DictCommandApi {
+public class DictQueryApiController extends InnerController implements DictQueryApi {
 
-	private final DictCommandService dictCommandService;
+	private final DictQueryService dictQueryService;
 
 	@Override
-	public Response<DictApiResponse> findByCode( Request<DictQueryApiRequest> dictQueryApiRequest ) {
-		return null;
+	@NotAuth
+	@Idempotent(perFix = "findByCode")
+	@Limit(key = "limitTest", period = 10, count = 3)
+	@SentinelResource("findByCode")
+	public Response<DictApiResponse> findByCode(
+		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
+		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
+			throw new BusinessException("我出错了");
+			// try {
+			//	Thread.sleep(100000000000L);
+			// } catch (InterruptedException e) {
+			//	throw new RuntimeException(e);
+			// }
+		}
+		//		DictPO dictPo = dictService.findByCode(code);
+		//		return DictAssembler.INSTANCE.convert(dictPo);
+		return Response.from(new DictApiResponse());
 	}
 
 	@Override
-	public Response<DictApiResponse> test( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+	@Operation(summary = "test", description = "test")
+	@RequestLogger
+	@NotAuth
+	@Idempotent(perFix = "test")
+	@TLogAspect(
+		value = {"code"},
+		pattern = "{{}}",
+		joint = ",",
+		str = "nihao")
+	@Limit(key = "limitTest", period = 10, count = 3)
+	@GuavaLimit
+	@SentinelResource("test")
+	public Response<DictApiResponse> test(
+		Request<DictQueryApiRequest> dictQueryApiRequest) {
+		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
+		//		Dict dict = service().findByCode(id);
+		//
+		//		Future<Dict> asyncByCode = service().findAsyncByCode(id);
+		//
+		//		Dict dict1;
+		//		try {
+		//			dict1 = asyncByCode.get();
+		//		} catch (InterruptedException | ExecutionException e) {
+		//			throw new RuntimeException(e);
+		//		}
+		//
+		//		LogUtils.info("我在等待你");
+
 		return null;
+		// return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
 	}
 }
