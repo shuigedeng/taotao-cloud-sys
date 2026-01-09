@@ -18,18 +18,25 @@ package com.taotao.cloud.sys.interfaces.controller.test;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.grpc.spring.annotation.GrpcClient;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
+import com.taotao.cloud.sys.api.grpc.DictGrpcRequest;
+import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
+import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
+import com.taotao.cloud.sys.application.dto.own.dict.query.DictQuery;
+import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 移动端-字典API
@@ -44,17 +51,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sys/mall/dict")
 @Tag(name = "移动端-字典API", description = "移动端-字典API")
 public class DictMallController extends BusinessController {
-//	@Qualifier("applicationTaskExecutor")
-//	private final AsyncTaskExecutor taskExecutor;
+	@Autowired
+	@Qualifier("applicationTaskExecutor")
+	private AsyncTaskExecutor taskExecutor;
+	@Autowired
+	private DictGrpcServiceGrpc.DictGrpcServiceBlockingStub dictGrpcServiceStub;
 
     @NotAuth
     @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
     @GetMapping("/testMybatisQueryStructure")
     public Result<List<String>> testMybatisQueryStructure() {
 		LogUtils.info("asdfasdffffff");
-//		taskExecutor.execute(() -> {
-//			System.out.println("Running on: " + Thread.currentThread());
-//		});
-        return Result.success(new ArrayList<>());
+		taskExecutor.execute(() -> {
+			System.out.println("Running on: " + Thread.currentThread());
+		});
+		DictGrpcResponse byCode = dictGrpcServiceStub.findByCode(DictGrpcRequest.newBuilder().build());
+		System.out.println(byCode);
+		return Result.success(new ArrayList<>());
     }
+
+	@NotAuth
+	@Operation(summary = "测试mybatis sqldddddd", description = "测试mybatis sqldddddd")
+	@PostMapping("/testMybatisQueryStructuredddd")
+	public Result<DictQueryResult> testMybatisQueryStructuredddd(@RequestBody DictQuery dictQuery ) {
+
+		return Result.success(null);
+	}
 }

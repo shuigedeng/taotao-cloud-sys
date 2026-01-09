@@ -61,7 +61,6 @@ public interface DictCommandApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-
     @PostExchange("/sys/feign/dict/code")
     Response<DictApiResponse> findByCode(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);

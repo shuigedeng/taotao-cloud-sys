@@ -26,7 +26,6 @@ import com.taotao.boot.cache.redis.delay.message.QueueMessageBuilder;
 import com.taotao.boot.cache.redis.delay.message.RedissonHeaders;
 import com.taotao.boot.cache.redis.delay.message.RedissonMessage;
 import com.taotao.boot.common.utils.json.JacksonUtils;
-import com.taotao.boot.common.utils.json.JacksonUtils;
 import com.taotao.boot.common.utils.log.LogUtils;
 import java.util.Map;
 import lombok.*;
@@ -43,7 +42,7 @@ import org.springframework.messaging.handler.annotation.Payload;
  * @since 2022-04-28 11:53:44
  */
 @Configuration
-public class RedissonDelayApplication {
+public class RedissonDelayConfiguration {
 
     @Bean
     public RedissonQueue redissonQueue() {

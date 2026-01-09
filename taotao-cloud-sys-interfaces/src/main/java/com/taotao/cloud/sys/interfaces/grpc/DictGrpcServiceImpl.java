@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.interfaces.grpc;
 
 import com.taotao.cloud.sys.api.grpc.DictGrpcRequest;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
-import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc.DictGrpcServiceImplBase;
+import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import com.taotao.cloud.sys.api.grpc.DictTestGrpcRequest;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
@@ -26,13 +26,11 @@ import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.grpc.server.service.GrpcService;
-//import org.lognet.springboot.grpc.GRpcService;
 
 @Slf4j
 @RequiredArgsConstructor
-//@GRpcService
 @GrpcService
-public class DictGrpcServiceImpl extends DictGrpcServiceImplBase {
+public class DictGrpcServiceImpl extends DictGrpcServiceGrpc.DictGrpcServiceImplBase {
 
 	private final DictQueryService dictQueryService;
 	private final DictCommandService dictCommandService;
@@ -40,7 +38,6 @@ public class DictGrpcServiceImpl extends DictGrpcServiceImplBase {
 	@Override
 	public void findByCode( DictGrpcRequest request,
 		StreamObserver<DictGrpcResponse> responseObserver ) {
-		super.findByCode(request, responseObserver);
 
 		log.info("findByCode:{}", request.toString());
 		boolean replyTag = false;

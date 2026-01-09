@@ -16,6 +16,9 @@
 
 package com.taotao.cloud.sys.application.dto.own.dict.query;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 /**
@@ -29,10 +32,22 @@ import lombok.*;
 @Getter
 @ToString
 public class DictQuery {
+	@Schema(description = "字典名称", requiredMode = Schema.RequiredMode.REQUIRED)
+	@NotBlank(message = "字典名称不能为空")
+	@Size(max = 10, message = "字典名称不能超过10个字符")
+	private String dictName;
 
-    private Long dictId;
-    private String itemText;
-    private String itemValue;
-    private String description;
-    private Integer status;
+	@Schema(description = "字典编码", requiredMode = Schema.RequiredMode.REQUIRED)
+	@NotBlank(message = "字典编码不能为空")
+	@Size(max = 10, message = "字典编码不能超过10个字符")
+	private String dictCode;
+
+	@Schema(description = "描述")
+	private String description;
+
+	@Schema(description = "排序值")
+	private Integer dictSort;
+
+	@Schema(description = "备注信息")
+	private String remark;
 }

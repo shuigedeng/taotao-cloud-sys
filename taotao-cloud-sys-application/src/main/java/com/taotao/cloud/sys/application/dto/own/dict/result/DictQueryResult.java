@@ -34,11 +34,11 @@ import lombok.experimental.Accessors;
  */
 @Setter
 @Getter
-@ToString
+//@ToString
 @Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+//@EqualsAndHashCode
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Schema(description = "字典查询对象")
 public class DictQueryResult implements Serializable {
 
