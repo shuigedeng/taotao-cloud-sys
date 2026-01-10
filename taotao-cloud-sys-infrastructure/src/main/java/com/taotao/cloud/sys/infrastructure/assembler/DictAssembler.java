@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.assembler;
 
-import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
+import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -34,7 +34,7 @@ public interface DictAssembler {
     /** 实例 */
     DictAssembler INSTANCE = Mappers.getMapper(DictAssembler.class);
 
-    DictApiResponse convert(DictPO dictPo);
+    DictQueryApiResponse convert(DictPO dictPo);
 
     /// **
     // * DictDTO转SysDict

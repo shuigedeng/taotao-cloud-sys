@@ -38,7 +38,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "公司查询VO")
-public class DictApiResponse  extends ResponseBase implements Serializable {
+public class DictQueryApiResponse extends ResponseBase implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

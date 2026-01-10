@@ -23,7 +23,7 @@ import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
-import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
+import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
@@ -46,7 +46,7 @@ public interface DeptCommandApi {
      * 字典列表code查询
      *
      * @param code 代码
-     * @return {@link DictApiResponse }
+     * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
     @ApiInfo(
@@ -63,14 +63,14 @@ public interface DeptCommandApi {
             })
 
     @PostExchange("/sys/feign/dict/code")
-    Response<DictApiResponse> findByCode(
+    Response<DictQueryApiResponse> findByCode(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
      *
      * @param id 代码
-     * @return {@link DictApiResponse }
+     * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
     @ApiInfo(
@@ -86,6 +86,6 @@ public interface DeptCommandApi {
                         date = "2022-07-01 17:11:55")
             })
     @PostExchange("/sys/feign/dict/test")
-    Response<DictApiResponse> test(
+    Response<DictQueryApiResponse> test(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 }

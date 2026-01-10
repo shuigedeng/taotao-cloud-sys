@@ -23,7 +23,7 @@ import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
-import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
+import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
@@ -38,15 +38,15 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-        value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+//@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange(url = "http://192.168.218.1:33331")
 public interface DictQueryApi {
 
     /**
      * 字典列表code查询
      *
      * @param code 代码
-     * @return {@link DictApiResponse }
+     * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
     @ApiInfo(
@@ -61,15 +61,15 @@ public interface DictQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/feign/dict/query/code")
-    Response<DictApiResponse> findByCode(
+    @PostExchange("/sys/inner/dict/query/code")
+    Response<DictQueryApiResponse> findByCode(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
      *
      * @param id 代码
-     * @return {@link DictApiResponse }
+     * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
     @ApiInfo(
@@ -84,7 +84,7 @@ public interface DictQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/feign/dict/query/test")
-    Response<DictApiResponse> test(
+    @PostExchange("/sys/inner/dict/query/test")
+    Response<DictQueryApiResponse> test(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 }

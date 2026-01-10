@@ -27,15 +27,13 @@ import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
+import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
 import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
-import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,7 +55,7 @@ public class DictQueryApiController extends InnerController implements DictQuery
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictApiResponse> findByCode(
+	public Response<DictQueryApiResponse> findByCode(
 		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
 		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
 			throw new BusinessException("我出错了");
@@ -67,9 +65,10 @@ public class DictQueryApiController extends InnerController implements DictQuery
 			//	throw new RuntimeException(e);
 			// }
 		}
+		LogUtils.info("xxxxxxxxxxxxxxxxxxxxx");
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return Response.from(new DictApiResponse());
+		return Response.from(new DictQueryApiResponse());
 	}
 
 	@Override
@@ -85,7 +84,7 @@ public class DictQueryApiController extends InnerController implements DictQuery
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
-	public Response<DictApiResponse> test(
+	public Response<DictQueryApiResponse> test(
 		Request<DictQueryApiRequest> dictQueryApiRequest) {
 		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
 		//		Dict dict = service().findByCode(id);
