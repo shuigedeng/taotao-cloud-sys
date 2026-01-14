@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.common.enums.SexTypeEnum;
+import com.taotao.boot.common.enums.SexEnum;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -88,7 +88,7 @@ public class UserPO extends BaseSuperEntity<UserPO, Long> {
     /**
      * 性别 1男 2女 0未知
      *
-     * @see SexTypeEnum
+     * @see SexEnum
      */
     @Column(name = "`sex`", columnDefinition = "int not null default 0 comment '性别 1男 2女 0未知'")
     private Integer sex;
