@@ -2,11 +2,11 @@
 #### https://github.com/marketplace?type=actions
 #### https://github.com/sdras/awesome-actions
 
-name: Microservice Docker graalvm Image
+name: TaoTaoCloudSys Graalvm Image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
@@ -23,7 +23,7 @@ env:
 
 jobs:
   build:
-    name: demo graalvm on ubuntu-latest
+    name: sys graalvm on ubuntu-latest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -58,7 +58,7 @@ jobs:
           echo "mavenPasswordNew=${{ secrets.TAOTAO_CLOUD_MAVEN_PASSWORD_NEW }}" >> gradle.properties
 
       #https://github.com/marketplace/actions/gradle-build-action  bootBuildImage
-      - name: Gradle nativeCompile  sys
+      - name: Gradle  sys nativeCompile
         run: gradle -p taotao-cloud-sys-assembly nativeCompile
 
       #- name: Publish Docker Image taotao-cloud-demo
