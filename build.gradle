@@ -189,8 +189,9 @@ plugins {
     //https://plugins.gradle.org/plugin/com.gorylenko.gradle-git-properties
     id "com.gorylenko.gradle-git-properties" version "2.5.4"
 
+    //https://github.com/graalvm/native-build-tools
     //https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html
-    id 'org.graalvm.buildtools.native' version '0.11.1'
+    id 'org.graalvm.buildtools.native' version '0.11.3'
 
     //https://github.com/kimichen13/mybatis-generator-plugin
     //https://plugins.gradle.org/plugin/com.qqviaja.gradle.MybatisGenerator
@@ -378,6 +379,7 @@ subprojects {
             }
 
             exclude group: 'com.vaadin.external.google', module: 'android-json'
+            exclude group: 'com.taobao.arthas', module: '*'
 
             resolutionStrategy {
                 force 'net.minidev:json-smart:2.6.0'

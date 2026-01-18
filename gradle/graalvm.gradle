@@ -60,6 +60,15 @@ graalvmNative {
             buildArgs.add('--verbose')
             buildArgs.add('--no-fallback')
 
+            //在windos上 为了解决这个问题Caused by: java.lang.IllegalArgumentException: 'other' has different root
+            //	at org.graalvm.buildtools.utils.NativeImageUtils.convertToArgsFile(NativeImageUtils.java:104)
+            //	at org.graalvm.buildtools.gradle.internal.NativeImageCommandLineProvider.asArguments(NativeImageCommandLineProvider.java:238)
+            //:taotao-cloud-sys-assembly:nativeCompile -Djava.io.tmpdir=.\\build\\tmp
+            //buildArgs.addAll(
+            //        '-Djava.io.tmpdir=' + buildDir.toPath().resolve('tmp').toAbsolutePath(),
+            //        '-Duser.dir=' + projectDir.absolutePath
+            //)
+
             equalsOpensList.each { open ->
                 buildArgs.add(open)
             }
