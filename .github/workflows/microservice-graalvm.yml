@@ -6,7 +6,7 @@ name: TaoTaoCloudSys Graalvm Image
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ main ]
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
