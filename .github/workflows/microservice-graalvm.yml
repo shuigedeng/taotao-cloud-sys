@@ -29,6 +29,12 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v6.0.1
 
+      - name: Setup short paths
+        run: |
+          mkdir -p /t/g /t/n
+          echo "GRADLE_USER_HOME=/t/g" >> $GITHUB_ENV
+          echo "TMPDIR=/t/n" >> $GITHUB_ENV
+
       - name: show release
         run: lsb_release -a
 
@@ -52,11 +58,6 @@ jobs:
           java --version
           native-image --version
 
-      - name: Shorten project path with symlink
-        run: |
-          sudo ln -s /home/runner/work/taotao-cloud-sys /tmp/taotao
-          cd /tmp/taotao
-
       - name: write secrets maven username password
         run: |
           echo "mavenUsernameNew=${{ secrets.TAOTAO_CLOUD_MAVEN_USERNAME_NEW }}" >> gradle.properties
@@ -64,6 +65,10 @@ jobs:
 
       #https://github.com/marketplace/actions/gradle-build-action  bootBuildImage
       - name: Gradle  sys nativeCompile
+        env:
+          GRADLE_USER_HOME: /t/g
+          TMPDIR: /t/n
+          JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=/t/n
         run: gradle -p taotao-cloud-sys-assembly nativeCompile
 
       #- name: Publish Docker Image taotao-cloud-demo
