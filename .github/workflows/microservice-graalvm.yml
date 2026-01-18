@@ -29,12 +29,6 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v6.0.1
 
-      - name: Setup short paths
-        run: |
-          mkdir -p /t/g /t/n
-          echo "GRADLE_USER_HOME=/t/g" >> $GITHUB_ENV
-          echo "TMPDIR=/t/n" >> $GITHUB_ENV
-
       - name: show release
         run: lsb_release -a
 
@@ -57,7 +51,10 @@ jobs:
           echo "JAVA_HOME: $JAVA_HOME"
           java --version
           native-image --version
-
+      - name: Increase system ARG_MAX limit (Ubuntu)
+        run: |
+          # 临时提升ARG_MAX（需要root权限，仅当前会话有效，GitHub Action环境重启后失效）
+          sudo sysctl -w kernel.arg_max=4194304 # 提升至4MB（默认通常为2097152）
       - name: write secrets maven username password
         run: |
           echo "mavenUsernameNew=${{ secrets.TAOTAO_CLOUD_MAVEN_USERNAME_NEW }}" >> gradle.properties
@@ -65,10 +62,6 @@ jobs:
 
       #https://github.com/marketplace/actions/gradle-build-action  bootBuildImage
       - name: Gradle  sys nativeCompile
-        env:
-          GRADLE_USER_HOME: /t/g
-          TMPDIR: /t/n
-          JAVA_TOOL_OPTIONS: -Djava.io.tmpdir=/t/n
         run: gradle -p taotao-cloud-sys-assembly nativeCompile
 
       #- name: Publish Docker Image taotao-cloud-demo
