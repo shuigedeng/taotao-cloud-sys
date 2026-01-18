@@ -51,10 +51,10 @@ jobs:
           echo "JAVA_HOME: $JAVA_HOME"
           java --version
           native-image --version
-      - name: Increase system ARG_MAX limit (Ubuntu)
+      - name: Adjust system limits
         run: |
-          # 临时提升ARG_MAX（需要root权限，仅当前会话有效，GitHub Action环境重启后失效）
-          sudo sysctl -w kernel.arg_max=4194304 # 提升至4MB（默认通常为2097152）
+          ulimit -s unlimited  # 临时解除栈大小限制
+          ulimit -n 65535     # 提升最大文件描述符数量
       - name: write secrets maven username password
         run: |
           echo "mavenUsernameNew=${{ secrets.TAOTAO_CLOUD_MAVEN_USERNAME_NEW }}" >> gradle.properties
