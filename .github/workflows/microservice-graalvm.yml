@@ -62,7 +62,7 @@ jobs:
 
       #https://github.com/marketplace/actions/gradle-build-action  bootBuildImage
       - name: Gradle  sys nativeCompile
-        run: gradle -p taotao-cloud-sys-assembly nativeCompile
+        run: gradle -p taotao-cloud-sys-assembly nativeCompile -Djava.io.tmpdir=./build/tmp
 
       #- name: Publish Docker Image taotao-cloud-demo
       #  uses: elgohr/Publish-Docker-Github-Action@v4
