@@ -52,6 +52,11 @@ jobs:
           java --version
           native-image --version
 
+      - name: Shorten project path with symlink
+        run: |
+          sudo ln -s /home/runner/work/taotao-cloud-sys /tmp/taotao
+          cd /tmp/taotao
+
       - name: write secrets maven username password
         run: |
           echo "mavenUsernameNew=${{ secrets.TAOTAO_CLOUD_MAVEN_USERNAME_NEW }}" >> gradle.properties
