@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC
+	"-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+
+	<!-- MySQL 特定的类型映射 -->
+<!--	<type-mapping>-->
+<!--		&lt;!&ndash; 整数类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="INTEGER" hibernate-type="java.lang.Integer"/>-->
+<!--		<sql-type jdbc-type="BIGINT" hibernate-type="java.lang.Long"/>-->
+<!--		<sql-type jdbc-type="SMALLINT" hibernate-type="java.lang.Short"/>-->
+<!--		<sql-type jdbc-type="TINYINT" hibernate-type="java.lang.Byte"/>-->
+
+<!--		&lt;!&ndash; 字符串类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="VARCHAR" hibernate-type="java.lang.String"/>-->
+<!--		<sql-type jdbc-type="CHAR" hibernate-type="java.lang.String"/>-->
+<!--		<sql-type jdbc-type="LONGVARCHAR" hibernate-type="java.lang.String"/>-->
+<!--		<sql-type jdbc-type="CLOB" hibernate-type="java.lang.String"/>-->
+
+<!--		&lt;!&ndash; 数值类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="DECIMAL" hibernate-type="java.math.BigDecimal"/>-->
+<!--		<sql-type jdbc-type="NUMERIC" hibernate-type="java.math.BigDecimal"/>-->
+<!--		<sql-type jdbc-type="FLOAT" hibernate-type="java.lang.Double"/>-->
+<!--		<sql-type jdbc-type="DOUBLE" hibernate-type="java.lang.Double"/>-->
+<!--		<sql-type jdbc-type="REAL" hibernate-type="java.lang.Float"/>-->
+
+<!--		&lt;!&ndash; 布尔类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="BOOLEAN" hibernate-type="java.lang.Boolean"/>-->
+<!--		<sql-type jdbc-type="BIT" hibernate-type="java.lang.Boolean"/>-->
+
+<!--		&lt;!&ndash; 日期时间类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="TIMESTAMP" hibernate-type="java.time.LocalDateTime"/>-->
+<!--		<sql-type jdbc-type="DATE" hibernate-type="java.time.LocalDate"/>-->
+<!--		<sql-type jdbc-type="TIME" hibernate-type="java.time.LocalTime"/>-->
+
+<!--		&lt;!&ndash; 二进制类型 &ndash;&gt;-->
+<!--		<sql-type jdbc-type="BLOB" hibernate-type="byte[]"/>-->
+<!--		<sql-type jdbc-type="BINARY" hibernate-type="byte[]"/>-->
+<!--		<sql-type jdbc-type="VARBINARY" hibernate-type="byte[]"/>-->
+<!--		<sql-type jdbc-type="LONGVARBINARY" hibernate-type="byte[]"/>-->
+<!--	</type-mapping>-->
+
+
+<!--	 1. 包含所有表 -->
+<!--		<table-filter match-name=".*" exclude="false"/>-->
+
+<!--	<table-filter match-catalog="information_schema" exclude="true"/>-->
+<!--	<table-filter match-catalog="mysql" exclude="true"/>-->
+<!--	<table-filter match-catalog="performance_schema" exclude="true"/>-->
+<!--	-->
+<!--&lt;!&ndash;		 2. 排除系统表 &ndash;&gt;-->
+<!--		<table-filter match-name="(?i)(flyway_.*|schema_version|databasechangelog.*|qrtz_.*)" exclude="true"/>-->
+<!--		<table-filter match-name=".*_audit" exclude="true"/>-->
+<!--		<table-filter match-name=".*_backup" exclude="true"/>-->
+<!--		<table-filter match-name="temp_.*" exclude="true"/>-->
+<!--&lt;!&ndash;	 ⭐ 关键：指定 catalog/schema&ndash;&gt;-->
+<!--	<schema-selection match-catalog="`sys`"/>-->
+
+<!--	&lt;!&ndash; 其他配置 &ndash;&gt;-->
+<!--	<table-filter match-name=".*" exclude="false"/>-->
+	<!-- MySQL 表配置示例 -->
+	<!--	<table name="spatial_data">-->
+	<!--		<column name="location" property="location" type="org.locationtech.jts.geom.Point"/>-->
+	<!--		<column name="area" property="area" type="org.locationtech.jts.geom.Polygon"/>-->
+	<!--	</table>-->
+
+	<!--	<table name="users">-->
+	<!--		<primary-key>-->
+	<!--			<generator class="identity"/>-->
+	<!--		</primary-key>-->
+	<!--		<column name="created_at" property="createdAt" type="java.time.LocalDateTime"/>-->
+	<!--		<column name="updated_at" property="updatedAt" type="java.time.LocalDateTime"/>-->
+	<!--		<column name="is_deleted" property="deleted" type="java.lang.Boolean"/>-->
+	<!--	</table>-->
+
+	<table name="ttc_file">
+	</table>
+</hibernate-reverse-engineering>
