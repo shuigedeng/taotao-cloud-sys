@@ -16,9 +16,9 @@
 
 
 
-//plugins {
-//    id("nu.studer.jooq") version "10.2"
-//}
+plugins {
+    id("nu.studer.jooq") version "10.2"
+}
 
 dependencies {
     api project(":taotao-cloud-sys-application")
@@ -32,59 +32,59 @@ dependencies {
     api 'com.mysql:mysql-connector-j:9.5.0'
     api("org.hibernate.tool:hibernate-tools-orm:7.2.1.Final")
     // jOOQ代码生成依赖（注意版本匹配）
-//    jooqGenerator 'com.mysql:mysql-connector-j:9.5.0'
-//    jooqGenerator 'org.jooq:jooq-meta-extensions:3.20.10'
+    jooqGenerator 'com.mysql:mysql-connector-j:9.5.0'
+    jooqGenerator 'org.jooq:jooq-meta-extensions:3.20.10'
 }
 
 
 
 // jOOQ配置
-//jooq {
-//    version = '3.20.10'  // 与dependencies中的jooq一致
-//
-//    configurations {
-//        main {  // 主配置
-//            generationTool {
-//                logging = org.jooq.meta.jaxb.Logging.WARN
-//
-//                // JDBC连接配置
-//                jdbc {
-//                    driver = 'com.mysql.cj.jdbc.Driver'
-//                    url = 'jdbc:mysql://localhost:3306/your_database'
-//                    user = 'root'
-//                    password = 'your_password'
-//                    // 可选：配置属性
+jooq {
+    version = '3.20.10'  // 与dependencies中的jooq一致
+
+    configurations {
+        main {  // 主配置
+            generationTool {
+                //logging = org.jooq.meta.jaxb.Logging.WARN
+
+                // JDBC连接配置
+                jdbc {
+                    driver = 'com.mysql.cj.jdbc.Driver'
+                    url = 'jdbc:mysql://192.168.218.2:3306/test?useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&useInformationSchema=true&nullNamePatternMatchesAll=true'
+                    user = 'root'
+                    password = '123456'
+                    // 可选：配置属性
 //                    properties {
 //                        property {
 //                            key = 'sslMode'
 //                            value = 'DISABLED'
 //                        }
 //                    }
-//                }
-//
-//                // 生成器配置
-//                generator {
-//                    name = 'org.jooq.codegen.JavaGenerator'
-//
-//                    // 数据库配置
-//                    database {
-//                        name = 'org.jooq.meta.mysql.MySQLDatabase'
-//                        // 或 PostgreSQL
-//                        // name = 'org.jooq.meta.postgres.PostgresDatabase'
-//
-//                        // 包含的表（正则表达式）
-//                        includes = '.*'
-//                        // 排除的表
+                }
+
+                // 生成器配置
+                generator {
+                    name = 'org.jooq.codegen.JavaGenerator'
+
+                    // 数据库配置
+                    database {
+                        name = 'org.jooq.meta.mysql.MySQLDatabase'
+                        // 或 PostgreSQL
+                        // name = 'org.jooq.meta.postgres.PostgresDatabase'
+
+                        // 包含的表（正则表达式）
+                        includes = 'sys_config'
+                        // 排除的表
 //                        excludes = '''
 //                            flyway_schema_history |
 //                            databasechangelog |
 //                            databasechangeloglock
 //                        '''
-//
-//                        // 输入schema
-//                        inputSchema = 'your_database'
-//
-//                        // 自定义类型映射
+
+                        // 输入schema
+                        inputSchema = 'test'
+
+                        // 自定义类型映射
 //                        forcedTypes {
 //                            forcedType {
 //                                name = 'vARCHAR'
@@ -96,50 +96,50 @@ dependencies {
 //                                includeTypes = '(?i:TINYINT\\(1\\))'
 //                            }
 //                        }
-//                    }
-//
-//                    // 生成目标
-//                    generate {
-//                        // 生成的内容
-//                        pojos = true              // 生成POJO
-//                        daos = true               // 生成DAO
-//                        immutablePojos = false    // 不可变POJO
-//                        fluentSetters = true      // 流畅的setter
-//                        javaTimeTypes = true      // 使用Java8时间类型
-//
-//                        // 关联关系
-//                        relations = true
-//                        deprecated = false
-//                        records = true
-//                        globalObjectReferences = true
-//                        globalCatalogReferences = false
-//                        globalSchemaReferences = false
-//                        globalTableReferences = false
-//                        globalSequenceReferences = false
-//                        globalUDTReferences = false
-//                        globalRoutineReferences = false
-//                        globalQueueReferences = false
-//                        globalLinkReferences = false
-//                    }
-//
-//                    // 目标配置
-//                    target {
-//                        packageName = 'com.example.jooq'
-//                        directory = 'src/main/java'
-//                        encoding = 'UTF-8'
-//                    }
-//
-//                    // 策略配置
-//                    strategy {
-//                        name = 'org.jooq.codegen.DefaultGeneratorStrategy'
-//                        // 或自定义策略
-//                        // name = 'com.example.CustomGeneratorStrategy'
-//                    }
-//                }
-//            }
-//        }
-//
-//        // 可选：测试数据库配置
+                    }
+
+                    // 生成目标
+                    generate {
+                        // 生成的内容
+                        pojos = true              // 生成POJO
+                        daos = true               // 生成DAO
+                        immutablePojos = false    // 不可变POJO
+                        fluentSetters = true      // 流畅的setter
+                        javaTimeTypes = true      // 使用Java8时间类型
+
+                        // 关联关系
+                        relations = true
+                        deprecated = false
+                        records = true
+                        globalObjectReferences = true
+                        globalCatalogReferences = false
+                        globalSchemaReferences = false
+                        globalTableReferences = false
+                        globalSequenceReferences = false
+                        globalUDTReferences = false
+                        globalRoutineReferences = false
+                        globalQueueReferences = false
+                        globalLinkReferences = false
+                    }
+
+                    // 目标配置
+                    target {
+                        packageName = 'com.taotao.cloud.sys.infrastructure.jooq'
+                        directory = 'src/main/java'
+                        encoding = 'UTF-8'
+                    }
+
+                    // 策略配置
+                    strategy {
+                        name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+                        // 或自定义策略
+                        // name = 'com.example.CustomGeneratorStrategy'
+                    }
+                }
+            }
+        }
+
+        // 可选：测试数据库配置
 //        test {
 //            generationTool {
 //                jdbc {
@@ -160,8 +160,8 @@ dependencies {
 //                }
 //            }
 //        }
-//    }
-//}
+    }
+}
 
 
 // 定义一个独立的配置，避免污染主依赖
