@@ -30,7 +30,8 @@ dependencies {
     annotationProcessor "jakarta.persistence:jakarta.persistence-api:3.2.0"
 
     api 'com.mysql:mysql-connector-j:9.5.0'
-    api("org.hibernate.tool:hibernate-tools-orm:7.2.1.Final")
+
+    testImplementation("org.hibernate.tool:hibernate-tools-orm:7.2.1.Final")
     // jOOQ代码生成依赖（注意版本匹配）
     jooqGenerator 'com.mysql:mysql-connector-j:9.5.0'
     jooqGenerator 'org.jooq:jooq-meta-extensions:3.20.10'
@@ -127,7 +128,7 @@ jooq {
                     // 目标配置
                     target {
                         packageName = 'com.taotao.cloud.sys.infrastructure.jooq'
-                        directory = 'src/main/java'
+                        directory = 'build/generated/sources/jooq/main'
                         encoding = 'UTF-8'
                     }
 
