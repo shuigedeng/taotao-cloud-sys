@@ -15,7 +15,6 @@
  */
 
 
-
 plugins {
     id("nu.studer.jooq") version "10.2"
 }
@@ -47,22 +46,16 @@ jooq {
         main {  // 主配置
             generateSchemaSourceOnCompilation = false
 
+            //https://github.com/jOOQ/jOOQ/blob/version-3.20.5/jOOQ-meta/src/main/java/org/jooq/meta/jaxb/Configuration.java
             generationTool {
                 //logging = org.jooq.meta.jaxb.Logging.WARN
 
                 // JDBC连接配置
                 jdbc {
                     driver = 'com.mysql.cj.jdbc.Driver'
-                    url = 'jdbc:mysql://192.168.218.2:3306/test?useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&useInformationSchema=true&nullNamePatternMatchesAll=true'
+                    url = 'jdbc:mysql://127.0.0.1:3306/taotao-cloud-sys?useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&useInformationSchema=true&nullNamePatternMatchesAll=true&allowPublicKeyRetrieval=true'
                     user = 'root'
                     password = '123456'
-                    // 可选：配置属性
-//                    properties {
-//                        property {
-//                            key = 'sslMode'
-//                            value = 'DISABLED'
-//                        }
-//                    }
                 }
 
                 // 生成器配置
@@ -76,7 +69,7 @@ jooq {
                         // name = 'org.jooq.meta.postgres.PostgresDatabase'
 
                         // 包含的表（正则表达式）
-                        includes = 'sys_config'
+                        //includes = '*'
                         // 排除的表
 //                        excludes = '''
 //                            flyway_schema_history |
@@ -85,7 +78,7 @@ jooq {
 //                        '''
 
                         // 输入schema
-                        inputSchema = 'test'
+                        inputSchema = 'taotao-cloud-sys'
 
                         // 自定义类型映射
 //                        forcedTypes {
@@ -102,13 +95,23 @@ jooq {
                     }
 
                     // 生成目标
+                    //https://github.com/jOOQ/jOOQ/blob/version-3.20.10/jOOQ-meta/src/main/java/org/jooq/meta/jaxb/Generate.java
                     generate {
                         // 生成的内容
                         pojos = true              // 生成POJO
                         daos = true               // 生成DAO
+                        springDao = true               // 生成DAO
                         immutablePojos = false    // 不可变POJO
                         fluentSetters = true      // 流畅的setter
                         javaTimeTypes = true      // 使用Java8时间类型
+
+                        // ✅ 注解的正确配置（是独立的属性，不是嵌套对象）：
+                        jpaAnnotations = true        // 生成 @Entity, @Table, @Id 等
+                        validationAnnotations = true  // 生成 @NotNull, @Size 等
+                        springAnnotations = true     // 生成 @Repository 等
+
+                        // ✅ Java 8+ 时间类型
+                        javaTimeTypes = true
 
                         // 关联关系
                         relations = true
@@ -123,6 +126,20 @@ jooq {
                         globalRoutineReferences = false
                         globalQueueReferences = false
                         globalLinkReferences = false
+                        generatedAnnotationJooqVersion=false
+                        jooqVersionReference=false
+
+                        generatedAnnotation = true
+                        // 配置注释位置
+                        // 这些配置影响注释生成
+                        comments = true           // 启用注释
+                        commentsOnCatalogs = true
+                        commentsOnSchemas = true
+                        commentsOnTables = true
+                        commentsOnColumns = true  // 字段注释
+
+                        // 关键：关闭方法上的注释
+                        javadoc = false  // 不生成方法上的JavaDoc
                     }
 
                     // 目标配置
@@ -142,27 +159,6 @@ jooq {
             }
         }
 
-        // 可选：测试数据库配置
-//        test {
-//            generationTool {
-//                jdbc {
-//                    driver = 'org.h2.Driver'
-//                    url = 'jdbc:h2:mem:testdb'
-//                    user = 'sa'
-//                    password = ''
-//                }
-//                generator {
-//                    database {
-//                        name = 'org.jooq.meta.h2.H2Database'
-//                        includes = '.*'
-//                    }
-//                    target {
-//                        packageName = 'com.example.jooq.test'
-//                        directory = 'src/test/java'
-//                    }
-//                }
-//            }
-//        }
     }
 }
 
@@ -188,20 +184,4 @@ task generateMybatis(type: JavaExec) {
     args '-configfile', 'generatorConfiguration.xml'
     args '-overwrite'
 }
-
-//// 取消默认的依赖关系
-//project.tasks.named('generateJooq') {
-//    // 移除与 compileJava 的依赖关系
-//    outputs.upToDateWhen { false }
-//}
-//
-//// 或者明确指定不依赖 compileJava
-//compileJava {
-//    dependsOn -= tasks.generateJooq
-//}
-
-// 移除 generateJooq 对 compileJava 的依赖
-//project.afterEvaluate {
-//    compileJava.dependsOn.remove(generateJooq)
-//}
 
