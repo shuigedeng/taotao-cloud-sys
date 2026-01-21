@@ -44,6 +44,8 @@ jooq {
 
     configurations {
         main {  // 主配置
+            generateSchemaSourceOnCompilation = false
+
             generationTool {
                 //logging = org.jooq.meta.jaxb.Logging.WARN
 
@@ -186,7 +188,19 @@ task generateMybatis(type: JavaExec) {
     args '-overwrite'
 }
 
+//// 取消默认的依赖关系
+//project.tasks.named('generateJooq') {
+//    // 移除与 compileJava 的依赖关系
+//    outputs.upToDateWhen { false }
+//}
+//
+//// 或者明确指定不依赖 compileJava
+//compileJava {
+//    dependsOn -= tasks.generateJooq
+//}
 
-
-
+// 移除 generateJooq 对 compileJava 的依赖
+//project.afterEvaluate {
+//    compileJava.dependsOn.remove(generateJooq)
+//}
 
