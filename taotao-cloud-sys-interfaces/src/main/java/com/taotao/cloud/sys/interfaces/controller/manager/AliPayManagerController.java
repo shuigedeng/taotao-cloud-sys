@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "工具管理端-支付宝管理API", description = "工具管理端-支付宝管理API")
-@RequestMapping("/sys/tools/aliPay")
+@RequestMapping("/manager/sys/aliPay")
 public class AliPayManagerController extends BusinessController {
 //
 //    private final AlipayUtils alipayUtils;

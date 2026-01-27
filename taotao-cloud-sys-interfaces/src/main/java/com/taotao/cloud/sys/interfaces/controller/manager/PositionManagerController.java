@@ -33,6 +33,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/manager/position")
+@RequestMapping("/manager/sys/position")
 @Tag(name = "管理端-岗位管理API", description = "管理端-岗位管理API")
 public class PositionManagerController extends BusinessController {}

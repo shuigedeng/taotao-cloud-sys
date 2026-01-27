@@ -41,7 +41,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Validated
 @RestController
-@RequestMapping("/sys/manager/dept")
+@RequestMapping("/manager/sys/dept")
 @Tag(name = "管理端-部门管理API", description = "管理端-部门管理API")
 @RequiredArgsConstructor
 public class DeptManagerController extends BusinessController {

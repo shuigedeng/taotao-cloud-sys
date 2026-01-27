@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Validated
 @RestController
-@RequestMapping("/sys/manager/logistics")
+@RequestMapping("/manager/sys/logistics")
 @Tag(name = "管理端-物流公司管理API", description = "管理端-物流公司管理API")
 public class LogisticsManagerController extends BusinessController {
 

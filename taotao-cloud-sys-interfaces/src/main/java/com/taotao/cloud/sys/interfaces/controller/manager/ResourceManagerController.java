@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/manager/resource")
+@RequestMapping("/manager/sys/resource")
 @Tag(name = "管理端-资源管理API", description = "管理端-资源管理API")
 public class ResourceManagerController extends BusinessController {
 

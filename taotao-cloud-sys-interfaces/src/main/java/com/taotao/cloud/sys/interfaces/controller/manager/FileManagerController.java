@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "文件管理接口11111")
-@RequestMapping("/file/common")
+@RequestMapping("/manager/sys/file/common")
 public class FileManagerController extends BusinessController {
 
     //    private final IFileService fileService;

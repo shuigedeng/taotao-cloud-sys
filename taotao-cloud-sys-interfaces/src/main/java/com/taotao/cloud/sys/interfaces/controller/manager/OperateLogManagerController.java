@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "操作日志")
 @RestController
-@RequestMapping("/log/operate")
+@RequestMapping("/manager/sys/log/operate")
 @RequiredArgsConstructor
 public class OperateLogManagerController extends BusinessController {
     // private final OperateLogService operateLogService;

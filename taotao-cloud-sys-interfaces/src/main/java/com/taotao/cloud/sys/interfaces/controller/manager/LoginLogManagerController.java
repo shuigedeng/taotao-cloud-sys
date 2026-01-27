@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "登录日志")
 @RestController
-@RequestMapping("/log/login")
+@RequestMapping("/manager/sys/log/login")
 @RequiredArgsConstructor
 public class LoginLogManagerController extends BusinessController {
     //    private final LoginLogService loginLogService;

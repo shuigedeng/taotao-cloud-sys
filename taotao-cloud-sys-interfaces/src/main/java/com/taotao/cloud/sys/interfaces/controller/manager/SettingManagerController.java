@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "工具管理端-配置管理API", description = "工具管理端-配置管理API")
-@RequestMapping("/sys/tools/setting")
+@RequestMapping("/manager/sys/setting")
 public class SettingManagerController extends BusinessController {
 
     //    private final ISettingService settingService;

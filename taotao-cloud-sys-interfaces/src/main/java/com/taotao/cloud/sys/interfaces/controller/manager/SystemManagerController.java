@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "工具管理端-system管理API", description = "工具管理端-system管理API")
-@RequestMapping("/sys/tools/system")
+@RequestMapping("/manager/sys/system")
 public class SystemManagerController extends BusinessController {
 
     private final SystemCommandService systemService;

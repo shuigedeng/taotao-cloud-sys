@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "应用管理")
 @RestController
-@RequestMapping("/app")
+@RequestMapping("/manager/sys/app")
 @RequiredArgsConstructor
 public class AppManagerController extends BusinessController {
 

@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Validated
 @RestController
-@RequestMapping("/sys/manager/dict/item")
+@RequestMapping("/manager/sys/dict/item")
 @Tag(name = "管理端-字典项管理API", description = "管理端-字典项管理API")
 public class DictItemManagerController extends BusinessController {
 

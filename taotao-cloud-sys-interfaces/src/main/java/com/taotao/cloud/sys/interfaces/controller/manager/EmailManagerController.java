@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "工具管理端-邮件管理API", description = "工具管理端-邮件管理API")
-@RequestMapping("/sys/tools/email")
+@RequestMapping("/manager/sys/email")
 public class EmailManagerController extends BusinessController {
 //
 ////	private final RedisDelayQueue redisDelayQueue;

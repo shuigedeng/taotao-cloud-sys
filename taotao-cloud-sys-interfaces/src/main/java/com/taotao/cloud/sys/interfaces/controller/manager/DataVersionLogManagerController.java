@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "数据版本日志")
 @RestController
-@RequestMapping("/log/dataVersion")
+@RequestMapping("/manager/sys/log/dataVersion")
 @RequiredArgsConstructor
 public class DataVersionLogManagerController extends BusinessController {
 

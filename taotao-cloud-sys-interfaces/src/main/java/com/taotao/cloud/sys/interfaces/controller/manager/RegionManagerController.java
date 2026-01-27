@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/manager/region")
+@RequestMapping("/manager/sys/region")
 @Tag(name = "管理端-地区管理API", description = "管理端-地区管理API")
 public class RegionManagerController extends BusinessController {
 

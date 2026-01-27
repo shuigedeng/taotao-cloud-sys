@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/i18n/i18n-data")
+@RequestMapping("/manager/sys/i18n/data")
 @Tag(name = "国际化信息管理")
 public class I18nDataManagerController extends BusinessController {
 

@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/manager/role")
+@RequestMapping("/manager/sys/role")
 @Tag(name = "管理端-角色管理API", description = "管理端-角色管理API")
 public class RoleManagerController extends BusinessController {
 

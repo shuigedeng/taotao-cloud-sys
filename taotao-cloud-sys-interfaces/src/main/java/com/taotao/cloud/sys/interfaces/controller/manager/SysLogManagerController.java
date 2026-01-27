@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-12-19 09:30:45
  */
 @RestController
-@RequestMapping("/sys/log")
+@RequestMapping("/manager/sys/sys/log")
 @RequiredArgsConstructor
 @Tag(name = "工具管理端-日志管理模块", description = "工具管理端-日志管理模块")
 public class SysLogManagerController extends BusinessController {}
