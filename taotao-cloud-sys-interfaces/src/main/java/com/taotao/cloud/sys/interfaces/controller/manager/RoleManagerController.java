@@ -75,7 +75,7 @@ public class RoleManagerController extends BusinessController {
     //    })
     //    @RequestLogger
     //    @PreAuthorize("hasAuthority('sys:role:menu')")
-    //    @PutMapping("/resources/{roleId}")
+    //    @PostMapping("/resources/{roleId}")
     //    public Result<Boolean> saveRoleMenus(@NotNull(message = "角色id不能为空") @PathVariable(name =
     // "roleId") Long roleId,
     //                                         @Validated @NotEmpty(message = "菜单id列表不能为空")

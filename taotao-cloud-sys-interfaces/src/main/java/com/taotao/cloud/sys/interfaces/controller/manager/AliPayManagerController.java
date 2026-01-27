@@ -44,7 +44,7 @@ public class AliPayManagerController extends BusinessController {
 //    @Operation(summary = "配置支付宝", description = "配置支付宝")
 //    @RequestLogger
 //    @PreAuthorize("@el.check('admin','timing:list')")
-//    @PutMapping
+//    @PostMapping
 //    public Result<Boolean> payConfig(@Validated @RequestBody AlipayConfig alipayConfig) {
 //        alipayConfig.setId(1L);
 //        alipayService.update(alipayConfig);

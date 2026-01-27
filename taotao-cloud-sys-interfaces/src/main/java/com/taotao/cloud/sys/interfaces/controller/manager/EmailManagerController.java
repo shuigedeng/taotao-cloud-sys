@@ -52,7 +52,7 @@ public class EmailManagerController extends BusinessController {
 //	@Operation(summary = "配置邮件", description = "配置邮件")
 //	@RequestLogger
 //	@PreAuthorize("@el.check('admin','timing:list')")
-//	@PutMapping
+//	@PostMapping
 //	public Result<Boolean> update(@Validated @RequestBody EmailConfig emailConfig) {
 //		emailService.update(emailConfig, emailService.find());
 //		return Result.success(true);

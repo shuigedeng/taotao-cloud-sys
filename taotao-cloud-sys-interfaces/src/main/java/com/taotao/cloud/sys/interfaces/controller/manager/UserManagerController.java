@@ -112,7 +112,7 @@ public class UserManagerController extends BusinessController {
     //		@Parameter(name = "userId", description = "用户id", required = true, example = "123", in =
     // ParameterIn.PATH),
     //	})
-    //	@PutMapping("/roles/{userId}")
+    //	@PostMapping("/roles/{userId}")
     //	@PreAuthorize("hasAuthority('sys:user:role')")
     //	public Result<Boolean> updateUserRoles(
     //		@NotNull(message = "用户id不能为空") @PathVariable Long userId,

@@ -71,7 +71,7 @@ public class I18nDataManagerController extends BusinessController {
     //		return Result.success(true);
     //	}
     //
-    //	@PutMapping
+    //	@PostMapping
     //	@PreAuthorize("@per.hasPermission('i18n:i18n-data:edit')")
     //	@Operation(summary = "修改国际化信息", description = "修改国际化信息")
     //	public Result<Boolean> updateById(@RequestBody I18nDataDTO i18nDataDTO) {
@@ -80,7 +80,7 @@ public class I18nDataManagerController extends BusinessController {
     //		return Result.success(true);
     //	}
     //
-    //	@DeleteMapping
+    //	@PostMapping
     //	@PreAuthorize("@per.hasPermission('i18n:i18n-data:del')")
     //	@Operation(summary = "通过id删除国际化信息", description = "通过id删除国际化信息")
     //	public Result<Boolean> removeById(@RequestParam("code") String code,

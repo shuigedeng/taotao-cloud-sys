@@ -57,7 +57,7 @@ public class SensitiveWordsManagerController extends BusinessController {
     //    }
     //
     //    @Operation(summary = "修改敏感词", description = "修改敏感词")
-    //    @PutMapping("/{id}")
+    //    @PostMapping("/{id}")
     //    public Result<SensitiveWord> edit(
     //            @Parameter(description = "敏感词ID", required = true) @NotNull(message = "敏感词ID不能为空")
     // @PathVariable Long id,
@@ -69,7 +69,7 @@ public class SensitiveWordsManagerController extends BusinessController {
     //    }
     //
     //    @Operation(summary = "批量删除", description = "批量删除")
-    //    @DeleteMapping(value = "/{ids}")
+    //    @PostMapping(value = "/{ids}")
     //    public Result<Boolean> delAllByIds(
     //            @Parameter(description = "敏感词ID", required = true) @NotEmpty(message =
     // "敏感词ID不能为空") @PathVariable
