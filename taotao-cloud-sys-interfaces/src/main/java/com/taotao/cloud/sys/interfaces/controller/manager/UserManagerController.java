@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-用户管理API
+ * 平台管理端-用户API
  *
  * @author shuigedeng
  * @version 2021.10
@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping("/manager/sys/user")
-@Tag(name = "管理端-用户管理API", description = "管理端-用户管理API")
+@Tag(name = "平台管理端-用户API", description = "平台管理端-用户API")
 public class UserManagerController extends BusinessController {
 
     //	//敏感字段加密、解密、脱敏

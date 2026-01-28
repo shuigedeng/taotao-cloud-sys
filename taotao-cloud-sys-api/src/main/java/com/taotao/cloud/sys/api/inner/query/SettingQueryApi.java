@@ -41,10 +41,10 @@ public interface SettingQueryApi {
      * @return 配置信息
      * @since 2022-03-25 14:10:22
      */
-    @GetExchange("/sys/feign/tools/setting")
+    @GetExchange("/sys/tools/setting")
     SettingApiResponse get(@RequestParam(value = "key") String key);
 
-    @GetExchange("/sys/feign/tools/setting/base")
+    @GetExchange("/sys/tools/setting/base")
     BaseSettingApiResponse getBaseSetting(@RequestParam(value = "name") String name);
 
     /**
@@ -54,33 +54,33 @@ public interface SettingQueryApi {
      * @return {@link Result }<{@link GoodsSettingApiResponse }>
      * @since 2022-04-25 16:47:40
      */
-    @GetExchange("/sys/feign/tools/setting/goods")
+    @GetExchange("/sys/tools/setting/goods")
     GoodsSettingApiResponse getGoodsSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/order")
+    @GetExchange("/sys/tools/setting/order")
     OrderSettingApiResponse getOrderSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/experience")
+    @GetExchange("/sys/tools/setting/experience")
     ExperienceSettingApiResponse getExperienceSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/point")
+    @GetExchange("/sys/tools/setting/point")
     PointSettingApiResponse getPointSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/qq/connect")
+    @GetExchange("/sys/tools/setting/qq/connect")
     QQConnectSettingApiResponse getQQConnectSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/wechat/connect")
+    @GetExchange("/sys/tools/setting/wechat/connect")
     WechatConnectSettingApiResponse getWechatConnectSetting(
             @RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/seckill")
+    @GetExchange("/sys/tools/setting/seckill")
     SeckillSettingApiResponse getSeckillSetting(@RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/ali")
+    @GetExchange("/sys/tools/setting/ali")
     AlipayPaymentSettingApiResponse getAlipayPaymentSetting(
             @RequestParam(value = "name") String name);
 
-    @GetExchange("/sys/feign/tools/setting/wechat")
+    @GetExchange("/sys/tools/setting/wechat")
     WechatPaymentSettingApiResponse getWechatPaymentSetting(
             @RequestParam(value = "name") String name);
 }

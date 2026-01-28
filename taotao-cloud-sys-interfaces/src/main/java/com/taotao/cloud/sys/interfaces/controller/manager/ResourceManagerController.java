@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-菜单管理API
+ * 平台管理端-菜单API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager/sys/resource")
-@Tag(name = "管理端-资源管理API", description = "管理端-资源管理API")
+@Tag(name = "平台管理端-资源API", description = "平台管理端-资源API")
 public class ResourceManagerController extends BusinessController {
 
     //    //

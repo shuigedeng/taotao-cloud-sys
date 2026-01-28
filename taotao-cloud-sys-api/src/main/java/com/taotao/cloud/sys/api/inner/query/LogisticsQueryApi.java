@@ -43,7 +43,7 @@ public interface LogisticsQueryApi {
      * @return {@link Result }<{@link LogisticsApiResponse }>
      * @since 2022-04-25 16:47:29
      */
-    @GetExchange("/sys/feign/logistic/codes")
+    @GetExchange("/sys/logistic/codes")
     LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
 
     /**
@@ -54,11 +54,11 @@ public interface LogisticsQueryApi {
      * @return {@link Result }<{@link TracesApiResponse }>
      * @since 2022-04-25 16:47:32
      */
-    @GetExchange("/sys/feign/logistic/info")
+    @GetExchange("/sys/logistic/info")
     TracesApiResponse getLogistic(
             @RequestParam(value = "logisticsId") Long logisticsId,
             @RequestParam(value = "logisticsNo") String logisticsNo);
 
-    @GetExchange("/sys/feign/logistic/list")
+    @GetExchange("/sys/logistic/list")
     List<LogisticsApiResponse> list();
 }

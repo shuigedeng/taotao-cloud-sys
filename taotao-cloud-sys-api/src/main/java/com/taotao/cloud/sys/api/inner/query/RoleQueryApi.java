@@ -42,6 +42,6 @@ public interface RoleQueryApi {
      * @return 角色列表
      * @since 2020/10/21 15:13
      */
-    @GetExchange("/sys/feign/role/info/userId")
+    @GetExchange("/sys/role/info/userId")
     List<RoleQueryApiResponse> findRoleByUserId(@RequestParam(value = "userId") Long userId);
 }

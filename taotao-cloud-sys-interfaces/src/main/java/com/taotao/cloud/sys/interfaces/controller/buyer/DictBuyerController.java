@@ -16,15 +16,20 @@
 
 package com.taotao.cloud.sys.interfaces.controller.buyer;
 
+import com.taotao.boot.common.model.result.Result;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * pc端-字典API
+ * 买家端-字典API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -34,50 +39,42 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/sys/buyer/dict")
-@Tag(name = "pc端-字典API", description = "pc端-字典API")
+@Tag(name = "买家端-字典API", description = "买家端-字典API")
 public class DictBuyerController extends BusinessController {
 
-    // @Autowired
-    // private ProducerService producerService;
 
-    //    @NotAuth
-    //    @GetMapping("/add/{type}")
-    //    @Operation( summary="通过code查询所有字典列表")
-    //    public Result<Boolean> add(@PathVariable String type) throws
-    // SQLIntegrityConstraintViolationException {
-    //        Boolean result = service().add(type);
-    //        return success(result);
-    //    }
-    //
-    //    @NotAuth
-    //    @GetMapping("/add1")
-    //    @Operation(summary="通过code查询所有字典列表")
-    //    public Result<Boolean> add1() {
-    //        Boolean result = service().add1();
-    //        return success(result);
-    //    }
-    //
-    //    @GetMapping("/test/codexxxxx")
-    //    @Operation(summary="通过code查询所有字典列表")
-    //    public Result<Boolean> testCode(@RequestParam String code) {
-    //        // try {
-    //        //	producerService.sendStringMsg();
-    //        //	producerService.sendClassMsg();
-    //        // } catch (PulsarClientException e) {
-    //        //	LogUtils.error(e);
-    //        // }
-    //
-    //        Dict byCode = service().findByCode(code);
-    //        LogUtils.info(String.valueOf(byCode));
-    //        return Result.success(true);
-    //    }
-    //
-    //    @NotAuth
-    //    @GetMapping("/testMybatisQueryStructure")
-    //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")
-    //    public Result<Dict> testMybatisQueryStructure(@RequestParam Long dictId) {
-    //        DictQuery dictQuery = new DictQuery();
-    //        dictQuery.setDictId(dictId);
-    //        return Result.success(service().testMybatisQueryStructure(dictQuery));
-    //    }
+	@NotAuth
+	@GetMapping("/query/type")
+	@Operation(summary = "通过code查询所有字典列表")
+	public Result<Boolean> add( @RequestParam String type ) {
+//		Boolean result = service().add(type);
+//		return success(result);
+		return null;
+	}
+
+
+	@GetMapping("/query/code")
+	@Operation(summary = "通过code查询所有字典列表")
+	public Result<Boolean> testCode( @RequestParam String code ) {
+		// try {
+		//	producerService.sendStringMsg();
+		//	producerService.sendClassMsg();
+		// } catch (PulsarClientException e) {
+		//	LogUtils.error(e);
+		// }
+
+//		Dict byCode = service().findByCode(code);
+//		LogUtils.info(String.valueOf(byCode));
+//		return Result.success(true);
+		return null;
+	}
+
+//	@NotAuth
+//	@GetMapping("/testMybatisQueryStructure")
+//	 @Operation(summary = "字典列表code查询")
+//	public Result<DictCO> testMybatisQueryStructure( @RequestParam Long dictId ) {
+//		DictQuery dictQuery = new DictQuery();
+//		dictQuery.setDictId(dictId);
+//		return Result.success(service().testMybatisQueryStructure(dictQuery));
+//	}
 }

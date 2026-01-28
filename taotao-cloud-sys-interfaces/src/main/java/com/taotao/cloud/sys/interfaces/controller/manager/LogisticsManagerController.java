@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-物流公司管理API
+ * 平台管理端-物流公司API
  *
  * @author shuigedeng
  * @version 2022.03
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping("/manager/sys/logistics")
-@Tag(name = "管理端-物流公司管理API", description = "管理端-物流公司管理API")
+@Tag(name = "平台管理端-物流公司API", description = "平台管理端-物流公司API")
 public class LogisticsManagerController extends BusinessController {
 
     //    private final ILogisticsService logisticsService;

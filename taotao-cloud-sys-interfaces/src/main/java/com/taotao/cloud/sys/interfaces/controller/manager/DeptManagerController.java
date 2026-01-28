@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-部门管理API
+ * 平台管理端-部门API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @RequestMapping("/manager/sys/dept")
-@Tag(name = "管理端-部门管理API", description = "管理端-部门管理API")
+@Tag(name = "平台管理端-部门API", description = "平台管理端-部门API")
 @RequiredArgsConstructor
 public class DeptManagerController extends BusinessController {
 
@@ -50,9 +50,10 @@ public class DeptManagerController extends BusinessController {
 
     @Operation(summary = "获取部门树", description = "获取部门树")
     @RequestLogger
-    @GetMapping("/tree")
-    @SentinelResource("tree")
+    @GetMapping("/query/tree")
+    @SentinelResource("/query/tree")
     public Result<List<DeptTreeResult>> tree() {
-        return Result.success(ForestNodeMerger.merge(deptService.tree()));
+		List<DeptTreeResult> deptTreeResults = ForestNodeMerger.merge(deptService.tree());
+		return Result.success(deptTreeResults);
     }
 }

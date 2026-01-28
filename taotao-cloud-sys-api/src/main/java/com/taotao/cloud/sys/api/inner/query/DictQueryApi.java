@@ -61,8 +61,8 @@ public interface DictQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/inner/dict/query/code")
-    Response<DictQueryApiResponse> findByCode(
+    @PostExchange("/inner/sys/dict/query/code")
+    Response<DictQueryApiResponse> queryByCode(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
@@ -84,7 +84,7 @@ public interface DictQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/inner/dict/query/test")
-    Response<DictQueryApiResponse> test(
+    @PostExchange("/inner/sys/dict/query/test")
+    Response<DictQueryApiResponse> queryTest(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 }

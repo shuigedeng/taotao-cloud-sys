@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 商户管理-字典管理API
+ * 商户管理-字典API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -33,6 +33,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/seller/dict")
-@Tag(name = "商户管理端-字典管理API", description = "商户管理端-字典管理API")
-public class DictSellerController extends BusinessController {}
+@RequestMapping("/seller/seller/dict")
+@Tag(name = "商户管理端-字典API", description = "商户管理端-字典API")
+public class DictSellerController extends BusinessController {
+
+
+}

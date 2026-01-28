@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Validated
 @RestController
-@Tag(name = "工具管理端-配置管理API", description = "工具管理端-配置管理API")
+@Tag(name = "平台管理端-配置API", description = "平台管理端-配置API")
 @RequestMapping("/manager/sys/setting")
 public class SettingManagerController extends BusinessController {
 

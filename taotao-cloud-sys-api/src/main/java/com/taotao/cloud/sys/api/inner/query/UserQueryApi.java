@@ -57,7 +57,7 @@ public interface UserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetExchange(value = "/sys/feign/user/info/username")
+    @GetExchange(value = "/sys/user/info/username")
     UserQueryApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
 
     /**
@@ -80,7 +80,7 @@ public interface UserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetExchange(value = "/sys/feign/user/info/social/{social}")
+    @GetExchange(value = "/sys/user/info/social/{social}")
     BaseSecurityUser getUserInfoBySocial(
             @RequestParam("providerId") String providerId,
             @RequestParam("providerUserId") int providerUserId);
@@ -104,7 +104,7 @@ public interface UserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetExchange(value = "/sys/feign/user/info")
+    @GetExchange(value = "/sys/user/info")
     BaseSecurityUser getSysSecurityUser(
             @RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail")
                     String nicknameOrUserNameOrPhoneOrEmail);

@@ -59,7 +59,7 @@ public interface SocialUserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange(value = "/sys/feign/social-user")
+    @PostExchange(value = "/sys/social-user")
     SocialUserApiResponse saveAndFlush(@RequestBody SocialUserApiResponse socialUserApiResponse);
 
     /**
@@ -81,7 +81,7 @@ public interface SocialUserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetExchange(value = "/sys/feign/social-user/info/username")
+    @GetExchange(value = "/sys/social-user/info/username")
     SocialUserApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
 
     /**
@@ -105,7 +105,7 @@ public interface SocialUserQueryApi {
                         date = "2022-07-01 17:11:55")
             })
     @GetExchange(
-            value = "/sys/feign/social-user/info/social/{social}")
+            value = "/sys/social-user/info/social/{social}")
     SocialUserApiResponse getUserInfoBySocial(
             @RequestParam("providerId") String providerId,
             @RequestParam("providerUserId") int providerUserId);
@@ -129,7 +129,7 @@ public interface SocialUserQueryApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @GetExchange(value = "/sys/feign/social-user/info/security")
+    @GetExchange(value = "/sys/social-user/info/security")
     SocialUserApiResponse getSysSecurityUser(
             @RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail")
                     String nicknameOrUserNameOrPhoneOrEmail);

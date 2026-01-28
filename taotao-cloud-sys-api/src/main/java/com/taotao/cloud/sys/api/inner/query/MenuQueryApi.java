@@ -43,7 +43,7 @@ public interface MenuQueryApi {
      * @return 角色列表
      * @since 2020/10/21 15:24
      */
-    @GetExchange("/sys/feign/menu/info/codes")
+    @GetExchange("/sys/menu/info/codes")
     List<MenuQueryApiResponse> findResourceByCodes(
             @RequestParam(value = "codes") Set<String> codes);
 }

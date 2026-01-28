@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-部门管理API
+ * 平台管理端-部门API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager/sys/org")
-@Tag(name = "管理端-部门管理API", description = "管理端-部门管理API")
+@Tag(name = "平台管理端-部门API", description = "平台管理端-部门API")
 public class OrgManagerController extends BusinessController {
     //
     //    @Operation(summary = "获取部门树", description = "获取部门树")

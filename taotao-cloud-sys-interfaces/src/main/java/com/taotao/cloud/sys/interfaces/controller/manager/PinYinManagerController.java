@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Validated
 @RestController
-@Tag(name = "工具管理端-拼音管理API", description = "工具管理端-拼音管理API")
+@Tag(name = "平台管理端-拼音API", description = "平台管理端-拼音API")
 @RequestMapping("/manager/sys/pinyin")
 public class PinYinManagerController extends BusinessController {
 

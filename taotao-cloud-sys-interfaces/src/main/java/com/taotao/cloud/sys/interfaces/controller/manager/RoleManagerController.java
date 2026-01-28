@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-角色管理API
+ * 平台管理端-角色API
  *
  * @author shuigedeng
  * @version 2021.10
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager/sys/role")
-@Tag(name = "管理端-角色管理API", description = "管理端-角色管理API")
+@Tag(name = "平台管理端-角色API", description = "平台管理端-角色API")
 public class RoleManagerController extends BusinessController {
 
     //    @Operation(summary = "根据用户id获取角色列表", description = "根据用户id获取角色列表")

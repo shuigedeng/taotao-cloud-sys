@@ -27,15 +27,16 @@ import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
+import com.taotao.cloud.sys.api.inner.command.DictCommandApi;
+import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
-import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
-import com.taotao.cloud.sys.application.service.query.DictQueryService;
+import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,17 +47,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping
-public class DictQueryApiController extends InnerController implements DictQueryApi {
+@Tag(name = "内部端-字典API", description = "内部端-字典API")
+public class DictInnerApiController extends InnerController implements DictCommandApi, DictQueryApi {
 
-	private final DictQueryService dictQueryService;
+	private final DictCommandService dictCommandService;
 
 	@Override
-	@NotAuth
+	@Operation(summary = "添加部门", description = "添加部门")
+	@RequestLogger
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictQueryApiResponse> findByCode(
-		@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest) {
+	public Response<DictQueryApiResponse> save( Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
@@ -72,7 +74,7 @@ public class DictQueryApiController extends InnerController implements DictQuery
 	}
 
 	@Override
-	@Operation(summary = "test", description = "test")
+	@Operation(summary = "测试部门", description = "测试部门")
 	@RequestLogger
 	@NotAuth
 	@Idempotent(perFix = "test")
@@ -84,8 +86,7 @@ public class DictQueryApiController extends InnerController implements DictQuery
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
-	public Response<DictQueryApiResponse> test(
-		Request<DictQueryApiRequest> dictQueryApiRequest) {
+	public Response<DictQueryApiResponse> test( Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
 		//		Dict dict = service().findByCode(id);
 		//
@@ -102,5 +103,22 @@ public class DictQueryApiController extends InnerController implements DictQuery
 
 		return null;
 		// return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
+	}
+
+
+
+
+	@Override
+	@Operation(summary = "根据code查询", description = "根据code查询")
+	@RequestLogger
+	public Response<DictQueryApiResponse> queryByCode( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+		return null;
+	}
+
+	@Override
+	@Operation(summary = "测试测试", description = "测试测试")
+	@RequestLogger
+	public Response<DictQueryApiResponse> queryTest( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+		return null;
 	}
 }

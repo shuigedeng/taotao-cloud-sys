@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-12-19 09:30:45
  */
 @RestController
-@Tag(name = "管理端-TestRediscontroller", description = "管理端-测试redis")
+@Tag(name = "平台管理端-TestRediscontroller", description = "平台管理端-测试redis")
 @RequiredArgsConstructor
 public class TestRedisManagerController extends BusinessController {
 

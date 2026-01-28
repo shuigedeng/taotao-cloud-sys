@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-岗位管理API
+ * 平台管理端-岗位API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -34,5 +34,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager/sys/position")
-@Tag(name = "管理端-岗位管理API", description = "管理端-岗位管理API")
+@Tag(name = "平台管理端-岗位API", description = "平台管理端-岗位API")
 public class PositionManagerController extends BusinessController {}

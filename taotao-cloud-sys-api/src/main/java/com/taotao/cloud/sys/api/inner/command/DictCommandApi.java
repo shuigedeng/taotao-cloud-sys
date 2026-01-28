@@ -38,8 +38,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-        value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
 public interface DictCommandApi {
 
     /**
@@ -61,8 +60,8 @@ public interface DictCommandApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/feign/dict/code")
-    Response<DictQueryApiResponse> findByCode(
+    @PostExchange("/inner/sys/dict/command/save")
+    Response<DictQueryApiResponse> save(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 
     /**
@@ -84,7 +83,7 @@ public interface DictCommandApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-    @PostExchange("/sys/feign/dict/test")
+    @PostExchange("/inner/sys/dict/command/test")
     Response<DictQueryApiResponse> test(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
 }

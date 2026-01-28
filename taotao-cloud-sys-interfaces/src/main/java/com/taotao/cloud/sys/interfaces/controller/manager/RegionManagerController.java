@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 管理端-地区管理API
+ * 平台管理端-地区API
  *
  * @author shuigedeng
  * @version 2021.9
@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager/sys/region")
-@Tag(name = "管理端-地区管理API", description = "管理端-地区管理API")
+@Tag(name = "平台管理端-地区API", description = "平台管理端-地区API")
 public class RegionManagerController extends BusinessController {
 
     //    @Operation(summary = "根据父id查询地区数据", description = "根据父id查询地区数据")

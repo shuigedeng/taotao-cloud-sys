@@ -32,5 +32,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/manager/sys/sysLogLogin")
-@Tag(name = "工具管理端-登录记录管理", description = "工具管理端-登录记录管理")
+@Tag(name = "平台管理端-登录记录管理", description = "平台管理端-登录记录管理")
 public class SysLogLoginManagerController extends BusinessController {}
