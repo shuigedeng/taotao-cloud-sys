@@ -191,7 +191,7 @@ plugins {
 
     //https://github.com/graalvm/native-build-tools
     //https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html
-    id 'org.graalvm.buildtools.native' version '0.11.3'
+    id 'org.graalvm.buildtools.native' version '0.11.4'
 
     //https://github.com/kimichen13/mybatis-generator-plugin
     //https://plugins.gradle.org/plugin/com.qqviaja.gradle.MybatisGenerator
