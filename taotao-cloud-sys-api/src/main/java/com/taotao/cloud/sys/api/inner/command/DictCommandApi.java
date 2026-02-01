@@ -41,49 +41,47 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 @HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
 public interface DictCommandApi {
 
-    /**
-     * 字典列表code查询
-     *
-     * @param code 代码
-     * @return {@link DictQueryApiResponse }
-     * @since 2022-06-29 21:40:21
-     */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @PostExchange("/inner/sys/dict/command/save")
-    Response<DictQueryApiResponse> save(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+	/**
+	 * 字典列表code查询
+	 *
+	 * @param code 代码
+	 * @return {@link DictQueryApiResponse }
+	 * @since 2022-06-29 21:40:21
+	 */
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(
+				version = V2022_07,
+				content = "主要修改了配置信息的接口查询",
+				date = "2022-07-01 17:11:55"),
+			@Update(
+				version = V2022_08,
+				content = "主要修改了配置信息的接口查询08",
+				date = "2022-07-01 17:11:55")
+		})
+	@PostExchange("/inner/sys/dict/command/save")
+	Response<DictQueryApiResponse> save( @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest );
 
-    /**
-     * 字典列表code查询
-     *
-     * @param id 代码
-     * @return {@link DictQueryApiResponse }
-     * @since 2022-06-29 21:40:21
-     */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @PostExchange("/inner/sys/dict/command/test")
-    Response<DictQueryApiResponse> test(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+	/**
+	 * 字典列表code查询
+	 *
+	 * @param id 代码
+	 * @return {@link DictQueryApiResponse }
+	 * @since 2022-06-29 21:40:21
+	 */
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(
+				version = V2022_07,
+				content = "主要修改了配置信息的接口查询",
+				date = "2022-07-01 17:11:55"),
+			@Update(
+				version = V2022_08,
+				content = "主要修改了配置信息的接口查询08",
+				date = "2022-07-01 17:11:55")
+		})
+	@PostExchange("/inner/sys/dict/command/test")
+	Response<DictQueryApiResponse> test( @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest );
 }

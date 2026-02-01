@@ -28,6 +28,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
+import org.springframework.web.service.registry.ImportHttpServices;
 
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
@@ -38,8 +39,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-        value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
 public interface DeptCommandApi {
 
     /**
@@ -61,7 +61,6 @@ public interface DeptCommandApi {
                         content = "主要修改了配置信息的接口查询08",
                         date = "2022-07-01 17:11:55")
             })
-
     @PostExchange("/sys/dict/code")
     Response<DictQueryApiResponse> findByCode(
             @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);

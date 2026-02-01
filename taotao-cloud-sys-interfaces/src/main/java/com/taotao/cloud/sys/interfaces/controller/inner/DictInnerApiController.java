@@ -37,6 +37,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -58,7 +59,7 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictQueryApiResponse> save( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> save(@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
@@ -78,15 +79,11 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@RequestLogger
 	@NotAuth
 	@Idempotent(perFix = "test")
-	@TLogAspect(
-		value = {"code"},
-		pattern = "{{}}",
-		joint = ",",
-		str = "nihao")
+	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
-	public Response<DictQueryApiResponse> test( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> test(@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
 		//		Dict dict = service().findByCode(id);
 		//
@@ -111,14 +108,14 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@Override
 	@Operation(summary = "根据code查询", description = "根据code查询")
 	@RequestLogger
-	public Response<DictQueryApiResponse> queryByCode( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> queryByCode(@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		return null;
 	}
 
 	@Override
 	@Operation(summary = "测试测试", description = "测试测试")
 	@RequestLogger
-	public Response<DictQueryApiResponse> queryTest( Request<DictQueryApiRequest> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> queryTest(@Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest ) {
 		return null;
 	}
 }

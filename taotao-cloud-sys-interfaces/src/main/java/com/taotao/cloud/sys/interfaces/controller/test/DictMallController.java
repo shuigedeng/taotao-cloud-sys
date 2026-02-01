@@ -45,7 +45,6 @@ import org.springframework.web.bind.annotation.*;
  * @version 2021.9
  * @since 2021-10-09 14:24:19
  */
-@RequiredArgsConstructor
 @Validated
 @RestController
 @RequestMapping("/sys/mall/dict")
@@ -75,6 +74,6 @@ public class DictMallController extends BusinessController {
 	@PostMapping("/testMybatisQueryStructuredddd")
 	public Result<DictQueryResult> testMybatisQueryStructuredddd(@RequestBody DictQuery dictQuery ) {
 
-		return Result.success(null);
+		return Result.success(new DictQueryResult());
 	}
 }
