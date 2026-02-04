@@ -24,7 +24,7 @@ import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
 import com.taotao.boot.ratelimit.ratelimitguava.Limit;
-import com.taotao.boot.security.spring.annotation.NotAuth;
+import com.taotao.boot.security.spring.support.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
 import com.taotao.cloud.sys.api.inner.command.DictCommandApi;
