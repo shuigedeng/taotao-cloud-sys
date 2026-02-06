@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.interfaces.controller.test;
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.grpc.spring.annotation.GrpcClient;
-import com.taotao.boot.security.spring.support.annotation.NotAuth;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.api.grpc.DictGrpcRequest;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;

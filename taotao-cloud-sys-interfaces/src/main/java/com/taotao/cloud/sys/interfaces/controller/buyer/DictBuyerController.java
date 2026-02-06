@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.interfaces.controller.buyer;
 
 import com.taotao.boot.common.model.result.Result;
-import com.taotao.boot.security.spring.support.annotation.NotAuth;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
