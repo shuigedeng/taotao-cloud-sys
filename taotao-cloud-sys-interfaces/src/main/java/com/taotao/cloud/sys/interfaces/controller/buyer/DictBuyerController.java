@@ -16,7 +16,9 @@
 
 package com.taotao.cloud.sys.interfaces.controller.buyer;
 
+import com.taotao.boot.common.model.result.EmptyResult;
 import com.taotao.boot.common.model.result.Result;
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.Operation;
@@ -38,7 +40,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/sys/buyer/dict")
+@RequestMapping("/buyer/sys/dict")
 @Tag(name = "买家端-字典API", description = "买家端-字典API")
 public class DictBuyerController extends BusinessController {
 
@@ -46,10 +48,11 @@ public class DictBuyerController extends BusinessController {
 	@NotAuth
 	@GetMapping("/query/type")
 	@Operation(summary = "通过code查询所有字典列表")
-	public Result<Boolean> add( @RequestParam String type ) {
+	public Result<EmptyResult> add( @RequestParam String type ) {
 //		Boolean result = service().add(type);
 //		return success(result);
-		return null;
+		LogUtils.info("type:xxxxxxxxx:{}",type);
+		return Result.success();
 	}
 
 
