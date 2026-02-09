@@ -39,7 +39,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @since 2020/5/2 16:42
  */
 //@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
-@HttpExchange(url = "http://192.168.218.1:33331")
+@HttpExchange(url = "http://taotao-cloud-sys")
 public interface DictQueryApi {
 
     /**
