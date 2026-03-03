@@ -16,13 +16,12 @@
 
 package com.taotao.cloud.sys.api.inner.query;
 
-import com.taotao.boot.common.constant.ServiceNameConstants;
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
-import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
+import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -63,7 +62,7 @@ public interface DictQueryApi {
             })
     @PostExchange("/inner/sys/dict/query/code")
     Response<DictQueryApiResponse> queryByCode(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
@@ -86,5 +85,5 @@ public interface DictQueryApi {
             })
     @PostExchange("/inner/sys/dict/query/test")
     Response<DictQueryApiResponse> queryTest(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 }

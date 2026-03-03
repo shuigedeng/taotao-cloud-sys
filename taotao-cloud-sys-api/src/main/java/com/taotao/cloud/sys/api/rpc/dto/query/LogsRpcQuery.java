@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.dto.request;
+package com.taotao.cloud.sys.api.rpc.dto.query;
 
-import com.taotao.boot.common.model.request.RequestBase;
+import com.taotao.boot.common.model.ddd.types.MarkerRequest;
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.*;
 import lombok.AllArgsConstructor;
@@ -38,7 +37,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuQueryRpcRequest extends RequestBase implements Serializable {
+public class LogsRpcQuery implements MarkerRequest {
 
     @Serial private static final long serialVersionUID = 5126530068827085130L;
 

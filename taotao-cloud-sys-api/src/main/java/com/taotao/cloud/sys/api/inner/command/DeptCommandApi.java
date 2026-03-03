@@ -22,13 +22,12 @@ import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
-import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
+import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
-import org.springframework.web.service.registry.ImportHttpServices;
 
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
@@ -45,7 +44,7 @@ public interface DeptCommandApi {
     /**
      * 字典列表code查询
      *
-     * @param code 代码
+     * @param dictQueryApiRequest 代码
      * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
@@ -63,12 +62,12 @@ public interface DeptCommandApi {
             })
     @PostExchange("/sys/dict/code")
     Response<DictQueryApiResponse> findByCode(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
      *
-     * @param id 代码
+     * @param dictQueryApiRequest 代码
      * @return {@link DictQueryApiResponse }
      * @since 2022-06-29 21:40:21
      */
@@ -86,5 +85,5 @@ public interface DeptCommandApi {
             })
     @PostExchange("/sys/dict/test")
     Response<DictQueryApiResponse> test(
-            @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest);
+            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 }

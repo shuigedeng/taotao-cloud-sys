@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.api.inner.dto.response;
 
-import com.taotao.boot.common.model.response.ResponseBase;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -36,7 +36,7 @@ import java.io.Serializable;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogisticsApiResponse  extends ResponseBase implements Serializable {
+public class LogisticsApiResponse  implements MarkerResponse  {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

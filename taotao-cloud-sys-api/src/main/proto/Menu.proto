@@ -16,10 +16,10 @@ option java_outer_classname = "MenuGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
 service MenuGrpcService {
-  rpc findResourceByCodes (MenuGrpcRequest) returns (MenuGrpcResponse){}
+  rpc findResourceByCodes (MenuGrpcQuery) returns (MenuGrpcResponse){}
 }
 
-message MenuGrpcRequest {
+message MenuGrpcQuery {
   repeated string codes = 1;
 }
 

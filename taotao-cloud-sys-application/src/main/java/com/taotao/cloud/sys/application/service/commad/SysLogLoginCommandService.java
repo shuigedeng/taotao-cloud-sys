@@ -24,4 +24,4 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @author: Sinda
  * @create: 2022-03-19 20:42:34
  */
-public interface SysLogLoginCommandService extends CommandService {}
+public interface SysLogLoginCommandService implements CommandService {}

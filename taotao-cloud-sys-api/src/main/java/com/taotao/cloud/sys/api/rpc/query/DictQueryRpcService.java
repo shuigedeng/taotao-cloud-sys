@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.api.rpc.query;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
-import com.taotao.cloud.sys.api.rpc.dto.request.DictQueryRpcRequest;
+import com.taotao.cloud.sys.api.rpc.dto.query.DictRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.DictRpcResponse;
 
 /**
@@ -37,5 +37,5 @@ public interface DictQueryRpcService {
      * @return {@link DictRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-    Response<DictRpcResponse> findByCode(Request<DictQueryRpcRequest> dictQueryRpcRequest);
+    Response<DictRpcResponse> findByCode(Request<DictRpcQuery> dictQueryRpcRequest);
 }

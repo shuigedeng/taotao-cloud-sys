@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.api.inner.dto.response;
 
-import com.taotao.boot.common.model.response.ResponseBase;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -33,6 +33,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogsApiResponse extends ResponseBase {
+public class LogsApiResponse implements MarkerResponse {
     private Long id;
 }

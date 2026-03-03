@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.api.rpc.query;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
-import com.taotao.cloud.sys.api.rpc.dto.request.MenuQueryRpcRequest;
+import com.taotao.cloud.sys.api.rpc.dto.query.MenuRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.MenuRpcResponse;
 
 /**
@@ -37,5 +37,5 @@ public interface ResourceQueryRpcService {
      * @return 菜单信息
      * @since 2022-03-25 14:13:34
      */
-    Response<MenuRpcResponse> queryAllById(Request<MenuQueryRpcRequest> menuQueryRpcRequest);
+    Response<MenuRpcResponse> queryAllById(Request<MenuRpcQuery> menuQueryRpcRequest);
 }

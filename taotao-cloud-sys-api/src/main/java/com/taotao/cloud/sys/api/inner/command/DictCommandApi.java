@@ -22,7 +22,7 @@ import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
-import com.taotao.cloud.sys.api.inner.dto.request.DictQueryApiRequest;
+import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -61,7 +61,7 @@ public interface DictCommandApi {
 				date = "2022-07-01 17:11:55")
 		})
 	@PostExchange("/inner/sys/dict/command/save")
-	Response<DictQueryApiResponse> save( @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest );
+	Response<DictQueryApiResponse> save( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
 
 	/**
 	 * 字典列表code查询
@@ -83,5 +83,5 @@ public interface DictCommandApi {
 				date = "2022-07-01 17:11:55")
 		})
 	@PostExchange("/inner/sys/dict/command/test")
-	Response<DictQueryApiResponse> test( @Validated @RequestBody Request<DictQueryApiRequest> dictQueryApiRequest );
+	Response<DictQueryApiResponse> test( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
 }

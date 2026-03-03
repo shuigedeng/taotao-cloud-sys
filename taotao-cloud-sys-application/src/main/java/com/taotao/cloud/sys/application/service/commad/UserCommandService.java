@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2023.01
  * @since 2023-02-15 14:43:45
  */
-public interface UserCommandService extends CommandService {
+public interface UserCommandService implements CommandService {
 
     //    /**
     //     * 保存用户

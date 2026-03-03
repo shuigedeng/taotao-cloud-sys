@@ -14,18 +14,25 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.inner.dto.request;
+package com.taotao.cloud.sys.api.rpc.dto.query;
 
-import com.taotao.boot.common.model.request.RequestBase;
-import lombok.*;
+import com.taotao.boot.common.model.ddd.types.MarkerRequest;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serial;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
- * SysLogLoginApiRequest
+ * 公司查询VO
  *
  * @author shuigedeng
- * @version 2026.04
- * @since 2025-12-19 09:30:45
+ * @version 2021.10
+ * @since 2021-10-09 16:31:52
  */
 @Setter
 @Getter
@@ -33,6 +40,18 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysLogLoginApiRequest extends RequestBase {
+@Schema(description = "公司查询VO")
+public class DeptRpcQuery implements MarkerRequest {
+
+    @Serial private static final long serialVersionUID = -4132785717179910025L;
+
     private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

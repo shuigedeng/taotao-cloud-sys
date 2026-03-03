@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.inner.dto.request;
+package com.taotao.cloud.sys.api.inner.dto.command;
 
-import com.taotao.boot.common.model.request.RequestBase;
+import com.taotao.boot.common.model.ddd.types.Command;
 import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
- * SysLogApiRequest
+ * SysLogLoginApiRequest
  *
  * @author shuigedeng
  * @version 2026.04
@@ -33,6 +33,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysLogApiRequest extends RequestBase {
+public class SysLogLoginApiCommand implements Command {
     private Long id;
 }

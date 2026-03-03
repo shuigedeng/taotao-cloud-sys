@@ -26,7 +26,7 @@ import java.util.Set;
  * @version 2022.03
  * @since 2022-03-25 15:01:39
  */
-public interface RoleResourceCommandService extends CommandService {
+public interface RoleResourceCommandService implements CommandService {
 
     /**
      * 添加角色-菜单对应关系

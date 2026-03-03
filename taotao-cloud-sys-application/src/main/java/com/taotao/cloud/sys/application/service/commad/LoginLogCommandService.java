@@ -23,7 +23,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @author shuigedeng
  * @since 2021/12/2
  */
-public interface LoginLogCommandService extends CommandService {
+public interface LoginLogCommandService implements CommandService {
 
     //    /**
     //     * 添加

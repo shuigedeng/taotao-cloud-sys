@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2022-03-25 14:33:20
  */
-public interface SensitiveWordCommandService extends CommandService {
+public interface SensitiveWordCommandService implements CommandService {
 
     /**
      * 重新写入缓存

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.dto.request;
+package com.taotao.cloud.sys.api.rpc.dto.query;
 
-import com.taotao.boot.common.model.request.RequestBase;
-import java.io.Serializable;
+import com.taotao.boot.common.model.ddd.types.MarkerRequest;
+
 import java.time.LocalDateTime;
 import lombok.*;
 import lombok.AllArgsConstructor;
@@ -37,7 +37,7 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuartzJobQueryRpcRequest extends RequestBase implements Serializable {
+public class QuartzJobRpcQuery implements MarkerRequest {
 
     private static final long serialVersionUID = 5126530068827085130L;
 

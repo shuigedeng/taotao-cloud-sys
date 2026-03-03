@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2021-10-09 20:38:19
  */
-public interface ResourceCommandService extends CommandService {
+public interface ResourceCommandService implements CommandService {
 
     //    /**
     //     * 查询所有菜单列表

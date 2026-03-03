@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2021-10-09 20:42:57
  */
-public interface RoleCommandService extends CommandService {
+public interface RoleCommandService implements CommandService {
 
     //    /**
     //     * 根据用户id列表获取角色列表

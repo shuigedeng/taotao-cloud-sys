@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.api.inner.query;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
-import com.taotao.cloud.sys.api.inner.dto.request.SysLogLoginApiRequest;
+import com.taotao.cloud.sys.api.inner.dto.command.SysLogLoginApiCommand;
 import com.taotao.cloud.sys.api.inner.dto.response.LogsApiResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
@@ -30,5 +30,5 @@ public interface SysLogLoginQueryApi {
     @PostExchange
     // Response save(@RequestBody SysLogLogin sysLogLogin,
     // @RequestHeader(AuthorizationConstants.FROM) String from);
-    LogsApiResponse save(@RequestBody SysLogLoginApiRequest sysLogLoginApiRequest);
+    LogsApiResponse save(@RequestBody SysLogLoginApiCommand sysLogLoginApiRequest);
 }

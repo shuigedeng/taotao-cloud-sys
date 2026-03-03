@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2022-02-15 09:19:55
  */
-public interface LogCommandService extends CommandService {
+public interface LogCommandService implements CommandService {
 
     //    /**
     //     * 分页获取日志数据

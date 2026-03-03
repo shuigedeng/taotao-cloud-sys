@@ -16,12 +16,12 @@ option java_outer_classname = "UserGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
 service UserGrpcService {
-  rpc findUserInfoByUsername (FindUserInfoByUsernameGrpcRequest) returns (FindUserInfoByUsernameGrpcResponse){}
-  rpc getUserInfoBySocial (GetUserInfoBySocialGrpcRequest) returns (GetUserInfoBySocialGrpcResponse){}
-  rpc getSysSecurityUser (GetSysSecurityUserGrpcRequest) returns (GetSysSecurityUserGrpcResponse){}
+  rpc findUserInfoByUsername (FindUserInfoByUsernameGrpcQuery) returns (FindUserInfoByUsernameGrpcResponse){}
+  rpc getUserInfoBySocial (GetUserInfoBySocialGrpcQuery) returns (GetUserInfoBySocialGrpcResponse){}
+  rpc getSysSecurityUser (GetSysSecurityUserGrpcQuery) returns (GetSysSecurityUserGrpcResponse){}
 }
 
-message FindUserInfoByUsernameGrpcRequest {
+message FindUserInfoByUsernameGrpcQuery {
   string username = 1;
 }
 
@@ -33,7 +33,7 @@ message FindUserInfoByUsernameGrpcResponse {
   int32 sex = 5;
 }
 
-message GetUserInfoBySocialGrpcRequest {
+message GetUserInfoBySocialGrpcQuery {
   string providerId = 1;
   string providerUserId = 2;
 }
@@ -46,7 +46,7 @@ message GetUserInfoBySocialGrpcResponse {
   string password = 5;
 }
 
-message GetSysSecurityUserGrpcRequest {
+message GetSysSecurityUserGrpcQuery {
   string nicknameOrUserNameOrPhoneOrEmail = 1;
 }
 

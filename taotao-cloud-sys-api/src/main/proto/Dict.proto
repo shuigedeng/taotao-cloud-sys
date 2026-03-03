@@ -16,11 +16,11 @@ option java_outer_classname = "DictGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
 service DictGrpcService {
-  rpc findByCode (DictGrpcRequest) returns (DictGrpcResponse){}
-  rpc test (DictTestGrpcRequest) returns (DictGrpcResponse){}
+  rpc findByCode (DictGrpcQuery) returns (DictGrpcResponse){}
+  rpc test (DictTestGrpcQuery) returns (DictGrpcResponse){}
 }
 
-message DictGrpcRequest {
+message DictGrpcQuery {
   string code = 1;
 }
 
@@ -33,6 +33,6 @@ message DictGrpcResponse {
   string remark = 6;
 }
 
-message DictTestGrpcRequest {
+message DictTestGrpcQuery {
   bool reply = 1;
 }

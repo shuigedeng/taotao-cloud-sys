@@ -8,13 +8,13 @@ option java_outer_classname = "LogGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
 service LogGrpcService {
-  rpc insertLog (LogGrpcRequest) returns (LogGrpcResponse){}
-  rpc updateLog (LogGrpcRequest) returns (LogGrpcResponse){}
-  rpc searchLog (LogGrpcRequest) returns (LogGrpcResponse){}
-  rpc deleteLog (LogGrpcRequest) returns (LogGrpcResponse){}
+  rpc insertLog (LogGrpcCommand) returns (LogGrpcResponse){}
+  rpc updateLog (LogGrpcCommand) returns (LogGrpcResponse){}
+  rpc searchLog (LogGrpcCommand) returns (LogGrpcResponse){}
+  rpc deleteLog (LogGrpcCommand) returns (LogGrpcResponse){}
 }
 
-message LogGrpcRequest {
+message LogGrpcCommand {
   string id = 1;
 }
 

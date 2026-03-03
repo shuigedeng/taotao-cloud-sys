@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.api.rpc.query;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
-import com.taotao.cloud.sys.api.rpc.dto.request.DeptQueryRpcRequest;
+import com.taotao.cloud.sys.api.rpc.dto.query.DeptRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
 
 /**
@@ -29,5 +29,5 @@ import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
  * @since 2022-03-25 14:22:32
  */
 public interface RegionQueryRpcService {
-    Response<DeptRpcResponse> getDeptById(Request<DeptQueryRpcRequest> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> deptQueryRpcRequest);
 }

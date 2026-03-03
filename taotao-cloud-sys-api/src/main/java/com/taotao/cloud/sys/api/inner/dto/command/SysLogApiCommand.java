@@ -14,30 +14,25 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.commad;
+package com.taotao.cloud.sys.api.inner.dto.command;
 
-import com.taotao.boot.ddd.model.application.service.CommandService;
+import com.taotao.boot.common.model.ddd.types.Command;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
- * ISettingService
+ * SysLogApiRequest
  *
  * @author shuigedeng
- * @version v1.0
- * @since 2022/03/10 10:31
+ * @version 2026.04
+ * @since 2025-12-19 09:30:45
  */
-public interface SettingCommandService implements CommandService {
-
-    //    /**
-    //     * 通过key获取
-    //     *
-    //     * @param key
-    //     */
-    //    Setting get(String key);
-    //
-    //    /**
-    //     * 修改
-    //     *
-    //     * @param setting
-    //     */
-    //    boolean saveUpdate(Setting setting);
+@Setter
+@Getter
+@ToString
+@Accessors(fluent = true)
+@AllArgsConstructor
+@NoArgsConstructor
+public class SysLogApiCommand implements Command {
+    private Long id;
 }

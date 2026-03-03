@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.inner.dto.request;
+package com.taotao.cloud.sys.api.inner.dto.query;
 
-import com.taotao.boot.common.model.request.RequestBase;
+import com.taotao.boot.common.model.ddd.types.MarkerRequest;
+import com.taotao.boot.common.model.ddd.types.Query;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * 公司查询对象
@@ -39,7 +39,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "公司查询对象")
-public class CompanyQueryApiRequest extends RequestBase implements Serializable {
+public class FileApiQuery implements Query {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 

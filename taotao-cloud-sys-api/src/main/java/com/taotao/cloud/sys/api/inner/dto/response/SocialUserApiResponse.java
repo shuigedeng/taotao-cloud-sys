@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.api.inner.dto.response;
 
-import com.taotao.boot.common.model.response.ResponseBase;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import com.taotao.cloud.sys.api.enums.AuthUserGender;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -31,7 +31,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @Accessors(fluent = true)
-public class SocialUserApiResponse  extends ResponseBase {
+public class SocialUserApiResponse  implements MarkerResponse {
 
     private Long id;
 

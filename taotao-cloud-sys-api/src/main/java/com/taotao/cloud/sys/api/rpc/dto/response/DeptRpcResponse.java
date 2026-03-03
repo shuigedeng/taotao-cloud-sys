@@ -16,49 +16,26 @@
 
 package com.taotao.cloud.sys.api.rpc.dto.response;
 
-import com.taotao.boot.common.model.response.ResponseBase;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.Accessors;
 
 /**
  * 公司查询VO
  *
+ * @param id 字典名称
+ * @param dictName 字典名称
  * @author shuigedeng
  * @version 2021.10
  * @since 2021-10-09 16:31:52
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
 @Schema(description = "公司查询VO")
-public class DeptRpcResponse  extends ResponseBase implements Serializable {
+public record DeptRpcResponse(Long id,
+							  String dictName)
+	implements MarkerResponse {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    private Long id;
-
-    /** 字典名称 */
-    private String dictName;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDictName() {
-        return dictName;
-    }
 }

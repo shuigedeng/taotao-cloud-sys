@@ -24,7 +24,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @author
  * @since 2022-09-12
  */
-public interface AppCommandService extends CommandService {
+public interface AppCommandService implements CommandService {
 
     //    /** 添加 */
     //    Boolean addApp(AppDTO appDTO);

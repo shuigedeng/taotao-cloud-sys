@@ -8,13 +8,13 @@ option java_outer_classname = "FileGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
 service FileGrpcService {
-    rpc insertFile (ConditionsGrpcRequest) returns (FileGrpcResponse){}
-    rpc updateFile (ConditionsGrpcRequest) returns (FileGrpcResponse){}
-    rpc searchFile (ConditionsGrpcRequest) returns (FileGrpcResponse){}
-    rpc deleteFile (ConditionsGrpcRequest) returns (FileGrpcResponse){}
+    rpc insertFile (ConditionsGrpcCommand) returns (FileGrpcResponse){}
+    rpc updateFile (ConditionsGrpcCommand) returns (FileGrpcResponse){}
+    rpc searchFile (ConditionsGrpcCommand) returns (FileGrpcResponse){}
+    rpc deleteFile (ConditionsGrpcCommand) returns (FileGrpcResponse){}
 }
 
-message ConditionsGrpcRequest {
+message ConditionsGrpcCommand {
     string id = 1;
 }
 

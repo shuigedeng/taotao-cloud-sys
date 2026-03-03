@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.dto.request;
+package com.taotao.cloud.sys.api.rpc.dto.query;
 
-import com.taotao.boot.common.model.request.RequestBase;
+import com.taotao.boot.common.model.ddd.types.MarkerRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,17 +41,17 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "公司查询VO")
-public class DeptQueryRpcRequest extends RequestBase implements Serializable {
+public class DictRpcQuery implements MarkerRequest {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;
 
-    private Long id;
+    private String code;
 
-    public Long getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 }

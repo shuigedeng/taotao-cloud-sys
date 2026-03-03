@@ -18,6 +18,6 @@ package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
 
-public interface BussinessCommandService extends CommandService {
+public interface BussinessCommandService implements CommandService {
     public boolean saveOrder();
 }
