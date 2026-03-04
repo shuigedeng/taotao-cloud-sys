@@ -17,8 +17,7 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
-import lombok.*;
-import lombok.experimental.Accessors;
+import io.soabase.recordbuilder.core.RecordBuilder;
 
 /**
  * LogsApiResponse
@@ -27,12 +26,8 @@ import lombok.experimental.Accessors;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
-public class LogsApiResponse implements MarkerResponse {
-    private Long id;
+@RecordBuilder
+public record LogsApiResponse(Long id) implements MarkerResponse {
+
+
 }

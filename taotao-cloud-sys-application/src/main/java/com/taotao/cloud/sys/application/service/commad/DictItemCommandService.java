@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2021-10-09 20:32:47
  */
-public interface DictItemCommandService implements CommandService {
+public interface DictItemCommandService extends CommandService {
 
     /**
      * 根据字典id删除字典项

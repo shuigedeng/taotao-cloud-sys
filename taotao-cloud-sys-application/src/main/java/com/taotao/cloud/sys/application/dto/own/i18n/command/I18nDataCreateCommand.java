@@ -16,68 +16,43 @@
 
 package com.taotao.cloud.sys.application.dto.own.i18n.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Setter;
+
 import java.util.List;
-import lombok.*;
 
 /**
  * 国际化信息传输对象
+ *
+ * @param code 唯一标识 = 业务:关键词
+ * @param languageTexts 语言文本列表
+ * @param remarks 备注
  */
-@Setter
-@Getter
-@ToString
+@RecordBuilder
 @Schema(title = "国际化信息传输对象")
-public class I18nDataCreateCommand {
+public record I18nDataCreateCommand(
+	@Schema(title = "唯一标识 = 业务:关键词") @NotEmpty(message = "{i18nMessage.code}：{}") String code,
+	@Schema(title = "语言文本列表") @Valid @NotNull(message = "{i18nData.languageTexts}: {}") @Size(min = 1, message = "{i18nData.languageTexts}: {}") List<LanguageText> languageTexts,
+	@Schema(title = "备注") String remarks) implements Command {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 唯一标识 = 业务:关键词
-     */
-    @NotEmpty(message = "{i18nMessage.code}：{}")
-    @Schema(title = "唯一标识 = 业务:关键词")
-    private String code;
+	/**
+	 * 语言文本
+	 *
+	 * @param languageTag 语言标签
+	 * @param message 文本值，可以使用 { } 加角标，作为占位符
+	 */
+	@Schema(title = "语言文本信息")
+	public record LanguageText(
+		@Schema(title = "语言标签") @NotEmpty(message = "{i18nMessage.languageTag}：{}") String languageTag,
+		@Schema(title = "文本值，可以使用 { } 加角标，作为占位符") @NotEmpty(message = "{i18nMessage.message}：{}") String message) {
 
-    /**
-     * 语言文本列表
-     */
-    @Valid
-    @NotNull(message = "{i18nData.languageTexts}: {}")
-    @Size(min = 1, message = "{i18nData.languageTexts}: {}")
-    @Schema(title = "语言文本列表")
-    private List<LanguageText> languageTexts;
-
-    /**
-     * 备注
-     */
-    @Schema(title = "备注")
-    private String remarks;
-
-    /**
-     * 语言文本
-     */
-    @Setter
-    @Getter
-    @ToString
-    @Schema(title = "语言文本信息")
-    public static class LanguageText {
-
-        /**
-         * 语言标签
-         */
-        @NotEmpty(message = "{i18nMessage.languageTag}：{}")
-        @Schema(title = "语言标签")
-        private String languageTag;
-
-        /**
-         * 文本值，可以使用 { } 加角标，作为占位符
-         */
-        @NotEmpty(message = "{i18nMessage.message}：{}")
-        @Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
-        private String message;
-    }
+	}
 }

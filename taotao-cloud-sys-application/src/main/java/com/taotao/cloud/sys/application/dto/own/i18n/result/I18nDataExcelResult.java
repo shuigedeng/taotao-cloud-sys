@@ -17,45 +17,27 @@
 package com.taotao.cloud.sys.application.dto.own.i18n.result;
 
 import com.alibaba.excel.annotation.ExcelProperty;
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
 
 /**
  * 国际化信息Excel映射对象
+ *
+ * @param languageTag 语言标签
+ * @param code 国际化标识
+ * @param message 文本值，可以使用 { } 加角标，作为占位符
+ * @param remarks 备注
  */
-@Setter
-@Getter
-@ToString
+@RecordBuilder
 @Schema(title = "国际化信息Excel映射对象")
-public class I18nDataExcelResult {
+public record I18nDataExcelResult(
+	@ExcelProperty(value = "{i18nMessage.languageTag}", index = 0) @Schema(title = "语言标签") String languageTag,
+	@ExcelProperty(value = "{i18nMessage.code}", index = 1) @Schema(title = "国际化标识") String code,
+	@ExcelProperty(value = "{i18nMessage.message}", index = 2) @Schema(title = "文本值，可以使用 { } 加角标，作为占位符") String message,
+	@ExcelProperty(value = "{i18nData.remarks}", index = 3) @Schema(title = "备注") String remarks) implements
+	MarkerResult {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 语言标签
-     */
-    @ExcelProperty(value = "{i18nMessage.languageTag}", index = 0)
-    @Schema(title = "语言标签")
-    private String languageTag;
-
-    /**
-     * 国际化标识
-     */
-    @ExcelProperty(value = "{i18nMessage.code}", index = 1)
-    @Schema(title = "国际化标识")
-    private String code;
-
-    /**
-     * 文本值，可以使用 { } 加角标，作为占位符
-     */
-    @ExcelProperty(value = "{i18nMessage.message}", index = 2)
-    @Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
-    private String message;
-
-    /**
-     * 备注
-     */
-    @ExcelProperty(value = "{i18nData.remarks}", index = 3)
-    @Schema(title = "备注")
-    private String remarks;
 }

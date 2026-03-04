@@ -42,8 +42,8 @@ import java.io.Serial;
  * @version 2021.10
  * @since 2021-10-19 20:47:05
  */
-@Schema(description = "公司查询Response")
 @RecordBuilder
+@Schema(description = "公司查询Response")
 public record CompanyRpcResponse(
 	@Schema(description = "租户id") String tenantId,
 	@Schema(description = "租户密钥") String tenantSecret,

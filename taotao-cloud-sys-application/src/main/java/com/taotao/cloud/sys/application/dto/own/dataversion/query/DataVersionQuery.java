@@ -16,39 +16,24 @@
 
 package com.taotao.cloud.sys.application.dto.own.dataversion.query;
 
-import com.taotao.boot.common.model.request.PageQuery;
+import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.ddd.query.PageQuery;
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author shuigedeng
  * @since 2022/1/10
  */
-@EqualsAndHashCode(callSuper = true)
-@Setter
-@Getter
-@ToString
-@Accessors(chain = true)
+@RecordBuilder
 @Schema(title = "数据版本日志")
-public class DataVersionQuery extends PageQuery {
+public record DataVersionQuery(
+	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = ValidationGroups.Update.class) PageQuery page,
+	@Schema(description = "表名称") String tableName, @Schema(description = "数据名称") String dataName,
+	@Schema(description = "数据主键") String dataId, @Schema(description = "数据内容对象") Object dataContent,
+	@Schema(description = "本次变动的数据内容") Object changeContent,
+	@Schema(description = "版本") Integer version) implements Query {
 
-    @Schema(description = "表名称")
-    private String tableName;
-
-    @Schema(description = "数据名称")
-    private String dataName;
-
-    @Schema(description = "数据主键")
-    private String dataId;
-
-    @Schema(description = "数据内容对象")
-    private Object dataContent;
-
-    @Schema(description = "本次变动的数据内容")
-    private Object changeContent;
-
-    @Schema(description = "版本")
-    private Integer version;
 }

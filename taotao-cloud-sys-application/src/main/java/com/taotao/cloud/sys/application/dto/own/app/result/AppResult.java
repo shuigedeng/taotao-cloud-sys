@@ -1,5 +1,8 @@
 package com.taotao.cloud.sys.application.dto.own.app.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
+
 /**
  * AppResult
  *
@@ -7,4 +10,5 @@ package com.taotao.cloud.sys.application.dto.own.app.result;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-public class AppResult {}
+@RecordBuilder
+public record AppResult() implements MarkerResult {}

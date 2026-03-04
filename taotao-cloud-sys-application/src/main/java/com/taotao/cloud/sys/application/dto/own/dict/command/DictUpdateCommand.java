@@ -16,16 +16,12 @@
 
 package com.taotao.cloud.sys.application.dto.own.dict.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 字典更新对象
@@ -34,34 +30,15 @@ import lombok.experimental.Accessors;
  * @version 2022.03
  * @since 2020/9/30 08:49
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "字典更新对象")
-public class DictUpdateCommand implements Serializable {
+public record DictUpdateCommand(
+	@Schema(description = "字典名称") @NotBlank(message = "字典名称不能为空") @Size(max = 10, message = "字典名称不能超过10个字符") String dictName,
+	@Schema(description = "字典编码") @NotBlank(message = "字典编码不能为空") @Size(max = 10, message = "字典编码不能超过10个字符") String dictCode,
+	@Schema(description = "描述") String description, @Schema(description = "排序值") Integer dictSort,
+	@Schema(description = "备注信息") String remark) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "字典名称", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "字典名称不能为空")
-    @Size(max = 10, message = "字典名称不能超过10个字符")
-    private String dictName;
-
-    @Schema(description = "字典编码", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "字典编码不能为空")
-    @Size(max = 10, message = "字典编码不能超过10个字符")
-    private String dictCode;
-
-    @Schema(description = "描述")
-    private String description;
-
-    @Schema(description = "排序值")
-    private Integer dictSort;
-
-    @Schema(description = "备注信息")
-    private String remark;
 }

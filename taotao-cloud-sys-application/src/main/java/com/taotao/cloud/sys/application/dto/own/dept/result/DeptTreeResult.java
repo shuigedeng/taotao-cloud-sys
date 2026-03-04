@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.own.dept.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
 import com.taotao.boot.common.tree.INode;
 import com.taotao.boot.common.tree.MapperNode;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -43,62 +44,62 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "部门树VO")
-public class DeptTreeResult extends MapperNode implements INode {
+public class DeptTreeResult extends MapperNode implements INode, MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial private static final long serialVersionUID = -4132785717179910025L;
 
-    /// **
-    // * 主键ID
-    // */
-    // private Long id;
+	/// **
+	// * 主键ID
+	// */
+	// private Long id;
 
-    /// **
-    // * 父节点ID
-    // */
-    // private Long parentId;
+	/// **
+	// * 父节点ID
+	// */
+	// private Long parentId;
 
-    /// **
-    // * 子孙节点
-    // */
-    // private List<INode> children;
+	/// **
+	// * 子孙节点
+	// */
+	// private List<INode> children;
 
-    /// **
-    // * 是否有子孙节点
-    // */
-    // private Boolean hasChildren;
+	/// **
+	// * 是否有子孙节点
+	// */
+	// private Boolean hasChildren;
 
-    /** 部门名称 */
-    private String name;
+	/** 部门名称 */
+	private String name;
 
-    /// **
-    // * 排序
-    // */
-    // private Integer sort;
-    /** 删除标识 */
-    private String isDeleted;
+	/// **
+	// * 排序
+	// */
+	// private Integer sort;
+	/** 删除标识 */
+	private String isDeleted;
 
-    /** 租户ID */
-    private Long tenantId;
+	/** 租户ID */
+	private Long tenantId;
 
-    @Schema(description = "备注")
-    private String remark;
+	@Schema(description = "备注")
+	private String remark;
 
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
+	@Schema(description = "创建时间")
+	private LocalDateTime createTime;
 
-    @Schema(description = "修改时间")
-    private LocalDateTime updateTime;
+	@Schema(description = "修改时间")
+	private LocalDateTime updateTime;
 
-    // @Override
-    // public List<INode> getChildren() {
-    //	if (this.children == null) {
-    //		this.children = new ArrayList<>();
-    //	}
-    //	return this.children;
-    // }
+	// @Override
+	// public List<INode> getChildren() {
+	//	if (this.children == null) {
+	//		this.children = new ArrayList<>();
+	//	}
+	//	return this.children;
+	// }
 
-    @Override
-    public <T extends INode> List<T> getChildren() {
-        return super.getChildren();
-    }
+	@Override
+	public <T extends INode> List<T> getChildren() {
+		return super.getChildren();
+	}
 }

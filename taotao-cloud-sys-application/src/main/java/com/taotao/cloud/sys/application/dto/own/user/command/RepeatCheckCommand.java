@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.user.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 重复校验DTO
@@ -31,21 +27,14 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/2 16:40
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "重复检查DTO")
-public class RepeatCheckCommand implements Serializable {
+public record RepeatCheckCommand(
+	@Schema(description = "字段值 邮箱 手机号 用户名") String fieldVal,
+	@Schema(description = "指用户id 主要作用编辑情况过滤自己的校验") Integer dataId) implements
+	Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "字段值 邮箱 手机号 用户名", requiredMode = Schema.RequiredMode.REQUIRED)
-    private String fieldVal;
-
-    @Schema(description = "指用户id 主要作用编辑情况过滤自己的校验", requiredMode = Schema.RequiredMode.REQUIRED)
-    private Integer dataId;
 }

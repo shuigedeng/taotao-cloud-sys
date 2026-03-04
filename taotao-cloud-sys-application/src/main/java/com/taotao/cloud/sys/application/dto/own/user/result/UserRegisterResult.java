@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.user.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 用户注册VO
@@ -31,24 +27,13 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "用户注册VO")
-public class UserRegisterResult implements Serializable {
+public record UserRegisterResult(@Schema(description = "真实用户名") String username,
+								 @Schema(description = "手机号") String phone,
+								 @Schema(description = "密码") String password) implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "真实用户名")
-    private String username;
-
-    @Schema(description = "手机号")
-    private String phone;
-
-    @Schema(description = "密码")
-    private String password;
 }

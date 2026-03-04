@@ -16,33 +16,26 @@
 
 package com.taotao.cloud.sys.application.dto.own.region.query;
 
-import com.taotao.boot.common.model.request.PageQuery;
+import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.ddd.query.PageQuery;
+import com.taotao.boot.common.model.ddd.types.Query;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+
+import io.soabase.recordbuilder.core.RecordBuilder;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * EmailVo
  *
+ * @param tos 收件人，支持多个收件人
  * @author shuigedeng
  * @version 2022.03
  * @since 2022-03-22 09:25:30
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor
-@NoArgsConstructor
-public class RegionPageQuery extends PageQuery {
+@RecordBuilder
+public record RegionPageQuery(
+	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = ValidationGroups.Update.class) PageQuery page,
+	List<String> tos, String subject, String content) implements Query {
 
-    /** 收件人，支持多个收件人 */
-    private List<String> tos;
-
-    private String subject;
-    private String content;
 }

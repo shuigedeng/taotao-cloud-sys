@@ -16,10 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.dict.query;
 
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.*;
 
 /**
  * DictQuery
@@ -28,26 +29,11 @@ import lombok.*;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Setter
-@Getter
-@ToString
-public class DictQuery {
-	@Schema(description = "字典名称", requiredMode = Schema.RequiredMode.REQUIRED)
-	@NotBlank(message = "字典名称不能为空")
-	@Size(max = 10, message = "字典名称不能超过10个字符")
-	private String dictName;
+@RecordBuilder
+public record DictQuery(
+	@Schema(description = "字典名称") @NotBlank(message = "字典名称不能为空") @Size(max = 10, message = "字典名称不能超过10个字符") String dictName,
+	@Schema(description = "字典编码") @NotBlank(message = "字典编码不能为空") @Size(max = 10, message = "字典编码不能超过10个字符") String dictCode,
+	@Schema(description = "描述") String description, @Schema(description = "排序值") Integer dictSort,
+	@Schema(description = "备注信息") String remark)implements Query {
 
-	@Schema(description = "字典编码", requiredMode = Schema.RequiredMode.REQUIRED)
-	@NotBlank(message = "字典编码不能为空")
-	@Size(max = 10, message = "字典编码不能超过10个字符")
-	private String dictCode;
-
-	@Schema(description = "描述")
-	private String description;
-
-	@Schema(description = "排序值")
-	private Integer dictSort;
-
-	@Schema(description = "备注信息")
-	private String remark;
 }

@@ -16,65 +16,32 @@
 
 package com.taotao.cloud.sys.application.dto.own.operate.command;
 
-import com.taotao.boot.common.model.request.PageQuery;
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * 操作日志
+ *
  * @author shuigedeng
  * @since 2021/8/12
  */
-@EqualsAndHashCode(callSuper = true)
-@Setter
-@Getter
-@ToString
-@Accessors(chain = true)
+@RecordBuilder
 @Schema(description = "操作日志")
-public class OperateLogAddCommand extends PageQuery {
+public record OperateLogAddCommand(@Schema(description = "操作模块") String title,
+								   @Schema(description = "操作人员id") Long operateId,
+								   @Schema(description = "操作人员账号") String username,
+								   @Schema(description = "业务类型") String businessType,
+								   @Schema(description = "请求方法") String method,
+								   @Schema(description = "请求方式") String requestMethod,
+								   @Schema(description = "请求url") String operateUrl,
+								   @Schema(description = "操作ip") String operateIp,
+								   @Schema(description = "操作地点") String operateLocation,
+								   @Schema(description = "请求参数") String operateParam,
+								   @Schema(description = "返回参数") String operateReturn,
+								   @Schema(description = "操作状态（0正常 1异常）") Boolean success,
+								   @Schema(description = "错误消息") String errorMsg,
+								   @Schema(description = "操作时间") LocalDateTime operateTime) implements Command {
 
-    @Schema(description = "操作模块")
-    private String title;
-
-    @Schema(description = "操作人员id")
-    private Long operateId;
-
-    @Schema(description = "操作人员账号")
-    private String username;
-
-    @Schema(description = "业务类型")
-    private String businessType;
-
-    @Schema(description = "请求方法")
-    private String method;
-
-    @Schema(description = "请求方式")
-    private String requestMethod;
-
-    @Schema(description = "请求url")
-    private String operateUrl;
-
-    @Schema(description = "操作ip")
-    private String operateIp;
-
-    @Schema(description = "操作地点")
-    private String operateLocation;
-
-    @Schema(description = "请求参数")
-    private String operateParam;
-
-    @Schema(description = "返回参数")
-    private String operateReturn;
-
-    @Schema(description = "操作状态（0正常 1异常）")
-    private Boolean success;
-
-    @Schema(description = "错误消息")
-    private String errorMsg;
-
-    @Schema(description = "操作时间")
-    private LocalDateTime operateTime;
 }

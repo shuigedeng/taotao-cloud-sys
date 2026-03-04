@@ -16,10 +16,10 @@
 
 package com.taotao.cloud.sys.api.rpc.dto.command;
 
-import com.taotao.boot.common.model.ddd.types.MarkerRequest;
+import com.taotao.boot.common.model.ddd.types.Command;
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import lombok.experimental.Accessors;
 
 import java.io.Serial;
 
@@ -30,24 +30,11 @@ import java.io.Serial;
  * @version 2021.10
  * @since 2021-10-09 16:31:52
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "公司查询VO")
-public class DeptRpcCommand implements MarkerRequest {
+public record DeptRpcCommand(Long id) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    private Long id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

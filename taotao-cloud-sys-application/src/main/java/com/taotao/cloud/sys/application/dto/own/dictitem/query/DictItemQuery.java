@@ -16,7 +16,8 @@
 
 package com.taotao.cloud.sys.application.dto.own.dictitem.query;
 
-import lombok.*;
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 
 /**
  * DictItemQuery
@@ -25,14 +26,8 @@ import lombok.*;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Setter
-@Getter
-@ToString
-public class DictItemQuery {
+@RecordBuilder
+public record DictItemQuery(Long dictId, String itemText, String itemValue, String description,
+							Integer status) implements Query {
 
-    private Long dictId;
-    private String itemText;
-    private String itemValue;
-    private String description;
-    private Integer status;
 }

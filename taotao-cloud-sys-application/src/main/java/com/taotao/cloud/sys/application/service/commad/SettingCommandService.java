@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version v1.0
  * @since 2022/03/10 10:31
  */
-public interface SettingCommandService implements CommandService {
+public interface SettingCommandService extends CommandService {
 
     //    /**
     //     * 通过key获取

@@ -16,10 +16,10 @@
 
 package com.taotao.cloud.sys.interfaces.grpc;
 
-import com.taotao.cloud.sys.api.grpc.DictGrpcRequest;
+import com.taotao.cloud.sys.api.grpc.DictGrpcQuery;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
-import com.taotao.cloud.sys.api.grpc.DictTestGrpcRequest;
+import com.taotao.cloud.sys.api.grpc.DictTestGrpcQuery;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import io.grpc.stub.StreamObserver;
@@ -36,9 +36,7 @@ public class DictGrpcServiceImpl extends DictGrpcServiceGrpc.DictGrpcServiceImpl
 	private final DictCommandService dictCommandService;
 
 	@Override
-	public void findByCode( DictGrpcRequest request,
-		StreamObserver<DictGrpcResponse> responseObserver ) {
-
+	public void findByCode( DictGrpcQuery request, StreamObserver<DictGrpcResponse> responseObserver ) {
 		log.info("findByCode:{}", request.toString());
 		boolean replyTag = false;
 		DictGrpcResponse reply = DictGrpcResponse.newBuilder().setId(1).build();
@@ -47,8 +45,7 @@ public class DictGrpcServiceImpl extends DictGrpcServiceGrpc.DictGrpcServiceImpl
 	}
 
 	@Override
-	public void test( DictTestGrpcRequest request,
-		StreamObserver<DictGrpcResponse> responseObserver ) {
-		super.test(request, responseObserver);
+	public void test( DictTestGrpcQuery request, StreamObserver<DictGrpcResponse> responseObserver ) {
+
 	}
 }

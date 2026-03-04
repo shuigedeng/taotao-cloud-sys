@@ -17,49 +17,29 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
-import lombok.*;
-import lombok.experimental.Accessors;
+import io.soabase.recordbuilder.core.RecordBuilder;
 
 import java.io.Serial;
-import java.io.Serializable;
 
 /**
  * LogisticsVO
  *
+ * @param name 物流公司名称
+ * @param code 物流公司code
+ * @param contactName 物流公司联系人
+ * @param contactMobile 物流公司联系电话
+ * @param standBy 支持电子面单
+ * @param formItems 物流公司电子面单表单
+ * @param disabled 禁用状态 OPEN：开启，CLOSE：禁用
  * @author shuigedeng
  * @version 2022.03
  * @since 2021/12/20 14:06
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
-public class LogisticsApiResponse  implements MarkerResponse  {
+@RecordBuilder
+public record LogisticsApiResponse(Long id, String name, String code, String contactName, String contactMobile,
+								   String standBy, String formItems, String disabled)implements MarkerResponse {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    private Long id;
-
-    /** 物流公司名称 */
-    private String name;
-
-    /** 物流公司code */
-    private String code;
-
-    /** 物流公司联系人 */
-    private String contactName;
-
-    /** 物流公司联系电话 */
-    private String contactMobile;
-
-    /** 支持电子面单 */
-    private String standBy;
-
-    /** 物流公司电子面单表单 */
-    private String formItems;
-
-    /** 禁用状态 OPEN：开启，CLOSE：禁用 */
-    private String disabled;
 }

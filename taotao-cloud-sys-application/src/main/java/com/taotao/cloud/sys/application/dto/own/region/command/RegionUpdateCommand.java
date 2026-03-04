@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.region.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 地区更新对象
@@ -32,36 +28,17 @@ import lombok.experimental.Accessors;
  * @version 2022.03
  * @since 2020/9/30 08:49
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "地区更新对象")
-public class RegionUpdateCommand implements Serializable {
+public record RegionUpdateCommand(@Schema(description = "地区编码") String code,
+								  @Schema(description = "地区名称") String name,
+								  @Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）") Integer level,
+								  @Schema(description = "城市编码") String cityCode,
+								  @Schema(description = "城市中心经度") String lng,
+								  @Schema(description = "城市中心纬度") String lat,
+								  @Schema(description = "地区父节点") Long parentId) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "地区编码")
-    private String code;
-
-    @Schema(description = "地区名称")
-    private String name;
-
-    @Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）")
-    private Integer level;
-
-    @Schema(description = "城市编码")
-    private String cityCode;
-
-    @Schema(description = "城市中心经度")
-    private String lng;
-
-    @Schema(description = "城市中心纬度")
-    private String lat;
-
-    @Schema(description = "地区父节点")
-    private Long parentId;
 }

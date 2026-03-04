@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.position.query;
 
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 岗位查询对象
@@ -32,30 +28,14 @@ import lombok.experimental.Accessors;
  * @version 2022.03
  * @since 2020/9/30 08:49
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "岗位查询对象")
-public class PositionQuery implements Serializable {
+public record PositionQuery(@Schema(description = "岗位名称") String name, @Schema(description = "部门id") Long deptId,
+							@Schema(description = "备注") String remark,
+							@Schema(description = "排序值") Integer sortNum,
+							@Schema(description = "租户id") String tenantId) implements Query {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "岗位名称")
-    private String name;
-
-    @Schema(description = "部门id")
-    private Long deptId;
-
-    @Schema(description = "备注")
-    private String remark;
-
-    @Schema(description = "排序值")
-    private Integer sortNum;
-
-    @Schema(description = "租户id")
-    private String tenantId;
 }

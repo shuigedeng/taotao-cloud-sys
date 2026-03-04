@@ -17,31 +17,24 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
-import lombok.*;
-import lombok.experimental.Accessors;
+import io.soabase.recordbuilder.core.RecordBuilder;
 
 import java.io.Serial;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-/** 物流信息 */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
-public class TracesApiResponse  implements MarkerResponse  {
+/**
+ * 物流信息
+ *
+ * @param shipper 物流公司
+ * @param logisticCode 物流单号
+ * @param traces 物流详细信息
+ */
+@RecordBuilder
+public record TracesApiResponse(String shipper, String logisticCode, List<Map<String, Object>> traces)implements
+	MarkerResponse {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    /** 物流公司 */
-    private String shipper;
-
-    /** 物流单号 */
-    private String logisticCode;
-
-    /** 物流详细信息 */
-    private List<Map<String, Object>> traces;
 }

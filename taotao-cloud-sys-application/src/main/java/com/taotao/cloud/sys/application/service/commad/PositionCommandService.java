@@ -25,4 +25,4 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @since 2020-10-16 16:23:05
  * @since 1.0
  */
-public interface PositionCommandService implements CommandService {}
+public interface PositionCommandService extends CommandService {}

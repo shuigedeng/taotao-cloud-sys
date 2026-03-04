@@ -45,6 +45,7 @@ public interface DictCommandApi {
 	 * 字典列表code查询
 	 *
 	 * @param code 代码
+	 *
 	 * @return {@link DictQueryApiResponse }
 	 * @since 2022-06-29 21:40:21
 	 */

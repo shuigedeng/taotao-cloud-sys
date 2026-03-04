@@ -16,64 +16,31 @@
 
 package com.taotao.cloud.sys.application.dto.own.region.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
-/** 地区VO */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+/**
+ * 地区VO
+ *
+ * @param level 地区级别（1:省份province,2:市city,3:区县district,4:街道street） "行政区划级别" + "country:国家" +
+ * "province:省份（直辖市会在province和city显示）" + "city:市（直辖市会在province和city显示）" + "district:区县" + "street:街道"
+ */
+@RecordBuilder
 @Schema(description = "地区VO")
-public class RegionResult implements Serializable {
+public record RegionResult(@Schema(description = "id") Long id, @Schema(description = "地区父节点") Long parentId,
+						   @Schema(description = "地区编码") String code, @Schema(description = "地区名称") String name,
+						   @Schema(description = "地区级别") String level,
+						   @Schema(description = "城市编码") String cityCode,
+						   @Schema(description = "城市中心经度") String lng,
+						   @Schema(description = "城市中心纬度") String lat,
+						   @Schema(description = "行政地区路径,类似：1，2，3") String path,
+						   @Schema(description = "排序") Integer orderNum,
+						   @Schema(description = "子信息") List<RegionResult> children) implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "地区父节点")
-    private Long parentId;
-
-    @Schema(description = "地区编码")
-    private String code;
-
-    @Schema(description = "地区名称")
-    private String name;
-
-    /**
-     * 地区级别（1:省份province,2:市city,3:区县district,4:街道street） "行政区划级别" + "country:国家" +
-     * "province:省份（直辖市会在province和city显示）" + "city:市（直辖市会在province和city显示）" + "district:区县" +
-     * "street:街道"
-     */
-    @Schema(description = "地区级别")
-    private String level;
-
-    @Schema(description = "城市编码")
-    private String cityCode;
-
-    @Schema(description = "城市中心经度")
-    private String lng;
-
-    @Schema(description = "城市中心纬度")
-    private String lat;
-
-    @Schema(description = "行政地区路径,类似：1，2，3")
-    private String path;
-
-    @Schema(description = "排序")
-    private Integer orderNum;
-
-    @Schema(description = "子信息")
-    private List<RegionResult> children;
 }

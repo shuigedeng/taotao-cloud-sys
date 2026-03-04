@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2020/11/12 21:26
  */
-public interface FileCommandService implements CommandService {
+public interface FileCommandService extends CommandService {
 
     //	/**
     //	 * 上传文件

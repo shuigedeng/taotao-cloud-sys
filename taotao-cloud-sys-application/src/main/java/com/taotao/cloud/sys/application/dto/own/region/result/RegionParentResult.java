@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.region.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * QueryRegionByParentIdVO
@@ -33,27 +29,14 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 15:31:45
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "查询应用列表数据VO")
-public class RegionParentResult implements Serializable {
+public record RegionParentResult(@Schema(description = "主键ID") Long id, @Schema(description = "名称") String label,
+								 @Schema(description = "应用名称") String value,
+								 @Schema(description = "子数据") List<RegionParentResult> children) implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "主键ID")
-    private Long id;
-
-    @Schema(description = "名称")
-    private String label;
-
-    @Schema(description = "应用名称")
-    private String value;
-
-    @Schema(description = "子数据")
-    private List<RegionParentResult> children;
 }

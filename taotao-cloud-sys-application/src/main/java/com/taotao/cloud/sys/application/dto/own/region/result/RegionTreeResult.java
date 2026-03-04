@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.own.region.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
 import com.taotao.boot.common.tree.MapperNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
@@ -41,28 +42,28 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "地区查询VO")
-public class RegionTreeResult extends MapperNode implements Serializable {
+public class RegionTreeResult extends MapperNode implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = -5853343562172855421L;
+	@Serial private static final long serialVersionUID = -5853343562172855421L;
 
-    @Schema(description = "地区编码")
-    private String code;
+	@Schema(description = "地区编码")
+	private String code;
 
-    @Schema(description = "地区名称")
-    private String name;
+	@Schema(description = "地区名称")
+	private String name;
 
-    @Schema(description = "地区级别（1:省份province,2:市city,3:区县district,4:街道street）")
-    private Integer level;
+	@Schema(description = "地区级别（1:省份province,2:市city,3:区县district,4:街道street）")
+	private Integer level;
 
-    @Schema(description = "城市编码")
-    private String cityCode;
+	@Schema(description = "城市编码")
+	private String cityCode;
 
-    @Schema(description = "城市中心经度")
-    private String lng;
+	@Schema(description = "城市中心经度")
+	private String lng;
 
-    @Schema(description = "城市中心纬度")
-    private String lat;
+	@Schema(description = "城市中心纬度")
+	private String lat;
 
-    @Schema(description = "地区父节点")
-    private Long parentId;
+	@Schema(description = "地区父节点")
+	private Long parentId;
 }

@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.08
  * @since 2022-08-10 10:24:46
  */
-public interface RegionCommandService implements CommandService {
+public interface RegionCommandService extends CommandService {
     //
     //    /**
     //     * queryRegionByParentId

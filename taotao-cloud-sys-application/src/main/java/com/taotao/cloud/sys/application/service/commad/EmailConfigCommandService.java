@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2022-03-25 14:25:28
  */
-public interface EmailConfigCommandService implements CommandService {
+public interface EmailConfigCommandService extends CommandService {
 
     //    /**
     //     * 更新邮件配置

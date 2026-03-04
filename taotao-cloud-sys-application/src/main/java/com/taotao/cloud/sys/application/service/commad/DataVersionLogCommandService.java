@@ -23,7 +23,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @author shuigedeng
  * @since 2022/1/10
  */
-public interface DataVersionLogCommandService implements CommandService {
+public interface DataVersionLogCommandService extends CommandService {
     //    /**
     //     * 添加
     //     */

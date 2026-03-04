@@ -25,4 +25,4 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2022-03-03 14:34:17
  */
-public interface SystemCommandService implements CommandService {}
+public interface SystemCommandService extends CommandService {}

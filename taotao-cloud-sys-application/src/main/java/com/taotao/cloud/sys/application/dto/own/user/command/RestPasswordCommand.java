@@ -16,16 +16,13 @@
 
 package com.taotao.cloud.sys.application.dto.own.user.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+
 import org.hibernate.validator.constraints.Length;
 
 /**
@@ -35,29 +32,15 @@ import org.hibernate.validator.constraints.Length;
  * @version 2021.10
  * @since 2021-10-09 15:21:15
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "用户重置密码DTO")
-public class RestPasswordCommand implements Serializable {
+public record RestPasswordCommand(
+	@Schema(description = "手机号") @NotBlank(message = "手机号不能为空") @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确") String phone,
+	@Schema(description = "原密码") @NotBlank(message = "原密码不能为空") String oldPassword,
+	@Schema(description = "新密码") @NotBlank(message = "新密码不能为空") @Length(min = 6, max = 128, message = "密码长度不能小于6位") String newPassword) implements
+	Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "手机号", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "手机号不能为空")
-    @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确")
-    private String phone;
-
-    @Schema(description = "原密码", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "原密码不能为空")
-    private String oldPassword;
-
-    @Schema(description = "新密码", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "新密码不能为空")
-    @Length(min = 6, max = 128, message = "密码长度不能小于6位")
-    private String newPassword;
 }

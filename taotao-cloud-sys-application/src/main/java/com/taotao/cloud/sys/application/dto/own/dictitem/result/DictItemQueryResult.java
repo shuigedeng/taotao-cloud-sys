@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.dictitem.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 字典项查询对象
@@ -33,39 +29,18 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 15:32:25
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "字典项查询对象")
-public class DictItemQueryResult implements Serializable {
+public record DictItemQueryResult(@Schema(description = "id") Long id, @Schema(description = "字典id") Long dictId,
+								  @Schema(description = "字典项文本") String itemText,
+								  @Schema(description = "字典项值") String itemValue,
+								  @Schema(description = "描述") String description,
+								  @Schema(description = "状态(1不启用 2启用)") Integer status,
+								  @Schema(description = "创建时间") LocalDateTime createTime,
+								  @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime) implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "字典id")
-    private Long dictId;
-
-    @Schema(description = "字典项文本")
-    private String itemText;
-
-    @Schema(description = "字典项值")
-    private String itemValue;
-
-    @Schema(description = "描述")
-    private String description;
-
-    @Schema(description = "状态(1不启用 2启用)")
-    private Integer status;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "最后修改时间")
-    private LocalDateTime lastModifiedTime;
 }

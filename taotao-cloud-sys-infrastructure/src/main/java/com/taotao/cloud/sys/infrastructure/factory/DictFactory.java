@@ -16,7 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.factory;
 
-import com.taotao.boot.ddd.model.types.Factory;
+
+import com.taotao.boot.common.model.ddd.types.MarkerFactory;
 
 /**
  * DictFactory
@@ -25,4 +26,4 @@ import com.taotao.boot.ddd.model.types.Factory;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-public class DictFactory implements Factory {}
+public class DictFactory implements MarkerFactory {}

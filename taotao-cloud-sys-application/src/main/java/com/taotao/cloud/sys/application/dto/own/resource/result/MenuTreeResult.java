@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.own.resource.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
 import com.taotao.boot.common.tree.MapperNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
@@ -42,47 +43,47 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Schema(description = "树形菜单列表")
-public class MenuTreeResult extends MapperNode implements Serializable {
+public class MenuTreeResult extends MapperNode implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = -5853343562172855421L;
+	@Serial private static final long serialVersionUID = -5853343562172855421L;
 
-    @Schema(description = "图标")
-    private String icon;
+	@Schema(description = "图标")
+	private String icon;
 
-    @Schema(description = "菜单名称")
-    private String name;
+	@Schema(description = "菜单名称")
+	private String name;
 
-    @Schema(description = "权限标识")
-    private String perms;
+	@Schema(description = "权限标识")
+	private String perms;
 
-    @Schema(description = "spread")
-    private Boolean spread;
+	@Schema(description = "spread")
+	private Boolean spread;
 
-    @Schema(description = "前端path / 即跳转路由")
-    private String path;
+	@Schema(description = "前端path / 即跳转路由")
+	private String path;
 
-    @Schema(description = "是否缓存页面: 0:否 1:是 (默认值0)")
-    private Boolean keepAlive;
+	@Schema(description = "是否缓存页面: 0:否 1:是 (默认值0)")
+	private Boolean keepAlive;
 
-    @Schema(description = "菜单类型 1：目录 2：菜单 3：按钮")
-    private Integer type;
+	@Schema(description = "菜单类型 1：目录 2：菜单 3：按钮")
+	private Integer type;
 
-    @Schema(description = "菜单标签")
-    private String label;
+	@Schema(description = "菜单标签")
+	private String label;
 
-    private String component;
+	private String component;
 
-    private Boolean hidden;
+	private Boolean hidden;
 
-    private String redirect;
+	private String redirect;
 
-    private Boolean alwaysShow;
+	private Boolean alwaysShow;
 
-    private Boolean target;
+	private Boolean target;
 
-    private String typeName;
+	private String typeName;
 
-    private LocalDateTime createTime;
+	private LocalDateTime createTime;
 
-    private MenuMetaResult meta;
+	private MenuMetaResult meta;
 }

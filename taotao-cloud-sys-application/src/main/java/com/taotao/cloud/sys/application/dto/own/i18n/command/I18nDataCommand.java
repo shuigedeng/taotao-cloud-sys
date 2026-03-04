@@ -16,41 +16,26 @@
 
 package com.taotao.cloud.sys.application.dto.own.i18n.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 /**
  * 国际化信息传输对象
+ *
+ * @param languageTag 语言标签
+ * @param code 唯一标识 = 业务:关键词
+ * @param message 文本值，可以使用 { } 加角标，作为占位符
+ * @param remarks 备注
  */
-@Setter
-@Getter
-@ToString
+@RecordBuilder
 @Schema(title = "国际化信息传输对象")
-public class I18nDataCommand {
+public record I18nDataCommand(@Schema(title = "语言标签") String languageTag,
+							  @Schema(title = "唯一标识 = 业务:关键词") String code,
+							  @Schema(title = "文本值，可以使用 { } 加角标，作为占位符") String message,
+							  @Schema(title = "备注") String remarks) implements Command {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 语言标签
-     */
-    @Schema(title = "语言标签")
-    private String languageTag;
-
-    /**
-     * 唯一标识 = 业务:关键词
-     */
-    @Schema(title = "唯一标识 = 业务:关键词")
-    private String code;
-
-    /**
-     * 文本值，可以使用 { } 加角标，作为占位符
-     */
-    @Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
-    private String message;
-
-    /**
-     * 备注
-     */
-    @Schema(title = "备注")
-    private String remarks;
 }

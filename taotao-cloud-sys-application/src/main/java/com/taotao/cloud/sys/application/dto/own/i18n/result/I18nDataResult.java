@@ -16,27 +16,20 @@
 
 package com.taotao.cloud.sys.application.dto.own.i18n.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
 
 /**
  * 国际化信息 查询对象
  */
-@Setter
-@Getter
-@ToString
+@RecordBuilder
 @Schema(title = "国际化信息查询对象")
-public class I18nDataResult {
+public record I18nDataResult(@Parameter(description = "国际化标识") String code,
+							 @Parameter(description = "文本信息") String message,
+							 @Parameter(description = "语言标签") String languageTag) implements MarkerResult {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Parameter(description = "国际化标识")
-    private String code;
-
-    @Parameter(description = "文本信息")
-    private String message;
-
-    @Parameter(description = "语言标签")
-    private String languageTag;
 }

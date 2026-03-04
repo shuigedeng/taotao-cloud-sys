@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.dict.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 字典查询对象
@@ -32,103 +28,17 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-//@ToString
-@Accessors(fluent = true)
-//@EqualsAndHashCode
-//@AllArgsConstructor
-//@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "字典查询对象")
-public class DictQueryResult implements Serializable {
+public record DictQueryResult(@Schema(description = "id") Long id, @Schema(description = "字典名称") String dictName,
+							  @Schema(description = "字典编码") String dictCode,
+							  @Schema(description = "描述") String description,
+							  @Schema(description = "排序值") Integer dictSort,
+							  @Schema(description = "备注信息") String remark,
+							  @Schema(description = "创建时间") LocalDateTime createTime,
+							  @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime) implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
-
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "字典名称")
-    private String dictName;
-
-    @Schema(description = "字典编码")
-    private String dictCode;
-
-    @Schema(description = "描述")
-    private String description;
-
-    @Schema(description = "排序值")
-    private Integer dictSort;
-
-    @Schema(description = "备注信息")
-    private String remark;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "最后修改时间")
-    private LocalDateTime lastModifiedTime;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId( Long id ) {
-		this.id = id;
-	}
-
-	public String getDictName() {
-		return dictName;
-	}
-
-	public void setDictName( String dictName ) {
-		this.dictName = dictName;
-	}
-
-	public String getDictCode() {
-		return dictCode;
-	}
-
-	public void setDictCode( String dictCode ) {
-		this.dictCode = dictCode;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription( String description ) {
-		this.description = description;
-	}
-
-	public Integer getDictSort() {
-		return dictSort;
-	}
-
-	public void setDictSort( Integer dictSort ) {
-		this.dictSort = dictSort;
-	}
-
-	public String getRemark() {
-		return remark;
-	}
-
-	public void setRemark( String remark ) {
-		this.remark = remark;
-	}
-
-	public LocalDateTime getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime( LocalDateTime createTime ) {
-		this.createTime = createTime;
-	}
-
-	public LocalDateTime getLastModifiedTime() {
-		return lastModifiedTime;
-	}
-
-	public void setLastModifiedTime( LocalDateTime lastModifiedTime ) {
-		this.lastModifiedTime = lastModifiedTime;
-	}
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 }

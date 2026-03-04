@@ -17,12 +17,10 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import lombok.experimental.Accessors;
 
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -33,56 +31,24 @@ import java.util.Set;
  * @version 2021.10
  * @since 2021-10-09 15:19:37
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "用户查询VO")
-public class UserQueryApiResponse  implements MarkerResponse  {
+public record UserQueryApiResponse(@Schema(description = "id") Long id, @Schema(description = "昵称") String nickname,
+								   @Schema(description = "真实用户名") String username,
+								   @Schema(description = "手机号") String phone,
+								   @Schema(description = "性别 1男 2女 0未知") Integer sex,
+								   @Schema(description = "邮箱") String email,
+								   @Schema(description = "部门ID") Long deptId,
+								   @Schema(description = "岗位ID") Long jobId,
+								   @Schema(description = "头像") String avatar,
+								   @Schema(description = "是否锁定 1-正常，2-锁定") Integer lockFlag,
+								   @Schema(description = "角色列表") Set<String> roles,
+								   @Schema(description = "权限列表") Set<String> permissions,
+								   @Schema(description = "创建时间") LocalDateTime createTime,
+								   @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime)  implements
+	MarkerResponse {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "昵称")
-    private String nickname;
-
-    @Schema(description = "真实用户名")
-    private String username;
-
-    @Schema(description = "手机号")
-    private String phone;
-
-    @Schema(description = "性别 1男 2女 0未知")
-    private Integer sex;
-
-    @Schema(description = "邮箱")
-    private String email;
-
-    @Schema(description = "部门ID")
-    private Long deptId;
-
-    @Schema(description = "岗位ID")
-    private Long jobId;
-
-    @Schema(description = "头像")
-    private String avatar;
-
-    @Schema(description = "是否锁定 1-正常，2-锁定")
-    private Integer lockFlag;
-
-    @Schema(description = "角色列表")
-    private Set<String> roles;
-
-    @Schema(description = "权限列表")
-    private Set<String> permissions;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "最后修改时间")
-    private LocalDateTime lastModifiedTime;
 }

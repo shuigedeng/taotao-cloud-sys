@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.resource.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 菜单
@@ -32,36 +28,16 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "菜单VO")
-public class MenuResult implements Serializable {
+public record MenuResult(@Schema(description = "菜单名称") String name, @Schema(description = "菜单路径") String path,
+						 @Schema(description = "菜单redirect") String redirect,
+						 @Schema(description = "菜单组件名称") String component,
+						 @Schema(description = "菜单alwaysShow") Boolean alwaysShow,
+						 @Schema(description = "菜单meta") MenuMetaResult meta,
+						 @Schema(description = "菜单children") List<MenuResult> children) implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = -5853343562172855421L;
+	@Serial
+	private static final long serialVersionUID = -5853343562172855421L;
 
-    @Schema(description = "菜单名称")
-    private String name;
-
-    @Schema(description = "菜单路径")
-    private String path;
-
-    @Schema(description = "菜单redirect")
-    private String redirect;
-
-    @Schema(description = "菜单组件名称")
-    private String component;
-
-    @Schema(description = "菜单alwaysShow")
-    private Boolean alwaysShow;
-
-    @Schema(description = "菜单meta")
-    private MenuMetaResult meta;
-
-    @Schema(description = "菜单children")
-    private List<MenuResult> children;
 }

@@ -16,13 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.dept.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 部门查询对象
@@ -30,29 +27,15 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/6/15 11:00
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "部门查询对象")
-public class DeptQueryResult implements Serializable {
+public record DeptQueryResult(@Schema(description = "部门id") Long deptId,
+							  @Schema(description = "部门名称") String name,
+							  @Schema(description = "上级部门id") Long parentId,
+							  @Schema(description = "排序") Integer sort,
+							  @Schema(description = "备注") String remark) implements MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "部门id", requiredMode = Schema.RequiredMode.REQUIRED)
-    private Long deptId;
-
-    @Schema(description = "部门名称")
-    private String name;
-
-    @Schema(description = "上级部门id")
-    private Long parentId;
-
-    @Schema(description = "排序")
-    private Integer sort;
-
-    @Schema(description = "备注")
-    private String remark;
 }

@@ -17,15 +17,14 @@
 package com.taotao.cloud.sys.application.dto.own.app.command;
 
 import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import java.io.Serializable;
+
+import java.io.Serial;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * AppAddCommand
@@ -34,48 +33,19 @@ import lombok.experimental.Accessors;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@NoArgsConstructor
-@AllArgsConstructor
+@RecordBuilder
 @Schema(title = "系统应用")
-public class AppAddCommand implements Serializable {
+public record AppAddCommand(
+	@Schema(description = "主键") @NotNull(message = "主键不能为空!", groups = ValidationGroups.Update.class) Long id,
+	@Schema(description = "应用名称") @Size(min = 1, max = 10, message = "应用名称长度在1-10之间!", groups = ValidationGroups.Create.class) @NotNull(message = "应用名称不能为空!", groups = ValidationGroups.Create.class) String name,
+	@Schema(description = "应用编码") @Size(min = 1, max = 10, message = "应用编码长度在1-10之间!", groups = ValidationGroups.Create.class) @NotNull(message = "应用编码不能为空!", groups = ValidationGroups.Create.class) String code,
+	@Schema(description = "图标") @NotNull(message = "图标不能为空!", groups = ValidationGroups.Create.class) String icon,
+	@Schema(description = "排序") @NotNull(message = "排序不能为空!", groups = ValidationGroups.Create.class) Integer sort,
+	@Schema(description = "创建者") String createBy, @Schema(description = "创建时间") LocalDateTime createTime,
+	@Schema(description = "更新者") String updateBy, @Schema(description = "更新时间") LocalDateTime updateTime) implements
+	Command {
 
-    private static final long serialVersionUID = -1L;
+	@Serial
+	private static final long serialVersionUID = -1L;
 
-    @Schema(description = "主键")
-    @NotNull(message = "主键不能为空!", groups = ValidationGroups.Update.class)
-    private Long id;
-
-    @Schema(description = "应用名称")
-    @Size(min = 1, max = 10, message = "应用名称长度在1-10之间!", groups = ValidationGroups.Create.class)
-    @NotNull(message = "应用名称不能为空!", groups = ValidationGroups.Create.class)
-    private String name;
-
-    @Schema(description = "应用编码")
-    @Size(min = 1, max = 10, message = "应用编码长度在1-10之间!", groups = ValidationGroups.Create.class)
-    @NotNull(message = "应用编码不能为空!", groups = ValidationGroups.Create.class)
-    private String code;
-
-    @Schema(description = "图标")
-    @NotNull(message = "图标不能为空!", groups = ValidationGroups.Create.class)
-    private String icon;
-
-    @Schema(description = "排序")
-    @NotNull(message = "排序不能为空!", groups = ValidationGroups.Create.class)
-    private Integer sort;
-
-    @Schema(description = "创建者")
-    private String createBy;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "更新者")
-    private String updateBy;
-
-    @Schema(description = "更新时间")
-    private LocalDateTime updateTime;
 }

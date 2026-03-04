@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.dept.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 部门添加对象
@@ -32,30 +28,14 @@ import lombok.experimental.Accessors;
  * @version 2022.03
  * @since 2022-03-23 08:50:16
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "部门添加对象")
-public class DeptSaveCommand implements Serializable {
+public record DeptSaveCommand(
+	@Schema(description = "部门id") Integer deptId,
+	@Schema(description = "部门名称") String name, @Schema(description = "上级部门id") Integer parentId,
+	@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "部门id", requiredMode = Schema.RequiredMode.REQUIRED)
-    private Integer deptId;
-
-    @Schema(description = "部门名称")
-    private String name;
-
-    @Schema(description = "上级部门id")
-    private Integer parentId;
-
-    @Schema(description = "排序")
-    private Integer sort;
-
-    @Schema(description = "备注")
-    private String remark;
 }

@@ -21,11 +21,12 @@ import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.grpc.spring.annotation.GrpcClient;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.api.grpc.DictGrpcRequest;
+import com.taotao.cloud.sys.api.grpc.DictGrpcQuery;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import com.taotao.cloud.sys.application.dto.own.dict.query.DictQuery;
 import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResult;
+import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResultBuilder;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class DictMallController extends BusinessController {
 		taskExecutor.execute(() -> {
 			System.out.println("Running on: " + Thread.currentThread());
 		});
-		DictGrpcResponse byCode = dictGrpcServiceStub.findByCode(DictGrpcRequest.newBuilder().build());
+		DictGrpcResponse byCode = dictGrpcServiceStub.findByCode(DictGrpcQuery.newBuilder().build());
 		System.out.println(byCode);
 		return Result.success(new ArrayList<>());
     }
@@ -74,6 +75,6 @@ public class DictMallController extends BusinessController {
 	@PostMapping("/testMybatisQueryStructuredddd")
 	public Result<DictQueryResult> testMybatisQueryStructuredddd(@RequestBody DictQuery dictQuery ) {
 
-		return Result.success(new DictQueryResult());
+		return Result.success(DictQueryResultBuilder.builder().build());
 	}
 }

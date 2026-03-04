@@ -27,7 +27,7 @@ import java.util.List;
  * @version 2022.03
  * @since 2022-03-25 14:24:48
  */
-public interface DeptCommandService implements CommandService {
+public interface DeptCommandService extends CommandService {
 
     /**
      * 获取部门树

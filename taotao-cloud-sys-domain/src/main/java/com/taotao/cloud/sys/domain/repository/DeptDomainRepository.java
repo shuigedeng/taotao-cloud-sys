@@ -16,9 +16,10 @@
 
 package com.taotao.cloud.sys.domain.repository;
 
+import com.taotao.boot.ddd.model.domain.repository.DomainRepository;
 import com.taotao.cloud.sys.domain.entity.DeptEntity;
 
-public interface DeptDomainRepository {
+public interface DeptDomainRepository extends DomainRepository {
     /**
      * 新增部门.
      *

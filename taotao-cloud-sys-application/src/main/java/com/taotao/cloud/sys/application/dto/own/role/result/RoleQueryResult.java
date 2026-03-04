@@ -16,15 +16,11 @@
 
 package com.taotao.cloud.sys.application.dto.own.role.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 角色查询对象
@@ -33,33 +29,16 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 15:23:58
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "角色查询对象")
-public class RoleQueryResult implements Serializable {
+public record RoleQueryResult(@Schema(description = "id") Long id, @Schema(description = "角色名称") String name,
+							  @Schema(description = "角色code") String code,
+							  @Schema(description = "备注") String remark,
+							  @Schema(description = "创建时间") LocalDateTime createTime,
+							  @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime) implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "角色名称")
-    private String name;
-
-    @Schema(description = "角色code")
-    private String code;
-
-    @Schema(description = "备注")
-    private String remark;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "最后修改时间")
-    private LocalDateTime lastModifiedTime;
 }

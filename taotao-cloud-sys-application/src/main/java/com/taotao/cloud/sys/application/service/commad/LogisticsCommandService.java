@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2022-03-25 14:58:48
  */
-public interface LogisticsCommandService implements CommandService {
+public interface LogisticsCommandService extends CommandService {
 
     /**
      * 根据id查询物流公司信息

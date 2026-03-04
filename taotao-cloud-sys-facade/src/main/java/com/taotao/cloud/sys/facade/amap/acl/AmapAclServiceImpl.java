@@ -1,6 +1,6 @@
 package com.taotao.cloud.sys.facade.amap.acl;
 
-import com.taotao.boot.ddd.acl.BaseAclService;
+import com.taotao.boot.ddd.acl.AclBaseService;
 import com.taotao.cloud.sys.application.acl.AmapAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,4 +14,4 @@ import org.springframework.stereotype.Service;
  */
 @AllArgsConstructor
 @Service
-public class AmapAclServiceImpl extends BaseAclService implements AmapAclService {}
+public class AmapAclServiceImpl extends AclBaseService implements AmapAclService {}

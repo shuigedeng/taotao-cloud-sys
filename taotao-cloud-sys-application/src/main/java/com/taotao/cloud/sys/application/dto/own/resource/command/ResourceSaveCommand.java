@@ -16,15 +16,12 @@
 
 package com.taotao.cloud.sys.application.dto.own.resource.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+
 import org.hibernate.validator.constraints.Length;
 
 /**
@@ -34,58 +31,22 @@ import org.hibernate.validator.constraints.Length;
  * @version 2021.10
  * @since 2021-10-09 15:26:19
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "菜单添加对象")
-public class ResourceSaveCommand implements Serializable {
+public record ResourceSaveCommand(
+	@Schema(description = "菜单名称") @NotBlank(message = "菜单名称不能超过为空") @Length(max = 20, message = "菜单名称不能超过20个字符") String name,
+	@Schema(description = "菜单类型 1：目录 2：菜单 3：按钮") @NotBlank(message = "菜单类型不能超过为空") Integer type,
+	@Schema(description = "权限标识") String perms, @Schema(description = "前端path / 即跳转路由") String path,
+	@Schema(description = "菜单组件") String component, @Schema(description = "父菜单ID") Long parentId,
+	@Schema(description = "图标") String icon,
+	@Schema(description = "是否缓存页面: 0:否 1:是 (默认值0)") Boolean keepAlive,
+	@Schema(description = "是否隐藏路由菜单: 0否;1是（默认值0）") Boolean hidden,
+	@Schema(description = "聚合路由 0否;1是（默认值0）") Boolean alwaysShow,
+	@Schema(description = "重定向") String redirect,
+	@Schema(description = "是否为外链 0否;1是（默认值0）") Boolean isFrame,
+	@Schema(description = "排序值") Integer sortNum) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "菜单名称", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "菜单名称不能超过为空")
-    @Length(max = 20, message = "菜单名称不能超过20个字符")
-    private String name;
-
-    @Schema(description = "菜单类型 1：目录 2：菜单 3：按钮", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "菜单类型不能超过为空")
-    // @IntEnums(value = {1; 2; 3})
-    private Integer type;
-
-    @Schema(description = "权限标识")
-    private String perms;
-
-    @Schema(description = "前端path / 即跳转路由")
-    private String path;
-
-    @Schema(description = "菜单组件")
-    private String component;
-
-    @Schema(description = "父菜单ID")
-    private Long parentId;
-
-    @Schema(description = "图标")
-    private String icon;
-
-    @Schema(description = "是否缓存页面: 0:否 1:是 (默认值0)")
-    private Boolean keepAlive;
-
-    @Schema(description = "是否隐藏路由菜单: 0否;1是（默认值0）")
-    private Boolean hidden;
-
-    @Schema(description = "聚合路由 0否;1是（默认值0）")
-    private Boolean alwaysShow;
-
-    @Schema(description = "重定向")
-    private String redirect;
-
-    @Schema(description = "是否为外链 0否;1是（默认值0）")
-    private Boolean isFrame;
-
-    @Schema(description = "排序值")
-    private Integer sortNum;
 }

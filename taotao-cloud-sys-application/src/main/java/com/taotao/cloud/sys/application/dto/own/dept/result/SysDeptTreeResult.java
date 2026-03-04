@@ -16,72 +16,35 @@
 
 package com.taotao.cloud.sys.application.dto.own.dept.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "部门树VO")
-public class SysDeptTreeResult implements Serializable {
+public record SysDeptTreeResult(@Schema(description = "对应SysDepart中的id字段,前端数据树中的key") Integer key,
+								@Schema(description = "对应SysDepart中的id字段;前端数据树中的value") String value,
+								@Schema(description = "对应depart_name字段;前端数据树中的title") String title,
+								@Schema(description = "部门主键ID") Long deptId,
+								@Schema(description = "部门名称") String name,
+								@Schema(description = "上级部门") Long parentId,
+								@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark,
+								@Schema(description = "创建时间") LocalDateTime createTime,
+								@Schema(description = "修改时间") LocalDateTime updateTime,
+								@Schema(description = "是否删除  -1：已删除  0：正常") Boolean delFlag,
+								@Schema(description = "上级部门") String parentName,
+								@Schema(description = "等级") Integer level,
+								@Schema(description = "children") List<SysDeptTreeResult> children) implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "对应SysDepart中的id字段,前端数据树中的key")
-    private Integer key;
-
-    @Schema(description = "对应SysDepart中的id字段;前端数据树中的value")
-    private String value;
-
-    @Schema(description = "对应depart_name字段;前端数据树中的title")
-    private String title;
-
-    @Schema(description = "部门主键ID")
-    private Long deptId;
-
-    @Schema(description = "部门名称")
-    private String name;
-
-    @Schema(description = "上级部门")
-    private Long parentId;
-
-    @Schema(description = "排序")
-    private Integer sort;
-
-    @Schema(description = "备注")
-    private String remark;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "修改时间")
-    private LocalDateTime updateTime;
-
-    @Schema(description = "是否删除  -1：已删除  0：正常")
-    private Boolean delFlag;
-
-    @Schema(description = "上级部门")
-    private String parentName;
-
-    @Schema(description = "等级")
-    private Integer level;
-
-    @Schema(description = "children")
-    private List<SysDeptTreeResult> children;
 }

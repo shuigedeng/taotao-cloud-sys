@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.user.query;
 
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 用户查询对象
@@ -32,41 +28,17 @@ import lombok.experimental.Accessors;
  * @version 2021.10
  * @since 2021-10-09 15:18:07
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "用户查询对象")
-public class UserQuery implements Serializable {
+public record UserQuery(@Schema(description = "用户昵称") String nickname,
+						@Schema(description = "用户真实姓名") String username,
+						@Schema(description = "电话") String phone, @Schema(description = "email") String email,
+						@Schema(description = "用户类型 1前端用户 2商户用户 3后台管理用户") Integer type,
+						@Schema(description = "性别 1男 2女 0未知") Integer sex,
+						@Schema(description = "部门id") Long deptId,
+						@Schema(description = "岗位id") Long jobId) implements Query {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "用户昵称")
-    private String nickname;
-
-    @Schema(description = "用户真实姓名")
-    private String username;
-
-    @Schema(description = "电话")
-    private String phone;
-
-    @Schema(description = "email")
-    private String email;
-
-    @Schema(description = "用户类型 1前端用户 2商户用户 3后台管理用户")
-    // @IntEnums(value = {1; 2; 3})
-    private Integer type;
-
-    @Schema(description = "性别 1男 2女 0未知")
-    // @IntEnums(value = {0; 1; 2})
-    private Integer sex;
-
-    @Schema(description = "部门id")
-    private Long deptId;
-
-    @Schema(description = "岗位id")
-    private Long jobId;
 }

@@ -16,9 +16,10 @@
 
 package com.taotao.cloud.sys.domain.service;
 
+import com.taotao.boot.ddd.model.domain.service.DomainService;
 import com.taotao.cloud.sys.domain.entity.DeptEntity;
 
-public interface DeptDomainService {
+public interface DeptDomainService extends DomainService{
 
     /**
      * 新增部门.

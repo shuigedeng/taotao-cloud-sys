@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2021.10
  * @since 2021-10-09 20:32:36
  */
-public interface DictCommandService implements CommandService {
+public interface DictCommandService extends CommandService {
 
     //    /**
     //     * 添加字典

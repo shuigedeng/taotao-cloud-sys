@@ -18,4 +18,4 @@ package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
 
-public interface SysLogCommandService implements CommandService {}
+public interface SysLogCommandService extends CommandService {}

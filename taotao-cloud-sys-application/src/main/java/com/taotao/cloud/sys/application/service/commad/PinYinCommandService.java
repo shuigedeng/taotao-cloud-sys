@@ -25,7 +25,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
  * @version 2022.03
  * @since 2022-03-23 08:59:36
  */
-public interface PinYinCommandService implements CommandService {
+public interface PinYinCommandService extends CommandService {
 
     /**
      * 获取姓氏的首字母大写

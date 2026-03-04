@@ -17,12 +17,10 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
-import lombok.experimental.Accessors;
 
 import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -32,32 +30,16 @@ import java.time.LocalDateTime;
  * @version 2021.10
  * @since 2021-10-09 15:23:58
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "角色查询对象")
-public class RoleQueryApiResponse  implements MarkerResponse  {
+public record RoleQueryApiResponse(@Schema(description = "id") Long id, @Schema(description = "角色名称") String name,
+								   @Schema(description = "角色code") String code,
+								   @Schema(description = "备注") String remark,
+								   @Schema(description = "创建时间") LocalDateTime createTime,
+								   @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime)  implements
+	MarkerResponse {
 
-    @Serial private static final long serialVersionUID = 5126530068827085130L;
+	@Serial
+	private static final long serialVersionUID = 5126530068827085130L;
 
-    @Schema(description = "id")
-    private Long id;
-
-    @Schema(description = "角色名称")
-    private String name;
-
-    @Schema(description = "角色code")
-    private String code;
-
-    @Schema(description = "备注")
-    private String remark;
-
-    @Schema(description = "创建时间")
-    private LocalDateTime createTime;
-
-    @Schema(description = "最后修改时间")
-    private LocalDateTime lastModifiedTime;
 }

@@ -26,7 +26,7 @@ import java.util.Set;
  * @version 2022.03
  * @since 2022-03-25 14:33:42
  */
-public interface UserRelationCommandService implements CommandService {
+public interface UserRelationCommandService extends CommandService {
 
     /**
      * 添加用户-角色对应关系

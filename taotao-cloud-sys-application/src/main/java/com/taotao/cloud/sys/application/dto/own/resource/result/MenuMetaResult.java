@@ -16,14 +16,10 @@
 
 package com.taotao.cloud.sys.application.dto.own.resource.result;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResult;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 菜单DTO
@@ -31,21 +27,12 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "菜单元数据VO")
-public class MenuMetaResult implements Serializable {
+public record MenuMetaResult(@Schema(description = "名称") String title, @Schema(description = "icon") String icon)implements
+	MarkerResult {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "名称")
-    private String title;
-
-    @Schema(description = "icon")
-    private String icon;
 }

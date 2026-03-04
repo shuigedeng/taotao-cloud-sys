@@ -21,7 +21,7 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
 /**
  * 国际化信息
  */
-public interface I18nDataCommandService implements CommandService {
+public interface I18nDataCommandService extends CommandService {
 
     //	/**
     //	 * 根据QueryObeject查询分页数据

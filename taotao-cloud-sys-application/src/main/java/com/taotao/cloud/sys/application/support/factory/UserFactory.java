@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.support.factory;
 
-import com.taotao.boot.ddd.model.types.Factory;
+import com.taotao.boot.common.model.ddd.types.MarkerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,4 +27,4 @@ import org.springframework.stereotype.Component;
  * @since 2025-12-19 09:30:45
  */
 @Component
-public class UserFactory implements Factory {}
+public class UserFactory implements MarkerFactory {}

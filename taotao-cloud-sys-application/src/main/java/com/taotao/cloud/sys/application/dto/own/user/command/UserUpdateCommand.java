@@ -16,19 +16,15 @@
 
 package com.taotao.cloud.sys.application.dto.own.user.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
-import java.io.Serializable;
 import java.util.List;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 /**
  * 用户更新DTO
@@ -36,52 +32,19 @@ import lombok.experimental.Accessors;
  * @author shuigedeng
  * @since 2020/5/14 10:44
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "用户更新DTO")
-public class UserUpdateCommand implements Serializable {
+public record UserUpdateCommand(
+	@Schema(description = "昵称") @NotBlank(message = "昵称不能为空") @Max(value = 10, message = "昵称不能超过10个字符") String nickname,
+	@Schema(description = "真实用户名") @NotBlank(message = "真实用户名不能为空") @Max(value = 10, message = "真实用户名不能超过10个字符") String username,
+	@Schema(description = "手机号") @NotBlank(message = "真实用户名不能为空") @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确") String phone,
+	@Schema(description = "邮箱") @Email(message = "邮箱格式错误") String email,
+	@Schema(description = "头像") String avatar, @Schema(description = "部门ID") Integer deptId,
+	@Schema(description = "岗位ID") Integer jobId, @Schema(description = "是否锁定用户") Boolean lockFlag,
+	@Schema(description = "是否删除用户") Integer delFlag,
+	@Schema(description = "角色id列表") List<Integer> roleList) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "昵称", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "昵称不能为空")
-    @Max(value = 10, message = "昵称不能超过10个字符")
-    private String nickname;
-
-    @Schema(description = "真实用户名", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "真实用户名不能为空")
-    @Max(value = 10, message = "真实用户名不能超过10个字符")
-    private String username;
-
-    @Schema(description = "手机号", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotBlank(message = "真实用户名不能为空")
-    @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确")
-    private String phone;
-
-    @Schema(description = "邮箱")
-    @Email(message = "邮箱格式错误")
-    private String email;
-
-    @Schema(description = "头像")
-    private String avatar;
-
-    @Schema(description = "部门ID")
-    private Integer deptId;
-
-    @Schema(description = "岗位ID")
-    private Integer jobId;
-
-    @Schema(description = "是否锁定用户")
-    private Boolean lockFlag;
-
-    @Schema(description = "是否删除用户")
-    private Integer delFlag;
-
-    @Schema(description = "角色id列表")
-    private List<Integer> roleList;
 }

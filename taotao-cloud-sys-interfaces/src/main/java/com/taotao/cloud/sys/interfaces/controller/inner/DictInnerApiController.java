@@ -30,6 +30,7 @@ import com.taotao.boot.webagg.controller.InnerController;
 import com.taotao.cloud.sys.api.inner.command.DictCommandApi;
 import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
+import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponseBuilder;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
 import com.yomahub.tlog.core.annotation.TLogAspect;
@@ -60,7 +61,7 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
 	public Response<DictQueryApiResponse> save(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
-		if ("sd".equals(dictQueryApiRequest.getOrder().getBizNo())) {
+		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
 			//	Thread.sleep(100000000000L);
@@ -71,7 +72,7 @@ public class DictInnerApiController extends InnerController implements DictComma
 		LogUtils.info("xxxxxxxxxxxxxxxxxxxxx");
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return Response.from(new DictQueryApiResponse());
+		return Response.from(DictQueryApiResponseBuilder.builder().build());
 	}
 
 	@Override

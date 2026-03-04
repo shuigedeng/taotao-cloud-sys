@@ -16,12 +16,12 @@
 
 package com.taotao.cloud.sys.application.dto.own.dictitem.query;
 
-import com.taotao.boot.common.model.request.PageQuery;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.ddd.query.PageQuery;
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * DictItemPageQuery
@@ -30,18 +30,9 @@ import lombok.experimental.Accessors;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor
-@NoArgsConstructor
-public class DictItemPageQuery extends PageQuery {
+@RecordBuilder
+public record DictItemPageQuery(
+	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = ValidationGroups.Update.class) PageQuery page,
+	Long dictId, String itemText, String itemValue, String description, Integer status) implements Query {
 
-    private Long dictId;
-    private String itemText;
-    private String itemValue;
-    private String description;
-    private Integer status;
 }

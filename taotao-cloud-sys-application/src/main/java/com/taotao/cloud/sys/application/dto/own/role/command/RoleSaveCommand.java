@@ -16,18 +16,13 @@
 
 package com.taotao.cloud.sys.application.dto.own.role.command;
 
-import static io.swagger.v3.oas.annotations.media.Schema.RequiredMode.REQUIRED;
-
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
-import java.io.Serializable;
-import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+
 import org.hibernate.validator.constraints.Length;
 
 /**
@@ -37,29 +32,14 @@ import org.hibernate.validator.constraints.Length;
  * @version 2021.10
  * @since 2021-10-09 15:25:01
  */
-@Setter
-@Getter
-@ToString
-@Accessors(fluent = true)
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@RecordBuilder
 @Schema(description = "角色添加对象")
-public class RoleSaveCommand implements Serializable {
+public record RoleSaveCommand(
+	@Schema(description = "角色名称") @NotBlank(message = "角色名称不能超过为空") @Length(max = 20, message = "角色名称不能超过20个字符") String name,
+	@Schema(description = "角色标识") @NotBlank(message = "角色标识不能超过为空") @Length(max = 20, message = "角色标识不能超过20个字符") @Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线") String code,
+	@Schema(description = "备注") String remark) implements Command {
 
-    @Serial private static final long serialVersionUID = -4132785717179910025L;
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
-    @Schema(description = "角色名称", requiredMode = REQUIRED)
-    @NotBlank(message = "角色名称不能超过为空")
-    @Length(max = 20, message = "角色名称不能超过20个字符")
-    private String name;
-
-    @Schema(description = "角色标识", requiredMode = REQUIRED)
-    @NotBlank(message = "角色标识不能超过为空")
-    @Length(max = 20, message = "角色标识不能超过20个字符")
-    @Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线")
-    private String code;
-
-    @Schema(description = "备注")
-    private String remark;
 }
