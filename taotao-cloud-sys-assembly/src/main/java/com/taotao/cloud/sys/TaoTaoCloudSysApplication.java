@@ -18,8 +18,6 @@ package com.taotao.cloud.sys;
 
 import com.taotao.boot.core.startup.StartupSpringApplication;
 import com.taotao.boot.web.annotation.TaoTaoBootApplication;
-import com.taotao.cloud.bootstrap.annotation.TaoTaoCloudApplication;
-//import com.taotao.cloud.bootstrap.annotation.TaoTaoCloudApplication;
 
 /**
  * 系统管理中心
