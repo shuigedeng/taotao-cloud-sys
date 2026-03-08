@@ -123,7 +123,6 @@ import com.taotao.boot.web.annotation.TaoTaoBootApplication;
  *                   --add-opens java.desktop/sun.awt=ALL-UNNAMED
  *                   --add-opens java.desktop/sun.font=ALL-UNNAMED
  *                   --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
- *                   --add-opens java.base/sun.security.action=ALL-UNNAMED
  *                   --add-opens java.base/java.lang=ALL-UNNAMED
  *                   --add-opens java.base/java.math=ALL-UNNAMED
  *                   --add-opens java.base/java.util=ALL-UNNAMED
@@ -138,7 +137,6 @@ import com.taotao.boot.web.annotation.TaoTaoBootApplication;
  *                   --add-opens java.management/java.lang.management=ALL-UNNAMED
  *                   --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
  *                   --add-opens java.management/sun.management=ALL-UNNAMED
- *                   --add-opens java.base/sun.security.action=ALL-UNNAMED
  *                   --add-opens java.management/java.lang.management=ALL-UNNAMED
  *                   --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
  *                   --add-opens java.management/sun.management=ALL-UNNAMED
@@ -170,7 +168,6 @@ import com.taotao.boot.web.annotation.TaoTaoBootApplication;
  *                   --add-opens java.management/java.lang.management=ALL-UNNAMED
  *                   --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
  *                   --add-opens java.management/sun.management=ALL-UNNAMED
- *                   --add-opens java.base/sun.security.action=ALL-UNNAMED
  *                   --add-opens java.base/sun.net.util=ALL-UNNAMED
  *                   --add-opens java.base/java.time=ALL-UNNAMED
  *                   --add-opens java.base/java.lang.reflect=ALL-UNNAMED
