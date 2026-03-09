@@ -358,6 +358,11 @@ seata:
 
 spring:
   config:
+    import:
+      # 使用 optional: 前缀，即使nacos不可用也能启动
+      - optional:nacos:${spring.application.name}.yaml
+      #- optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+      #- optional:nacos:shared-config.yaml
     activate:
       on-profile: test
   #  dynamic:
