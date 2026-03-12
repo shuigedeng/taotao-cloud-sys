@@ -14,20 +14,17 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.constant;
+package com.taotao.cloud.sys.common.enums;
 
-import com.taotao.boot.common.enums.ResultEnum;
-import com.taotao.boot.common.exception.BaseException;
-import com.taotao.boot.common.exception.BusinessException;
+/** 时间类型 */
+public enum QuartzTypeEnum {
 
-/**
- * 拼音异常
- *
- * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-25 14:22:32
- */
-public class PinyinException extends BusinessException {
+    /** 月 */
+    MONTH,
 
+    /** 年 */
+    YEAR,
 
+    /** 全部 */
+    ALL;
 }

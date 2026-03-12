@@ -14,23 +14,33 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.constant;
+package com.taotao.cloud.sys.common.enums;
 
 /**
- * 拼音模块常量
+ * app类型 安卓 IOS
  *
  * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-25 14:22:32
+ * @version 2022.04
+ * @since 2022-04-25 16:47:12
  */
-public interface PinyinConstants {
+public enum FileTypeEnum {
 
-    /** 邮件模块的名称 */
-    String PINYIN_MODULE_NAME = "kernel-d-pinyin";
+    /** IOS */
+    IOS("IOS"),
+    /** 安卓 */
+    ANDROID("安卓");
 
-    /** 异常枚举的步进值 */
-    String PINYIN_EXCEPTION_STEP_CODE = "22";
+    private final String description;
 
-    /** 中文字符的正则表达式 */
-    String CHINESE_WORDS_REGEX = "[\u4E00-\u9FA5]+";
+    FileTypeEnum(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String description() {
+        return this.description;
+    }
 }

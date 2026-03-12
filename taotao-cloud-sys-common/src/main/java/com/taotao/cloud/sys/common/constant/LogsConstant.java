@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.constant;
+package com.taotao.cloud.sys.common.constant;
 
 /**
  * 说明：订单的状态常量池

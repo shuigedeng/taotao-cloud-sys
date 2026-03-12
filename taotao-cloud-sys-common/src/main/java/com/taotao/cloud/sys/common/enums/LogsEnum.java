@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.enums;
+package com.taotao.cloud.sys.common.enums;
 
 /** 搜索类型 */
 public enum LogsEnum {

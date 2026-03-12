@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.enums;
+package com.taotao.cloud.sys.common.enums;
 
 import com.taotao.boot.common.utils.lang.StringUtils;
 import java.util.Arrays;

@@ -16,9 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.commad.impl;
 
-import static com.taotao.cloud.sys.api.constant.PinyinConstants.CHINESE_WORDS_REGEX;
+import static com.taotao.cloud.sys.common.constant.PinyinConstants.CHINESE_WORDS_REGEX;
 
-import com.taotao.cloud.sys.api.constant.PinyinException;
+import com.taotao.cloud.sys.common.constant.PinyinException;
 import com.taotao.cloud.sys.application.service.commad.PinYinCommandService;
 import java.util.Properties;
 import java.util.Set;

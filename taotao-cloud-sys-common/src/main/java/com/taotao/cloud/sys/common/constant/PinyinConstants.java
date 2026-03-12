@@ -14,38 +14,23 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.enums;
+package com.taotao.cloud.sys.common.constant;
 
 /**
- * 菜单类型
+ * 拼音模块常量
  *
  * @author shuigedeng
- * @version 2021.9
- * @since 2021-09-02 22:14:43
+ * @version 2022.03
+ * @since 2022-03-25 14:22:32
  */
-public enum ResourceTypeEnum {
+public interface PinyinConstants {
 
-    /** 目录 */
-    DIR(1, "目录"),
-    /** 菜单 */
-    MENU(2, "菜单"),
-    /** 资源 (包括分页、各种按钮、删除 等等 对应的是请求路径如：/api/menu/find) */
-    RESOURCE(3, "资源");
+    /** 邮件模块的名称 */
+    String PINYIN_MODULE_NAME = "kernel-d-pinyin";
 
-    private final Integer code;
+    /** 异常枚举的步进值 */
+    String PINYIN_EXCEPTION_STEP_CODE = "22";
 
-    private final String message;
-
-    ResourceTypeEnum(Integer code, String message) {
-        this.code = code;
-        this.message = message;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
+    /** 中文字符的正则表达式 */
+    String CHINESE_WORDS_REGEX = "[\u4E00-\u9FA5]+";
 }
