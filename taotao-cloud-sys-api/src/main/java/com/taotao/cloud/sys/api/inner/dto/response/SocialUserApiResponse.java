@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.api.inner.dto.response;
 
 import com.taotao.boot.common.model.ddd.types.MarkerResponse;
-import com.taotao.cloud.sys.api.enums.AuthUserGender;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -41,7 +40,7 @@ public record SocialUserApiResponse(Long id, @Schema(title = "社会用户ID") S
 									@Schema(title = "用户头像") String avatar, @Schema(title = "用户网址") String blog,
 									@Schema(title = "所在公司") String company, @Schema(title = "位置") String location,
 									@Schema(title = "用户邮箱") String email, @Schema(title = "用户邮箱") String remark,
-									@Schema(title = "性别") AuthUserGender gender,
+									@Schema(title = "性别") String gender,
 									@Schema(title = "第三方用户来源") String source,
 									@Schema(title = "用户的授权令牌") String accessToken,
 									@Schema(title = "第三方用户的授权令牌的有效期", description = "部分平台可能没有") Integer expireIn,

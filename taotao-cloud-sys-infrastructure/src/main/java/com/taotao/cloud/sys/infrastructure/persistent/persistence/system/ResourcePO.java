@@ -18,7 +18,6 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
-import com.taotao.cloud.sys.api.enums.ResourceTypeEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -89,7 +88,6 @@ public class ResourcePO extends BaseSuperEntity<ResourcePO, Long> {
     /**
      * 菜单类型 1:目录 2:菜单 3：资源(分页查询操作、操作按钮、删除按钮、查询按钮、等等) 资源 (包括分页、各种按钮、删除 等等 对应的是请求路径如：/api/menu/find)
      *
-     * @see ResourceTypeEnum
      */
     @Column(name = "`type`", columnDefinition = "int not null comment '菜单类型 (1:目录 2:菜单 3：资源)'")
     private Integer type;

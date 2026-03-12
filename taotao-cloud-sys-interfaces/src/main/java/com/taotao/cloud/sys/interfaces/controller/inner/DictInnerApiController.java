@@ -33,7 +33,7 @@ import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponseBuilder;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
 import com.taotao.cloud.sys.application.service.commad.DictCommandService;
-import com.yomahub.tlog.core.annotation.TLogAspect;
+//import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -80,7 +80,7 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@RequestLogger
 	@NotAuth
 	@Idempotent(perFix = "test")
-	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
+//	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")

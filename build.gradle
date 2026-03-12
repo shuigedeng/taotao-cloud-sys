@@ -360,8 +360,8 @@ subprojects {
                 cacheDynamicVersionsFor 0, "seconds"
             }
 
-            exclude group: 'com.vaadin.external.google', module: 'android-json'
-            exclude group: 'com.taobao.arthas', module: '*'
+//            exclude group: 'com.vaadin.external.google', module: 'android-json'
+//            exclude group: 'com.taobao.arthas', module: '*'
 
             resolutionStrategy {
                 force 'net.minidev:json-smart:2.6.0'
