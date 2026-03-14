@@ -16,8 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.assembler;
 
+import com.taotao.boot.ddd.model.assembler.BaseAssembler;
+import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 /**
  * UserMapper
@@ -26,13 +32,16 @@ import org.mapstruct.factory.Mappers;
  * @version 2022.04
  * @since 2022-04-28 13:39:49
  */
-@Mapper
-public interface RoleAssembler {
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface RoleAssembler extends BaseAssembler {
 
     /** 实例 */
     RoleAssembler INSTANCE = Mappers.getMapper(RoleAssembler.class);
 
-    //    /**
+	List<RoleAgg> toAggs( List<RolePO> rolePos );
+	RoleAgg toAgg( RolePO rolePo );
+
+	//    /**
     //     * bos, vos
     //     *
     //     * @param bos bos

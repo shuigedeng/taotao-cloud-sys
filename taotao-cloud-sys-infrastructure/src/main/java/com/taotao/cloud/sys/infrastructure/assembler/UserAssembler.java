@@ -16,7 +16,11 @@
 
 package com.taotao.cloud.sys.infrastructure.assembler;
 
+import com.taotao.boot.ddd.model.assembler.BaseAssembler;
+import com.taotao.cloud.sys.domain.aggregate.UserAgg;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -26,45 +30,50 @@ import org.mapstruct.factory.Mappers;
  * @version 2022.04
  * @since 2022-04-28 13:39:56
  */
-@Mapper
-public interface UserAssembler {
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface UserAssembler extends BaseAssembler {
 
-    /** 实例 */
-    UserAssembler INSTANCE = Mappers.getMapper(UserAssembler.class);
+	/**
+	 * 实例
+	 */
+	UserAssembler INSTANCE = Mappers.getMapper(UserAssembler.class);
 
-    //    /**
-    //     * 系统用户用户查询签证官
-    //     *
-    //     * @param sysUser 系统用户
-    //     * @return {@link UserQueryVO }
-    //     * @since 2022-04-28 13:39:56
-    //     */
-    //    UserQueryVO convert(User sysUser);
-    //
-    //    /**
-    //     * 系统用户添加用户签证官
-    //     *
-    //     * @param sysUser 系统用户
-    //     * @return {@link UserRegisterVO }
-    //     * @since 2022-04-28 13:39:57
-    //     */
-    //    UserRegisterVO convertRegisterVO(User sysUser);
-    //
-    //    /**
-    //     * 系统用户用户查询签证官
-    //     *
-    //     * @param userList 用户列表
-    //     * @return {@link List }<{@link UserQueryVO }>
-    //     * @since 2022-04-28 13:39:57
-    //     */
-    //    List<UserQueryVO> convertList(List<User> userList);
-    //
-    //    /**
-    //     * 用户dto复制到系统用户
-    //     *
-    //     * @param userQueryDTO 用户查询dto
-    //     * @param user 用户
-    //     * @since 2022-04-28 13:39:57
-    //     */
-    //    void copy(UserQueryDTO userQueryDTO, @MappingTarget User user);
+	UserAgg toAgg( UserPO userPo );
+
+	UserPO toPo( UserAgg userAgg );
+	//    /**
+	//     * 系统用户用户查询签证官
+	//     *
+	//     * @param sysUser 系统用户
+	//     * @return {@link UserQueryVO }
+	//     * @since 2022-04-28 13:39:56
+	//     */
+	//    UserQueryVO convert(User sysUser);
+	//
+	//    /**
+	//     * 系统用户添加用户签证官
+	//     *
+	//     * @param sysUser 系统用户
+	//     * @return {@link UserRegisterVO }
+	//     * @since 2022-04-28 13:39:57
+	//     */
+	//    UserRegisterVO convertRegisterVO(User sysUser);
+	//
+	//    /**
+	//     * 系统用户用户查询签证官
+	//     *
+	//     * @param userList 用户列表
+	//     * @return {@link List }<{@link UserQueryVO }>
+	//     * @since 2022-04-28 13:39:57
+	//     */
+	//    List<UserQueryVO> convertList(List<User> userList);
+	//
+	//    /**
+	//     * 用户dto复制到系统用户
+	//     *
+	//     * @param userQueryDTO 用户查询dto
+	//     * @param user 用户
+	//     * @since 2022-04-28 13:39:57
+	//     */
+	//    void copy(UserQueryDTO userQueryDTO, @MappingTarget User user);
 }

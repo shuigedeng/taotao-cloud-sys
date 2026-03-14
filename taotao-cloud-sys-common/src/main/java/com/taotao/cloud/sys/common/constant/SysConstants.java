@@ -14,27 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.assembler;
+package com.taotao.cloud.sys.common.constant;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
+/** 代码生成通用常量 */
+public final class SysConstants {
 
-/**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
- */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface AppAssembler {
-
-    //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
-    //
-    //	Page<AppDTO> convertPage(Page<App> appDO);
-    //
-    //	List<AppDTO> convertList(List<App> app);
-    //
-    //	AppDTO convert(App app);
-    //
-    //	App convert(AppDTO appDTO);
+    /** 单表（增删改查） */
+    public static final String SERVER_NAME = "taotao-cloud-sys";
 
 }

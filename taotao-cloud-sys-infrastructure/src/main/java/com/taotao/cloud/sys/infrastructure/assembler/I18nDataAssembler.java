@@ -17,12 +17,13 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
 /**
  * 国际化信息模型转换器
  */
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface I18nDataAssembler {
 
     I18nDataAssembler INSTANCE = Mappers.getMapper(I18nDataAssembler.class);

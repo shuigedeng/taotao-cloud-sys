@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.common.constant;
+package com.taotao.cloud.sys.domain.service;
 
-/** 代码生成通用常量 */
-public interface FileConstants {
+import com.taotao.boot.ddd.model.domain.service.DomainService;
+import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 
-    /** 单表（增删改查） */
-    String TPL_CRUD = "crud";
+import java.util.List;
+
+public interface UserDomainService extends DomainService {
+
+	void assignRoles( UserAgg userAgg, List<Long> roleIds );
 }

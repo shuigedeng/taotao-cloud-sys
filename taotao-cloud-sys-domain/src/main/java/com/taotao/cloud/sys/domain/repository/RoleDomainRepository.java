@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event;
+package com.taotao.cloud.sys.domain.repository;
 
-/**
- * GuavaEventPublisher
- *
- * @author shuigedeng
- * @version 2026.04
- * @since 2025-12-19 09:30:45
- */
-public class GuavaEventPublisher {}
+import com.taotao.boot.ddd.model.domain.repository.DomainRepository;
+import com.taotao.boot.ddd.model.val.BizId;
+import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
+
+import java.util.List;
+import java.util.Set;
+
+public interface RoleDomainRepository extends DomainRepository<BizId, RoleAgg> {
+
+	List<RoleAgg> findAssignableRoles( Set<BizId> requestedRoleIds );
+}

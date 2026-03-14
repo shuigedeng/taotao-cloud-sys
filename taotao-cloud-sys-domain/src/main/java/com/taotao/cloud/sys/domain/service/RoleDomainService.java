@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event.listener;
+package com.taotao.cloud.sys.domain.service;
 
-/**
- * DictCreateListener
- *
- * @author shuigedeng
- * @version 2026.04
- * @since 2025-12-19 09:30:45
- */
-public class DictCreateListener {}
+import com.taotao.boot.ddd.model.domain.service.DomainService;
+
+public interface RoleDomainService extends DomainService{
+
+}

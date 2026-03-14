@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.service.commad;
+package com.taotao.cloud.sys.application.service.query;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.application.dto.own.user.command.UserAssignRolesCommand;
-import jakarta.validation.Valid;
+import com.taotao.boot.ddd.model.application.service.QueryService;
 
 /**
  * ISysUserService
@@ -27,47 +26,8 @@ import jakarta.validation.Valid;
  * @version 2023.01
  * @since 2023-02-15 14:43:45
  */
-public interface UserCommandService extends CommandService {
+public interface UserQueryService extends QueryService {
 
-	void assignRoles( UserAssignRolesCommand userAssignRolesCommand );
-
-
-	//    /**
-    //     * 保存用户
-    //     *
-    //     * @param user 用户
-    //     * @return {@link User }
-    //     * @since 2023-02-15 14:43:47
-    //     */
-    //    User saveUser(User user);
-    //
-    //    /**
-    //     * 更新用户
-    //     *
-    //     * @param user 用户
-    //     * @return {@link User }
-    //     * @since 2023-02-15 14:43:50
-    //     */
-    //    User updateUser(User user);
-    //
-    //    /**
-    //     * 重置密码
-    //     *
-    //     * @param restPasswordDTO 重置密码对象
-    //     * @return 重置结果
-    //     * @since 2021-10-09 20:49:02
-    //     */
-    //    Boolean restPass(Long userId, RestPasswordUserDTO restPasswordDTO);
-    //
-    //    /**
-    //     * 更新用户角色信息
-    //     *
-    //     * @param userId userId
-    //     * @param roleIds roleIds
-    //     * @return 更新结果
-    //     * @since 2021-10-09 20:49:19
-    //     */
-    //    Boolean updateUserRoles(Long userId, Set<Long> roleIds);
     //
     //    /**
     //     * 根据手机号码查询用户是否存在

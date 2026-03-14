@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event;
+package com.taotao.cloud.sys.domain.repository;
 
-/**
- * RedisEventPublisher
- *
- * @author shuigedeng
- * @version 2026.04
- * @since 2025-12-19 09:30:45
- */
-public class RedisEventPublisher {}
+import com.taotao.boot.ddd.model.domain.repository.DomainRepository;
+import com.taotao.boot.ddd.model.val.BizId;
+import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
+import com.taotao.cloud.sys.domain.aggregate.UserAgg;
+import com.taotao.cloud.sys.domain.entity.DeptEntity;
+
+public interface UserDomainRepository extends DomainRepository<BizId, UserAgg> {
+}

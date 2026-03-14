@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -26,7 +27,7 @@ import org.mapstruct.factory.Mappers;
  * @version 2022.04
  * @since 2022-04-28 13:39:34
  */
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface LogisticsAssembler {
 
     /** 实例 */

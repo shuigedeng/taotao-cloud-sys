@@ -16,8 +16,14 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.taotao.boot.common.enums.UserObjectEnum;
 import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRelationPO;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
+import java.util.List;
 
 /**
  * IUserRoleMapper
@@ -26,4 +32,21 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRel
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface UserRelationMapper extends MpSuperMapper<UserRelationPO, Long> {}
+public interface UserRelationMapper extends MpSuperMapper<UserRelationPO, Long> {
+
+	default List<UserRelationPO> selectByUserId( Long userId, UserObjectEnum userObjectEnum ) {
+		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+		lambdaQueryWrapper.eq(UserRelationPO::userId, userId);
+		lambdaQueryWrapper.eq(UserRelationPO::objectType, userObjectEnum.getValue());
+		return selectList(lambdaQueryWrapper);
+	}
+
+	default void deleteByUserId( Long userId, UserObjectEnum userObjectEnum ){
+		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+		lambdaQueryWrapper.eq(UserRelationPO::userId, userId);
+		lambdaQueryWrapper.eq(UserRelationPO::objectType, userObjectEnum.getValue());
+		delete(lambdaQueryWrapper);
+	}
+
+	;
+}

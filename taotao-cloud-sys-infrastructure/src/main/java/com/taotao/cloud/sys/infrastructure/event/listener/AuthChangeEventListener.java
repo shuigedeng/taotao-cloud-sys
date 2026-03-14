@@ -14,13 +14,26 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event;
+package com.taotao.cloud.sys.infrastructure.event.listener;
+
+import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
 /**
- * GuavaEventConfig
+ * AuthChangeEventListener
  *
  * @author shuigedeng
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-public class GuavaEventConfig {}
+@Slf4j
+@Component
+public class AuthChangeEventListener {
+
+	@EventListener(AuthChangeEvent.class)
+	public void handleAuthChangeEvent( AuthChangeEvent authChangeEvent ){
+		log.info("接受到AuthChangeEvent:{}", authChangeEvent);
+	}
+}

@@ -16,11 +16,22 @@
 
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
+import com.taotao.boot.common.model.result.Result;
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.webagg.controller.BusinessController;
+import com.taotao.cloud.sys.application.dto.own.user.command.UserAssignRolesCommand;
+import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.application.service.query.UserQueryService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 平台管理端-用户API
@@ -29,11 +40,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.10
  * @since 2021-10-09 15:13:54
  */
+@AllArgsConstructor
 @Validated
 @RestController
 @RequestMapping("/manager/sys/user")
 @Tag(name = "平台管理端-用户API", description = "平台管理端-用户API")
 public class UserManagerController extends BusinessController {
+
+	private final UserCommandService userCommandService;
+	private final UserQueryService userQueryService;
 
     //	//敏感字段加密、解密、脱敏
     //	@PostMapping("/addUser")
@@ -105,22 +120,16 @@ public class UserManagerController extends BusinessController {
     //		User sysUser = service().getById(userId);
     //		return success(UserConvert.INSTANCE.convert(sysUser));
     //	}
-    //
-    //	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
-    // "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
-    //	@Parameters({
-    //		@Parameter(name = "userId", description = "用户id", required = true, example = "123", in =
-    // ParameterIn.PATH),
-    //	})
-    //	@PostMapping("/roles/{userId}")
-    //	@PreAuthorize("hasAuthority('sys:user:role')")
-    //	public Result<Boolean> updateUserRoles(
-    //		@NotNull(message = "用户id不能为空") @PathVariable Long userId,
-    //		@Validated @NotEmpty(message = "角色id列表不能为空") @RequestBody Set<Long> roleIds) {
-    //		LogUtils.info("请求参数： name = {}, age = {}", userId, roleIds);
-    //		return success(service().updateUserRoles(userId, roleIds));
-    //	}
-    //
+
+    	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
+     "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
+    	@PostMapping("/roles/assign/roles")
+    	@PreAuthorize("hasAuthority('admin:user:assign-roles')")
+    	public Result<Void> assignRoles( @Valid @RequestBody UserAssignRolesCommand userAssignRolesCommand) {
+			userCommandService.assignRoles(userAssignRolesCommand);
+    		return Result.success((Void)null);
+    	}
+
     //	@Operation(summary = "test", description = "test",
     //		requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(content =
     // @Content(mediaType = APPLICATION_JSON_VALUE)),

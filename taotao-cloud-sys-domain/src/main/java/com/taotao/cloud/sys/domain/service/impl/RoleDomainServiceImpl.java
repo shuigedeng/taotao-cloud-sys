@@ -14,27 +14,25 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.assembler;
+package com.taotao.cloud.sys.domain.service.impl;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
+import com.taotao.cloud.sys.domain.repository.DeptDomainRepository;
+import com.taotao.cloud.sys.domain.repository.RoleDomainRepository;
+import com.taotao.cloud.sys.domain.service.RoleDomainService;
+import com.taotao.cloud.sys.domain.service.UserDomainService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 /**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
+ * DeptDomainServiceImpl
+ *
+ * @author shuigedeng
+ * @version 2026.04
+ * @since 2025-12-19 09:30:45
  */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface AppAssembler {
+@Service
+@AllArgsConstructor
+public class RoleDomainServiceImpl implements RoleDomainService {
 
-    //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
-    //
-    //	Page<AppDTO> convertPage(Page<App> appDO);
-    //
-    //	List<AppDTO> convertList(List<App> app);
-    //
-    //	AppDTO convert(App app);
-    //
-    //	App convert(AppDTO appDTO);
-
+    private RoleDomainRepository roleDomainRepository;
 }
