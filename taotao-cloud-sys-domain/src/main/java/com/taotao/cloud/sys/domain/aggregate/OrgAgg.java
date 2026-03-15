@@ -38,7 +38,7 @@ import lombok.experimental.Accessors;
 @ToString
 @Accessors(fluent = true)
 @Schema(name = "Dept", description = "部门")
-public class DeptAgg extends AggregateRoot<Long> {
+public class OrgAgg extends AggregateRoot<Long> {
 
 	@Schema(name = "name", description = "部门名称")
 	private String name;

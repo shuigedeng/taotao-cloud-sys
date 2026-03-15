@@ -36,15 +36,15 @@ public interface UserRelationMapper extends MpSuperMapper<UserRelationPO, Long> 
 
 	default List<UserRelationPO> selectByUserId( Long userId, UserObjectEnum userObjectEnum ) {
 		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.eq(UserRelationPO::userId, userId);
-		lambdaQueryWrapper.eq(UserRelationPO::objectType, userObjectEnum.getValue());
+		lambdaQueryWrapper.eq(UserRelationPO::getUserId, userId);
+		lambdaQueryWrapper.eq(UserRelationPO::getObjectType, userObjectEnum.name());
 		return selectList(lambdaQueryWrapper);
 	}
 
 	default void deleteByUserId( Long userId, UserObjectEnum userObjectEnum ){
 		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.eq(UserRelationPO::userId, userId);
-		lambdaQueryWrapper.eq(UserRelationPO::objectType, userObjectEnum.getValue());
+		lambdaQueryWrapper.eq(UserRelationPO::getUserId, userId);
+		lambdaQueryWrapper.eq(UserRelationPO::getObjectType, userObjectEnum.name());
 		delete(lambdaQueryWrapper);
 	}
 

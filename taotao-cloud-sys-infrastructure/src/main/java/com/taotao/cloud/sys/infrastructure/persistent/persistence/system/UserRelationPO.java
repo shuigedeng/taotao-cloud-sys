@@ -44,8 +44,6 @@ import org.hibernate.Hibernate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(callSuper = true)
-@Accessors(fluent = true)
 @Entity
 @Table(
         name = UserRelationPO.TABLE_NAME,

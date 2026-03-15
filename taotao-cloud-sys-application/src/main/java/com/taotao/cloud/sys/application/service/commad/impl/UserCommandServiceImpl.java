@@ -25,6 +25,7 @@ import com.taotao.cloud.sys.domain.service.UserDomainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * UserServiceImpl
@@ -42,6 +43,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 	private final UserDomainService userDomainService;
 
 	@Override
+	@Transactional
 	public void assignRoles( UserAssignRolesCommand userAssignRolesCommand ) {
 
 		UserAgg userAgg = userDomainRepository.findById(BizId.fromValue(userAssignRolesCommand.userId()), Boolean.TRUE);

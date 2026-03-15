@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.domain.repository;
 
 import com.taotao.boot.ddd.model.domain.repository.DomainRepository;
-import com.taotao.cloud.sys.domain.entity.DeptEntity;
+import com.taotao.cloud.sys.domain.entity.DictItem;
 
 public interface DeptDomainRepository extends DomainRepository {
     /**
@@ -25,14 +25,14 @@ public interface DeptDomainRepository extends DomainRepository {
      *
      * @param dept 部门对象
      */
-    void create(DeptEntity dept);
+    void create( DictItem dept);
 
     /**
      * 修改部门.
      *
      * @param dept 部门对象
      */
-    void modify(DeptEntity dept);
+    void modify( DictItem dept);
 
     /**
      * 根据ID删除部门.

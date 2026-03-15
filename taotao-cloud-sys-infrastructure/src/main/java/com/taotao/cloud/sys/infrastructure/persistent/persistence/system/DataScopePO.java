@@ -16,18 +16,15 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.data.mybatis.mybatisplus.handler.typehandler.JacksonListTypeHandler;
 import com.taotao.boot.data.mybatis.mybatisplus.interceptor.datascope.dataPermission.enums.DataScopeEnum;
 import com.taotao.boot.webagg.entity.BaseSuperEntity;
-import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import java.util.List;
+
 import java.util.Objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,7 +33,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.Type;
 
 /**
  * 数据权限表
@@ -88,21 +84,21 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
 
     /** 组织id列表 */
     //@Type(value = JsonType.class)
-    @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "`org_ids`", columnDefinition = "json null comment '组织id列表'")
-    private List<Long> orgIds;
+    //@TableField(typeHandler = JacksonListTypeHandler.class)
+    @Column(name = "`org_ids`", columnDefinition = "varchar(4096) null comment '组织id列表'")
+    private String orgIds;
 
     /** 部门id */
     //@Type(value = JsonType.class)
-    @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "`dept_ids`", columnDefinition = "json null comment '部门id列表'")
-    private List<Long> deptIds;
+    //@TableField(typeHandler = JacksonListTypeHandler.class)
+    @Column(name = "`dept_ids`", columnDefinition = "varchar(4096) null comment '部门id列表'")
+    private String deptIds;
 
     /** 用户id */
     //@Type(value = JsonType.class)
-    @TableField(typeHandler = JacksonListTypeHandler.class)
-    @Column(name = "`user_ids`", columnDefinition = "json null comment '用户id列表'")
-    private List<Long> userIds;
+    //@TableField(typeHandler = JacksonListTypeHandler.class)
+    @Column(name = "`user_ids`", columnDefinition = "varchar(4096) null comment '用户id列表'")
+    private String userIds;
 
     /** 租户id */
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
@@ -140,27 +136,27 @@ public class DataScopePO extends BaseSuperEntity<DataScopePO, Long> {
         this.remark = remark;
     }
 
-    public List<Long> getOrgIds() {
+    public String getOrgIds() {
         return orgIds;
     }
 
-    public void setOrgIds(List<Long> orgIds) {
+    public void setOrgIds( String orgIds) {
         this.orgIds = orgIds;
     }
 
-    public List<Long> getDeptIds() {
+    public String getDeptIds() {
         return deptIds;
     }
 
-    public void setDeptIds(List<Long> deptIds) {
+    public void setDeptIds( String deptIds) {
         this.deptIds = deptIds;
     }
 
-    public List<Long> getUserIds() {
+    public String getUserIds() {
         return userIds;
     }
 
-    public void setUserIds(List<Long> userIds) {
+    public void setUserIds( String userIds) {
         this.userIds = userIds;
     }
 

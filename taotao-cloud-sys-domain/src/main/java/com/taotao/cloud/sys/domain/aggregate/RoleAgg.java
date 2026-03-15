@@ -39,7 +39,7 @@ public class RoleAgg extends AggregateRoot<BizId> {
      */
     private String description;
 
-    private EnabledEnum enabled;
+    private EnabledEnum enabled  = EnabledEnum.ENABLED;
 
 
     /**

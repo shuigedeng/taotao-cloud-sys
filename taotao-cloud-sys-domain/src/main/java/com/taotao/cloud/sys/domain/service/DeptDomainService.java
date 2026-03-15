@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.domain.service;
 
 import com.taotao.boot.ddd.model.domain.service.DomainService;
-import com.taotao.cloud.sys.domain.entity.DeptEntity;
+import com.taotao.cloud.sys.domain.entity.DictItem;
 
 public interface DeptDomainService extends DomainService{
 
@@ -26,14 +26,14 @@ public interface DeptDomainService extends DomainService{
      *
      * @param dept 部门对象
      */
-    void create(DeptEntity dept);
+    void create( DictItem dept);
 
     /**
      * 修改部门.
      *
      * @param dept 部门对象
      */
-    void modify(DeptEntity dept);
+    void modify( DictItem dept);
 
     /**
      * 根据ID删除部门.

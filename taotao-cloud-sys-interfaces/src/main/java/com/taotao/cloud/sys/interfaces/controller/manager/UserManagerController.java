@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.application.dto.own.user.command.UserAssignRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
@@ -124,7 +125,8 @@ public class UserManagerController extends BusinessController {
     	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
      "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
     	@PostMapping("/roles/assign/roles")
-    	@PreAuthorize("hasAuthority('admin:user:assign-roles')")
+		@NotAuth
+    	//@PreAuthorize("hasAuthority('admin:user:assign-roles')")
     	public Result<Void> assignRoles( @Valid @RequestBody UserAssignRolesCommand userAssignRolesCommand) {
 			userCommandService.assignRoles(userAssignRolesCommand);
     		return Result.success((Void)null);

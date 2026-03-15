@@ -62,7 +62,7 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	public UserAgg findById( BizId bizId, boolean withLock ) {
 		UserPO userPo;
 		if (withLock) {
-			userPo = userMapper.selectByIdForUpdate(bizId.id());
+			userPo = userMapper.selectByUserIdForUpdate(bizId.id());
 		} else {
 			userPo = userMapper.selectById(bizId.id());
 		}
@@ -90,7 +90,7 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 
 	private void fillRoleIds( UserAgg userAgg ) {
 		List<UserRelationPO> userRelationPo = userRelationMapper.selectByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
-		List<BizId> roleIds = userRelationPo.stream().map(UserRelationPO::objectId).map(BizId::fromValue).toList();
+		List<BizId> roleIds = userRelationPo.stream().map(UserRelationPO::getObjectId).map(BizId::fromValue).toList();
 		userAgg.setRoleIds(roleIds);
 	}
 
@@ -101,12 +101,12 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 				UserRelationPO po = new UserRelationPO();
 				po.setUserId(userAgg.id().id());
 				po.setObjectId(roleId.id());
-				po.setObjectType(UserObjectEnum.ROLE.getValue());
+				po.setObjectType(UserObjectEnum.ROLE.name());
 				return po;
 			})
 			.collect(Collectors.toList());
 		if (CollectionUtil.isNotEmpty(userRelationPos)) {
-			userRelationMapper.batchInsert(userRelationPos);
+			userRelationMapper.insert(userRelationPos);
 		}
 	}
 }

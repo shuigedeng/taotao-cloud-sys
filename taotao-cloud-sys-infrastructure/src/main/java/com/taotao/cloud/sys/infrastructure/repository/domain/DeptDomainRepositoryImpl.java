@@ -16,14 +16,12 @@
 
 package com.taotao.cloud.sys.infrastructure.repository.domain;
 
-import com.taotao.cloud.sys.domain.entity.DeptEntity;
+import com.taotao.cloud.sys.domain.entity.DictItem;
 import com.taotao.cloud.sys.domain.repository.DeptDomainRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.DeptMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.DeptRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -42,12 +40,12 @@ public class DeptDomainRepositoryImpl implements DeptDomainRepository {
 	private final DeptRepository deptRepository;
 
     @Override
-    public void create(DeptEntity dept) {
+    public void create( DictItem dept) {
 		deptMapper.insert((DeptPO) null);
 	}
 
     @Override
-    public void modify(DeptEntity dept) {}
+    public void modify( DictItem dept) {}
 
     @Override
     public void remove(Long[] ids) {}

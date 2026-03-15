@@ -14,13 +14,43 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.domain.valobj;
+package com.taotao.cloud.sys.domain.entity;
+
+import com.taotao.boot.ddd.model.domain.Entity;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.Column;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
 
 /**
- * DeptVal
+ * DeptEntity
  *
  * @author shuigedeng
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-public class DeptVal {}
+@Setter
+@Getter
+@ToString
+@Accessors(fluent = true)
+@Schema(name = "Dept", description = "部门")
+public class DictItem implements Entity {
+	private String dictCode;
+
+	/** 字典项文本 */
+	private String itemText;
+
+	/** 字典项值 */
+	private String itemValue;
+
+	/** 描述 */
+	private String description;
+
+	/** 状态 0不启用 1启用 */
+	private Integer status;
+
+	/** 排序值 */
+	private Integer sortNum;
+}

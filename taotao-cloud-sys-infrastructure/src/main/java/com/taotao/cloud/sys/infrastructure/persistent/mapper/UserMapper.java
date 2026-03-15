@@ -19,6 +19,9 @@ package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import java.util.List;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -55,4 +58,7 @@ public interface UserMapper extends MpSuperMapper<UserPO, Long> {
         select * from sys_person where id in (select person_id from sys_person_phone_encrypt where phone_key like concat('%',#{phoneVal},'%'))
         """)
     List<UserPO> queryByPhoneEncrypt(@Param("phoneVal") String phoneVal);
+
+	@Select("SELECT * FROM ttc_user WHERE id = #{id} FOR UPDATE")
+    UserPO selectByUserIdForUpdate( @Param("id") Long id );
 }
