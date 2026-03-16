@@ -40,7 +40,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = PositionPO.TABLE_NAME)
 @TableName(PositionPO.TABLE_NAME)

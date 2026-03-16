@@ -27,7 +27,7 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-@Accessors(fluent = true)
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "商品配置VO")

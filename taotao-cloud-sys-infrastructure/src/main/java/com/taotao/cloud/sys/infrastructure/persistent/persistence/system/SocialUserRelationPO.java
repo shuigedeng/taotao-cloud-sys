@@ -42,7 +42,7 @@ import org.hibernate.Hibernate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = SocialUserRelationPO.TABLE_NAME)
 @TableName(SocialUserRelationPO.TABLE_NAME)

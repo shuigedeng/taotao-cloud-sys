@@ -34,7 +34,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @ToString
-@Accessors(fluent = true)
+
 @Schema(name = "Dept", description = "部门")
 public class DictItem implements Entity {
 	private String dictCode;

@@ -46,7 +46,7 @@ import org.hibernate.Hibernate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(
 	name = DataScopePO.TABLE_NAME,

@@ -41,7 +41,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = DictItemPO.TABLE_NAME)
 @TableName(DictItemPO.TABLE_NAME)

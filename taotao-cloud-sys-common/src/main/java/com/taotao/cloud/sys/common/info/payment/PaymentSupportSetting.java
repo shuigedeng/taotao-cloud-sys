@@ -26,7 +26,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @ToString
-@Accessors(chain = true)
+
 public class PaymentSupportSetting {
 
     private List<PaymentSupportItem> paymentSupportItems;

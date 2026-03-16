@@ -47,7 +47,7 @@ import org.hibernate.annotations.Type;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = RegionPO.TABLE_NAME)
 @TableName(value = RegionPO.TABLE_NAME, autoResultMap = true)

@@ -41,7 +41,7 @@ import org.hibernate.proxy.HibernateProxy;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = AppPO.TABLE_NAME)
 @TableName(AppPO.TABLE_NAME)

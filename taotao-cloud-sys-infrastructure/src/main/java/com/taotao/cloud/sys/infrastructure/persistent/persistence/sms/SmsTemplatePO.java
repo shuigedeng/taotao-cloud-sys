@@ -36,7 +36,7 @@ import org.hibernate.Hibernate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = SmsTemplatePO.TABLE_NAME)
 @TableName(SmsTemplatePO.TABLE_NAME)

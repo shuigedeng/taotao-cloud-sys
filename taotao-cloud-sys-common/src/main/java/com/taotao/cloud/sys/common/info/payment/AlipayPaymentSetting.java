@@ -25,7 +25,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @ToString
-@Accessors(chain = true)
+
 public class AlipayPaymentSetting {
 
     /** 应用id */

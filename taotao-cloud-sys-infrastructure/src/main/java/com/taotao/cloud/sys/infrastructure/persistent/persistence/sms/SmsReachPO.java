@@ -35,7 +35,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = SmsReachPO.TABLE_NAME)
 @TableName(SmsReachPO.TABLE_NAME)

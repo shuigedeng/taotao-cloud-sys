@@ -49,7 +49,7 @@ import org.hibernate.type.SqlTypes;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = OrgPO.TABLE_NAME)
 @TableName(value = OrgPO.TABLE_NAME, autoResultMap = true)

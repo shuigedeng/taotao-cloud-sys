@@ -40,7 +40,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = EmailConfigPO.TABLE_NAME)
 @TableName(EmailConfigPO.TABLE_NAME)

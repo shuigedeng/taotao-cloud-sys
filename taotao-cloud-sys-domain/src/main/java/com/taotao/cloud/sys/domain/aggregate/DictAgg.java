@@ -41,7 +41,7 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-@Accessors(fluent = true)
+
 @Schema(name = "Dept", description = "部门")
 public class DictAgg extends AggregateRoot<BizId> {
 

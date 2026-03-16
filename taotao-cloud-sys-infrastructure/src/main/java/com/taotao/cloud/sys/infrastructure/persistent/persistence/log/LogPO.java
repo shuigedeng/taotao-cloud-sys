@@ -45,7 +45,7 @@ import org.hibernate.Hibernate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = LogPO.TABLE_NAME)
 @TableName(LogPO.TABLE_NAME)

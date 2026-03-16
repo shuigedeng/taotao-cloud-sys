@@ -37,7 +37,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-@Accessors(fluent = true)
+
 @Entity
 @Table(name = I18nDataPO.TABLE_NAME)
 @TableName(I18nDataPO.TABLE_NAME)
