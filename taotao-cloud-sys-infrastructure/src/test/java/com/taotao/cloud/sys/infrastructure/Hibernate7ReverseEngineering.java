@@ -27,7 +27,7 @@ public class Hibernate7ReverseEngineering {
 			);
 			properties.setProperty(
 				AvailableSettings.JAKARTA_JDBC_URL,
-				"jdbc:mysql://192.168.218.2:3306/taotao-cloud-sys?useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&useInformationSchema=true&nullNamePatternMatchesAll=true"
+				"jdbc:mysql://127.0.0.1:3306/taotao-cloud-sys?useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&useInformationSchema=true&nullNamePatternMatchesAll=true"
 			);
 			properties.setProperty(
 				AvailableSettings.JAKARTA_JDBC_USER,

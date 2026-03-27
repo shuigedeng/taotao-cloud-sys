@@ -36,7 +36,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
 
-    @Autowired private DeptCommandService deptService;
 	@Autowired
 	private DeptCommandService deptCommandService;
 	@Autowired
@@ -45,7 +44,7 @@ public class BrandQueryServiceTest extends TaoTaoCloudSysApplicationTests {
     @TtcTest(duration = 1000, reporter = HtmlReporter.class)
     public void treeTest() throws InterruptedException {
 
-        List<DeptTreeResult> tree = deptService.tree();
+        List<DeptTreeResult> tree = deptCommandService.tree();
         System.out.println("asdfasdfsadfsadf");
     }
 
