@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.interfaces.controller.buyer;
 
-import com.taotao.boot.common.model.result.EmptyResult;
+
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.security.spring.annotation.NotAuth;
@@ -48,7 +48,7 @@ public class DictBuyerController extends BusinessController {
 	@NotAuth
 	@GetMapping("/query/type")
 	@Operation(summary = "通过code查询所有字典列表")
-	public Result<EmptyResult> add( @RequestParam String type ) {
+	public Result<Void> add( @RequestParam String type ) {
 //		Boolean result = service().add(type);
 //		return success(result);
 		LogUtils.info("type:xxxxxxxxx:{}",type);
