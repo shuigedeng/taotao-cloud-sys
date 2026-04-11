@@ -182,7 +182,7 @@ plugins {
 
     //https://github.com/graalvm/native-build-tools
     //https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html
-    id 'org.graalvm.buildtools.native' version '0.11.5'
+    id 'org.graalvm.buildtools.native' version '1.0.0'
 
     //https://github.com/kimichen13/mybatis-generator-plugin
     //https://plugins.gradle.org/plugin/com.qqviaja.gradle.MybatisGenerator
@@ -348,7 +348,7 @@ subprojects {
         annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructProcessorVersion}"
         //https://github.com/entur/mapstruct-spi-protobuf
         //https://search.maven.org/artifact/no.entur.mapstruct.spi/protobuf-spi-impl
-        annotationProcessor "no.entur.mapstruct.spi:protobuf-spi-impl:1.52.0"
+        annotationProcessor "no.entur.mapstruct.spi:protobuf-spi-impl:1.53.0"
 
         annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
     }
