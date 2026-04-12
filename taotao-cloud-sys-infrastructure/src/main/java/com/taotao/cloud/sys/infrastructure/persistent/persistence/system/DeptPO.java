@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
@@ -56,7 +56,7 @@ import org.hibernate.Hibernate;
 	})
 @TableName(DeptPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = DeptPO.TABLE_NAME)
-public class DeptPO extends BaseSuperEntity<DeptPO, Long> {
+public class DeptPO extends BasePO<DeptPO> {
 
     public static final String TABLE_NAME = "ttc_dept";
 

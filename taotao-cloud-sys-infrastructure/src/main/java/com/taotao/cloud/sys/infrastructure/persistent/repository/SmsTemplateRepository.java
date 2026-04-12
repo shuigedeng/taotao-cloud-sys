@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.ExtendRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.sms.SmsTemplatePO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,4 +28,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface SmsTemplateRepository extends JpaRepository<SmsTemplatePO, Long>, JpaExtendRepository<SmsTemplatePO, Long> {}
+public interface SmsTemplateRepository extends JpaRepository<SmsTemplatePO, Long>, ExtendRepository<SmsTemplatePO, Long> {}

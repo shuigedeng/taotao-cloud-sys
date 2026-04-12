@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import com.taotao.cloud.sys.common.enums.AuthUserGender;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
@@ -55,7 +55,7 @@ import lombok.experimental.Accessors;
         })
 @TableName(SocialUserPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = SocialUserPO.TABLE_NAME)
-public class SocialUserPO extends BaseSuperEntity<SocialUserPO, Long> {
+public class SocialUserPO extends BasePO<SocialUserPO> {
 
     public static final String TABLE_NAME = "ttc_social_user";
 

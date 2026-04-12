@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.i18n;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -42,7 +42,7 @@ import lombok.experimental.Accessors;
 @Table(name = I18nDataPO.TABLE_NAME)
 @TableName(I18nDataPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = I18nDataPO.TABLE_NAME)
-public class I18nDataPO extends BaseSuperEntity<I18nDataPO, Long> {
+public class I18nDataPO extends BasePO<I18nDataPO> {
 
     public static final String TABLE_NAME = "ttc_i18n_data";
 

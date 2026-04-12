@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.config;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -45,7 +45,7 @@ import lombok.experimental.Accessors;
 @Table(name = EmailConfigPO.TABLE_NAME)
 @TableName(EmailConfigPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = EmailConfigPO.TABLE_NAME)
-public class EmailConfigPO extends BaseSuperEntity<EmailConfigPO, Long> {
+public class EmailConfigPO extends BasePO<EmailConfigPO> {
 
     public static final String TABLE_NAME = "ttc_email_config";
 

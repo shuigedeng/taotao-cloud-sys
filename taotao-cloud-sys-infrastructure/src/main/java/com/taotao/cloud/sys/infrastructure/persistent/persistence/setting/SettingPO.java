@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.setting;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
@@ -63,7 +63,7 @@ import org.hibernate.annotations.Type;
 	})
 @TableName(value = SettingPO.TABLE_NAME, autoResultMap = true)
 @org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME)
-public class SettingPO extends BaseSuperEntity<SettingPO, Long> {
+public class SettingPO extends BasePO<SettingPO> {
 
     public static final String TABLE_NAME = "ttc_setting";
 

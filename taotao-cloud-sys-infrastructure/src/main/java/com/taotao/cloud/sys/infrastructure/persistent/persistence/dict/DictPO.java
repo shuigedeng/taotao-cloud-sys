@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.dict;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RequestPathPO;
 import jakarta.annotation.PreDestroy;
 import jakarta.persistence.Column;
@@ -145,7 +145,7 @@ import lombok.experimental.Accessors;
 // @NamedQuery(name = "User.findByEmailAddress",
 //	query = "select u from User u where u.emailAddress = ?1")
 @org.springframework.data.relational.core.mapping.Table(name = DictPO.TABLE_NAME)
-public class DictPO extends BaseSuperEntity<DictPO, Long> {
+public class DictPO extends BasePO<DictPO> {
 
     public static final String TABLE_NAME = "ttc_dict";
 

@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
-import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.ExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.BaseRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 
@@ -28,4 +28,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface RoleRepository extends JpaSuperRepository<RolePO, Long> , JpaExtendRepository<RolePO, Long> {}
+public interface RoleRepository extends BaseRepository<RolePO> , ExtendRepository<RolePO, Long> {}

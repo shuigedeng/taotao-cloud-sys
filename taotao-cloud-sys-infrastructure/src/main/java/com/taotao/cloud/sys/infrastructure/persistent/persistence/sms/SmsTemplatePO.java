@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.sms;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -41,7 +41,7 @@ import org.hibernate.Hibernate;
 @Table(name = SmsTemplatePO.TABLE_NAME)
 @TableName(SmsTemplatePO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = SmsTemplatePO.TABLE_NAME)
-public class SmsTemplatePO extends BaseSuperEntity<SmsTemplatePO, Long> {
+public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
 
     public static final String TABLE_NAME = "ttc_sms_template";
 

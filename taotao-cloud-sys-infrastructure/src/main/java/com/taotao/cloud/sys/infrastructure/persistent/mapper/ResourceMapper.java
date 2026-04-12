@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.taotao.boot.common.model.ddd.query.PageQuery;
 import com.taotao.boot.data.mybatis.mybatisplus.query.LambdaQueryWrapperX;
-import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.MpSuperMapper;
+import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.BaseMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
 import java.util.List;
 import java.util.Set;
@@ -32,7 +32,7 @@ import org.apache.ibatis.annotations.Select;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface ResourceMapper extends MpSuperMapper<ResourcePO, Long> {
+public interface ResourceMapper extends BaseMapper<ResourcePO> {
 
     @Select(
             """

@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.file;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -45,7 +45,7 @@ import lombok.experimental.Accessors;
 @Table(name = FileLogPO.TABLE_NAME)
 @TableName(FileLogPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = FileLogPO.TABLE_NAME)
-public class FileLogPO extends BaseSuperEntity<FileLogPO, Long> {
+public class FileLogPO extends BasePO<FileLogPO> {
 
     public static final String TABLE_NAME = "ttc_file_log";
 

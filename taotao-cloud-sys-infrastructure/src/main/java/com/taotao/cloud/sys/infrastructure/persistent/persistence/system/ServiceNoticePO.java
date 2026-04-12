@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
@@ -52,7 +52,7 @@ import org.hibernate.Hibernate;
         })
 @TableName(ServiceNoticePO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = ServiceNoticePO.TABLE_NAME)
-public class ServiceNoticePO extends BaseSuperEntity<ServiceNoticePO, Long> {
+public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
 
     public static final String TABLE_NAME = "ttc_service_notice";
 

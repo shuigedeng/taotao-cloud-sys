@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
-import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.ExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.BaseRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.config.LogisticsConfigPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 
@@ -29,4 +29,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
  * @since 2021/10/13 22:50
  */
 public interface LogisticsRepository
-        extends JpaSuperRepository<LogisticsConfigPO, Long> , JpaExtendRepository<LogisticsConfigPO, Long> {}
+        extends BaseRepository<LogisticsConfigPO> , ExtendRepository<LogisticsConfigPO, Long> {}

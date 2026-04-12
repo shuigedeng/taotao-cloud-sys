@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
-import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.ExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.BaseRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialUserRelationPO;
 
@@ -29,4 +29,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.SocialU
  * @since 2021/10/13 22:50
  */
 public interface SocialUserRelationRepository
-        extends JpaSuperRepository<SocialUserRelationPO, Long> , JpaExtendRepository<SocialUserRelationPO, Long> {}
+        extends BaseRepository<SocialUserRelationPO> , ExtendRepository<SocialUserRelationPO, Long> {}

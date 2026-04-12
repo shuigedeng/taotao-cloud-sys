@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.app;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.util.Objects;
@@ -46,7 +46,7 @@ import org.hibernate.proxy.HibernateProxy;
 @Table(name = AppPO.TABLE_NAME)
 @TableName(AppPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = AppPO.TABLE_NAME)
-public class AppPO extends BaseSuperEntity<AppPO, Long> {
+public class AppPO extends BasePO<AppPO> {
 
     public static final String TABLE_NAME = "ttc_app";
 

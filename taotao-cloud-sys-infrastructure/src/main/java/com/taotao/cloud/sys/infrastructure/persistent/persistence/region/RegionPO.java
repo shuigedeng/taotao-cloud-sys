@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.region;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.data.mybatis.mybatisplus.handler.typehandler.JacksonListTypeHandler;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -52,7 +52,7 @@ import org.hibernate.annotations.Type;
 @Table(name = RegionPO.TABLE_NAME)
 @TableName(value = RegionPO.TABLE_NAME, autoResultMap = true)
 @org.springframework.data.relational.core.mapping.Table(name = RegionPO.TABLE_NAME)
-public class RegionPO extends BaseSuperEntity<RegionPO, Long> {
+public class RegionPO extends BasePO<RegionPO> {
 
     public static final String TABLE_NAME = "ttc_region";
 

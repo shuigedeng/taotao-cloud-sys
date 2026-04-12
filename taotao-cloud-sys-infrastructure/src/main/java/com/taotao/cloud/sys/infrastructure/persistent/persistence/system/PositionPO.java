@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -45,7 +45,7 @@ import lombok.experimental.Accessors;
 @Table(name = PositionPO.TABLE_NAME)
 @TableName(PositionPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = PositionPO.TABLE_NAME)
-public class PositionPO extends BaseSuperEntity<PositionPO, Long> {
+public class PositionPO extends BasePO<PositionPO> {
 
     public static final String TABLE_NAME = "ttc_position";
 

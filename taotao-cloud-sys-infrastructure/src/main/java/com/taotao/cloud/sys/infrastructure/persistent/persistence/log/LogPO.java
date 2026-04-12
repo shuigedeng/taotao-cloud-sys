@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.infrastructure.persistent.persistence.log;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.taotao.boot.data.mybatis.interceptor.encrypt.annotation.EncryptField;
 import com.taotao.boot.data.mybatis.mybatisplus.interceptor.datachanage.annotation.DataVersionLog;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -50,7 +50,7 @@ import org.hibernate.Hibernate;
 @Table(name = LogPO.TABLE_NAME)
 @TableName(LogPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = LogPO.TABLE_NAME)
-public class LogPO extends BaseSuperEntity<LogPO, Long> {
+public class LogPO extends BasePO<LogPO> {
 
     public static final String TABLE_NAME = "ttc_log";
 

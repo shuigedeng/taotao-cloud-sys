@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.system;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
@@ -56,7 +56,7 @@ import org.hibernate.Hibernate;
 	})
 @TableName(RequestPathPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = RequestPathPO.TABLE_NAME)
-public class RequestPathPO extends BaseSuperEntity<RequestPathPO, Long> {
+public class RequestPathPO extends BasePO<RequestPathPO> {
 
     public static final String TABLE_NAME = "ttc_request_path";
 

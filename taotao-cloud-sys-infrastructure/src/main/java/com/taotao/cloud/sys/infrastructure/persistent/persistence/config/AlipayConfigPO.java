@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.persistent.persistence.config;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.taotao.boot.webagg.entity.BaseSuperEntity;
+import com.taotao.boot.webagg.entity.BasePO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -45,7 +45,7 @@ import lombok.experimental.Accessors;
 @Table(name = AlipayConfigPO.TABLE_NAME)
 @TableName(AlipayConfigPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = AlipayConfigPO.TABLE_NAME)
-public class AlipayConfigPO extends BaseSuperEntity<AlipayConfigPO, Long> {
+public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
 
     public static final String TABLE_NAME = "ttc_alipay_config";
 

@@ -16,8 +16,8 @@
 
 package com.taotao.cloud.sys.infrastructure.persistent.repository;
 
-import com.taotao.boot.data.jpa.base.repository.JpaExtendRepository;
-import com.taotao.boot.data.jpa.base.repository.JpaSuperRepository;
+import com.taotao.boot.data.jpa.base.repository.ExtendRepository;
+import com.taotao.boot.data.jpa.base.repository.BaseRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.sensitive.SensitiveWordPO;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
 
@@ -29,4 +29,4 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
  * @since 2021/10/13 22:50
  */
 public interface SensitiveWordRepository
-        extends JpaSuperRepository<SensitiveWordPO, Long> , JpaExtendRepository<SensitiveWordPO, Long> {}
+        extends BaseRepository<SensitiveWordPO> , ExtendRepository<SensitiveWordPO, Long> {}
