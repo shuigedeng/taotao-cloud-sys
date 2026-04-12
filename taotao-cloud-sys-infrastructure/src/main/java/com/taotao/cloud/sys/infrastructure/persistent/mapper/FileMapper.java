@@ -29,8 +29,7 @@ import org.apache.ibatis.annotations.Select;
  * @since 2021/10/13 22:50
  */
 public interface FileMapper extends BaseMapper<FilePO> {
-    @Select(
-            """
+    @Select("""
         select url
         from tt_file
         """)

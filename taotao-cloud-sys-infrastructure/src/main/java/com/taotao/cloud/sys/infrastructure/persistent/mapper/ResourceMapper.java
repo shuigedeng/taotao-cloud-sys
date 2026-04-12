@@ -18,12 +18,13 @@ package com.taotao.cloud.sys.infrastructure.persistent.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.taotao.boot.common.model.ddd.query.PageQuery;
-import com.taotao.boot.data.mybatis.mybatisplus.query.LambdaQueryWrapperX;
 import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.BaseMapper;
+import com.taotao.boot.data.mybatis.mybatisplus.query.LambdaQueryWrapperX;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.ResourcePO;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 import java.util.Set;
-import org.apache.ibatis.annotations.Select;
 
 /**
  * IMenuMapper
@@ -34,26 +35,24 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ResourceMapper extends BaseMapper<ResourcePO> {
 
-    @Select(
-            """
-        select * from tt_resource where id in #{roleIds}
-        """)
-    List<ResourcePO> findMenuByRoleIds(Set<Long> roleIds);
+	@Select("""
+		select * from tt_resource where id in #{roleIds}
+		""")
+	List<ResourcePO> findMenuByRoleIds( Set<Long> roleIds );
 
-    @Select(
-            """
-        select id from tt_resource where parent_id in #{roleIds}
-        """)
-    List<Long> selectIdList(List<Long> pidList);
+	@Select("""
+		select id from tt_resource where parent_id in #{roleIds}
+		""")
+	List<Long> selectIdList( List<Long> pidList );
 
-    /**
-     * 查询资源列表
-     */
-    default IPage<ResourcePO> selectResourceList(ResourcePO resource, PageQuery pageQuery) {
-        return this.selectPage(
-                new LambdaQueryWrapperX<ResourcePO>()
-                        .likeIfPresent(ResourcePO::getName, resource.getName())
-                        .eqIfPresent(ResourcePO::getParentId, resource.getParentId()),
-                pageQuery);
-    }
+	/**
+	 * 查询资源列表
+	 */
+	default IPage<ResourcePO> selectResourceList( ResourcePO resource, PageQuery pageQuery ) {
+		return this.selectPage(
+			new LambdaQueryWrapperX<ResourcePO>()
+				.likeIfPresent(ResourcePO::getName, resource.getName())
+				.eqIfPresent(ResourcePO::getParentId, resource.getParentId()),
+			pageQuery);
+	}
 }

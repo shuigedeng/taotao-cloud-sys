@@ -26,4 +26,5 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.DeptPO;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-public interface DeptMapper extends BaseMapper<DeptPO> {}
+public interface DeptMapper extends BaseMapper<DeptPO> {
+}
