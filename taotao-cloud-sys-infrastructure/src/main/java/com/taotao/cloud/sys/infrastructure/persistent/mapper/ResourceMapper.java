@@ -36,12 +36,12 @@ import java.util.Set;
 public interface ResourceMapper extends BaseMapper<ResourcePO> {
 
 	@Select("""
-		select * from tt_resource where id in #{roleIds}
+		select * from ttc_resource where id in #{roleIds}
 		""")
 	List<ResourcePO> findMenuByRoleIds( Set<Long> roleIds );
 
 	@Select("""
-		select id from tt_resource where parent_id in #{roleIds}
+		select id from ttc_resource where parent_id in #{roleIds}
 		""")
 	List<Long> selectIdList( List<Long> pidList );
 

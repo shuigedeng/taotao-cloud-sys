@@ -32,7 +32,7 @@ public interface FileLogMapper extends BaseMapper<FileLogPO> {
     @Select(
             """
         select biz_type
-        from tt_file_log
+        from ttc_file_log
         """)
     List<String> testQueryFileLog();
 }

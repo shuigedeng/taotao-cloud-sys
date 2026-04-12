@@ -31,7 +31,7 @@ import org.apache.ibatis.annotations.Select;
 public interface FileMapper extends BaseMapper<FilePO> {
     @Select("""
         select url
-        from tt_file
+        from ttc_file
         """)
     List<String> testMybatisQueryStructure();
 }

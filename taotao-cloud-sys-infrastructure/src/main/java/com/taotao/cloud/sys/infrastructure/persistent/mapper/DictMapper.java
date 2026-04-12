@@ -34,7 +34,7 @@ public interface DictMapper extends BaseMapper<DictPO> {
     //		dictPO.description as description,
     //		dictPO.dict_name as itemValue,
     //		dictPO.dict_code as itemText
-    //		from tt_dict dictPO
+    //		from ttc_dict dictPO
     //		""")
     //    List<DictPO> testMybatisQueryStructure(@Param("params") DictDeptParams params);
 }

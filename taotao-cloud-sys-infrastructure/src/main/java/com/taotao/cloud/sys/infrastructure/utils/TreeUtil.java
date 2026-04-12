@@ -219,7 +219,7 @@ public class TreeUtil {
     // FileUtil.readLines("/Users/shuigeng/projects/taotao-projects/sensitive-word/src/main/resources/dict.txt",
     //			StandardCharsets.UTF_8);
     //
-    //		String sql = "insert into tt_sys_sensitive_words(sensitive_word)values(?)";
+    //		String sql = "insert into ttc_sys_sensitive_words(sensitive_word)values(?)";
     //		PreparedStatement ps = conn.prepareStatement(sql);
     //		final String UTFI_BOM="\uFEFF";
     //		for (String str1 : strings) {
