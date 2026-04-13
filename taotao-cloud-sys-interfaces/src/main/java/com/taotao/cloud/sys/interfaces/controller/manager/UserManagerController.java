@@ -17,20 +17,15 @@
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.common.model.result.Result;
-import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.dto.own.user.command.UserAssignRolesCommand;
+import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import com.taotao.cloud.sys.application.service.query.UserQueryService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -127,8 +122,8 @@ public class UserManagerController extends BusinessController {
     	@PostMapping("/roles/assign/roles")
 		@NotAuth
     	//@PreAuthorize("hasAuthority('admin:user:assign-roles')")
-    	public Result<Void> assignRoles( @Valid @RequestBody UserAssignRolesCommand userAssignRolesCommand) {
-			userCommandService.assignRoles(userAssignRolesCommand);
+    	public Result<Void> assignUserRoles( @Valid @RequestBody AssignUserRolesCommand assignUserRolesCommand) {
+			userCommandService.assignRoles(assignUserRolesCommand);
     		return Result.success((Void)null);
     	}
 

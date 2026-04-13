@@ -5,7 +5,9 @@ import com.taotao.boot.ddd.model.val.BizId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * AuthChangeEvent 类
@@ -22,4 +24,9 @@ import java.util.List;
 public class AuthChangeEvent extends DomainEvent<BizId> {
 
 	private final List<BizId> roleIds;
+
+	public AuthChangeEvent(BizId aggregateId, List<BizId> roleIds) {
+		this.setAggregateId(Objects.requireNonNull(aggregateId));
+		this.roleIds = new ArrayList<>(roleIds); // 防御拷贝
+	}
 }

@@ -17,11 +17,12 @@
 package com.taotao.cloud.sys.domain.service;
 
 import com.taotao.boot.ddd.model.domain.service.DomainService;
+import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 
 import java.util.List;
 
 public interface UserDomainService extends DomainService {
 
-	void assignRoles( UserAgg userAgg, List<Long> roleIds );
+	void assignRoles( UserAgg userAgg, List<RoleAgg> assignableRoles );
 }

@@ -44,37 +44,25 @@ import java.util.stream.Collectors;
 public class UserDomainServiceImpl implements UserDomainService {
 
     private UserDomainRepository userDomainRepository;
-    private RoleDomainRepository roleDomainRepository;
 
 	@Override
-	public void assignRoles( UserAgg userAgg, List<Long> roleIds ) {
-		if (roleIds == null || roleIds.isEmpty()) {
-			throw new BusinessException("角色列表不能为空");
+	public void assignRoles( UserAgg userAgg, List<RoleAgg> assignableRoles ) {
+		// 只处理用户聚合内部的业务规则
+		// 例如：检查用户状态、角色冲突、数量限制等
+
+		if (userAgg.isDeleted()) {
+			throw new BusinessException("已删除的用户不能分配角色");
 		}
 
-		Set<BizId> requestedRoleIds = roleIds.stream()
-			.map(BizId::fromValue)
-			.collect(Collectors.toSet());
+		if (assignableRoles.isEmpty()) {
+			throw new BusinessException("至少分配一个角色");
+		}
 
-		List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
-
-		// 校验是否所有请求的角色都存在且可分配
-		Set<BizId> foundIds = assignableRoles.stream()
+		// 将角色ID列表传递给用户聚合
+		List<BizId> roleIds = assignableRoles.stream()
 			.map(RoleAgg::id)
-			.collect(Collectors.toSet());
+			.collect(Collectors.toList());
 
-		Set<BizId> missing = new HashSet<>(requestedRoleIds);
-		missing.removeAll(foundIds);
-		if (!missing.isEmpty()) {
-			throw new BusinessException("角色不存在或不可分配: " + missing);
-		}
-
-		for (RoleAgg role : assignableRoles) {
-			if (!role.isEnabled()) {
-				throw new IllegalStateException("Repository 返回了非启用角色: " + role.getId());
-			}
-		}
-
-		userAgg.assignRoles(new ArrayList<>(requestedRoleIds));
+		userAgg.assignRoles(roleIds);  // 用户聚合内部处理角色分配逻辑
 	}
 }

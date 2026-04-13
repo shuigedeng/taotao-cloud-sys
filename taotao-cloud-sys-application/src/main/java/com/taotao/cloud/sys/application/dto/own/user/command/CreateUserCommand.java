@@ -19,24 +19,23 @@ package com.taotao.cloud.sys.application.dto.own.user.command;
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
 import java.io.Serial;
-import java.util.List;
 
 /**
- * 为管理员分配角色命令
+ * 用户查询对象
  *
  * @author shuigedeng
- * @since 2020/5/14 10:44
+ * @version 2021.10
+ * @since 2021-10-09 15:18:07
  */
 @RecordBuilder
-@Schema(description = "为管理员分配角色命令")
-public record UserAssignRolesCommand(
-	@Schema(description = "用户id") @NotNull(message = "用户id不能为空") Long userId,
-	@Schema(description = "角色id列表") @NotEmpty(message = "角色id列表不能为空") List<Long> roleIds) implements
-	Command {
+@Schema(description = "用户查询对象")
+public record CreateUserCommand(@Schema(description = "用户昵称") String nickname,
+                                @Schema(description = "用户真实姓名") String username,
+                                @Schema(description = "电话") String phone, @Schema(description = "email") String email,
+                                @Schema(description = "性别 1男 2女 0未知") Integer sex,
+                                @Schema(description = "部门id") Long deptId,
+                                @Schema(description = "岗位id") Long jobId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

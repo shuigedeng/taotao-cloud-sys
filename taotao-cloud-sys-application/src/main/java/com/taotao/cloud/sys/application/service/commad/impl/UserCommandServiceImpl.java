@@ -16,16 +16,27 @@
 
 package com.taotao.cloud.sys.application.service.commad.impl;
 
+import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.data.datasource.tx.TxSynchronizationWrapper;
 import com.taotao.boot.ddd.model.val.BizId;
-import com.taotao.cloud.sys.application.dto.own.user.command.UserAssignRolesCommand;
+import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
+import com.taotao.cloud.sys.domain.repository.RoleDomainRepository;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
 import com.taotao.cloud.sys.domain.service.UserDomainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionSynchronization;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * UserServiceImpl
@@ -40,22 +51,55 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserCommandServiceImpl implements UserCommandService {
 
 	private final UserDomainRepository userDomainRepository;
+	private final RoleDomainRepository roleDomainRepository;
 	private final UserDomainService userDomainService;
 
 	@Override
 	@Transactional
-	public void assignRoles( UserAssignRolesCommand userAssignRolesCommand ) {
+	public void assignRoles( AssignUserRolesCommand assignUseRolesCommand ) {
 
-		UserAgg userAgg = userDomainRepository.findById(BizId.fromValue(userAssignRolesCommand.userId()), Boolean.TRUE);
+		// 1. 加载数据（5个聚合）
+		// 2. 应用层校验（3-5个）
+		// 3. 调用领域服务（2-3次）
+		// 4. 保存多个聚合
+		// 5. 调用外部服务
+		// 6. 发送消息/事件
+		// 7. 记录日志
 
-		userDomainService.assignRoles(userAgg, userAssignRolesCommand.roleIds());
+		UserAgg userAgg = userDomainRepository.findById(BizId.fromValue(assignUseRolesCommand.userId()), Boolean.TRUE);
+
+		Set<BizId> requestedRoleIds = assignUseRolesCommand.roleIds().stream()
+			.map(BizId::fromValue)
+			.collect(Collectors.toSet());
+		if (requestedRoleIds.isEmpty()) {
+			throw new BusinessException("角色列表不能为空");
+		}
+
+		List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
+
+		validateRolesExist(requestedRoleIds, assignableRoles);
+
+		userDomainService.assignRoles(userAgg, assignableRoles);
 
 		userDomainRepository.save(userAgg);
 
-		userAgg.publishEvents();
+		TxSynchronizationWrapper.afterCommit(userAgg::publishEvents);
 
-		log.info("角色分配成功，管理员ID: {}, 角色数量: {}", userAssignRolesCommand.userId(),
-			userAssignRolesCommand.roleIds().size());
+		log.info("角色分配成功，管理员ID: {}, 角色数量: {}", assignUseRolesCommand.userId(),
+			assignUseRolesCommand.roleIds().size());
+	}
+
+	private void validateRolesExist(Set<BizId> requested, List<RoleAgg> found) {
+		Set<BizId> foundIds = found.stream()
+			.map(RoleAgg::id)
+			.collect(Collectors.toSet());
+
+		Set<BizId> missing = new HashSet<>(requested);
+		missing.removeAll(foundIds);
+
+		if (!missing.isEmpty()) {
+			throw new BusinessException("角色不存在或不可分配: " + missing);
+		}
 	}
 
 	//	private static final QUser USER = QUser.user;

@@ -1,6 +1,7 @@
 package com.taotao.cloud.sys.domain.aggregate;
 
 import cn.hutool.core.util.StrUtil;
+import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.ddd.model.domain.AggregateRoot;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.common.enums.UserStatusEnum;
@@ -11,6 +12,7 @@ import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static com.taotao.cloud.sys.common.constant.SysConstants.SERVER_NAME;
@@ -182,15 +184,21 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 * @param roleId 角色ID
 	 * @return 是否拥有
 	 */
-	public boolean hasRole( String roleId ) {
+	public boolean hasRole( BizId roleId ) {
 		return roleIds.contains(roleId);
 	}
 
 	public void assignRoles( List<BizId> roleIds ) {
-		this.roleIds = roleIds;
+		if (roleIds == null || roleIds.isEmpty()) {
+			throw new BusinessException("角色列表不能为空");
+		}
 
-		AuthChangeEvent authChangeEvent = new AuthChangeEvent(this.roleIds);
-		authChangeEvent.setAggregateId(this.id);
-		publishEvent(authChangeEvent);
+		if(isDeleted()){
+			throw new BusinessException("已删除用户不能分配角色");
+		}
+
+		this.roleIds = new ArrayList<>(new LinkedHashSet<>(roleIds));
+
+		registerEvent(new AuthChangeEvent(this.id, this.roleIds));
 	}
 }
