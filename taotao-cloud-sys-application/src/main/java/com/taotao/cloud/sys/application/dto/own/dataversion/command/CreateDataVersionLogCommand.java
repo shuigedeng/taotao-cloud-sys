@@ -20,8 +20,6 @@ import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
-import lombok.*;
-import lombok.experimental.Accessors;
 
 /**
  *
@@ -30,14 +28,14 @@ import lombok.experimental.Accessors;
  */
 @RecordBuilder
 @Schema(title = "数据版本日志")
-public record DataVersionLogAddCommand(@Schema(description = "主键") Long id,
-									   @Schema(description = "表名称") String tableName,
-									   @Schema(description = "数据名称") String dataName,
-									   @Schema(description = "数据主键") String dataId,
-									   @Schema(description = "数据内容") String dataContent,
-									   @Schema(description = "本次变动的数据内容") Object changeContent,
-									   @Schema(description = "数据版本") Integer version,
-									   @Schema(description = "创建者ID") Long creator,
-									   @Schema(description = "创建时间") LocalDateTime createTime)implements Command {
+public record CreateDataVersionLogCommand(@Schema(description = "主键") Long id,
+                                          @Schema(description = "表名称") String tableName,
+                                          @Schema(description = "数据名称") String dataName,
+                                          @Schema(description = "数据主键") String dataId,
+                                          @Schema(description = "数据内容") String dataContent,
+                                          @Schema(description = "本次变动的数据内容") Object changeContent,
+                                          @Schema(description = "数据版本") Integer version,
+                                          @Schema(description = "创建者ID") Long creator,
+                                          @Schema(description = "创建时间") LocalDateTime createTime)implements Command {
 
 }
