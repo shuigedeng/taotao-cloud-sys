@@ -1,4 +1,4 @@
-package com.taotao.cloud.sys.application.dto.amap.res;
+package com.taotao.cloud.sys.application.dto.external.amap.res;
 
 /**
  * AmapRes

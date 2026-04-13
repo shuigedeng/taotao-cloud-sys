@@ -1,4 +1,4 @@
-package com.taotao.cloud.sys.application.dto.amap.req;
+package com.taotao.cloud.sys.application.dto.external.amap.req;
 
 /**
  * AmapReq

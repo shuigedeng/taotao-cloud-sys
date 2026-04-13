@@ -1,4 +1,4 @@
-package com.taotao.cloud.sys.application.dto.connect.res;
+package com.taotao.cloud.sys.application.dto.external.connect.res;
 
 /**
  * ConnectRes
