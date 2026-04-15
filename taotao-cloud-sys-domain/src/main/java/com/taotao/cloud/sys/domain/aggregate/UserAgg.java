@@ -1,7 +1,9 @@
 package com.taotao.cloud.sys.domain.aggregate;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.ddd.model.domain.AggregateRoot;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.common.enums.UserStatusEnum;
@@ -189,13 +191,10 @@ public class UserAgg extends AggregateRoot<BizId> {
 	}
 
 	public void assignRoles( List<BizId> roleIds ) {
-		if (roleIds == null || roleIds.isEmpty()) {
-			throw new BusinessException("角色列表不能为空");
-		}
 
-		if(isDeleted()){
-			throw new BusinessException("已删除用户不能分配角色");
-		}
+		BusinessAssert.isTrue(CollUtil.isNotEmpty(roleIds), "角色列表不能为空");
+
+		BusinessAssert.isTrue(isDeleted(), "已删除的用户不能分配角色");
 
 		this.roleIds = new ArrayList<>(new LinkedHashSet<>(roleIds));
 

@@ -16,9 +16,11 @@
 
 package com.taotao.cloud.sys.infrastructure.repository.domain;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
@@ -57,11 +59,15 @@ public class RoleDomainRepositoryImpl implements RoleDomainRepository {
 
 	@Override
 	public List<RoleAgg> findAssignableRoles( Set<BizId> requestedRoleIds ) {
+
+		BusinessAssert.isTrue(CollUtil.isNotEmpty(requestedRoleIds), "角色列表不能为空");
+
 		List<Long> ids = requestedRoleIds.stream().map(BizId::id).toList();
+
 		List<RolePO> rolePos = roleMapper.selectByIds(ids);
-		if (CollectionUtil.isEmpty(rolePos)) {
-			throw new BusinessException(StrUtil.format("ids:{}角色不存在", ids));
-		}
+
+		BusinessAssert.isTrue(CollUtil.isNotEmpty(rolePos), "ids:{}角色不存在", ids);
+
 		return roleAssembler.toAggs(rolePos);
 	}
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.utils;
+package com.taotao.cloud.sys.application.utils;
 
 /**
  * FileUtils

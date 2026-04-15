@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event.subscribe;
+package com.taotao.cloud.sys.infrastructure.event.subscribe.redis;
 
 /**
  * RedisEventSubscriber

@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.utils;
+package com.taotao.cloud.sys.application.utils;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.apache.commons.lang3.math.NumberUtils;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.apache.commons.lang3.math.NumberUtils;
 
 // 组装生成复杂父子树形结构， Stream + Lambda优雅搞定！
 // 一般来说完成这样的需求大多数人会想到递归，但递归的方式弊端过于明显：方法多次自调用效率很低、数据量大容易导致堆栈溢出、随着树深度的增加其时间复杂度会呈指数级增加等。

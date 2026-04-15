@@ -16,7 +16,9 @@
 
 package com.taotao.cloud.sys.domain.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
 import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
@@ -50,18 +52,12 @@ public class UserDomainServiceImpl implements UserDomainService {
 		// 只处理用户聚合内部的业务规则
 		// 例如：检查用户状态、角色冲突、数量限制等
 
-		if (userAgg.isDeleted()) {
-			throw new BusinessException("已删除的用户不能分配角色");
-		}
+		BusinessAssert.isTrue(userAgg != null, "用户不能为空");
 
-		if (assignableRoles.isEmpty()) {
-			throw new BusinessException("至少分配一个角色");
-		}
+		BusinessAssert.isTrue(CollUtil.isNotEmpty(assignableRoles), "至少分配一个角色");
 
 		// 将角色ID列表传递给用户聚合
-		List<BizId> roleIds = assignableRoles.stream()
-			.map(RoleAgg::id)
-			.collect(Collectors.toList());
+		List<BizId> roleIds = assignableRoles.stream().map(RoleAgg::id).collect(Collectors.toList());
 
 		userAgg.assignRoles(roleIds);  // 用户聚合内部处理角色分配逻辑
 	}

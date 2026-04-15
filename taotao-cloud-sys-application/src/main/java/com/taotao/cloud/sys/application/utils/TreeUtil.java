@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.utils;
+package com.taotao.cloud.sys.application.utils;
 
 import com.taotao.boot.common.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+
+import java.util.*;
 
 /**
  * TreeUtil

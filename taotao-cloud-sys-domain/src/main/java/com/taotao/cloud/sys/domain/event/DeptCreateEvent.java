@@ -33,7 +33,6 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @Getter
 @ToString
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(name = "OperateLogEvent", description = "操作日志事件")

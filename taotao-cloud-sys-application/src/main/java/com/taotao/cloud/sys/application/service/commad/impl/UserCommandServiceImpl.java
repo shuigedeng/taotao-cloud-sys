@@ -16,8 +16,9 @@
 
 package com.taotao.cloud.sys.application.service.commad.impl;
 
-import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.data.datasource.tx.TxSynchronizationWrapper;
+import com.taotao.boot.common.support.asserts.BusinessAssert;
+import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper;
+import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
@@ -30,8 +31,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.TransactionSynchronization;
-import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.util.HashSet;
 import java.util.List;
@@ -53,6 +52,8 @@ public class UserCommandServiceImpl implements UserCommandService {
 	private final UserDomainRepository userDomainRepository;
 	private final RoleDomainRepository roleDomainRepository;
 	private final UserDomainService userDomainService;
+	private final TransactionSynchronizationWrapper txSynchronizationWrapper;
+	private final EventDispatcher eventDispatcher;
 
 	@Override
 	@Transactional
@@ -69,11 +70,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 		UserAgg userAgg = userDomainRepository.findById(BizId.fromValue(assignUseRolesCommand.userId()), Boolean.TRUE);
 
 		Set<BizId> requestedRoleIds = assignUseRolesCommand.roleIds().stream()
-			.map(BizId::fromValue)
-			.collect(Collectors.toSet());
-		if (requestedRoleIds.isEmpty()) {
-			throw new BusinessException("角色列表不能为空");
-		}
+			.map(BizId::fromValue).collect(Collectors.toSet());
 
 		List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
 
@@ -83,23 +80,19 @@ public class UserCommandServiceImpl implements UserCommandService {
 
 		userDomainRepository.save(userAgg);
 
-		TxSynchronizationWrapper.afterCommit(userAgg::publishEvents);
+		txSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
 
 		log.info("角色分配成功，管理员ID: {}, 角色数量: {}", assignUseRolesCommand.userId(),
 			assignUseRolesCommand.roleIds().size());
 	}
 
-	private void validateRolesExist(Set<BizId> requested, List<RoleAgg> found) {
-		Set<BizId> foundIds = found.stream()
-			.map(RoleAgg::id)
-			.collect(Collectors.toSet());
+	private void validateRolesExist( Set<BizId> requested, List<RoleAgg> found ) {
+		Set<BizId> foundIds = found.stream().map(RoleAgg::id).collect(Collectors.toSet());
 
 		Set<BizId> missing = new HashSet<>(requested);
 		missing.removeAll(foundIds);
 
-		if (!missing.isEmpty()) {
-			throw new BusinessException("角色不存在或不可分配: " + missing);
-		}
+		BusinessAssert.isTrue(!missing.isEmpty(), "角色不存在或不可分配: {}", missing);
 	}
 
 	//	private static final QUser USER = QUser.user;

@@ -14,15 +14,26 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.event.roketmq.handler;
+package com.taotao.cloud.sys.infrastructure.event.listener;
 
-/** 会员登录消息 */
-public interface MemberLoginEventHandler {
+import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
-    /**
-     * 会员登录
-     *
-     * @param member 会员
-     */
-    //    void memberLogin(Member member);
+/**
+ * AuthChangeEventListener
+ *
+ * @author shuigedeng
+ * @version 2026.04
+ * @since 2025-12-19 09:30:45
+ */
+@Slf4j
+@Component
+public class AuthChangeSpringEventListener {
+
+	@EventListener(AuthChangeEvent.class)
+	public void handleAuthChangeEvent( AuthChangeEvent authChangeEvent ){
+		log.info("接受到AuthChangeEvent:{}", authChangeEvent);
+	}
 }

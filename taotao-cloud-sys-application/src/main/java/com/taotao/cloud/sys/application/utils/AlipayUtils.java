@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.utils;
+package com.taotao.cloud.sys.application.utils;
+
+import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.springframework.stereotype.Component;
 
 /**
  * 支付宝工具类
@@ -27,7 +28,6 @@ import org.springframework.stereotype.Component;
  * @version 2022.03
  * @since 2022-03-25 14:15:43
  */
-@Component
 public class AlipayUtils {
 
     /**
