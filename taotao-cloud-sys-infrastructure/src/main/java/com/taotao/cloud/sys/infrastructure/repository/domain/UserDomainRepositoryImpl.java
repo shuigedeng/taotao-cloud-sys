@@ -23,7 +23,7 @@ import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
-import com.taotao.cloud.sys.infrastructure.assembler.UserAssembler;
+import com.taotao.cloud.sys.infrastructure.assembler.UserInfraAssembler;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.UserMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.UserRelationMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
@@ -49,7 +49,7 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 
 	private final UserRepository userRepository;
 	private final UserMapper userMapper;
-	private final UserAssembler userAssembler;
+	private final UserInfraAssembler userAssembler;
 	private final UserRelationRepository userRelationRepository;
 	private final UserRelationMapper userRelationMapper;
 

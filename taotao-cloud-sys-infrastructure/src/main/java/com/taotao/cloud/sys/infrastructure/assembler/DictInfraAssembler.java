@@ -30,10 +30,10 @@ import org.mapstruct.factory.Mappers;
  * @since 2022-04-28 13:39:24
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAssembler {
+public interface DictInfraAssembler {
 
     /** 实例 */
-    DictAssembler INSTANCE = Mappers.getMapper(DictAssembler.class);
+    DictInfraAssembler INSTANCE = Mappers.getMapper(DictInfraAssembler.class);
 
     DictQueryApiResponse convert(DictPO dictPo);
 

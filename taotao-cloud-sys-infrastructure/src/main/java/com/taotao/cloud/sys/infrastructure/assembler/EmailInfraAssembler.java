@@ -28,17 +28,10 @@ import org.mapstruct.factory.Mappers;
  * @since 2022-04-28 13:39:18
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DeptAssembler {
+public interface EmailInfraAssembler {
 
     /** 实例 */
-    DeptAssembler INSTANCE = Mappers.getMapper(DeptAssembler.class);
+    EmailInfraAssembler INSTANCE = Mappers.getMapper(EmailInfraAssembler.class);
 
-    //    /**
-    //     * 部门列表给签证官
-    //     *
-    //     * @param deptList 部门列表
-    //     * @return {@link List }<{@link DeptTreeVO }>
-    //     * @since 2022-04-28 13:39:18
-    //     */
-    //    List<DeptTreeVO> convertTree(List<Dept> deptList);
+    //    EmailConfig convert(EmailDTO emailDTO);
 }

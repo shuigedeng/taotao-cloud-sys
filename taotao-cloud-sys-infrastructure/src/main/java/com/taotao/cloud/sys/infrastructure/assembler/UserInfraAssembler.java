@@ -31,12 +31,12 @@ import org.mapstruct.factory.Mappers;
  * @since 2022-04-28 13:39:56
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface UserAssembler extends BaseAssembler {
+public interface UserInfraAssembler extends BaseAssembler {
 
 	/**
 	 * 实例
 	 */
-	UserAssembler INSTANCE = Mappers.getMapper(UserAssembler.class);
+	UserInfraAssembler INSTANCE = Mappers.getMapper(UserInfraAssembler.class);
 
 	UserAgg toAgg( UserPO userPo );
 

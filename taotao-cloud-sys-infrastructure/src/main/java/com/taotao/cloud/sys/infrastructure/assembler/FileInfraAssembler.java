@@ -21,33 +21,35 @@ import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
 /**
- * ilogistics地图结构
+ * ifile地图结构
  *
  * @author shuigedeng
  * @version 2022.04
- * @since 2022-04-28 13:39:34
+ * @since 2022-04-28 13:39:30
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface LogisticsAssembler {
+public interface FileInfraAssembler {
 
     /** 实例 */
-    LogisticsAssembler INSTANCE = Mappers.getMapper(LogisticsAssembler.class);
-    //
+    FileInfraAssembler INSTANCE = Mappers.getMapper(FileInfraAssembler.class);
+
     //    /**
-    //     * 物流文件签证官
+    //     * 文件文件签证官
     //     *
-    //     * @param logisticsConfig 物流配置
-    //     * @return {@link LogisticsVO }
-    //     * @since 2022-04-28 13:39:35
+    //     * @param file 文件
+    //     * @return {@link FileVO }
+    //     * @since 2022-04-28 13:39:30
     //     */
-    //    LogisticsVO convert(LogisticsConfig logisticsConfig);
+    //    FileVO convert(File file);
 
     // /**
     //  * SysUser转AddUserVO
     //  *
     //  * @param sysUser sysUser
     //  * @return com.taotao.cloud.sys.api.vo.user.AddUserVO
+    //  * @author shuigedeng
     //  * @since 2020/11/11 16:59
+    //  * @version 2022.03
     //  */
     // AddUserVO sysUserToAddUserVO(SysUser sysUser);
     //
@@ -56,7 +58,9 @@ public interface LogisticsAssembler {
     //  *
     //  * @param userList userList
     //  * @return java.util.List<com.taotao.cloud.sys.api.vo.user.UserVO>
+    //  * @author shuigedeng
     //  * @since 2020/11/11 15:00
+    //  * @version 2022.03
     //  */
     // List<UserVO> sysUserToUserVO(List<SysUser> userList);
     //
@@ -65,7 +69,9 @@ public interface LogisticsAssembler {
     //  *
     //  * @param userDTO userDTO
     //  * @return com.taotao.cloud.sys.biz.entity.SysUser
+    //  * @author shuigedeng
     //  * @since 2020/11/11 14:52
+    //  * @version 2022.03
     //  */
     // SysUser userDtoToSysUser(UserDTO userDTO);
     //
@@ -75,7 +81,9 @@ public interface LogisticsAssembler {
     //  * @param userDTO userDTO
     //  * @param user    user
     //  * @return void
+    //  * @author shuigedeng
     //  * @since 2020/11/11 16:59
+    //  * @version 2022.03
     //  */
     // void copyUserDtoToSysUser(UserDTO userDTO, @MappingTarget SysUser user);
 }

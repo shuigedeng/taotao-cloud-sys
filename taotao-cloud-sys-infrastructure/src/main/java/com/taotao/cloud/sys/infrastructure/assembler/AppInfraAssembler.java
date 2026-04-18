@@ -18,27 +18,23 @@ package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
 
 /**
- * iregion地图结构
- *
- * @author shuigedeng
- * @version 2022.04
- * @since 2022-04-28 13:39:46
+ * @author
+ * @version 0.0.1
+ * @since 2022/11/23 00:45
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface RegionAssembler {
+public interface AppInfraAssembler {
 
-    /** 实例 */
-    RegionAssembler INSTANCE = Mappers.getMapper(RegionAssembler.class);
+    //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
+    //
+    //	Page<AppDTO> convertPage(Page<App> appDO);
+    //
+    //	List<AppDTO> convertList(List<App> app);
+    //
+    //	AppDTO convert(App app);
+    //
+    //	App convert(AppDTO appDTO);
 
-    //    /**
-    //     * 区域列表给签证官
-    //     *
-    //     * @param regionList 区域列表
-    //     * @return {@link List }<{@link RegionTreeVO }>
-    //     * @since 2022-04-28 13:39:46
-    //     */
-    //    List<RegionTreeVO> convertTree(List<Region> regionList);
 }

@@ -17,25 +17,14 @@
 package com.taotao.cloud.sys.infrastructure.repository.domain;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.StrUtil;
-import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
-import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.RoleDomainRepository;
-import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
-import com.taotao.cloud.sys.infrastructure.assembler.RoleAssembler;
-import com.taotao.cloud.sys.infrastructure.assembler.UserAssembler;
+import com.taotao.cloud.sys.infrastructure.assembler.RoleInfraAssembler;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.RoleMapper;
-import com.taotao.cloud.sys.infrastructure.persistent.mapper.UserMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
-import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.RoleRepository;
-import com.taotao.cloud.sys.infrastructure.persistent.repository.UserRepository;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -55,7 +44,7 @@ public class RoleDomainRepositoryImpl implements RoleDomainRepository {
 
 	private final RoleRepository roleRepository;
 	private final RoleMapper roleMapper;
-	private final RoleAssembler roleAssembler;
+	private final RoleInfraAssembler roleAssembler;
 
 	@Override
 	public List<RoleAgg> findAssignableRoles( Set<BizId> requestedRoleIds ) {

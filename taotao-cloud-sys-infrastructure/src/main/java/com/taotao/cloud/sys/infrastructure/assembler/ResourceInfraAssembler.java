@@ -28,10 +28,10 @@ import org.mapstruct.factory.Mappers;
  * @since 2022-04-28 13:39:41
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface ResourceAssembler {
+public interface ResourceInfraAssembler {
 
     /** 实例 */
-    ResourceAssembler INSTANCE = Mappers.getMapper(ResourceAssembler.class);
+    ResourceInfraAssembler INSTANCE = Mappers.getMapper(ResourceInfraAssembler.class);
 
     //    /**
     //     * 菜单列表树vo列表

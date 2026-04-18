@@ -33,10 +33,10 @@ import java.util.List;
  * @since 2022-04-28 13:39:49
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface RoleAssembler extends BaseAssembler {
+public interface RoleInfraAssembler extends BaseAssembler {
 
     /** 实例 */
-    RoleAssembler INSTANCE = Mappers.getMapper(RoleAssembler.class);
+    RoleInfraAssembler INSTANCE = Mappers.getMapper(RoleInfraAssembler.class);
 
 	List<RoleAgg> toAggs( List<RolePO> rolePos );
 	RoleAgg toAgg( RolePO rolePo );

@@ -21,17 +21,24 @@ import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
 /**
- * DeptMapStruct
+ * iregion地图结构
  *
  * @author shuigedeng
  * @version 2022.04
- * @since 2022-04-28 13:39:18
+ * @since 2022-04-28 13:39:46
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface EmailAssembler {
+public interface RegionInfraAssembler {
 
     /** 实例 */
-    EmailAssembler INSTANCE = Mappers.getMapper(EmailAssembler.class);
+    RegionInfraAssembler INSTANCE = Mappers.getMapper(RegionInfraAssembler.class);
 
-    //    EmailConfig convert(EmailDTO emailDTO);
+    //    /**
+    //     * 区域列表给签证官
+    //     *
+    //     * @param regionList 区域列表
+    //     * @return {@link List }<{@link RegionTreeVO }>
+    //     * @since 2022-04-28 13:39:46
+    //     */
+    //    List<RegionTreeVO> convertTree(List<Region> regionList);
 }

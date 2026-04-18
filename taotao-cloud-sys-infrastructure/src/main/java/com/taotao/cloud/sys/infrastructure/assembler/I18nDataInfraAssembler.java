@@ -24,9 +24,9 @@ import org.mapstruct.factory.Mappers;
  * 国际化信息模型转换器
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface I18nDataAssembler {
+public interface I18nDataInfraAssembler {
 
-    I18nDataAssembler INSTANCE = Mappers.getMapper(I18nDataAssembler.class);
+    I18nDataInfraAssembler INSTANCE = Mappers.getMapper(I18nDataInfraAssembler.class);
 
     //	/**
     //	 * i18nMessage 转 I18nData

@@ -18,23 +18,27 @@ package com.taotao.cloud.sys.infrastructure.assembler;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.factory.Mappers;
 
 /**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
+ * DeptMapStruct
+ *
+ * @author shuigedeng
+ * @version 2022.04
+ * @since 2022-04-28 13:39:18
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface AppAssembler {
+public interface DeptInfraAssembler {
 
-    //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);
-    //
-    //	Page<AppDTO> convertPage(Page<App> appDO);
-    //
-    //	List<AppDTO> convertList(List<App> app);
-    //
-    //	AppDTO convert(App app);
-    //
-    //	App convert(AppDTO appDTO);
+    /** 实例 */
+    DeptInfraAssembler INSTANCE = Mappers.getMapper(DeptInfraAssembler.class);
 
+    //    /**
+    //     * 部门列表给签证官
+    //     *
+    //     * @param deptList 部门列表
+    //     * @return {@link List }<{@link DeptTreeVO }>
+    //     * @since 2022-04-28 13:39:18
+    //     */
+    //    List<DeptTreeVO> convertTree(List<Dept> deptList);
 }
