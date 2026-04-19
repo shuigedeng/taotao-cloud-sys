@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 
-@Component
+//@Component
 public class SysKafkaConsumer {
 
 	@KafkaListener(
