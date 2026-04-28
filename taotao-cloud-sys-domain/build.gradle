@@ -82,7 +82,7 @@ dependencies {
     api "io.github.shuigedeng:taotao-boot-starter-oss-minio"
     api "io.github.shuigedeng:taotao-boot-starter-mq-rocketmq"
     api "io.github.shuigedeng:taotao-boot-starter-mq-kafka"
-    api "io.github.shuigedeng:taotao-boot-starter-webguard-captcha"
+    api "io.github.shuigedeng:taotao-boot-starter-captcha"
 
     //AVIATOR——轻量级JAVA表达式求值引擎 https://blog.csdn.net/ZhangQingmu/article/details/125087255
     //https://code.google.com/p/aviator/

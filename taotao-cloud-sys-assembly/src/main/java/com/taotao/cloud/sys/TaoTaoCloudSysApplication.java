@@ -32,6 +32,10 @@ import com.taotao.boot.web.annotation.TaoTaoBootApplication;
  * --add-exports 导出包，意味着其中的所有公共类型和成员都可以在编译和运行时访问。 --add-opens 打开包，意味着其中的所有类型和成员（不仅是公共类型）都可以在运行时访问。
  * 主要区别在于 --add-opens 允许 “深度反射”，即非公共成员的访问，才可以调用 setAccessible(true)
  *
+ * -Djdk.virtualThreadStackSize=256k
+ * -Djdk.virtualThreadScheduler.parallelism=10
+ * -Djdk.virtualThreadScheduler.maxPoolSize=20
+ *
  * <pre class="code">
  *                   --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED
  *                   --add-opens java.base/java.io=ALL-UNNAMED
