@@ -28,11 +28,11 @@ dependencies {
     api "jakarta.persistence:jakarta.persistence-api:3.2.0"
     annotationProcessor "jakarta.persistence:jakarta.persistence-api:3.2.0"
 
-    api 'com.mysql:mysql-connector-j:9.6.0'
+    api 'com.mysql:mysql-connector-j:9.7.0'
 
     testImplementation("org.hibernate.tool:hibernate-tools-orm:7.3.0.Final")
     // jOOQ代码生成依赖（注意版本匹配）
-//    jooqGenerator 'com.mysql:mysql-connector-j:9.6.0'
+//    jooqGenerator 'com.mysql:mysql-connector-j:9.7.0'
 //    jooqGenerator 'org.jooq:jooq-meta-extensions:3.20.10'
 }
 
@@ -172,7 +172,7 @@ dependencies {
     mybatisGen 'org.mybatis.generator:mybatis-generator-core:2.0.0'
     mybatisGen 'org.mybatis.dynamic-sql:mybatis-dynamic-sql:2.0.0'
     mybatisGen 'io.github.shuigedeng:taotao-boot-starter-data-mybatis:2026.06'
-    mybatisGen 'com.mysql:mysql-connector-j:9.6.0'
+    mybatisGen 'com.mysql:mysql-connector-j:9.7.0'
     //mybatisGenerator 'org.postgresql:postgresql:42.7.8'
     //mybatisGenerator  // Here add your mariadb dependencies or else
 }
