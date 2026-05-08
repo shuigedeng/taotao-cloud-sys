@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.service;
 import com.taotao.boot.test.junitperf.core.annotation.TtcTest;
 import com.taotao.boot.test.junitperf.core.report.impl.HtmlReporter;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
-import com.taotao.cloud.sys.application.dto.own.dept.result.DeptTreeResult;
+import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
 import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
 import java.util.List;
 

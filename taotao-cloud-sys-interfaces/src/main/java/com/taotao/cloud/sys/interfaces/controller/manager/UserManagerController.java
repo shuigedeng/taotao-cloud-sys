@@ -19,7 +19,7 @@ package com.taotao.cloud.sys.interfaces.controller.manager;
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import com.taotao.cloud.sys.application.service.query.UserQueryService;
 import io.swagger.v3.oas.annotations.Operation;

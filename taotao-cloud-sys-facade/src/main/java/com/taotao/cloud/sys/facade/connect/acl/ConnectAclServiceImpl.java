@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.facade.connect.acl;
 
 import com.taotao.boot.ddd.acl.AclBaseService;
-import com.taotao.cloud.sys.application.acl.ConnectAclService;
+import com.taotao.cloud.sys.application.acl.service.ConnectAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

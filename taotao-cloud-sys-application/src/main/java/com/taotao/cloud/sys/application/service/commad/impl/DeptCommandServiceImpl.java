@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.commad.impl;
 
-import com.taotao.cloud.sys.application.dto.own.dept.result.DeptTreeResult;
+import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
 import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
 import java.util.List;
 import org.springframework.stereotype.Service;

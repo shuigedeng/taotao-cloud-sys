@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.service;
 
 import com.taotao.boot.ddd.model.val.BizId;
-import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.impl.UserCommandServiceImpl;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;

@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.facade.weather.acl;
 
 import com.taotao.boot.ddd.acl.AclBaseService;
-import com.taotao.cloud.sys.application.acl.WeatherAclService;
+import com.taotao.cloud.sys.application.acl.service.WeatherAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

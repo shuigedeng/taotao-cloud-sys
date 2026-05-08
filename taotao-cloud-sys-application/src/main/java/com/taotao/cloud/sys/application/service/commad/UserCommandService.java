@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.application.dto.own.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
 
 /**
  * ISysUserService

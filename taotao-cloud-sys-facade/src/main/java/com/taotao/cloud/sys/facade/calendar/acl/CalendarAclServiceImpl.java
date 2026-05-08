@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.facade.calendar.acl;
 
 import com.taotao.boot.ddd.acl.AclBaseService;
-import com.taotao.cloud.sys.application.acl.CalendarAclService;
+import com.taotao.cloud.sys.application.acl.service.CalendarAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

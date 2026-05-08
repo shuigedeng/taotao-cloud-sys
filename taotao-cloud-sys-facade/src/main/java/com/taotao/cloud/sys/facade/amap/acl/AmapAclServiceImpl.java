@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.facade.amap.acl;
 
 import com.taotao.boot.ddd.acl.AclBaseService;
-import com.taotao.cloud.sys.application.acl.AmapAclService;
+import com.taotao.cloud.sys.application.acl.service.AmapAclService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

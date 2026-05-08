@@ -18,21 +18,19 @@ package com.taotao.cloud.sys.interfaces.controller.test;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.grpc.spring.annotation.GrpcClient;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.api.grpc.DictGrpcQuery;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
-import com.taotao.cloud.sys.application.dto.own.dict.query.DictQuery;
-import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResult;
+import com.taotao.cloud.sys.application.dto.dict.query.DictQuery;
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
 import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResultBuilder;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.task.AsyncTaskExecutor;

@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.application.dto.own.dept.result.DeptTreeResult;
+import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
 import java.util.List;
 
 /**
