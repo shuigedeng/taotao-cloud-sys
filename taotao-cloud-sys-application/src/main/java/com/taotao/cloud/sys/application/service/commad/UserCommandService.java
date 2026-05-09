@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
-import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
 
 /**
  * ISysUserService
@@ -28,7 +28,7 @@ import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
  */
 public interface UserCommandService extends CommandService {
 
-	void assignRoles( AssignUserRolesCommand userAssignRolesCommand );
+	void assignRoles( AssignRolesCommand userAssignRolesCommand );
 
 
 	//    /**

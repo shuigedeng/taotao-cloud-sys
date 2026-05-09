@@ -20,7 +20,7 @@ import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper;
 import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
-import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
@@ -57,7 +57,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 
 	@Override
 	@Transactional
-	public void assignRoles( AssignUserRolesCommand assignUseRolesCommand ) {
+	public void assignRoles( AssignRolesCommand assignUseRolesCommand ) {
 
 		// 1. 加载数据（5个聚合）
 		// 2. 应用层校验（3-5个）

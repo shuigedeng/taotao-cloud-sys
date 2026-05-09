@@ -23,7 +23,6 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Setter;
 
 import java.util.List;
 
@@ -36,7 +35,7 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(title = "国际化信息传输对象")
-public record I18nDataCreateCommand(
+public record CreateI18nDataCommand(
 	@Schema(title = "唯一标识 = 业务:关键词") @NotEmpty(message = "{i18nMessage.code}：{}") String code,
 	@Schema(title = "语言文本列表") @Valid @NotNull(message = "{i18nData.languageTexts}: {}") @Size(min = 1, message = "{i18nData.languageTexts}: {}") List<LanguageText> languageTexts,
 	@Schema(title = "备注") String remarks) implements Command {

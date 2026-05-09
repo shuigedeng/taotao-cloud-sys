@@ -14,29 +14,27 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.position.command;
+package com.taotao.cloud.sys.application.dto.i18n.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.Serial;
 
 /**
- * 岗位更新对象
+ * 国际化信息传输对象
  *
- * @author shuigedeng
- * @version 2022.03
- * @since 2020/9/30 08:49
+ * @param languageTag 语言标签
+ * @param code 唯一标识 = 业务:关键词
+ * @param message 文本值，可以使用 { } 加角标，作为占位符
+ * @param remarks 备注
  */
 @RecordBuilder
-@Schema(description = "岗位更新对象")
-public record PositionUpdateCommand(@Schema(description = "岗位名称") String name,
-									@Schema(description = "部门id") Long deptId,
-									@Schema(description = "备注") String remark,
-									@Schema(description = "排序值") Integer sortNum,
-									@Schema(description = "租户id") String tenantId) implements Command {
+@Schema(title = "国际化信息传输对象")
+public record UpdateI18nDataCommand(@Schema(title = "语言标签") String languageTag,
+                                    @Schema(title = "唯一标识 = 业务:关键词") String code,
+                                    @Schema(title = "文本值，可以使用 { } 加角标，作为占位符") String message,
+                                    @Schema(title = "备注") String remarks) implements Command {
 
-	@Serial
-	private static final long serialVersionUID = -4132785717179910025L;
+	private static final long serialVersionUID = 1L;
 
 }

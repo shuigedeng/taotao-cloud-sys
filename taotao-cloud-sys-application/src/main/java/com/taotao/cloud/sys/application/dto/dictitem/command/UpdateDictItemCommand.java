@@ -14,29 +14,31 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.dict.command;
+package com.taotao.cloud.sys.application.dto.dictitem.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.io.Serial;
 
 /**
- * 字典添加对象
+ * 字典项更新对象
  *
  * @author shuigedeng
  * @version 2022.03
- * @since 2022-03-23 08:50:33
+ * @since 2020/9/30 08:49
  */
 @RecordBuilder
-@Schema(description = "字典添加对象")
-public record DictSaveCommand(
-	@Schema(description = "字典名称") @NotBlank(message = "字典名称不能为空") @Size(max = 10, message = "字典名称不能超过10个字符") String dictName,
-	@Schema(description = "字典编码") @NotBlank(message = "字典编码不能为空") @Size(max = 10, message = "字典编码不能超过10个字符") String dictCode,
-	@Schema(description = "描述") String description, @Schema(description = "排序值") Integer dictSort,
-	@Schema(description = "备注信息") String remark) implements Command {
+@Schema(description = "字典项更新对象")
+public record UpdateDictItemCommand(@Schema(description = "字典id") @NotNull(message = "字典id不能为空") Long dictId,
+                                    @Schema(description = "字典项文本") @NotBlank(message = "字典项文本不能为空") @Size(max = 1000, message = "字典项文本不能超过1000个字符") String itemText,
+                                    @Schema(description = "字典项值") @NotBlank(message = "字典项值不能为空") String itemValue,
+                                    @Schema(description = "描述") String description,
+                                    @Schema(description = "字典状态 1不启用 2启用") @NotBlank(message = "字典状态不能为空") Integer status) implements
+	Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

@@ -34,7 +34,7 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(description = "用户更新DTO")
-public record UserUpdateCommand(
+public record UpdateUserCommand(
 	@Schema(description = "昵称") @NotBlank(message = "昵称不能为空") @Max(value = 10, message = "昵称不能超过10个字符") String nickname,
 	@Schema(description = "真实用户名") @NotBlank(message = "真实用户名不能为空") @Max(value = 10, message = "真实用户名不能超过10个字符") String username,
 	@Schema(description = "手机号") @NotBlank(message = "真实用户名不能为空") @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确") String phone,

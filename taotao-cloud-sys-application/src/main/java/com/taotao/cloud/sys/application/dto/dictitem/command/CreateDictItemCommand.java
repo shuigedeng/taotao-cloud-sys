@@ -33,11 +33,11 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "字典项添加对象")
-public record DictItemSaveCommand(@Schema(description = "字典id") @NotNull(message = "字典id不能为空") Long dictId,
-								  @Schema(description = "字典项文本") @NotBlank(message = "字典项文本不能为空") @Size(max = 1000, message = "字典项文本不能超过1000个字符") String itemText,
-								  @Schema(description = "字典项值") @NotBlank(message = "字典项值不能为空") String itemValue,
-								  @Schema(description = "描述") String description,
-								  @Schema(description = "字典状态 1不启用 2启用") @NotBlank(message = "字典状态不能为空") Integer status) implements
+public record CreateDictItemCommand(@Schema(description = "字典id") @NotNull(message = "字典id不能为空") Long dictId,
+                                    @Schema(description = "字典项文本") @NotBlank(message = "字典项文本不能为空") @Size(max = 1000, message = "字典项文本不能超过1000个字符") String itemText,
+                                    @Schema(description = "字典项值") @NotBlank(message = "字典项值不能为空") String itemValue,
+                                    @Schema(description = "描述") String description,
+                                    @Schema(description = "字典状态 1不启用 2启用") @NotBlank(message = "字典状态不能为空") Integer status) implements
 	Command {
 
 	@Serial

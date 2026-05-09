@@ -14,28 +14,34 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.dept.command;
+package com.taotao.cloud.sys.application.dto.email.command;
 
-import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
-import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.Serial;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotBlank;
 
 /**
- * 部门更新对象
+ * EmailDTO
  *
  * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-23 08:50:21
+ * @version 2023.07
+ * @see Record
+ * @since 2023-07-12 17:59:02
  */
 @RecordBuilder
-@Schema(description = "部门更新对象")
-public record DeptUpdateCommand(
-	@Schema(description = "部门id") Integer deptId,
-	@Schema(description = "部门名称") String name, @Schema(description = "上级部门id") Integer parentId,
-	@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark) implements Command {
+public record CreateEmailCommand(
 
-	@Serial
-	private static final long serialVersionUID = -4132785717179910025L;
+        /* 收件人 */
+        @NotBlank(message = "收件人不能为空") String fromUser,
 
-}
+        /* 邮件服务器SMTP地址 */
+        String host,
+
+        /* 密码 */
+        String pass,
+
+        /* 端口 */
+        @Max(value = 200, message = "端口不能大于200") Integer port,
+
+        /* 发件者用户名 */
+        String user) {}

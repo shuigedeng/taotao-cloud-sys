@@ -14,26 +14,30 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.dept.command;
+package com.taotao.cloud.sys.application.dto.role.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
 
+import org.hibernate.validator.constraints.Length;
+
 /**
- * 部门添加对象
+ * 角色添加对象
  *
  * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-23 08:50:16
+ * @version 2021.10
+ * @since 2021-10-09 15:25:01
  */
 @RecordBuilder
-@Schema(description = "部门添加对象")
-public record DeptSaveCommand(
-	@Schema(description = "部门id") Integer deptId,
-	@Schema(description = "部门名称") String name, @Schema(description = "上级部门id") Integer parentId,
-	@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark) implements Command {
+@Schema(description = "角色添加对象")
+public record CreateRoleCommand(
+	@Schema(description = "角色名称") @NotBlank(message = "角色名称不能超过为空") @Length(max = 20, message = "角色名称不能超过20个字符") String name,
+	@Schema(description = "角色标识") @NotBlank(message = "角色标识不能超过为空") @Length(max = 20, message = "角色标识不能超过20个字符") @Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线") String code,
+	@Schema(description = "备注") String remark) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

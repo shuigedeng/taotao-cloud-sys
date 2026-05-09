@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.user.command;
+package com.taotao.cloud.sys.application.dto.region.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
@@ -22,21 +22,21 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 
 /**
- * 用户查询对象
+ * 地区添加对象
  *
  * @author shuigedeng
- * @version 2021.10
- * @since 2021-10-09 15:18:07
+ * @version 2022.03
+ * @since 2020/9/30 08:49
  */
 @RecordBuilder
-@Schema(description = "用户查询对象")
-public record UserUpdate1Command(@Schema(description = "用户昵称") String nickname,
-								 @Schema(description = "用户真实姓名") String username,
-								 @Schema(description = "电话") String phone,
-								 @Schema(description = "email") String email,
-								 @Schema(description = "性别 1男 2女 0未知") Integer sex,
-								 @Schema(description = "部门id") Long deptId,
-								 @Schema(description = "岗位id") Long jobId) implements Command {
+@Schema(description = "地区添加对象")
+public record CreateRegionCommand(@Schema(description = "地区编码") String code,
+                                  @Schema(description = "地区名称") String name,
+                                  @Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）") Integer level,
+                                  @Schema(description = "城市编码") String cityCode,
+                                  @Schema(description = "城市中心经度") String lng,
+                                  @Schema(description = "城市中心纬度") String lat,
+                                  @Schema(description = "地区父节点") Long parentId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

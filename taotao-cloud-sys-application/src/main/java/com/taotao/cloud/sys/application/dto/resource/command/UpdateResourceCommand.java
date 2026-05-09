@@ -33,7 +33,7 @@ import org.hibernate.validator.constraints.Length;
  */
 @RecordBuilder
 @Schema(description = "菜单更新对象")
-public record ResourceUpdateCommand(
+public record UpdateResourceCommand(
 	@Schema(description = "菜单名称") @NotBlank(message = "菜单名称不能超过为空") @Length(max = 20, message = "菜单名称不能超过20个字符") String name,
 	@Schema(description = "菜单类型 1：目录 2：菜单 3：按钮") @NotBlank(message = "菜单类型不能超过为空") Byte type,
 	@Schema(description = "权限标识") String perms, @Schema(description = "前端path / 即跳转路由") String path,

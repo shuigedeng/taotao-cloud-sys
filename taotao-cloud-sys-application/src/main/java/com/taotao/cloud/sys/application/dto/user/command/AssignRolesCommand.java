@@ -14,31 +14,29 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.dictitem.command;
+package com.taotao.cloud.sys.application.dto.user.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+
 import java.io.Serial;
+import java.util.List;
 
 /**
- * 字典项更新对象
+ * 为管理员分配角色命令
  *
  * @author shuigedeng
- * @version 2022.03
- * @since 2020/9/30 08:49
+ * @since 2020/5/14 10:44
  */
 @RecordBuilder
-@Schema(description = "字典项更新对象")
-public record DictItemUpdateCommand(@Schema(description = "字典id") @NotNull(message = "字典id不能为空") Long dictId,
-									@Schema(description = "字典项文本") @NotBlank(message = "字典项文本不能为空") @Size(max = 1000, message = "字典项文本不能超过1000个字符") String itemText,
-									@Schema(description = "字典项值") @NotBlank(message = "字典项值不能为空") String itemValue,
-									@Schema(description = "描述") String description,
-									@Schema(description = "字典状态 1不启用 2启用") @NotBlank(message = "字典状态不能为空") Integer status) implements
-	Command {
+@Schema(description = "为管理员分配角色命令")
+public record AssignRolesCommand(
+	@Schema(description = "用户id") @NotNull(message = "用户id不能为空") Long userId,
+	@Schema(description = "角色id列表") @NotEmpty(message = "角色id列表不能为空") List<Long> roleIds)
+	implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.service;
 
 import com.taotao.boot.ddd.model.val.BizId;
-import com.taotao.cloud.sys.application.dto.user.command.AssignUserRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
 import com.taotao.cloud.sys.application.service.commad.impl.UserCommandServiceImpl;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
@@ -39,7 +39,7 @@ class UserCommandServiceTest {
 //		when(userRepository.save(mockUser)).thenReturn(null);
 
 		// --- Act (执行) ---
-		userService.assignRoles (new AssignUserRolesCommand(1L, new ArrayList<>()));
+		userService.assignRoles (new AssignRolesCommand(1L, new ArrayList<>()));
 
 		// --- Assert (断言) ---
 //		assertThat(result.getName()).isEqualTo("Alice");

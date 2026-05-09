@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.region.command;
+package com.taotao.cloud.sys.application.dto.dept.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
@@ -22,21 +22,18 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 
 /**
- * 地区添加对象
+ * 部门更新对象
  *
  * @author shuigedeng
  * @version 2022.03
- * @since 2020/9/30 08:49
+ * @since 2022-03-23 08:50:21
  */
 @RecordBuilder
-@Schema(description = "地区添加对象")
-public record RegionSaveCommand(@Schema(description = "地区编码") String code,
-								@Schema(description = "地区名称") String name,
-								@Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）") Integer level,
-								@Schema(description = "城市编码") String cityCode,
-								@Schema(description = "城市中心经度") String lng,
-								@Schema(description = "城市中心纬度") String lat,
-								@Schema(description = "地区父节点") Long parentId) implements Command {
+@Schema(description = "部门更新对象")
+public record UpdateDeptCommand(
+	@Schema(description = "部门id") Integer deptId,
+	@Schema(description = "部门名称") String name, @Schema(description = "上级部门id") Integer parentId,
+	@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

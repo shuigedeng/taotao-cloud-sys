@@ -14,30 +14,29 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.role.command;
+package com.taotao.cloud.sys.application.dto.region.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import java.io.Serial;
 
-import org.hibernate.validator.constraints.Length;
-
 /**
- * 角色更新对象
+ * 地区更新对象
  *
  * @author shuigedeng
- * @version 2021.10
- * @since 2021-10-09 15:25:01
+ * @version 2022.03
+ * @since 2020/9/30 08:49
  */
 @RecordBuilder
-@Schema(description = "角色更新对象")
-public record RoleUpdateCommand(
-	@Schema(description = "角色名称") @NotBlank(message = "角色名称不能超过为空") @Length(max = 20, message = "角色名称不能超过20个字符") String name,
-	@Schema(description = "角色标识") @NotBlank(message = "角色标识不能超过为空") @Length(max = 20, message = "角色标识不能超过20个字符") @Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线") String code,
-	@Schema(description = "备注") String remark) implements Command {
+@Schema(description = "地区更新对象")
+public record UpdateRegionCommand(@Schema(description = "地区编码") String code,
+                                  @Schema(description = "地区名称") String name,
+                                  @Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）") Integer level,
+                                  @Schema(description = "城市编码") String cityCode,
+                                  @Schema(description = "城市中心经度") String lng,
+                                  @Schema(description = "城市中心纬度") String lat,
+                                  @Schema(description = "地区父节点") Long parentId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

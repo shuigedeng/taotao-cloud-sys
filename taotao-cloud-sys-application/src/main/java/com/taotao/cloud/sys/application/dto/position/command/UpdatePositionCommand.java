@@ -14,29 +14,27 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.dto.user.command;
+package com.taotao.cloud.sys.application.dto.position.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
 import java.io.Serial;
-import java.util.List;
 
 /**
- * 为管理员分配角色命令
+ * 岗位更新对象
  *
  * @author shuigedeng
- * @since 2020/5/14 10:44
+ * @version 2022.03
+ * @since 2020/9/30 08:49
  */
 @RecordBuilder
-@Schema(description = "为管理员分配角色命令")
-public record AssignUserRolesCommand(
-	@Schema(description = "用户id") @NotNull(message = "用户id不能为空") Long userId,
-	@Schema(description = "角色id列表") @NotEmpty(message = "角色id列表不能为空") List<Long> roleIds)
-	implements Command {
+@Schema(description = "岗位更新对象")
+public record UpdatePositionCommand(@Schema(description = "岗位名称") String name,
+                                    @Schema(description = "部门id") Long deptId,
+                                    @Schema(description = "备注") String remark,
+                                    @Schema(description = "排序值") Integer sortNum,
+                                    @Schema(description = "租户id") String tenantId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;
