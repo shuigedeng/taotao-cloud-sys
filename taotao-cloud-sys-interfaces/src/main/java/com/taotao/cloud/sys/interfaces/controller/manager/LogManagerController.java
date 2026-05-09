@@ -126,7 +126,7 @@ public class LogManagerController extends BusinessController {
     //    @PostMapping(value = "/testAdd")
     //    @NotAuth
     //    public Result<Boolean> testAdd(@RequestBody Log log) {
-    //        boolean save = logService.save(log);
+    //        boolean save = logService.create(log);
     //        return Result.success(save);
     //    }
     //

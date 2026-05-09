@@ -44,14 +44,14 @@ public class SensitiveWordsManagerController extends BusinessController {
     //
     //    // @ApiOperation(value = "分页获取")
     //    // @GetMapping
-    //    // public Result<IPage<SensitiveWord>> getByPage(PageVO page) {
+    //    // public Result<IPage<SensitiveWord>> queryByPage(PageVO page) {
     //    //	return Result.success(sensitiveWordService.page(PageUtil.initPage(page)));
     //    // }
     //
     //    @Operation(summary = "添加敏感词", description = "添加敏感词")
     //    @PostMapping
     //    public Result<SensitiveWord> add(@Valid @RequestBody SensitiveWord sensitiveWords) {
-    //        sensitiveWordService.save(sensitiveWords);
+    //        sensitiveWordService.create(sensitiveWords);
     //        sensitiveWordService.resetCache();
     //        return Result.success(sensitiveWords);
     //    }

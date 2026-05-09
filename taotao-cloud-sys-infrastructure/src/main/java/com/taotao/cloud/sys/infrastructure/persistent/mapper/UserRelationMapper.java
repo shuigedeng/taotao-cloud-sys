@@ -41,12 +41,11 @@ public interface UserRelationMapper extends BaseMapper<UserRelationPO> {
 		return selectList(lambdaQueryWrapper);
 	}
 
-	default void deleteByUserId( Long userId, UserObjectEnum userObjectEnum ){
+	default int deleteByUserId( Long userId, UserObjectEnum userObjectEnum ){
 		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.eq(UserRelationPO::getUserId, userId);
 		lambdaQueryWrapper.eq(UserRelationPO::getObjectType, userObjectEnum.name());
-		delete(lambdaQueryWrapper);
+		return delete(lambdaQueryWrapper);
 	}
 
-	;
 }

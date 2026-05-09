@@ -58,11 +58,11 @@ public class SettingManagerController extends BusinessController {
     //
     //    @NotAuth
     //    @PostMapping("/save")
-    //    public Result<Boolean> save(@RequestBody Setting setting) {
+    //    public Result<Boolean> create(@RequestBody Setting setting) {
     //
     //        settingService.im().insert(setting);
-    //        settingService.cr().save(setting);
-    //        settingService.ir().save(setting);
+    //        settingService.cr().create(setting);
+    //        settingService.ir().create(setting);
     //
     //        return Result.success(true);
     //    }

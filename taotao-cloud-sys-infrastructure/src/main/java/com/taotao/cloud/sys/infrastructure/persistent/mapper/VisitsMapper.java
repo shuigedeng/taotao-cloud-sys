@@ -34,5 +34,5 @@ public interface VisitsMapper extends BaseMapper<VisitsPO> {
     @Select("""
 		select * FROM visits where create_time between #{time1} and #{time2}
 		""")
-    List<VisitsPO> findAllVisits(@Param("time1") String time1, @Param("time2") String time2);
+    List<VisitsPO> selectAllVisits(@Param("time1") String time1, @Param("time2") String time2);
 }

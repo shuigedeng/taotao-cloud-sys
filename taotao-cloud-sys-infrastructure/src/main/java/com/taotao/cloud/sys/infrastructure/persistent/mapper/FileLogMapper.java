@@ -29,10 +29,9 @@ import org.apache.ibatis.annotations.Select;
  * @since 2021/10/13 22:50
  */
 public interface FileLogMapper extends BaseMapper<FileLogPO> {
-    @Select(
-            """
+    @Select("""
         select biz_type
         from ttc_file_log
         """)
-    List<String> testQueryFileLog();
+    List<String> selectQueryFileLog();
 }

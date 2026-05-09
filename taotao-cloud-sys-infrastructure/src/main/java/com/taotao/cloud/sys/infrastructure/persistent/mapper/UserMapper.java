@@ -21,7 +21,6 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserPO;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -32,7 +31,6 @@ import java.util.List;
  * @version 2022.03
  * @since 2021/10/13 22:50
  */
-@Repository
 public interface UserMapper extends BaseMapper<UserPO> {
 
 	/**
@@ -43,12 +41,12 @@ public interface UserMapper extends BaseMapper<UserPO> {
 	@Update("""
 		  insert into sys_person_phone_encrypt (person_id, phone_key) value(#{personId},#{phoneKey})
 		""")
-	Integer insertPhoneKeyworkds( Long personId, String phoneKey );
+	int insertPhoneKeyWorkds( Long personId, String phoneKey );
 
 	@Select("""
 		select * from sys_person where id in (select person_id from sys_person_phone_encrypt where phone_key like concat('%',#{phoneVal},'%'))
 		""")
-	List<UserPO> queryByPhoneEncrypt( @Param("phoneVal") String phoneVal );
+	List<UserPO> selectByPhoneEncrypt( @Param("phoneVal") String phoneVal );
 
 	@Select("SELECT * FROM ttc_user WHERE id = #{id} FOR UPDATE")
 	UserPO selectByUserIdForUpdate( @Param("id") Long id );

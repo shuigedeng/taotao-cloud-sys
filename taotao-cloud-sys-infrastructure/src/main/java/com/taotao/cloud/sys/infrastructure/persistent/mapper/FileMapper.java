@@ -33,5 +33,5 @@ public interface FileMapper extends BaseMapper<FilePO> {
         select url
         from ttc_file
         """)
-    List<String> testMybatisQueryStructure();
+    List<String> selectMybatisQueryStructure();
 }

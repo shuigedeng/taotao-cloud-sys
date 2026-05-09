@@ -26,5 +26,4 @@ import org.springframework.stereotype.Repository;
  * @author
  * @since 2022-09-12
  */
-@Repository
 public interface AppMapper extends BaseMapper<AppPO> {}

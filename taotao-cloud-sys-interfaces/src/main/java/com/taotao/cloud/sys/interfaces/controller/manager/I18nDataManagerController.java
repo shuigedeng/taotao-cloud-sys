@@ -54,7 +54,7 @@ public class I18nDataManagerController extends BusinessController {
     //	@PostMapping
     //	@PreAuthorize("@per.hasPermission('i18n:i18n-data:add')")
     //	@Operation(summary = "新增国际化信息", description = "新增国际化信息")
-    //	public Result<Boolean> save(@Valid @RequestBody I18nDataCreateDTO i18nDataCreateDTO) {
+    //	public Result<Boolean> create(@Valid @RequestBody I18nDataCreateDTO i18nDataCreateDTO) {
     //		// 转换为实体类列表
     //		List<I18nData> list = new ArrayList<>();
     //		List<I18nDataCreateDTO.LanguageText> languageTexts = i18nDataCreateDTO.getLanguageTexts();

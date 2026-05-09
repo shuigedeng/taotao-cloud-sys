@@ -64,7 +64,7 @@ public class EmailManagerController extends BusinessController {
 //	@PostMapping
 //	public Result<Boolean> add(@Validated @RequestBody EmailDTO emailDTO) {
 //		EmailConfig emailConfig = EmailConvert.INSTANCE.convert(emailDTO);
-//		emailService.save(emailConfig);
+//		emailService.create(emailConfig);
 //
 //		// for (int i = 0; i < 10; i++) {
 //		//	Integer random = new Random().nextInt(300) + 1;

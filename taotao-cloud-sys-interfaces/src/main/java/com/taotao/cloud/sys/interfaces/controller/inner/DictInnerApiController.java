@@ -60,7 +60,7 @@ public class DictInnerApiController extends InnerController implements DictComma
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictQueryApiResponse> save(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> create(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {

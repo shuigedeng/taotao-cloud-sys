@@ -38,7 +38,7 @@ public interface ResourceMapper extends BaseMapper<ResourcePO> {
 	@Select("""
 		select * from ttc_resource where id in #{roleIds}
 		""")
-	List<ResourcePO> findMenuByRoleIds( Set<Long> roleIds );
+	List<ResourcePO> selectMenuByRoleIds( Set<Long> roleIds );
 
 	@Select("""
 		select id from ttc_resource where parent_id in #{roleIds}

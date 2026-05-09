@@ -34,7 +34,7 @@ import java.util.List;
 public interface LogMapper extends BaseMapper<LogPO> {
 
 	@Delete("delete from log where log_type = #{logType}")
-	void deleteByLogType( @Param("logType") String logType );
+	int deleteByLogType( @Param("logType") String logType );
 
 	@Select("""
 		<script>
@@ -51,7 +51,7 @@ public interface LogMapper extends BaseMapper<LogPO> {
 		order by l.id desc
 		</script>
 		""")
-	List<LogPO> findAllByPageable( @Param("nickname") String nickname );
+	List<LogPO> selectAllByPageable( @Param("nickname") String nickname );
 
 	@Select("""
 		select count(*)
@@ -61,5 +61,5 @@ public interface LogMapper extends BaseMapper<LogPO> {
 		             GROUP BY request_ip
 		     ) as s
 		""")
-	long findIp( @Param("date1") String date1, @Param("date2") String date2 );
+	long selectIp( @Param("date1") String date1, @Param("date2") String date2 );
 }
