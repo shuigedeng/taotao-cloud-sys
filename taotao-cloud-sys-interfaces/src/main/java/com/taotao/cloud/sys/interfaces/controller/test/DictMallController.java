@@ -25,7 +25,7 @@ import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import com.taotao.cloud.sys.application.dto.dict.query.DictQuery;
 import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import com.taotao.cloud.sys.application.dto.own.dict.result.DictQueryResultBuilder;
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResultBuilder;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.ArrayList;

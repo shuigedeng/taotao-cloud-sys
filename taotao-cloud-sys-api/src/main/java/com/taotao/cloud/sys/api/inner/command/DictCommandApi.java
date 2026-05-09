@@ -62,7 +62,7 @@ public interface DictCommandApi {
 				date = "2022-07-01 17:11:55")
 		})
 	@PostExchange("/inner/sys/dict/command/save")
-	Response<DictQueryApiResponse> save( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
+	Response<DictQueryApiResponse> create( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
 
 	/**
 	 * 字典列表code查询
