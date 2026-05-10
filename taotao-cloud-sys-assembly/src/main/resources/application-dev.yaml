@@ -19,21 +19,6 @@ server:
     keep-alive-timeout: 20000
     # 在连接关闭之前可以进行流水线处理的最大HTTP请求数量。当设置为0或1时，禁用keep-alive和流水线处理。当设置为-1时，允许无限数量的流水线处理或keep-alive请求。 
     max-keep-alive-requests: 100
-  undertow:
-    buffer-size: 2048 #每块buffer的空间大小,越小的空间被利用越充分，buffer会用于服务器连接的IO操作,类似netty的池化内存管理
-    direct-buffers: true # 是否分配的直接内存
-    #max-http-post-size: -1B # HTTP POST请求最大的大小
-    max-cookies: 200 # 允许的最大 cookie 数量
-    max-headers: 100 # 允许的最大请求头数量
-    threads:
-      io: 16 # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
-      worker: 256 # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
-    accesslog:
-      dir: ${user.home}/logs/${spring.application.name}/undertow # 日志存放目录
-      enabled: true # 是否启动日志
-      pattern: common # 日志格式
-      prefix: "access_log." # 日志文件名前缀
-      suffix: log # 日志文件名后缀
   servlet:
     application-display-name: ${spring.application.name}
     #context-path: sys
@@ -1121,8 +1106,7 @@ taotao:
         enabled: false
       sentinel:
         enabled: true
-      undertow:
-        enabled: true
+
     logger:
       enabled: true
       logging:
