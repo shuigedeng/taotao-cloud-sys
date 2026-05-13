@@ -54,22 +54,18 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	private final UserRelationMapper userRelationMapper;
 
 	@Override
-	public UserAgg findById( BizId bizId ) {
-		return findById(bizId, Boolean.FALSE);
-	}
-
-	@Override
-	public UserAgg findById( BizId bizId, boolean withLock ) {
+	public UserAgg findUsingIdCol( Long id , boolean withLock) {
 		UserPO userPo;
 		if (withLock) {
-			userPo = userMapper.selectByUserIdForUpdate(bizId.id());
+			userPo = userMapper.selectByUserIdForUpdate(id);
 		} else {
-			userPo = userMapper.selectById(bizId.id());
+			userPo = userMapper.selectById(id);
 		}
 
 		if (userPo == null) {
-			throw new BusinessException(StrUtil.format("id:{}用户不存在", bizId.id()));
+			throw new BusinessException(StrUtil.format("id:{}用户不存在", id));
 		}
+
 		UserAgg userAgg = userAssembler.toAgg(userPo);
 
 		fillRoleIds(userAgg);
@@ -78,14 +74,12 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	}
 
 	@Override
-	public Long save( UserAgg userAgg ) {
+	public void save( UserAgg userAgg, boolean skipNull  ) {
 
 		UserPO userPo = userAssembler.toPo(userAgg);
 		userMapper.insertOrUpdate(userPo);
 
 		syncUserRoleRelation(userAgg);
-
-		return 1L;
 	}
 
 	private void fillRoleIds( UserAgg userAgg ) {

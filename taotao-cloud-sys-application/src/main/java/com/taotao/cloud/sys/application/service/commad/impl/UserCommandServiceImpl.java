@@ -67,7 +67,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 		// 6. 发送消息/事件
 		// 7. 记录日志
 
-		UserAgg userAgg = userDomainRepository.findById(BizId.fromValue(assignUseRolesCommand.userId()), Boolean.TRUE);
+		UserAgg userAgg = userDomainRepository.findUsingIdCol(assignUseRolesCommand.userId(), Boolean.TRUE);
 
 		Set<BizId> requestedRoleIds = assignUseRolesCommand.roleIds().stream()
 			.map(BizId::fromValue).collect(Collectors.toSet());
@@ -78,7 +78,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 
 		userDomainService.assignRoles(userAgg, assignableRoles);
 
-		userDomainRepository.save(userAgg);
+		userDomainRepository.save(userAgg, Boolean.TRUE);
 
 		txSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
 
