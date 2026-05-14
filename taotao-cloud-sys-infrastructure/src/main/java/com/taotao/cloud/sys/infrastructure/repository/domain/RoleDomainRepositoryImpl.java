@@ -57,6 +57,6 @@ public class RoleDomainRepositoryImpl implements RoleDomainRepository {
 
 		BusinessAssert.isTrue(CollUtil.isNotEmpty(rolePos), "ids:{}角色不存在", ids);
 
-		return roleAssembler.toAggs(rolePos);
+		return roleAssembler.toAgg(rolePos);
 	}
 }

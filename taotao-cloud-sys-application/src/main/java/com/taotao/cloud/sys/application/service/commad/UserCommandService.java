@@ -18,6 +18,8 @@ package com.taotao.cloud.sys.application.service.commad;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
 import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.ScheduleUserCommand;
+import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
 
 /**
  * ISysUserService
@@ -30,6 +32,11 @@ public interface UserCommandService extends CommandService {
 
 	void assignRoles( AssignRolesCommand userAssignRolesCommand );
 
+	void handleAuthChangeEvent( AuthChangeEvent authChangeEvent );
+
+	void handleNotify( String message );
+
+	void scheduleJob( ScheduleUserCommand scheduleUserCommand);
 
 	//    /**
     //     * 保存用户

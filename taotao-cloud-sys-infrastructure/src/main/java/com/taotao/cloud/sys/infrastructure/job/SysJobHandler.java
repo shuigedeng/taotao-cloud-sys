@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.infrastructure.task;
+package com.taotao.cloud.sys.infrastructure.job;
 
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.job.xxl.base.BaseSchedule;
 import com.taotao.boot.job.xxl.executor.annotation.XxlRegister;
+import com.taotao.cloud.sys.application.dto.user.command.ScheduleUserCommand;
+import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import com.xxl.tool.response.Response;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
@@ -41,13 +45,20 @@ import java.util.concurrent.TimeUnit;
  * @since 2022-04-28 11:54:43
  */
 @Component
-public class DictJobHandler {
+@AllArgsConstructor
+public class SysJobHandler extends BaseSchedule {
+
+	private final UserCommandService userCommandService;
 
 	@XxlJob("ThrowJobHandler")
-	public Response<String> throwJobHandler() throws Exception {
+	public Response<String> throwJobHandler(String param) throws Exception {
 		XxlJobHelper.log("XXL-JOB, throwwwwwwwwwwwwww");
 
 		LogUtils.info("=============xxljob throwwwwwwwwwwwwwwwwwwwwwwwwww");
+
+		ScheduleUserCommand scheduleUserCommand = this.from(param, ScheduleUserCommand.class);
+
+		userCommandService.scheduleJob(scheduleUserCommand);
 
 		throw new Exception("XXL-JOB, throwwwwwwwwwwwwww");
 	}

@@ -38,7 +38,7 @@ public interface RoleInfraAssembler extends BaseAssembler {
     /** 实例 */
     RoleInfraAssembler INSTANCE = Mappers.getMapper(RoleInfraAssembler.class);
 
-	List<RoleAgg> toAggs( List<RolePO> rolePos );
+	List<RoleAgg> toAgg( List<RolePO> rolePos );
 	RoleAgg toAgg( RolePO rolePo );
 
 	//    /**

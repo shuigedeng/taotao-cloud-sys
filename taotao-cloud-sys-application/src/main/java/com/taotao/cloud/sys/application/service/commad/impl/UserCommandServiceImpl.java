@@ -21,9 +21,11 @@ import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper
 import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
+import com.taotao.cloud.sys.application.dto.user.command.ScheduleUserCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
+import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
 import com.taotao.cloud.sys.domain.repository.RoleDomainRepository;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
 import com.taotao.cloud.sys.domain.service.UserDomainService;
@@ -84,6 +86,21 @@ public class UserCommandServiceImpl implements UserCommandService {
 
 		log.info("角色分配成功，管理员ID: {}, 角色数量: {}", assignUseRolesCommand.userId(),
 			assignUseRolesCommand.roleIds().size());
+	}
+
+	@Override
+	public void handleAuthChangeEvent( AuthChangeEvent authChangeEvent ) {
+
+	}
+
+	@Override
+	public void handleNotify( String message ) {
+
+	}
+
+	@Override
+	public void scheduleJob( ScheduleUserCommand scheduleUserCommand ) {
+
 	}
 
 	private void validateRolesExist( Set<BizId> requested, List<RoleAgg> found ) {
