@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.job;
 
 import com.taotao.boot.common.utils.log.LogUtils;
-import com.taotao.boot.job.xxl.base.BaseSchedule;
+import com.taotao.boot.job.xxl.base.XxlJobBase;
 import com.taotao.boot.job.xxl.executor.annotation.XxlRegister;
 import com.taotao.cloud.sys.application.dto.user.command.ScheduleUserCommand;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
@@ -46,7 +46,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @AllArgsConstructor
-public class SysJobHandler extends BaseSchedule {
+public class SysJob extends XxlJobBase {
 
 	private final UserCommandService userCommandService;
 

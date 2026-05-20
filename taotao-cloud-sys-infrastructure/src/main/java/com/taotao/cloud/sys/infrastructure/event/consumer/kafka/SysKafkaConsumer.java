@@ -1,6 +1,7 @@
 package com.taotao.cloud.sys.infrastructure.event.consumer.kafka;
 
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.mq.common.base.MqConsumerBase;
 import com.taotao.boot.mq.common.consumer.Acknowledgement;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import lombok.AllArgsConstructor;
@@ -19,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 
 //@Component
 @AllArgsConstructor
-public class SysKafkaConsumer {
+public class SysKafkaConsumer extends MqConsumerBase {
 	private final UserCommandService userCommandService;
 	@KafkaListener(
 		topics = "xxx",

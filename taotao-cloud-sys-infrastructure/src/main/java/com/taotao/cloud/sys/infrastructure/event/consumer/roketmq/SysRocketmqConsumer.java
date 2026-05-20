@@ -1,6 +1,7 @@
 package com.taotao.cloud.sys.infrastructure.event.consumer.roketmq;
 
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.mq.common.base.MqConsumerBase;
 import com.taotao.cloud.sys.application.service.commad.UserCommandService;
 import lombok.AllArgsConstructor;
 import org.apache.rocketmq.common.message.MessageExt;
@@ -21,7 +22,7 @@ import java.nio.charset.StandardCharsets;
 //	messageModel = MessageModel.BROADCASTING
 //)
 @AllArgsConstructor
-public class SysRocketmqConsumer implements RocketMQListener<MessageExt> {
+public class SysRocketmqConsumer extends MqConsumerBase implements RocketMQListener<MessageExt> {
 
 	private final UserCommandService userCommandService;
 
