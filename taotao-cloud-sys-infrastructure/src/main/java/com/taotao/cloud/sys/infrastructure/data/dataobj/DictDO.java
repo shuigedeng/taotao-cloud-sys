@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.common.data.dataparam;
+package com.taotao.cloud.sys.infrastructure.data.dataobj;
 
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * DeptParams
+ * DictDO
  *
  * @author shuigedeng
  * @version 2026.04
@@ -31,8 +30,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class DeptParams {
-
-    private List<Long> ids;
-    private Long id;
+public class DictDO {
+    private String name;
+    private String id;
 }
