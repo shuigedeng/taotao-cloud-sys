@@ -20,6 +20,7 @@ import com.taotao.boot.ddd.model.assembler.BaseAssembler;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.RolePO;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.factory.Mappers;
 
@@ -39,6 +40,7 @@ public interface RoleInfraAssembler extends BaseAssembler {
     RoleInfraAssembler INSTANCE = Mappers.getMapper(RoleInfraAssembler.class);
 
 	List<RoleAgg> toAgg( List<RolePO> rolePos );
+	@Mapping(target = "EVENTS", ignore = true)
 	RoleAgg toAgg( RolePO rolePo );
 
 	//    /**
