@@ -41,7 +41,7 @@ public class I18nDataManagerController extends BusinessController {
     //	public Result<PageResult<I18nDataPageVO>> getI18nDataPage(@Validated PageQuery pageParam,
     // I18nDataQO i18nDataQO) {
     //		IPage<I18nDataPageVO> page = i18nDataService.queryPage(pageParam, i18nDataQO);
-    //		return Result.success(MpUtils.convertMybatisPage(page, I18nDataPageVO.class));
+    //		return Result.success(MpUtils.convertMpPage(page, I18nDataPageVO.class));
     //	}
     //
     //	@GetMapping("/list")

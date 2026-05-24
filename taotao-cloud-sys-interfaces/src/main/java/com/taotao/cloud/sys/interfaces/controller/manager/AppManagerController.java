@@ -41,7 +41,7 @@ public class AppManagerController extends BusinessController {
     //    @GetMapping(value = "/page")
     //    public Result<PageResult<AppDTO>> pageSysApp(AppPageDTO appPageDTO) {
     //        // Validator.validateParam(appPageDTO, ValidationGroups.query.class);
-    //        return Result.success(MpUtils.convertMybatisPage(appService.pageApp(appPageDTO),
+    //        return Result.success(MpUtils.convertMpPage(appService.pageApp(appPageDTO),
     // AppDTO.class));
     //    }
     //
