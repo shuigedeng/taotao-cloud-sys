@@ -35,7 +35,7 @@ class UserCommandServiceTest {
 		UserAgg mockUser = new UserAgg();
 
 		// 告诉 Mock 对象：当有人调用 findById(1L) 时，返回 mockUser
-		when(userRepository.findById(BizId.fromValue(1L), true)).thenReturn(mockUser);
+		when(userRepository.find (String.valueOf(1), true)).thenReturn(mockUser);
 //		when(userRepository.save(mockUser)).thenReturn(null);
 
 		// --- Act (执行) ---
@@ -46,6 +46,6 @@ class UserCommandServiceTest {
 
 		// --- Verify (验证) ---
 		// 验证 userRepository.findById 是否真的被调用了一次
-		verify(userRepository, times(1)).findById(BizId.fromValue(1L));
+		verify(userRepository, times(1)).find(String.valueOf(1), true);
 	}
 }
