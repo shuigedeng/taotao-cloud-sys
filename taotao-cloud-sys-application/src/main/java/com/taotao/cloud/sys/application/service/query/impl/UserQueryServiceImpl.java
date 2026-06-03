@@ -1,5 +1,6 @@
 package com.taotao.cloud.sys.application.service.query.impl;
 
+import com.taotao.cloud.sys.application.repository.UserQueryRepository;
 import com.taotao.cloud.sys.application.service.query.AppQueryService;
 import com.taotao.cloud.sys.application.service.query.UserQueryService;
 import lombok.RequiredArgsConstructor;
@@ -14,4 +15,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
-public class UserQueryServiceImpl implements UserQueryService {}
+public class UserQueryServiceImpl implements UserQueryService {
+private final UserQueryRepository userQueryRepository;
+}

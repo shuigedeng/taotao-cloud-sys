@@ -16,9 +16,15 @@
 
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
+import com.taotao.boot.common.model.result.Result;
+import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
+import com.taotao.cloud.sys.application.service.commad.DictCommandService;
+import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +39,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/manager/sys/dict")
 @Tag(name = "平台管理端-字典API", description = "平台管理端-字典API")
+@AllArgsConstructor
 public class DictManagerController extends BusinessController {
+	private final DictQueryService dictQueryService;
+	private final DictCommandService dictCommandService;
+
+	@GetMapping("/query/for-update")
+	@NotAuth
+	public Result<Void> queryForUpdate() {
+		dictQueryService.queryForUpdate();
+		return Result.success();
+	}
 
     //    @GetMapping("/list-code")
     //    // @ApiOperation(value = "字典列表code查询", notes = "字典列表code查询")

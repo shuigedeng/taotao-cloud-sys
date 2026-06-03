@@ -117,6 +117,7 @@ public class UserManagerController extends BusinessController {
     //		return success(UserConvert.INSTANCE.convert(sysUser));
     //	}
 
+
     	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
      "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
     	@PostMapping("/roles/assign/roles")
@@ -161,10 +162,5 @@ public class UserManagerController extends BusinessController {
     //		return Result.success(true);
     //	}
     //
-    //	@GetMapping("/user/test/get")
-    //	@NotAuth
-    //	public Result<List<User>> testGet() {
-    //		List<User> all = service().ir().findAll();
-    //		return Result.success(all);
-    //	}
+
 }

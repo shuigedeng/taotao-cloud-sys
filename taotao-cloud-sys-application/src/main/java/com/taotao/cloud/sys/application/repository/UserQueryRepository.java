@@ -17,8 +17,7 @@
 package com.taotao.cloud.sys.application.repository;
 
 
-public interface DictQueryRepository {
+public interface UserQueryRepository {
 
-	void queryForUpdate();
 
 }

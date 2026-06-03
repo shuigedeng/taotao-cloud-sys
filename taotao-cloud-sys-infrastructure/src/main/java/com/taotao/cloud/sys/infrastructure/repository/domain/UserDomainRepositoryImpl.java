@@ -74,12 +74,14 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	}
 
 	@Override
-	public void save( UserAgg userAgg, boolean skipNull  ) {
+	public int save( UserAgg userAgg, boolean skipNull  ) {
 
 		UserPO userPo = userAssembler.toPo(userAgg);
 		userMapper.insertOrUpdate(userPo);
+		int num = save(userPo, userMapper, skipNull);
 
 		syncUserRoleRelation(userAgg);
+		return num;
 	}
 
 	private void fillRoleIds( UserAgg userAgg ) {

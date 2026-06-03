@@ -18,6 +18,8 @@ package com.taotao.cloud.sys.infrastructure.repository.apliction;
 
 
 import com.taotao.cloud.sys.application.repository.DictQueryRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,4 +32,30 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
-public class DictQueryRepositoryImpl implements DictQueryRepository {}
+public class DictQueryRepositoryImpl implements DictQueryRepository {
+
+	private final DictMapper dictMapper;
+
+	@Override
+	public void queryForUpdate() {
+		DictPO dictPO = DictPO.builder().dictCode("s1").dictName("s2").build();
+		dictMapper.insertSkipNull(dictPO, true);
+//		dictMapper.insertSkipNullOther()
+//		dictMapper.insertBatchSkipNull()
+//		dictMapper.insertBatchSkipNullOther();
+//
+//		dictMapper.updateByFieldSkipNull();
+//		dictMapper.updateByIdSkipNull();
+//		dictMapper.updateByIdSkipNullOther();
+//		dictMapper.updateByWrapperSkipNull();
+//		dictMapper.updateByWrapperSkipNullOther();
+//		dictMapper.updateBatchSkipNull();
+//		dictMapper.updateBatchSkipNullOther();
+//
+//		dictMapper.selectByIdForUpdate();
+//		//dictMapper.selectByIdForUpdateOther();
+//		dictMapper.selectByIdsForUpdate();
+//		dictMapper.selectListForUpdate();
+//		dictMapper.selectListForUpdateOther();
+	}
+}

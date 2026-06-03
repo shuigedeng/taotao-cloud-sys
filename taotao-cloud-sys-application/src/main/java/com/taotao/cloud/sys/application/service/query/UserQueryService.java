@@ -28,6 +28,7 @@ import com.taotao.boot.ddd.model.application.service.QueryService;
  */
 public interface UserQueryService extends QueryService {
 
+
     //
     //    /**
     //     * 根据手机号码查询用户是否存在

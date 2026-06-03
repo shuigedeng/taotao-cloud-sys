@@ -4,4 +4,6 @@ import com.taotao.boot.ddd.model.application.service.QueryService;
 
 public interface DictQueryService extends QueryService {
 
+    void queryForUpdate();
+
 }
