@@ -1062,20 +1062,20 @@ taotao:
           interceptor:
             enabled: true
             pagination:
-              db-type: mysql
               enabled: true
+              db-type: mysql
               max-limit: 1000
               optimize-join: true
               overflow: true
-            blockAttack:
+            block-attack:
               enabled: true
-            illegalSql:
+            illegal-sql:
               enabled: true
-            optimisticLocker:
+            optimistic-locker:
               enabled: true
-            dataScope:
+            data-scope:
               enabled: true
-            multiTenant:
+            multi-tenant:
               enabled: false
             data-change:
               enabled: true
@@ -1086,7 +1086,7 @@ taotao:
         tenant:
           enabled: false
       p6spy:
-        enabled: true
+        enabled: false
         dateformat: yyyy-MM-dd HH:mm:ss
         driverlist: com.mysql.cj.jdbc.Driver
         database-dialect-date-format: yyyy-MM-dd HH:mm:ss

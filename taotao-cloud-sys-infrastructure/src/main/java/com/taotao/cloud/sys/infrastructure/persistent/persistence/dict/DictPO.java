@@ -82,7 +82,7 @@ import lombok.*;
 		@UniqueConstraint(name = "uniq_code", columnNames = "`dict_code`"),
 	},
 	indexes = {
-		@Index(name = "idx_create_date", columnList = "create_date"),
+		@Index(name = "idx_create_time", columnList = "create_time"),
 	})
 @TableName(DictPO.TABLE_NAME)
 @EntityListeners({DictPO.DictEntityListener.class})

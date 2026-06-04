@@ -53,7 +53,7 @@ import org.hibernate.Hibernate;
             @UniqueConstraint(name = "uniq_mobile", columnNames = "mobile"),
         },
         indexes = {
-            @Index(name = "idx_create_date", columnList = "create_date"),
+            @Index(name = "idx_create_time", columnList = "create_time"),
         })
 @TableName(UserPO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = UserPO.TABLE_NAME)

@@ -17,11 +17,15 @@
 package com.taotao.cloud.sys.infrastructure.repository.apliction;
 
 
+import cn.hutool.core.collection.ListUtil;
+import cn.idev.excel.util.ListUtils;
 import com.taotao.cloud.sys.application.repository.DictQueryRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**
  * DictQueryRepositoryImpl
@@ -38,10 +42,12 @@ public class DictQueryRepositoryImpl implements DictQueryRepository {
 
 	@Override
 	public void queryForUpdate() {
-		DictPO dictPO = DictPO.builder().dictCode("s1").dictName("s2").build();
+		DictPO dictPO = DictPO.builder().dictCode("s1").dictName("s2").sortNum(1).build();
+		DictPO dictPO1 = DictPO.builder().dictCode("s4").dictName("s5").sortNum(1).build();
 		dictMapper.insertSkipNull(dictPO, true);
-//		dictMapper.insertSkipNullOther()
-//		dictMapper.insertBatchSkipNull()
+//		dictMapper.insertSkipNullOther(dictPO, true);
+		ArrayList<DictPO> dictPOS = ListUtils.newArrayList(dictPO, dictPO1);
+//		dictMapper.insertBatchSkipNull(dictPOS, false);
 //		dictMapper.insertBatchSkipNullOther();
 //
 //		dictMapper.updateByFieldSkipNull();

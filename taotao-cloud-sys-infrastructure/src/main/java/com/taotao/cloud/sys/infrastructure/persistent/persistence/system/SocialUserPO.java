@@ -47,10 +47,10 @@ import lombok.experimental.Accessors;
 @Table(
         name = SocialUserPO.TABLE_NAME,
         uniqueConstraints = {
-            @UniqueConstraint(name = "uniq_goods_no", columnNames = "`goods_no`"),
+            @UniqueConstraint(name = "uniq_social_id", columnNames = "`social_id`"),
         },
         indexes = {
-            @Index(name = "idx_create_date", columnList = "`create_date`"),
+            @Index(name = "idx_create_time", columnList = "`create_time`"),
             @Index(name = "idx_social_id", columnList = "`social_id`"),
         })
 @TableName(SocialUserPO.TABLE_NAME)

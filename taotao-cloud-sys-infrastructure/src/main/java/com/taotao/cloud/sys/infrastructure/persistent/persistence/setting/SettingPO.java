@@ -59,7 +59,7 @@ import org.hibernate.annotations.Type;
 		@UniqueConstraint(name = "uniq_en_code", columnNames = "`en_code`"),
 	},
 	indexes = {
-		@Index(name = "idx_create_date", columnList = "create_date"),
+		@Index(name = "idx_create_time", columnList = "create_time"),
 	})
 @TableName(value = SettingPO.TABLE_NAME, autoResultMap = true)
 @org.springframework.data.relational.core.mapping.Table(name = SettingPO.TABLE_NAME)

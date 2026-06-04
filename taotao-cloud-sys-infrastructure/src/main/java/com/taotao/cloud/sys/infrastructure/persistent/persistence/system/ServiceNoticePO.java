@@ -45,10 +45,10 @@ import org.hibernate.Hibernate;
 @Table(
         name = ServiceNoticePO.TABLE_NAME,
         uniqueConstraints = {
-            @UniqueConstraint(name = "uniq_goods_no", columnNames = "`goods_no`"),
+            @UniqueConstraint(name = "uniq_store_id", columnNames = "`store_id`"),
         },
         indexes = {
-            @Index(name = "idx_create_date", columnList = "`create_date`"),
+            @Index(name = "idx_create_time", columnList = "`create_time`"),
         })
 @TableName(ServiceNoticePO.TABLE_NAME)
 @org.springframework.data.relational.core.mapping.Table(name = ServiceNoticePO.TABLE_NAME)
