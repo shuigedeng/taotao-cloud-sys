@@ -17,9 +17,9 @@
 package com.taotao.cloud.sys.infrastructure.repository.domain;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.StrUtil;
 import com.taotao.boot.common.enums.UserObjectEnum;
-import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.common.support.asserts.BusinessAssert;
+import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
@@ -31,6 +31,7 @@ import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.UserRel
 import com.taotao.cloud.sys.infrastructure.persistent.repository.UserRelationRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.executor.BatchResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,24 +48,17 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserDomainRepositoryImpl implements UserDomainRepository {
 
-	private final UserRepository userRepository;
-	private final UserMapper userMapper;
 	private final UserInfraAssembler userAssembler;
-	private final UserRelationRepository userRelationRepository;
+	private final UserMapper userMapper;
 	private final UserRelationMapper userRelationMapper;
+	private final UserRepository userRepository;
+	private final UserRelationRepository userRelationRepository;
 
 	@Override
-	public UserAgg findUsingIdCol( Long id , boolean withLock) {
-		UserPO userPo;
-		if (withLock) {
-			userPo = userMapper.selectByUserIdForUpdate(id);
-		} else {
-			userPo = userMapper.selectById(id);
-		}
+	public UserAgg findUsingIdCol( Long id, boolean withLock ) {
+		UserPO userPo = userMapper.selectByIdForUpdate(id, withLock);
 
-		if (userPo == null) {
-			throw new BusinessException(StrUtil.format("id:{}用户不存在", id));
-		}
+		BusinessAssert.notNull(userPo, "id:{}用户不存在", id);
 
 		UserAgg userAgg = userAssembler.toAgg(userPo);
 
@@ -74,35 +68,56 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	}
 
 	@Override
-	public int save( UserAgg userAgg, boolean skipNull  ) {
+	public int save( UserAgg userAgg, boolean skipNull ) {
 
 		UserPO userPo = userAssembler.toPo(userAgg);
-		userMapper.insertOrUpdate(userPo);
 		int num = save(userPo, userMapper, skipNull);
 
-		syncUserRoleRelation(userAgg);
+		BusinessAssert.isTrue(num > 0, "保存用户失败");
+		BusinessAssert.notNull(userPo.getId(), "用户ID不能为空");
+
+		userAgg.ifRoleIdModified(this::replaceUserRoles);
+
 		return num;
 	}
 
 	private void fillRoleIds( UserAgg userAgg ) {
 		List<UserRelationPO> userRelationPo = userRelationMapper.selectByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
-		List<BizId> roleIds = userRelationPo.stream().map(UserRelationPO::getObjectId).map(BizId::fromValue).toList();
+
+		List<BizId> roleIds = userRelationPo.stream()
+			.map(UserRelationPO::getObjectId)
+			.map(BizId::fromValue).toList();
+
 		userAgg.setRoleIds(roleIds);
 	}
 
-	private void syncUserRoleRelation( UserAgg userAgg ) {
-		userRelationMapper.deleteByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
-		List<UserRelationPO> userRelationPos = userAgg.getRoleIds().stream()
-			.map(roleId -> {
-				UserRelationPO po = new UserRelationPO();
-				po.setUserId(userAgg.id().id());
-				po.setObjectId(roleId.id());
-				po.setObjectType(UserObjectEnum.ROLE.name());
-				return po;
-			})
-			.collect(Collectors.toList());
-		if (CollectionUtil.isNotEmpty(userRelationPos)) {
-			userRelationMapper.insert(userRelationPos);
+	/**
+	 * 替换用户的所有角色关联（先删后增）
+	 */
+	private void replaceUserRoles( UserAgg userAgg ) {
+
+		Long userId = userAgg.id().id();
+		List<BizId> roleIds = CollectionUtil.emptyIfNull(userAgg.getRoleIds());
+
+		int deleteCount = userRelationMapper.deleteByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
+		LogUtils.debug("删除用户{}的旧角色关系{}条", userId, deleteCount);
+
+		if (roleIds.isEmpty()) {
+			return;
 		}
+
+		List<UserRelationPO> userRelationPos = roleIds.stream()
+			.map(roleId -> new UserRelationPO(userAgg.id().id(),roleId.id(),UserObjectEnum.ROLE.name()))
+			.collect(Collectors.toList());
+
+		int insertCount = saves(userRelationPos, userRelationMapper, false);
+
+		LogUtils.debug("为用户{}添加角色关系{}条", userId, insertCount);
+
+		BusinessAssert.isTrue(insertCount == roleIds.size(),
+			"用户角色关系保存失败，预期插入{}条，实际插入{}条",
+			userRelationPos.size(), insertCount);
+
+		LogUtils.info("用户{}角色关系同步完成", userId);
 	}
 }

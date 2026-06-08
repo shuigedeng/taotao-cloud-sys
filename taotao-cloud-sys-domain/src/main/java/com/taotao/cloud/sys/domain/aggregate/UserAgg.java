@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.function.Consumer;
 
 import static com.taotao.cloud.sys.common.constant.SysConstants.SERVER_NAME;
 
@@ -51,6 +52,18 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 * 角色ID列表
 	 */
 	private List<BizId> roleIds = new ArrayList<>();
+	private Boolean roleIdModified = false;
+	public boolean isRoleIdModified() {
+		return roleIdModified;
+	}
+	public final void markRoleIdModified(){
+		this.roleIdModified = true;
+	}
+	public void ifRoleIdModified( Consumer<UserAgg> consumer){
+		if(isRoleIdModified() && consumer != null){
+			consumer.accept(this);
+		}
+	}
 
 	/**
 	 * 创建管理员
@@ -116,6 +129,8 @@ public class UserAgg extends AggregateRoot<BizId> {
 			BizId roleBizId = BizId.fromValue(roleId);
 			if (!roleIds.contains(roleBizId)) {
 				roleIds.add(roleBizId);
+
+				markRoleIdModified();
 			}
 		}
 	}
@@ -142,6 +157,8 @@ public class UserAgg extends AggregateRoot<BizId> {
 	public void removeRoles( List<BizId> roleIds ) {
 		if (roleIds != null) {
 			this.roleIds.removeAll(roleIds);
+
+			markRoleIdModified();
 		}
 	}
 
@@ -150,6 +167,8 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 */
 	public void clearRoles() {
 		roleIds.clear();
+
+		markRoleIdModified();
 	}
 
 	/**
@@ -197,6 +216,8 @@ public class UserAgg extends AggregateRoot<BizId> {
 		BusinessAssert.isTrue(isDeleted(), "已删除的用户不能分配角色");
 
 		this.roleIds = new ArrayList<>(new LinkedHashSet<>(roleIds));
+
+		markRoleIdModified();
 
 		registerEvent(new AuthChangeEvent(this.id, this.roleIds));
 	}

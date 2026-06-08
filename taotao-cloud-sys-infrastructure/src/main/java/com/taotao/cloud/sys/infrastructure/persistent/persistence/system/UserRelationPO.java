@@ -76,7 +76,13 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
     @Column(name = "`sort_code`", columnDefinition = "int null comment '排序值'")
     private Integer sortCode;
 
-    public Long getUserId() {
+	public UserRelationPO( Long userId, Long objectId , String objectType) {
+		this.userId = userId;
+		this.objectType = objectType;
+		this.objectId = objectId;
+	}
+
+	public Long getUserId() {
         return userId;
     }
 
