@@ -30,7 +30,7 @@ dependencies {
 
     api 'com.mysql:mysql-connector-j:9.7.0'
 
-    testImplementation("org.hibernate.tool:hibernate-tools-orm:7.3.0.Final")
+    testImplementation("org.hibernate.tool:hibernate-tools-orm:7.3.8.Final")
     // jOOQ代码生成依赖（注意版本匹配）
 //    jooqGenerator 'com.mysql:mysql-connector-j:9.7.0'
 //    jooqGenerator 'org.jooq:jooq-meta-extensions:3.20.10'
