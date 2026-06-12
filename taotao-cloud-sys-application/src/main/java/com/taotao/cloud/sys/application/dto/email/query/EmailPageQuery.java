@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.email.query;
 
-import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.Groups;
 import com.taotao.boot.common.model.ddd.query.PageQuery;
 import com.taotao.boot.common.model.ddd.types.Query;
 
@@ -36,7 +36,7 @@ import jakarta.validation.constraints.NotNull;
  */
 @RecordBuilder
 public record EmailPageQuery(
-	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = ValidationGroups.Update.class) PageQuery page,
+	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = Groups.Update.class) PageQuery page,
 	List<String> tos, String subject, String content) implements Query {
 
 }

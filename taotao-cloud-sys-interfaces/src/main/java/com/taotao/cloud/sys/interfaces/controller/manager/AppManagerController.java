@@ -40,7 +40,7 @@ public class AppManagerController extends BusinessController {
     //    @Operation(summary = "分页")
     //    @GetMapping(value = "/page")
     //    public Result<PageResult<AppDTO>> pageSysApp(AppPageDTO appPageDTO) {
-    //        // Validator.validateParam(appPageDTO, ValidationGroups.query.class);
+    //        // Validator.validateParam(appPageDTO, Groups.query.class);
     //        return Result.success(MpUtils.convertMpPage(appService.pageApp(appPageDTO),
     // AppDTO.class));
     //    }
@@ -48,14 +48,14 @@ public class AppManagerController extends BusinessController {
     //    @Operation(summary = "添加")
     //    @PostMapping(value = "/add")
     //    public Result<Boolean> add(@RequestBody AppDTO appDTO) {
-    //        // ValidationUtil.validateParam(appDTO, ValidationGroups.add.class);
+    //        // ValidationUtil.validateParam(appDTO, Groups.add.class);
     //        return Result.success(appService.addApp(appDTO));
     //    }
     //
     //    @Operation(summary = "修改")
     //    @PostMapping(value = "/update")
     //    public Result<Boolean> update(@RequestBody AppDTO appDTO) {
-    //        // ValidationUtil.validateParam(appDTO, ValidationGroups.update.class);
+    //        // ValidationUtil.validateParam(appDTO, Groups.update.class);
     //        return Result.success(appService.updateApp(appDTO));
     //    }
     //

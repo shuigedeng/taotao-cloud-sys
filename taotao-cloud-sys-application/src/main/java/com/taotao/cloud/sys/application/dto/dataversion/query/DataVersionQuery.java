@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.application.dto.dataversion.query;
 
-import com.taotao.boot.common.model.ValidationGroups;
+import com.taotao.boot.common.model.Groups;
 import com.taotao.boot.common.model.ddd.query.PageQuery;
 import com.taotao.boot.common.model.ddd.types.Query;
 import io.soabase.recordbuilder.core.RecordBuilder;
@@ -30,7 +30,7 @@ import jakarta.validation.constraints.NotNull;
 @RecordBuilder
 @Schema(title = "数据版本日志")
 public record DataVersionQuery(
-	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = ValidationGroups.Update.class) PageQuery page,
+	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = Groups.Update.class) PageQuery page,
 	@Schema(description = "表名称") String tableName, @Schema(description = "数据名称") String dataName,
 	@Schema(description = "数据主键") String dataId, @Schema(description = "数据内容对象") Object dataContent,
 	@Schema(description = "本次变动的数据内容") Object changeContent,
