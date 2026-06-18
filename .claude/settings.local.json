@@ -1,15 +1,15 @@
 {
   "permissions": {
-    "read": ["/Users/username/.m2/settings.xml"],
-    "write": ["/tmp/claude-output"],
-    "network": ["localhost:9090"]
+    "read": [],
+    "write": [],
+    "network": []
   },
   "model": {
-    "temperature": 0.5
+    "temperature": 0.3
   },
-  "custom": {
-    "theme": "dark",
-    "notifications": true,
-    "autoSave": true
+  "hooks": {
+    "preCommit": [],
+    "postCommit": [],
+    "preCommand": []
   }
 }

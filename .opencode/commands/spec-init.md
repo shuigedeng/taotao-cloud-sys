@@ -1,6 +1,6 @@
 ---
 description: 初始化项目上下文，分析 DDD 工程结构、依赖、分层模式
-agent: general
+agent: backend-architect
 ---
 
 你是 taotao-cloud-sys 项目架构分析师，正在执行 /spec-init 命令。

@@ -1,58 +1,104 @@
-
-**`.claude/rules/api-conventions.md`**
-```markdown
 # API 设计规范
 
 ## RESTful 约定
 
+### URL 前缀按角色分包
+```
+/{role}/{resource}
+# role = manager | seller | buyer | inner
+```
+
+| 端 | 前缀 | Controller 包 |
+|----|------|--------------|
+| 管理端 | `/manager/**` | `controller/manager/` |
+| 商家端 | `/seller/**` | `controller/seller/` |
+| 买家端 | `/buyer/**` | `controller/buyer/` |
+| 内部调用 | `/inner/**` | `controller/inner/` |
+
 ### 资源命名
-- 使用名词复数: `/users`, `/orders`, `/products`
-- 避免动词: ❌ `/getUser`, ✅ `/users/{id}`
+- 使用名词：`/manager/dict`, `/manager/dict/item`
+- 避免动词：❌ `/getDict`, ✅ `GET /manager/dict/{id}`
 
 ### HTTP 方法
-| 方法 | 用途 | 示例 | 状态码 |
-|------|------|------|--------|
-| GET | 查询 | `/users/{id}` | 200 |
-| POST | 创建 | `/users` | 201 |
-| PUT | 全量更新 | `/users/{id}` | 200 |
-| PATCH | 部分更新 | `/users/{id}` | 200 |
-| DELETE | 删除 | `/users/{id}` | 204 |
+| 方法 | 用途 | 示例 |
+|------|------|------|
+| GET | 查询 | `/manager/dict/page`, `/manager/dict/{id}` |
+| POST | 创建 | `/manager/dict` |
+| PUT | 全量更新 | `/manager/dict/{id}` |
+| DELETE | 删除 | `/manager/dict/{id}` |
 
 ### 响应格式
 ```json
 {
   "code": 200,
   "message": "success",
-  "data": {
-    "id": 1,
-    "username": "john"
-  },
-  "timestamp": "2024-01-01T00:00:00Z"
+  "data": {},
+  "timestamp": "2026-06-18T00:00:00Z"
 }
-分页响应
-json
+```
+
+### 分页响应
+```json
 {
   "code": 200,
   "message": "success",
   "data": {
-    "content": [...],
-    "page": 0,
+    "records": [],
+    "total": 100,
     "size": 20,
-    "totalElements": 100,
-    "totalPages": 5,
-    "last": false
+    "current": 1,
+    "pages": 5
   }
 }
-参数校验注解
-java
-public class UserRequest {
-    @NotNull(message = "用户名不能为空")
-    @Size(min = 3, max = 50, message = "用户名长度必须在3-50之间")
-    private String username;
-    
-    @Email(message = "邮箱格式不正确")
-    private String email;
-    
-    @Pattern(regexp = "^1[3-9]\\d{9}$", message = "手机号格式不正确")
-    private String phone;
+```
+
+### Controller 规范
+```java
+@RestController
+@RequestMapping("/manager/dict")
+@Tag(name = "字典管理")
+public class DictManagerController extends BusinessController {
+    @GetMapping("/page")
+    public Result<PageResult<DictPageResult>> page(DictPageQuery query) {
+        return Result.success(dictQueryService.pageQuery(query));
+    }
+
+    @PostMapping
+    @Operation(summary = "创建字典")
+    public Result<Void> save(@Validated @RequestBody DictSaveCommand command) {
+        dictCommandService.save(command);
+        return Result.success();
+    }
 }
+```
+
+### RPC 接口（Dubbo）
+```java
+// api/rpc/query/ — 接口定义
+public interface DictQueryRpcService {
+    DictRpcResponse findByCode(String code);
+}
+
+// interfaces/rpc/ — 实现
+@DubboService
+public class DictQueryRpcServiceImpl implements DictQueryRpcService {
+    // ...
+}
+```
+
+### gRPC 接口
+- 定义在 `api/proto/`（`.proto` 文件）
+- 实现 `interfaces/grpc/`
+
+### 参数校验
+```java
+public class DictSaveCommand {
+    @NotBlank(message = "字典名称不能为空")
+    @Size(max = 100)
+    private String dictName;
+
+    @NotBlank(message = "字典编码不能为空")
+    @Size(max = 100)
+    private String dictCode;
+}
+```

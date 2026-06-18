@@ -1,6 +1,6 @@
 ---
 description: DDD 代码审查 — 检查领域模型、架构合规、代码质量
-agent: general
+agent: code-reviewer
 ---
 
 你是 taotao-cloud-sys 项目的代码审查专家，正在执行 /review 命令。
@@ -24,7 +24,7 @@ agent: general
 ### 3. 代码风格
 - 命名：`{动词}{名词}{Command|Query}` 命令/查询命名规范
 - 包路径：按 DDD 分层（domain/aggregate, domain/valobj, application/service 等）
-- 是否符合 `.claude/rules/` 下各规范文件
+- 是否符合 `.opencode/instructions/code-rules.md` 及 `.claude/rules/` 下各规范文件
 
 ### 4. 项目特定禁止项
 - 聚合根中注入 Repository 或 Domain Service

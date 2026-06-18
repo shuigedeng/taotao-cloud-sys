@@ -1,120 +1,76 @@
-## 3. DDD 模块化规则
-
-**`.claude/rules/aggregate-design.md`**
-```markdown
 # 聚合设计规范
 
 ## 聚合识别原则
 
-### 1. 事务边界
-聚合内修改必须在一个事务中完成，聚合间使用最终一致性。
+### 1. 聚合边界
+- 聚合内修改必须在一个事务中完成
+- 聚合间使用事件驱动最终一致性
+- 聚合根命名以 `Agg` 后缀（`DictAgg`, `UserAgg`, `DeptAgg`）
+
+### 2. 跨聚合引用
+- 跨聚合通过 ID 引用（Long/Long 值），非对象引用
 
 ```java
-// ✅ 正确：聚合内事务
-@Aggregate
-public class Order {
-    public void addItem(Product product, int quantity) {
-        // 校验库存（聚合内规则）
-        if (product.getStock() < quantity) {
-            throw new DomainException("库存不足");
-        }
-        this.items.add(new OrderItem(product, quantity));
-        this.totalAmount = calculateTotal();
-    }
+// ✅ 正确：跨聚合用 ID
+public class DictAgg {
+    private Long parentId;  // 父级字典 ID
+    private List<DictItem> items;  // 聚合内实体用对象引用
 }
 
-// ❌ 错误：跨聚合事务
-public class Order {
-    public void addItem(Product product, int quantity) {
-        // 不应该直接调用Product聚合的方法
-        product.reduceStock(quantity);  
-    }
+// ❌ 错误：跨聚合用对象引用
+public class DictAgg {
+    private DictAgg parent;  // 不应直接引用其他聚合根
 }
-2. 一致性规则
-强一致性: 聚合内保证
+```
 
-最终一致性: 聚合间通过事件保证
+### 3. 小聚合原则
+- 一个聚合根只包含必要的实体，通常 1-3 个
+- 避免加载过多数据
 
-3. 聚合大小
-小聚合原则: 一个聚合根通常只包含1-3个实体
-
-性能考虑: 避免加载过多数据
-
-java
-// ✅ 好的设计：小聚合
-@Aggregate
-public class Order {
-    private OrderId id;
-    private List<OrderItem> items;  // 只包含必要实体
-    private Money totalAmount;
-}
-
-// ❌ 坏的设计：大聚合
-@Aggregate
-public class Order {
-    private List<OrderItem> items;
-    private Customer customer;  // 不应该包含Customer聚合
-    private Payment payment;     // 不应该包含Payment聚合
-    private Shipping shipping;   // 不应该包含Shipping聚合
-}
-4. 聚合根标识
-使用值对象作为ID，而非基本类型：
-
-java
-// ✅ 正确
-public class OrderId implements Serializable {
-    private final String value;
-    
-    public OrderId(String value) {
-        this.value = value;
-    }
-    // equals/hashCode
-}
-
-// ❌ 错误
-public class Order {
-    @Id
-    private Long id;  // 基本类型无法表达业务语义
-}
-聚合根方法设计
-命令方法（状态变更）
-java
-public class Order {
+### 4. 行为方法（非贫血模型）
+```java
+public class DictAgg {
     // 命令方法：有业务语义
-    public void submit() { ... }
-    public void cancel(String reason) { ... }
-    public void pay(Money amount) { ... }
-    
-    // 而不是
-    public void setStatus(OrderStatus status) { ... }  // 贫血模型
-}
-查询方法（只读）
-java
-public class Order {
-    public boolean isPending() {
-        return status == OrderStatus.PENDING;
-    }
-    
-    public Money calculateTax(TaxPolicy policy) {
-        return policy.calculate(this.totalAmount);
-    }
-}
-不变性维护
-聚合根必须保证内部不变量：
+    public void addItem(DictItem item) { ... }
+    public void disable() { ... }
+    public void updateName(String name) { ... }
 
-java
-public class Order {
-    public void addItem(OrderItem item) {
-        // 不变性1: 订单必须是待支付状态
-        if (status != OrderStatus.PENDING) {
-            throw new DomainException("只有待支付订单可以添加商品");
+    // 禁止 setter 风格
+    // public void setStatus(Integer status) { ... }
+}
+```
+
+### 5. 工厂方法
+```java
+public class DictAgg {
+    // 无参构造（JPA 要求），protected
+    protected DictAgg() {}
+
+    // 静态工厂方法
+    public static DictAgg create(String dictName, String dictCode) {
+        DictAgg agg = new DictAgg();
+        agg.dictName = dictName;
+        agg.dictCode = dictCode;
+        agg.status = EnabledEnum.ENABLED;
+        agg.registerEvent(new DictCreatedEvent(agg.id));
+        return agg;
+    }
+}
+```
+
+### 6. 不变性维护
+```java
+public class DictAgg {
+    public void addItem(DictItem item) {
+        // 不变性：字典必须启用才能添加条目
+        if (!isEnabled()) {
+            throw new DomainException("已禁用的字典不能添加条目");
         }
-        
-        // 不变性2: 商品数量不能超过库存
-        if (item.getQuantity() > 100) {
-            throw new DomainException("单次购买数量不能超过100");
+        // 不变性：编码唯一
+        if (hasItemCode(item.getItemCode())) {
+            throw new DomainException("字典条目编码已存在");
         }
-        
         items.add(item);
     }
 }
+```

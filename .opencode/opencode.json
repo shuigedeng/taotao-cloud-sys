@@ -1,11 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-20250514",
   "default_agent": "build",
+  "model": "opencode/deepseek-v4-flash-free",
   "lsp": {
     "java": {
-      "command": ["java", "-jar", "C:/Users/Lenovo/AppData/Local/opencode/lsp/java-language-server.jar"],
-      "extensions": ["java"]
+      "command": [
+        "java",
+        "-jar",
+        "C:/Users/Lenovo/AppData/Local/opencode/lsp/java-language-server.jar"
+      ],
+      "extensions": [
+        "java"
+      ]
     }
   },
   "permission": {
@@ -22,5 +28,46 @@
     "question": "allow",
     "lsp": "allow",
     "skill": "allow"
+  },
+  "skills": {
+    "code-copilot": {
+      "description": "渐进式 Spec 开发 — No Spec No Code 工作流",
+      "file": "skills/code-copilot.md"
+    },
+    "generate-crud": {
+      "description": "DDD CRUD 代码生成器（聚合根/值对象/仓储/Controller）",
+      "file": "skills/generate-crud.py"
+    },
+    "optimize-query": {
+      "description": "SQL 查询分析器 — N+1/缺少索引/SELECT * 检测",
+      "file": "skills/optimize-query.py"
+    },
+    "security-scan": {
+      "description": "安全扫描 — 敏感信息泄露/权限配置/依赖漏洞",
+      "file": "skills/security-scan.sh"
+    }
+  },
+  "agents": {
+    "domain-expert": {
+      "description": "DDD 领域专家 — 分析领域模型设计、聚合边界、值对象规范"
+    },
+    "code-reviewer": {
+      "description": "DDD 代码审查 — 检查领域模型合规、架构依赖、代码质量"
+    },
+    "backend-architect": {
+      "description": "后端架构师 — 设计 DDD 分层架构、模块依赖、技术选型"
+    },
+    "db-expert": {
+      "description": "数据库专家 — 设计持久化映射、查询优化、表结构"
+    },
+    "aggregate-designer": {
+      "description": "聚合设计师 — 设计聚合根/实体/值对象/领域事件"
+    },
+    "security-auditor": {
+      "description": "安全审计员 — 检查 Spring Security 配置、RBAC 权限、接口鉴权"
+    },
+    "general": {
+      "description": "通用代理 — 执行多步骤任务和复杂问题调研"
+    }
   }
 }

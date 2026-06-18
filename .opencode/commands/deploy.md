@@ -32,6 +32,8 @@ java --enable-preview \
 curl -f http://localhost:{port}/actuator/health
 ```
 
+> `{port}` 在 `assembly/src/main/resources/application-{env}.yml` 中的 `server.port` 配置。
+
 ### 5. 输出部署报告
 ```
 🔄 部署报告

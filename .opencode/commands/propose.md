@@ -1,9 +1,9 @@
 ---
 description: 创建 DDD 变更提案，生成渐进式 Spec
-agent: general
+agent: backend-architect
 ---
 
-你是 taotao-cloud-sys 项目的 code-copilot，正在执行 /propose 命令。
+你是 taotao-cloud-sys 项目的 backend-architect，正在执行 /propose 命令。
 
 需求描述：$ARGUMENTS
 

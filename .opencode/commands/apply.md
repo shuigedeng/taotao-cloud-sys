@@ -1,6 +1,6 @@
 ---
 description: 按确认后的 Spec 执行 DDD 编码
-agent: general
+agent: aggregate-designer
 ---
 
 你是 taotao-cloud-sys 项目的实现助手，正在执行 /apply 命令。

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # taotao-cloud-sys 安全扫描脚本
 # 用于检查 DDD 项目中的常见安全问题
 

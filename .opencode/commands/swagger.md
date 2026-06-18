@@ -15,7 +15,7 @@ agent: general
 ./gradlew :taotao-cloud-sys-assembly:bootRun
 ```
 
-启动后访问：
+启动后访问（`{port}` 见 `application-{env}.yml` 的 `server.port`）：
 - Knife4j UI：`http://localhost:{port}/doc.html`
 - OpenAPI JSON：`http://localhost:{port}/v3/api-docs`
 

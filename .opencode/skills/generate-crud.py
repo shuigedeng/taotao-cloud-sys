@@ -8,7 +8,7 @@ taotao-cloud-sys DDD CRUD 代码生成器
 - infrastructure: 持久化 PO、Assembler、仓储实现
 - interfaces: Controller
 
-用法: python generate-crud.py --entity=Order --module=order
+用法: python generate-crud.py --entity=Dict --module=dict
 """
 
 import argparse
