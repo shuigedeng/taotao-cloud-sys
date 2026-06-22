@@ -1,6 +1,6 @@
 ---
 description: 生成 OpenAPI / Swagger 文档
-agent: general
+agent: ttc-general
 ---
 
 你是 taotao-cloud-sys 项目的 API 文档助手，正在执行 /swagger 命令。

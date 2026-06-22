@@ -1,6 +1,6 @@
 ---
 description: 运行测试并生成 JaCoCo 覆盖率报告
-agent: general
+agent: ttc-general
 ---
 
 你是 taotao-cloud-sys 项目的测试执行助手，正在执行 /test 命令。

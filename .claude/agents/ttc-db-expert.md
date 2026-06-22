@@ -1,5 +1,5 @@
 ---
-name: db-expert
+name: ttc-db-expert
 description: 数据库专家 — 设计持久化映射、查询优化、表结构
 tools:
   - read

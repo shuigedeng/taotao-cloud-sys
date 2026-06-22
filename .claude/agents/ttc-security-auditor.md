@@ -1,5 +1,5 @@
 ---
-name: security-auditor
+name: ttc-security-auditor
 description: 安全审计员 — 检查 Spring Security 配置、RBAC 权限、接口鉴权
 tools:
   - read

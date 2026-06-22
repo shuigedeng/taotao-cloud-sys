@@ -1,6 +1,6 @@
 ---
 description: DDD 代码审查 — 检查领域模型、架构合规、代码质量
-agent: code-reviewer
+agent: ttc-code-reviewer
 ---
 
 你是 taotao-cloud-sys 项目的代码审查专家，正在执行 /review 命令。

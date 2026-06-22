@@ -1,6 +1,6 @@
 ---
 description: Review 后修正迭代 — 增量修正 + DDD 合规
-agent: code-reviewer
+agent: ttc-code-reviewer
 ---
 
 你是 taotao-cloud-sys 项目的修复助手，正在执行 /fix 命令。

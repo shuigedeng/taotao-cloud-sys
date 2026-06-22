@@ -1,5 +1,5 @@
 ---
-name: domain-expert
+name: ttc-domain-expert
 description: 领域专家代理，帮助理解和建模业务领域
 tools:
   - read
