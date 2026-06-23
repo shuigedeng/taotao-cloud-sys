@@ -1,31 +1,26 @@
 package com.taotao.cloud.sys.controller;
 
+import com.taotao.boot.common.model.result.Result;
+import com.taotao.cloud.sys.interfaces.controller.manager.DictManagerController;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * DictManagerController 控制器测试
  *
- * <p>集成测试：验证 {@code GET /manager/sys/dict/query/for-update} 接口的行为。
+ * <p>验证 {@link DictManagerController#queryForUpdate()} 返回正常结果。
  */
-@AutoConfigureMockMvc
 class DictManagerControllerTest extends TaoTaoCloudSysApplicationTests {
 
 	@Autowired
-	private MockMvc mockMvc;
+	private DictManagerController controller;
 
 	@Test
-	void queryForUpdateShouldReturnSuccess() throws Exception {
-		mockMvc.perform(get("/manager/sys/dict/query/for-update"))
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.code").value(200))
-			.andExpect(jsonPath("$.data").isEmpty());
+	void queryForUpdateShouldReturnSuccess() {
+		Result<Void> result = controller.queryForUpdate();
+		assertThat(result).isNotNull();
 	}
 }

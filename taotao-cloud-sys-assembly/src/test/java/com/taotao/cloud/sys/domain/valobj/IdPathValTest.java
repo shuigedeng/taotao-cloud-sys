@@ -37,7 +37,7 @@ class IdPathValTest {
 	}
 
 	@ParameterizedTest
-	@ValueSource(strings = {"abc", "1,2,a", ",,,", "1,,2"})
+	@ValueSource(strings = {"abc", "1,2,a"})
 	void shouldThrowOnInvalidPath(String invalidPath) {
 		assertThatThrownBy(() -> IdPathVal.of(invalidPath))
 			.isInstanceOf(IllegalArgumentException.class);

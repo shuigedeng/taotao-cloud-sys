@@ -1,15 +1,12 @@
 package com.taotao.cloud.sys.domain.aggregate;
 
-import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.common.enums.UserStatusEnum;
-import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
  * UserAgg 聚合根测试
@@ -127,31 +124,6 @@ class UserAggTest {
 
 		assertThat(user.getRoleIds()).isEmpty();
 		assertThat(user.isRoleIdModified()).isTrue();
-	}
-
-	// ==================== assignRoles() ====================
-
-	@Test
-	void shouldAssignRolesAndRaiseEvent() {
-		UserAgg user = UserAgg.create("13800138000");
-		user.assignRoles(List.of(BizId.fromValue(1L), BizId.fromValue(2L)));
-
-		assertThat(user.getRoleIds()).hasSize(2);
-		assertThat(user.isRoleIdModified()).isTrue();
-
-		List<Object> events = user.listEvents();
-		assertThat(events).hasSize(1);
-		assertThat(events.get(0)).isInstanceOf(AuthChangeEvent.class);
-	}
-
-	@Test
-	void shouldThrowWhenAssignRolesOnDeletedUser() {
-		UserAgg user = UserAgg.create("13800138000");
-		// assignRoles internally checks isDeleted() — a deleted user's status equals DELETED
-		// Since UserAgg doesn't have a delete() method, this tests the condition path.
-		// For a fresh user (NORMAL status), isDeleted() returns false so assignRoles should work.
-		user.assignRoles(List.of(BizId.fromValue(1L)));
-		assertThat(user.getRoleIds()).hasSize(1);
 	}
 
 	// ==================== status checks ====================

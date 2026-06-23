@@ -1,4 +1,4 @@
-package com.taotao.cloud.sys.service;
+package com.taotao.cloud.sys.application;
 
 import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper;
 import com.taotao.boot.ddd.model.event.EventDispatcher;
@@ -20,7 +20,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.*;
 
 /**
