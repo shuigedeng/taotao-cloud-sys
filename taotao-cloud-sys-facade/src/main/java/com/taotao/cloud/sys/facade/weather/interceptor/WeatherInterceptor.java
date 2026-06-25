@@ -1,8 +1,8 @@
 package com.taotao.cloud.sys.facade.weather.interceptor;
 
-import com.taotao.boot.ddd.gateway.interceptor.GatewayPostInterceptor;
-import com.taotao.boot.ddd.gateway.model.GatewayContext;
-import com.taotao.boot.ddd.gateway.model.GatewayResponse;
+import com.taotao.boot.client.gateway.interceptor.GatewayPostInterceptor;
+import com.taotao.boot.client.gateway.model.GatewayContext;
+import com.taotao.boot.client.gateway.model.GatewayResponse;
 
 /**
  * WeatherInterceptor
