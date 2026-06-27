@@ -433,6 +433,7 @@ spring:
     suffix: .html
     encoding: UTF-8
     cache: false
+    check-template: false
   main:
     allow-circular-references: false
     allow-bean-definition-overriding: false
@@ -440,6 +441,7 @@ spring:
     register-shutdown-hook: true
     cloud-platform: none
     web-application-type: servlet
+    log-startup-info: true
   application:
     name: taotao-cloud-sys
     admin:
@@ -479,6 +481,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
+    connection-fetch: lazy
     hikari:
       auto-commit: true # 从池返回的连接的默认自动提交行为 默认true 是否自动提交，默认true
       connection-timeout: 350000 # 客户端等待连接池的最大毫秒数 从连接池获取连接的超时时间，默认30s
@@ -517,6 +520,7 @@ spring:
             connection-test-query: SELECT 1
             max-pool-size: 15
             min-idle: 10
+
   jpa:
     database: mysql
     database-platform: mysql
@@ -551,7 +555,7 @@ spring:
         logging:
           level:
             sql=FINE:
-      javax:
+      jakarta:
         persistence:
           sharedCache:
             mode: ENABLE_SELECTIVE
@@ -560,7 +564,6 @@ spring:
         eclipselink.logging.level.sql: FINE
         format_sql: true
         hbm2ddl.auto: update
-        dialect: org.hibernate.dialect.MySQLDialect
         use_sql_comments: true
         show_sql: false
         generate_statistics: false
@@ -572,8 +575,8 @@ spring:
         javax:
           cache:
             missing_cache_strategy: create
-        temp:
-          use_jdbc_metadata_defaults: false
+        boot:
+          allow_jdbc_metadata_access: false
   redis:
     redisson:
       config: |
