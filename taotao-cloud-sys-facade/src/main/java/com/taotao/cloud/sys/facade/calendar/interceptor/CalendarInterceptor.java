@@ -13,12 +13,12 @@ import com.taotao.boot.client.gateway.model.GatewayResponse;
  */
 public class CalendarInterceptor<T> implements GatewayPostInterceptor<T> {
 	@Override
-	public void intercept(GatewayResponse<T> response, GatewayContext context) {
+	public void postIntercept(GatewayResponse<T> response, GatewayContext context) {
 
 	}
 
 	@Override
-	public boolean shouldFilter(GatewayContext context) {
+	public boolean postShouldFilter(GatewayContext context) {
 		return context.getCatchedException() != null;
 	}
 }
