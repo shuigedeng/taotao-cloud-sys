@@ -40,54 +40,11 @@
       "maven.aliyun.com"
     ]
   },
-  "model": {
-    "default": "claude-3.5-sonnet-20241022",
-    "fallback": "claude-3-opus-20240229",
-    "temperature": 0.3,
-    "maxTokens": 8192
-  },
+  "model": "claude-sonnet-4-20250514",
   "git": {
     "autoCommit": false,
     "requireTests": false,
     "commitMessageTemplate": "{{type}}({{scope}}): {{description}}"
   },
-  "java": {
-    "buildTool": "gradle",
-    "version": 25,
-    "buildCommand": "./gradlew build -x test",
-    "compileCommand": "./gradlew compileJava",
-    "testCommand": "./gradlew test",
-    "formatCommand": "./gradlew spotlessApply"
-  },
-  "lsp": {
-    "java": {
-      "enabled": true,
-      "command": "java",
-      "args": [
-        "-jar",
-        "${workspaceFolder}/../tools/java-language-server.jar"
-      ]
-    }
-  },
-  "ddd": {
-    "layers": [
-      "api",
-      "application",
-      "assembly",
-      "common",
-      "domain",
-      "facade",
-      "infrastructure",
-      "interfaces"
-    ],
-    "package": "com.taotao.cloud.sys",
-    "enforceHexagonal": true
-  },
-  "hooks": {
-    "preCommit": [
-      "echo 'Running pre-commit checks...'"
-    ],
-    "postCommit": [],
-    "preCommand": []
-  }
+  "hooks": {}
 }

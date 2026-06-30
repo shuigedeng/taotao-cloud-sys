@@ -4,12 +4,5 @@
     "write": [],
     "network": []
   },
-  "model": {
-    "temperature": 0.3
-  },
-  "hooks": {
-    "preCommit": [],
-    "postCommit": [],
-    "preCommand": []
-  }
+  "hooks": {}
 }
