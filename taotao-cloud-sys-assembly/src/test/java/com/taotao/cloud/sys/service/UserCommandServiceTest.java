@@ -4,7 +4,7 @@ import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper
 import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
-import com.taotao.cloud.sys.application.service.commad.impl.UserCommandServiceImpl;
+import com.taotao.cloud.sys.application.service.command.impl.UserCommandServiceImpl;
 import com.taotao.cloud.sys.domain.aggregate.RoleAgg;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.RoleDomainRepository;

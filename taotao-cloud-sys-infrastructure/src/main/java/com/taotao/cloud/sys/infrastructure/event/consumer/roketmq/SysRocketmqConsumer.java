@@ -1,15 +1,10 @@
 package com.taotao.cloud.sys.infrastructure.event.consumer.roketmq;
 
-import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.mq.common.base.MqConsumerBase;
-import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.application.service.command.UserCommandService;
 import lombok.AllArgsConstructor;
 import org.apache.rocketmq.common.message.MessageExt;
-import org.apache.rocketmq.spring.annotation.ConsumeMode;
-import org.apache.rocketmq.spring.annotation.MessageModel;
-import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
-import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 

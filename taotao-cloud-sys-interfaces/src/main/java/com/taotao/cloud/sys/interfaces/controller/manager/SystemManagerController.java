@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.interfaces.controller.manager;
 
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.service.commad.SystemCommandService;
+import com.taotao.cloud.sys.application.service.command.SystemCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;

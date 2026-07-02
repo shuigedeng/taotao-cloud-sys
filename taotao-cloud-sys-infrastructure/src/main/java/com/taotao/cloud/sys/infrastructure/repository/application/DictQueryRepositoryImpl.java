@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.taotao.cloud.sys.infrastructure.repository.application;
+
+
+import cn.idev.excel.util.ListUtils;
+import com.taotao.cloud.sys.application.repository.DictQueryRepository;
+import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
+import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+
+/**
+ * DictQueryRepositoryImpl
+ *
+ * @author shuigedeng
+ * @version 2026.04
+ * @since 2025-12-19 09:30:45
+ */
+@Service
+@RequiredArgsConstructor
+public class DictQueryRepositoryImpl implements DictQueryRepository {
+
+	private final DictMapper dictMapper;
+
+	@Override
+	public void queryForUpdate() {
+		DictPO dictPO = DictPO.builder().dictCode("s1").dictName("s2").sortNum(1).build();
+		DictPO dictPO1 = DictPO.builder().dictCode("s4").dictName("s5").sortNum(1).build();
+		dictMapper.insertSkipNull(dictPO, true);
+//		dictMapper.insertSkipNullOther(dictPO, true);
+		ArrayList<DictPO> dictPOS = ListUtils.newArrayList(dictPO, dictPO1);
+//		dictMapper.insertBatchSkipNull(dictPOS, false);
+//		dictMapper.insertBatchSkipNullOther();
+//
+//		dictMapper.updateByFieldSkipNull();
+//		dictMapper.updateByIdSkipNull();
+//		dictMapper.updateByIdSkipNullOther();
+//		dictMapper.updateByWrapperSkipNull();
+//		dictMapper.updateByWrapperSkipNullOther();
+//		dictMapper.updateBatchSkipNull();
+//		dictMapper.updateBatchSkipNullOther();
+//
+//		dictMapper.selectByIdForUpdate();
+//		//dictMapper.selectByIdForUpdateOther();
+//		dictMapper.selectByIdsForUpdate();
+//		dictMapper.selectListForUpdate();
+//		dictMapper.selectListForUpdateOther();
+	}
+}

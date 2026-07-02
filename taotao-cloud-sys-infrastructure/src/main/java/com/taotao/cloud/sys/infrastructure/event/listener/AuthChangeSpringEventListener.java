@@ -16,7 +16,7 @@
 
 package com.taotao.cloud.sys.infrastructure.event.listener;
 
-import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.application.service.command.UserCommandService;
 import com.taotao.cloud.sys.domain.event.AuthChangeEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

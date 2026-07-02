@@ -20,7 +20,7 @@ import com.taotao.cloud.sys.api.grpc.DictGrpcQuery;
 import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
 import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import com.taotao.cloud.sys.api.grpc.DictTestGrpcQuery;
-import com.taotao.cloud.sys.application.service.commad.DictCommandService;
+import com.taotao.cloud.sys.application.service.command.DictCommandService;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;

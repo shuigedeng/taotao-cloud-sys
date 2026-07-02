@@ -22,7 +22,7 @@ import com.taotao.boot.common.tree.ForestNodeMerger;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
+import com.taotao.cloud.sys.application.service.command.DeptCommandService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;

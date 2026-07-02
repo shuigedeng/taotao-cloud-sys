@@ -14,29 +14,30 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.application.service.command.impl;
 
-import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.application.service.command.PinYinCommandService;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import com.taotao.cloud.sys.application.service.command.LogisticsCommandService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 /**
- * PinYinController
- *
  * @author shuigedeng
  * @version 2022.03
- * @since 2022/03/03 14:57
+ * @since 2020/11/13 10:00
  */
+@Service
 @RequiredArgsConstructor
-@Validated
-@RestController
-@Tag(name = "平台管理端-拼音API", description = "平台管理端-拼音API")
-@RequestMapping("/manager/sys/pinyin")
-public class PinYinManagerController extends BusinessController {
+public class LogisticsCommandServiceImpl implements LogisticsCommandService {
 
-    private final PinYinCommandService pinYinService;
+    //	@Override
+    //	public LogisticsConfigPO findLogisticsById(Long id) {
+    //		return null;
+    //	}
+
+    //    @Override
+    //    public LogisticsConfig findLogisticsById(Long id) {
+    //        Optional<LogisticsConfig> optionalExpressCompany = ir().findById(id);
+    //        return optionalExpressCompany.orElseThrow(() -> new
+    // BusinessException(ResultEnum.FILE_NOT_EXIST));
+    //    }
 }

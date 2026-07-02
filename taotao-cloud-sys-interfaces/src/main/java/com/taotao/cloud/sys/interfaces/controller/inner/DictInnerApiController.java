@@ -32,7 +32,7 @@ import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
 import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponseBuilder;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
-import com.taotao.cloud.sys.application.service.commad.DictCommandService;
+import com.taotao.cloud.sys.application.service.command.DictCommandService;
 //import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -20,7 +20,7 @@ import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.job.xxl.base.XxlJobBase;
 import com.taotao.boot.job.xxl.executor.annotation.XxlRegister;
 import com.taotao.cloud.sys.application.dto.user.command.ScheduleUserCommand;
-import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.application.service.command.UserCommandService;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import com.xxl.tool.response.Response;

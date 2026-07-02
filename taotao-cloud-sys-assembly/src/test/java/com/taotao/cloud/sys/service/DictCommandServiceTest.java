@@ -1,7 +1,7 @@
 package com.taotao.cloud.sys.service;
 
-import com.taotao.cloud.sys.application.service.commad.DictCommandService;
-import com.taotao.cloud.sys.application.service.commad.impl.DictCommandServiceImpl;
+import com.taotao.cloud.sys.application.service.command.DictCommandService;
+import com.taotao.cloud.sys.application.service.command.impl.DictCommandServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

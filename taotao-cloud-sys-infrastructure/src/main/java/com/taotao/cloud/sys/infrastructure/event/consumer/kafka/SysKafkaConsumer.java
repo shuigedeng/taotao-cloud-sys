@@ -3,9 +3,8 @@ package com.taotao.cloud.sys.infrastructure.event.consumer.kafka;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.mq.common.base.MqConsumerBase;
 import com.taotao.boot.mq.common.consumer.Acknowledgement;
-import com.taotao.cloud.sys.application.service.commad.UserCommandService;
+import com.taotao.cloud.sys.application.service.command.UserCommandService;
 import lombok.AllArgsConstructor;
-import org.jspecify.annotations.Nullable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
@@ -14,9 +13,6 @@ import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
 import org.springframework.kafka.listener.ContainerProperties;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
-import org.springframework.stereotype.Component;
-
-import java.nio.charset.StandardCharsets;
 
 //@Component
 @AllArgsConstructor

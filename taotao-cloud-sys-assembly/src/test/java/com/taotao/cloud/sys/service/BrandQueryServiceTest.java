@@ -20,7 +20,7 @@ import com.taotao.boot.test.junitperf.core.annotation.TtcTest;
 import com.taotao.boot.test.junitperf.core.report.impl.HtmlReporter;
 import com.taotao.cloud.sys.TaoTaoCloudSysApplicationTests;
 import com.taotao.cloud.sys.application.dto.dept.result.DeptTreeResult;
-import com.taotao.cloud.sys.application.service.commad.DeptCommandService;
+import com.taotao.cloud.sys.application.service.command.DeptCommandService;
 import java.util.List;
 
 import com.taotao.cloud.sys.domain.repository.DeptDomainRepository;
