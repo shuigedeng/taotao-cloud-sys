@@ -120,12 +120,12 @@ public class UserManagerController extends BusinessController {
 
     	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
      "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
-    	@PostMapping("/roles/assign/roles")
+    	@PostMapping("/assign-roles")
 		@NotAuth
     	//@PreAuthorize("hasAuthority('admin:user:assign-roles')")
-    	public Result<Void> assignUserRoles( @Valid @RequestBody AssignRolesCommand assignUserRolesCommand) {
+    	public Result<Void> assignRoles( @Valid @RequestBody AssignRolesCommand assignUserRolesCommand) {
 			userCommandService.assignRoles(assignUserRolesCommand);
-    		return Result.success((Void)null);
+    		return Result.success();
     	}
 
     //	@Operation(summary = "test", description = "test",

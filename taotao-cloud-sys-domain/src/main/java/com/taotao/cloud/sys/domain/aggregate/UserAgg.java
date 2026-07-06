@@ -213,7 +213,7 @@ public class UserAgg extends AggregateRoot<BizId> {
 
 		BusinessAssert.isTrue(CollUtil.isNotEmpty(roleIds), "角色列表不能为空");
 
-		BusinessAssert.isTrue(isDeleted(), "已删除的用户不能分配角色");
+		BusinessAssert.isTrue(!isDeleted(), "已删除的用户不能分配角色");
 
 		this.roleIds = new ArrayList<>(new LinkedHashSet<>(roleIds));
 

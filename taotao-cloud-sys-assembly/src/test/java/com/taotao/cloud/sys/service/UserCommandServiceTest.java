@@ -18,6 +18,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -76,7 +78,7 @@ class UserCommandServiceTest {
 		userService.assignRoles(cmd);
 
 		// Assert - 领域服务被调用
-		verify(userDomainService).assignRoles(mockUser, List.of(role1));
+		verify(userDomainService).assignRoles(mockUser, List.of(role1), new HashSet<>());
 		// Assert - 保存被调用
 		verify(userDomainRepository).save(mockUser, Boolean.TRUE);
 		// Assert - 注册了 afterCommit 回调

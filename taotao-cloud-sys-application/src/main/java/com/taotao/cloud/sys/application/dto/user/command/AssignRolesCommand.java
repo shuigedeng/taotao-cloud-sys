@@ -17,13 +17,17 @@
 package com.taotao.cloud.sys.application.dto.user.command;
 
 import com.taotao.boot.common.model.ddd.types.Command;
+import com.taotao.boot.ddd.model.val.BizId;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serial;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * 为管理员分配角色命令
@@ -41,4 +45,16 @@ public record AssignRolesCommand(
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;
 
+	public Set<BizId> getBizIdRoleIds() {
+		if (roleIds == null || roleIds.isEmpty()) {
+			return Collections.emptySet();
+		}
+		return roleIds.stream()
+			.map(BizId::fromValue)
+			.collect(Collectors.toSet());
+	}
+
+	public boolean hasRoleIds() {
+		return roleIds != null && !roleIds.isEmpty();
+	}
 }

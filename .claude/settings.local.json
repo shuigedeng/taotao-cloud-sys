@@ -2,7 +2,10 @@
   "permissions": {
     "read": [],
     "write": [],
-    "network": []
+    "network": [],
+    "allow": [
+      "mcp__idea__read_file"
+    ]
   },
   "hooks": {}
 }

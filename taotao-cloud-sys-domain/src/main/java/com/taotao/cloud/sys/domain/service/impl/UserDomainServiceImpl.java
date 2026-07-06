@@ -48,17 +48,23 @@ public class UserDomainServiceImpl implements UserDomainService {
     private UserDomainRepository userDomainRepository;
 
 	@Override
-	public void assignRoles( UserAgg userAgg, List<RoleAgg> assignableRoles ) {
-		// 只处理用户聚合内部的业务规则
-		// 例如：检查用户状态、角色冲突、数量限制等
-
+	public void assignRoles( UserAgg userAgg, List<RoleAgg> assignableRoles, Set<BizId> requestedRoleIds ) {
 		BusinessAssert.isTrue(userAgg != null, "用户不能为空");
-
 		BusinessAssert.isTrue(CollUtil.isNotEmpty(assignableRoles), "至少分配一个角色");
 
-		// 将角色ID列表传递给用户聚合
-		List<BizId> roleIds = assignableRoles.stream().map(RoleAgg::id).collect(Collectors.toList());
+		List<BizId> assignableRoleIds = assignableRoles.stream().map(RoleAgg::id).collect(Collectors.toList());
 
-		userAgg.assignRoles(roleIds);  // 用户聚合内部处理角色分配逻辑
+		validateRolesExist(requestedRoleIds, assignableRoleIds);
+
+		userAgg.assignRoles(assignableRoleIds);
+	}
+
+	private void validateRolesExist( Set<BizId> requestedRoleIds, List<BizId> assignableRoleIds ) {
+		Set<BizId> assignableRoleIdsCopy = new HashSet<>(assignableRoleIds);
+		Set<BizId> requestedRoleIdsCopy = new HashSet<>(requestedRoleIds);
+
+		requestedRoleIdsCopy.removeAll(assignableRoleIdsCopy);
+
+		BusinessAssert.isTrue(requestedRoleIdsCopy.isEmpty(), "角色不存在或不可分配: {}", requestedRoleIdsCopy);
 	}
 }

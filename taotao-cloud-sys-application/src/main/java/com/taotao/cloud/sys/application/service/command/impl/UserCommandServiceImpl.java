@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.application.service.command.impl;
 
 import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper;
+import com.taotao.boot.data.datasource.wrapper.TransactionalWrapper;
 import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
@@ -54,38 +55,27 @@ public class UserCommandServiceImpl implements UserCommandService {
 	private final UserDomainRepository userDomainRepository;
 	private final RoleDomainRepository roleDomainRepository;
 	private final UserDomainService userDomainService;
+	private final TransactionalWrapper transactionalWrapper;
 	private final TransactionSynchronizationWrapper txSynchronizationWrapper;
 	private final EventDispatcher eventDispatcher;
 
 	@Override
-	@Transactional
 	public void assignRoles( AssignRolesCommand assignUseRolesCommand ) {
 
-		// 1. 加载数据（5个聚合）
-		// 2. 应用层校验（3-5个）
-		// 3. 调用领域服务（2-3次）
-		// 4. 保存多个聚合
-		// 5. 调用外部服务
-		// 6. 发送消息/事件
-		// 7. 记录日志
+		Set<BizId> requestedRoleIds = assignUseRolesCommand.getBizIdRoleIds();
+		Long userId = assignUseRolesCommand.userId();
 
-		UserAgg userAgg = userDomainRepository.findUsingIdCol(assignUseRolesCommand.userId(), Boolean.TRUE);
+		transactionalWrapper.doInTransaction(()->{
+			UserAgg userAgg = userDomainRepository.findUsingIdCol(userId, Boolean.TRUE);
+			List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
 
-		Set<BizId> requestedRoleIds = assignUseRolesCommand.roleIds().stream()
-			.map(BizId::fromValue).collect(Collectors.toSet());
+			userDomainService.assignRoles(userAgg, assignableRoles, requestedRoleIds);
 
-		List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
+			userDomainRepository.save(userAgg, Boolean.TRUE);
+			txSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
+		});
 
-		validateRolesExist(requestedRoleIds, assignableRoles);
-
-		userDomainService.assignRoles(userAgg, assignableRoles);
-
-		userDomainRepository.save(userAgg, Boolean.TRUE);
-
-		txSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
-
-		log.info("角色分配成功，管理员ID: {}, 角色数量: {}", assignUseRolesCommand.userId(),
-			assignUseRolesCommand.roleIds().size());
+		log.info("角色分配成功，用户ID: {}, 角色数量: {}", userId, requestedRoleIds.size());
 	}
 
 	@Override
@@ -103,14 +93,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 
 	}
 
-	private void validateRolesExist( Set<BizId> requested, List<RoleAgg> found ) {
-		Set<BizId> foundIds = found.stream().map(RoleAgg::id).collect(Collectors.toSet());
 
-		Set<BizId> missing = new HashSet<>(requested);
-		missing.removeAll(foundIds);
-
-		BusinessAssert.isTrue(!missing.isEmpty(), "角色不存在或不可分配: {}", missing);
-	}
 
 	//	private static final QUser USER = QUser.user;
 	//
