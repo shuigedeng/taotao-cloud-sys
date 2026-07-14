@@ -1,5 +1,5 @@
 ---
-name: ttc-code-reviewer
+name: ttc-cc-ag-code-reviewer
 description: DDD 代码审查 — 检查领域模型合规、架构依赖、代码质量
 tools:
   - read

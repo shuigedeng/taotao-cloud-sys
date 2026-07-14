@@ -20,7 +20,9 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.taotao.boot.common.enums.UserObjectEnum;
 import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.BaseMapper;
 import com.taotao.boot.ddd.model.val.BizId;
+import com.taotao.boot.webagg.entity.SuperPO;
 import com.taotao.cloud.sys.domain.aggregate.UserAgg;
 import com.taotao.cloud.sys.domain.repository.UserDomainRepository;
 import com.taotao.cloud.sys.infrastructure.assembler.UserInfraAssembler;
@@ -53,6 +55,16 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	private final UserRelationMapper userRelationMapper;
 	private final UserRepository userRepository;
 	private final UserRelationRepository userRelationRepository;
+
+	@Override
+	public int remove( UserAgg userAgg ) {
+		return UserDomainRepository.super.remove(userAgg);
+	}
+
+	@Override
+	public UserAgg find( String identifier, boolean withLock ) {
+		return UserDomainRepository.super.find(identifier, withLock);
+	}
 
 	@Override
 	public UserAgg findUsingIdCol( Long id, boolean withLock ) {
@@ -99,12 +111,12 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 		Long userId = userAgg.id().id();
 		List<BizId> roleIds = CollectionUtil.emptyIfNull(userAgg.getRoleIds());
 
-		int deleteCount = userRelationMapper.deleteByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
-		LogUtils.debug("删除用户{}的旧角色关系{}条", userId, deleteCount);
-
 		if (roleIds.isEmpty()) {
 			return;
 		}
+
+		int deleteCount = userRelationMapper.deleteByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
+		LogUtils.debug("删除用户{}的旧角色关系{}条", userId, deleteCount);
 
 		List<UserRelationPO> userRelationPos = roleIds.stream()
 			.map(roleId -> new UserRelationPO(userAgg.id().id(),roleId.id(),UserObjectEnum.ROLE.name()))

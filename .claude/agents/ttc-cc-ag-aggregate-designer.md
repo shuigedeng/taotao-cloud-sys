@@ -1,5 +1,5 @@
 ---
-name: ttc-aggregate-designer
+name: ttc-cc-ag-aggregate-designer
 description: 聚合设计专家，负责设计 DDD 聚合根
 tools:
   - read

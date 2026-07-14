@@ -1,5 +1,5 @@
 ---
-name: ttc-backend-architect
+name: ttc-cc-ag-backend-architect
 description: 后端架构师 — 设计 DDD 分层架构、模块依赖、技术选型
 tools:
   - read
