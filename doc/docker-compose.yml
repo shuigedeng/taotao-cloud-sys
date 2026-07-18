@@ -72,6 +72,54 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.13
 
+  openobserve:
+    image: o2cr.ai/openobserve/openobserve-enterprise:latest
+    container_name: openobserve
+    restart: no
+    environment:
+      ZO_ROOT_USER_EMAIL: "981376577@qq.com"  # 替换为你的邮箱
+      ZO_ROOT_USER_PASSWORD: "Complexpass#123" # 替换为你的强密码
+    ports:
+      - "5080:5080"
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.50
+
+  xxl-job-admin-3.4.2:
+    image: xuxueli/xxl-job-admin:3.4.2
+    container_name: xxl-job-admin-3.4.2
+    restart: no
+    ports:
+      - "48080:8080"
+    environment:
+      PARAMS: >-
+        --spring.datasource.url=jdbc:mysql://172.11.0.10:3306/xxl_job_3.4.2?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+        --spring.datasource.username=root
+        --spring.datasource.password=123456
+        --xxl.job.accessToken=123456
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.27
+
+  opentelemetry-collector-0.156.0:
+    image: otel/opentelemetry-collector-contrib:0.156.0
+    container_name: opentelemetry-collector-0.156.0
+    restart: no
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+      - "55679:55679" # ZPages endpoint
+      - "8889:8889" # ZPages endpoint
+    volumes:
+      - ./dockervolumes/opentelemetry/opentelemetry-config.yaml:/etc/otelcol/config.yaml
+    command: [ "--config", "/etc/otelcol/config.yaml" ]
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.31
+
+
+####################################################
+
   #sentinel-dashboard-1.8.9:
   #  image: bladex/sentinel-dashboard:1.8.9
   #  container_name: sentinel-dashboard-1.8.9
@@ -354,21 +402,7 @@ services:
   #    taotao-cluster-network:
   #      ipv4_address: 172.11.0.26
 
-  xxl-job-admin-3.4.0:
-    image: xuxueli/xxl-job-admin:3.4.0
-    container_name: xxl-job-admin-3.4.0
-    restart: no
-    ports:
-      - "48080:8080"
-    environment:
-      PARAMS: >-
-        --spring.datasource.url=jdbc:mysql://172.11.0.10:3306/xxl_job?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
-        --spring.datasource.username=root
-        --spring.datasource.password=123456
-        --xxl.job.accessToken=123456
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.27
+
 
   prometheus-3.12.0:
     image: prom/prometheus:v3.12.0
@@ -420,21 +454,7 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.30
 
-  opentelemetry-collector-0.154.0:
-    image: otel/opentelemetry-collector-contrib:0.154.0
-    container_name: opentelemetry-collector-0.154.0
-    restart: no
-    ports:
-      - "4317:4317"   # OTLP gRPC receiver
-      - "4318:4318"   # OTLP HTTP receiver
-      - "55679:55679" # ZPages endpoint
-      - "8889:8889" # ZPages endpoint
-    volumes:
-      - ./otel/otel-config.yaml:/etc/otelcol/config.yaml
-    command: [ "--config", "/etc/otelcol/config.yaml" ]
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.31
+
 
   loki-main:
     container_name: loki-main

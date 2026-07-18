@@ -481,7 +481,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    connection-fetch: lazy
+    #connection-fetch: lazy
     hikari:
       auto-commit: true # 从池返回的连接的默认自动提交行为 默认true 是否自动提交，默认true
       connection-timeout: 350000 # 客户端等待连接池的最大毫秒数 从连接池获取连接的超时时间，默认30s

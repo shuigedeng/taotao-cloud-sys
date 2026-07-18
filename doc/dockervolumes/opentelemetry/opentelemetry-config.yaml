@@ -1,0 +1,45 @@
+extensions:
+  zpages:
+    endpoint: 0.0.0.0:55679
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  memory_limiter:
+    limit_mib: 1536
+    spike_limit_mib: 512
+    check_interval: 5s
+  batch:
+    timeout: 5s
+    send_batch_size: 10
+
+exporters:
+  debug:
+    verbosity: detailed
+  otlphttp/openobserve:
+    endpoint: http://172.11.0.50:5080/api/default
+    headers:
+      Authorization: "Basic OTgxMzc2NTc3QHFxLmNvbTpDb21wbGV4cGFzcyMxMjM="
+      stream-name: "default"
+
+service:
+  extensions: [ zpages ]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlphttp/openobserve]
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter,batch]
+      exporters: [otlphttp/openobserve]
+    logs:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlphttp/openobserve]
