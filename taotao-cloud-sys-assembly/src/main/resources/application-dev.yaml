@@ -1496,6 +1496,6 @@ herodotus:
 scalar:
   enabled: true
   actuatorEnabled: true
-  url: http://${remote-ip}:33331/v3/api-docs/taotao-cloud-sys
+  url: http://127.0.0.1:33331/v3/api-docs/taotao-cloud-sys
   path: /docs
   pageTitle: My API Documentation

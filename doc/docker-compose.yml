@@ -117,6 +117,80 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.31
 
+  rocketmq-nameserv-5.5.0:
+    image: apache/rocketmq:5.5.0
+    container_name: rocketmq-nameserv-5.5.0
+    ports:
+      - "9876:9876"
+    restart: no
+    privileged: true
+    environment:
+      MAX_HEAP_SIZE: 512M
+      HEAP_NEWSIZE: 256M
+      TZ: Asia/Shanghai
+    command: [ "sh","mqnamesrv" ]
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.19
+  rocketmq-broker-5.5.0:
+    image: apache/rocketmq:5.5.0
+    container_name: rocketmq-broker-5.5.0
+    ports:
+      - "10909:10909"
+      - "10911:10911"
+      - "10912:10912"
+    restart: no
+    privileged: true
+    depends_on:
+      - 'rocketmq-nameserv-5.5.0'
+    environment:
+      NAMESRV_ADDR: 172.11.0.19:9876
+      MAX_HEAP_SIZE: 512M
+      HEAP_NEWSIZE: 256M
+    volumes:
+      - ./dockervolumes/rocketmq5.5.0/broker/broker.conf:/home/rocketmq/rocketmq-5.5.0/conf/broker.conf
+      - ./dockervolumes/rocketmq5.5.0/broker/tools.yml:/home/rocketmq/rocketmq-5.5.0/conf/tools.yml
+    command: [ "sh","mqbroker","-c","/home/rocketmq/rocketmq-5.5.0/conf/broker.conf " ]
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.20
+  rocketmq-proxy-5.5.0:
+    image: apache/rocketmq:5.5.0
+    container_name: rocketmq-proxy-5.5.0
+    restart: no
+    depends_on:
+      - 'rocketmq-nameserv-5.5.0'
+      - 'rocketmq-broker-5.5.0'
+    ports:
+      - 18680:18680
+      - 18681:18681
+    volumes:
+      - ./dockervolumes/rocketmq5.5.0/proxy/rmq-proxy.json:/home/rocketmq/rocketmq-5.5.0/conf/rmq-proxy.json
+      - ./dockervolumes/rocketmq5.5.0/broker/tools.yml:/home/rocketmq/rocketmq-5.5.0/conf/tools.yml
+    environment:
+      NAMESRV_ADDR: 172.11.0.19:9876
+    command: sh mqproxy -pc /home/rocketmq/rocketmq-5.5.0/conf/rmq-proxy.json
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.70
+  rocketmq-dashboard-2.1.0:
+    image: apacherocketmq/rocketmq-dashboard:2.1.0
+    container_name: rocketmq-dashboard-2.1.0
+    ports:
+      - "8082:8082"
+    restart: no
+    privileged: true
+    volumes:
+      # 数据目录映射, user.properties需要放在data目录下
+      - ./dockervolumes/rocketmq5.5.0/dashboard/users.properties:/tmp/rocketmq-console/data/users.properties
+    depends_on:
+      - 'rocketmq-nameserv-5.5.0'
+      - 'rocketmq-broker-5.5.0'
+    environment:
+      JAVA_OPTS: '-Xmx256M -Xms256M -Xmn128M -Drocketmq.namesrv.addr=172.11.0.19:9876 -Drocketmq.config.proxyAddrs=172.11.0.70:18680 -Dcom.rocketmq.sendMessageWithVIPChannel=false -Drocketmq.config.loginRequired=true -Drocketmq.config.accessKey=taotaocloud -Drocketmq.config.secretKey=taotaocloud'
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.21
 
 ####################################################
 
@@ -242,80 +316,7 @@ services:
     #      ipv4_address: 172.11.0.21
     #
 
-  rocketmq-nameserv-5.5.0:
-    image: aapache/rocketmq:5.5.0
-    container_name: rocketmq-nameserv-5.5.0
-    ports:
-      - "9876:9876"
-    restart: no
-    privileged: true
-    environment:
-      MAX_HEAP_SIZE: 512M
-      HEAP_NEWSIZE: 256M
-      TZ: Asia/Shanghai
-    command: [ "sh","mqnamesrv" ]
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.19
-  rocketmq-broker-5.5.0:
-    image: aapache/rocketmq:5.5.0
-    container_name: rocketmq-broker-5.5.0
-    ports:
-      - "10909:10909"
-      - "10911:10911"
-      - "10912:10912"
-    restart: no
-    privileged: true
-    depends_on:
-      - 'rocketmq-nameserv'
-    environment:
-      NAMESRV_ADDR: 192.168.218.2:9876
-      MAX_HEAP_SIZE: 512M
-      HEAP_NEWSIZE: 256M
-    volumes:
-      - ./rocketmq5.3.3/broker/broker.conf:/home/rocketmq/rocketmq-5.3.3/conf/broker.conf
-      - ./rocketmq5.3.3/broker/tools.yml:/home/rocketmq/rocketmq-5.3.3/conf/tools.yml
-    command: [ "sh","mqbroker","-c","/home/rocketmq/rocketmq-5.3.3/conf/broker.conf ", "autoCreateTopicEnable=true" ]
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.20
-  rocketmq-proxy-5.5.0:
-    image: aapache/rocketmq:5.5.0
-    container_name: rocketmq-proxy-5.5.0
-    depends_on:
-      - 'rocketmq-nameserv'
-      - 'rocketmq-broker'
-    ports:
-      - 18680:18680
-      - 18681:18681
-    restart: no
-    volumes:
-      - ./rocketmq5.3.3/proxy/rmq-proxy.json:/home/rocketmq/rocketmq-5.3.3/conf/rmq-proxy.json
-      - ./rocketmq5.3.3/broker/tools.yml:/home/rocketmq/rocketmq-5.3.3/conf/tools.yml
-    environment:
-      NAMESRV_ADDR: 172.11.0.19:9876
-    command: sh mqproxy -pc /home/rocketmq/rocketmq-5.3.3/conf/rmq-proxy.json
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.70
-  rocketmq-dashboard-2.1.0:
-    image: apacherocketmq/rocketmq-dashboard:2.1.0
-    container_name: rocketmq-dashboard-2.1.0
-    ports:
-      - "8086:8080"
-    restart: no
-    privileged: true
-    volumes:
-      # 数据目录映射, user.properties需要放在data目录下
-      - ./rocketmq5.3.3/dashboard/users.properties:/tmp/rocketmq-console/data/users.properties
-    depends_on:
-      - 'rocketmq-nameserv'
-      - 'rocketmq-broker'
-    environment:
-      JAVA_OPTS: '-Xmx256M -Xms256M -Xmn128M -Drocketmq.namesrv.addr=192.168.218.2:9876 -Drocketmq.config.proxyAddrs=192.168.218.2:18680 -Dcom.rocketmq.sendMessageWithVIPChannel=false -Drocketmq.config.loginRequired=true -Drocketmq.config.accessKey=taotaocloud -Drocketmq.config.secretKey=taotaocloud'
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.21
+
 
   #arthas:
   #  image: hengyunabc/arthas:4.1.1

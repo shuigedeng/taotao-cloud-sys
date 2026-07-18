@@ -1,0 +1,15 @@
+{
+    "rocketMQClusterName": "DefaultCluster",
+    "remotingListenPort": 18680,
+    "grpcServerPort": 18681,
+    "enableACL": true,
+    "authenticationEnabled": true,
+    "authenticationProvider": "org.apache.rocketmq.auth.authentication.provider.DefaultAuthenticationProvider",
+    "authenticationMetadataProvider": "org.apache.rocketmq.proxy.auth.ProxyAuthenticationMetadataProvider",
+    "innerClientAuthenticationCredentials": "{\"accessKey\":\"taotaocloud\", \"secretKey\":\"taotaocloud\"}",
+    "enableAclRpcHookForClusterMode": true,
+    "authorizationEnabled": true,
+    "authorizationProvider": "org.apache.rocketmq.auth.authorization.provider.DefaultAuthorizationProvider",
+    "authorizationMetadataProvider": "org.apache.rocketmq.proxy.auth.ProxyAuthorizationMetadataProvider",
+    "migrateAuthFromV1Enabled": true
+}
