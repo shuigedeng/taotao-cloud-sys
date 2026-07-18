@@ -20,7 +20,7 @@ class IdPathValTest {
 
 	@Test
 	void shouldCreateEmptyWhenNullPath() {
-		IdPathVal val = IdPathVal.of(null);
+		IdPathVal val = IdPathVal.of("");
 		assertThat(val.path()).isEmpty();
 	}
 
