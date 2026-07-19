@@ -192,6 +192,51 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.21
 
+  kafka-4.3.0:
+    image: apache/kafka:4.3.0
+    container_name: kafka-4.3.0
+    restart: no
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      - KAFKA_PROCESS_ROLES=broker,controller
+      - KAFKA_NODE_ID=1
+      - KAFKA_CONTROLLER_QUORUM_VOTERS=1@172.11.0.24:9093
+      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093,PLAINTEXT_HOST://0.0.0.0:9094
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://172.11.0.24:9092,PLAINTEXT_HOST://127.0.0.1:9094
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      - KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+      - KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_NUM_PARTITIONS=1
+      - KAFKA_DEFAULT_REPLICATION_FACTOR=1
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+      - KAFKA_MIN_INSYNC_REPLICAS=1
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.24
+  kafka-ui-0.7.2:
+    image: provectuslabs/kafka-ui:v0.7.2
+    container_name: kafka-ui-0.7.2
+    restart: no
+    ports:
+      - "28080:8080"
+    environment:
+      # 集群名称
+      - KAFKA_CLUSTERS_0_NAME=kafkaCluster
+      # 集群地址
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=172.11.0.24:9092
+      - DYNAMIC_CONFIG_ENABLED=true
+      - AUTH_TYPE=LOGIN_FORM
+      - SPRING_SECURITY_USER_NAME=admin
+      - SPRING_SECURITY_USER_PASSWORD=123456
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.25
+
 ####################################################
 
   #sentinel-dashboard-1.8.9:
@@ -343,50 +388,7 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.23
 
-  kafka-4.3.0:
-    image: apache/kafka:4.3.0
-    container_name: kafka-4.3.0
-    restart: no
-    ports:
-      - "9092:9092"
-      - "9093:9093"
-    environment:
-      - KAFKA_CFG_PROCESS_ROLES=broker,controller
-      - KAFKA_CFG_NODE_ID=1
-      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@172.11.0.24:9093
-      - KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://192.168.218.2:9092
-      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
-      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-      - KAFKA_CFG_NUM_PARTITIONS=1
-      - KAFKA_CFG_DEFAULT_REPLICATION_FACTOR=1
-      - KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=1
-      - KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
-      - KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR=1
-      - KAFKA_CFG_MIN_INSYNC_REPLICAS=1
-      - ALLOW_PLAINTEXT_LISTENER=yes
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.24
-  kafka-ui-0.7.2:
-    image: provectuslabs/kafka-ui:v0.7.2
-    container_name: kafka-ui-0.7.2
-    restart: no
-    ports:
-      - "28080:8080"
-    environment:
-      # 集群名称
-      - KAFKA_CLUSTERS_0_NAME=kafkaCluster
-      # 集群地址
-      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=192.168.218.2:9092
-      - DYNAMIC_CONFIG_ENABLED=true
-      - AUTH_TYPE=LOGIN_FORM
-      - SPRING_SECURITY_USER_NAME=admin
-      - SPRING_SECURITY_USER_PASSWORD=123456
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.25
+
 
   #minio:
   #  image: quay.io/minio/minio:latest
