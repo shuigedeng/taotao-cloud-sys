@@ -66,40 +66,180 @@ public class Server {
      */
     private List<SysFile> sysFiles = new LinkedList<>();
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Cpu
+     *
+     * @return Cpu
+     * @since 2022.03
+     */
+
     public Cpu getCpu() {
 
         return cpu;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Cpu
+     *
+     * @param cpu cpu
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCpu( Cpu cpu) {
 
         this.cpu = cpu;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Mem
+     *
+     * @return Mem
+     * @since 2022.03
+     */
+
     public Mem getMem() {
 
         return mem;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Mem
+     *
+     * @param mem mem
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setMem( Mem mem) {
 
         this.mem = mem;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Jvm
+     *
+     * @return Jvm
+     * @since 2022.03
+     */
+
     public Jvm getJvm() {
 
         return jvm;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Jvm
+     *
+     * @param jvm jvm
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setJvm( Jvm jvm) {
 
         this.jvm = jvm;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Sys
+     *
+     * @return Sys
+     * @since 2022.03
+     */
+
     public Sys getSys() {
 
         return sys;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Sys
+     *
+     * @param sys sys
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSys( Sys sys) {
 
@@ -110,6 +250,24 @@ public class Server {
 
         return sysFiles;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置SysFiles
+     *
+     * @param sysFiles sysFiles
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSysFiles(List<SysFile> sysFiles) {
 

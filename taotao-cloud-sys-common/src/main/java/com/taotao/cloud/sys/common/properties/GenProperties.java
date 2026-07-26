@@ -43,33 +43,173 @@ public class GenProperties {
     /** 表前缀(类名不会包含表前缀) */
     public static String tablePrefix;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Author
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public static String getAuthor() {
         return author;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Author
+     *
+     * @param author author
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setAuthor(String author) {
         GenProperties.author = author;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取PackageName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public static String getPackageName() {
         return packageName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置PackageName
+     *
+     * @param packageName packageName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setPackageName(String packageName) {
         GenProperties.packageName = packageName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取AutoRemovePre
+     *
+     * @return 是否成功
+     * @since 2022.03
+     */
+
     public static boolean getAutoRemovePre() {
         return autoRemovePre;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置AutoRemovePre
+     *
+     * @param autoRemovePre autoRemovePre
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setAutoRemovePre(boolean autoRemovePre) {
         GenProperties.autoRemovePre = autoRemovePre;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取表Prefix
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public static String getTablePrefix() {
         return tablePrefix;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置表Prefix
+     *
+     * @param tablePrefix 表Prefix
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTablePrefix(String tablePrefix) {
         GenProperties.tablePrefix = tablePrefix;

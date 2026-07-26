@@ -5,9 +5,45 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+
+
+
+
+
+
+
+
+
+
+/**
+ * ID集合Val
+ *
+ * @param deptIds 部门IDs
+ * @return 记录
+ * @since 2022.03
+ */
+
 public record IdsVal(List<Long> deptIds) {
 
 	// 静态工厂方法（带校验）
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * of 方法
+	 *
+	 * @param deptIds 部门IDs
+	 * @return ID集合Val
+	 * @since 2022.03
+	 */
+
 	public static IdsVal of( List<Long> deptIds ) {
 		if (deptIds == null || deptIds.isEmpty()) {
 			return new IdsVal(Collections.emptyList());
@@ -24,21 +60,91 @@ public record IdsVal(List<Long> deptIds) {
 	}
 
 	// 空作用域
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * empty 方法
+	 *
+	 * @return ID集合Val
+	 * @since 2022.03
+	 */
+
 	public static IdsVal empty() {
 		return new IdsVal(Collections.emptyList());
 	}
 
 	// 业务方法：是否包含某部门
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * contains 方法
+	 *
+	 * @param deptId 部门ID
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean contains( Long deptId ) {
 		return deptIds.contains(deptId);
 	}
 
 	// 业务方法：是否为空
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 判断Empty
+	 *
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean isEmpty() {
 		return deptIds.isEmpty();
 	}
 
 	// 业务方法：交集（用于权限计算）
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * intersect 方法
+	 *
+	 * @param other other
+	 * @return ID集合Val
+	 * @since 2022.03
+	 */
+
 	public IdsVal intersect( IdsVal other ) {
 		if (this.isEmpty() || other.isEmpty()) {
 			return empty();

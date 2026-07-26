@@ -52,11 +52,46 @@ public class DeptAgg extends AggregateRoot<Long> {
 	@Schema(name = "sort", description = "部门排序")
 	private Integer sort;
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验名称
+	 *
+	 * @param count 数量
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	public void checkName(long count) {
 		if (count > 0) {
 			throw new BusinessException("部门名称已存在，请重新填写");
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验
+	 *
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void checkIdAndPid() {
 		if (id.equals(pid)) {

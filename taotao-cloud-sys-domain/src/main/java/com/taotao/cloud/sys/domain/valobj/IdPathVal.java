@@ -34,6 +34,24 @@ import java.util.List;
 public record IdPathVal(String path) {
 
 	// 静态工厂方法（推荐）
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * of 方法
+	 *
+	 * @param path 路径
+	 * @return IdPathVal
+	 * @since 2022.03
+	 */
+
 	public static IdPathVal of( String path ) {
 		if (path == null || path.trim().isEmpty()) {
 			return new IdPathVal("");
@@ -45,6 +63,24 @@ public record IdPathVal(String path) {
 		return new IdPathVal(path.trim());
 	}
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * of 方法
+	 *
+	 * @param ids ID集合
+	 * @return IdPathVal
+	 * @since 2022.03
+	 */
+
 	public static IdPathVal of( List<Long> ids){
 		return of(StrUtil.join(StrPool.COMMA, ids));
 	}
@@ -54,6 +90,23 @@ public record IdPathVal(String path) {
 	}
 
 	// 业务方法：获取父路径
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 设置父级
+	 *
+	 * @return IdPathVal
+	 * @since 2022.03
+	 */
+
 	public IdPathVal parent() {
 		if (path.isEmpty() || !path.contains(",")) {
 			return new IdPathVal("");
@@ -63,11 +116,46 @@ public record IdPathVal(String path) {
 	}
 
 	// 业务方法：是否为根节点
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 判断Root
+	 *
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean isRoot() {
 		return !path.contains(",");
 	}
 
 	// 业务方法：是否包含某 ID（用于权限判断）
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * contains 方法
+	 *
+	 * @param targetId 目标ID
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean contains( Long targetId ) {
 		if (targetId == null || path.isEmpty()) {
 			return false;
@@ -77,6 +165,23 @@ public record IdPathVal(String path) {
 	}
 
 	// 获取原始字符串（用于持久化）
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 获取值
+	 *
+	 * @return 字符串
+	 * @since 2022.03
+	 */
+
 	public String getValue() {
 		return path;
 	}

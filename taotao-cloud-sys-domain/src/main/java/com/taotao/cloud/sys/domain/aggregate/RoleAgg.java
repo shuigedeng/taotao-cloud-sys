@@ -158,6 +158,23 @@ public class RoleAgg extends AggregateRoot<BizId> {
 		return permissionIds.contains(permissionId);
 	}
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 判断是否启用
+	 *
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean isEnabled() {
 		return EnabledEnum.ENABLED.equals(this.enabled);
 	}

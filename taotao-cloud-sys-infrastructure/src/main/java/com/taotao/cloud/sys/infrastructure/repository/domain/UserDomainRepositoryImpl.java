@@ -93,6 +93,24 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 		return num;
 	}
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 填充角色ID列表
+	 *
+	 * @param userAgg userAgg
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	private void fillRoleIds( UserAgg userAgg ) {
 		List<UserRelationPO> userRelationPo = userRelationMapper.selectByUserId(userAgg.id().id(), UserObjectEnum.ROLE);
 

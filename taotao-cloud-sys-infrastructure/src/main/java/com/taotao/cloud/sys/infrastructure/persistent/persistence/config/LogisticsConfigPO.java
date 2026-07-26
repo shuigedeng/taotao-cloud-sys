@@ -73,57 +73,302 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
             columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
     private String disabled;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取名称
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getName() {
         return name;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置名称
+     *
+     * @param name 名称
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setName(String name) {
         this.name = name;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取编码
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getCode() {
         return code;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置编码
+     *
+     * @param code 编码
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCode(String code) {
         this.code = code;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取ContactName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getContactName() {
         return contactName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置ContactName
+     *
+     * @param contactName contactName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取ContactMobile
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getContactMobile() {
         return contactMobile;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置ContactMobile
+     *
+     * @param contactMobile contactMobile
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setContactMobile(String contactMobile) {
         this.contactMobile = contactMobile;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取StandBy
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getStandBy() {
         return standBy;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置StandBy
+     *
+     * @param standBy standBy
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setStandBy(String standBy) {
         this.standBy = standBy;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取FormItems
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getFormItems() {
         return formItems;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置FormItems
+     *
+     * @param formItems formItems
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFormItems(String formItems) {
         this.formItems = formItems;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Disabled
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getDisabled() {
         return disabled;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Disabled
+     *
+     * @param disabled disabled
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDisabled(String disabled) {
         this.disabled = disabled;

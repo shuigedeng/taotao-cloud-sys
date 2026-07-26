@@ -35,9 +35,44 @@ public class LogStoreTypeProperties {
     // db, mongo
     private String type;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取类型
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getType() {
         return type;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置类型
+     *
+     * @param type 类型
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setType(String type) {
         this.type = type;

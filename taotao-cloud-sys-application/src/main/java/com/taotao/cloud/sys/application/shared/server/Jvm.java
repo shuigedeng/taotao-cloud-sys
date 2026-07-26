@@ -47,40 +47,179 @@ public class Jvm {
     /** JDK路径 */
     private String home;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取总计
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getTotal() {
 
         return total / (1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置总计
+     *
+     * @param total 总计
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTotal(double total) {
 
         this.total = total;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Max
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getMax() {
 
         return max / (1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Max
+     *
+     * @param max max
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setMax(double max) {
 
         this.max = max;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Free
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getFree() {
 
         return free / (1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Free
+     *
+     * @param free free
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFree(double free) {
 
         this.free = free;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Used
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getUsed() {
 
         return (total - free) / (1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Usage
+     *
+     * @return double
+     * @since 2022.03
+     */
 
     public double getUsage() {
 
@@ -93,20 +232,90 @@ public class Jvm {
         return ManagementFactory.getRuntimeMXBean().getVmName();
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取版本
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getVersion() {
 
         return version;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置版本
+     *
+     * @param version 版本
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setVersion(String version) {
 
         this.version = version;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Home
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getHome() {
 
         return home;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Home
+     *
+     * @param home home
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setHome(String home) {
 

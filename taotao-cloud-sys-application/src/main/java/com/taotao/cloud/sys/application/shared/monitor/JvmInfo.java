@@ -60,21 +60,106 @@ public class JvmInfo {
      */
     private String home;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取总计
+     *
+     * @return BigDecimal
+     * @since 2022.03
+     */
+
     public BigDecimal getTotal() {
         return BigDecimal.valueOf(NumberUtil.div(total, CommonConstants.MB, 2));
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Max
+     *
+     * @return BigDecimal
+     * @since 2022.03
+     */
 
     public BigDecimal getMax() {
         return BigDecimal.valueOf(NumberUtil.div(max, CommonConstants.MB, 2));
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Free
+     *
+     * @return BigDecimal
+     * @since 2022.03
+     */
+
     public BigDecimal getFree() {
         return BigDecimal.valueOf(NumberUtil.div(free, CommonConstants.MB, 2));
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Used
+     *
+     * @return BigDecimal
+     * @since 2022.03
+     */
+
     public BigDecimal getUsed() {
         return BigDecimal.valueOf(NumberUtil.div(total - free, CommonConstants.MB, 2));
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Usage
+     *
+     * @return BigDecimal
+     * @since 2022.03
+     */
 
     public BigDecimal getUsage() {
         return BigDecimal.valueOf(NumberUtil.div((total - free) * 100, total, 2));

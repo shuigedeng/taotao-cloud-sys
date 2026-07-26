@@ -78,49 +78,259 @@ public class DictItemPO extends BasePO<DictItemPO> {
     @Column(name = "`sort_num`", columnDefinition = "int not null default 1 comment '排序值'")
     private Integer sortNum;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取字典ID
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Long getDictId() {
         return dictId;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置字典ID
+     *
+     * @param dictId 字典ID
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDictId(Long dictId) {
         this.dictId = dictId;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取项文本
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getItemText() {
         return itemText;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置项文本
+     *
+     * @param itemText 项文本
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setItemText(String itemText) {
         this.itemText = itemText;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取项值
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getItemValue() {
         return itemValue;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置项值
+     *
+     * @param itemValue 项值
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setItemValue(String itemValue) {
         this.itemValue = itemValue;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取描述
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getDescription() {
         return description;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置描述
+     *
+     * @param description 描述
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取状态
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Integer getStatus() {
         return status;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置状态
+     *
+     * @param status 状态
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setStatus(Integer status) {
         this.status = status;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取排序号
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Integer getSortNum() {
         return sortNum;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置排序号
+     *
+     * @param sortNum 排序号
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;

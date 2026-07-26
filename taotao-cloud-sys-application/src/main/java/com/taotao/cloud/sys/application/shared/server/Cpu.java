@@ -40,60 +40,270 @@ public class Cpu {
     /** CPU当前空闲率 */
     private double free;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取CpuNum
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public int getCpuNum() {
 
         return cpuNum;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置CpuNum
+     *
+     * @param cpuNum cpuNum
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCpuNum(int cpuNum) {
 
         this.cpuNum = cpuNum;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取总计
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getTotal() {
 
         return total * 100;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置总计
+     *
+     * @param total 总计
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTotal(double total) {
 
         this.total = total;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Sys
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getSys() {
 
         return sys / total * 100;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Sys
+     *
+     * @param sys sys
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSys(double sys) {
 
         this.sys = sys;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Used
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getUsed() {
 
         return used / total * 100;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Used
+     *
+     * @param used used
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUsed(double used) {
 
         this.used = used;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Wait
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getWait() {
 
         return wait / total * 100;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Wait
+     *
+     * @param wait wait
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setWait(double wait) {
 
         this.wait = wait;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Free
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getFree() {
 
         return free / total * 100;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Free
+     *
+     * @param free free
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFree(double free) {
 

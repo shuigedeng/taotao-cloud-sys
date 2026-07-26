@@ -53,12 +53,64 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 */
 	private List<BizId> roleIds = new ArrayList<>();
 	private Boolean roleIdModified = false;
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 判断角色IDModified
+	 *
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+
 	public boolean isRoleIdModified() {
 		return roleIdModified;
 	}
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * markRoleIdModified 方法
+	 *
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	public final void markRoleIdModified(){
 		this.roleIdModified = true;
 	}
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * ifRoleIdModified 方法
+	 *
+	 * @param consumer consumer
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	public void ifRoleIdModified( Consumer<UserAgg> consumer){
 		if(isRoleIdModified() && consumer != null){
 			consumer.accept(this);
@@ -208,6 +260,24 @@ public class UserAgg extends AggregateRoot<BizId> {
 	public boolean hasRole( BizId roleId ) {
 		return roleIds.contains(roleId);
 	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 设置分配角色
+	 *
+	 * @param roleIds 角色ID列表
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void assignRoles( List<BizId> roleIds ) {
 

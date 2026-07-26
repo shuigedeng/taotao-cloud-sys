@@ -41,6 +41,25 @@ public interface UserRelationMapper extends BaseMapper<UserRelationPO> {
 		return selectList(lambdaQueryWrapper);
 	}
 
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 删除
+	 *
+	 * @param userId 用户ID
+	 * @param userObjectEnum userObjectEnum
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	default int deleteByUserId( Long userId, UserObjectEnum userObjectEnum ){
 		LambdaQueryWrapper<UserRelationPO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.eq(UserRelationPO::getUserId, userId);

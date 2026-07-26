@@ -87,33 +87,173 @@ public class SettingPO extends BasePO<SettingPO> {
         super.setId(id);
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取名称
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getName() {
         return name;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置名称
+     *
+     * @param name 名称
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setName(String name) {
         this.name = name;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取分类
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getCategory() {
         return category;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置分类
+     *
+     * @param category 分类
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCategory(String category) {
         this.category = category;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取EnCode
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getEnCode() {
         return enCode;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置EnCode
+     *
+     * @param enCode enCode
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setEnCode(String enCode) {
         this.enCode = enCode;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取值
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getValue() {
         return value;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置值
+     *
+     * @param value 值
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setValue(String value) {
         this.value = value;

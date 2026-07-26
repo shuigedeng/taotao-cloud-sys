@@ -32,35 +32,157 @@ public class Mem {
     /** 剩余内存 */
     private double free;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取总计
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getTotal() {
 
         return total / (1024 * 1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置总计
+     *
+     * @param total 总计
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTotal(long total) {
 
         this.total = total;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Used
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getUsed() {
 
         return used / (1024 * 1024 * 1024);
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Used
+     *
+     * @param used used
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUsed(long used) {
 
         this.used = used;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Free
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getFree() {
 
         return free / (1024 * 1024 * 1024);
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Free
+     *
+     * @param free free
+     * @return 无返回值
+     * @since 2022.03
+     */
+
     public void setFree(long free) {
 
         this.free = free;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Usage
+     *
+     * @return double
+     * @since 2022.03
+     */
 
     public double getUsage() {
 

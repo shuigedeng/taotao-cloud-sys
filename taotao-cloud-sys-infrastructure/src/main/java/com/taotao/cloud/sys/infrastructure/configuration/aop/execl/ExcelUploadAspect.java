@@ -64,9 +64,44 @@ public class ExcelUploadAspect {
                     new ThreadPoolExecutor.AbortPolicy());
 
     @Pointcut("@annotation(com.taotao.cloud.sys.biz.config.aop.execl.ExcelUpload)")
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 上传
+     *
+     * @return 无返回值
+     * @since 2022.03
+     */
+
     public void uploadPoint() {}
 
     @Around(value = "uploadPoint()")
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 上传
+     *
+     * @param pjp pjp
+     * @return Object
+     * @since 2022.03
+     */
+
     public Object uploadControl(ProceedingJoinPoint pjp) {
         // 获取方法上的注解，进而获取uploadType
         MethodSignature signature = (MethodSignature) pjp.getSignature();
@@ -98,6 +133,25 @@ public class ExcelUploadAspect {
                 });
         return new Object();
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * fail 方法
+     *
+     * @param message 消息
+     * @param batchNo batchNo
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     private void fail(String message, String batchNo) {
         // 生成上传错误日志文件的文件key

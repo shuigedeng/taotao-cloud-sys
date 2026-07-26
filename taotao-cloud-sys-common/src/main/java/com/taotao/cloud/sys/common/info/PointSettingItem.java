@@ -33,12 +33,47 @@ public class PointSettingItem implements Comparable<PointSettingItem>, Serializa
     /** 赠送积分 */
     private Integer point;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Point
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Integer getPoint() {
         if (point == null || point < 0) {
             return 0;
         }
         return point;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Point
+     *
+     * @param point point
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setPoint(Integer point) {
         this.point = point;

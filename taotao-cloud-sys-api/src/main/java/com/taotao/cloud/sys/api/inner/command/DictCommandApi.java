@@ -33,7 +33,8 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
 import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 /**
- * 远程调用后台用户模块
+ * 字典命令 API
+ * <p>提供字典相关的命令操作接口（远程调用）</p>
  *
  * @author shuigedeng
  * @since 2020/5/2 16:42

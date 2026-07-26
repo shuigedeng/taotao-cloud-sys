@@ -71,6 +71,23 @@ public class ServerInfo {
      */
     private List<DiskInfo> diskInfos = new LinkedList<>();
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 填充信息
+     *
+     * @return ServerInfo
+     * @since 2022.03
+     */
+
     public static ServerInfo fillInfo() {
         ServerInfo serverInfo = new ServerInfo();
 

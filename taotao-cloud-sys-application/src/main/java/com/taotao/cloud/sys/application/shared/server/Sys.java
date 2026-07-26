@@ -38,50 +38,225 @@ public class Sys {
     /** 系统架构 */
     private String osArch;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取ComputerName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getComputerName() {
 
         return computerName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置ComputerName
+     *
+     * @param computerName computerName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setComputerName(String computerName) {
 
         this.computerName = computerName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取ComputerIp
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getComputerIp() {
 
         return computerIp;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置ComputerIp
+     *
+     * @param computerIp computerIp
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setComputerIp(String computerIp) {
 
         this.computerIp = computerIp;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取UserDir
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getUserDir() {
 
         return userDir;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置UserDir
+     *
+     * @param userDir userDir
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUserDir(String userDir) {
 
         this.userDir = userDir;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取OsName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getOsName() {
 
         return osName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置OsName
+     *
+     * @param osName osName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setOsName(String osName) {
 
         this.osName = osName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取OsArch
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getOsArch() {
 
         return osArch;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置OsArch
+     *
+     * @param osArch osArch
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setOsArch(String osArch) {
 

@@ -76,33 +76,173 @@ public class RolePO extends BasePO<RolePO> {
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取名称
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getName() {
         return name;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置名称
+     *
+     * @param name 名称
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setName(String name) {
         this.name = name;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取编码
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getCode() {
         return code;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置编码
+     *
+     * @param code 编码
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setCode(String code) {
         this.code = code;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取备注
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getRemark() {
         return remark;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置备注
+     *
+     * @param remark 备注
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setRemark(String remark) {
         this.remark = remark;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取租户ID
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getTenantId() {
         return tenantId;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置租户ID
+     *
+     * @param tenantId 租户ID
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;

@@ -26,7 +26,8 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
- * DeptAgg
+ * 岗位聚合根
+ * <p>封装岗位相关的业务规则和一致性边界</p>
  *
  * @author shuigedeng
  * @version 2026.04
@@ -37,26 +38,58 @@ import lombok.experimental.Accessors;
 @Getter
 @ToString
 
-@Schema(name = "Dept", description = "部门")
+@Schema(name = "Position", description = "岗位聚合根")
 public class PositionAgg extends AggregateRoot<Long> {
 
-	@Schema(name = "name", description = "部门名称")
+	@Schema(name = "name", description = "岗位名称")
 	private String name;
 
-	@Schema(name = "pid", description = "部门父节点ID")
-	private Long pid;
+	@Schema(name = "deptId", description = "所属部门ID")
+	private Long deptId;
 
-	@Schema(name = "path", description = "部门节点")
-	private String path;
+	@Schema(name = "remark", description = "岗位备注")
+	private String remark;
 
-	@Schema(name = "sort", description = "部门排序")
-	private Integer sort;
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验名称
+	 *
+	 * @param count 数量
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void checkName(long count) {
 		if (count > 0) {
 			throw new BusinessException("部门名称已存在，请重新填写");
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验
+	 *
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void checkIdAndPid() {
 		if (id.equals(pid)) {

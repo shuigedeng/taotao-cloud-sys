@@ -99,81 +99,431 @@ public class FileLogPO extends BasePO<FileLogPO> {
     @Column(name = "`size`", columnDefinition = "bigint not null comment '大小'")
     private Long size;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取BizId
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Long getBizId() {
         return bizId;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置BizId
+     *
+     * @param bizId bizId
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setBizId(Long bizId) {
         this.bizId = bizId;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取BizType
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getBizType() {
         return bizType;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置BizType
+     *
+     * @param bizType bizType
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setBizType(String bizType) {
         this.bizType = bizType;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取数据类型
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getDataType() {
         return dataType;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置数据类型
+     *
+     * @param dataType 数据类型
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取OriginalFileName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getOriginalFileName() {
         return originalFileName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置OriginalFileName
+     *
+     * @param originalFileName originalFileName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setOriginalFileName(String originalFileName) {
         this.originalFileName = originalFileName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取URL
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getUrl() {
         return url;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置URL
+     *
+     * @param url URL
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUrl(String url) {
         this.url = url;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取文件md5
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getFileMd5() {
         return fileMd5;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置文件md5
+     *
+     * @param fileMd5 文件md5
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFileMd5(String fileMd5) {
         this.fileMd5 = fileMd5;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取ContextType
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getContextType() {
         return contextType;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置ContextType
+     *
+     * @param contextType contextType
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setContextType(String contextType) {
         this.contextType = contextType;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取文件名称
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getFilename() {
         return filename;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置文件名称
+     *
+     * @param filename 文件名称
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFilename(String filename) {
         this.filename = filename;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Ext
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getExt() {
         return ext;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Ext
+     *
+     * @param ext ext
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setExt(String ext) {
         this.ext = ext;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取尺寸
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Long getSize() {
         return size;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置尺寸
+     *
+     * @param size 尺寸
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSize(Long size) {
         this.size = size;

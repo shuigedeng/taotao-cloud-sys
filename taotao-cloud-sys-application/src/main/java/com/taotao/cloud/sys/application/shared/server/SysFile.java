@@ -44,70 +44,315 @@ public class SysFile {
     /** 资源的使用率 */
     private double usage;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取DirName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getDirName() {
 
         return dirName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置DirName
+     *
+     * @param dirName dirName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setDirName(String dirName) {
 
         this.dirName = dirName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取SysTypeName
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getSysTypeName() {
 
         return sysTypeName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置SysTypeName
+     *
+     * @param sysTypeName sysTypeName
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSysTypeName(String sysTypeName) {
 
         this.sysTypeName = sysTypeName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取类型名称
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getTypeName() {
 
         return typeName;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置类型名称
+     *
+     * @param typeName 类型名称
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTypeName(String typeName) {
 
         this.typeName = typeName;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取总计
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getTotal() {
 
         return total;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置总计
+     *
+     * @param total 总计
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setTotal(String total) {
 
         this.total = total;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Free
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getFree() {
 
         return free;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Free
+     *
+     * @param free free
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setFree(String free) {
 
         this.free = free;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Used
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getUsed() {
 
         return used;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Used
+     *
+     * @param used used
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUsed(String used) {
 
         this.used = used;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取Usage
+     *
+     * @return double
+     * @since 2022.03
+     */
+
     public double getUsage() {
 
         return usage;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置Usage
+     *
+     * @param usage usage
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setUsage(double usage) {
 

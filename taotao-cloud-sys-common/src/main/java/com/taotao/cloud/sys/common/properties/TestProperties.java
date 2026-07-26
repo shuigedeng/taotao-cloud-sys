@@ -34,9 +34,44 @@ public class TestProperties {
      */
     private Integer signInFailureLimited = 0;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取SignInFailureLimited
+     *
+     * @return 结果数量
+     * @since 2022.03
+     */
+
     public Integer getSignInFailureLimited() {
         return signInFailureLimited;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 设置SignInFailureLimited
+     *
+     * @param signInFailureLimited signInFailureLimited
+     * @return 无返回值
+     * @since 2022.03
+     */
 
     public void setSignInFailureLimited(Integer signInFailureLimited) {
         this.signInFailureLimited = signInFailureLimited;

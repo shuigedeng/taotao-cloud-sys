@@ -27,6 +27,24 @@ public enum AuthUserGender {
     private String code;
     private String desc;
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取RealGender
+     *
+     * @param originalGender originalGender
+     * @return AuthUserGender
+     * @since 2022.03
+     */
+
     public static AuthUserGender getRealGender(String originalGender) {
         if (null != originalGender && !UNKNOWN.getCode().equals(originalGender)) {
             String[] males = new String[] {"m", "男", "1", "male"};
@@ -36,15 +54,67 @@ public enum AuthUserGender {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取WechatRealGender
+     *
+     * @param originalGender originalGender
+     * @return AuthUserGender
+     * @since 2022.03
+     */
+
     public static AuthUserGender getWechatRealGender(String originalGender) {
         return !StringUtils.isEmpty(originalGender) && !"0".equals(originalGender)
                 ? getRealGender(originalGender)
                 : UNKNOWN;
     }
 
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取编码
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
+
     public String getCode() {
         return this.code;
     }
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 获取描述
+     *
+     * @return 字符串
+     * @since 2022.03
+     */
 
     public String getDesc() {
         return this.desc;

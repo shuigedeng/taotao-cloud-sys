@@ -25,7 +25,8 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
- * DeptEntity
+ * 字典项实体
+ * <p>字典的子项，包含字典编码对应的具体文本值</p>
  *
  * @author shuigedeng
  * @version 2026.04
@@ -35,7 +36,7 @@ import lombok.experimental.Accessors;
 @Getter
 @ToString
 
-@Schema(name = "Dept", description = "部门")
+@Schema(name = "DictItem", description = "字典项实体")
 public class DictItem implements Entity {
 	private String dictCode;
 

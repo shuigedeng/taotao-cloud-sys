@@ -33,5 +33,23 @@ import org.springframework.web.service.annotation.PostExchange;
 public interface QuartzJobQueryApi {
 
     @PostExchange("/job/addQuartzJobDTOTestSeata")
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 添加
+     *
+     * @param quartzJobDTO quartzJobDTO
+     * @return 是否成功
+     * @since 2022.03
+     */
+
     public Boolean addQuartzJobDTOTestSeata(@Validated @RequestBody Long quartzJobDTO);
 }

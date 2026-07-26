@@ -20,7 +20,7 @@ import com.taotao.boot.data.mybatis.mybatisplus.base.mapper.BaseMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.system.PositionPO;
 
 /**
- * IJobMapper
+ * 岗位 Mapper
  *
  * @author shuigedeng
  * @version 2022.03

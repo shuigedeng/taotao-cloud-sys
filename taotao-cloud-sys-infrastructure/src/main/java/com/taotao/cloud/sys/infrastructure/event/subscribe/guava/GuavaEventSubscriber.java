@@ -7,6 +7,24 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class GuavaEventSubscriber {
 	@Subscribe
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * onMessage 方法
+	 *
+	 * @param message 消息
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
+
 	public void onMessage( EventModel<?> message) {
 		LogUtils.info("收到消息：{}", message);
 	}

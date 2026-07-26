@@ -26,7 +26,8 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
- * DeptAgg
+ * 文件日志聚合根
+ * <p>封装文件操作日志相关的业务规则和一致性边界</p>
  *
  * @author shuigedeng
  * @version 2026.04
@@ -37,26 +38,58 @@ import lombok.experimental.Accessors;
 @Getter
 @ToString
 
-@Schema(name = "Dept", description = "部门")
+@Schema(name = "FileLog", description = "文件日志聚合根")
 public class FileLogAgg extends AggregateRoot<Long> {
 
-	@Schema(name = "name", description = "部门名称")
+	@Schema(name = "name", description = "日志名称")
 	private String name;
 
-	@Schema(name = "pid", description = "部门父节点ID")
-	private Long pid;
+	@Schema(name = "fileId", description = "文件ID")
+	private Long fileId;
 
-	@Schema(name = "path", description = "部门节点")
-	private String path;
+	@Schema(name = "action", description = "操作类型")
+	private String action;
 
-	@Schema(name = "sort", description = "部门排序")
-	private Integer sort;
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验名称
+	 *
+	 * @param count 数量
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void checkName(long count) {
 		if (count > 0) {
 			throw new BusinessException("部门名称已存在，请重新填写");
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * 校验
+	 *
+	 * @return 无返回值
+	 * @since 2022.03
+	 */
 
 	public void checkIdAndPid() {
 		if (id.equals(pid)) {
