@@ -55,6 +55,51 @@ services:
       retries: 30
       start_period: 120s
       
+  flink-jobmanager-2.3.0:
+    image: apache/flink:2.3.0-scala_2.12-java21
+    container_name: flink-jobmanager-2.3.0
+    hostname: flink-jobmanager-2.3.0
+    restart: no
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: 172.11.0.82
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.82
+  flink-taskmanager-2.3.0:
+    image: apache/flink:2.3.0-scala_2.12-java21
+    container_name: flink-taskmanager-2.3.0
+    hostname: flink-taskmanager-2.3.0
+    restart: no
+    depends_on:
+      - flink-jobmanager-2.3.0
+    command: taskmanager
+    scale: 1
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: 172.11.0.82
+        taskmanager.numberOfTaskSlots: 2
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.83
+  flink-sql-client-2.3.0:
+    image: apache/flink:2.3.0-scala_2.12-java21
+    depends_on:
+      - flink-jobmanager-2.3.0
+    command: bin/sql-client.sh
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: 172.11.0.82
+        rest.address: 172.11.0.82
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.84
 
 
 networks:
