@@ -32,7 +32,14 @@ import jakarta.validation.constraints.NotNull;
  */
 @RecordBuilder
 public record DictItemPageQuery(
-	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = Groups.Update.class) PageQuery page,
-	Long dictId, String itemText, String itemValue, String description, Integer status) implements Query {
+	@Schema(description = "分页")
+	@NotNull(message = "分页参数不能为空!", groups = Groups.Update.class)
+	PageQuery page,
+
+	Long dictId,
+ String itemText,
+ String itemValue,
+ String description,
+ Integer status) implements Query {
 
 }

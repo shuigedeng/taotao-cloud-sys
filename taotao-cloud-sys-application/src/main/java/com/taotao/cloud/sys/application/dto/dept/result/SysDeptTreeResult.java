@@ -29,19 +29,34 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(description = "部门树VO")
-public record SysDeptTreeResult(@Schema(description = "对应SysDepart中的id字段,前端数据树中的key") Integer key,
-								@Schema(description = "对应SysDepart中的id字段;前端数据树中的value") String value,
-								@Schema(description = "对应depart_name字段;前端数据树中的title") String title,
-								@Schema(description = "部门主键ID") Long deptId,
-								@Schema(description = "部门名称") String name,
-								@Schema(description = "上级部门") Long parentId,
-								@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark,
-								@Schema(description = "创建时间") LocalDateTime createTime,
-								@Schema(description = "修改时间") LocalDateTime updateTime,
-								@Schema(description = "是否删除  -1：已删除  0：正常") Boolean delFlag,
-								@Schema(description = "上级部门") String parentName,
-								@Schema(description = "等级") Integer level,
-								@Schema(description = "children") List<SysDeptTreeResult> children) implements
+public record SysDeptTreeResult(	@Schema(description = "对应SysDepart中的id字段,前端数据树中的key")
+	Integer key,
+	@Schema(description = "对应SysDepart中的id字段;前端数据树中的value")
+	String value,
+	@Schema(description = "对应depart_name字段;前端数据树中的title")
+	String title,
+	@Schema(description = "部门主键ID")
+	Long deptId,
+	@Schema(description = "部门名称")
+	String name,
+	@Schema(description = "上级部门")
+	Long parentId,
+	@Schema(description = "排序")
+	Integer sort,
+	@Schema(description = "备注")
+	String remark,
+	@Schema(description = "创建时间")
+	LocalDateTime createTime,
+	@Schema(description = "修改时间")
+	LocalDateTime updateTime,
+	@Schema(description = "是否删除  -1：已删除  0：正常")
+	Boolean delFlag,
+	@Schema(description = "上级部门")
+	String parentName,
+	@Schema(description = "等级")
+	Integer level,
+	@Schema(description = "children")
+	List<SysDeptTreeResult> children) implements
 	MarkerResult {
 
 	@Serial

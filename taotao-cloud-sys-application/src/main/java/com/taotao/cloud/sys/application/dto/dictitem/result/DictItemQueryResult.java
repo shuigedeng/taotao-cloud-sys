@@ -31,13 +31,22 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "字典项查询对象")
-public record DictItemQueryResult(@Schema(description = "id") Long id, @Schema(description = "字典id") Long dictId,
-								  @Schema(description = "字典项文本") String itemText,
-								  @Schema(description = "字典项值") String itemValue,
-								  @Schema(description = "描述") String description,
-								  @Schema(description = "状态(1不启用 2启用)") Integer status,
-								  @Schema(description = "创建时间") LocalDateTime createTime,
-								  @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime) implements
+public record DictItemQueryResult(	@Schema(description = "id")
+	Long id,
+	@Schema(description = "字典id")
+	Long dictId,
+	@Schema(description = "字典项文本")
+	String itemText,
+	@Schema(description = "字典项值")
+	String itemValue,
+	@Schema(description = "描述")
+	String description,
+	@Schema(description = "状态(1不启用 2启用)")
+	Integer status,
+	@Schema(description = "创建时间")
+	LocalDateTime createTime,
+	@Schema(description = "最后修改时间")
+	LocalDateTime lastModifiedTime) implements
 	MarkerResult {
 
 	@Serial

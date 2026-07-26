@@ -29,16 +29,27 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "登录日志")
-public record CreateLoginLogCommand(@Schema(description = "用户账号id") Long userId,
-                                    @Schema(description = "用户名称") String account,
-                                    @Schema(description = "登录成功状态") Boolean login,
-                                    @Schema(description = "登录终端") String client,
-                                    @Schema(description = "登录方式") String loginType,
-                                    @Schema(description = "登录IP地址") String ip,
-                                    @Schema(description = "登录地点") String loginLocation,
-                                    @Schema(description = "浏览器类型") String browser,
-                                    @Schema(description = "操作系统") String os,
-                                    @Schema(description = "提示消息") String msg,
-                                    @Schema(description = "访问时间") LocalDateTime loginTime) implements Command {
+public record CreateLoginLogCommand(	@Schema(description = "用户账号id")
+	Long userId,
+	@Schema(description = "用户名称")
+	String account,
+	@Schema(description = "登录成功状态")
+	Boolean login,
+	@Schema(description = "登录终端")
+	String client,
+	@Schema(description = "登录方式")
+	String loginType,
+	@Schema(description = "登录IP地址")
+	String ip,
+	@Schema(description = "登录地点")
+	String loginLocation,
+	@Schema(description = "浏览器类型")
+	String browser,
+	@Schema(description = "操作系统")
+	String os,
+	@Schema(description = "提示消息")
+	String msg,
+	@Schema(description = "访问时间")
+	LocalDateTime loginTime) implements Command {
 
 }

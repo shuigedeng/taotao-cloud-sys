@@ -30,10 +30,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 @RecordBuilder
 @Schema(title = "国际化信息传输对象")
-public record UpdateI18nDataCommand(@Schema(title = "语言标签") String languageTag,
-                                    @Schema(title = "唯一标识 = 业务:关键词") String code,
-                                    @Schema(title = "文本值，可以使用 { } 加角标，作为占位符") String message,
-                                    @Schema(title = "备注") String remarks) implements Command {
+public record UpdateI18nDataCommand(	@Schema(title = "语言标签")
+	String languageTag,
+	@Schema(title = "唯一标识 = 业务:关键词")
+	String code,
+	@Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
+	String message,
+	@Schema(title = "备注")
+	String remarks) implements Command {
 
 	private static final long serialVersionUID = 1L;
 

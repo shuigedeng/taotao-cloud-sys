@@ -33,8 +33,10 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "公司查询VO")
-public record DeptRpcResponse(@Schema(description = "id") Long id,
-							  @Schema(description = "字典名称") String dictName)
+public record DeptRpcResponse(	@Schema(description = "id")
+	Long id,
+	@Schema(description = "字典名称")
+	String dictName)
 	implements MarkerResponse {
 
 	@Serial

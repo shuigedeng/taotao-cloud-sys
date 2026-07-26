@@ -29,11 +29,16 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "部门查询对象")
-public record DeptQueryResult(@Schema(description = "部门id") Long deptId,
-							  @Schema(description = "部门名称") String name,
-							  @Schema(description = "上级部门id") Long parentId,
-							  @Schema(description = "排序") Integer sort,
-							  @Schema(description = "备注") String remark) implements MarkerResult {
+public record DeptQueryResult(	@Schema(description = "部门id")
+	Long deptId,
+	@Schema(description = "部门名称")
+	String name,
+	@Schema(description = "上级部门id")
+	Long parentId,
+	@Schema(description = "排序")
+	Integer sort,
+	@Schema(description = "备注")
+	String remark) implements MarkerResult {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

@@ -30,12 +30,20 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(description = "菜单VO")
-public record MenuResult(@Schema(description = "菜单名称") String name, @Schema(description = "菜单路径") String path,
-						 @Schema(description = "菜单redirect") String redirect,
-						 @Schema(description = "菜单组件名称") String component,
-						 @Schema(description = "菜单alwaysShow") Boolean alwaysShow,
-						 @Schema(description = "菜单meta") MenuMetaResult meta,
-						 @Schema(description = "菜单children") List<MenuResult> children) implements MarkerResult {
+public record MenuResult(	@Schema(description = "菜单名称")
+	String name,
+	@Schema(description = "菜单路径")
+	String path,
+	@Schema(description = "菜单redirect")
+	String redirect,
+	@Schema(description = "菜单组件名称")
+	String component,
+	@Schema(description = "菜单alwaysShow")
+	Boolean alwaysShow,
+	@Schema(description = "菜单meta")
+	MenuMetaResult meta,
+	@Schema(description = "菜单children")
+	List<MenuResult> children) implements MarkerResult {
 
 	@Serial
 	private static final long serialVersionUID = -5853343562172855421L;

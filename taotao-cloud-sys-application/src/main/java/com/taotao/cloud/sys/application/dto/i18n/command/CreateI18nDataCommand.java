@@ -36,9 +36,16 @@ import java.util.List;
 @RecordBuilder
 @Schema(title = "国际化信息传输对象")
 public record CreateI18nDataCommand(
-	@Schema(title = "唯一标识 = 业务:关键词") @NotEmpty(message = "{i18nMessage.code}：{}") String code,
-	@Schema(title = "语言文本列表") @Valid @NotNull(message = "{i18nData.languageTexts}: {}") @Size(min = 1, message = "{i18nData.languageTexts}: {}") List<LanguageText> languageTexts,
-	@Schema(title = "备注") String remarks) implements Command {
+	@Schema(title = "唯一标识 = 业务:关键词")
+	@NotEmpty(message = "{i18nMessage.code}：{}")
+	String code,
+	@Schema(title = "语言文本列表")
+	@Valid
+	@NotNull(message = "{i18nData.languageTexts}: {}")
+	@Size(min = 1, message = "{i18nData.languageTexts}: {}")
+	List<LanguageText> languageTexts,
+	@Schema(title = "备注")
+	String remarks) implements Command {
 
 	private static final long serialVersionUID = 1L;
 
@@ -50,8 +57,12 @@ public record CreateI18nDataCommand(
 	 */
 	@Schema(title = "语言文本信息")
 	public record LanguageText(
-		@Schema(title = "语言标签") @NotEmpty(message = "{i18nMessage.languageTag}：{}") String languageTag,
-		@Schema(title = "文本值，可以使用 { } 加角标，作为占位符") @NotEmpty(message = "{i18nMessage.message}：{}") String message) {
+		@Schema(title = "语言标签")
+		@NotEmpty(message = "{i18nMessage.languageTag}：{}")
+		String languageTag,
+		@Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
+		@NotEmpty(message = "{i18nMessage.message}：{}")
+		String message) {
 
 	}
 }

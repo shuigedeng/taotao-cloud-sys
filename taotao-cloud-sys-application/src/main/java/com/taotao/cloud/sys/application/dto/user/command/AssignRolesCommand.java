@@ -38,8 +38,12 @@ import java.util.stream.Collectors;
 @RecordBuilder
 @Schema(description = "为管理员分配角色命令")
 public record AssignRolesCommand(
-	@Schema(description = "用户id") @NotNull(message = "用户id不能为空") Long userId,
-	@Schema(description = "角色id列表") @NotEmpty(message = "角色id列表不能为空") List<Long> roleIds)
+	@Schema(description = "用户id")
+	@NotNull(message = "用户id不能为空")
+	Long userId,
+	@Schema(description = "角色id列表")
+	@NotEmpty(message = "角色id列表不能为空")
+	List<Long> roleIds)
 	implements Command {
 
 	@Serial

@@ -31,9 +31,14 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(description = "查询应用列表数据VO")
-public record RegionParentResult(@Schema(description = "主键ID") Long id, @Schema(description = "名称") String label,
-								 @Schema(description = "应用名称") String value,
-								 @Schema(description = "子数据") List<RegionParentResult> children) implements
+public record RegionParentResult(	@Schema(description = "主键ID")
+	Long id,
+	@Schema(description = "名称")
+	String label,
+	@Schema(description = "应用名称")
+	String value,
+	@Schema(description = "子数据")
+	List<RegionParentResult> children) implements
 	MarkerResult {
 
 	@Serial

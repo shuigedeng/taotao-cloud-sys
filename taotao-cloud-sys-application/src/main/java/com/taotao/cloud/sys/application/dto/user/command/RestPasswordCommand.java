@@ -35,9 +35,17 @@ import org.hibernate.validator.constraints.Length;
 @RecordBuilder
 @Schema(description = "用户重置密码DTO")
 public record RestPasswordCommand(
-	@Schema(description = "手机号") @NotBlank(message = "手机号不能为空") @Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确") String phone,
-	@Schema(description = "原密码") @NotBlank(message = "原密码不能为空") String oldPassword,
-	@Schema(description = "新密码") @NotBlank(message = "新密码不能为空") @Length(min = 6, max = 128, message = "密码长度不能小于6位") String newPassword) implements
+	@Schema(description = "手机号")
+	@NotBlank(message = "手机号不能为空")
+	@Pattern(regexp = "^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$", message = "手机号码不正确")
+	String phone,
+	@Schema(description = "原密码")
+	@NotBlank(message = "原密码不能为空")
+	String oldPassword,
+	@Schema(description = "新密码")
+	@NotBlank(message = "新密码不能为空")
+	@Length(min = 6, max = 128, message = "密码长度不能小于6位")
+	String newPassword) implements
 	Command {
 
 	@Serial

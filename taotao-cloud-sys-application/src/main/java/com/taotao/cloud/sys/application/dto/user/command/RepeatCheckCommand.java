@@ -30,8 +30,10 @@ import java.io.Serial;
 @RecordBuilder
 @Schema(description = "重复检查DTO")
 public record RepeatCheckCommand(
-	@Schema(description = "字段值 邮箱 手机号 用户名") String fieldVal,
-	@Schema(description = "指用户id 主要作用编辑情况过滤自己的校验") Integer dataId) implements
+	@Schema(description = "字段值 邮箱 手机号 用户名")
+	String fieldVal,
+	@Schema(description = "指用户id 主要作用编辑情况过滤自己的校验")
+	Integer dataId) implements
 	Command {
 
 	@Serial

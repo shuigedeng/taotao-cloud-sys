@@ -37,9 +37,17 @@ import org.hibernate.validator.constraints.Length;
 @RecordBuilder
 @Schema(description = "角色查询对象")
 public record RoleQuery(
-	@Schema(description = "角色名称") @NotBlank(message = "角色名称不能超过为空") @Length(max = 20, message = "角色名称不能超过20个字符") String name,
-	@Schema(description = "角色标识") @NotBlank(message = "角色标识不能超过为空") @Length(max = 20, message = "角色标识不能超过20个字符") @Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线") String code,
-	@Schema(description = "备注") String remark) implements Query {
+	@Schema(description = "角色名称")
+	@NotBlank(message = "角色名称不能超过为空")
+	@Length(max = 20, message = "角色名称不能超过20个字符")
+	String name,
+	@Schema(description = "角色标识")
+	@NotBlank(message = "角色标识不能超过为空")
+	@Length(max = 20, message = "角色标识不能超过20个字符")
+	@Pattern(regexp = "^[0-9a-zA-Z_]+$", message = "角色标识格式错误：最多20字符，只能包含字母或者下划线")
+	String code,
+	@Schema(description = "备注")
+	String remark) implements Query {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

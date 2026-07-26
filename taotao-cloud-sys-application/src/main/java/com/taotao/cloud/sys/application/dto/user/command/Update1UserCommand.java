@@ -30,13 +30,20 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "用户查询对象")
-public record Update1UserCommand(@Schema(description = "用户昵称") String nickname,
-                                 @Schema(description = "用户真实姓名") String username,
-                                 @Schema(description = "电话") String phone,
-                                 @Schema(description = "email") String email,
-                                 @Schema(description = "性别 1男 2女 0未知") Integer sex,
-                                 @Schema(description = "部门id") Long deptId,
-                                 @Schema(description = "岗位id") Long jobId) implements Command {
+public record Update1UserCommand(	@Schema(description = "用户昵称")
+	String nickname,
+	@Schema(description = "用户真实姓名")
+	String username,
+	@Schema(description = "电话")
+	String phone,
+	@Schema(description = "email")
+	String email,
+	@Schema(description = "性别 1男 2女 0未知")
+	Integer sex,
+	@Schema(description = "部门id")
+	Long deptId,
+	@Schema(description = "岗位id")
+	Long jobId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

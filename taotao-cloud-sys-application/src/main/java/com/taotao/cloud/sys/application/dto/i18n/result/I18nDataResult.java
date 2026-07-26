@@ -26,9 +26,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 @RecordBuilder
 @Schema(title = "国际化信息查询对象")
-public record I18nDataResult(@Parameter(description = "国际化标识") String code,
-							 @Parameter(description = "文本信息") String message,
-							 @Parameter(description = "语言标签") String languageTag) implements MarkerResult {
+public record I18nDataResult(	@Parameter(description = "国际化标识")
+	String code,
+	@Parameter(description = "文本信息")
+	String message,
+	@Parameter(description = "语言标签")
+	String languageTag) implements MarkerResult {
 
 	private static final long serialVersionUID = 1L;
 

@@ -30,11 +30,16 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "岗位更新对象")
-public record UpdatePositionCommand(@Schema(description = "岗位名称") String name,
-                                    @Schema(description = "部门id") Long deptId,
-                                    @Schema(description = "备注") String remark,
-                                    @Schema(description = "排序值") Integer sortNum,
-                                    @Schema(description = "租户id") String tenantId) implements Command {
+public record UpdatePositionCommand(	@Schema(description = "岗位名称")
+	String name,
+	@Schema(description = "部门id")
+	Long deptId,
+	@Schema(description = "备注")
+	String remark,
+	@Schema(description = "排序值")
+	Integer sortNum,
+	@Schema(description = "租户id")
+	String tenantId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

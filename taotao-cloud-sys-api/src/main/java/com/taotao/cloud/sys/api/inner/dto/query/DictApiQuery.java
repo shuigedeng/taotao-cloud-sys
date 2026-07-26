@@ -31,7 +31,10 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "公司查询对象")
-public record DictApiQuery(@Schema(description = "租户id") String code, @Schema(description = "租户密钥") Long id) implements
+public record DictApiQuery(	@Schema(description = "租户id")
+	String code,
+	@Schema(description = "租户密钥")
+	Long id) implements
 	Query {
 
 	@Serial

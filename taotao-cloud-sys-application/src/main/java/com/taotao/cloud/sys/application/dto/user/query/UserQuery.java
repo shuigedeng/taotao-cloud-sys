@@ -30,13 +30,22 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "用户查询对象")
-public record UserQuery(@Schema(description = "用户昵称") String nickname,
-						@Schema(description = "用户真实姓名") String username,
-						@Schema(description = "电话") String phone, @Schema(description = "email") String email,
-						@Schema(description = "用户类型 1前端用户 2商户用户 3后台管理用户") Integer type,
-						@Schema(description = "性别 1男 2女 0未知") Integer sex,
-						@Schema(description = "部门id") Long deptId,
-						@Schema(description = "岗位id") Long jobId) implements Query {
+public record UserQuery(	@Schema(description = "用户昵称")
+	String nickname,
+	@Schema(description = "用户真实姓名")
+	String username,
+	@Schema(description = "电话")
+	String phone,
+	@Schema(description = "email")
+	String email,
+	@Schema(description = "用户类型 1前端用户 2商户用户 3后台管理用户")
+	Integer type,
+	@Schema(description = "性别 1男 2女 0未知")
+	Integer sex,
+	@Schema(description = "部门id")
+	Long deptId,
+	@Schema(description = "岗位id")
+	Long jobId) implements Query {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

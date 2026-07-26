@@ -33,10 +33,20 @@ import java.io.Serial;
 @RecordBuilder
 @Schema(description = "字典更新对象")
 public record UpdateDictCommand(
-	@Schema(description = "字典名称") @NotBlank(message = "字典名称不能为空") @Size(max = 10, message = "字典名称不能超过10个字符") String dictName,
-	@Schema(description = "字典编码") @NotBlank(message = "字典编码不能为空") @Size(max = 10, message = "字典编码不能超过10个字符") String dictCode,
-	@Schema(description = "描述") String description, @Schema(description = "排序值") Integer dictSort,
-	@Schema(description = "备注信息") String remark) implements Command {
+	@Schema(description = "字典名称")
+	@NotBlank(message = "字典名称不能为空")
+	@Size(max = 10, message = "字典名称不能超过10个字符")
+	String dictName,
+	@Schema(description = "字典编码")
+	@NotBlank(message = "字典编码不能为空")
+	@Size(max = 10, message = "字典编码不能超过10个字符")
+	String dictCode,
+	@Schema(description = "描述")
+	String description,
+	@Schema(description = "排序值")
+	Integer dictSort,
+	@Schema(description = "备注信息")
+	String remark) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

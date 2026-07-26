@@ -33,19 +33,34 @@ import java.util.Set;
  */
 @RecordBuilder
 @Schema(description = "用户查询VO")
-public record UserQueryApiResponse(@Schema(description = "id") Long id, @Schema(description = "昵称") String nickname,
-								   @Schema(description = "真实用户名") String username,
-								   @Schema(description = "手机号") String phone,
-								   @Schema(description = "性别 1男 2女 0未知") Integer sex,
-								   @Schema(description = "邮箱") String email,
-								   @Schema(description = "部门ID") Long deptId,
-								   @Schema(description = "岗位ID") Long jobId,
-								   @Schema(description = "头像") String avatar,
-								   @Schema(description = "是否锁定 1-正常，2-锁定") Integer lockFlag,
-								   @Schema(description = "角色列表") Set<String> roles,
-								   @Schema(description = "权限列表") Set<String> permissions,
-								   @Schema(description = "创建时间") LocalDateTime createTime,
-								   @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime)  implements
+public record UserQueryApiResponse(	@Schema(description = "id")
+	Long id,
+	@Schema(description = "昵称")
+	String nickname,
+	@Schema(description = "真实用户名")
+	String username,
+	@Schema(description = "手机号")
+	String phone,
+	@Schema(description = "性别 1男 2女 0未知")
+	Integer sex,
+	@Schema(description = "邮箱")
+	String email,
+	@Schema(description = "部门ID")
+	Long deptId,
+	@Schema(description = "岗位ID")
+	Long jobId,
+	@Schema(description = "头像")
+	String avatar,
+	@Schema(description = "是否锁定 1-正常，2-锁定")
+	Integer lockFlag,
+	@Schema(description = "角色列表")
+	Set<String> roles,
+	@Schema(description = "权限列表")
+	Set<String> permissions,
+	@Schema(description = "创建时间")
+	LocalDateTime createTime,
+	@Schema(description = "最后修改时间")
+	LocalDateTime lastModifiedTime)  implements
 	MarkerResponse {
 
 	@Serial

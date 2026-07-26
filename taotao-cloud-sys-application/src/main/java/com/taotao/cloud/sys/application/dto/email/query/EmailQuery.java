@@ -30,18 +30,25 @@ import jakarta.validation.constraints.NotBlank;
  */
 @RecordBuilder
 public record EmailQuery(
+/* 收件人 */
 
-        /* 收件人 */
-        @NotBlank(message = "收件人不能为空") String fromUser,
+        @NotBlank(message = "收件人不能为空")
+
+        String fromUser,
+
 
         /* 邮件服务器SMTP地址 */
         String host,
 
+
         /* 密码 */
         String pass,
+/* 端口 */
 
-        /* 端口 */
-        @Max(value = 200, message = "端口不能大于200") Integer port,
+        @Max(value = 200, message = "端口不能大于200")
+
+        Integer port,
+
 
         /* 发件者用户名 */
         String user) {}

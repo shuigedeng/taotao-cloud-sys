@@ -31,9 +31,19 @@ import jakarta.validation.constraints.Size;
  */
 @RecordBuilder
 public record DictQuery(
-	@Schema(description = "字典名称") @NotBlank(message = "字典名称不能为空") @Size(max = 10, message = "字典名称不能超过10个字符") String dictName,
-	@Schema(description = "字典编码") @NotBlank(message = "字典编码不能为空") @Size(max = 10, message = "字典编码不能超过10个字符") String dictCode,
-	@Schema(description = "描述") String description, @Schema(description = "排序值") Integer dictSort,
-	@Schema(description = "备注信息") String remark)implements Query {
+	@Schema(description = "字典名称")
+	@NotBlank(message = "字典名称不能为空")
+	@Size(max = 10, message = "字典名称不能超过10个字符")
+	String dictName,
+	@Schema(description = "字典编码")
+	@NotBlank(message = "字典编码不能为空")
+	@Size(max = 10, message = "字典编码不能超过10个字符")
+	String dictCode,
+	@Schema(description = "描述")
+	String description,
+	@Schema(description = "排序值")
+	Integer dictSort,
+	@Schema(description = "备注信息")
+	String remark)implements Query {
 
 }

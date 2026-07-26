@@ -36,7 +36,12 @@ import jakarta.validation.constraints.NotNull;
  */
 @RecordBuilder
 public record EmailPageQuery(
-	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = Groups.Update.class) PageQuery page,
-	List<String> tos, String subject, String content) implements Query {
+	@Schema(description = "分页")
+	@NotNull(message = "分页参数不能为空!", groups = Groups.Update.class)
+	PageQuery page,
+
+	List<String> tos,
+ String subject,
+ String content) implements Query {
 
 }

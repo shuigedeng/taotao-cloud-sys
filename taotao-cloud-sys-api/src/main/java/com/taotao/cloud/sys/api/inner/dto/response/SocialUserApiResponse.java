@@ -33,27 +33,55 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @param gender 性别
  */
 @RecordBuilder
-public record SocialUserApiResponse(Long id, @Schema(title = "社会用户ID") String socialId,
-									@Schema(title = "用户第三方系统的唯一id", description = "在调用方集成该组件时，可以用uuid + source唯一确定一个用") String uuid,
-									@Schema(title = "用户名") String userName,
-									@Schema(title = "用户昵称") String nickName,
-									@Schema(title = "用户头像") String avatar, @Schema(title = "用户网址") String blog,
-									@Schema(title = "所在公司") String company, @Schema(title = "位置") String location,
-									@Schema(title = "用户邮箱") String email, @Schema(title = "用户邮箱") String remark,
-									@Schema(title = "性别") String gender,
-									@Schema(title = "第三方用户来源") String source,
-									@Schema(title = "用户的授权令牌") String accessToken,
-									@Schema(title = "第三方用户的授权令牌的有效期", description = "部分平台可能没有") Integer expireIn,
-									@Schema(title = "刷新令牌", description = "部分平台可能没有") String refreshToken,
-									@Schema(title = "第三方用户的刷新令牌的有效期", description = "部分平台可能没有") Integer refreshTokenExpireIn,
-									@Schema(title = "第三方用户授予的权限", description = "部分平台可能没有") String scope,
-									@Schema(title = "个别平台的授权信息", description = "部分平台可能没有") String tokenType,
-									@Schema(title = "第三方用户的 ID", description = "部分平台可能没有") String uid,
-									@Schema(title = "第三方用户的 open id", description = "部分平台可能没有") String openId,
-									@Schema(title = "个别平台的授权信息", description = "部分平台可能没有") String accessCode,
-									@Schema(title = "第三方用户的 union id", description = "部分平台可能没有") String unionId,
-									@Schema(title = "小程序Appid", description = "部分平台可能没有") String appId,
-									@Schema(title = "手机号码", description = "部分平台可能没有") String phoneNumber) implements
+public record SocialUserApiResponse(Long id,
+	@Schema(title = "社会用户ID")
+	String socialId,
+	@Schema(title = "用户第三方系统的唯一id", description = "在调用方集成该组件时，可以用uuid + source唯一确定一个用")
+	String uuid,
+	@Schema(title = "用户名")
+	String userName,
+	@Schema(title = "用户昵称")
+	String nickName,
+	@Schema(title = "用户头像")
+	String avatar,
+	@Schema(title = "用户网址")
+	String blog,
+	@Schema(title = "所在公司")
+	String company,
+	@Schema(title = "位置")
+	String location,
+	@Schema(title = "用户邮箱")
+	String email,
+	@Schema(title = "用户邮箱")
+	String remark,
+	@Schema(title = "性别")
+	String gender,
+	@Schema(title = "第三方用户来源")
+	String source,
+	@Schema(title = "用户的授权令牌")
+	String accessToken,
+	@Schema(title = "第三方用户的授权令牌的有效期", description = "部分平台可能没有")
+	Integer expireIn,
+	@Schema(title = "刷新令牌", description = "部分平台可能没有")
+	String refreshToken,
+	@Schema(title = "第三方用户的刷新令牌的有效期", description = "部分平台可能没有")
+	Integer refreshTokenExpireIn,
+	@Schema(title = "第三方用户授予的权限", description = "部分平台可能没有")
+	String scope,
+	@Schema(title = "个别平台的授权信息", description = "部分平台可能没有")
+	String tokenType,
+	@Schema(title = "第三方用户的 ID", description = "部分平台可能没有")
+	String uid,
+	@Schema(title = "第三方用户的 open id", description = "部分平台可能没有")
+	String openId,
+	@Schema(title = "个别平台的授权信息", description = "部分平台可能没有")
+	String accessCode,
+	@Schema(title = "第三方用户的 union id", description = "部分平台可能没有")
+	String unionId,
+	@Schema(title = "小程序Appid", description = "部分平台可能没有")
+	String appId,
+	@Schema(title = "手机号码", description = "部分平台可能没有")
+	String phoneNumber) implements
 	MarkerResponse {
 
 }

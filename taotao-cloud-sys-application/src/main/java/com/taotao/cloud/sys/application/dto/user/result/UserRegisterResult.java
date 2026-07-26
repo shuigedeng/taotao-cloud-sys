@@ -29,9 +29,12 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "用户注册VO")
-public record UserRegisterResult(@Schema(description = "真实用户名") String username,
-								 @Schema(description = "手机号") String phone,
-								 @Schema(description = "密码") String password) implements MarkerResult {
+public record UserRegisterResult(	@Schema(description = "真实用户名")
+	String username,
+	@Schema(description = "手机号")
+	String phone,
+	@Schema(description = "密码")
+	String password) implements MarkerResult {
 
 	@Serial
 	private static final long serialVersionUID = 5126530068827085130L;

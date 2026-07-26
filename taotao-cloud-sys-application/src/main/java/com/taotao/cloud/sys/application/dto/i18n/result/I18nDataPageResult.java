@@ -34,12 +34,20 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(title = "国际化信息分页视图对象")
-public record I18nDataPageResult(@Schema(title = "ID") Integer id, @Schema(title = "语言标签") String languageTag,
-								 @Schema(title = "国际化标识") String code,
-								 @Schema(title = "文本值，可以使用 { } 加角标，作为占位符") String message,
-								 @Schema(title = "备注") String remarks,
-								 @Schema(title = "创建时间") LocalDateTime createTime,
-								 @Schema(title = "修改时间") LocalDateTime updateTime) implements MarkerResult {
+public record I18nDataPageResult(	@Schema(title = "ID")
+	Integer id,
+	@Schema(title = "语言标签")
+	String languageTag,
+	@Schema(title = "国际化标识")
+	String code,
+	@Schema(title = "文本值，可以使用 { } 加角标，作为占位符")
+	String message,
+	@Schema(title = "备注")
+	String remarks,
+	@Schema(title = "创建时间")
+	LocalDateTime createTime,
+	@Schema(title = "修改时间")
+	LocalDateTime updateTime) implements MarkerResult {
 
 	private static final long serialVersionUID = 1L;
 

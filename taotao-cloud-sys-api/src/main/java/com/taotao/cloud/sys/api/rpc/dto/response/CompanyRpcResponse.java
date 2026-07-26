@@ -45,19 +45,32 @@ import java.io.Serial;
 @RecordBuilder
 @Schema(description = "公司查询Response")
 public record CompanyRpcResponse(
-	@Schema(description = "租户id") String tenantId,
-	@Schema(description = "租户密钥") String tenantSecret,
-	@Schema(description = "公司名称") String name,
-	@Schema(description = "企业全称") String fullName,
-	@Schema(description = "信用代码") String creditCode,
-	@Schema(description = "邮箱") String email,
-	@Schema(description = "联系人") String username,
-	@Schema(description = "联系人手机号") String phone,
-	@Schema(description = "联系人地址") String address,
-	@Schema(description = "请求域名") String domain,
-	@Schema(description = "公司网址") String webSite,
-	@Schema(description = "所在地区") String regionInfo,
-	@Schema(description = "公司类型") Integer type)
+	@Schema(description = "租户id")
+	String tenantId,
+	@Schema(description = "租户密钥")
+	String tenantSecret,
+	@Schema(description = "公司名称")
+	String name,
+	@Schema(description = "企业全称")
+	String fullName,
+	@Schema(description = "信用代码")
+	String creditCode,
+	@Schema(description = "邮箱")
+	String email,
+	@Schema(description = "联系人")
+	String username,
+	@Schema(description = "联系人手机号")
+	String phone,
+	@Schema(description = "联系人地址")
+	String address,
+	@Schema(description = "请求域名")
+	String domain,
+	@Schema(description = "公司网址")
+	String webSite,
+	@Schema(description = "所在地区")
+	String regionInfo,
+	@Schema(description = "公司类型")
+	Integer type)
 	implements MarkerResponse {
 
 	@Serial

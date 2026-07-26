@@ -29,19 +29,33 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "操作日志")
-public record CreateOperateLogCommand(@Schema(description = "操作模块") String title,
-                                      @Schema(description = "操作人员id") Long operateId,
-                                      @Schema(description = "操作人员账号") String username,
-                                      @Schema(description = "业务类型") String businessType,
-                                      @Schema(description = "请求方法") String method,
-                                      @Schema(description = "请求方式") String requestMethod,
-                                      @Schema(description = "请求url") String operateUrl,
-                                      @Schema(description = "操作ip") String operateIp,
-                                      @Schema(description = "操作地点") String operateLocation,
-                                      @Schema(description = "请求参数") String operateParam,
-                                      @Schema(description = "返回参数") String operateReturn,
-                                      @Schema(description = "操作状态（0正常 1异常）") Boolean success,
-                                      @Schema(description = "错误消息") String errorMsg,
-                                      @Schema(description = "操作时间") LocalDateTime operateTime) implements Command {
+public record CreateOperateLogCommand(	@Schema(description = "操作模块")
+	String title,
+	@Schema(description = "操作人员id")
+	Long operateId,
+	@Schema(description = "操作人员账号")
+	String username,
+	@Schema(description = "业务类型")
+	String businessType,
+	@Schema(description = "请求方法")
+	String method,
+	@Schema(description = "请求方式")
+	String requestMethod,
+	@Schema(description = "请求url")
+	String operateUrl,
+	@Schema(description = "操作ip")
+	String operateIp,
+	@Schema(description = "操作地点")
+	String operateLocation,
+	@Schema(description = "请求参数")
+	String operateParam,
+	@Schema(description = "返回参数")
+	String operateReturn,
+	@Schema(description = "操作状态（0正常 1异常）")
+	Boolean success,
+	@Schema(description = "错误消息")
+	String errorMsg,
+	@Schema(description = "操作时间")
+	LocalDateTime operateTime) implements Command {
 
 }

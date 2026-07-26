@@ -32,11 +32,18 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "角色查询对象")
-public record RoleQueryApiResponse(@Schema(description = "id") Long id, @Schema(description = "角色名称") String name,
-								   @Schema(description = "角色code") String code,
-								   @Schema(description = "备注") String remark,
-								   @Schema(description = "创建时间") LocalDateTime createTime,
-								   @Schema(description = "最后修改时间") LocalDateTime lastModifiedTime)  implements
+public record RoleQueryApiResponse(	@Schema(description = "id")
+	Long id,
+	@Schema(description = "角色名称")
+	String name,
+	@Schema(description = "角色code")
+	String code,
+	@Schema(description = "备注")
+	String remark,
+	@Schema(description = "创建时间")
+	LocalDateTime createTime,
+	@Schema(description = "最后修改时间")
+	LocalDateTime lastModifiedTime)  implements
 	MarkerResponse {
 
 	@Serial

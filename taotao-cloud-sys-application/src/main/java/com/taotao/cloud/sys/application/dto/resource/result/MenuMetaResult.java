@@ -29,7 +29,10 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "菜单元数据VO")
-public record MenuMetaResult(@Schema(description = "名称") String title, @Schema(description = "icon") String icon)implements
+public record MenuMetaResult(	@Schema(description = "名称")
+	String title,
+	@Schema(description = "icon")
+	String icon)implements
 	MarkerResult {
 
 	@Serial

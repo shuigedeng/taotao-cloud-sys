@@ -30,15 +30,28 @@ import java.util.List;
  */
 @RecordBuilder
 @Schema(description = "地区VO")
-public record RegionResult(@Schema(description = "id") Long id, @Schema(description = "地区父节点") Long parentId,
-						   @Schema(description = "地区编码") String code, @Schema(description = "地区名称") String name,
-						   @Schema(description = "地区级别") String level,
-						   @Schema(description = "城市编码") String cityCode,
-						   @Schema(description = "城市中心经度") String lng,
-						   @Schema(description = "城市中心纬度") String lat,
-						   @Schema(description = "行政地区路径,类似：1，2，3") String path,
-						   @Schema(description = "排序") Integer orderNum,
-						   @Schema(description = "子信息") List<RegionResult> children) implements MarkerResult {
+public record RegionResult(	@Schema(description = "id")
+	Long id,
+	@Schema(description = "地区父节点")
+	Long parentId,
+	@Schema(description = "地区编码")
+	String code,
+	@Schema(description = "地区名称")
+	String name,
+	@Schema(description = "地区级别")
+	String level,
+	@Schema(description = "城市编码")
+	String cityCode,
+	@Schema(description = "城市中心经度")
+	String lng,
+	@Schema(description = "城市中心纬度")
+	String lat,
+	@Schema(description = "行政地区路径,类似：1，2，3")
+	String path,
+	@Schema(description = "排序")
+	Integer orderNum,
+	@Schema(description = "子信息")
+	List<RegionResult> children) implements MarkerResult {
 
 	@Serial
 	private static final long serialVersionUID = 5126530068827085130L;

@@ -30,10 +30,20 @@ import jakarta.validation.constraints.NotNull;
 @RecordBuilder
 @Schema(title = "数据版本日志")
 public record DataVersionQuery(
-	@Schema(description = "分页") @NotNull(message = "分页参数不能为空!", groups = Groups.Update.class) PageQuery page,
-	@Schema(description = "表名称") String tableName, @Schema(description = "数据名称") String dataName,
-	@Schema(description = "数据主键") String dataId, @Schema(description = "数据内容对象") Object dataContent,
-	@Schema(description = "本次变动的数据内容") Object changeContent,
-	@Schema(description = "版本") Integer version) implements Query {
+	@Schema(description = "分页")
+	@NotNull(message = "分页参数不能为空!", groups = Groups.Update.class)
+	PageQuery page,
+	@Schema(description = "表名称")
+	String tableName,
+	@Schema(description = "数据名称")
+	String dataName,
+	@Schema(description = "数据主键")
+	String dataId,
+	@Schema(description = "数据内容对象")
+	Object dataContent,
+	@Schema(description = "本次变动的数据内容")
+	Object changeContent,
+	@Schema(description = "版本")
+	Integer version) implements Query {
 
 }

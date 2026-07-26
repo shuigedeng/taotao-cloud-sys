@@ -30,13 +30,20 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "地区更新对象")
-public record UpdateRegionCommand(@Schema(description = "地区编码") String code,
-                                  @Schema(description = "地区名称") String name,
-                                  @Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）") Integer level,
-                                  @Schema(description = "城市编码") String cityCode,
-                                  @Schema(description = "城市中心经度") String lng,
-                                  @Schema(description = "城市中心纬度") String lat,
-                                  @Schema(description = "地区父节点") Long parentId) implements Command {
+public record UpdateRegionCommand(	@Schema(description = "地区编码")
+	String code,
+	@Schema(description = "地区名称")
+	String name,
+	@Schema(description = "地区级别（1:省份province;2:市city;3:区县district;4:街道street）")
+	Integer level,
+	@Schema(description = "城市编码")
+	String cityCode,
+	@Schema(description = "城市中心经度")
+	String lng,
+	@Schema(description = "城市中心纬度")
+	String lat,
+	@Schema(description = "地区父节点")
+	Long parentId) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

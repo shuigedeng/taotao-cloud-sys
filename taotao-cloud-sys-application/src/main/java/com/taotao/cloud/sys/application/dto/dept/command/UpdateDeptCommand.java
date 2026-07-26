@@ -31,9 +31,16 @@ import java.io.Serial;
 @RecordBuilder
 @Schema(description = "部门更新对象")
 public record UpdateDeptCommand(
-	@Schema(description = "部门id") Integer deptId,
-	@Schema(description = "部门名称") String name, @Schema(description = "上级部门id") Integer parentId,
-	@Schema(description = "排序") Integer sort, @Schema(description = "备注") String remark) implements Command {
+	@Schema(description = "部门id")
+	Integer deptId,
+	@Schema(description = "部门名称")
+	String name,
+	@Schema(description = "上级部门id")
+	Integer parentId,
+	@Schema(description = "排序")
+	Integer sort,
+	@Schema(description = "备注")
+	String remark) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;
