@@ -61,36 +61,15 @@ public class CpuInfo {
      */
     private double free;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取总计
      *
      * @return double
      * @since 2022.03
      */
-
     public double getTotal() {
         return NumberUtil.round(total * 100, 2).doubleValue();
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Sys
@@ -98,20 +77,9 @@ public class CpuInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getSys() {
         return BigDecimal.valueOf(NumberUtil.div(sys * 100, total, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Used
@@ -119,20 +87,9 @@ public class CpuInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getUsed() {
         return BigDecimal.valueOf(NumberUtil.div(used * 100, total, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Wait
@@ -140,20 +97,9 @@ public class CpuInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getWait() {
         return BigDecimal.valueOf(NumberUtil.div(wait * 100, total, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Free
@@ -161,7 +107,6 @@ public class CpuInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getFree() {
         return BigDecimal.valueOf(NumberUtil.div(free * 100, total, 2));
     }

@@ -104,36 +104,15 @@ public class DataScopePO extends BasePO<DataScopePO> {
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取编码
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -142,20 +121,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取名称
@@ -163,20 +131,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -185,20 +142,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取类型
@@ -206,20 +152,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getType() {
         return type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置类型
@@ -228,20 +163,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setType(Integer type) {
         this.type = type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -249,20 +173,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -271,20 +184,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取组织IDs
@@ -292,20 +194,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOrgIds() {
         return orgIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置组织IDs
@@ -314,20 +205,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOrgIds( String orgIds) {
         this.orgIds = orgIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取部门IDs
@@ -335,20 +215,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDeptIds() {
         return deptIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置部门IDs
@@ -357,20 +226,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDeptIds( String deptIds) {
         this.deptIds = deptIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取用户IDs
@@ -378,20 +236,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUserIds() {
         return userIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户IDs
@@ -400,20 +247,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserIds( String userIds) {
         this.userIds = userIds;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -421,20 +257,9 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -443,7 +268,6 @@ public class DataScopePO extends BasePO<DataScopePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

@@ -37,22 +37,12 @@ public class BusinessCommandServiceImpl implements BussinessCommandService {
     @Override
 //    @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)
 
-
-
-
-
-
-
-
-
-
     /**
      * 保存订单
      *
      * @return 是否成功
      * @since 2022.03
      */
-
     public boolean saveOrder() {
         log.info("=============用户下单=================");
 //        log.info("当前 XID: {}", RootContext.getXID());

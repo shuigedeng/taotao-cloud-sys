@@ -63,36 +63,15 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
     @Column(name = "`social_user_id`", columnDefinition = "bigint not null comment '菜单ID'")
     private Long socialUserId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取用户ID
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getUserId() {
         return userId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户ID
@@ -101,20 +80,9 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserId(Long roleId) {
         this.userId = roleId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取SocialUserId
@@ -122,20 +90,9 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getSocialUserId() {
         return socialUserId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SocialUserId
@@ -144,7 +101,6 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSocialUserId(Long resourceId) {
         this.socialUserId = resourceId;
     }

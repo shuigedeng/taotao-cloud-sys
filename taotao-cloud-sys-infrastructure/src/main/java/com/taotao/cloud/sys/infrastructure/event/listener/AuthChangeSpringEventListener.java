@@ -39,15 +39,6 @@ public class AuthChangeSpringEventListener {
 
 	@EventListener(AuthChangeEvent.class)
 
-
-
-
-
-
-
-
-
-
 	/**
 	 * 处理
 	 *
@@ -55,7 +46,6 @@ public class AuthChangeSpringEventListener {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void handleAuthChangeEvent( AuthChangeEvent authChangeEvent ){
 		log.info("接受到AuthChangeEvent:{}", authChangeEvent);
 		userCommandService.handleAuthChangeEvent(authChangeEvent);

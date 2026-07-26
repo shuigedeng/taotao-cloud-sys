@@ -53,16 +53,6 @@ public class OrgAgg extends AggregateRoot<Long> {
 	@Schema(name = "sort", description = "组织排序")
 	private Integer sort;
 
-
-
-
-
-
-
-
-
-
-
 	/**
 	 * 校验名称
 	 *
@@ -70,22 +60,11 @@ public class OrgAgg extends AggregateRoot<Long> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void checkName(long count) {
 		if (count > 0) {
 			throw new BusinessException("部门名称已存在，请重新填写");
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 校验
@@ -93,7 +72,6 @@ public class OrgAgg extends AggregateRoot<Long> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void checkIdAndPid() {
 		if (id.equals(pid)) {
 			throw new BusinessException("上级部门不能为当前部门");

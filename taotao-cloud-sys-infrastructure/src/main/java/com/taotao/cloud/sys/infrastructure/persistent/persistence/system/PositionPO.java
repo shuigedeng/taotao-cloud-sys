@@ -73,36 +73,15 @@ public class PositionPO extends BasePO<PositionPO> {
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取名称
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -111,20 +90,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取部门ID
@@ -132,20 +100,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getDeptId() {
         return deptId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置部门ID
@@ -154,20 +111,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDeptId(Long deptId) {
         this.deptId = deptId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取组织ID
@@ -175,20 +121,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getOrgId() {
         return orgId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置组织ID
@@ -197,20 +132,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOrgId(Long orgId) {
         this.orgId = orgId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -218,20 +142,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -240,20 +153,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取排序号
@@ -261,20 +163,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSortNum() {
         return sortNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置排序号
@@ -283,20 +174,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -304,20 +184,9 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -326,7 +195,6 @@ public class PositionPO extends BasePO<PositionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

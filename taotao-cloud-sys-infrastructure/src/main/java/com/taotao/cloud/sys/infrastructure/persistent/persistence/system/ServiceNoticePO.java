@@ -85,36 +85,15 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
                     "varchar(255) not null default '' comment '站内信内容(富文本框编辑，可以上传图片的html)'")
     private String content;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取StoreId
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getStoreId() {
         return storeId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置StoreId
@@ -123,20 +102,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setStoreId(String storeId) {
         this.storeId = storeId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取BannerImage
@@ -144,20 +112,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBannerImage() {
         return bannerImage;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置BannerImage
@@ -166,20 +123,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBannerImage(String bannerImage) {
         this.bannerImage = bannerImage;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取标题
@@ -187,20 +133,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTitle() {
         return title;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置标题
@@ -209,20 +144,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTitle(String title) {
         this.title = title;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取SubTitle
@@ -230,20 +154,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSubTitle() {
         return subTitle;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SubTitle
@@ -252,20 +165,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSubTitle(String subTitle) {
         this.subTitle = subTitle;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ToUrl
@@ -273,20 +175,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getToUrl() {
         return toUrl;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ToUrl
@@ -295,20 +186,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setToUrl(String toUrl) {
         this.toUrl = toUrl;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取内容
@@ -316,20 +196,9 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContent() {
         return content;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置内容
@@ -338,7 +207,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContent(String content) {
         this.content = content;
     }

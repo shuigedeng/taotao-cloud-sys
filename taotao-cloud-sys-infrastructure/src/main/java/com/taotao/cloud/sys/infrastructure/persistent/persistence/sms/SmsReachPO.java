@@ -64,36 +64,15 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
     @Column(name = "`num`", columnDefinition = "varchar(2000) not null comment '预计发送条数'")
     private String num;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取SignName
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSignName() {
         return signName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SignName
@@ -102,20 +81,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSignName(String signName) {
         this.signName = signName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取短信 name
@@ -123,20 +91,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSmsName() {
         return smsName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置短信 name
@@ -145,20 +102,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSmsName(String smsName) {
         this.smsName = smsName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取消息编码
@@ -166,20 +112,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMessageCode() {
         return messageCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置消息编码
@@ -188,20 +123,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMessageCode(String messageCode) {
         this.messageCode = messageCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Context
@@ -209,20 +133,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContext() {
         return context;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Context
@@ -231,20 +144,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContext(String context) {
         this.context = context;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取短信 range
@@ -252,20 +154,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSmsRange() {
         return smsRange;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置短信 range
@@ -274,20 +165,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSmsRange(String smsRange) {
         this.smsRange = smsRange;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取数量
@@ -295,20 +175,9 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getNum() {
         return num;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置数量
@@ -317,7 +186,6 @@ public class SmsReachPO extends BasePO<SmsReachPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setNum(String num) {
         this.num = num;
     }

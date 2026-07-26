@@ -73,36 +73,15 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
     @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取模板名称
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTemplateName() {
         return templateName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置模板名称
@@ -111,20 +90,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取模板类型
@@ -132,20 +100,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getTemplateType() {
         return templateType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置模板类型
@@ -154,20 +111,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTemplateType(Integer templateType) {
         this.templateType = templateType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -175,20 +121,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -197,20 +132,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取模板内容
@@ -218,20 +142,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTemplateContent() {
         return templateContent;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置模板内容
@@ -240,20 +153,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTemplateContent(String templateContent) {
         this.templateContent = templateContent;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取模板状态
@@ -261,20 +163,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getTemplateStatus() {
         return templateStatus;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置模板状态
@@ -283,20 +174,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTemplateStatus(Integer templateStatus) {
         this.templateStatus = templateStatus;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取模板编码
@@ -304,20 +184,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTemplateCode() {
         return templateCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置模板编码
@@ -326,20 +195,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTemplateCode(String templateCode) {
         this.templateCode = templateCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Reason
@@ -347,20 +205,9 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getReason() {
         return reason;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Reason
@@ -369,7 +216,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setReason(String reason) {
         this.reason = reason;
     }

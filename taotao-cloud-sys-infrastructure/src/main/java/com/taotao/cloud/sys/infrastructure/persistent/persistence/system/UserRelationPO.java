@@ -82,36 +82,15 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
 		this.objectId = objectId;
 	}
 
-
-
-
-
-
-
-
-
-
-
 	/**
 	 * 获取用户ID
 	 *
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Long getUserId() {
         return userId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户ID
@@ -120,20 +99,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserId(Long userId) {
         this.userId = userId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ObjectType
@@ -141,20 +109,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getObjectType() {
         return objectType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ObjectType
@@ -163,20 +120,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ObjectId
@@ -184,20 +130,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getObjectId() {
         return objectId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ObjectId
@@ -206,20 +141,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setObjectId(Long objectId) {
         this.objectId = objectId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取排序编码
@@ -227,20 +151,9 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSortCode() {
         return sortCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置排序编码
@@ -249,7 +162,6 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSortCode(Integer sortCode) {
         this.sortCode = sortCode;
     }

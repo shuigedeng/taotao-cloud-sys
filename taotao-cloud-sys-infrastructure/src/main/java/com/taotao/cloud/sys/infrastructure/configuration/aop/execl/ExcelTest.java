@@ -46,23 +46,13 @@ public class ExcelTest {
 
     // 导出逻辑代码
 
-
-
-
-
-
-
-
-
-
     /**
-     * 设置数据export300w
+     * 数据export300w
      *
      * @param response 响应
      * @return 无返回值
      * @since 2022.03
      */
-
     public void dataExport300w(HttpServletResponse response) {
         {
             OutputStream outputStream = null;
@@ -182,23 +172,12 @@ public class ExcelTest {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 导入2db from excel10w test
      *
      * @return 无返回值
      * @since 2022.03
      */
-
     public void import2DBFromExcel10wTest() {
         String fileName =
                 "D:\\StudyWorkspace\\JavaWorkspace\\java_project_workspace\\idea_projects\\SpringBootProjects\\easyexcel\\exportFile\\excel300w.xlsx";
@@ -224,23 +203,12 @@ public static class EasyExceGeneralDatalListener extends AnalysisEventListener<M
         /** 用于存储读取的数据 */
         private List<Map<Integer, String>> dataList = new ArrayList<Map<Integer, String>>();
 
-
-
-
-
-
-
-
-
-
-
         /**
          * EasyExceGeneralDatalListener 方法
          *
          * @return 无返回值
          * @since 2022.03
          */
-
         public EasyExceGeneralDatalListener() {}
 
         @Override

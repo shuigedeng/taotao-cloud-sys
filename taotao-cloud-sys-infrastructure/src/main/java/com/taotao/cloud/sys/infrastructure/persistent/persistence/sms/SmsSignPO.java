@@ -71,36 +71,15 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
     @Column(name = "`reason`", columnDefinition = "varchar(2000) not null comment '审核备注'")
     private String reason;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取SignName
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSignName() {
         return signName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SignName
@@ -109,20 +88,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSignName(String signName) {
         this.signName = signName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取SignSource
@@ -130,20 +98,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSignSource() {
         return signSource;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SignSource
@@ -152,20 +109,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSignSource(Integer signSource) {
         this.signSource = signSource;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -173,20 +119,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -195,20 +130,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取BusinessLicense
@@ -216,20 +140,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBusinessLicense() {
         return businessLicense;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置BusinessLicense
@@ -238,20 +151,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBusinessLicense(String businessLicense) {
         this.businessLicense = businessLicense;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取License
@@ -259,20 +161,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLicense() {
         return license;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置License
@@ -281,20 +172,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLicense(String license) {
         this.license = license;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取SignStatus
@@ -302,20 +182,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSignStatus() {
         return signStatus;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SignStatus
@@ -324,20 +193,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSignStatus(Integer signStatus) {
         this.signStatus = signStatus;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Reason
@@ -345,20 +203,9 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getReason() {
         return reason;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Reason
@@ -367,7 +214,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setReason(String reason) {
         this.reason = reason;
     }

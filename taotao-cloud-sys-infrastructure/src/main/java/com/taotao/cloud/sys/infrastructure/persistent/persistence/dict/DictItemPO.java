@@ -78,36 +78,15 @@ public class DictItemPO extends BasePO<DictItemPO> {
     @Column(name = "`sort_num`", columnDefinition = "int not null default 1 comment '排序值'")
     private Integer sortNum;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取字典ID
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getDictId() {
         return dictId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置字典ID
@@ -116,20 +95,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDictId(Long dictId) {
         this.dictId = dictId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取项文本
@@ -137,20 +105,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getItemText() {
         return itemText;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置项文本
@@ -159,20 +116,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setItemText(String itemText) {
         this.itemText = itemText;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取项值
@@ -180,20 +126,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getItemValue() {
         return itemValue;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置项值
@@ -202,20 +137,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setItemValue(String itemValue) {
         this.itemValue = itemValue;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取描述
@@ -223,20 +147,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDescription() {
         return description;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置描述
@@ -245,20 +158,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取状态
@@ -266,20 +168,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getStatus() {
         return status;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置状态
@@ -288,20 +179,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取排序号
@@ -309,20 +189,9 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSortNum() {
         return sortNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置排序号
@@ -331,7 +200,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;
     }

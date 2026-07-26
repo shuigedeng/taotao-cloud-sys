@@ -116,36 +116,15 @@ public class ResourcePO extends BasePO<ResourcePO> {
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取名称
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -154,20 +133,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取权限
@@ -175,20 +143,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPermission() {
         return permission;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置权限
@@ -197,20 +154,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPermission(String permission) {
         this.permission = permission;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取路径
@@ -218,20 +164,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPath() {
         return path;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置路径
@@ -240,20 +175,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPath(String path) {
         this.path = path;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Component
@@ -261,20 +185,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getComponent() {
         return component;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Component
@@ -283,20 +196,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setComponent(String component) {
         this.component = component;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取父级ID
@@ -304,20 +206,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getParentId() {
         return parentId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置父级ID
@@ -326,20 +217,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取图标
@@ -347,20 +227,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getIcon() {
         return icon;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置图标
@@ -369,20 +238,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setIcon(String icon) {
         this.icon = icon;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取排序号
@@ -390,20 +248,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSortNum() {
         return sortNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置排序号
@@ -412,20 +259,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSortNum(Integer sortNum) {
         this.sortNum = sortNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取KeepAlive
@@ -433,20 +269,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 是否成功
      * @since 2022.03
      */
-
     public Boolean getKeepAlive() {
         return keepAlive;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置KeepAlive
@@ -455,20 +280,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setKeepAlive(Boolean keepAlive) {
         this.keepAlive = keepAlive;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取类型
@@ -476,20 +290,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getType() {
         return type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置类型
@@ -498,20 +301,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setType(Integer type) {
         this.type = type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取请求路径ID
@@ -519,20 +311,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getRequestPathId() {
         return requestPathId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置请求路径ID
@@ -541,20 +322,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRequestPathId(Long requestPathId) {
         this.requestPathId = requestPathId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Hidden
@@ -562,20 +332,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 是否成功
      * @since 2022.03
      */
-
     public Boolean getHidden() {
         return hidden;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Hidden
@@ -584,20 +343,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setHidden(Boolean hidden) {
         this.hidden = hidden;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Redirect
@@ -605,20 +353,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRedirect() {
         return redirect;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Redirect
@@ -627,20 +364,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRedirect(String redirect) {
         this.redirect = redirect;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取目标
@@ -648,20 +374,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTarget() {
         return target;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置目标
@@ -670,20 +385,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTarget(String target) {
         this.target = target;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -691,20 +395,9 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -713,7 +406,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

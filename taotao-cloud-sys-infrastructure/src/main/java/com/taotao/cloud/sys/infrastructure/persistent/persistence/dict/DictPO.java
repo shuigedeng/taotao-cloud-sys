@@ -123,36 +123,15 @@ public class DictPO extends BasePO<DictPO> {
 	@Column(name = "`remark`", columnDefinition = "varchar(255) comment '备注信息'")
 	private String remark;
 
-
-
-
-
-
-
-
-
-
-
 	/**
 	 * 获取字典名称
 	 *
 	 * @return 字符串
 	 * @since 2022.03
 	 */
-
 	public String getDictName() {
 		return dictName;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 设置字典名称
@@ -161,20 +140,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void setDictName( String dictName ) {
 		this.dictName = dictName;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 获取字典编码
@@ -182,20 +150,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 字符串
 	 * @since 2022.03
 	 */
-
 	public String getDictCode() {
 		return dictCode;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 设置字典编码
@@ -204,20 +161,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void setDictCode( String dictCode ) {
 		this.dictCode = dictCode;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 获取描述
@@ -225,20 +171,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 字符串
 	 * @since 2022.03
 	 */
-
 	public String getDescription() {
 		return description;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 设置描述
@@ -247,20 +182,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void setDescription( String description ) {
 		this.description = description;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 获取排序号
@@ -268,20 +192,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 结果数量
 	 * @since 2022.03
 	 */
-
 	public Integer getSortNum() {
 		return sortNum;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 设置排序号
@@ -290,20 +203,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void setSortNum( Integer sortNum ) {
 		this.sortNum = sortNum;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 获取备注
@@ -311,20 +213,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 字符串
 	 * @since 2022.03
 	 */
-
 	public String getRemark() {
 		return remark;
 	}
-
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 设置备注
@@ -333,19 +224,9 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	public void setRemark( String remark ) {
 		this.remark = remark;
 	}
-
-
-
-
-
-
-
-
-
 
 	/**
 	 * 构建
@@ -353,7 +234,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * @return 字典POBuilder
 	 * @since 2022.03
 	 */
-
 	public static DictPOBuilder builder() {
 		return new DictPOBuilder();
 	}
@@ -464,35 +344,14 @@ public class DictPO extends BasePO<DictPO> {
 		private String dictCode;
 		private String dictName;
 
-
-
-
-
-
-
-
-
-
-
 		/**
 		 * 字典POBuilder
 		 *
 		 * @return 无返回值
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder() {
 		}
-
-
-
-
-
-
-
-
-
-
 
 		/**
 		 * 字典POBuilder
@@ -501,7 +360,6 @@ public class DictPO extends BasePO<DictPO> {
 		 * @return 无返回值
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder( DictPO other ) {
 			this.remark = other.remark;
 			this.sortNum = other.sortNum;
@@ -510,133 +368,65 @@ public class DictPO extends BasePO<DictPO> {
 			this.dictName = other.dictName;
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
 		/**
-		 * 设置备注
+		 * 备注
 		 *
 		 * @param remark 备注
 		 * @return 字典POBuilder
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder remark( String remark ) {
 			this.remark = remark;
 			return this;
 		}
 
-
-
-
-
-
-
-
-
-
-
 		/**
-		 * 设置排序号
+		 * 排序号
 		 *
 		 * @param sortNum 排序号
 		 * @return 字典POBuilder
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder sortNum( Integer sortNum ) {
 			this.sortNum = sortNum;
 			return this;
 		}
 
-
-
-
-
-
-
-
-
-
-
 		/**
-		 * 设置描述
+		 * 描述
 		 *
 		 * @param description 描述
 		 * @return 字典POBuilder
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder description( String description ) {
 			this.description = description;
 			return this;
 		}
 
-
-
-
-
-
-
-
-
-
-
 		/**
-		 * 设置字典编码
+		 * 字典编码
 		 *
 		 * @param dictCode 字典编码
 		 * @return 字典POBuilder
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder dictCode( String dictCode ) {
 			this.dictCode = dictCode;
 			return this;
 		}
 
-
-
-
-
-
-
-
-
-
-
 		/**
-		 * 设置字典名称
+		 * 字典名称
 		 *
 		 * @param dictName 字典名称
 		 * @return 字典POBuilder
 		 * @since 2022.03
 		 */
-
 		public DictPOBuilder dictName( String dictName ) {
 			this.dictName = dictName;
 			return this;
 		}
-
-
-
-
-
-
-
-
-
-
-
 
 		/**
 		 * 构建
@@ -644,7 +434,6 @@ public class DictPO extends BasePO<DictPO> {
 		 * @return 字典PO
 		 * @since 2022.03
 		 */
-
 		public DictPO build() {
 			DictPO dictPO = new DictPO();
 			dictPO.setRemark(remark);

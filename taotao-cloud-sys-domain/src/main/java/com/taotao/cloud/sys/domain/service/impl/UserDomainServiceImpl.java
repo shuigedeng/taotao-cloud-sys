@@ -59,16 +59,6 @@ public class UserDomainServiceImpl implements UserDomainService {
 		userAgg.assignRoles(assignableRoleIds);
 	}
 
-
-
-
-
-
-
-
-
-
-
 	/**
 	 * 验证角色是否存在
 	 *
@@ -77,7 +67,6 @@ public class UserDomainServiceImpl implements UserDomainService {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
-
 	private void validateRolesExist( Set<BizId> requestedRoleIds, List<BizId> assignableRoleIds ) {
 		Set<BizId> assignableRoleIdsCopy = new HashSet<>(assignableRoleIds);
 		Set<BizId> requestedRoleIdsCopy = new HashSet<>(requestedRoleIds);

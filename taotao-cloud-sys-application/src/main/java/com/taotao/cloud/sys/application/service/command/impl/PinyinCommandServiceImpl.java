@@ -34,23 +34,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PinyinCommandServiceImpl implements PinYinCommandService {
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 属性列表
      *
      * @return 无返回值
      * @since 2022.03
      */
-
     private final Properties properties = new Properties();
 
     public PinyinCommandServiceImpl() {

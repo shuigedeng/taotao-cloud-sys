@@ -117,36 +117,15 @@ public class RegionPO extends BasePO<RegionPO> {
     @Column(name = "`depth`", columnDefinition = "int not null default 0 comment '当前深度 已1开始'")
     private Integer depth;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取父级ID
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getParentId() {
         return parentId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置父级ID
@@ -155,20 +134,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取编码
@@ -176,20 +144,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -198,20 +155,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取名称
@@ -219,20 +165,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -241,20 +176,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取级别
@@ -262,20 +186,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLevel() {
         return level;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置级别
@@ -284,20 +197,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLevel(String level) {
         this.level = level;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取城市编码
@@ -305,20 +207,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCityCode() {
         return cityCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置城市编码
@@ -327,20 +218,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCityCode(String cityCode) {
         this.cityCode = cityCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Lng
@@ -348,20 +228,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLng() {
         return lng;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Lng
@@ -370,20 +239,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLng(String lng) {
         this.lng = lng;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Lat
@@ -391,20 +249,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLat() {
         return lat;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Lat
@@ -413,20 +260,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLat(String lat) {
         this.lat = lat;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取订单数量
@@ -434,20 +270,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getOrderNum() {
         return orderNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置订单数量
@@ -456,7 +281,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOrderNum(Integer orderNum) {
         this.orderNum = orderNum;
     }
@@ -465,16 +289,6 @@ public class RegionPO extends BasePO<RegionPO> {
         return idTree;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 设置IdTree
      *
@@ -482,7 +296,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setIdTree(List<Long> idTree) {
         this.idTree = idTree;
     }
@@ -491,16 +304,6 @@ public class RegionPO extends BasePO<RegionPO> {
         return codeTree;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 设置编码树结构
      *
@@ -508,20 +311,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCodeTree(List<String> codeTree) {
         this.codeTree = codeTree;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取部门h
@@ -529,20 +321,9 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getDepth() {
         return depth;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置部门h
@@ -551,7 +332,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDepth(Integer depth) {
         this.depth = depth;
     }

@@ -72,36 +72,15 @@ public class VisitsPO extends BasePO<VisitsPO> {
     @Column(name = "`week_day`", columnDefinition = "varchar(64) not null comment '天'")
     private String weekDay;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取日期
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDate() {
         return date;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置日期
@@ -110,20 +89,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDate(String date) {
         this.date = date;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取PvCounts
@@ -131,20 +99,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getPvCounts() {
         return pvCounts;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置PvCounts
@@ -153,20 +110,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPvCounts(Long pvCounts) {
         this.pvCounts = pvCounts;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取IpCounts
@@ -174,20 +120,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getIpCounts() {
         return ipCounts;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置IpCounts
@@ -196,20 +131,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setIpCounts(Long ipCounts) {
         this.ipCounts = ipCounts;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取WeekDay
@@ -217,20 +141,9 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getWeekDay() {
         return weekDay;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置WeekDay
@@ -239,7 +152,6 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setWeekDay(String weekDay) {
         this.weekDay = weekDay;
     }

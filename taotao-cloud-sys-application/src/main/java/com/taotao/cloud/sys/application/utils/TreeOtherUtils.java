@@ -191,16 +191,6 @@ public class TreeOtherUtils {
          */
         public Long cityId;
 
-
-
-
-
-
-
-
-
-
-
         /**
          * 转换
          *
@@ -208,7 +198,6 @@ public class TreeOtherUtils {
          * @return RegionCascadeVO
          * @since 2022.03
          */
-
         public RegionCascadeVO convertExt(Class clazz) {
             return null;
         }
@@ -295,16 +284,6 @@ public class TreeOtherUtils {
          */
         private String tenantCode;
 
-
-
-
-
-
-
-
-
-
-
         /**
          * 转换
          *
@@ -312,7 +291,6 @@ public class TreeOtherUtils {
          * @return 部门树结构NodeVO
          * @since 2022.03
          */
-
         public DeptTreeNodeVO convertExt(Class clazz) {
             return null;
         }
@@ -342,16 +320,6 @@ public class TreeOtherUtils {
          */
         protected String deptName;
 
-
-
-
-
-
-
-
-
-
-
         /**
          * 转换
          *
@@ -359,7 +327,6 @@ public class TreeOtherUtils {
          * @return 部门树结构NodeVO
          * @since 2022.03
          */
-
         public DeptTreeNodeVO convertExt(Class clazz) {
             return null;
         }

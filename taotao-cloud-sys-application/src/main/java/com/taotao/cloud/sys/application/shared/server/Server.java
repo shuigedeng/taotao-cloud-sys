@@ -66,37 +66,16 @@ public class Server {
      */
     private List<SysFile> sysFiles = new LinkedList<>();
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Cpu
      *
      * @return Cpu
      * @since 2022.03
      */
-
     public Cpu getCpu() {
 
         return cpu;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Cpu
@@ -105,21 +84,10 @@ public class Server {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCpu( Cpu cpu) {
 
         this.cpu = cpu;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Mem
@@ -127,21 +95,10 @@ public class Server {
      * @return Mem
      * @since 2022.03
      */
-
     public Mem getMem() {
 
         return mem;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Mem
@@ -150,21 +107,10 @@ public class Server {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMem( Mem mem) {
 
         this.mem = mem;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Jvm
@@ -172,21 +118,10 @@ public class Server {
      * @return Jvm
      * @since 2022.03
      */
-
     public Jvm getJvm() {
 
         return jvm;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Jvm
@@ -195,21 +130,10 @@ public class Server {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setJvm( Jvm jvm) {
 
         this.jvm = jvm;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Sys
@@ -217,21 +141,10 @@ public class Server {
      * @return Sys
      * @since 2022.03
      */
-
     public Sys getSys() {
 
         return sys;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Sys
@@ -240,7 +153,6 @@ public class Server {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSys( Sys sys) {
 
         this.sys = sys;
@@ -251,16 +163,6 @@ public class Server {
         return sysFiles;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 设置SysFiles
      *
@@ -268,7 +170,6 @@ public class Server {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSysFiles(List<SysFile> sysFiles) {
 
         this.sysFiles = sysFiles;

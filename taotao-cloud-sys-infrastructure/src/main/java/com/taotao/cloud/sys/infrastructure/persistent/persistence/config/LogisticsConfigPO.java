@@ -73,36 +73,15 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
             columnDefinition = "varchar(12) not null COMMENT '禁用状态 OPEN：开启，CLOSE：禁用'")
     private String disabled;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取名称
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -111,20 +90,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取编码
@@ -132,20 +100,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -154,20 +111,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ContactName
@@ -175,20 +121,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContactName() {
         return contactName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ContactName
@@ -197,20 +132,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContactName(String contactName) {
         this.contactName = contactName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ContactMobile
@@ -218,20 +142,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContactMobile() {
         return contactMobile;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ContactMobile
@@ -240,20 +153,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContactMobile(String contactMobile) {
         this.contactMobile = contactMobile;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取StandBy
@@ -261,20 +163,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getStandBy() {
         return standBy;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置StandBy
@@ -283,20 +174,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setStandBy(String standBy) {
         this.standBy = standBy;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取FormItems
@@ -304,20 +184,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getFormItems() {
         return formItems;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置FormItems
@@ -326,20 +195,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFormItems(String formItems) {
         this.formItems = formItems;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Disabled
@@ -347,20 +205,9 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDisabled() {
         return disabled;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Disabled
@@ -369,7 +216,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDisabled(String disabled) {
         this.disabled = disabled;
     }

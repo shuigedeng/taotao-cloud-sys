@@ -47,37 +47,16 @@ public class Jvm {
     /** JDK路径 */
     private String home;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取总计
      *
      * @return double
      * @since 2022.03
      */
-
     public double getTotal() {
 
         return total / (1024 * 1024);
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置总计
@@ -86,21 +65,10 @@ public class Jvm {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTotal(double total) {
 
         this.total = total;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Max
@@ -108,21 +76,10 @@ public class Jvm {
      * @return double
      * @since 2022.03
      */
-
     public double getMax() {
 
         return max / (1024 * 1024);
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Max
@@ -131,21 +88,10 @@ public class Jvm {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMax(double max) {
 
         this.max = max;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Free
@@ -153,21 +99,10 @@ public class Jvm {
      * @return double
      * @since 2022.03
      */
-
     public double getFree() {
 
         return free / (1024 * 1024);
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Free
@@ -176,21 +111,10 @@ public class Jvm {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFree(double free) {
 
         this.free = free;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Used
@@ -198,21 +122,10 @@ public class Jvm {
      * @return double
      * @since 2022.03
      */
-
     public double getUsed() {
 
         return (total - free) / (1024 * 1024);
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Usage
@@ -220,7 +133,6 @@ public class Jvm {
      * @return double
      * @since 2022.03
      */
-
     public double getUsage() {
 
         return (total - free) / total * 100;
@@ -232,37 +144,16 @@ public class Jvm {
         return ManagementFactory.getRuntimeMXBean().getVmName();
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取版本
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getVersion() {
 
         return version;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置版本
@@ -271,21 +162,10 @@ public class Jvm {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setVersion(String version) {
 
         this.version = version;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Home
@@ -293,21 +173,10 @@ public class Jvm {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getHome() {
 
         return home;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Home
@@ -316,7 +185,6 @@ public class Jvm {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setHome(String home) {
 
         this.home = home;

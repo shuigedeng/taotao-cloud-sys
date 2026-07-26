@@ -38,37 +38,16 @@ public class Sys {
     /** 系统架构 */
     private String osArch;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取ComputerName
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getComputerName() {
 
         return computerName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ComputerName
@@ -77,21 +56,10 @@ public class Sys {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setComputerName(String computerName) {
 
         this.computerName = computerName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ComputerIp
@@ -99,21 +67,10 @@ public class Sys {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getComputerIp() {
 
         return computerIp;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ComputerIp
@@ -122,21 +79,10 @@ public class Sys {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setComputerIp(String computerIp) {
 
         this.computerIp = computerIp;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取UserDir
@@ -144,21 +90,10 @@ public class Sys {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUserDir() {
 
         return userDir;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置UserDir
@@ -167,21 +102,10 @@ public class Sys {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserDir(String userDir) {
 
         this.userDir = userDir;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取OsName
@@ -189,21 +113,10 @@ public class Sys {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOsName() {
 
         return osName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置OsName
@@ -212,21 +125,10 @@ public class Sys {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOsName(String osName) {
 
         this.osName = osName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取OsArch
@@ -234,21 +136,10 @@ public class Sys {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOsArch() {
 
         return osArch;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置OsArch
@@ -257,7 +148,6 @@ public class Sys {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOsArch(String osArch) {
 
         this.osArch = osArch;

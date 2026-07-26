@@ -20,21 +20,11 @@ import com.taotao.boot.ddd.model.application.service.CommandService;
 
 public interface BussinessCommandService extends CommandService {
 
-
-
-
-
-
-
-
-
-
     /**
      * 保存订单
      *
      * @return 是否成功
      * @since 2022.03
      */
-
     public boolean saveOrder();
 }

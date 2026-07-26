@@ -41,36 +41,15 @@ public enum ResourceTypeEnum {
         this.message = message;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取编码
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取消息
@@ -78,7 +57,6 @@ public enum ResourceTypeEnum {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMessage() {
         return message;
     }

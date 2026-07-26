@@ -40,37 +40,16 @@ public class Cpu {
     /** CPU当前空闲率 */
     private double free;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取CpuNum
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public int getCpuNum() {
 
         return cpuNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置CpuNum
@@ -79,21 +58,10 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCpuNum(int cpuNum) {
 
         this.cpuNum = cpuNum;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取总计
@@ -101,21 +69,10 @@ public class Cpu {
      * @return double
      * @since 2022.03
      */
-
     public double getTotal() {
 
         return total * 100;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置总计
@@ -124,21 +81,10 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTotal(double total) {
 
         this.total = total;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Sys
@@ -146,21 +92,10 @@ public class Cpu {
      * @return double
      * @since 2022.03
      */
-
     public double getSys() {
 
         return sys / total * 100;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Sys
@@ -169,21 +104,10 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSys(double sys) {
 
         this.sys = sys;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Used
@@ -191,21 +115,10 @@ public class Cpu {
      * @return double
      * @since 2022.03
      */
-
     public double getUsed() {
 
         return used / total * 100;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Used
@@ -214,21 +127,10 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUsed(double used) {
 
         this.used = used;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Wait
@@ -236,21 +138,10 @@ public class Cpu {
      * @return double
      * @since 2022.03
      */
-
     public double getWait() {
 
         return wait / total * 100;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Wait
@@ -259,21 +150,10 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setWait(double wait) {
 
         this.wait = wait;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Free
@@ -281,21 +161,10 @@ public class Cpu {
      * @return double
      * @since 2022.03
      */
-
     public double getFree() {
 
         return free / total * 100;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Free
@@ -304,7 +173,6 @@ public class Cpu {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFree(double free) {
 
         this.free = free;

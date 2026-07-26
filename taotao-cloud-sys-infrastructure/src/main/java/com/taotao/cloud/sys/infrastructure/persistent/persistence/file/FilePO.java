@@ -93,36 +93,15 @@ public class FilePO extends BasePO<FilePO> {
     @Column(name = "`length`", columnDefinition = "bigint null comment '大小'")
     private Long length;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取CreateName
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCreateName() {
         return createName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置CreateName
@@ -131,20 +110,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCreateName(String createName) {
         this.createName = createName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取BizType
@@ -152,20 +120,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBizType() {
         return bizType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置BizType
@@ -174,20 +131,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBizType(String bizType) {
         this.bizType = bizType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取数据类型
@@ -195,20 +141,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDataType() {
         return dataType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置数据类型
@@ -217,20 +152,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Original
@@ -238,20 +162,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOriginal() {
         return original;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Original
@@ -260,20 +173,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOriginal(String original) {
         this.original = original;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取URL
@@ -281,20 +183,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUrl() {
         return url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置URL
@@ -303,20 +194,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUrl(String url) {
         this.url = url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取md5
@@ -324,20 +204,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMd5() {
         return md5;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置md5
@@ -346,20 +215,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMd5(String md5) {
         this.md5 = md5;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取类型
@@ -367,20 +225,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getType() {
         return type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置类型
@@ -389,20 +236,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setType(String type) {
         this.type = type;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ContextType
@@ -410,20 +246,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContextType() {
         return contextType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ContextType
@@ -432,20 +257,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContextType(String contextType) {
         this.contextType = contextType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取名称
@@ -453,20 +267,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -475,20 +278,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Ext
@@ -496,20 +288,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getExt() {
         return ext;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Ext
@@ -518,20 +299,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setExt(String ext) {
         this.ext = ext;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取长度
@@ -539,20 +309,9 @@ public class FilePO extends BasePO<FilePO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getLength() {
         return length;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置长度
@@ -561,7 +320,6 @@ public class FilePO extends BasePO<FilePO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLength(Long length) {
         this.length = length;
     }

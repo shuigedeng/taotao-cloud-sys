@@ -72,36 +72,15 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
     @Column(name = "`remarks`", columnDefinition = "varchar(255) not null comment '备注'")
     private String remarks;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取LanguageTag
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLanguageTag() {
         return languageTag;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置LanguageTag
@@ -110,20 +89,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLanguageTag(String languageTag) {
         this.languageTag = languageTag;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取编码
@@ -131,20 +99,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -153,20 +110,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取消息
@@ -174,20 +120,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMessage() {
         return message;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置消息
@@ -196,20 +131,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMessage(String message) {
         this.message = message;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注s
@@ -217,20 +141,9 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemarks() {
         return remarks;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注s
@@ -239,7 +152,6 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }

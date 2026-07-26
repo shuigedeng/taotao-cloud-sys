@@ -49,23 +49,12 @@ public class PointSetting implements Serializable {
     /** 积分具体设置 */
     private List<PointSettingItem> pointSettingItems = new ArrayList<>();
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Register
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getRegister() {
         if (register == null || register < 0) {
             return 0;
@@ -73,23 +62,12 @@ public class PointSetting implements Serializable {
         return register;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Money
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getMoney() {
         if (money == null || money < 0) {
             return 0;
@@ -97,23 +75,12 @@ public class PointSetting implements Serializable {
         return money;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Consumer
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getConsumer() {
         if (consumer == null || consumer < 0) {
             return 0;
@@ -121,23 +88,12 @@ public class PointSetting implements Serializable {
         return consumer;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取SignIn
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSignIn() {
         if (signIn == null || signIn < 0) {
             return 0;
@@ -145,23 +101,12 @@ public class PointSetting implements Serializable {
         return signIn;
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Comment
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getComment() {
         if (comment == null || comment < 0) {
             return 0;

@@ -34,15 +34,6 @@ public interface QuartzJobQueryApi {
 
     @PostExchange("/job/addQuartzJobDTOTestSeata")
 
-
-
-
-
-
-
-
-
-
     /**
      * 添加
      *
@@ -50,6 +41,5 @@ public interface QuartzJobQueryApi {
      * @return 是否成功
      * @since 2022.03
      */
-
     public Boolean addQuartzJobDTOTestSeata(@Validated @RequestBody Long quartzJobDTO);
 }

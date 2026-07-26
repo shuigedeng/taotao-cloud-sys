@@ -126,36 +126,15 @@ public class UserPO extends BasePO<UserPO> {
     // @Column(name = "`job_id`", columnDefinition = "bigint not null comment '岗位ID'")
     // private Long jobId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取Account
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAccount() {
         return account;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Account
@@ -164,20 +143,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAccount(String account) {
         this.account = account;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取昵称
@@ -185,20 +153,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getNickname() {
         return nickname;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置昵称
@@ -207,20 +164,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取用户名
@@ -228,20 +174,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUsername() {
         return username;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户名
@@ -250,20 +185,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUsername(String username) {
         this.username = username;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取密码
@@ -271,20 +195,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPassword() {
         return password;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置密码
@@ -293,20 +206,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取手机号
@@ -314,20 +216,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMobile() {
         return mobile;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置手机号
@@ -336,20 +227,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取手机号
@@ -357,20 +237,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPhone() {
         return phone;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置手机号
@@ -379,20 +248,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Sex
@@ -400,20 +258,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSex() {
         return sex;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Sex
@@ -422,20 +269,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSex(Integer sex) {
         this.sex = sex;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取邮箱
@@ -443,20 +279,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getEmail() {
         return email;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置邮箱
@@ -465,20 +290,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Birthday
@@ -486,20 +300,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBirthday() {
         return birthday;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Birthday
@@ -508,20 +311,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取头像
@@ -529,20 +321,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAvatar() {
         return avatar;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置头像
@@ -551,20 +332,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取状态
@@ -572,20 +342,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getStatus() {
         return status;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置状态
@@ -594,20 +353,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -615,20 +363,9 @@ public class UserPO extends BasePO<UserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -637,7 +374,6 @@ public class UserPO extends BasePO<UserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

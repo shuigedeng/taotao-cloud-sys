@@ -54,23 +54,12 @@ public record AssignRolesCommand(
 			.collect(Collectors.toSet());
 	}
 
-
-
-
-
-
-
-
-
-
-
 	/**
 	 * 判断角色ID列表
 	 *
 	 * @return 是否成功
 	 * @since 2022.03
 	 */
-
 	public boolean hasRoleIds() {
 		return roleIds != null && !roleIds.isEmpty();
 	}

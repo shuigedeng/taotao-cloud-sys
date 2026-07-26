@@ -168,36 +168,15 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
     @Column(name = "phone_number", length = 50)
     private String phoneNumber;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取SocialId
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSocialId() {
         return socialId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置SocialId
@@ -206,20 +185,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSocialId(String socialId) {
         this.socialId = socialId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Uuid
@@ -227,20 +195,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUuid() {
         return uuid;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Uuid
@@ -249,20 +206,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取用户名
@@ -270,20 +216,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUserName() {
         return userName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户名
@@ -292,20 +227,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取昵称
@@ -313,20 +237,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getNickName() {
         return nickName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置昵称
@@ -335,20 +248,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取头像
@@ -356,20 +258,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAvatar() {
         return avatar;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置头像
@@ -378,20 +269,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Blog
@@ -399,20 +279,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBlog() {
         return blog;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Blog
@@ -421,20 +290,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBlog(String blog) {
         this.blog = blog;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Company
@@ -442,20 +300,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCompany() {
         return company;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Company
@@ -464,20 +311,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCompany(String company) {
         this.company = company;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Location
@@ -485,20 +321,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLocation() {
         return location;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Location
@@ -507,20 +332,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLocation(String location) {
         this.location = location;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取邮箱
@@ -528,20 +342,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getEmail() {
         return email;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置邮箱
@@ -550,20 +353,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -571,20 +363,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -593,20 +374,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Gender
@@ -614,20 +384,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return AuthUserGender
      * @since 2022.03
      */
-
     public AuthUserGender getGender() {
         return gender;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Gender
@@ -636,20 +395,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setGender(AuthUserGender gender) {
         this.gender = gender;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取来源
@@ -657,20 +405,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSource() {
         return source;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置来源
@@ -679,20 +416,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSource(String source) {
         this.source = source;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取AccessToken
@@ -700,20 +426,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAccessToken() {
         return accessToken;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置AccessToken
@@ -722,20 +437,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ExpireIn
@@ -743,20 +447,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getExpireIn() {
         return expireIn;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ExpireIn
@@ -765,20 +458,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setExpireIn(Integer expireIn) {
         this.expireIn = expireIn;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取RefreshToken
@@ -786,20 +468,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRefreshToken() {
         return refreshToken;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置RefreshToken
@@ -808,20 +479,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取RefreshTokenExpireIn
@@ -829,20 +489,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getRefreshTokenExpireIn() {
         return refreshTokenExpireIn;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置RefreshTokenExpireIn
@@ -851,20 +500,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRefreshTokenExpireIn(Integer refreshTokenExpireIn) {
         this.refreshTokenExpireIn = refreshTokenExpireIn;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Scope
@@ -872,20 +510,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getScope() {
         return scope;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Scope
@@ -894,20 +521,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setScope(String scope) {
         this.scope = scope;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Token类型
@@ -915,20 +531,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTokenType() {
         return tokenType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Token类型
@@ -937,20 +542,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTokenType(String tokenType) {
         this.tokenType = tokenType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Uid
@@ -958,20 +552,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUid() {
         return uid;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Uid
@@ -980,20 +563,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUid(String uid) {
         this.uid = uid;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取OpenId
@@ -1001,20 +573,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOpenId() {
         return openId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置OpenId
@@ -1023,20 +584,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOpenId(String openId) {
         this.openId = openId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取AccessCode
@@ -1044,20 +594,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAccessCode() {
         return accessCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置AccessCode
@@ -1066,20 +605,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAccessCode(String accessCode) {
         this.accessCode = accessCode;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取UnionId
@@ -1087,20 +615,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUnionId() {
         return unionId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置UnionId
@@ -1109,20 +626,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUnionId(String unionId) {
         this.unionId = unionId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取AppId
@@ -1130,20 +636,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getAppId() {
         return appId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置AppId
@@ -1152,20 +647,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取手机号编号
@@ -1173,20 +657,9 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置手机号编号
@@ -1195,7 +668,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

@@ -173,36 +173,15 @@ public class LogPO extends BasePO<LogPO> {
     @EncryptField
     private String browser;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取TraceId
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTraceId() {
         return traceId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置TraceId
@@ -211,20 +190,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTraceId(String traceId) {
         this.traceId = traceId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ApplicationName
@@ -232,20 +200,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getApplicationName() {
         return applicationName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ApplicationName
@@ -254,20 +211,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取用户名
@@ -275,20 +221,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUsername() {
         return username;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户名
@@ -297,20 +232,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUsername(String username) {
         this.username = username;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取用户ID
@@ -318,20 +242,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUserId() {
         return userId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置用户ID
@@ -340,20 +253,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ClientId
@@ -361,20 +263,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getClientId() {
         return clientId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ClientId
@@ -383,20 +274,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取描述
@@ -404,20 +284,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDescription() {
         return description;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置描述
@@ -426,20 +295,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Ip
@@ -447,20 +305,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getIp() {
         return ip;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Ip
@@ -469,20 +316,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setIp(String ip) {
         this.ip = ip;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取OperateType
@@ -490,20 +326,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getOperateType() {
         return operateType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置OperateType
@@ -512,20 +337,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOperateType(Integer operateType) {
         this.operateType = operateType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取请求类型
@@ -533,20 +347,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getRequestType() {
         return requestType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置请求类型
@@ -555,20 +358,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRequestType(Integer requestType) {
         this.requestType = requestType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取MethodName
@@ -576,20 +368,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMethodName() {
         return methodName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置MethodName
@@ -598,20 +379,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMethodName(String methodName) {
         this.methodName = methodName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Method
@@ -619,20 +389,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getMethod() {
         return method;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Method
@@ -641,20 +400,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setMethod(String method) {
         this.method = method;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取URL
@@ -662,20 +410,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUrl() {
         return url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置URL
@@ -684,20 +421,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUrl(String url) {
         this.url = url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Args
@@ -705,20 +431,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getArgs() {
         return args;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Args
@@ -727,20 +442,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setArgs(String args) {
         this.args = args;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取参数列表
@@ -748,20 +452,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getParams() {
         return params;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置参数列表
@@ -770,20 +463,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setParams(String params) {
         this.params = params;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Headers
@@ -791,20 +473,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getHeaders() {
         return headers;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Headers
@@ -813,20 +484,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setHeaders(String headers) {
         this.headers = headers;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Classpath
@@ -834,20 +494,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getClasspath() {
         return classpath;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Classpath
@@ -856,20 +505,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setClasspath(String classpath) {
         this.classpath = classpath;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取开始时间
@@ -877,20 +515,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getStartTime() {
         return startTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置开始时间
@@ -899,20 +526,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取结束时间
@@ -920,20 +536,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getEndTime() {
         return endTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置结束时间
@@ -942,20 +547,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ConsumingTime
@@ -963,20 +557,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getConsumingTime() {
         return consumingTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ConsumingTime
@@ -985,20 +568,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setConsumingTime(Long consumingTime) {
         this.consumingTime = consumingTime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ExDetail
@@ -1006,20 +578,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getExDetail() {
         return exDetail;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ExDetail
@@ -1028,20 +589,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setExDetail(String exDetail) {
         this.exDetail = exDetail;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ExDesc
@@ -1049,20 +599,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getExDesc() {
         return exDesc;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ExDesc
@@ -1071,20 +610,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setExDesc(String exDesc) {
         this.exDesc = exDesc;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -1092,20 +620,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -1114,20 +631,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取来源
@@ -1135,20 +641,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getSource() {
         return source;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置来源
@@ -1157,20 +652,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSource(String source) {
         this.source = source;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Ctime
@@ -1178,20 +662,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCtime() {
         return ctime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Ctime
@@ -1200,20 +673,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCtime(String ctime) {
         this.ctime = ctime;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取结果
@@ -1221,20 +683,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getResult() {
         return result;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置结果
@@ -1243,20 +694,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setResult(String result) {
         this.result = result;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取日志day
@@ -1264,20 +704,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLogday() {
         return logday;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置日志day
@@ -1286,20 +715,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLogday(String logday) {
         this.logday = logday;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Location
@@ -1307,20 +725,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getLocation() {
         return location;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Location
@@ -1329,20 +736,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setLocation(String location) {
         this.location = location;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Os
@@ -1350,20 +746,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOs() {
         return os;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Os
@@ -1372,20 +757,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOs(String os) {
         this.os = os;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Browser
@@ -1393,20 +767,9 @@ public class LogPO extends BasePO<LogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBrowser() {
         return browser;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Browser
@@ -1415,7 +778,6 @@ public class LogPO extends BasePO<LogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBrowser(String browser) {
         this.browser = browser;
     }

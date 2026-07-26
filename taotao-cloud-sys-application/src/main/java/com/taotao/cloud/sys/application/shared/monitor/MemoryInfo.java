@@ -47,36 +47,15 @@ public class MemoryInfo {
      */
     private double free;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取总计
      *
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getTotal() {
         return BigDecimal.valueOf(NumberUtil.div(total, CommonConstants.GB, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Used
@@ -84,20 +63,9 @@ public class MemoryInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getUsed() {
         return BigDecimal.valueOf(NumberUtil.div(used, CommonConstants.GB, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Free
@@ -105,20 +73,9 @@ public class MemoryInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getFree() {
         return BigDecimal.valueOf(NumberUtil.div(free, CommonConstants.GB, 2));
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Usage
@@ -126,7 +83,6 @@ public class MemoryInfo {
      * @return BigDecimal
      * @since 2022.03
      */
-
     public BigDecimal getUsage() {
         return BigDecimal.valueOf(NumberUtil.div(used * 100, total, 2));
     }

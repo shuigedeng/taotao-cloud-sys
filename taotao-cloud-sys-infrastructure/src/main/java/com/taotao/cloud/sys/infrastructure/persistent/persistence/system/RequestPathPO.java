@@ -98,36 +98,15 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
     @Column(name = "`tenant_id`", columnDefinition = "varchar(32) COMMENT '租户id'")
     private String tenantId;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取编码
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -136,20 +115,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取名称
@@ -157,20 +125,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -179,20 +136,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取GroupName
@@ -200,20 +146,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getGroupName() {
         return groupName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置GroupName
@@ -222,20 +157,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取请求类型
@@ -243,20 +167,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRequestType() {
         return requestType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置请求类型
@@ -265,20 +178,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRequestType(String requestType) {
         this.requestType = requestType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取路径
@@ -286,20 +188,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPath() {
         return path;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置路径
@@ -308,20 +199,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPath(String path) {
         this.path = path;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 判断Enable
@@ -329,20 +209,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 是否成功
      * @since 2022.03
      */
-
     public boolean isEnable() {
         return enable;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Enable
@@ -351,20 +220,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setEnable(boolean enable) {
         this.enable = enable;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 判断Generate
@@ -372,20 +230,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 是否成功
      * @since 2022.03
      */
-
     public boolean isGenerate() {
         return generate;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Generate
@@ -394,20 +241,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setGenerate(boolean generate) {
         this.generate = generate;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取备注
@@ -415,20 +251,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getRemark() {
         return remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置备注
@@ -437,20 +262,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取租户ID
@@ -458,20 +272,9 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getTenantId() {
         return tenantId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置租户ID
@@ -480,7 +283,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }

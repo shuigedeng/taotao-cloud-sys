@@ -69,36 +69,15 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
     @Column(name = "`user`", columnDefinition = "varchar(64) not null comment '发件者用户名'")
     private String user;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取FromUser
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getFromUser() {
         return fromUser;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置FromUser
@@ -107,20 +86,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFromUser(String fromUser) {
         this.fromUser = fromUser;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Host
@@ -128,20 +96,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getHost() {
         return host;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Host
@@ -150,20 +107,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setHost(String host) {
         this.host = host;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Pass
@@ -171,20 +117,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPass() {
         return pass;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Pass
@@ -193,20 +128,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPass(String pass) {
         this.pass = pass;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Port
@@ -214,20 +138,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getPort() {
         return port;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Port
@@ -236,20 +149,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setPort(String port) {
         this.port = port;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取User
@@ -257,20 +159,9 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUser() {
         return user;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置User
@@ -279,7 +170,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUser(String user) {
         this.user = user;
     }

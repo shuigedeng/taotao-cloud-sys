@@ -70,36 +70,15 @@ public class AppPO extends BasePO<AppPO> {
      */
     private Integer sort;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取名称
      *
      * @return 字符串
      * @since 2022.03
      */
-
     public String getName() {
         return name;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取编码
@@ -107,20 +86,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getCode() {
         return code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取图标
@@ -128,20 +96,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getIcon() {
         return icon;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取排序
@@ -149,20 +106,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Integer getSort() {
         return sort;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置排序
@@ -171,20 +117,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSort(Integer sort) {
         this.sort = sort;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置图标
@@ -193,20 +128,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setIcon(String icon) {
         this.icon = icon;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置编码
@@ -215,20 +139,9 @@ public class AppPO extends BasePO<AppPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置名称
@@ -237,7 +150,6 @@ public class AppPO extends BasePO<AppPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setName(String name) {
         this.name = name;
     }

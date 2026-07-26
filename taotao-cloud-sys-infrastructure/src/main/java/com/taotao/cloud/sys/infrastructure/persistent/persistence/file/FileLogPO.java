@@ -99,36 +99,15 @@ public class FileLogPO extends BasePO<FileLogPO> {
     @Column(name = "`size`", columnDefinition = "bigint not null comment '大小'")
     private Long size;
 
-
-
-
-
-
-
-
-
-
-
     /**
      * 获取BizId
      *
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getBizId() {
         return bizId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置BizId
@@ -137,20 +116,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBizId(Long bizId) {
         this.bizId = bizId;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取BizType
@@ -158,20 +126,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getBizType() {
         return bizType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置BizType
@@ -180,20 +137,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setBizType(String bizType) {
         this.bizType = bizType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取数据类型
@@ -201,20 +147,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getDataType() {
         return dataType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置数据类型
@@ -223,20 +158,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取OriginalFileName
@@ -244,20 +168,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getOriginalFileName() {
         return originalFileName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置OriginalFileName
@@ -266,20 +179,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setOriginalFileName(String originalFileName) {
         this.originalFileName = originalFileName;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取URL
@@ -287,20 +189,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getUrl() {
         return url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置URL
@@ -309,20 +200,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setUrl(String url) {
         this.url = url;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取文件md5
@@ -330,20 +210,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getFileMd5() {
         return fileMd5;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置文件md5
@@ -352,20 +221,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFileMd5(String fileMd5) {
         this.fileMd5 = fileMd5;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取ContextType
@@ -373,20 +231,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getContextType() {
         return contextType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置ContextType
@@ -395,20 +242,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setContextType(String contextType) {
         this.contextType = contextType;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取文件名称
@@ -416,20 +252,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getFilename() {
         return filename;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置文件名称
@@ -438,20 +263,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setFilename(String filename) {
         this.filename = filename;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取Ext
@@ -459,20 +273,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 字符串
      * @since 2022.03
      */
-
     public String getExt() {
         return ext;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置Ext
@@ -481,20 +284,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setExt(String ext) {
         this.ext = ext;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 获取尺寸
@@ -502,20 +294,9 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 结果数量
      * @since 2022.03
      */
-
     public Long getSize() {
         return size;
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 设置尺寸
@@ -524,7 +305,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * @return 无返回值
      * @since 2022.03
      */
-
     public void setSize(Long size) {
         this.size = size;
     }
