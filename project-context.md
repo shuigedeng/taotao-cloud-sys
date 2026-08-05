@@ -2,7 +2,7 @@
 
 > **生成时间**: 2026-07-02
 > **命令**: `/ttc-spec-init`
-> **项目**: `io.github.shuigedeng:taotao-cloud-sys:2026.08`
+> **项目**: `io.github.shuigedeng:taotao-cloud-sys:2026.09`
 > **描述**: 基于 DDD 六边形架构的企业级系统管理中心微服务，提供用户、部门、角色、资源、字典、文件、日志、配置等基础服务
 
 ---
