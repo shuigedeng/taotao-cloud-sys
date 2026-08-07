@@ -70,8 +70,8 @@ public class FileAgg extends AggregateRoot<Long> {
 	 * @since 2022.03
 	 */
 	public void checkIdAndPid() {
-		if (id.equals(pid)) {
-			throw new BusinessException("上级部门不能为当前部门");
-		}
+//		if (id.equals(pid)) {
+//			throw new BusinessException("上级部门不能为当前部门");
+//		}
 	}
 }
