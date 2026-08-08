@@ -380,7 +380,7 @@ rocketmq:
 spring:
   grpc:
     server:
-      port: 9097
+      port: 9091
       enabled: true
       servlet:
         enabled: false
@@ -388,7 +388,7 @@ spring:
       enabled: true
       channels:
         local:
-          address: static://localhost:9097
+          address: static://localhost:9091
           enableKeepAlive: true
           idle-timeout: 60s
         #laokou-common-grpc:
@@ -848,7 +848,7 @@ spring:
       #            rule-type: param-flow
       transport:
         dashboard: ${remote-ip}:8858
-        port: 8712
+        port: 8711
       metric:
         file-single-size: 1024 * 1024 * 50
         file-total-count: 10
