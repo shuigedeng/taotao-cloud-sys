@@ -192,6 +192,18 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.21
 
+  zookeeper-3.9.5:
+    image: zookeeper:3.9.5
+    container_name: zookeeper-3.9.5
+    restart: no
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.26
+
   kafka-4.3.0:
     image: apache/kafka:4.3.0
     container_name: kafka-4.3.0
@@ -454,71 +466,22 @@ services:
   #    taotao-cluster-network:
   #      ipv4_address: 172.11.0.17
 
-  zipkin-3.6:
-    image: openzipkin/zipkin:3.6
-    container_name: zipkin-3.6
-    restart: no
-    environment:
-      - STORAGE_TYPE=mysql
-      - MYSQL_DB=taotao-cloud-zipkin-3.4.2
-      - MYSQL_USER=root
-      - MYSQL_PASS=123456
-      - MYSQL_HOST=172.11.0.10
-      - MYSQL_TCP_PORT=3306
-    ports:
-      - "9411:9411"
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.18
-
-    #rocketmq-nameserv-4.9.6:
-    #  image: apache/rocketmq:4.9.6
-    #  container_name: rocketmq-nameserv-
-    #  ports:
-    #    - "9876:9876"
-    #  restart: no
-    #  privileged: true
-    #  command: [ "sh","mqnamesrv" ]
-    #  networks:
-    #    taotao-cluster-network:
-    #       ipv4_address: 172.11.0.19
-    #rocketmq-broker-:
-    #  image: apache/rocketmq:4.9.6
-    #  container_name: rocketmq-broker-
-    #  ports:
-    #    - "10909:10909"
-    #    - "10911:10911"
-    #    - "10912:10912"
-    #  restart: no
-    #  privileged: true
-    #  depends_on:
-    #    - 'rocketmq-nameserv'
-    #  environment:
-    #    NAMESRV_ADDR: 192.168.218.2:9876
-    #  volumes:
-    #    - ./rocketmq/broker.conf:/home/rocketmq/rocketmq-4.9.6/conf/broker.conf
-    #  command: [ "sh","mqbroker","-c","/home/rocketmq/rocketmq-4.9.6/conf/broker.conf", "autoCreateTopicEnable=true" ]
-    #  networks:
-    #    taotao-cluster-network:
-    #      ipv4_address: 172.11.0.20
-    #rocketmq-dashboard:
-    #  image: apacherocketmq/rocketmq-dashboard:latest
-    #  container_name: rocketmq-dashboard
-    #  ports:
-    #    - "8082:8080"
-    #  restart: no
-    #  privileged: true
-    #  depends_on:
-    #    - 'rocketmq-nameserv'
-    #    - 'rocketmq-broker'
-    #  environment:
-    #    JAVA_OPTS: '-Drocketmq.namesrv.addr=192.168.218.2:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false'
-    #  networks:
-    #    taotao-cluster-network:
-    #      ipv4_address: 172.11.0.21
-    #
-
-
+  #zipkin-3.6:
+  #  image: openzipkin/zipkin:3.6
+  #  container_name: zipkin-3.6
+  #  restart: no
+  #  environment:
+  #    - STORAGE_TYPE=mysql
+  #    - MYSQL_DB=taotao-cloud-zipkin-3.4.2
+  #    - MYSQL_USER=root
+  #    - MYSQL_PASS=123456
+  #    - MYSQL_HOST=172.11.0.10
+  #    - MYSQL_TCP_PORT=3306
+  #  ports:
+  #    - "9411:9411"
+  #  networks:
+  #    taotao-cluster-network:
+  #      ipv4_address: 172.11.0.18
 
   #arthas:
   #  image: hengyunabc/arthas:4.1.1
@@ -532,20 +495,6 @@ services:
   #  networks:
   #    taotao-cluster-network:
   #      ipv4_address: 172.11.0.22
-
-  zookeeper-3.9.5:
-    image: zookeeper:3.9.5
-    container_name: zookeeper-3.9.5
-    restart: no
-    ports:
-      - "2181:2181"
-    environment:
-      - ALLOW_ANONYMOUS_LOGIN=yes
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.23
-
-
 
   #minio:
   #  image: quay.io/minio/minio:latest
@@ -562,73 +511,68 @@ services:
   #    taotao-cluster-network:
   #      ipv4_address: 172.11.0.26
 
-
-
-  prometheus-3.12.0:
-    image: prom/prometheus:v3.12.0
-    container_name: prometheus-3.12.0
-    restart: no
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
-      - '--web.console.templates=/usr/share/prometheus/consoles'
-      - '--web.external-url=http://192.168.218.2:9090/'
-      - '--web.enable-lifecycle'
-    ports:
-      - "9090:9090"
-    links:
-      - alertmanager:alertmanager
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.28
-  alertmanager-0.33.0:
-    image: prom/alertmanager:v0.33.0
-    container_name: alertmanager-0.33.0
-    restart: no
-    ports:
-      - "9094:9093"
-    volumes:
-      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
-    command:
-      - '--config.file=/etc/alertmanager/alertmanager.yml'
-      - '--storage.path=/alertmanager'
-      - '--cluster.listen-address='
-      - '--cluster.advertise-address='
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.29
-  grafana-13.0.2:
-    image: grafana/grafana:13.0.2
-    container_name: grafana-13.0.2
-    restart: no
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_INSTALL_PLUGINS=camptocamp-prometheus-alertmanager-datasource
-    links:
-      - prometheus:prometheus
-      - alertmanager:alertmanager
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.30
-
-
-
-  loki-main:
-    container_name: loki-main
-    image: grafana/loki:main
-    restart: no
-    environment:
-      - TZ=Asia/Shanghai
-      - LANG=zh_CN.UTF-8
-    ports:
-      - "3100:3100"
-    #command: -config.file=/mnt/config/loki-config.yaml
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.32
+  #prometheus-3.12.0:
+  #  image: prom/prometheus:v3.12.0
+  #  container_name: prometheus-3.12.0
+  #  restart: no
+  #  volumes:
+  #    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #  command:
+  #    - '--config.file=/etc/prometheus/prometheus.yml'
+  #    - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+  #    - '--web.console.templates=/usr/share/prometheus/consoles'
+  #    - '--web.external-url=http://192.168.218.2:9090/'
+  #    - '--web.enable-lifecycle'
+  #  ports:
+  #    - "9090:9090"
+  #  links:
+  #    - alertmanager:alertmanager
+  #  networks:
+  #    taotao-cluster-network:
+  #      ipv4_address: 172.11.0.28
+  #alertmanager-0.33.0:
+  #  image: prom/alertmanager:v0.33.0
+  #  container_name: alertmanager-0.33.0
+  #  restart: no
+  #  ports:
+  #    - "9094:9093"
+  #  volumes:
+  #    - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+  #  command:
+  #    - '--config.file=/etc/alertmanager/alertmanager.yml'
+  #    - '--storage.path=/alertmanager'
+  #    - '--cluster.listen-address='
+  #    - '--cluster.advertise-address='
+  #  networks:
+  #    taotao-cluster-network:
+  #      ipv4_address: 172.11.0.29
+  #grafana-13.0.2:
+  #  image: grafana/grafana:13.0.2
+  #  container_name: grafana-13.0.2
+  #  restart: no
+  #  ports:
+  #    - "3000:3000"
+  #  environment:
+  #    - GF_INSTALL_PLUGINS=camptocamp-prometheus-alertmanager-datasource
+  #  links:
+  #    - prometheus:prometheus
+  #    - alertmanager:alertmanager
+  #  networks:
+  #    taotao-cluster-network:
+  #      ipv4_address: 172.11.0.30
+  #loki-main:
+  #  container_name: loki-main
+  #  image: grafana/loki:main
+  #  restart: no
+  #  environment:
+  #    - TZ=Asia/Shanghai
+  #    - LANG=zh_CN.UTF-8
+  #  ports:
+  #    - "3100:3100"
+  #  #command: -config.file=/mnt/config/loki-config.yaml
+  #  networks:
+  #    taotao-cluster-network:
+  #      ipv4_address: 172.11.0.32
 
 networks:
   taotao-cluster-network:
