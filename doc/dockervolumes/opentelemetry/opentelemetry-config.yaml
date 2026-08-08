@@ -27,6 +27,10 @@ exporters:
     headers:
       Authorization: "Basic OTgxMzc2NTc3QHFxLmNvbTpDb21wbGV4cGFzcyMxMjM="
       stream-name: "default"
+  #otlp/databuff:
+  #  endpoint: "172.11.0.78:4317"
+  #  tls:
+  #    insecure: true
 
 service:
   extensions: [ zpages ]
