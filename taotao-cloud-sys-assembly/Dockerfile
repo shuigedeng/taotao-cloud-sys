@@ -5,7 +5,7 @@ WORKDIR /builder
 
 COPY ./build/libs/taotao-cloud-sys-2026.09.jar ./
 
-RUN java -Djarmode=layertools -jar taotao-cloud-sys-2026.09.jar extract --layers --destination extracted
+RUN java -Djarmode=tools -jar taotao-cloud-sys-2026.09.jar extract --layers --destination extracted
 
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-skywalking:openjdk-17-8.6.0
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk25:amd64
@@ -14,10 +14,10 @@ FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk
 
 ARG SKYWALKING_BACKEND_SERVICE=127.0.0.1:11800
 ARG SKYWALKING_AGENT_AUTHENTICATION=taotao-cloud
-ARG APP_NAME=taotao-cloud-monitor
+ARG APP_NAME=taotao-cloud-sys
 ARG APP_VERSION=2026.09
 ARG APP_JAR_NAME=${APP_NAME}-${APP_VERSION}.jar
-ARG APP_PORT=33332
+ARG APP_PORT=33331
 ARG APP_PRROFILES=dev
 ARG DINGDING_TOKEN_ID_ARG=xxxxxx
 ARG DINGDING_SECRET_ARG=xxxxxx
@@ -61,7 +61,7 @@ ENV PYROSCOPE_PROFILING_INTERVAL=10ms
 ENV PYROSCOPE_PROFILER_EVENT=cpu,alloc,lock,wall,itimer
 ENV PYROSCOPE_UPLOAD_INTERVAL=10s
 ENV PYROSCOPE_LOG_LEVEL=info
-ENV PYROSCOPE_LABELS="APP=taotao-cloud-monitor"
+ENV PYROSCOPE_LABELS="APP=taotao-cloud-sys"
 #ENV PYROSCOPE_AUTH_TOKEN=info
 
 ENV JAVA_OPTIONS_BACKUP="-Xms1g \
