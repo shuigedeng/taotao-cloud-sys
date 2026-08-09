@@ -18,7 +18,7 @@ ARG APP_NAME=taotao-cloud-sys
 ARG APP_VERSION=2026.09
 ARG APP_JAR_NAME=${APP_NAME}-${APP_VERSION}.jar
 ARG APP_PORT=33331
-ARG APP_PRROFILES=dev
+ARG APP_PROFILES=dev
 ARG DINGDING_TOKEN_ID_ARG=xxxxxx
 ARG DINGDING_SECRET_ARG=xxxxxx
 ARG REQUEST_API_DOCS=1
@@ -33,7 +33,7 @@ ENV APP_NAME=${APP_NAME}
 ENV APP_PORT=${APP_PORT}
 ENV APP_VERSION=${APP_VERSION}
 ENV APP_JAR_NAME=${APP_NAME}-${APP_VERSION}.jar
-ENV APP_PRROFILES=${APP_PRROFILES}
+ENV APP_PROFILES=${APP_PROFILES}
 ENV REQUEST_API_DOCS=${REQUEST_API_DOCS}
 
 ENV DINGDING_TOKEN_ID=${DINGDING_TOKEN_ID_ARG}
@@ -63,52 +63,47 @@ ENV PYROSCOPE_UPLOAD_INTERVAL=10s
 ENV PYROSCOPE_LOG_LEVEL=info
 ENV PYROSCOPE_LABELS="APP=taotao-cloud-sys"
 #ENV PYROSCOPE_AUTH_TOKEN=info
-
-ENV JAVA_OPTIONS_BACKUP="-Xms1g \
-                  -Xmx2g \
-                  -Xss256k \
-                  -XX:ReservedCodeCacheSize=2048m \
-                  -XX:+UseZGC \
-                  -XX:MaxDirectMemorySize=256m \
-                  -XX:SoftRefLRUPolicyMSPerMB=50 \
-                  -XX:CICompilerCount=2  \
-                  -XX:SurvivorRatio=8 \
-                  -XX:+UseCompressedOops \
-                  -XX:+UseCompressedClassPointers \
-                  -XX:+SegmentedCodeCache \
-                  -XX:+PrintCommandLineFlags \
-                  -XX:+ExplicitGCInvokesConcurrent \
-                  -XX:-OmitStackTraceInFastThrow\
-                  -XX:+HeapDumpOnOutOfMemoryError \
-                  -XX:+ShowCodeDetailsInExceptionMessages \
-                  -XX:ParallelGCThreads=4 \
-                  -Xlog:async \
-                  -XX:AsyncLogBufferSize=409600 \
-                  -Xlog:gc*=debug:file=/root/logs/${APP_NAME}/${APP_NAME}.gc.log:utctime,level,tags:filecount=50,filesize=100M \
-                  -Xlog:jit+compilation=debug:file=/root/logs/${APP_NAME}/${APP_NAME}.jit.compile.log:utctime,level,tags:filecount=10,filesize=100M \
-                  -XX:MetaspaceSize=256m \
-                  -XX:MaxMetaspaceSize=512m \
-                  -verbose:gc \
-                  -Djava.security.egd=file:/dev/./urandom \
-                  -Dfile.encoding=utf-8 \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  -Dspring.profiles.active=${PRROFILES} \
-                  -javaagent:/skywalking/agent/skywalking-agent.jar \
-                  -Dskywalking.agent.service_name=${APP_NAME} \
-                  -Dskywalking.agent.authentication=${AGENT_AUTHENTICATION} \
-                  -Dskywalking.logging.file_name=skywalking.log \
-                  -Dskywalking.logging.level=INFO \
-                  -Dskywalking.logging.dir=/root/logs/${APP_NAME} \
-                  -Dskywalking.collector.backend_service=${BACKEND_SERVICE} "
+#
+#ENV JAVA_OPTIONS_BACKUP="-Xms1g \
+#                  -Xmx2g \
+#                  -Xss256k \
+#                  -XX:MaxDirectMemorySize=1024m \
+#                  -XX:ReservedCodeCacheSize=2048m \
+#                  -XX:SoftRefLRUPolicyMSPerMB=50 \
+#                  -XX:CICompilerCount=2  \
+#                  -XX:SurvivorRatio=8 \
+#                  -XX:+UseZGC \
+#                  -XX:+SegmentedCodeCache \
+#                  -XX:+PrintCommandLineFlags \
+#                  -XX:+ExplicitGCInvokesConcurrent \
+#                  -XX:-OmitStackTraceInFastThrow\
+#                  -XX:+HeapDumpOnOutOfMemoryError \
+#                  -XX:+ShowCodeDetailsInExceptionMessages \
+#                  -XX:ParallelGCThreads=4 \
+#                  -Xlog:async \
+#                  -XX:AsyncLogBufferSize=409600 \
+#                  -Xlog:gc*=debug:file=/root/logs/${APP_NAME}/${APP_NAME}.gc.log:utctime,level,tags:filecount=50,filesize=100M \
+#                  -Xlog:jit+compilation=debug:file=/root/logs/${APP_NAME}/${APP_NAME}.jit.compile.log:utctime,level,tags:filecount=10,filesize=100M \
+#                  -verbose:gc \
+#                  -Djava.security.egd=file:/dev/./urandom \
+#                  -Dfile.encoding=utf-8 \
+#                  --add-opens java.base/java.lang=ALL-UNNAMED \
+#                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+#                  --add-opens java.base/java.util=ALL-UNNAMED \
+#                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
+#                  -Dspring.profiles.active=${PRROFILES} \
+#                  -javaagent:/skywalking/agent/skywalking-agent.jar \
+#                  -Dskywalking.agent.service_name=${APP_NAME} \
+#                  -Dskywalking.agent.authentication=${AGENT_AUTHENTICATION} \
+#                  -Dskywalking.logging.file_name=skywalking.log \
+#                  -Dskywalking.logging.level=INFO \
+#                  -Dskywalking.logging.dir=/root/logs/${APP_NAME} \
+#                  -Dskywalking.collector.backend_service=${BACKEND_SERVICE} "
 
 ENV JAVA_OPTIONS="-Xms1g \
                   -Xmx2g \
                   -Xmn1280m \
                   -Xss512k \
-                  -Xlog:async \
                   -XX:MaxDirectMemorySize=1024m \
                   -XX:MetaspaceSize=256m \
                   -XX:MaxMetaspaceSize=512m \
@@ -131,7 +126,7 @@ ENV JAVA_OPTIONS="-Xms1g \
                   -XX:+ExplicitGCInvokesConcurrent \
                   -XX:+HeapDumpOnOutOfMemoryError \
                   -XX:+ShowCodeDetailsInExceptionMessages \
-                  -XX:ParallelGCThreads=4 \
+                  -XX:ConcGCThreads=4 \
                   -XX:AsyncLogBufferSize=409600 \
                   -Xlog:gc*=debug:file=/root/logs/${APP_NAME}/gc.log:utctime,level,tags:filecount=50,filesize=100M \
                   -Xlog:jit+compilation=debug:file=/root/logs/${APP_NAME}/jit.compile.log:utctime,level,tags:filecount=10,filesize=100M \
@@ -140,6 +135,8 @@ ENV JAVA_OPTIONS="-Xms1g \
                   -Dnetworkaddress.cache.ttl=10 \
                   -Djava.security.egd=file:/dev/./urandom \
                   -Dfile.encoding=utf-8 \
+                  -Dspring.profiles.active=${APP_PROFILES} \
+                  --enable-preview \
                   --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED \
                   --add-opens java.base/java.io=ALL-UNNAMED \
                   --add-opens java.base/java.lang=ALL-UNNAMED \
@@ -296,15 +293,11 @@ ENV JAVA_OPTIONS="-Xms1g \
                   --add-opens java.base/java.math=ALL-UNNAMED \
                   --add-opens java.desktop/sun.awt=ALL-UNNAMED \
                   --add-exports java.desktop/sun.awt=ALL-UNNAMED \
-                  -Xlint:unchecked \
-                  -Xlint:deprecation \
-                  --enable-preview \
                   --add-exports=java.desktop/sun.font=ALL-UNNAMED \
                   --add-exports=java.base/sun.reflect.generics.tree=ALL-UNNAMED \
                   --add-exports=java.base/sun.net.www.protocol.ftp=ALL-UNNAMED \
                   --add-exports=java.desktop/sun.awt=ALL-UNNAMED \
                   --add-exports=java.desktop/sun.font=ALL-UNNAMED  \
-                  -Dspring.profiles.active=${APP_PRROFILES} \
                   -javaagent:/skywalking/agent/skywalking-agent.jar"
 
 USER root
