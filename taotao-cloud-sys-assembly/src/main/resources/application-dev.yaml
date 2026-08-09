@@ -380,6 +380,7 @@ rocketmq:
 spring:
   grpc:
     server:
+      address: 0.0.0.0
       port: 9091
       enabled: true
       servlet:

@@ -136,6 +136,7 @@ ENV JAVA_OPTIONS="-Xms1g \
                   -Djava.security.egd=file:/dev/./urandom \
                   -Dfile.encoding=utf-8 \
                   -Dspring.profiles.active=${APP_PROFILES} \
+                  -Djava.net.preferIPv4Stack=true \
                   --enable-preview \
                   --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED \
                   --add-opens java.base/java.io=ALL-UNNAMED \
