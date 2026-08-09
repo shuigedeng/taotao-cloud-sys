@@ -19,7 +19,7 @@ env:
   TAOTAO_CLOUD_GITHUB_TOKEN: ${{ secrets.TAOTAO_CLOUD_GITHUB_TOKEN }}
   TAOTAO_CLOUD_REGISTRY_USERNAME: ${{ secrets.TAOTAO_CLOUD_REGISTRY_USERNAME }}
   TAOTAO_CLOUD_REGISTRY_PASSWORD: ${{ secrets.TAOTAO_CLOUD_REGISTRY_PASSWORD }}
-  TAOTAO_CLOUD_VERSION: 2025.03
+  TAOTAO_CLOUD_VERSION: 2026.09
 
 jobs:
   build:
@@ -43,7 +43,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
-          gradle-version: "9.6.0"
+          gradle-version: "9.7.0"
 
       - name: Example step
         run: |

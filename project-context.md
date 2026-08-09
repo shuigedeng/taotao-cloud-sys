@@ -48,7 +48,7 @@ assembly → facade, interfaces, infrastructure
 | 技术 | 版本 |
 |------|------|
 | JDK | **25**（启用 `--enable-preview` 预览特性） |
-| Gradle | **9.6.0** |
+| Gradle | **9.7.0** |
 | Spring Boot | **4.1.0** |
 | Spring Cloud | **2025.1.1** |
 | Spring Cloud Alibaba | **2025.1.0.0-preview** |
@@ -78,7 +78,7 @@ assembly → facade, interfaces, infrastructure
 | XXL-Job | 3.4.0 | 分布式定时任务 |
 | Redis (Redisson) | 4.3.1 | 分布式缓存 / 延迟队列 |
 | Elasticsearch | 9.2.2 | 全文检索 |
-| MySQL | 9.6.0 | 关系数据库 |
+| MySQL | 9.7.0 | 关系数据库 |
 | protobuf / gRPC | 4.35.0 / 1.82.0 | RPC 通信 |
 | Knife4j / Swagger | 4.5.0 / 3.0.0 | API 文档 |
 | Prometheus / ELK / Skywalking | - | 监控 / 日志 / 链路追踪 |
