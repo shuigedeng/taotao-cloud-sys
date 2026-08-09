@@ -117,10 +117,10 @@ jobs:
           tags: "${{env.TAOTAO_CLOUD_VERSION}}"
           workdir: ${{ github.workspace }}/taotao-cloud-sys-assembly
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5.0.2
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      #- name: Upload coverage reports to Codecov
+      #  uses: codecov/codecov-action@v5.0.2
+      #  env:
+      #    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       #- name: login to registry
       #  uses: docker/login-action@v1
