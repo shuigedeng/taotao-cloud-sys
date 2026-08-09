@@ -45,8 +45,8 @@ services:
 
   nacos-3.2.2:
     image: nacos/nacos-server:v3.2.2
-    restart: no
     container_name: nacos-3.2.2
+    restart: no
     privileged: true
     ports:
       - "8848:8848"
@@ -71,6 +71,16 @@ services:
     networks:
       taotao-cluster-network:
         ipv4_address: 172.11.0.13
+
+  sentinel-dashboard-1.8.10:
+    image: registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/sentinel-dashboard:1.8.10
+    container_name: sentinel-dashboard-1.8.10
+    restart: no
+    ports:
+      - "8858:8858"
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.14
 
   openobserve:
     image: o2cr.ai/openobserve/openobserve-enterprise:latest
@@ -408,15 +418,6 @@ services:
 
 ####################################################
 
-  #sentinel-dashboard-1.8.9:
-  #  image: bladex/sentinel-dashboard:1.8.9
-  #  container_name: sentinel-dashboard-1.8.9
-  #  restart: no
-  #  ports:
-  #    - "8858:8858"
-  #  networks:
-  #    taotao-cluster-network:
-  #      ipv4_address: 172.11.0.14
 
   #dubbo-admin-0.6.0:
   #  image: apache/dubbo-admin:0.6.0
