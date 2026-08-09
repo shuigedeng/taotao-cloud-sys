@@ -851,7 +851,7 @@ spring:
         dashboard: ${remote-ip}:8858
         port: 8711
       metric:
-        file-single-size: 1024 * 1024 * 50
+        file-single-size: 52428800
         file-total-count: 10
       flow:
         cold-factor: 3
@@ -1246,6 +1246,8 @@ management:
       access: unrestricted
   health:
     mail:
+      enabled: false
+    sentinel:
       enabled: false
   opentelemetry:
     logging:
