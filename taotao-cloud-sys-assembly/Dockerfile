@@ -100,8 +100,8 @@ ENV PYROSCOPE_LABELS="APP=taotao-cloud-sys"
 #                  -Dskywalking.logging.dir=/root/logs/${APP_NAME} \
 #                  -Dskywalking.collector.backend_service=${BACKEND_SERVICE} "
 
-ENV JAVA_OPTIONS="-Xms1g \
-                  -Xmx2g \
+ENV JAVA_OPTIONS="-Xms2g \
+                  -Xmx4g \
                   -Xmn1280m \
                   -Xss512k \
                   -XX:MaxDirectMemorySize=1024m \
