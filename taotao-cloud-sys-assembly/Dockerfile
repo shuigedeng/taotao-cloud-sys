@@ -297,8 +297,8 @@ ENV JAVA_OPTIONS="-Xms1g \
                   --add-exports=java.base/sun.reflect.generics.tree=ALL-UNNAMED \
                   --add-exports=java.base/sun.net.www.protocol.ftp=ALL-UNNAMED \
                   --add-exports=java.desktop/sun.awt=ALL-UNNAMED \
-                  --add-exports=java.desktop/sun.font=ALL-UNNAMED  \
-                  -javaagent:/skywalking/agent/skywalking-agent.jar"
+                  --add-exports=java.desktop/sun.font=ALL-UNNAMED"
+                  #-javaagent:/skywalking/agent/skywalking-agent.jar"
 
 USER root
 
