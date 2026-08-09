@@ -1,11 +1,11 @@
 FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk25:latest as builder
 #FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-graalvm25:latest as builder
 
-WORKDIR /root
+WORKDIR /builder
 
-ADD ./build/libs/taotao-cloud-sys-2026.09.jar ./
+COPY ./build/libs/taotao-cloud-sys-2026.09.jar ./
 
-RUN java -Djarmode=layertools -jar taotao-cloud-sys-2026.09.jar extract
+RUN java -Djarmode=layertools -jar taotao-cloud-sys-2026.09.jar extract --layers --destination extracted
 
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-skywalking:openjdk-17-8.6.0
 # FROM registry.cn-hangzhou.aliyuncs.com/taotao-cloud-project/taotao-cloud-openjdk25:amd64
@@ -327,15 +327,18 @@ VOLUME /root/logs
 
 EXPOSE ${APP_PORT}
 
-COPY --from=builder /root/dependencies/ ./
+COPY --from=builder /builder/extracted/dependencies/ ./
 RUN true
-COPY --from=builder /root/spring-boot-loader/ ./
+COPY --from=builder /builder/extracted/spring-boot-loader/ ./
 RUN true
-COPY --from=builder /root/snapshot-dependencies/ ./
+COPY --from=builder /builder/extracted/snapshot-dependencies/ ./
 RUN true
-COPY --from=builder /root/application/ ./
+COPY --from=builder /builder/extracted/application/ ./
 RUN true
 
 #HEALTHCHECK --interval=120s --timeout=60s --retries=5 CMD curl -fs http://127.0.0.1:${APP_PORT}/actuator/health || exit 1
 
-ENTRYPOINT sleep 30; java ${JAVA_OPTIONS} org.springframework.boot.loader.launch.JarLauncher
+#ENTRYPOINT ["java", "-jar", "taotao-cloud-sys-2026.09.jar"]
+ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTIONS} -jar application.jar"]
+
+#ENTRYPOINT sleep 30; java ${JAVA_OPTIONS} org.springframework.boot.loader.launch.JarLauncher
