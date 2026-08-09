@@ -1103,7 +1103,11 @@ taotao:
       version: ${ttcVersion}
       title: 系统管理模块
       packages-to-scan:
-        - com.taotao.cloud.sys.interfaces.controller.**
+        - com.taotao.cloud.sys.interfaces.controller.buyer
+        - com.taotao.cloud.sys.interfaces.controller.inner
+        - com.taotao.cloud.sys.interfaces.controller.manager
+        - com.taotao.cloud.sys.interfaces.controller.seller
+        - com.taotao.cloud.sys.interfaces.controller.test
     metrics:
       enabled: true
       druid:
@@ -1409,6 +1413,8 @@ gobrs:
           task-interrupt: true # 局部异常是否打断主流程 默认 false
 
 springdoc:
+  cache:
+    disabled: true
   showActuator: false
   show-spring-cloud-functions: false
   default-flat-param-object: true
