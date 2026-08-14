@@ -2,10 +2,30 @@
   "serverUrl": "http://localhost:8080",
   "isStrict": false,
   "allInOne": true,
-  "outPath": "src/main/resources/static/doc",
+  "outPath": "/doc",
+  "allInOneDocFileName": "index.html",
   "coverOld": true,
   "style":"xt256",
   "createDebugPage": true,
   "md5EncryptedHtmlName": false,
-  "projectName": "SpringBoot2-Open-Api"
+  "projectName": "taotao-cloud-sys",
+  "packageFilters": "com.taotao.cloud.sys.interfaces.controller.*;com.taotao.cloud.sys.api.*",
+  "skipTransientField": true,
+  "rpcApiDependencies": [
+    {
+      "artifactId": "SpringBoot2-Dubbo-Api",
+      "groupId": "com.demo",
+      "version": "1.0.0"
+    }
+  ],
+  "sourceCodePaths": [
+    {
+      "path": "../taotao-cloud-sys-interfaces/src/main/java",
+      "desc": "REST 接口"
+    },
+    {
+      "path": "../taotao-cloud-sys-api/src/main/java",
+      "desc": "Dubbo 接口"
+    }
+  ]
 }

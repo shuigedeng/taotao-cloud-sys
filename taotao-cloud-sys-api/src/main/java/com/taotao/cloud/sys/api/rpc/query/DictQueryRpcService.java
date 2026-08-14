@@ -32,7 +32,7 @@ public interface DictQueryRpcService {
 
     /**
      * 字典code查询
-     *
+     * @dubbo
      * @param code 代码
      * @return {@link DictRpcResponse }
      * @since 2022-06-29 21:45:44

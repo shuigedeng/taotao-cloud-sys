@@ -1,4 +1,4 @@
-apply plugin: "com.ly.smart-doc"
+apply plugin: "io.github.shuigedeng.plugin.smart-doc"
 
 smartdoc {
     configFile = file("smart-doc.json")
@@ -10,7 +10,16 @@ smartdoc {
 //    exclude 'org.springframework.boot.*'
 //    // You can use the include configuration to let the plugin automatically load the specified source.
 //    // include example
-//    include 'org.springframework.boot:spring-boot-starter-tomcat'
+    include "jakarta.validation:jakarta.validation-api"
+    include "jakarta.annotation:jakarta.annotation-api"
+    include "com.fasterxml.jackson.core:jackson-annotations"
+    include "io.swagger.core.v3:swagger-annotations"
+    include "io.swagger.core.v3:swagger-models-jakarta"
+    include "io.swagger.core.v3:swagger-annotations-jakarta"
+    include "org.jspecify:jspecify"
+    include "com.google.protobuf:protobuf-java:4.35.0"
+    include "com.google.protobuf:protobuf-java-util:4.35.0"
+    include "com.google.protobuf:protobuf-javalite:4.35.0"
 //    // 使用jpa的分页
 //    include 'org.springframework.data:spring-data-commons'
 //    // 使用mybatis-plus的分页
