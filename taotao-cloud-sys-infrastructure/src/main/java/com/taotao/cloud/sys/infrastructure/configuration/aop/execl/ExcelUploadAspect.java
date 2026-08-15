@@ -63,17 +63,14 @@ public class ExcelUploadAspect {
                     commonThreadFactory,
                     new ThreadPoolExecutor.AbortPolicy());
 
-    @Pointcut("@annotation(com.taotao.cloud.sys.biz.config.aop.execl.ExcelUpload)")
-
     /**
      * 上传
      *
      * @return 无返回值
      * @since 2022.03
      */
+    @Pointcut("@annotation(com.taotao.cloud.sys.biz.config.aop.execl.ExcelUpload)")
     public void uploadPoint() {}
-
-    @Around(value = "uploadPoint()")
 
     /**
      * 上传
@@ -82,6 +79,7 @@ public class ExcelUploadAspect {
      * @return Object
      * @since 2022.03
      */
+    @Around(value = "uploadPoint()")
     public Object uploadControl(ProceedingJoinPoint pjp) {
         // 获取方法上的注解，进而获取uploadType
         MethodSignature signature = (MethodSignature) pjp.getSignature();
@@ -158,3 +156,4 @@ public class ExcelUploadAspect {
         // deleteFile(file);
     }
 }
+

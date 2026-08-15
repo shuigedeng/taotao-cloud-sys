@@ -69,14 +69,14 @@ import lombok.*;
  * @Transient：注解表示在生成数据库的表时，该属性被忽略，即不生成对应的字段 字典表
  * @since 2021-10-09 21:10:04
  */
+
+// @NamedQuery(name = "User.findByEmailAddress",
+//	query = "select u from User u where u.emailAddress = ?1")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(callSuper = true)
-
-// @NamedQuery(name = "User.findByEmailAddress",
-//	query = "select u from User u where u.emailAddress = ?1")
 @Entity
 @Table(
 	name = DictPO.TABLE_NAME,
@@ -445,3 +445,4 @@ public class DictPO extends BasePO<DictPO> {
 		}
 	}
 }
+

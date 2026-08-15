@@ -58,14 +58,13 @@ public class SysKafkaConsumer extends MqConsumerBase {
 		return container;
 	}
 
-	@Bean
-
 	/**
 	 * kafkaErrorHandler 方法
 	 *
 	 * @return ConsumerAwareListenerErrorHandler
 	 * @since 2022.03
 	 */
+	@Bean
 	public ConsumerAwareListenerErrorHandler kafkaErrorHandler() {
 		return ( message,exception, consumer ) -> {
 			System.out.println(message);
@@ -76,3 +75,4 @@ public class SysKafkaConsumer extends MqConsumerBase {
 		};
 	}
 }
+

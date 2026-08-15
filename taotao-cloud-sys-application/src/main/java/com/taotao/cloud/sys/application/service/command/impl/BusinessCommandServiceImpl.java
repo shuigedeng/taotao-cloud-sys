@@ -35,7 +35,6 @@ import org.springframework.stereotype.Service;
 public class BusinessCommandServiceImpl implements BussinessCommandService {
 
 //    @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)
-    @Override
 
     /**
      * 保存订单
@@ -43,6 +42,7 @@ public class BusinessCommandServiceImpl implements BussinessCommandService {
      * @return 是否成功
      * @since 2022.03
      */
+    @Override
     public boolean saveOrder() {
         log.info("=============用户下单=================");
 //        log.info("当前 XID: {}", RootContext.getXID());
@@ -58,3 +58,4 @@ public class BusinessCommandServiceImpl implements BussinessCommandService {
         return true;
     }
 }
+
