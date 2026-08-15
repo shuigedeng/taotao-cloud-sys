@@ -6,7 +6,6 @@ import com.taotao.boot.eventbus.model.EventModel;
 import org.greenrobot.eventbus.ThreadMode;
 
 public class GreenrobotEventSubscriber {
-	@org.greenrobot.eventbus.Subscribe(threadMode = ThreadMode.ASYNC)
 
 	/**
 	 * onMessage 方法
@@ -15,6 +14,7 @@ public class GreenrobotEventSubscriber {
 	 * @return 无返回值
 	 * @since 2022.03
 	 */
+	@org.greenrobot.eventbus.Subscribe(threadMode = ThreadMode.ASYNC)
 	public void onMessage(EventModel<?> message) {
 		LogUtils.info("收到消息：{}", message);
 	}
