@@ -75,6 +75,8 @@ import lombok.*;
 @AllArgsConstructor
 @ToString(callSuper = true)
 
+// @NamedQuery(name = "User.findByEmailAddress",
+//	query = "select u from User u where u.emailAddress = ?1")
 @Entity
 @Table(
 	name = DictPO.TABLE_NAME,
@@ -86,8 +88,6 @@ import lombok.*;
 	})
 @TableName(DictPO.TABLE_NAME)
 @EntityListeners({DictPO.DictEntityListener.class})
-// @NamedQuery(name = "User.findByEmailAddress",
-//	query = "select u from User u where u.emailAddress = ?1")
 @org.springframework.data.relational.core.mapping.Table(name = DictPO.TABLE_NAME)
 public class DictPO extends BasePO<DictPO> {
 

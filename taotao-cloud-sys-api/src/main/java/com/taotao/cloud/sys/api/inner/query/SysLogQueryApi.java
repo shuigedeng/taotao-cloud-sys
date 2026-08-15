@@ -27,8 +27,8 @@ import org.springframework.web.service.annotation.PostExchange;
 	value = ServiceNameConstants.TAOTAO_CLOUD_LOG)
 public interface SysLogQueryApi {
 
-    @PostExchange("/save")
     // Response save(@RequestBody SysLog sysLog, @RequestHeader(AuthorizationConstants.FROM) String
     // from);
+    @PostExchange("/save")
     LogsApiResponse save(@RequestBody SysLogApiCommand sysLogApiRequest);
 }

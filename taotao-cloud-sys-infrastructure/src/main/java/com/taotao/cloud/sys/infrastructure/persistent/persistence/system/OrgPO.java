@@ -78,8 +78,8 @@ public class OrgPO extends BasePO<OrgPO> {
      * //pgsql json定义语句
      * @Column(name = "`jsonb_content`", columnDefinition = "jsonb")
      */
-    @JdbcTypeCode(SqlTypes.JSON)
     //@Type(value = JsonType.class)
+    @JdbcTypeCode(SqlTypes.JSON)
     @TableField(typeHandler = JacksonListTypeHandler.class)
     @Column(name = "`id_tree`", columnDefinition = "json null comment 'id树'")
     private List<String> idTree;

@@ -45,9 +45,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class DictBuyerController extends BusinessController {
 
 
+	@Operation(summary = "通过code查询所有字典列表")
 	@NotAuth
 	@GetMapping("/query/type")
-	@Operation(summary = "通过code查询所有字典列表")
 	public Result<Void> add( @RequestParam String type ) {
 //		Boolean result = service().add(type);
 //		return success(result);
@@ -56,8 +56,8 @@ public class DictBuyerController extends BusinessController {
 	}
 
 
-	@GetMapping("/query/code")
 	@Operation(summary = "通过code查询所有字典列表")
+	@GetMapping("/query/code")
 	public Result<Boolean> testCode( @RequestParam String code ) {
 		// try {
 		//	producerService.sendStringMsg();

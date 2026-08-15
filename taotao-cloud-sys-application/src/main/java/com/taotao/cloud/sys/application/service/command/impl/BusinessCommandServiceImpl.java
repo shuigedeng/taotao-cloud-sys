@@ -34,8 +34,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class BusinessCommandServiceImpl implements BussinessCommandService {
 
-    @Override
 //    @GlobalTransactional(name = "createOrder", rollbackFor = Exception.class)
+    @Override
 
     /**
      * 保存订单

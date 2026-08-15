@@ -55,8 +55,8 @@ public class DictMallController extends BusinessController {
 	@Autowired
 	private DictGrpcServiceGrpc.DictGrpcServiceBlockingStub dictGrpcServiceStub;
 
-    @NotAuth
     @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
+    @NotAuth
     @GetMapping("/testMybatisQueryStructure")
     public Result<List<String>> testMybatisQueryStructure() {
 		LogUtils.info("asdfasdffffff");
@@ -68,8 +68,8 @@ public class DictMallController extends BusinessController {
 		return Result.success(new ArrayList<>());
     }
 
-	@NotAuth
 	@Operation(summary = "测试mybatis sqldddddd", description = "测试mybatis sqldddddd")
+	@NotAuth
 	@PostMapping("/testMybatisQueryStructuredddd")
 	public Result<DictQueryResult> testMybatisQueryStructuredddd(@RequestBody DictQuery dictQuery ) {
 

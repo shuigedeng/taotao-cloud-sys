@@ -54,8 +54,8 @@ public class InnerDictController extends InnerController implements DictCommandA
 
 	private final DictCommandService dictCommandService;
 
-	@Override
 	@Operation(summary = "添加部门", description = "添加部门")
+	@Override
 	@RequestLogger
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
@@ -75,12 +75,12 @@ public class InnerDictController extends InnerController implements DictCommandA
 		return Response.from(DictQueryApiResponseBuilder.builder().build());
 	}
 
-	@Override
+	//	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
 	@Operation(summary = "测试部门", description = "测试部门")
+	@Override
 	@RequestLogger
 	@NotAuth
 	@Idempotent(perFix = "test")
-//	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
@@ -106,15 +106,15 @@ public class InnerDictController extends InnerController implements DictCommandA
 
 
 
-	@Override
 	@Operation(summary = "根据code查询", description = "根据code查询")
+	@Override
 	@RequestLogger
 	public Response<DictQueryApiResponse> queryByCode(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		return null;
 	}
 
-	@Override
 	@Operation(summary = "测试测试", description = "测试测试")
+	@Override
 	@RequestLogger
 	public Response<DictQueryApiResponse> queryTest(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		return null;

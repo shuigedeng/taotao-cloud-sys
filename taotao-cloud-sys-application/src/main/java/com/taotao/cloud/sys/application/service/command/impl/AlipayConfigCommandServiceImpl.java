@@ -33,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Service
 // @CacheConfig(cacheNames = "alipayConfig")
+@Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class AlipayConfigCommandServiceImpl implements AlipayConfigCommandService {}

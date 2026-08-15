@@ -118,12 +118,12 @@ public class AdminUserController extends BusinessController {
     //	}
 
 
-    	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
-     "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
-    	@PostMapping("/assign-roles")
+     	@Operation(summary = "根据用户id更新角色信息(用户分配角色)", description =
+      "后台页面-用户信息页面-根据用户id更新角色信息(用户分配角色)")
+     	//@PreAuthorize("hasAuthority('admin:user:assign-roles')")
+     	@PostMapping("/assign-roles")
 		@NotAuth
-    	//@PreAuthorize("hasAuthority('admin:user:assign-roles')")
-    	public Result<Void> assignRoles( @Valid @RequestBody AssignRolesCommand assignUserRolesCommand) {
+     	public Result<Void> assignRoles( @Valid @RequestBody AssignRolesCommand assignUserRolesCommand) {
 			userCommandService.assignRoles(assignUserRolesCommand);
     		return Result.success();
     	}

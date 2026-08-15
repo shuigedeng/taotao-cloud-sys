@@ -34,8 +34,8 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
+// @CacheConfig(cacheNames = "emailConfig")
 @Service
 @RequiredArgsConstructor
-// @CacheConfig(cacheNames = "emailConfig")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class EmailConfigCommandServiceImpl implements EmailConfigCommandService {}
