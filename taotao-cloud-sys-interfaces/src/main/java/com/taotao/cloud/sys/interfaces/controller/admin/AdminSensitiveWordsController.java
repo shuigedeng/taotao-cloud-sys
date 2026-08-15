@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,9 +27,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Validated
 @RestController
-@RequestMapping("/manager/sys/sensitive/word")
+@RequestMapping("/admin/sys/sensitive/word")
 @Tag(name = "平台管理端-敏感词API", description = "平台管理端-敏感词API")
-public class SensitiveWordsManagerController extends BusinessController {
+public class AdminSensitiveWordsController extends BusinessController {
 
     //    private final ISensitiveWordService sensitiveWordService;
     //

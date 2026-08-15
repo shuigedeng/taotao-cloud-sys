@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,14 +23,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * ManagerMonitorController
+ * SysLogLoginController
  *
  * @author shuigedeng
  * @version 2026.04
  * @since 2025-12-19 09:30:45
  */
-@Tag(name = "监控API", description = "监控相关信息")
 @RestController
-@RequestMapping("/manager/sys/monitor")
 @RequiredArgsConstructor
-public class MonitorManagerController extends BusinessController {}
+@RequestMapping("/admin/sys/sysLogLogin")
+@Tag(name = "平台管理端-登录记录管理", description = "平台管理端-登录记录管理")
+public class AdminSysLogLoginController extends BusinessController {}

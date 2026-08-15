@@ -152,7 +152,7 @@ api  ←  interfaces  ←  application  →  facade
 | 查询服务 | `{Biz}QueryService` | `DictQueryService` |
 | 查询仓储 | `{Biz}QueryRepository` | `DictQueryRepository` |
 | PO | `{Biz}PO` | `DictPO`, `UserPO` |
-| Controller | `{Biz}{Role}Controller` | `DictManagerController` |
+| Controller | `{Biz}{Role}Controller` | `AdminDictController` |
 
 ---
 
@@ -160,19 +160,19 @@ api  ←  interfaces  ←  application  →  facade
 
 | 业务 | 聚合根 | Mapper | 命令服务 | Controller |
 |------|--------|--------|---------|------------|
-| 用户 | `UserAgg` | `UserMapper` | `UserCommandService` | `UserManagerController` |
-| 角色 | `RoleAgg` | `RoleMapper` | `RoleCommandService` | `RoleManagerController` |
-| 权限 | `PermissionAgg` | `ResourceMapper` | `ResourceCommandService` | `ResourceManagerController` |
-| 部门 | `DeptAgg` | `DeptMapper` | `DeptCommandService` | `DeptManagerController` |
-| 组织 | `OrgAgg` | — | — | `OrgManagerController` |
-| 岗位 | `PositionAgg` | `PositionMapper` | `PositionCommandService` | `PositionManagerController` |
-| 字典 | `DictAgg` + `DictItem` | `DictMapper` | `DictCommandService` | `DictManagerController` |
-| 文件 | `FileAgg` + `FileLogAgg` | `FileMapper` | `FileCommandService` | `FileManagerController` |
-| 区域 | — | `RegionMapper` | `RegionCommandService` | `RegionManagerController` |
-| 设置 | — | `SettingMapper` | `SettingCommandService` | `SettingManagerController` |
-| 日志 | — | `LogMapper` | `LogCommandService` | `LogManagerController` |
-| 国际化 | — | `I18nDataMapper` | `I18nDataCommandService` | `I18nDataManagerController` |
-| 敏感词 | — | `SensitiveWordMapper` | `SensitiveWordCommandService` | `SensitiveWordsManagerController` |
+| 用户 | `UserAgg` | `UserMapper` | `UserCommandService` | `AdminUserController` |
+| 角色 | `RoleAgg` | `RoleMapper` | `RoleCommandService` | `AdminRoleController` |
+| 权限 | `PermissionAgg` | `ResourceMapper` | `ResourceCommandService` | `AdminResourceController` |
+| 部门 | `DeptAgg` | `DeptMapper` | `DeptCommandService` | `AdminDeptController` |
+| 组织 | `OrgAgg` | — | — | `AdminOrgController` |
+| 岗位 | `PositionAgg` | `PositionMapper` | `PositionCommandService` | `AdminPositionController` |
+| 字典 | `DictAgg` + `DictItem` | `DictMapper` | `DictCommandService` | `AdminDictController` |
+| 文件 | `FileAgg` + `FileLogAgg` | `FileMapper` | `FileCommandService` | `AdminFileController` |
+| 区域 | — | `RegionMapper` | `RegionCommandService` | `AdminRegionController` |
+| 设置 | — | `SettingMapper` | `SettingCommandService` | `AdminSettingController` |
+| 日志 | — | `LogMapper` | `LogCommandService` | `AdminLogController` |
+| 国际化 | — | `I18nDataMapper` | `I18nDataCommandService` | `AdminI18nDataController` |
+| 敏感词 | — | `SensitiveWordMapper` | `SensitiveWordCommandService` | `AdminSensitiveWordsController` |
 
 ---
 

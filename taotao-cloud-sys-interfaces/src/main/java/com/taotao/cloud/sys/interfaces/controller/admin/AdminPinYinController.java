@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
+import com.taotao.cloud.sys.application.service.command.PinYinCommandService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -24,24 +25,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 平台管理端-部门API
+ * PinYinController
  *
  * @author shuigedeng
- * @version 2021.9
- * @since 2021-10-09 14:19:11
+ * @version 2022.03
+ * @since 2022/03/03 14:57
  */
-@Validated
 @RequiredArgsConstructor
+@Validated
 @RestController
-@RequestMapping("/manager/sys/org")
-@Tag(name = "平台管理端-部门API", description = "平台管理端-部门API")
-public class OrgManagerController extends BusinessController {
-    //
-    //    @Operation(summary = "获取部门树", description = "获取部门树")
-    //    @RequestLogger
-    //    @PreAuthorize("hasAuthority('dept:tree:data')")
-    //    @GetMapping("/tree")
-    //    public Result<List<DeptTreeVO>> tree() {
-    //        return Result.success(ForestNodeMerger.merge(service().tree()));
-    //    }
+@Tag(name = "平台管理端-拼音API", description = "平台管理端-拼音API")
+@RequestMapping("/admin/sys/pinyin")
+public class AdminPinYinController extends BusinessController {
+
+    private final PinYinCommandService pinYinService;
 }

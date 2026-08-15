@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.security.spring.annotation.NotAuth;
@@ -39,9 +39,9 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @Validated
 @RestController
-@RequestMapping("/manager/sys/user")
+@RequestMapping("/admin/sys/user")
 @Tag(name = "平台管理端-用户API", description = "平台管理端-用户API")
-public class UserManagerController extends BusinessController {
+public class AdminUserController extends BusinessController {
 
 	private final UserCommandService userCommandService;
 	private final UserQueryService userQueryService;

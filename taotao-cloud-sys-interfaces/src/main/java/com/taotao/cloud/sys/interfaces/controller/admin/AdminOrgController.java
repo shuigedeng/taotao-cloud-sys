@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -24,15 +24,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 平台管理端-岗位API
+ * 平台管理端-部门API
  *
  * @author shuigedeng
  * @version 2021.9
- * @since 2021-10-09 15:01:47
+ * @since 2021-10-09 14:19:11
  */
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/manager/sys/position")
-@Tag(name = "平台管理端-岗位API", description = "平台管理端-岗位API")
-public class PositionManagerController extends BusinessController {}
+@RequestMapping("/admin/sys/org")
+@Tag(name = "平台管理端-部门API", description = "平台管理端-部门API")
+public class AdminOrgController extends BusinessController {
+    //
+    //    @Operation(summary = "获取部门树", description = "获取部门树")
+    //    @RequestLogger
+    //    @PreAuthorize("hasAuthority('dept:tree:data')")
+    //    @GetMapping("/tree")
+    //    public Result<List<DeptTreeVO>> tree() {
+    //        return Result.success(ForestNodeMerger.merge(service().tree()));
+    //    }
+}

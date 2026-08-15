@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.web.annotation.BusinessApi;
 import com.taotao.boot.webagg.controller.BusinessController;
@@ -35,8 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "文件管理接口11111")
-@RequestMapping("/manager/sys/file/common")
-public class FileManagerController extends BusinessController {
+@RequestMapping("/admin/sys/file/common")
+public class AdminFileController extends BusinessController {
 
     //    private final IFileService fileService;
     //    private final ISeataTccService seataTccService;

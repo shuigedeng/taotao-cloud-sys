@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.security.spring.annotation.NotAuth;
@@ -37,10 +37,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Validated
 @RestController
-@RequestMapping("/manager/sys/dict")
+@RequestMapping("/admin/sys/dict")
 @Tag(name = "平台管理端-字典API", description = "平台管理端-字典API")
 @AllArgsConstructor
-public class DictManagerController extends BusinessController {
+public class AdminDictController extends BusinessController {
 	private final DictQueryService dictQueryService;
 	private final DictCommandService dictCommandService;
 

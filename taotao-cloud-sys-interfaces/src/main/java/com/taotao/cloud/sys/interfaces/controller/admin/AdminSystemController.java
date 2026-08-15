@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import com.taotao.cloud.sys.application.service.command.SystemCommandService;
@@ -35,8 +35,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "平台管理端-systemAPI", description = "平台管理端-systemAPI")
-@RequestMapping("/manager/sys/system")
-public class SystemManagerController extends BusinessController {
+@RequestMapping("/admin/sys/system")
+public class AdminSystemController extends BusinessController {
 
     private final SystemCommandService systemService;
 

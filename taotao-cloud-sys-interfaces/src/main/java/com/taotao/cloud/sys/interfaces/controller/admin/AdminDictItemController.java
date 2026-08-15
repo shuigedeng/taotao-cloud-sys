@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,9 +31,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Validated
 @RestController
-@RequestMapping("/manager/sys/dict/item")
+@RequestMapping("/admin/sys/dict/item")
 @Tag(name = "平台管理端-字典项API", description = "平台管理端-字典项API")
-public class DictItemManagerController extends BusinessController {
+public class AdminDictItemController extends BusinessController {
 
     /// **
     // * 根据code查询字典项列表

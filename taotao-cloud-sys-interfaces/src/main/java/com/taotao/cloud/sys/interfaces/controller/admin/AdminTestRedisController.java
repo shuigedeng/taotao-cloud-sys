@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "平台管理端-TestRediscontroller", description = "平台管理端-测试redis")
 @RequiredArgsConstructor
-public class TestRedisManagerController extends BusinessController {
+public class AdminTestRedisController extends BusinessController {
 
     private final RedisTemplate<String, Object> redisTemplate;
 

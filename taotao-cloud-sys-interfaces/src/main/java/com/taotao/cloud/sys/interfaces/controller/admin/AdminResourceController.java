@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,9 +33,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/manager/sys/resource")
+@RequestMapping("/admin/sys/resource")
 @Tag(name = "平台管理端-资源API", description = "平台管理端-资源API")
-public class ResourceManagerController extends BusinessController {
+public class AdminResourceController extends BusinessController {
 
     //    //
     // ************************************************菜单*************************************************************

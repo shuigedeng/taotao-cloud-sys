@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,9 +31,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Tag(name = "应用管理")
 @RestController
-@RequestMapping("/manager/sys/app")
+@RequestMapping("/admin/sys/app")
 @RequiredArgsConstructor
-public class AppManagerController extends BusinessController {
+public class AdminAppController extends BusinessController {
 
     //    private final AppService appService;
     //

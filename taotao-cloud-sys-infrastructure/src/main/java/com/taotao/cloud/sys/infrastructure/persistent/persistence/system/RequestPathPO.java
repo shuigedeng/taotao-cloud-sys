@@ -76,7 +76,7 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
     @Column(name = "`request_type`", columnDefinition = "varchar(255) not null comment '请求类型'")
     private String requestType;
 
-    /** 请求路径 (/api/sys/manager/user) */
+    /** 请求路径 (/api/sys/admin/user) */
     @Column(name = "`path`", columnDefinition = "varchar(1024) not null comment '请求路径'")
     private String path;
 

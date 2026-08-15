@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.model.result.Result;
@@ -41,10 +41,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Validated
 @RestController
-@RequestMapping("/manager/sys/dept")
+@RequestMapping("/admin/sys/dept")
 @Tag(name = "平台管理端-部门API", description = "平台管理端-部门API")
 @RequiredArgsConstructor
-public class DeptManagerController extends BusinessController {
+public class AdminDeptController extends BusinessController {
 
 	private final DeptCommandService deptService;
 

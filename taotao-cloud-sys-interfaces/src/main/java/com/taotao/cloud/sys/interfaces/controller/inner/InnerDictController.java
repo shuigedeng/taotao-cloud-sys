@@ -50,7 +50,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
-public class DictInnerApiController extends InnerController implements DictCommandApi, DictQueryApi {
+public class InnerDictController extends InnerController implements DictCommandApi, DictQueryApi {
 
 	private final DictCommandService dictCommandService;
 

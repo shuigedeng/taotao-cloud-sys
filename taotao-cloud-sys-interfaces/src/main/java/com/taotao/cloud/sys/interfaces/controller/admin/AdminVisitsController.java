@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -34,8 +34,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "平台管理端-访问记录API", description = "平台管理端-访问记录API")
-@RequestMapping("/manager/sys/visits")
-public class VisitsManagerController extends BusinessController {
+@RequestMapping("/admin/sys/visits")
+public class AdminVisitsController extends BusinessController {
 
     //    private final IVisitsService visitsService;
     //

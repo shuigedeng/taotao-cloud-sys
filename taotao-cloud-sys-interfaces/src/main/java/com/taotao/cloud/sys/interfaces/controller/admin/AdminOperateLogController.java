@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -23,26 +23,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 操作日志
+ *
  * @author shuigedeng
- * @since 2022/1/10
+ * @since 2021/9/8
  */
-@Tag(name = "数据版本日志")
+@Tag(name = "操作日志")
 @RestController
-@RequestMapping("/manager/sys/log/dataVersion")
+@RequestMapping("/admin/sys/log/operate")
 @RequiredArgsConstructor
-public class DataVersionLogManagerController extends BusinessController {
+public class AdminOperateLogController extends BusinessController {
+    // private final OperateLogService operateLogService;
 
-    // private final DataVersionLogService service;
-
-    //	@Operation(summary = "分页")
-    //	@GetMapping("/page")
-    //	public Result<PageResult<DataVersionLogDto>> page(DataVersionLogParam param) {
-    //		return Result.success(service.page(param));
-    //	}
+    //    @Operation(summary = "分页")
+    //    @GetMapping("/page")
+    //    public Result<PageResult<OperateLogDto>> page(OperateLogParam operateLogParam) {
+    //        return Result.success(operateLogService.page(operateLogParam));
+    //    }
     //
-    //	@Operation(summary = "获取")
-    //	@GetMapping("/findById")
-    //	public Result<DataVersionLogDto> findById(Long id) {
-    //		return Result.success(service.findById(id));
-    //	}
+    //    @Operation(summary = "获取")
+    //    @GetMapping("/findById")
+    //    public Result<OperateLogDto> findById(Long id) {
+    //        return Result.success(operateLogService.findById(id));
+    //    }
 }

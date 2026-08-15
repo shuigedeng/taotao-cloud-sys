@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,9 +33,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/manager/sys/region")
+@RequestMapping("/admin/sys/region")
 @Tag(name = "平台管理端-地区API", description = "平台管理端-地区API")
-public class RegionManagerController extends BusinessController {
+public class AdminRegionController extends BusinessController {
 
     //    @Operation(summary = "根据父id查询地区数据", description = "根据父id查询地区数据")
     //    @Parameters({

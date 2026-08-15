@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.manager;
+package com.taotao.cloud.sys.interfaces.controller.admin;
 
 import com.taotao.boot.webagg.controller.BusinessController;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -27,8 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 @RestController
 @Tag(name = "平台管理端-支付宝API", description = "平台管理端-支付宝API")
-@RequestMapping("/manager/sys/aliPay")
-public class AliPayManagerController extends BusinessController {
+@RequestMapping("/admin/sys/aliPay")
+public class AdminAliPayController extends BusinessController {
 //
 //    private final AlipayUtils alipayUtils;
 //    private final IAlipayConfigService alipayService;
