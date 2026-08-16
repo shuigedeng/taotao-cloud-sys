@@ -100,38 +100,27 @@ ENV PYROSCOPE_LABELS="APP=taotao-cloud-sys"
 #                  -Dskywalking.logging.dir=/root/logs/${APP_NAME} \
 #                  -Dskywalking.collector.backend_service=${BACKEND_SERVICE} "
 
-ENV JAVA_OPTIONS="-Xms2g \
-                  -Xmx4g \
-                  -Xmn1280m \
+ENV G1_GC_JAVA_OPTIONS="-Xms2g \
+                  -Xmx2g \
                   -Xss512k \
                   -XX:MaxDirectMemorySize=1024m \
                   -XX:MetaspaceSize=256m \
                   -XX:MaxMetaspaceSize=512m \
                   -XX:ReservedCodeCacheSize=256m \
                   -XX:+DisableExplicitGC \
-                  -XX:+UnlockDiagnosticVMOptions \
-                  -XX:+UseZGC  \
+                  -XX:+UseG1GC \
                   -XX:MaxGCPauseMillis=50 \
-                  -XX:GuaranteedSafepointInterval=0  \
-                  -XX:FlightRecorderOptions=maxchunksize=128m  \
-                  -XX:+UseCountedLoopSafepoints \
-                  -XX:StartFlightRecording=disk=true,maxsize=4096m,maxage=3d \
+                  -XX:InitiatingHeapOccupancyPercent=45 \
+                  -XX:G1HeapRegionSize=16m \
+                  -XX:G1ReservePercent=10 \
+                  -XX:+ParallelRefProcEnabled \
                   -XX:-OmitStackTraceInFastThrow \
-                  -XX:+UnlockExperimentalVMOptions \
-                  -XX:SurvivorRatio=8 \
-                  -XX:+UseCompressedOops \
-                  -XX:+UseCompressedClassPointers \
-                  -XX:+SegmentedCodeCache \
-                  -XX:+PrintCommandLineFlags \
-                  -XX:+ExplicitGCInvokesConcurrent \
                   -XX:+HeapDumpOnOutOfMemoryError \
                   -XX:+ShowCodeDetailsInExceptionMessages \
-                  -XX:ConcGCThreads=4 \
-                  -XX:AsyncLogBufferSize=409600 \
-                  -Xlog:gc*=debug:file=/root/logs/${APP_NAME}/gc.log:utctime,level,tags:filecount=50,filesize=100M \
-                  -Xlog:jit+compilation=debug:file=/root/logs/${APP_NAME}/jit.compile.log:utctime,level,tags:filecount=10,filesize=100M \
-                  -Xlog:safepoint=debug:file=/root/logs/${APP_NAME}/safepoint%t.log:utctime,level,tags:filecount=10,filesize=10M \
-                  -verbose:gc \
+                  -XX:+PrintCommandLineFlags \
+                  -Xlog:gc*=info:file=/root/logs/${APP_NAME}/gc.log:utctime,level,tags:filecount=50,filesize=100M \
+                  -Xlog:jit+compilation=info:file=/root/logs/${APP_NAME}/jit.compile.log:utctime,level,tags:filecount=10,filesize=100M \
+                  -Xlog:safepoint=info:file=/root/logs/${APP_NAME}/safepoint%t.log:utctime,level,tags:filecount=10,filesize=10M \
                   -Dnetworkaddress.cache.ttl=10 \
                   -Djava.security.egd=file:/dev/./urandom \
                   -Dfile.encoding=utf-8 \
@@ -156,10 +145,22 @@ ENV JAVA_OPTIONS="-Xms2g \
                   --add-opens java.base/sun.net.util=ALL-UNNAMED \
                   --add-opens java.base/sun.reflect.annotation=ALL-UNNAMED \
                   --add-opens java.base/jdk.internal.vm=ALL-UNNAMED \
+                  --add-opens java.base/jdk.internal.misc=ALL-UNNAMED \
+                  --add-opens java.base/sun.nio.ch=ALL-UNNAMED \
+                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+                  --add-opens java.base/jdk.internal.access=ALL-UNNAMED \
+                  --add-opens java.base/sun.reflect.generics.tree=ALL-UNNAMED \
+                  --add-opens java.base/sun.net.www.protocol.ftp=ALL-UNNAMED \
                   --add-opens java.compiler/javax.annotation.processing=ALL-UNNAMED \
+                  --add-opens java.compiler/javax.lang.model=ALL-UNNAMED \
+                  --add-opens java.compiler/javax.tools=ALL-UNNAMED \
+                  --add-opens java.compiler/com.sun.source.doctree=ALL-UNNAMED \
+                  --add-opens java.compiler/com.sun.source.tree=ALL-UNNAMED \
+                  --add-opens java.compiler/com.sun.source.util=ALL-UNNAMED \
+                  --add-opens java.compiler/com.sun.tools.javac=ALL-UNNAMED \
+                  --add-opens java.datatransfer/java.awt.datatransfer=ALL-UNNAMED \
                   --add-opens java.desktop/java.applet=ALL-UNNAMED \
                   --add-opens java.desktop/java.awt=ALL-UNNAMED \
-                  --add-opens java.datatransfer/java.awt.datatransfer=ALL-UNNAMED \
                   --add-opens java.desktop/java.beans=ALL-UNNAMED \
                   --add-opens java.desktop/java.beans.beancontext=ALL-UNNAMED \
                   --add-opens java.desktop/javax.accessibility=ALL-UNNAMED \
@@ -167,138 +168,58 @@ ENV JAVA_OPTIONS="-Xms2g \
                   --add-opens java.desktop/javax.print=ALL-UNNAMED \
                   --add-opens java.desktop/javax.sound.midi=ALL-UNNAMED \
                   --add-opens java.desktop/javax.swing=ALL-UNNAMED \
-                  --add-opens java.sql/java.sql=ALL-UNNAMED \
-                  --add-opens java.net.http/java.net.http=ALL-UNNAMED \
-                  --add-opens java.compiler/javax.lang.model=ALL-UNNAMED \
-                  --add-opens java.management/javax.management=ALL-UNNAMED \
+                  --add-opens java.desktop/sun.awt=ALL-UNNAMED \
+                  --add-opens java.desktop/sun.font=ALL-UNNAMED \
+                  --add-opens java.instrument/java.lang.instrument=ALL-UNNAMED \
                   --add-opens java.management/java.lang.management=ALL-UNNAMED \
+                  --add-opens java.management/javax.management=ALL-UNNAMED \
                   --add-opens java.management/sun.management=ALL-UNNAMED \
                   --add-opens java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED \
                   --add-opens java.management.rmi/javax.management.remote.rmi=ALL-UNNAMED \
                   --add-opens java.naming/javax.naming=ALL-UNNAMED \
-                  --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED \
+                  --add-opens java.net.http/java.net.http=ALL-UNNAMED \
                   --add-opens java.rmi/java.rmi=ALL-UNNAMED \
+                  --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED \
                   --add-opens java.scripting/javax.script=ALL-UNNAMED \
                   --add-opens java.security.jgss/org.ietf.jgss=ALL-UNNAMED \
                   --add-opens java.security.jgss/javax.security.auth.kerberos=ALL-UNNAMED \
                   --add-opens java.security.sasl/javax.security.sasl=ALL-UNNAMED \
                   --add-opens java.smartcardio/javax.smartcardio=ALL-UNNAMED \
+                  --add-opens java.sql/java.sql=ALL-UNNAMED \
                   --add-opens java.sql/javax.sql=ALL-UNNAMED \
                   --add-opens java.sql.rowset/javax.sql.rowset=ALL-UNNAMED \
-                  --add-opens java.compiler/javax.tools=ALL-UNNAMED \
                   --add-opens java.transaction.xa/javax.transaction.xa=ALL-UNNAMED \
-                  --add-opens java.instrument/java.lang.instrument=ALL-UNNAMED \
                   --add-opens java.xml/javax.xml=ALL-UNNAMED \
                   --add-opens java.xml/org.xml.sax=ALL-UNNAMED \
                   --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED \
                   --add-opens jdk.accessibility/com.sun.java.accessibility.util=ALL-UNNAMED \
-                  --add-opens jdk.jdi/com.sun.jdi=ALL-UNNAMED \
-                  --add-opens jdk.httpserver/com.sun.net.httpserver=ALL-UNNAMED \
-                  --add-opens jdk.httpserver/com.sun.net.httpserver.spi=ALL-UNNAMED \
-                  --add-opens jdk.sctp/com.sun.nio.sctp=ALL-UNNAMED \
-                  --add-opens jdk.security.auth/com.sun.security.auth=ALL-UNNAMED \
-                  --add-opens jdk.security.auth/com.sun.security.auth.callback=ALL-UNNAMED \
-                  --add-opens jdk.compiler/com.sun.source.doctree=ALL-UNNAMED \
-                  --add-opens jdk.compiler/com.sun.source.tree=ALL-UNNAMED \
-                  --add-opens jdk.compiler/com.sun.source.util=ALL-UNNAMED \
                   --add-opens jdk.attach/com.sun.tools.attach=ALL-UNNAMED \
                   --add-opens jdk.attach/com.sun.tools.attach.spi=ALL-UNNAMED \
                   --add-opens jdk.compiler/com.sun.tools.javac=ALL-UNNAMED \
-                  --add-opens jdk.jconsole/com.sun.tools.jconsole=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management=ALL-UNNAMED \
-                  --add-opens jdk.management.jfr/jdk.management.jfr=ALL-UNNAMED \
                   --add-opens jdk.dynalink/jdk.dynalink=ALL-UNNAMED \
+                  --add-opens jdk.httpserver/com.sun.net.httpserver=ALL-UNNAMED \
+                  --add-opens jdk.httpserver/com.sun.net.httpserver.spi=ALL-UNNAMED \
+                  --add-opens jdk.jartool/jdk.security.jarsigner=ALL-UNNAMED \
                   --add-opens jdk.javadoc/jdk.javadoc.doclet=ALL-UNNAMED \
+                  --add-opens jdk.jconsole/com.sun.tools.jconsole=ALL-UNNAMED \
+                  --add-opens jdk.jdi/com.sun.jdi=ALL-UNNAMED \
                   --add-opens jdk.jfr/jdk.jfr=ALL-UNNAMED \
                   --add-opens jdk.jfr/jdk.jfr.consumer=ALL-UNNAMED \
                   --add-opens jdk.jshell/jdk.jshell=ALL-UNNAMED \
+                  --add-opens jdk.jsobject/netscape.javascript=ALL-UNNAMED \
+                  --add-opens jdk.management/com.sun.management=ALL-UNNAMED \
+                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
+                  --add-opens jdk.management.jfr/jdk.management.jfr=ALL-UNNAMED \
                   --add-opens jdk.net/jdk.net=ALL-UNNAMED \
                   --add-opens jdk.net/jdk.nio=ALL-UNNAMED \
                   --add-opens jdk.nio.mapmode/jdk.nio.mapmode=ALL-UNNAMED \
-                  --add-opens jdk.jartool/jdk.security.jarsigner=ALL-UNNAMED \
-                  --add-opens jdk.jsobject/netscape.javascript=ALL-UNNAMED \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
-                  --add-opens java.base/java.lang.invoke=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens java.base/sun.net=ALL-UNNAMED \
-                  --add-opens java.base/java.math=ALL-UNNAMED \
-                  --add-opens java.base/sun.reflect.annotation=ALL-UNNAMED \
-                  --add-opens java.base/sun.net=ALL-UNNAMED \
-                  --add-opens java.desktop/sun.awt=ALL-UNNAMED \
-                  --add-opens java.desktop/sun.font=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.math=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens java.base/sun.util.calendar=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent.locks=ALL-UNNAMED \
-                  --add-opens java.base/java.security=ALL-UNNAMED \
-                  --add-opens java.base/jdk.internal.loader=ALL-UNNAMED \
-                  --add-opens java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED \
-                  --add-opens java.base/java.net=ALL-UNNAMED \
-                  --add-opens java.base/sun.nio.ch=ALL-UNNAMED \
-                  --add-opens java.management/java.lang.management=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  --add-opens java.management/sun.management=ALL-UNNAMED \
-                  --add-opens java.management/java.lang.management=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  --add-opens java.management/sun.management=ALL-UNNAMED \
-                  --add-opens java.base/java.time=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent.locks=ALL-UNNAMED \
-                  --add-opens java.base/java.security=ALL-UNNAMED \
-                  --add-opens java.base/jdk.internal.loader=ALL-UNNAMED \
-                  --add-opens java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED \
-                  --add-opens java.base/java.net=ALL-UNNAMED \
-                  --add-opens java.base/sun.nio.ch=ALL-UNNAMED \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.math=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens java.base/sun.util.calendar=ALL-UNNAMED \
-                  --add-opens java.base/sun.net.util=ALL-UNNAMED \
-                  --add-opens java.base/sun.net.util=ALL-UNNAMED \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.math=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens java.base/sun.util.calendar=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent=ALL-UNNAMED \
-                  --add-opens java.base/java.util.concurrent.locks=ALL-UNNAMED \
-                  --add-opens java.base/java.security=ALL-UNNAMED \
-                  --add-opens java.base/jdk.internal.loader=ALL-UNNAMED \
-                  --add-opens java.management/com.sun.jmx.mbeanserver=ALL-UNNAMED \
-                  --add-opens java.base/java.net=ALL-UNNAMED \
-                  --add-opens java.base/sun.nio.ch=ALL-UNNAMED \
-                  --add-opens java.management/java.lang.management=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  --add-opens java.management/sun.management=ALL-UNNAMED \
-                  --add-opens java.base/sun.net.util=ALL-UNNAMED \
-                  --add-opens java.base/java.time=ALL-UNNAMED \
-                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
-                  --add-opens java.base/java.io=ALL-UNNAMED \
-                  --add-opens java.base/java.security=ALL-UNNAMED \
-                  --add-opens java.base/jdk.internal.misc=ALL-UNNAMED \
-                  --add-opens java.base/java.text=ALL-UNNAMED \
-                  --add-opens java.base/java.nio=ALL-UNNAMED \
-                  --add-opens java.base/jdk.internal.access=ALL-UNNAMED \
-                  --add-opens java.base/java.time=ALL-UNNAMED \
-                  --add-opens java.base/java.io=ALL-UNNAMED \
-                  --add-opens java.base/java.net=ALL-UNNAMED \
-                  --add-opens java.base/java.lang=ALL-UNNAMED \
-                  --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
-                  --add-opens java.base/java.util=ALL-UNNAMED \
-                  --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED \
-                  --add-opens java.base/sun.reflect.annotation=ALL-UNNAMED \
-                  --add-opens java.base/sun.net=ALL-UNNAMED \
-                  --add-opens java.base/java.math=ALL-UNNAMED \
-                  --add-opens java.desktop/sun.awt=ALL-UNNAMED \
+                  --add-opens jdk.sctp/com.sun.nio.sctp=ALL-UNNAMED \
+                  --add-opens jdk.security.auth/com.sun.security.auth=ALL-UNNAMED \
+                  --add-opens jdk.security.auth/com.sun.security.auth.callback=ALL-UNNAMED \
                   --add-exports java.desktop/sun.awt=ALL-UNNAMED \
-                  --add-exports=java.desktop/sun.font=ALL-UNNAMED \
-                  --add-exports=java.base/sun.reflect.generics.tree=ALL-UNNAMED \
-                  --add-exports=java.base/sun.net.www.protocol.ftp=ALL-UNNAMED \
-                  --add-exports=java.desktop/sun.awt=ALL-UNNAMED \
-                  --add-exports=java.desktop/sun.font=ALL-UNNAMED"
+                  --add-exports java.desktop/sun.font=ALL-UNNAMED \
+                  --add-exports java.base/sun.reflect.generics.tree=ALL-UNNAMED \
+                  --add-exports java.base/sun.net.www.protocol.ftp=ALL-UNNAMED"
                   #-javaagent:/skywalking/agent/skywalking-agent.jar"
 
 ENV Z_GC_JAVA_OPTIONS="-Xms2g \

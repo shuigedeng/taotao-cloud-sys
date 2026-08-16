@@ -1,0 +1,29 @@
+server:
+  port: 33331
+
+remote-ip: 127.0.0.1
+ttcVersion: 1.0.0
+
+spring:
+  application:
+    name: taotao-cloud-sys
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${remote-ip}:8848
+        namespace: 82f5c2ff-c0d5-478d-9987-7f082d1a55d7
+        username: nacos
+        password: nacos
+        group: TAOTAO_CLOUD_GROUP
+      config:
+        enabled: true
+        server-addr: ${remote-ip}:8848
+        namespace: 82f5c2ff-c0d5-478d-9987-7f082d1a55d7
+        username: nacos
+        password: nacos
+        group: TAOTAO_CLOUD_GROUP
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.yaml
