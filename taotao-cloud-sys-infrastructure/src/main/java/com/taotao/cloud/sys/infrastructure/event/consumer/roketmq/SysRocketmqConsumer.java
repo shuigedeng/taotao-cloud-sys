@@ -1,38 +1,49 @@
-//package com.taotao.cloud.sys.infrastructure.event.consumer.roketmq;
-//
-//import com.taotao.boot.mq.common.base.MqConsumerBase;
-//import com.taotao.cloud.sys.application.service.command.UserCommandService;
-//import lombok.AllArgsConstructor;
-//import org.apache.rocketmq.common.message.MessageExt;
-//import org.apache.rocketmq.spring.core.RocketMQListener;
-//
-//import java.nio.charset.StandardCharsets;
-//
-////@Component
-////@RocketMQMessageListener(
-////	topic = "${taotao.data.rocketmq.member-topic}",
-////	selectorExpression = " res || xx",
-////	consumerGroup = "${taotao.data.rocketmq.member-group}",
-////	consumeMode = ConsumeMode.ORDERLY,
-////	messageModel = MessageModel.BROADCASTING
-////)
-//@AllArgsConstructor
-//public class SysRocketmqConsumer extends MqConsumerBase implements RocketMQListener<MessageExt> {
-//
-//	private final UserCommandService userCommandService;
-//
-//	//没有抛异常 自动确认
-//	//抛异常
-//	@Override
-//	public void onMessage( MessageExt message ) {
-//		try {
-//			String s = new String(message.getBody(), StandardCharsets.UTF_8);
-//			//手动确认
-//			userCommandService.handleNotify(s);
-//		} catch (Exception e) {
-//
-//		}
-//	}
-//
-//
-//}
+package com.taotao.cloud.sys.infrastructure.event.consumer.roketmq;
+
+import com.taotao.boot.common.exception.BusinessException;
+import com.taotao.boot.mq.common.base.MqConsumerBase;
+import com.taotao.cloud.sys.application.dto.app.command.NotifyAppCommand;
+import com.taotao.cloud.sys.application.service.command.AppCommandService;
+import lombok.AllArgsConstructor;
+import org.apache.rocketmq.client.annotation.RocketMQMessageListener;
+import org.apache.rocketmq.client.apis.consumer.ConsumeResult;
+import org.apache.rocketmq.client.apis.message.MessageView;
+import org.apache.rocketmq.client.core.RocketMQListener;
+import org.springframework.stereotype.Component;
+
+import java.nio.charset.StandardCharsets;
+
+@Component
+@RocketMQMessageListener(
+	topic = "sys-topic",
+	tag = "*",
+	sslEnabled = false,
+	consumerGroup = "sys_consumer_group"
+)
+@AllArgsConstructor
+public class SysRocketmqConsumer extends MqConsumerBase implements RocketMQListener {
+	private final AppCommandService appCommandService;
+
+	@Override
+	public ConsumeResult consume( MessageView messageView ) {
+		try {
+			String msg = StandardCharsets.UTF_8.decode(messageView.getBody()).toString();
+
+			NotifyAppCommand notifyGoodsCommand = from(msg, NotifyAppCommand.class);
+
+			handleNotify(() -> {
+
+				appCommandService.handleNotify(notifyGoodsCommand);
+
+			});
+
+		} catch (Exception e) {
+			if(e instanceof BusinessException businessException){
+				return ConsumeResult.SUCCESS;
+			}
+
+			return ConsumeResult.FAILURE;
+		}
+		return ConsumeResult.SUCCESS;
+	}
+}

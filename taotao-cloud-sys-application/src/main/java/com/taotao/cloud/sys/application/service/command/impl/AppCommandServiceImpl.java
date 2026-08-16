@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.application.service.command.impl;
 
+import com.taotao.cloud.sys.application.dto.app.command.NotifyAppCommand;
 import com.taotao.cloud.sys.application.service.command.AppCommandService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +33,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AppCommandServiceImpl implements AppCommandService {
 
-    //    private final AppManager appManager;
+	@Override
+	public void handleNotify( NotifyAppCommand notifyAppCommand ) {
+
+	}
+
+	//    private final AppManager appManager;
     //
     //    /** 添加 */
     //    @Override

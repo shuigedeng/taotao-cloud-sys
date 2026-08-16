@@ -349,33 +349,34 @@ seata:
     enable-client-batch-send-request: true     # 客户端事务消息请求是否批量合并发送（默认true）
 
 rocketmq:
-  name-server: http://${remote-ip}:9876
   producer:
-    # 发送同一类消息的设置为同一个group，保证唯一
-    group: ${spring.application.name}     # 组名称
-    # 阿里云购买的rocketmq
+    endpoints: ${remote-ip}:18681
+    group: ${spring.application.name}
     access-key: taotaocloud
-    # 阿里云购买的rocketmq
     secret-key: taotaocloud
-    # 发送消息超时时间，默认3000
-    sendMessageTimeout: 10000
-    # 发送消息失败重试次数，默认2
-    retryTimesWhenSendFailed: 2
-    # 异步消息重试此处，默认2
-    retryTimesWhenSendAsyncFailed: 2
-    # 消息最大长度，默认1024 * 1024 * 4(默认4M)
-    maxMessageSize: 4096
-    # 压缩消息阈值，默认4k(1024 * 4)
-    compressMessageBodyThreshold: 4096
-    # 是否在内部发送失败时重试另一个broker，默认false
-    retryNextServer: false
-  consumer:
+    topic: sys-topic # 建议配置默认Topic
+    request-timeout: 3 # 超时时间(秒)
+    ssl-enabled: false # WSL2本地开发建议关闭SSL
+  simple-consumer:
+    endpoints: ${remote-ip}:18681
+    consumer-group: sys_consumer_group
     access-key: taotaocloud
-    # 阿里云购买的rocketmq
     secret-key: taotaocloud
-    group: taotao_cloud_sys_consumer_group
-    # 一次拉取消息最大值，注意是拉取消息的最大值而非消费最大值
-    pull-batch-size: 10
+    topic: OrderTopic
+    tag: "*" # 订阅所有Tag
+    await-duration: 5 # 长轮询等待时间(秒)
+    request-timeout: 3
+    ssl-enabled: false # WSL2本地开发建议关闭SSL
+  push-consumer:
+    endpoints: ${remote-ip}:18681
+    consumer-group: sys_consumer_group
+    access-key: taotaocloud
+    secret-key: taotaocloud
+    topic: sys-topic
+    tag: "*" # 订阅所有Tag
+    await-duration: 5 # 长轮询等待时间(秒)
+    request-timeout: 3
+    ssl-enabled: false # WSL2本地开发建议关闭SSL
 
 spring:
   grpc:
@@ -644,20 +645,14 @@ spring:
           min-idle: 100
   kafka:
     enabled: true
-    bootstrap-servers: ${remote-ip}:9092
+    bootstrap-servers: ${remote-ip}:9094
     producer:
       # 消息发送重试次数
-      # 写入失败时，重试次数。当leader节点失效，一个repli节点会替代成为leader节点，此时可能出现写入失败，
-      # 当retris为0时，produce不会重复。retirs重发，此时repli节点完全成为leader节点，不会产生消息丢失。
       retries: 1
       # 当有多个消息需要被发送到同一个分区时，生产者会把它们放在同一个批次里。该参数指定了一个批次可以使用的内存大小，按照字节数计算。
-      # 每次批量发送消息的数量,produce积累到一定数据，一次发送
       batch-size: 16384 #批量大小
-      # produce积累数据一次发送，缓存大小达到buffer.memory就发送数据
-      # 生产者内存缓冲区的大小
-      buffer-memory: 33554432
+      buffer-memory: 33554432 # 生产者内存缓冲区的大小
       #transaction-id-prefix: tx_1 #开启事务，必须在开启了事务的方法中发送，否则报错
-      # 指定消息key和消息体的序列化编解码方式
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       #key-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
@@ -673,21 +668,16 @@ spring:
         linger.ms: 100 #提交延迟
         partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner #指定分区器
     consumer:
-      #默认的消费组ID
-      #指定默认消费者group id --> 由于在kafka中，同一组中的consumer不会读取到同一个消息，依靠groud.id设置组名
-      group-id: taotao_cloud_sys_consumer_group
+      group-id: testGroup #默认的消费组ID
+      # 自动提交的时间间隔 在spring boot 2.X 版本中这里采用的是值的类型为Duration 需要符合特定的格式，如1S,1M,2H,5D
+      #auto-commit-interval: 2s
       # 该属性指定了消费者在读取一个没有偏移量的分区或者偏移量无效的情况下该作何处理：
       # earliest：当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费分区的记录
       # latest：当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据（在消费者启动之后生成的记录）
       # none：当各分区都存在已提交的offset时，从提交的offset开始消费；只要有一个分区不存在已提交的offset，则抛出异常
-      # smallest和largest才有效，如果smallest重新0开始读取，如果是largest从logfile的offset读取。一般情况下我们都是设置smallest
       auto-offset-reset: latest
       # 是否自动提交偏移量，默认值是true，为了避免出现重复数据和数据丢失，可以把它设置为false，然后手动提交偏移量
-      # enable.auto.commit:true --> 设置自动提交offset
       enable-auto-commit: false
-      # 自动提交的时间间隔 在spring boot 2.X 版本中这里采用的是值的类型为Duration 需要符合特定的格式，如1S,1M,2H,5D
-      #如果'enable.auto.commit'为true，则消费者偏移自动提交给Kafka的频率（以毫秒为单位），默认值为5000。
-      #auto-commit-interval: 2s
       #max-poll-records: 500 #单次拉取消息的最大条数
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -727,12 +717,12 @@ spring:
       # 在侦听器容器中运行的线程数，一般设置为 机器数*分区数
       concurrency: 4
       # 自动提交关闭，需要设置手动消息确认
-      ack-mode: manual_immediate
+      ack-mode: manual
       # 消费监听接口监听的主题不存在时，默认会报错，所以设置为false忽略错误
       missing-topics-fatal: false
       # 两次poll之间的最大间隔，默认值为5分钟。如果超过这个间隔会触发reBalance
       poll-timeout: 60s
-      type: batch #设置批量消费
+      type: single #设置批量消费
   security:
     oauth2:
       resourceserver:

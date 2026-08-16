@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.application.service.command;
 
 import com.taotao.boot.ddd.model.application.service.CommandService;
+import com.taotao.cloud.sys.application.dto.app.command.NotifyAppCommand;
 
 /**
  * 系统应用表
@@ -43,4 +44,6 @@ public interface AppCommandService extends CommandService {
     //
     //    /** 删除 */
     //    Boolean deleteApp(Long id);
+
+	public void handleNotify( NotifyAppCommand notifyAppCommand );
 }
