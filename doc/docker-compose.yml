@@ -21,6 +21,15 @@ services:
       --default-time-zone='+8:00'
       --explicit_defaults_for_timestamp=true
       --lower_case_table_names=1
+      # ========== binlog 配置开始 ==========
+      --log-bin=mysql-bin                # 开启binlog，binlog文件名前缀
+      --binlog-format=ROW          # 设置日志格式为 ROW（推荐用于主从复制和数据恢复）
+      --binlog-row-image=FULL      # 记录完整的行变更数据
+      --server-id=1                       # 主库必须设置server‑id，不能为0
+      --expire-logs-days=7                # binlog保留7天，自动清理旧日志
+      --sync-binlog=1                     # 每次事务刷盘，数据安全，性能略降
+      --max_binlog_size=100M       # 单个 binlog 文件的最大大小
+      # ========== binlog 配置结束 ==========
     logging:
       driver: "json-file"
       options:
@@ -43,9 +52,9 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.12
 
-  nacos-3.2.2:
-    image: nacos/nacos-server:v3.2.2
-    container_name: nacos-3.2.2
+  nacos-3.2.3:
+    image: nacos/nacos-server:v3.2.3
+    container_name: nacos-3.2.3
     restart: no
     privileged: true
     ports:
@@ -60,7 +69,7 @@ services:
       MYSQL_SERVICE_PORT: 3306
       MYSQL_SERVICE_USER: root
       MYSQL_SERVICE_PASSWORD: 123456
-      MYSQL_SERVICE_DB_NAME: "nacos3.2.2"
+      MYSQL_SERVICE_DB_NAME: "nacos_3.2.3"
       MYSQL_SERVICE_DB_PARAM: "characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true"
       JVM_XMS: 256m
       JVM_XMX: 512m
@@ -82,9 +91,9 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.14
 
-  openobserve:
-    image: o2cr.ai/openobserve/openobserve-enterprise:latest
-    container_name: openobserve
+  openobserve-0.92.2:
+    image: o2cr.ai/openobserve/openobserve-enterprise:v0.92.2
+    container_name: openobserve-0.92.2
     restart: no
     environment:
       ZO_ROOT_USER_EMAIL: "981376577@qq.com"  # 替换为你的邮箱
