@@ -1,14 +1,11 @@
 server:
   port: 33331
 
-remote-ip: 127.0.0.1
-ttcVersion: 1.0.0
+ttcVersion: 2026.09
 
 spring:
   application:
     name: taotao-cloud-sys
-  profiles:
-    active: dev
   cloud:
     nacos:
       discovery:
@@ -26,4 +23,4 @@ spring:
         group: TAOTAO_CLOUD_GROUP
   config:
     import:
-      - optional:nacos:${spring.application.name}.yaml
+      - optional:nacos:taotao-cloud-sys-nacos.yaml
