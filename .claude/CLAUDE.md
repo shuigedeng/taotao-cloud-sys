@@ -13,7 +13,7 @@
 |------|------|
 | JDK | 25（预览特性 `--enable-preview`） |
 | Gradle | 9.7.0 |
-| Spring Boot | 4.1.0 |
+| Spring Boot | 4.1.1 |
 | Spring Cloud | 2025.1.1 |
 | Spring Cloud Alibaba | 2025.1.0.0 |
 | Spring Security | 7.1.0 |
