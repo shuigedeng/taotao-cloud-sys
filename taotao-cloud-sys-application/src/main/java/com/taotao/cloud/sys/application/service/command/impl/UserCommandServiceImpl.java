@@ -16,9 +16,8 @@
 
 package com.taotao.cloud.sys.application.service.command.impl;
 
-import com.taotao.boot.common.support.asserts.BusinessAssert;
 import com.taotao.boot.data.datasource.wrapper.TransactionSynchronizationWrapper;
-import com.taotao.boot.data.datasource.wrapper.TransactionalWrapper;
+import com.taotao.boot.data.datasource.wrapper.TransactionWrapper;
 import com.taotao.boot.ddd.model.event.EventDispatcher;
 import com.taotao.boot.ddd.model.val.BizId;
 import com.taotao.cloud.sys.application.dto.user.command.AssignRolesCommand;
@@ -33,12 +32,9 @@ import com.taotao.cloud.sys.domain.service.UserDomainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * UserServiceImpl
@@ -55,8 +51,8 @@ public class UserCommandServiceImpl implements UserCommandService {
 	private final UserDomainRepository userDomainRepository;
 	private final RoleDomainRepository roleDomainRepository;
 	private final UserDomainService userDomainService;
-	private final TransactionalWrapper transactionalWrapper;
-	private final TransactionSynchronizationWrapper txSynchronizationWrapper;
+	private final TransactionWrapper transactionWrapper;
+	private final TransactionSynchronizationWrapper transactionSynchronizationWrapper;
 	private final EventDispatcher eventDispatcher;
 
 	@Override
@@ -65,14 +61,14 @@ public class UserCommandServiceImpl implements UserCommandService {
 		Set<BizId> requestedRoleIds = assignUseRolesCommand.getBizIdRoleIds();
 		Long userId = assignUseRolesCommand.userId();
 
-		transactionalWrapper.doInTransaction(()->{
+		transactionWrapper.doInTransaction(()->{
 			UserAgg userAgg = userDomainRepository.findUsingIdCol(userId, Boolean.TRUE);
 			List<RoleAgg> assignableRoles = roleDomainRepository.findAssignableRoles(requestedRoleIds);
 
 			userDomainService.assignRoles(userAgg, assignableRoles, requestedRoleIds);
 
 			userDomainRepository.save(userAgg, Boolean.TRUE);
-			txSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
+			transactionSynchronizationWrapper.afterCommit(() -> eventDispatcher.dispatchEvents(userAgg));
 		});
 
 		log.info("角色分配成功，用户ID: {}, 角色数量: {}", userId, requestedRoleIds.size());
