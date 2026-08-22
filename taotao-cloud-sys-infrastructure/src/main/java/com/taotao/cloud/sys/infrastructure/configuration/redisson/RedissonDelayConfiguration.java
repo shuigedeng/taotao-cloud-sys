@@ -85,7 +85,6 @@ public class RedissonDelayConfiguration {
      *
      * @param MESSAGE_ID 消息_id
      * @param false false
-     * @return 无返回值
      * @since 2022.03
      */
     @RedissonListener(queues = "riven", messageConverter = "myMessageConverter")

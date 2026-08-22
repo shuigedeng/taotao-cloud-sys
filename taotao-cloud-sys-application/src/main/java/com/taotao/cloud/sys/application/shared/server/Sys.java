@@ -53,7 +53,6 @@ public class Sys {
      * 设置ComputerName
      *
      * @param computerName computerName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setComputerName(String computerName) {
@@ -76,7 +75,6 @@ public class Sys {
      * 设置ComputerIp
      *
      * @param computerIp computerIp
-     * @return 无返回值
      * @since 2022.03
      */
     public void setComputerIp(String computerIp) {
@@ -99,7 +97,6 @@ public class Sys {
      * 设置UserDir
      *
      * @param userDir userDir
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUserDir(String userDir) {
@@ -122,7 +119,6 @@ public class Sys {
      * 设置OsName
      *
      * @param osName osName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOsName(String osName) {
@@ -145,7 +141,6 @@ public class Sys {
      * 设置OsArch
      *
      * @param osArch osArch
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOsArch(String osArch) {

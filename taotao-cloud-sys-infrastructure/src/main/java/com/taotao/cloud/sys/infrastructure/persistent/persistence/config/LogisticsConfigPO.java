@@ -87,7 +87,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -108,7 +107,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -129,7 +127,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置ContactName
      *
      * @param contactName contactName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setContactName(String contactName) {
@@ -150,7 +147,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置ContactMobile
      *
      * @param contactMobile contactMobile
-     * @return 无返回值
      * @since 2022.03
      */
     public void setContactMobile(String contactMobile) {
@@ -171,7 +167,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置StandBy
      *
      * @param standBy standBy
-     * @return 无返回值
      * @since 2022.03
      */
     public void setStandBy(String standBy) {
@@ -192,7 +187,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置FormItems
      *
      * @param formItems formItems
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFormItems(String formItems) {
@@ -213,7 +207,6 @@ public class LogisticsConfigPO extends BasePO<LogisticsConfigPO> {
      * 设置Disabled
      *
      * @param disabled disabled
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDisabled(String disabled) {

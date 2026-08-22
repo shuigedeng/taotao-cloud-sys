@@ -55,7 +55,6 @@ public class Cpu {
      * 设置CpuNum
      *
      * @param cpuNum cpuNum
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCpuNum(int cpuNum) {
@@ -78,7 +77,6 @@ public class Cpu {
      * 设置总计
      *
      * @param total 总计
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTotal(double total) {
@@ -101,7 +99,6 @@ public class Cpu {
      * 设置Sys
      *
      * @param sys sys
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSys(double sys) {
@@ -124,7 +121,6 @@ public class Cpu {
      * 设置Used
      *
      * @param used used
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUsed(double used) {
@@ -147,7 +143,6 @@ public class Cpu {
      * 设置Wait
      *
      * @param wait wait
-     * @return 无返回值
      * @since 2022.03
      */
     public void setWait(double wait) {
@@ -170,7 +165,6 @@ public class Cpu {
      * 设置Free
      *
      * @param free free
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFree(double free) {

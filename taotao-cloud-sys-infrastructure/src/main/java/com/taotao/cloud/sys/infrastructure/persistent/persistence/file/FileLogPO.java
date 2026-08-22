@@ -113,7 +113,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置BizId
      *
      * @param bizId bizId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBizId(Long bizId) {
@@ -134,7 +133,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置BizType
      *
      * @param bizType bizType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBizType(String bizType) {
@@ -155,7 +153,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置数据类型
      *
      * @param dataType 数据类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDataType(String dataType) {
@@ -176,7 +173,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置OriginalFileName
      *
      * @param originalFileName originalFileName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOriginalFileName(String originalFileName) {
@@ -197,7 +193,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置URL
      *
      * @param url URL
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUrl(String url) {
@@ -218,7 +213,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置文件md5
      *
      * @param fileMd5 文件md5
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFileMd5(String fileMd5) {
@@ -239,7 +233,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置ContextType
      *
      * @param contextType contextType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setContextType(String contextType) {
@@ -260,7 +253,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置文件名称
      *
      * @param filename 文件名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFilename(String filename) {
@@ -281,7 +273,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置Ext
      *
      * @param ext ext
-     * @return 无返回值
      * @since 2022.03
      */
     public void setExt(String ext) {
@@ -302,7 +293,6 @@ public class FileLogPO extends BasePO<FileLogPO> {
      * 设置尺寸
      *
      * @param size 尺寸
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSize(Long size) {

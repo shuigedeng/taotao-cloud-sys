@@ -47,7 +47,6 @@ public class Mem {
      * 设置总计
      *
      * @param total 总计
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTotal(long total) {
@@ -70,7 +69,6 @@ public class Mem {
      * 设置Used
      *
      * @param used used
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUsed(long used) {
@@ -93,7 +91,6 @@ public class Mem {
      * 设置Free
      *
      * @param free free
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFree(long free) {

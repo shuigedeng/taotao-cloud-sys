@@ -62,7 +62,6 @@ public class Jvm {
      * 设置总计
      *
      * @param total 总计
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTotal(double total) {
@@ -85,7 +84,6 @@ public class Jvm {
      * 设置Max
      *
      * @param max max
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMax(double max) {
@@ -108,7 +106,6 @@ public class Jvm {
      * 设置Free
      *
      * @param free free
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFree(double free) {
@@ -159,7 +156,6 @@ public class Jvm {
      * 设置版本
      *
      * @param version 版本
-     * @return 无返回值
      * @since 2022.03
      */
     public void setVersion(String version) {
@@ -182,7 +178,6 @@ public class Jvm {
      * 设置Home
      *
      * @param home home
-     * @return 无返回值
      * @since 2022.03
      */
     public void setHome(String home) {

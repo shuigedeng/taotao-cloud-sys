@@ -86,7 +86,6 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * 设置LanguageTag
      *
      * @param languageTag languageTag
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLanguageTag(String languageTag) {
@@ -107,7 +106,6 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -128,7 +126,6 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * 设置消息
      *
      * @param message 消息
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMessage(String message) {
@@ -149,7 +146,6 @@ public class I18nDataPO extends BasePO<I18nDataPO> {
      * 设置备注s
      *
      * @param remarks 备注s
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemarks(String remarks) {

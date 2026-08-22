@@ -63,7 +63,6 @@ public class DictAgg extends AggregateRoot<BizId> {
 	 * 校验名称
 	 *
 	 * @param count 数量
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void checkName(long count) {
@@ -75,7 +74,6 @@ public class DictAgg extends AggregateRoot<BizId> {
 	/**
 	 * 校验
 	 *
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void checkIdAndPid() {

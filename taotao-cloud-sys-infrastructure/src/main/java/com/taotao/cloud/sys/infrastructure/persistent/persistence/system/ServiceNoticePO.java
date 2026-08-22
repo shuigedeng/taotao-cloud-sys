@@ -99,7 +99,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置StoreId
      *
      * @param storeId storeId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setStoreId(String storeId) {
@@ -120,7 +119,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置BannerImage
      *
      * @param bannerImage bannerImage
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBannerImage(String bannerImage) {
@@ -141,7 +139,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置标题
      *
      * @param title 标题
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTitle(String title) {
@@ -162,7 +159,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置SubTitle
      *
      * @param subTitle subTitle
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSubTitle(String subTitle) {
@@ -183,7 +179,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置ToUrl
      *
      * @param toUrl toUrl
-     * @return 无返回值
      * @since 2022.03
      */
     public void setToUrl(String toUrl) {
@@ -204,7 +199,6 @@ public class ServiceNoticePO extends BasePO<ServiceNoticePO> {
      * 设置内容
      *
      * @param content 内容
-     * @return 无返回值
      * @since 2022.03
      */
     public void setContent(String content) {

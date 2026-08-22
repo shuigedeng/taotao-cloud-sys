@@ -57,7 +57,6 @@ public class OrgAgg extends AggregateRoot<Long> {
 	 * 校验名称
 	 *
 	 * @param count 数量
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void checkName(long count) {
@@ -69,7 +68,6 @@ public class OrgAgg extends AggregateRoot<Long> {
 	/**
 	 * 校验
 	 *
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void checkIdAndPid() {

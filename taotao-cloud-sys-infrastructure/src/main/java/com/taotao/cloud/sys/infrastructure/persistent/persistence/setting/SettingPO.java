@@ -101,7 +101,6 @@ public class SettingPO extends BasePO<SettingPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -122,7 +121,6 @@ public class SettingPO extends BasePO<SettingPO> {
      * 设置分类
      *
      * @param category 分类
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCategory(String category) {
@@ -143,7 +141,6 @@ public class SettingPO extends BasePO<SettingPO> {
      * 设置EnCode
      *
      * @param enCode enCode
-     * @return 无返回值
      * @since 2022.03
      */
     public void setEnCode(String enCode) {
@@ -164,7 +161,6 @@ public class SettingPO extends BasePO<SettingPO> {
      * 设置值
      *
      * @param value 值
-     * @return 无返回值
      * @since 2022.03
      */
     public void setValue(String value) {

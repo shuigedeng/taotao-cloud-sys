@@ -90,7 +90,6 @@ public class RolePO extends BasePO<RolePO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -111,7 +110,6 @@ public class RolePO extends BasePO<RolePO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -132,7 +130,6 @@ public class RolePO extends BasePO<RolePO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -153,7 +150,6 @@ public class RolePO extends BasePO<RolePO> {
      * 设置租户ID
      *
      * @param tenantId 租户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTenantId(String tenantId) {

@@ -85,7 +85,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置SignName
      *
      * @param signName signName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSignName(String signName) {
@@ -106,7 +105,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置SignSource
      *
      * @param signSource signSource
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSignSource(Integer signSource) {
@@ -127,7 +125,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -148,7 +145,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置BusinessLicense
      *
      * @param businessLicense businessLicense
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBusinessLicense(String businessLicense) {
@@ -169,7 +165,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置License
      *
      * @param license license
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLicense(String license) {
@@ -190,7 +185,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置SignStatus
      *
      * @param signStatus signStatus
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSignStatus(Integer signStatus) {
@@ -211,7 +205,6 @@ public class SmsSignPO extends BasePO<SmsSignPO> {
      * 设置Reason
      *
      * @param reason reason
-     * @return 无返回值
      * @since 2022.03
      */
     public void setReason(String reason) {

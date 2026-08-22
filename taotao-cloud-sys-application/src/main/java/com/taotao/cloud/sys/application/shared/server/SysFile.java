@@ -59,7 +59,6 @@ public class SysFile {
      * 设置DirName
      *
      * @param dirName dirName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDirName(String dirName) {
@@ -82,7 +81,6 @@ public class SysFile {
      * 设置SysTypeName
      *
      * @param sysTypeName sysTypeName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSysTypeName(String sysTypeName) {
@@ -105,7 +103,6 @@ public class SysFile {
      * 设置类型名称
      *
      * @param typeName 类型名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTypeName(String typeName) {
@@ -128,7 +125,6 @@ public class SysFile {
      * 设置总计
      *
      * @param total 总计
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTotal(String total) {
@@ -151,7 +147,6 @@ public class SysFile {
      * 设置Free
      *
      * @param free free
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFree(String free) {
@@ -174,7 +169,6 @@ public class SysFile {
      * 设置Used
      *
      * @param used used
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUsed(String used) {
@@ -197,7 +191,6 @@ public class SysFile {
      * 设置Usage
      *
      * @param usage usage
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUsage(double usage) {

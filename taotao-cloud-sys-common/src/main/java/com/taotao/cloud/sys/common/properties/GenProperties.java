@@ -57,7 +57,6 @@ public class GenProperties {
      * 设置Author
      *
      * @param author author
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAuthor(String author) {
@@ -78,7 +77,6 @@ public class GenProperties {
      * 设置PackageName
      *
      * @param packageName packageName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPackageName(String packageName) {
@@ -99,7 +97,6 @@ public class GenProperties {
      * 设置AutoRemovePre
      *
      * @param autoRemovePre autoRemovePre
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAutoRemovePre(boolean autoRemovePre) {
@@ -120,7 +117,6 @@ public class GenProperties {
      * 设置表Prefix
      *
      * @param tablePrefix 表Prefix
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTablePrefix(String tablePrefix) {

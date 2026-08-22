@@ -114,7 +114,6 @@ public class AppPO extends BasePO<AppPO> {
      * 设置排序
      *
      * @param sort 排序
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSort(Integer sort) {
@@ -125,7 +124,6 @@ public class AppPO extends BasePO<AppPO> {
      * 设置图标
      *
      * @param icon 图标
-     * @return 无返回值
      * @since 2022.03
      */
     public void setIcon(String icon) {
@@ -136,7 +134,6 @@ public class AppPO extends BasePO<AppPO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -147,7 +144,6 @@ public class AppPO extends BasePO<AppPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {

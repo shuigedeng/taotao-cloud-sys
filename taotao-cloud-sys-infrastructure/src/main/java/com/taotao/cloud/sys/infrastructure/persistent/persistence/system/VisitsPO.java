@@ -86,7 +86,6 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * 设置日期
      *
      * @param date 日期
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDate(String date) {
@@ -107,7 +106,6 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * 设置PvCounts
      *
      * @param pvCounts pvCounts
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPvCounts(Long pvCounts) {
@@ -128,7 +126,6 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * 设置IpCounts
      *
      * @param ipCounts ipCounts
-     * @return 无返回值
      * @since 2022.03
      */
     public void setIpCounts(Long ipCounts) {
@@ -149,7 +146,6 @@ public class VisitsPO extends BasePO<VisitsPO> {
      * 设置WeekDay
      *
      * @param weekDay weekDay
-     * @return 无返回值
      * @since 2022.03
      */
     public void setWeekDay(String weekDay) {

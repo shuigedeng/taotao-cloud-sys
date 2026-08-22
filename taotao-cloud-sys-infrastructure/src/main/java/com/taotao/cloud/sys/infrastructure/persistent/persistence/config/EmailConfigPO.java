@@ -83,7 +83,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * 设置FromUser
      *
      * @param fromUser fromUser
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFromUser(String fromUser) {
@@ -104,7 +103,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * 设置Host
      *
      * @param host host
-     * @return 无返回值
      * @since 2022.03
      */
     public void setHost(String host) {
@@ -125,7 +123,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * 设置Pass
      *
      * @param pass pass
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPass(String pass) {
@@ -146,7 +143,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * 设置Port
      *
      * @param port port
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPort(String port) {
@@ -167,7 +163,6 @@ public class EmailConfigPO extends BasePO<EmailConfigPO> {
      * 设置User
      *
      * @param user user
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUser(String user) {

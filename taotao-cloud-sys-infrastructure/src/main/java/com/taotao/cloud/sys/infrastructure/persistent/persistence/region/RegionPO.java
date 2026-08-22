@@ -131,7 +131,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置父级ID
      *
      * @param parentId 父级ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setParentId(Long parentId) {
@@ -152,7 +151,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -173,7 +171,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -194,7 +191,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置级别
      *
      * @param level 级别
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLevel(String level) {
@@ -215,7 +211,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置城市编码
      *
      * @param cityCode 城市编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCityCode(String cityCode) {
@@ -236,7 +231,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置Lng
      *
      * @param lng lng
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLng(String lng) {
@@ -257,7 +251,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置Lat
      *
      * @param lat lat
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLat(String lat) {
@@ -278,7 +271,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置订单数量
      *
      * @param orderNum 订单数量
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOrderNum(Integer orderNum) {
@@ -293,7 +285,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置IdTree
      *
      * @param idTree idTree
-     * @return 无返回值
      * @since 2022.03
      */
     public void setIdTree(List<Long> idTree) {
@@ -308,7 +299,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置编码树结构
      *
      * @param codeTree 编码树结构
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCodeTree(List<String> codeTree) {
@@ -329,7 +319,6 @@ public class RegionPO extends BasePO<RegionPO> {
      * 设置部门h
      *
      * @param depth 部门h
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDepth(Integer depth) {

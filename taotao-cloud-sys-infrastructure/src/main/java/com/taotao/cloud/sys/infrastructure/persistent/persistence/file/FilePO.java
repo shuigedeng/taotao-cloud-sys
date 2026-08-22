@@ -107,7 +107,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置CreateName
      *
      * @param createName createName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCreateName(String createName) {
@@ -128,7 +127,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置BizType
      *
      * @param bizType bizType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBizType(String bizType) {
@@ -149,7 +147,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置数据类型
      *
      * @param dataType 数据类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDataType(String dataType) {
@@ -170,7 +167,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置Original
      *
      * @param original original
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOriginal(String original) {
@@ -191,7 +187,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置URL
      *
      * @param url URL
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUrl(String url) {
@@ -212,7 +207,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置md5
      *
      * @param md5 md5
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMd5(String md5) {
@@ -233,7 +227,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置类型
      *
      * @param type 类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setType(String type) {
@@ -254,7 +247,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置ContextType
      *
      * @param contextType contextType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setContextType(String contextType) {
@@ -275,7 +267,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -296,7 +287,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置Ext
      *
      * @param ext ext
-     * @return 无返回值
      * @since 2022.03
      */
     public void setExt(String ext) {
@@ -317,7 +307,6 @@ public class FilePO extends BasePO<FilePO> {
      * 设置长度
      *
      * @param length 长度
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLength(Long length) {

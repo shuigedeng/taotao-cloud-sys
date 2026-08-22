@@ -77,7 +77,6 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
      * 设置用户ID
      *
      * @param roleId 角色ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUserId(Long roleId) {
@@ -98,7 +97,6 @@ public class SocialUserRelationPO extends BasePO<SocialUserRelationPO> {
      * 设置SocialUserId
      *
      * @param resourceId resourceId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSocialUserId(Long resourceId) {

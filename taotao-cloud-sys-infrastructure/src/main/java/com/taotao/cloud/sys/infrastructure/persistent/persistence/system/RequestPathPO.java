@@ -112,7 +112,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置编码
      *
      * @param code 编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCode(String code) {
@@ -133,7 +132,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -154,7 +152,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置GroupName
      *
      * @param groupName groupName
-     * @return 无返回值
      * @since 2022.03
      */
     public void setGroupName(String groupName) {
@@ -175,7 +172,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置请求类型
      *
      * @param requestType 请求类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRequestType(String requestType) {
@@ -196,7 +192,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置路径
      *
      * @param path 路径
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPath(String path) {
@@ -217,7 +212,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置Enable
      *
      * @param enable enable
-     * @return 无返回值
      * @since 2022.03
      */
     public void setEnable(boolean enable) {
@@ -238,7 +232,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置Generate
      *
      * @param generate generate
-     * @return 无返回值
      * @since 2022.03
      */
     public void setGenerate(boolean generate) {
@@ -259,7 +252,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -280,7 +272,6 @@ public class RequestPathPO extends BasePO<RequestPathPO> {
      * 设置租户ID
      *
      * @param tenantId 租户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTenantId(String tenantId) {

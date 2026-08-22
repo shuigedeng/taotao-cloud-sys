@@ -67,7 +67,6 @@ public class UserAgg extends AggregateRoot<BizId> {
 	/**
 	 * markRoleIdModified 方法
 	 *
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public final void markRoleIdModified(){
@@ -78,7 +77,6 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 * ifRoleIdModified 方法
 	 *
 	 * @param consumer consumer
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void ifRoleIdModified( Consumer<UserAgg> consumer){
@@ -235,7 +233,6 @@ public class UserAgg extends AggregateRoot<BizId> {
 	 * 分配角色
 	 *
 	 * @param roleIds 角色ID列表
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void assignRoles( List<BizId> roleIds ) {

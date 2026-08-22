@@ -130,7 +130,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -151,7 +150,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置权限
      *
      * @param permission 权限
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPermission(String permission) {
@@ -172,7 +170,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置路径
      *
      * @param path 路径
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPath(String path) {
@@ -193,7 +190,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置Component
      *
      * @param component component
-     * @return 无返回值
      * @since 2022.03
      */
     public void setComponent(String component) {
@@ -214,7 +210,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置父级ID
      *
      * @param parentId 父级ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setParentId(Long parentId) {
@@ -235,7 +230,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置图标
      *
      * @param icon 图标
-     * @return 无返回值
      * @since 2022.03
      */
     public void setIcon(String icon) {
@@ -256,7 +250,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置排序号
      *
      * @param sortNum 排序号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSortNum(Integer sortNum) {
@@ -277,7 +270,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置KeepAlive
      *
      * @param keepAlive keepAlive
-     * @return 无返回值
      * @since 2022.03
      */
     public void setKeepAlive(Boolean keepAlive) {
@@ -298,7 +290,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置类型
      *
      * @param type 类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setType(Integer type) {
@@ -319,7 +310,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置请求路径ID
      *
      * @param requestPathId 请求路径ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRequestPathId(Long requestPathId) {
@@ -340,7 +330,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置Hidden
      *
      * @param hidden hidden
-     * @return 无返回值
      * @since 2022.03
      */
     public void setHidden(Boolean hidden) {
@@ -361,7 +350,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置Redirect
      *
      * @param redirect redirect
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRedirect(String redirect) {
@@ -382,7 +370,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置目标
      *
      * @param target 目标
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTarget(String target) {
@@ -403,7 +390,6 @@ public class ResourcePO extends BasePO<ResourcePO> {
      * 设置租户ID
      *
      * @param tenantId 租户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTenantId(String tenantId) {

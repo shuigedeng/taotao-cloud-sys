@@ -97,7 +97,6 @@ public class UserDomainRepositoryImpl implements UserDomainRepository {
 	 * 填充角色ID列表
 	 *
 	 * @param userAgg 用户Agg
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	private void fillRoleIds( UserAgg userAgg ) {

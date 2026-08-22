@@ -110,7 +110,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置名称
      *
      * @param name 名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setName(String name) {
@@ -131,7 +130,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置父级ID
      *
      * @param parentId 父级ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setParentId(Long parentId) {
@@ -152,7 +150,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -167,7 +164,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置IdTree
      *
      * @param idTree idTree
-     * @return 无返回值
      * @since 2022.03
      */
     public void setIdTree(List<String> idTree) {
@@ -188,7 +184,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置部门h
      *
      * @param depth 部门h
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDepth(Integer depth) {
@@ -209,7 +204,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置排序号
      *
      * @param sortNum 排序号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSortNum(Integer sortNum) {
@@ -230,7 +224,6 @@ public class OrgPO extends BasePO<OrgPO> {
      * 设置租户ID
      *
      * @param tenantId 租户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTenantId(String tenantId) {

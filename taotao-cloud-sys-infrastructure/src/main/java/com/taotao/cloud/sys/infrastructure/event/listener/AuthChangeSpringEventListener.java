@@ -42,7 +42,6 @@ public class AuthChangeSpringEventListener {
 	 * 处理
 	 *
 	 * @param authChangeEvent authChangeEvent
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	@EventListener(AuthChangeEvent.class)

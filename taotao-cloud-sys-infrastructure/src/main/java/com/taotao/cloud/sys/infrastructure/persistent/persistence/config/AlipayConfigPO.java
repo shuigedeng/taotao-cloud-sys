@@ -103,7 +103,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置AppId
      *
      * @param appId appId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAppId(String appId) {
@@ -124,7 +123,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置Charset
      *
      * @param charset charset
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCharset(String charset) {
@@ -145,7 +143,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置Format
      *
      * @param format format
-     * @return 无返回值
      * @since 2022.03
      */
     public void setFormat(String format) {
@@ -166,7 +163,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置GatewayUrl
      *
      * @param gatewayUrl gatewayUrl
-     * @return 无返回值
      * @since 2022.03
      */
     public void setGatewayUrl(String gatewayUrl) {
@@ -187,7 +183,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置NotifyUrl
      *
      * @param notifyUrl notifyUrl
-     * @return 无返回值
      * @since 2022.03
      */
     public void setNotifyUrl(String notifyUrl) {
@@ -208,7 +203,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置PrivateKey
      *
      * @param privateKey privateKey
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPrivateKey(String privateKey) {
@@ -229,7 +223,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置PublicKey
      *
      * @param publicKey publicKey
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPublicKey(String publicKey) {
@@ -250,7 +243,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置ReturnUrl
      *
      * @param returnUrl returnUrl
-     * @return 无返回值
      * @since 2022.03
      */
     public void setReturnUrl(String returnUrl) {
@@ -271,7 +263,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置SignType
      *
      * @param signType signType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSignType(String signType) {
@@ -292,7 +283,6 @@ public class AlipayConfigPO extends BasePO<AlipayConfigPO> {
      * 设置ServiceProviderId
      *
      * @param serviceProviderId serviceProviderId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setServiceProviderId(String serviceProviderId) {

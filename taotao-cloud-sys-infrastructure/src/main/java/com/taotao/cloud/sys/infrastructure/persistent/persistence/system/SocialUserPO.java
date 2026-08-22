@@ -182,7 +182,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置SocialId
      *
      * @param socialId socialId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSocialId(String socialId) {
@@ -203,7 +202,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Uuid
      *
      * @param uuid uuid
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUuid(String uuid) {
@@ -224,7 +222,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置用户名
      *
      * @param userName 用户名
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUserName(String userName) {
@@ -245,7 +242,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置昵称
      *
      * @param nickName 昵称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setNickName(String nickName) {
@@ -266,7 +262,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置头像
      *
      * @param avatar 头像
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAvatar(String avatar) {
@@ -287,7 +282,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Blog
      *
      * @param blog blog
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBlog(String blog) {
@@ -308,7 +302,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Company
      *
      * @param company company
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCompany(String company) {
@@ -329,7 +322,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Location
      *
      * @param location location
-     * @return 无返回值
      * @since 2022.03
      */
     public void setLocation(String location) {
@@ -350,7 +342,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置邮箱
      *
      * @param email 邮箱
-     * @return 无返回值
      * @since 2022.03
      */
     public void setEmail(String email) {
@@ -371,7 +362,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -392,7 +382,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Gender
      *
      * @param gender gender
-     * @return 无返回值
      * @since 2022.03
      */
     public void setGender(AuthUserGender gender) {
@@ -413,7 +402,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置来源
      *
      * @param source 来源
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSource(String source) {
@@ -434,7 +422,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置AccessToken
      *
      * @param accessToken accessToken
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAccessToken(String accessToken) {
@@ -455,7 +442,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置ExpireIn
      *
      * @param expireIn expireIn
-     * @return 无返回值
      * @since 2022.03
      */
     public void setExpireIn(Integer expireIn) {
@@ -476,7 +462,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置RefreshToken
      *
      * @param refreshToken refreshToken
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRefreshToken(String refreshToken) {
@@ -497,7 +482,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置RefreshTokenExpireIn
      *
      * @param refreshTokenExpireIn refreshTokenExpireIn
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRefreshTokenExpireIn(Integer refreshTokenExpireIn) {
@@ -518,7 +502,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Scope
      *
      * @param scope scope
-     * @return 无返回值
      * @since 2022.03
      */
     public void setScope(String scope) {
@@ -539,7 +522,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Token类型
      *
      * @param tokenType Token类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTokenType(String tokenType) {
@@ -560,7 +542,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置Uid
      *
      * @param uid uid
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUid(String uid) {
@@ -581,7 +562,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置OpenId
      *
      * @param openId openId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setOpenId(String openId) {
@@ -602,7 +582,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置AccessCode
      *
      * @param accessCode accessCode
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAccessCode(String accessCode) {
@@ -623,7 +602,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置UnionId
      *
      * @param unionId unionId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUnionId(String unionId) {
@@ -644,7 +622,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置AppId
      *
      * @param appId appId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAppId(String appId) {
@@ -665,7 +642,6 @@ public class SocialUserPO extends BasePO<SocialUserPO> {
      * 设置手机号编号
      *
      * @param phoneNumber 手机号编号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPhoneNumber(String phoneNumber) {

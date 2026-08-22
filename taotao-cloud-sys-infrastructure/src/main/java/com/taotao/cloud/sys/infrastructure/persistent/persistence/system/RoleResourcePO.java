@@ -73,7 +73,6 @@ public class RoleResourcePO extends BasePO<RoleResourcePO> {
      * 设置角色ID
      *
      * @param roleId 角色ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRoleId(Long roleId) {
@@ -94,7 +93,6 @@ public class RoleResourcePO extends BasePO<RoleResourcePO> {
      * 设置ResourceId
      *
      * @param resourceId resourceId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setResourceId(Long resourceId) {

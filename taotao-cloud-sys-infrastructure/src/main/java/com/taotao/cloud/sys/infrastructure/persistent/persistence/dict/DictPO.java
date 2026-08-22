@@ -137,7 +137,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * 设置字典名称
 	 *
 	 * @param dictName 字典名称
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void setDictName( String dictName ) {
@@ -158,7 +157,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * 设置字典编码
 	 *
 	 * @param dictCode 字典编码
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void setDictCode( String dictCode ) {
@@ -179,7 +177,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * 设置描述
 	 *
 	 * @param description 描述
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void setDescription( String description ) {
@@ -200,7 +197,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * 设置排序号
 	 *
 	 * @param sortNum 排序号
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void setSortNum( Integer sortNum ) {
@@ -221,7 +217,6 @@ public class DictPO extends BasePO<DictPO> {
 	 * 设置备注
 	 *
 	 * @param remark 备注
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	public void setRemark( String remark ) {
@@ -347,7 +342,6 @@ public class DictPO extends BasePO<DictPO> {
 		/**
 		 * 字典POBuilder
 		 *
-		 * @return 无返回值
 		 * @since 2022.03
 		 */
 		public DictPOBuilder() {
@@ -357,7 +351,6 @@ public class DictPO extends BasePO<DictPO> {
 		 * 字典POBuilder
 		 *
 		 * @param other other
-		 * @return 无返回值
 		 * @since 2022.03
 		 */
 		public DictPOBuilder( DictPO other ) {

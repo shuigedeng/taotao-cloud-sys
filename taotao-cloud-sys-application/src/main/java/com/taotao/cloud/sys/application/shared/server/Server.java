@@ -81,7 +81,6 @@ public class Server {
      * 设置Cpu
      *
      * @param cpu cpu
-     * @return 无返回值
      * @since 2022.03
      */
     public void setCpu( Cpu cpu) {
@@ -104,7 +103,6 @@ public class Server {
      * 设置Mem
      *
      * @param mem mem
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMem( Mem mem) {
@@ -127,7 +125,6 @@ public class Server {
      * 设置Jvm
      *
      * @param jvm jvm
-     * @return 无返回值
      * @since 2022.03
      */
     public void setJvm( Jvm jvm) {
@@ -150,7 +147,6 @@ public class Server {
      * 设置Sys
      *
      * @param sys sys
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSys( Sys sys) {
@@ -167,7 +163,6 @@ public class Server {
      * 设置SysFiles
      *
      * @param sysFiles sysFiles
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSysFiles(List<SysFile> sysFiles) {

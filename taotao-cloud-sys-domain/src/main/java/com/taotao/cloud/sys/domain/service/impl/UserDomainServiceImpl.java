@@ -64,7 +64,6 @@ public class UserDomainServiceImpl implements UserDomainService {
 	 *
 	 * @param requestedRoleIds 请求的角色ID列表
 	 * @param assignableRoleIds 可分配角色ID列表
-	 * @return 无返回值
 	 * @since 2022.03
 	 */
 	private void validateRolesExist( Set<BizId> requestedRoleIds, List<BizId> assignableRoleIds ) {

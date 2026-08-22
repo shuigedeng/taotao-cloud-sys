@@ -140,7 +140,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置Account
      *
      * @param account account
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAccount(String account) {
@@ -161,7 +160,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置昵称
      *
      * @param nickname 昵称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setNickname(String nickname) {
@@ -182,7 +180,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置用户名
      *
      * @param username 用户名
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUsername(String username) {
@@ -203,7 +200,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置密码
      *
      * @param password 密码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPassword(String password) {
@@ -224,7 +220,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置手机号
      *
      * @param mobile 手机号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setMobile(String mobile) {
@@ -245,7 +240,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置手机号
      *
      * @param phone 手机号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPhone(String phone) {
@@ -266,7 +260,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置Sex
      *
      * @param sex sex
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSex(Integer sex) {
@@ -287,7 +280,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置邮箱
      *
      * @param email 邮箱
-     * @return 无返回值
      * @since 2022.03
      */
     public void setEmail(String email) {
@@ -308,7 +300,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置Birthday
      *
      * @param birthday birthday
-     * @return 无返回值
      * @since 2022.03
      */
     public void setBirthday(String birthday) {
@@ -329,7 +320,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置头像
      *
      * @param avatar 头像
-     * @return 无返回值
      * @since 2022.03
      */
     public void setAvatar(String avatar) {
@@ -350,7 +340,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置状态
      *
      * @param status 状态
-     * @return 无返回值
      * @since 2022.03
      */
     public void setStatus(Integer status) {
@@ -371,7 +360,6 @@ public class UserPO extends BasePO<UserPO> {
      * 设置租户ID
      *
      * @param tenantId 租户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTenantId(String tenantId) {

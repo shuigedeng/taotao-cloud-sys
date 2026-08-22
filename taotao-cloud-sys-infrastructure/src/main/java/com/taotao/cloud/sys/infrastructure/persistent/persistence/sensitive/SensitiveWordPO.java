@@ -69,7 +69,6 @@ public class SensitiveWordPO extends BasePO<SensitiveWordPO> {
      * 设置SensitiveWord
      *
      * @param sensitiveWord sensitiveWord
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSensitiveWord(String sensitiveWord) {

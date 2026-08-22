@@ -92,7 +92,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置字典ID
      *
      * @param dictId 字典ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDictId(Long dictId) {
@@ -113,7 +112,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置项文本
      *
      * @param itemText 项文本
-     * @return 无返回值
      * @since 2022.03
      */
     public void setItemText(String itemText) {
@@ -134,7 +132,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置项值
      *
      * @param itemValue 项值
-     * @return 无返回值
      * @since 2022.03
      */
     public void setItemValue(String itemValue) {
@@ -155,7 +152,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置描述
      *
      * @param description 描述
-     * @return 无返回值
      * @since 2022.03
      */
     public void setDescription(String description) {
@@ -176,7 +172,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置状态
      *
      * @param status 状态
-     * @return 无返回值
      * @since 2022.03
      */
     public void setStatus(Integer status) {
@@ -197,7 +192,6 @@ public class DictItemPO extends BasePO<DictItemPO> {
      * 设置排序号
      *
      * @param sortNum 排序号
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSortNum(Integer sortNum) {

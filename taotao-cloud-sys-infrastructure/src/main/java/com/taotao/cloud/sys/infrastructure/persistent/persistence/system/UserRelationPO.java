@@ -96,7 +96,6 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * 设置用户ID
      *
      * @param userId 用户ID
-     * @return 无返回值
      * @since 2022.03
      */
     public void setUserId(Long userId) {
@@ -117,7 +116,6 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * 设置ObjectType
      *
      * @param objectType objectType
-     * @return 无返回值
      * @since 2022.03
      */
     public void setObjectType(String objectType) {
@@ -138,7 +136,6 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * 设置ObjectId
      *
      * @param objectId objectId
-     * @return 无返回值
      * @since 2022.03
      */
     public void setObjectId(Long objectId) {
@@ -159,7 +156,6 @@ public class UserRelationPO extends BasePO<UserRelationPO> {
      * 设置排序编码
      *
      * @param sortCode 排序编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSortCode(Integer sortCode) {

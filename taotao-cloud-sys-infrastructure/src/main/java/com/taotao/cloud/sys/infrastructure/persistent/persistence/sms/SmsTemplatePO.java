@@ -87,7 +87,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置模板名称
      *
      * @param templateName 模板名称
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTemplateName(String templateName) {
@@ -108,7 +107,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置模板类型
      *
      * @param templateType 模板类型
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTemplateType(Integer templateType) {
@@ -129,7 +127,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置备注
      *
      * @param remark 备注
-     * @return 无返回值
      * @since 2022.03
      */
     public void setRemark(String remark) {
@@ -150,7 +147,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置模板内容
      *
      * @param templateContent 模板内容
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTemplateContent(String templateContent) {
@@ -171,7 +167,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置模板状态
      *
      * @param templateStatus 模板状态
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTemplateStatus(Integer templateStatus) {
@@ -192,7 +187,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置模板编码
      *
      * @param templateCode 模板编码
-     * @return 无返回值
      * @since 2022.03
      */
     public void setTemplateCode(String templateCode) {
@@ -213,7 +207,6 @@ public class SmsTemplatePO extends BasePO<SmsTemplatePO> {
      * 设置Reason
      *
      * @param reason reason
-     * @return 无返回值
      * @since 2022.03
      */
     public void setReason(String reason) {

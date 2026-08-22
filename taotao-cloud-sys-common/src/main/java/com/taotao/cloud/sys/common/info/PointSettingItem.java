@@ -50,7 +50,6 @@ public class PointSettingItem implements Comparable<PointSettingItem>, Serializa
      * 设置Point
      *
      * @param point point
-     * @return 无返回值
      * @since 2022.03
      */
     public void setPoint(Integer point) {

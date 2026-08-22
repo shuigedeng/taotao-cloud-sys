@@ -48,7 +48,6 @@ public class TestProperties {
      * 设置SignInFailureLimited
      *
      * @param signInFailureLimited signInFailureLimited
-     * @return 无返回值
      * @since 2022.03
      */
     public void setSignInFailureLimited(Integer signInFailureLimited) {
