@@ -59,46 +59,6 @@ public class RoleResourcePO extends BasePO<RoleResourcePO> {
     @Column(name = "`resource_id`", columnDefinition = "bigint not null comment '菜单ID'")
     private Long resourceId;
 
-    /**
-     * 获取角色ID
-     *
-     * @return 结果数量
-     * @since 2022.03
-     */
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    /**
-     * 设置角色ID
-     *
-     * @param roleId 角色ID
-     * @since 2022.03
-     */
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    /**
-     * 获取ResourceId
-     *
-     * @return 结果数量
-     * @since 2022.03
-     */
-    public Long getResourceId() {
-        return resourceId;
-    }
-
-    /**
-     * 设置ResourceId
-     *
-     * @param resourceId resourceId
-     * @since 2022.03
-     */
-    public void setResourceId(Long resourceId) {
-        this.resourceId = resourceId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {

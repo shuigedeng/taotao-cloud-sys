@@ -55,26 +55,6 @@ public class SensitiveWordPO extends BasePO<SensitiveWordPO> {
             columnDefinition = "varchar(255) not null default '' comment '敏感词名称'")
     private String sensitiveWord;
 
-    /**
-     * 获取SensitiveWord
-     *
-     * @return 字符串
-     * @since 2022.03
-     */
-    public String getSensitiveWord() {
-        return sensitiveWord;
-    }
-
-    /**
-     * 设置SensitiveWord
-     *
-     * @param sensitiveWord sensitiveWord
-     * @since 2022.03
-     */
-    public void setSensitiveWord(String sensitiveWord) {
-        this.sensitiveWord = sensitiveWord;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
