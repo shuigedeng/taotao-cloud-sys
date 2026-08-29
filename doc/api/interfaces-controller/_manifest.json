@@ -1,0 +1,162 @@
+[
+  {
+    "sub": "buyer",
+    "name": "DictBuyerController",
+    "endpoints": 2
+  },
+  {
+    "sub": "inner",
+    "name": "DictInnerApiController",
+    "endpoints": 4
+  },
+  {
+    "sub": "manager",
+    "name": "AliPayManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "AppManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "DataVersionLogManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "DeptManagerController",
+    "endpoints": 1
+  },
+  {
+    "sub": "manager",
+    "name": "DictItemManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "DictManagerController",
+    "endpoints": 1
+  },
+  {
+    "sub": "manager",
+    "name": "EmailManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "FileManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "I18nDataManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "LogManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "LoginLogManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "LogisticsManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "MonitorManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "OperateLogManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "OrgManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "PinYinManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "PositionManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "RegionManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "ResourceManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "RoleManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "SensitiveWordsManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "SettingManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "SysLogLoginManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "SysLogManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "SystemManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "manager",
+    "name": "TestRedisManagerController",
+    "endpoints": 3
+  },
+  {
+    "sub": "manager",
+    "name": "UserManagerController",
+    "endpoints": 1
+  },
+  {
+    "sub": "manager",
+    "name": "VisitsManagerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "seller",
+    "name": "DictSellerController",
+    "endpoints": 0
+  },
+  {
+    "sub": "test",
+    "name": "DictMallController",
+    "endpoints": 2
+  }
+]
