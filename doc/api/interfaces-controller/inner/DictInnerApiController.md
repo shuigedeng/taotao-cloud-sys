@@ -41,7 +41,7 @@
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | requestNo | String | 请求No | 自动生成 |
 | orderNo | String | 订单No | 必填 @NotBlank |
 | bizNo | String | 业务No | 必填 @NotBlank |
@@ -63,7 +63,7 @@
 | code | String | 状态值 | 如 0000000 |
 | message | String | 消息描述 | 默认"请求成功" |
 | timestamp | long | 请求时间 | 毫秒时间戳 |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
@@ -106,7 +106,7 @@
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | requestNo | String | 请求No | 自动生成 |
 | orderNo | String | 订单No | 必填 @NotBlank |
 | bizNo | String | 业务No | 必填 @NotBlank |
@@ -128,7 +128,7 @@
 | code | String | 状态值 | 如 0000000 |
 | message | String | 消息描述 | 默认"请求成功" |
 | timestamp | long | 请求时间 | 毫秒时间戳 |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
@@ -170,7 +170,7 @@
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | requestNo | String | 请求No | 自动生成 |
 | orderNo | String | 订单No | 必填 @NotBlank |
 | bizNo | String | 业务No | 必填 @NotBlank |
@@ -192,7 +192,7 @@
 | code | String | 状态值 | 如 0000000 |
 | message | String | 消息描述 | 默认"请求成功" |
 | timestamp | long | 请求时间 | 毫秒时间戳 |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
@@ -232,7 +232,7 @@
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | requestNo | String | 请求No | 自动生成 |
 | orderNo | String | 订单No | 必填 @NotBlank |
 | bizNo | String | 业务No | 必填 @NotBlank |
@@ -254,7 +254,7 @@
 | code | String | 状态值 | 如 0000000 |
 | message | String | 消息描述 | 默认"请求成功" |
 | timestamp | long | 请求时间 | 毫秒时间戳 |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 

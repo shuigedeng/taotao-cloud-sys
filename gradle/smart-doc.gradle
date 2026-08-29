@@ -1,4 +1,5 @@
-apply plugin: "io.github.shuigedeng.plugin.smart-doc"
+//apply plugin: "io.github.shuigedeng.plugin.smart-doc"
+apply plugin: "com.ly.smart-doc"
 
 smartdoc {
     configFile = file("smart-doc.json")

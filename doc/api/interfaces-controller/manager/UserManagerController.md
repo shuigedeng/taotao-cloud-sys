@@ -51,7 +51,7 @@
 | code | String | 状态值 | 如 0000000 |
 | message | String | 消息描述 | 默认"请求成功" |
 | timestamp | long | 请求时间 | 毫秒时间戳 |
-| version | String | 版本号 | 如 2026.09 |
+| version | String | 版本号 | 如 2026.10 |
 | requestId | String | 请求id | traceId 或生成的 id |
 | data | T | 数据对象 | 业务数据 |
 

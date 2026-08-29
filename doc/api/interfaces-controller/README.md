@@ -55,7 +55,7 @@
   "code": "0000000",
   "message": "请求成功",
   "timestamp": 1772632838459,
-  "version": "2026.09",
+  "version": "2026.10",
   "requestId": "1772632838459",
   "data": {}
 }

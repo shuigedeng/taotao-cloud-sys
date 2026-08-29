@@ -157,7 +157,7 @@ taotao-cloud-sys/
 ## NOTES
 
 - JDK 25 预览特性，`--enable-preview` + 大量 `--add-opens` / `--add-exports`
-- `taotao-cloud-dependencies:2026.09` BOM 通过 gradle `platform()` 引入
+- `taotao-cloud-dependencies:2026.10` BOM 通过 gradle `platform()` 引入
 - 四个环境配置：dev / test / pre / pro
 - 代码质量门禁：Checkstyle + SpotBugs + PMD + Spotless + OWASP + JaCoCo
 - 采用 `@TaoTaoBootApplication`（自定义组合注解）替代 `@SpringBootApplication`
