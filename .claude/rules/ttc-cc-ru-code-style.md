@@ -8,7 +8,7 @@
 
 ## 命名约定
 - **类名**：PascalCase（`DictCommandService`, `AdminDictController`）
-- **方法**：小驼峰，动词开头（`findByCode`, `saveDict`, `pageQuery`）
+- **方法**：小驼峰，动词开头（`queryByCode`, `saveDict`, `pageQuery`）
 - **常量**：UPPER_SNAKE_CASE（`MAX_BATCH_SIZE`）
 - **枚举**：PascalCase，字段 UPPER_SNAKE_CASE
 - **包名**：全小写（`com.taotao.cloud.sys.domain.aggregate`）
