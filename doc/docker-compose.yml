@@ -22,13 +22,13 @@ services:
       --explicit_defaults_for_timestamp=true
       --lower_case_table_names=1
       # ========== binlog 配置开始 ==========
-      --log-bin=mysql-bin                # 开启binlog，binlog文件名前缀
-      --binlog-format=ROW          # 设置日志格式为 ROW（推荐用于主从复制和数据恢复）
-      --binlog-row-image=FULL      # 记录完整的行变更数据
-      --server-id=1                       # 主库必须设置server‑id，不能为0
-      --expire-logs-days=7                # binlog保留7天，自动清理旧日志
-      --sync-binlog=1                     # 每次事务刷盘，数据安全，性能略降
-      --max_binlog_size=100M       # 单个 binlog 文件的最大大小
+      --log-bin=mysql-bin
+      --binlog-format=ROW
+      --binlog-row-image=FULL
+      --server-id=1
+      --binlog_expire_logs_seconds=604800
+      --sync-binlog=1
+      --max_binlog_size=100M
       # ========== binlog 配置结束 ==========
     logging:
       driver: "json-file"
@@ -90,9 +90,9 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.14
 
-  openobserve-0.92.2:
-    image: o2cr.ai/openobserve/openobserve-enterprise:v0.92.2
-    container_name: openobserve-0.92.2
+  openobserve-1.0.0:
+    image: o2cr.ai/openobserve/openobserve-enterprise:v1.0.0
+    container_name: openobserve-1.0.0
     restart: no
     environment:
       ZO_ROOT_USER_EMAIL: "981376577@qq.com"  # 替换为你的邮箱
