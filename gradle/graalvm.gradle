@@ -6,7 +6,103 @@ def projectName = project.name
 graalvmNative {
     //禁用工具链检测
     //toolchainDetection = false
+    //testSupport = false
     useArgFile = true
+
+    binaries {
+        //resources.autodetect()
+
+        main {
+            //imageName = 'application'
+            //mainClass = 'org.test.Main'
+            //debug = true
+            //verbose = true
+            //fallback = true
+            //sharedLibrary = false
+            //quickBuild = false
+            //richOutput = false
+            //useFatJar = true
+
+            imageName.set(projectName)
+            buildArgs.add('--verbose')
+            buildArgs.add('--no-fallback')
+
+            //javaLauncher = javaToolchains.launcherFor {
+            //    languageVersion = JavaLanguageVersion.of(8)
+            //    vendor = JvmVendorSpec.matching("GraalVM Community")
+            //}
+
+            //在windos上 为了解决这个问题Caused by: java.lang.IllegalArgumentException: 'other' has different root
+            //	at org.graalvm.buildtools.utils.NativeImageUtils.convertToArgsFile(NativeImageUtils.java:104)
+            //	at org.graalvm.buildtools.gradle.internal.NativeImageCommandLineProvider.asArguments(NativeImageCommandLineProvider.java:238)
+            //:taotao-cloud-sys-assembly:nativeCompile -Djava.io.tmpdir=.\\build\\tmp
+            //buildArgs.addAll(
+            //        '-Djava.io.tmpdir=' + buildDir.toPath().resolve('tmp').toAbsolutePath(),
+            //        '-Duser.dir=' + projectDir.absolutePath
+            //)
+
+            //systemProperties = [name1: 'value1', name2: 'value2']
+            //configurationFileDirectories.from(file('src/my-config'))
+            //excludeConfig.put("org.example.test:artifact:version", ["^/META-INF/native-image/.*", "^/config/.*"])
+            //excludeConfig.put(file("path/to/artifact.jar"), listOf("^/META-INF/native-image/.*", "^/config/.*"))
+            // 第一部分：排除 BC 签名文件，解决构建期 SecurityException
+            excludeConfig.put("org.bouncycastle:bcprov-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
+            excludeConfig.put("org.bouncycastle:bcpkix-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
+
+            //// Advanced options
+            //buildArgs.add('--link-at-build-time')
+            //jvmArgs.add('flag')
+
+            //// Runtime options
+            //runtimeArgs.add('--help')
+
+            // 第二部分：BC 初始化参数，解决运行时 Provider 注册问题
+            buildArgs.add("--initialize-at-build-time=org.bouncycastle")
+            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$Default")
+            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$NonceAndIV")
+
+//            buildArgs.add('--trace-class-initialization=ch.qos.logback.classic.Logger')
+//            buildArgs.add('--trace-class-initialization=java.net.Inet4Address')
+//
+//            buildArgs.add('--trace-object-instantiation=ch.qos.logback.core.AsyncAppenderBase$Worker')
+//            buildArgs.add('--trace-object-instantiation=java.net.Inet4Address')
+//
+//            //buildArgs.add('--initialize-at-run-time=io.netty')
+//            buildArgs.add('--initialize-at-run-time=io.netty.util.NetUtil')
+//            //buildArgs.add('--initialize-at-run-time=java.net.Inet4Address')
+//
+//            buildArgs.add('--initialize-at-build-time=org.springframework.util.unit.DataSize')
+//            buildArgs.add('--initialize-at-build-time=org.slf4j.LoggerFactory,ch.qos.logback')
+//            buildArgs.add('--initialize-at-build-time=org.slf4j.MDC')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.Level')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.Logger')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.status.StatusBase')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.status.InfoStatus')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.spi.AppenderAttachableImpl')
+//            buildArgs.add('--initialize-at-build-time=org.slf4j.LoggerFactory')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.util.Loader')
+//            buildArgs.add('--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.spi.ThrowableProxy')
+//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.CoreConstants')
+//            buildArgs.add('--initialize-at-build-time=io.netty.channel.DefaultFileRegion')
+//            buildArgs.add('--initialize-at-build-time=io.netty.util.AbstractReferenceCounted')
+//            buildArgs.add('--report-unsupported-elements-at-runtime')
+//            buildArgs.add('--allow-incomplete-classpath')
+//            buildArgs.add('-H:+ReportExceptionStackTraces')
+        }
+    }
+
+    //layers {
+    //    dependencies {
+    //        contents {
+    //            modules('java.base')
+    //            fromConfiguration(configurations.runtimeClasspath)
+    //            // Version catalog accessors are also accepted:
+    //            // dependencies(libs.slf4j.api)
+    //        }
+    //    }
+    //}
 
     //agent {
     //    defaultMode = "standard" // Default agent mode if one isn't specified using `-Pagent=mode_name`
@@ -46,75 +142,6 @@ graalvmNative {
     //     */
     //    tasksToInstrumentPredicate = t -> true
     //}
-
-    binaries {
-        //all {
-        //    resources.autodetect()
-        //}
-        main {
-            //useFatJar = true
-
-            //javaLauncher = javaToolchains.launcherFor {
-            //    languageVersion = JavaLanguageVersion.of(8)
-            //    vendor = JvmVendorSpec.matching("GraalVM Community")
-            //}
-
-            imageName.set(projectName)
-            buildArgs.add('--verbose')
-            buildArgs.add('--no-fallback')
-
-            //在windos上 为了解决这个问题Caused by: java.lang.IllegalArgumentException: 'other' has different root
-            //	at org.graalvm.buildtools.utils.NativeImageUtils.convertToArgsFile(NativeImageUtils.java:104)
-            //	at org.graalvm.buildtools.gradle.internal.NativeImageCommandLineProvider.asArguments(NativeImageCommandLineProvider.java:238)
-            //:taotao-cloud-sys-assembly:nativeCompile -Djava.io.tmpdir=.\\build\\tmp
-            //buildArgs.addAll(
-            //        '-Djava.io.tmpdir=' + buildDir.toPath().resolve('tmp').toAbsolutePath(),
-            //        '-Duser.dir=' + projectDir.absolutePath
-            //)
-
-            // 第一部分：排除 BC 签名文件，解决构建期 SecurityException
-            excludeConfig.put("org.bouncycastle:bcprov-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
-            excludeConfig.put("org.bouncycastle:bcpkix-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
-
-            // 第二部分：BC 初始化参数，解决运行时 Provider 注册问题
-            buildArgs.add("--initialize-at-build-time=org.bouncycastle")
-            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$Default")
-            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$NonceAndIV")
-//            equalsOpensList.each { open ->
-//                buildArgs.add(open)
-//            }
-//
-//            buildArgs.add('--trace-class-initialization=ch.qos.logback.classic.Logger')
-//            buildArgs.add('--trace-class-initialization=java.net.Inet4Address')
-//
-//            buildArgs.add('--trace-object-instantiation=ch.qos.logback.core.AsyncAppenderBase$Worker')
-//            buildArgs.add('--trace-object-instantiation=java.net.Inet4Address')
-//
-//            //buildArgs.add('--initialize-at-run-time=io.netty')
-//            buildArgs.add('--initialize-at-run-time=io.netty.util.NetUtil')
-//            //buildArgs.add('--initialize-at-run-time=java.net.Inet4Address')
-//
-//            buildArgs.add('--initialize-at-build-time=org.springframework.util.unit.DataSize')
-//            buildArgs.add('--initialize-at-build-time=org.slf4j.LoggerFactory,ch.qos.logback')
-//            buildArgs.add('--initialize-at-build-time=org.slf4j.MDC')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.Level')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.Logger')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.util.StatusPrinter')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.status.StatusBase')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.status.InfoStatus')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.spi.AppenderAttachableImpl')
-//            buildArgs.add('--initialize-at-build-time=org.slf4j.LoggerFactory')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.util.Loader')
-//            buildArgs.add('--initialize-at-build-time=org.slf4j.impl.StaticLoggerBinder')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.classic.spi.ThrowableProxy')
-//            buildArgs.add('--initialize-at-build-time=ch.qos.logback.core.CoreConstants')
-////            buildArgs.add('--initialize-at-build-time=io.netty.channel.DefaultFileRegion')
-////            buildArgs.add('--initialize-at-build-time=io.netty.util.AbstractReferenceCounted')
-//            buildArgs.add('--report-unsupported-elements-at-runtime')
-//            buildArgs.add('--allow-incomplete-classpath')
-//            buildArgs.add('-H:+ReportExceptionStackTraces')
-        }
-    }
 }
 
 //nativeCompile {
