@@ -17,7 +17,7 @@
 package com.taotao.cloud.sys.infrastructure.repository.application;
 
 
-import cn.idev.excel.util.ListUtils;
+//import cn.idev.excel.util.ListUtils;
 import com.taotao.cloud.sys.application.repository.DictQueryRepository;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
@@ -45,7 +45,7 @@ public class DictQueryRepositoryImpl implements DictQueryRepository {
 		DictPO dictPO1 = DictPO.builder().dictCode("s4").dictName("s5").sortNum(1).build();
 		dictMapper.insertSkipNull(dictPO, true);
 //		dictMapper.insertSkipNullOther(dictPO, true);
-		ArrayList<DictPO> dictPOS = ListUtils.newArrayList(dictPO, dictPO1);
+//		ArrayList<DictPO> dictPOS = ListUtils.newArrayList(dictPO, dictPO1);
 //		dictMapper.insertBatchSkipNull(dictPOS, false);
 //		dictMapper.insertBatchSkipNullOther();
 //
