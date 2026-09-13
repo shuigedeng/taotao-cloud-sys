@@ -46,7 +46,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @AllArgsConstructor
-public class SysJob extends XxlJobBase {
+public class SysJob {
 
 	private final UserCommandService userCommandService;
 
@@ -56,9 +56,9 @@ public class SysJob extends XxlJobBase {
 
 		LogUtils.info("=============xxljob throwwwwwwwwwwwwwwwwwwwwwwwwww");
 
-		ScheduleUserCommand scheduleUserCommand = this.from(param, ScheduleUserCommand.class);
-
-		userCommandService.scheduleJob(scheduleUserCommand);
+//		ScheduleUserCommand scheduleUserCommand = this.from(param, ScheduleUserCommand.class);
+//
+//		userCommandService.scheduleJob(scheduleUserCommand);
 
 		throw new Exception("XXL-JOB, throwwwwwwwwwwwwww");
 	}

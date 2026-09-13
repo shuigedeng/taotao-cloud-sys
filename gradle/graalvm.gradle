@@ -71,6 +71,8 @@ graalvmNative {
             buildArgs.add('--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED')
             buildArgs.add('--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED')
 
+            buildArgs.add('--initialize-at-build-time=com.alibaba.fastjson2')
+
             buildArgs.add('-H:+ReportExceptionStackTraces')
 
 //            buildArgs.add('--trace-class-initialization=ch.qos.logback.classic.Logger')
