@@ -72,6 +72,14 @@ graalvmNative {
             //        '-Duser.dir=' + projectDir.absolutePath
             //)
 
+            // 第一部分：排除 BC 签名文件，解决构建期 SecurityException
+            excludeConfig.put("org.bouncycastle:bcprov-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
+            excludeConfig.put("org.bouncycastle:bcpkix-jdk18on", ["META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA"])
+
+            // 第二部分：BC 初始化参数，解决运行时 Provider 注册问题
+            buildArgs.add("--initialize-at-build-time=org.bouncycastle")
+            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$Default")
+            buildArgs.add("--initialize-at-run-time=org.bouncycastle.jcajce.provider.drbg.DRBG\$NonceAndIV")
 //            equalsOpensList.each { open ->
 //                buildArgs.add(open)
 //            }
