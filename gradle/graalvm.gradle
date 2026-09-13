@@ -1,5 +1,5 @@
 apply plugin: "org.graalvm.buildtools.native"
-apply from: rootProject.file('gradle/opens.gradle')
+//apply from: rootProject.file('gradle/opens.gradle')
 
 def projectName = project.name
 

@@ -6,7 +6,7 @@ name: TaoTaoCloudSys Graalvm Image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
 env:
   TAOTAO_CLOUD_OSSRH_USERNAME: ${{ secrets.TAOTAO_CLOUD_OSSRH_USERNAME }}
@@ -33,9 +33,9 @@ jobs:
         run: lsb_release -a
 
       #https://github.com/marketplace/actions/github-action-for-graalvm
-      - uses: graalvm/setup-graalvm@v1.5.6
+      - uses: graalvm/setup-graalvm@v1.6.6
         with:
-          java-version: '25'
+          java-version: '25.3'
           distribution: 'graalvm'
           github-token: ${{ secrets.TAOTAO_CLOUD_GITHUB_TOKEN }}
           native-image-job-reports: 'true'
@@ -51,10 +51,12 @@ jobs:
           echo "JAVA_HOME: $JAVA_HOME"
           java --version
           native-image --version
+
       - name: Adjust system limits
         run: |
           ulimit -s unlimited  # 临时解除栈大小限制
           ulimit -n 65535     # 提升最大文件描述符数量
+
       - name: write secrets maven username password
         run: |
           echo "mavenUsernameNew=${{ secrets.TAOTAO_CLOUD_MAVEN_USERNAME_NEW }}" >> gradle.properties
@@ -62,7 +64,7 @@ jobs:
 
       #https://github.com/marketplace/actions/gradle-build-action  bootBuildImage
       - name: Gradle  sys nativeCompile
-        run: gradle -p taotao-cloud-sys-assembly nativeCompile --no-fallback -Djava.io.tmpdir=/tmp
+        run: gradle -p taotao-cloud-sys-assembly nativeCompile
 
       #- name: Publish Docker Image taotao-cloud-demo
       #  uses: elgohr/Publish-Docker-Github-Action@v4
