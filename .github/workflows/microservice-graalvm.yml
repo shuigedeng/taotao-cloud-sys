@@ -35,7 +35,7 @@ jobs:
       #https://github.com/marketplace/actions/github-action-for-graalvm
       - uses: graalvm/setup-graalvm@v1.6.6
         with:
-          java-version: '25i3'
+          java-version: '25'
           distribution: 'graalvm'
           github-token: ${{ secrets.TAOTAO_CLOUD_GITHUB_TOKEN }}
           native-image-job-reports: 'true'
