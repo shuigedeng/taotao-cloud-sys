@@ -1,7 +1,6 @@
 package com.taotao.cloud.sys.infrastructure.event.consumer.kafka;
 
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.mq.common.base.MqConsumerBase;
 import com.taotao.cloud.sys.application.dto.app.command.NotifyAppCommand;
 import com.taotao.cloud.sys.application.service.command.AppCommandService;
 import lombok.AllArgsConstructor;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class SysKafkaConsumer extends MqConsumerBase {
+public class SysKafkaConsumer {
 
 	private final AppCommandService appCommandService;
 
@@ -40,13 +39,13 @@ public class SysKafkaConsumer extends MqConsumerBase {
 		try {
 			String msg = record.value();
 
-			NotifyAppCommand notifyGoodsCommand = from(msg, NotifyAppCommand.class);
-
-			handleNotify(() -> {
-
-				appCommandService.handleNotify(notifyGoodsCommand);
-
-			});
+//			NotifyAppCommand notifyGoodsCommand = from(msg, NotifyAppCommand.class);
+//
+//			handleNotify(() -> {
+//
+//				appCommandService.handleNotify(notifyGoodsCommand);
+//
+//			});
 
 		} catch (Exception e) {
 			if(e instanceof BusinessException businessException){

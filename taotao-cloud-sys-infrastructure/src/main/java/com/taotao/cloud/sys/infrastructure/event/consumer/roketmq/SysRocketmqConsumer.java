@@ -1,7 +1,6 @@
 package com.taotao.cloud.sys.infrastructure.event.consumer.roketmq;
 
 import com.taotao.boot.common.exception.BusinessException;
-import com.taotao.boot.mq.common.base.MqConsumerBase;
 import com.taotao.cloud.sys.application.dto.app.command.NotifyAppCommand;
 import com.taotao.cloud.sys.application.service.command.AppCommandService;
 import lombok.AllArgsConstructor;
@@ -21,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 	consumerGroup = "sys_consumer_group"
 )
 @AllArgsConstructor
-public class SysRocketmqConsumer extends MqConsumerBase implements RocketMQListener {
+public class SysRocketmqConsumer  implements RocketMQListener {
 	private final AppCommandService appCommandService;
 
 	@Override
@@ -29,13 +28,13 @@ public class SysRocketmqConsumer extends MqConsumerBase implements RocketMQListe
 		try {
 			String msg = StandardCharsets.UTF_8.decode(messageView.getBody()).toString();
 
-			NotifyAppCommand notifyGoodsCommand = from(msg, NotifyAppCommand.class);
-
-			handleNotify(() -> {
-
-				appCommandService.handleNotify(notifyGoodsCommand);
-
-			});
+//			NotifyAppCommand notifyGoodsCommand = from(msg, NotifyAppCommand.class);
+//
+//			handleNotify(() -> {
+//
+//				appCommandService.handleNotify(notifyGoodsCommand);
+//
+//			});
 
 		} catch (Exception e) {
 			if(e instanceof BusinessException businessException){
