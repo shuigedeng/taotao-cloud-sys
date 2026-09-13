@@ -52,7 +52,7 @@ graalvmNative {
         //    resources.autodetect()
         //}
         main {
-            useFatJar = true
+            //useFatJar = true
 
             //javaLauncher = javaToolchains.launcherFor {
             //    languageVersion = JavaLanguageVersion.of(8)
