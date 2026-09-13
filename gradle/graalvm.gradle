@@ -6,6 +6,7 @@ def projectName = project.name
 graalvmNative {
     //禁用工具链检测
     //toolchainDetection = false
+    useArgFile = true
 
     //agent {
     //    defaultMode = "standard" // Default agent mode if one isn't specified using `-Pagent=mode_name`
