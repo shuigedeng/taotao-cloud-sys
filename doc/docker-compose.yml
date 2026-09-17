@@ -444,6 +444,30 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.84
 
+  openresty-1.31:
+    image: openresty/openresty:1.31-alpine
+    container_name: openresty-1.31
+    hostname: openresty-1.31
+    restart: no
+    ports:
+      - "80:80"
+    volumes:
+      # 挂载主配置文件（只读，避免容器内误改）
+      - ./dockervolumes/openresty1.31/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+      # 挂载子配置目录（方便管理多个站点的 server 块）
+      - ./dockervolumes/openresty1.31/conf.d:/usr/local/openresty/nginx/conf/conf.d:ro
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.200
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    restart: no
+    command: tunnel --no-autoupdate run --token xxxxxxx
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.201
 
 ####################################################
 
