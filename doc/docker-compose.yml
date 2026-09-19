@@ -119,10 +119,10 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.27
 
-  rustfs-1.0.0-rc.1:
-    image: rustfs/rustfs:1.0.0-rc.1
+  rustfs-1.0.0:
+    image: rustfs/rustfs:1.0.0
     restart: no
-    container_name: rustfs-1.0.0-rc.1
+    container_name: rustfs-1.0.0
     ports:
       - "9000:9000" # S3 API port
       - "9001:9001" # Console port
@@ -135,7 +135,10 @@ services:
       - RUSTFS_ACCESS_KEY=rustfsadmin
       - RUSTFS_SECRET_KEY=rustfsadmin
       - RUSTFS_OBS_LOGGER_LEVEL=info
-      - RUSTFS_OBS_LOG_DIRECTORY=/tmp/logs
+      - RUSTFS_OBS_LOG_DIRECTORY=/app/logs
+    volumes:
+      - ./dockervolumes/rustfs1.0.0/data:/data
+      - ./dockervolumes/rustfs1.0.0/logs:/app/logs
     networks:
       taotao-cluster-network:
         ipv4_address: 172.11.0.28
@@ -460,14 +463,6 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.200
 
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared-tunnel
-    restart: no
-    command: tunnel --no-autoupdate run --token xxxxxxx
-    networks:
-      taotao-cluster-network:
-        ipv4_address: 172.11.0.201
 
 ####################################################
 
