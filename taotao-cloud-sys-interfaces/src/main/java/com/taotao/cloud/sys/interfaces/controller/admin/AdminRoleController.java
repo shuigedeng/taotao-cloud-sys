@@ -30,7 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.10
  * @since 2021-10-09 15:09:56
  */
-@Validated
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/admin/sys/role")

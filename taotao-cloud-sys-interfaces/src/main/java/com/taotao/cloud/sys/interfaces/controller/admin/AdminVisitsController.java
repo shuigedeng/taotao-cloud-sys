@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2022-02-11 16:26:45
  */
 @RequiredArgsConstructor
-@Validated
 @RestController
 @Tag(name = "平台管理端-访问记录API", description = "平台管理端-访问记录API")
 @RequestMapping("/admin/sys/visits")

@@ -32,7 +32,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2022-03-02 15:55:38
  */
 @RequiredArgsConstructor
-@Validated
 @RestController
 @Tag(name = "平台管理端-systemAPI", description = "平台管理端-systemAPI")
 @RequestMapping("/admin/sys/system")

@@ -23,8 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
 
-@HttpExchange(
-	value = ServiceNameConstants.TAOTAO_CLOUD_LOG)
+@HttpExchange
 public interface SysLogLoginQueryApi {
 
     // Response save(@RequestBody SysLogLogin sysLogLogin,

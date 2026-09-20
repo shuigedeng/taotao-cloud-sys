@@ -30,7 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 2021.9
  * @since 2021-10-09 14:24:19
  */
-@Validated
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/seller/seller/dict")

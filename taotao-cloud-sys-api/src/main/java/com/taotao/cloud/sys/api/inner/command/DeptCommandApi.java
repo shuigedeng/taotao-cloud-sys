@@ -38,7 +38,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange
 public interface DeptCommandApi {
 
     /**
@@ -62,7 +62,7 @@ public interface DeptCommandApi {
             })
     @PostExchange("/sys/dict/code")
     Response<DictQueryApiResponse> findByCode(
-            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
+             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 
     /**
      * 字典列表code查询
@@ -85,5 +85,5 @@ public interface DeptCommandApi {
             })
     @PostExchange("/sys/dict/test")
     Response<DictQueryApiResponse> test(
-            @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest);
+             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
 }

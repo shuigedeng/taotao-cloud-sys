@@ -32,7 +32,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2022/03/03 14:57
  */
 @RequiredArgsConstructor
-@Validated
 @RestController
 @Tag(name = "平台管理端-拼音API", description = "平台管理端-拼音API")
 @RequestMapping("/admin/sys/pinyin")

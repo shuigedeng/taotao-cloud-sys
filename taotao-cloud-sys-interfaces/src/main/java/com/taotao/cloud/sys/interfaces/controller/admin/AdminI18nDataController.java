@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 国际化信息
  */
-@Validated
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/admin/sys/i18n/data")

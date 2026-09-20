@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2021-10-09 15:13:54
  */
 @AllArgsConstructor
-@Validated
+
 @RestController
 @RequestMapping("/admin/sys/user")
 @Tag(name = "平台管理端-用户API", description = "平台管理端-用户API")

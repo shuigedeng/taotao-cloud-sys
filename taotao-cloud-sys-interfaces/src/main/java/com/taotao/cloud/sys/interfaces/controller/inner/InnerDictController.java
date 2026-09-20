@@ -36,6 +36,7 @@ import com.taotao.cloud.sys.application.service.command.DictCommandService;
 //import com.yomahub.tlog.core.annotation.TLogAspect;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,22 +46,19 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 为远程客户端提供粗粒度的调用接口
  */
-@Validated
 @RequiredArgsConstructor
 @RestController
 @RequestMapping
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
 public class InnerDictController extends InnerController implements DictCommandApi, DictQueryApi {
 
-	private final DictCommandService dictCommandService;
-
-	@Operation(summary = "添加部门", description = "添加部门")
 	@Override
+	@Operation(summary = "添加部门", description = "添加部门")
 	@RequestLogger
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictQueryApiResponse> create(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> create(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
@@ -75,6 +73,8 @@ public class InnerDictController extends InnerController implements DictCommandA
 		return Response.from(DictQueryApiResponseBuilder.builder().build());
 	}
 
+	private final DictCommandService dictCommandService;
+
 	//	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
 	@Operation(summary = "测试部门", description = "测试部门")
 	@Override
@@ -84,7 +84,7 @@ public class InnerDictController extends InnerController implements DictCommandA
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@GuavaLimit
 	@SentinelResource("test")
-	public Response<DictQueryApiResponse> test(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> test(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
 		//		Dict dict = service().findByCode(id);
 		//
@@ -109,14 +109,14 @@ public class InnerDictController extends InnerController implements DictCommandA
 	@Operation(summary = "根据code查询", description = "根据code查询")
 	@Override
 	@RequestLogger
-	public Response<DictQueryApiResponse> queryByCode(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> queryByCode(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		return null;
 	}
 
 	@Operation(summary = "测试测试", description = "测试测试")
 	@Override
 	@RequestLogger
-	public Response<DictQueryApiResponse> queryTest(@Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
+	public Response<DictQueryApiResponse> queryTest(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
 		return null;
 	}
 }

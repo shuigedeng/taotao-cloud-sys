@@ -17,6 +17,7 @@
 package com.taotao.cloud.sys.api.inner.query;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
+import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
@@ -28,8 +29,7 @@ import org.springframework.web.service.annotation.PostExchange;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(
-        value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange
 public interface QuartzJobQueryApi {
 
     /**
@@ -40,6 +40,6 @@ public interface QuartzJobQueryApi {
      * @since 2022.03
      */
     @PostExchange("/job/addQuartzJobDTOTestSeata")
-    public Boolean addQuartzJobDTOTestSeata(@Validated @RequestBody Long quartzJobDTO);
+    public Boolean addQuartzJobDTOTestSeata( @Valid @RequestBody Long quartzJobDTO);
 }
 

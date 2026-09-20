@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020/11/13 09:58
  */
 @RequiredArgsConstructor
-@Validated
 @RestController
 @RequestMapping("/admin/sys/logistics")
 @Tag(name = "平台管理端-物流公司API", description = "平台管理端-物流公司API")

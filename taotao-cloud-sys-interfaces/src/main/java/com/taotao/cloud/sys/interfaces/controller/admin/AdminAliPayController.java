@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@Validated
 @RestController
 @Tag(name = "平台管理端-支付宝API", description = "平台管理端-支付宝API")
 @RequestMapping("/admin/sys/aliPay")

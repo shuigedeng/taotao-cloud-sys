@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /** 管理端,敏感词管理接口 */
 @RequiredArgsConstructor
-@Validated
 @RestController
 @RequestMapping("/admin/sys/sensitive/word")
 @Tag(name = "平台管理端-敏感词API", description = "平台管理端-敏感词API")

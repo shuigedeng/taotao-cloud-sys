@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020/11/26 15:41
  */
 @BusinessApi
-@Validated
+
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "文件管理接口11111")

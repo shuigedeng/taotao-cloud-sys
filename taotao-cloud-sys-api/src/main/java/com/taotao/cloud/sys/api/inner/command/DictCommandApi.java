@@ -39,7 +39,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-@HttpExchange(value = ServiceNameConstants.TAOTAO_CLOUD_SYS)
+@HttpExchange
 public interface DictCommandApi {
 
 	/**
@@ -63,7 +63,7 @@ public interface DictCommandApi {
 				date = "2022-07-01 17:11:55")
 		})
 	@PostExchange("/inner/sys/dict/command/save")
-	Response<DictQueryApiResponse> create( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
+	Response<DictQueryApiResponse> create(  @RequestBody Request<DictApiQuery> dictQueryApiRequest );
 
 	/**
 	 * 字典列表code查询
@@ -85,5 +85,5 @@ public interface DictCommandApi {
 				date = "2022-07-01 17:11:55")
 		})
 	@PostExchange("/inner/sys/dict/command/test")
-	Response<DictQueryApiResponse> test( @Validated @RequestBody Request<DictApiQuery> dictQueryApiRequest );
+	Response<DictQueryApiResponse> test(  @RequestBody Request<DictApiQuery> dictQueryApiRequest );
 }
