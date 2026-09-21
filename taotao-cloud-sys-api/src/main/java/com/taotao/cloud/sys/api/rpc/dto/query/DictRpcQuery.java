@@ -29,7 +29,7 @@ import java.io.Serial;
  * @since 2021-10-09 16:31:52
  */
 @RecordBuilder
-@Schema(description = "公司查询VO")
+@Schema(description = "公司查询响应对象")
 public record DictRpcQuery(String code) implements Query {
 
 	@Serial

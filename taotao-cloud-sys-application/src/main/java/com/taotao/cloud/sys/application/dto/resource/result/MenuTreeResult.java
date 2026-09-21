@@ -36,7 +36,6 @@ import lombok.NoArgsConstructor;
 @Setter
 @Getter
 @ToString
-
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

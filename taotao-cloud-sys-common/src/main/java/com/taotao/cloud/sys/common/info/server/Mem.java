@@ -1,0 +1,111 @@
+/*
+ * Copyright (c) 2020-2030, Shuigedeng (981376577@qq.com & https://blog.taotaocloud.top/).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.taotao.cloud.sys.common.info.server;
+
+/**
+ * 內存相关信息
+ *
+ * @since 2022/5/21 15:42
+ */
+public class Mem {
+
+    /** 内存总量 */
+    private double total;
+
+    /** 已用内存 */
+    private double used;
+
+    /** 剩余内存 */
+    private double free;
+
+    /**
+     * 获取总计
+     *
+     * @return double
+     * @since 2022.03
+     */
+    public double getTotal() {
+
+        return total / (1024 * 1024 * 1024);
+    }
+
+    /**
+     * 设置总计
+     *
+     * @param total 总计
+     * @since 2022.03
+     */
+    public void setTotal(long total) {
+
+        this.total = total;
+    }
+
+    /**
+     * 获取Used
+     *
+     * @return double
+     * @since 2022.03
+     */
+    public double getUsed() {
+
+        return used / (1024 * 1024 * 1024);
+    }
+
+    /**
+     * 设置Used
+     *
+     * @param used used
+     * @since 2022.03
+     */
+    public void setUsed(long used) {
+
+        this.used = used;
+    }
+
+    /**
+     * 获取Free
+     *
+     * @return double
+     * @since 2022.03
+     */
+    public double getFree() {
+
+        return free / (1024 * 1024 * 1024);
+    }
+
+    /**
+     * 设置Free
+     *
+     * @param free free
+     * @since 2022.03
+     */
+    public void setFree(long free) {
+
+        this.free = free;
+    }
+
+    /**
+     * 获取Usage
+     *
+     * @return double
+     * @since 2022.03
+     */
+    public double getUsage() {
+
+        return (used / total) * 100;
+    }
+}

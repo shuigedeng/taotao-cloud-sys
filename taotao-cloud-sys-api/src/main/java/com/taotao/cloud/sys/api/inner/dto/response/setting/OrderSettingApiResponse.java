@@ -26,7 +26,6 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderSettingApiResponse implements Serializable {

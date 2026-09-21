@@ -30,7 +30,7 @@ import java.util.List;
  * @since 2021-10-09 15:31:45
  */
 @RecordBuilder
-@Schema(description = "查询应用列表数据VO")
+@Schema(description = "查询应用列表数据响应对象")
 public record RegionParentResult(	@Schema(description = "主键ID")
 	Long id,
 	@Schema(description = "名称")

@@ -150,7 +150,7 @@ api  ←  interfaces  ←  application  →  facade
 | 仓储接口 (domain) | `{Biz}DomainRepository` | `DictDomainRepository` |
 | 命令服务 | `{Biz}CommandService` | `DictCommandService` |
 | 查询服务 | `{Biz}QueryService` | `DictQueryService` |
-| 查询仓储 | `{Biz}QueryRepository` | `DictQueryRepository` |
+| 查询仓储 | `{Biz}QueryRepository` | `DictQueryPort` |
 | PO | `{Biz}PO` | `DictPO`, `UserPO` |
 | Controller | `{Biz}{Role}Controller` | `AdminDictController` |
 

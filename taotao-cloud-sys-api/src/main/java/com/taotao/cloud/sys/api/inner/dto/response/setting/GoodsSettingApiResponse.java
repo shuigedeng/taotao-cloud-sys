@@ -27,10 +27,9 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "商品配置VO")
+@Schema(description = "商品配置响应对象")
 public class GoodsSettingApiResponse implements Serializable {
 
     @Serial private static final long serialVersionUID = -4132785717179910025L;

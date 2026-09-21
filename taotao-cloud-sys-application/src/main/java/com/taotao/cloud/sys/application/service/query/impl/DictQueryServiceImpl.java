@@ -1,8 +1,6 @@
 package com.taotao.cloud.sys.application.service.query.impl;
 
-import com.taotao.boot.ddd.model.application.service.QueryService;
-import com.taotao.cloud.sys.application.repository.DictQueryRepository;
-import com.taotao.cloud.sys.application.service.query.AppQueryService;
+import com.taotao.cloud.sys.application.adapter.DictQueryPort;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,9 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DictQueryServiceImpl implements DictQueryService {
-private final DictQueryRepository dictQueryRepository;
+private final DictQueryPort dictQueryPort;
 	@Override
 	public void queryForUpdate() {
-		dictQueryRepository.queryForUpdate();
+		dictQueryPort.queryForUpdate();
 	}
 }

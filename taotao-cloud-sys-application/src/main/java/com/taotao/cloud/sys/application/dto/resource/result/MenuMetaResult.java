@@ -28,7 +28,7 @@ import java.io.Serial;
  * @since 2020/5/14 10:44
  */
 @RecordBuilder
-@Schema(description = "菜单元数据VO")
+@Schema(description = "菜单元数据响应对象")
 public record MenuMetaResult(	@Schema(description = "名称")
 	String title,
 	@Schema(description = "icon")

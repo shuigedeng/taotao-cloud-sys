@@ -31,7 +31,7 @@ import java.util.Set;
  * @since 2021-10-09 15:19:37
  */
 @RecordBuilder
-@Schema(description = "用户查询VO")
+@Schema(description = "用户查询响应对象")
 public record UserQueryResult(	@Schema(description = "id")
 	Long id,
 	@Schema(description = "昵称")

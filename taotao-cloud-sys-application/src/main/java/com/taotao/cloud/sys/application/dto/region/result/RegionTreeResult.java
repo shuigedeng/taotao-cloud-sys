@@ -41,7 +41,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "地区查询VO")
+@Schema(description = "地区查询响应对象")
 public class RegionTreeResult extends MapperNode implements MarkerResult {
 
 	@Serial private static final long serialVersionUID = -5853343562172855421L;

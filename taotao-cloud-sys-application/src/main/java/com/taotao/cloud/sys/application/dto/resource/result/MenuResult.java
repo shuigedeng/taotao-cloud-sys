@@ -29,7 +29,7 @@ import java.util.List;
  * @since 2020/5/14 10:44
  */
 @RecordBuilder
-@Schema(description = "菜单VO")
+@Schema(description = "菜单响应对象")
 public record MenuResult(	@Schema(description = "菜单名称")
 	String name,
 	@Schema(description = "菜单路径")

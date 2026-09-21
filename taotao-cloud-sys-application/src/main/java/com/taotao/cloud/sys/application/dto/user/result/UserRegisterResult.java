@@ -28,7 +28,7 @@ import java.io.Serial;
  * @since 2020/5/14 10:44
  */
 @RecordBuilder
-@Schema(description = "用户注册VO")
+@Schema(description = "用户注册响应对象")
 public record UserRegisterResult(	@Schema(description = "真实用户名")
 	String username,
 	@Schema(description = "手机号")

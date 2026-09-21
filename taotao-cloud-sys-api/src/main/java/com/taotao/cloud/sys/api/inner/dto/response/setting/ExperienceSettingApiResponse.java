@@ -27,7 +27,6 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @ToString
-
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExperienceSettingApiResponse implements Serializable {

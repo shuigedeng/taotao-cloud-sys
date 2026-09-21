@@ -29,7 +29,7 @@ import java.util.List;
  * "province:省份（直辖市会在province和city显示）" + "city:市（直辖市会在province和city显示）" + "district:区县" + "street:街道"
  */
 @RecordBuilder
-@Schema(description = "地区VO")
+@Schema(description = "地区响应对象")
 public record RegionResult(	@Schema(description = "id")
 	Long id,
 	@Schema(description = "地区父节点")

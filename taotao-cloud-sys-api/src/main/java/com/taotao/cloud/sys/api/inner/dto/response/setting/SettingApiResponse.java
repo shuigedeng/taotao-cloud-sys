@@ -25,7 +25,6 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-
 @AllArgsConstructor
 @NoArgsConstructor
 public class SettingApiResponse {
