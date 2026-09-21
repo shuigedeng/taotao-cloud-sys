@@ -634,6 +634,8 @@ spring:
         lockWatchdogTimeout: 10000
   data:
     redis:
+      repositories:
+        enabled: false
       host: ${remote-ip}
       port: 6379
       database: 1
