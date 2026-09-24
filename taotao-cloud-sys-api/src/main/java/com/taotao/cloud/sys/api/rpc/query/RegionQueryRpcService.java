@@ -29,5 +29,5 @@ import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
  * @since 2022-03-25 14:22:32
  */
 public interface RegionQueryRpcService {
-    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> request);
 }

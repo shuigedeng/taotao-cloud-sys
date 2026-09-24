@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.taotao.cloud.sys.api.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.taotao.cloud.sys.api.grpc.dto.command";
+option java_outer_classname = "DictCommandProto";
+//option objc_class_prefix = "HLW";
+
+message CreateDictGrpcCommand {
+  string code = 1;
+}

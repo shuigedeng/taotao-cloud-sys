@@ -12,27 +12,13 @@ package com.taotao.cloud.sys.api.grpc;
 
 option java_multiple_files = true;
 option java_package = "com.taotao.cloud.sys.api.grpc";
-option java_outer_classname = "DictGrpcServiceProto";
+option java_outer_classname = "DictCommandGrpcServiceProto";
 //option objc_class_prefix = "HLW";
 
-service DictGrpcService {
-  rpc findByCode (DictGrpcQuery) returns (DictGrpcResponse){}
-  rpc test (DictTestGrpcQuery) returns (DictGrpcResponse){}
+import "dto/command/DictCommand.proto";
+import "dto/response/DictResponse.proto";
+
+service DictCommandGrpcService {
+  rpc create (CreateDictGrpcCommand) returns (DictGrpcResponse){}
 }
 
-message DictGrpcQuery {
-  string code = 1;
-}
-
-message DictGrpcResponse {
-  int64 id = 1;
-  string dictName = 2;
-  string dictCode = 3;
-  string description = 4;
-  int32 sortNum = 5;
-  string remark = 6;
-}
-
-message DictTestGrpcQuery {
-  bool reply = 1;
-}

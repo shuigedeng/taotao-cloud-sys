@@ -17,8 +17,11 @@
 package com.taotao.cloud.sys.application.adapter;
 
 
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
+
 public interface DictQueryPort {
 
 	void queryForUpdate();
 
+	DictQueryResult queryByCode(String code);
 }

@@ -14,27 +14,24 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.dto.command;
+package com.taotao.cloud.sys.application.assembler;
 
-import com.taotao.boot.common.model.ddd.types.Command;
-import com.taotao.boot.common.model.ddd.types.Query;
-import io.soabase.recordbuilder.core.RecordBuilder;
-import io.swagger.v3.oas.annotations.media.Schema;
-
-import java.io.Serial;
+import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.factory.Mappers;
 
 /**
- * 公司查询VO
- *
- * @author shuigedeng
- * @version 2021.10
- * @since 2021-10-09 16:31:52
+ * @author
+ * @version 0.0.1
+ * @since 2022/11/23 00:45
  */
-@RecordBuilder
-@Schema(description = "公司查询响应对象")
-public record DeptRpcCommand(Long id) implements Command {
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface DictAppAssembler {
 
-	@Serial
-	private static final long serialVersionUID = -4132785717179910025L;
+	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
+
+	DictApiResponse toResponse(DictQueryResult source);
 
 }

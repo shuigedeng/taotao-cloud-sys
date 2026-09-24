@@ -17,13 +17,14 @@
 package com.taotao.cloud.sys.application.assembler;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
 
 /**
  * @author
  * @version 0.0.1
  * @since 2022/11/23 00:45
  */
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface AppAssembler {
 
     //	AppConvert INSTANCE = Mappers.getMapper(AppConvert.class);

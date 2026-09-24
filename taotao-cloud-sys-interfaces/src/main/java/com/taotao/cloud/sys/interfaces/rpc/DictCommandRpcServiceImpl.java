@@ -14,28 +14,36 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.query;
+package com.taotao.cloud.sys.interfaces.rpc;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
+import com.taotao.boot.common.utils.log.LogUtils;
+import com.taotao.cloud.sys.api.rpc.command.DictCommandRpcService;
+import com.taotao.cloud.sys.api.rpc.dto.command.CreateDictRpcCommand;
 import com.taotao.cloud.sys.api.rpc.dto.query.DictRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.DictRpcResponse;
+import com.taotao.cloud.sys.api.rpc.dto.response.DictRpcResponseBuilder;
+import com.taotao.cloud.sys.api.rpc.query.DictQueryRpcService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+//import org.apache.dubbo.config.annotation.DubboService;
 
 /**
- * ISysDictService
+ * DictServiceImpl
  *
  * @author shuigedeng
  * @version 2021.10
- * @since 2021-10-09 20:32:36
+ * @since 2021-10-09 20:26:36
  */
-public interface DictQueryRpcService {
+//@DubboService(interfaceClass = DictRpcService.class, validation = "true")
+@Service
+@RequiredArgsConstructor
+public class DictCommandRpcServiceImpl implements DictCommandRpcService {
 
-    /**
-     * 字典code查询
-     * @dubbo
-     * @param code 代码
-     * @return {@link DictRpcResponse }
-     * @since 2022-06-29 21:45:44
-     */
-    Response<DictRpcResponse> findByCode(Request<DictRpcQuery> request);
+	@Override
+	public Response<DictRpcResponse> create(Request<CreateDictRpcCommand> request) {
+		return null;
+	}
 }

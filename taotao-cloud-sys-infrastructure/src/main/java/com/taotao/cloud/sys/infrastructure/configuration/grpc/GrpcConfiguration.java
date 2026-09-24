@@ -1,6 +1,5 @@
 package com.taotao.cloud.sys.infrastructure.configuration.grpc;
 
-import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import org.springframework.context.annotation.Bean;
 import org.springframework.grpc.client.GrpcChannelFactory;
 import org.springframework.stereotype.Component;
@@ -14,10 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class GrpcConfiguration {
-	@Bean
-	DictGrpcServiceGrpc.DictGrpcServiceBlockingStub stub( GrpcChannelFactory channels) {
-		return DictGrpcServiceGrpc.newBlockingStub(channels.createChannel("local"));
-	}
+//	@Bean
+//	DictGrpcServiceGrpc.DictGrpcServiceBlockingStub stub( GrpcChannelFactory channels) {
+//		return DictGrpcServiceGrpc.newBlockingStub(channels.createChannel("local"));
+//	}
 //	@Bean
 //	@GlobalServerInterceptor
 //	AuthenticationProcessInterceptor jwtSecurityFilterChain( GrpcSecurity grpc) throws Exception {

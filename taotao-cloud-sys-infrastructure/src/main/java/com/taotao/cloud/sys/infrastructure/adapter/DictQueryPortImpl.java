@@ -18,7 +18,10 @@ package com.taotao.cloud.sys.infrastructure.adapter;
 
 
 //import cn.idev.excel.util.ListUtils;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.taotao.cloud.sys.application.adapter.DictQueryPort;
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
+import com.taotao.cloud.sys.infrastructure.assembler.DictInfraAssembler;
 import com.taotao.cloud.sys.infrastructure.persistent.mapper.DictMapper;
 import com.taotao.cloud.sys.infrastructure.persistent.persistence.dict.DictPO;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +39,7 @@ import org.springframework.stereotype.Service;
 public class DictQueryPortImpl implements DictQueryPort {
 
 	private final DictMapper dictMapper;
+	private final DictInfraAssembler dictInfraAssembler;
 
 	@Override
 	public void queryForUpdate() {
@@ -60,5 +64,13 @@ public class DictQueryPortImpl implements DictQueryPort {
 //		dictMapper.selectByIdsForUpdate();
 //		dictMapper.selectListForUpdate();
 //		dictMapper.selectListForUpdateOther();
+	}
+
+	@Override
+	public DictQueryResult queryByCode(String code) {
+		LambdaQueryWrapper<DictPO> queryWrapper = new LambdaQueryWrapper<>();
+		queryWrapper.eq(DictPO::getDictCode, code);
+		DictPO dictPo = dictMapper.selectOne(queryWrapper);
+		return dictInfraAssembler.toResult(dictPo);
 	}
 }

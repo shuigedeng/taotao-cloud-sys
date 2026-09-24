@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.inner.dto.query;
+package com.taotao.cloud.sys.api.inner.dto.command;
 
+import com.taotao.boot.common.model.ddd.types.Command;
 import com.taotao.boot.common.model.ddd.types.Query;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -31,10 +32,10 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "字典查询对象")
-public record DictApiQuery(
+public record CreateDictApiCommad(
 	@Schema(description = "code")
 	String code
-) implements Query {
+) implements Command {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

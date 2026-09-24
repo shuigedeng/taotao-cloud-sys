@@ -67,7 +67,7 @@
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
-**result 泛型 `DictQueryApiResponse` 字段明细：**
+**result 泛型 `DictApiResponse` 字段明细：**
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
@@ -132,7 +132,7 @@
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
-**result 泛型 `DictQueryApiResponse` 字段明细：**
+**result 泛型 `DictApiResponse` 字段明细：**
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
@@ -196,7 +196,7 @@
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
-**result 泛型 `DictQueryApiResponse` 字段明细：**
+**result 泛型 `DictApiResponse` 字段明细：**
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |
@@ -258,7 +258,7 @@
 | responseNo | String | 响应No | 自动生成 |
 | result | T | 数据对象 | 业务结果 |
 
-**result 泛型 `DictQueryApiResponse` 字段明细：**
+**result 泛型 `DictApiResponse` 字段明细：**
 
 | 字段 | 类型 | 说明 | 约束/备注 |
 | --- | --- | --- | --- |

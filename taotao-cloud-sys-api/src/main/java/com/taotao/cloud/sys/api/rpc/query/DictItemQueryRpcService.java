@@ -29,5 +29,5 @@ import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
  * @since 2021-10-09 20:32:47
  */
 public interface DictItemQueryRpcService {
-    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> request);
 }

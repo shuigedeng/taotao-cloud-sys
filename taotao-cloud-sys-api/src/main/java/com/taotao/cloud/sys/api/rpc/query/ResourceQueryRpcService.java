@@ -37,5 +37,5 @@ public interface ResourceQueryRpcService {
      * @return 菜单信息
      * @since 2022-03-25 14:13:34
      */
-    Response<MenuRpcResponse> queryAllById(Request<MenuRpcQuery> menuQueryRpcRequest);
+    Response<MenuRpcResponse> queryAllById(Request<MenuRpcQuery> request);
 }

@@ -20,9 +20,6 @@ import com.taotao.boot.common.model.result.Result;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.webagg.controller.BusinessController;
-import com.taotao.cloud.sys.api.grpc.DictGrpcQuery;
-import com.taotao.cloud.sys.api.grpc.DictGrpcResponse;
-import com.taotao.cloud.sys.api.grpc.DictGrpcServiceGrpc;
 import com.taotao.cloud.sys.application.dto.dict.query.DictQuery;
 import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
 import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResultBuilder;
@@ -51,8 +48,8 @@ public class DictMallController extends BusinessController {
 	@Autowired
 	@Qualifier("applicationTaskExecutor")
 	private AsyncTaskExecutor taskExecutor;
-	@Autowired
-	private DictGrpcServiceGrpc.DictGrpcServiceBlockingStub dictGrpcServiceStub;
+//	@Autowired
+//	private DictGrpcServiceGrpc.DictGrpcServiceBlockingStub dictGrpcServiceStub;
 
     @Operation(summary = "测试mybatis sql", description = "测试mybatis sql")
     @NotAuth
@@ -62,8 +59,8 @@ public class DictMallController extends BusinessController {
 		taskExecutor.execute(() -> {
 			System.out.println("Running on: " + Thread.currentThread());
 		});
-		DictGrpcResponse byCode = dictGrpcServiceStub.findByCode(DictGrpcQuery.newBuilder().build());
-		System.out.println(byCode);
+//		DictGrpcResponse byCode = dictGrpcServiceStub.findByCode(DictGrpcQuery.newBuilder().build());
+//		System.out.println(byCode);
 		return Result.success(new ArrayList<>());
     }
 

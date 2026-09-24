@@ -18,6 +18,7 @@ package com.taotao.cloud.sys.api.rpc.command;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
+import com.taotao.cloud.sys.api.rpc.dto.command.CreateDictRpcCommand;
 import com.taotao.cloud.sys.api.rpc.dto.query.DictRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.DictRpcResponse;
 
@@ -33,9 +34,9 @@ public interface DictCommandRpcService {
     /**
      * 字典code查询
      *
-     * @param code 代码
+     * @param request 代码
      * @return {@link DictRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-    Response<DictRpcResponse> findByCode(Request<DictRpcQuery> dictQueryRpcRequest);
+    Response<DictRpcResponse> create(Request<CreateDictRpcCommand> request);
 }

@@ -29,5 +29,5 @@ import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
  * @since 2022-04-28 09:21:20
  */
 public interface QuartzJobQueryRpcService {
-    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> request);
 }

@@ -30,5 +30,5 @@ import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
  */
 public interface DeptCommandRpcService {
 
-    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> deptQueryRpcRequest);
+    Response<DeptRpcResponse> getDeptById(Request<DeptRpcQuery> request);
 }

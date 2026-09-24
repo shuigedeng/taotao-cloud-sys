@@ -18,18 +18,12 @@ package com.taotao.cloud.sys.api.inner.query;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
-import com.taotao.boot.common.support.info.ApiInfo;
-import com.taotao.boot.common.support.info.Create;
-import com.taotao.boot.common.support.info.Update;
 import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
-import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
-import org.springframework.validation.annotation.Validated;
+import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
 
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
-import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 /**
  * 字典查询 API
@@ -38,53 +32,17 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
  * @author shuigedeng
  * @since 2020/5/2 16:42
  */
-//@HttpExchange
-@HttpExchange(url = "http://taotao-cloud-sys")
+@HttpExchange
+//@HttpExchange(url = "http://taotao-cloud-sys")
 public interface DictQueryApi {
 
-    /**
-     * 字典列表code查询
-     *
-     * @param code 代码
-     * @return {@link DictQueryApiResponse }
-     * @since 2022-06-29 21:40:21
-     */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @PostExchange("/inner/sys/dict/query/code")
-    Response<DictQueryApiResponse> queryByCode(
-             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
-
-    /**
-     * 字典列表code查询
-     *
-     * @param id 代码
-     * @return {@link DictQueryApiResponse }
-     * @since 2022-06-29 21:40:21
-     */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @PostExchange("/inner/sys/dict/query/test")
-    Response<DictQueryApiResponse> queryTest(
-             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
+	/**
+	 * 字典列表code查询
+	 *
+	 * @param request 代码
+	 * @return {@link DictApiResponse }
+	 * @since 2022-06-29 21:40:21
+	 */
+	@PostExchange("/inner/sys/dict/query/code")
+	Response<DictApiResponse> queryByCode(@RequestBody Request<DictApiQuery> request);
 }

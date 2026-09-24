@@ -20,6 +20,9 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.exception.BusinessException;
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
+import com.taotao.boot.common.support.info.ApiInfo;
+import com.taotao.boot.common.support.info.Create;
+import com.taotao.boot.common.support.info.Update;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.GuavaLimit;
@@ -28,20 +31,25 @@ import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InnerController;
 import com.taotao.cloud.sys.api.inner.command.DictCommandApi;
+import com.taotao.cloud.sys.api.inner.dto.command.CreateDictApiCommad;
 import com.taotao.cloud.sys.api.inner.dto.query.DictApiQuery;
-import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponse;
-import com.taotao.cloud.sys.api.inner.dto.response.DictQueryApiResponseBuilder;
+import com.taotao.cloud.sys.api.inner.dto.response.DictApiResponse;
 import com.taotao.cloud.sys.api.inner.query.DictQueryApi;
+import com.taotao.cloud.sys.application.assembler.DictAppAssembler;
+import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
 import com.taotao.cloud.sys.application.service.command.DictCommandService;
 //import com.yomahub.tlog.core.annotation.TLogAspect;
+import com.taotao.cloud.sys.application.service.query.DictQueryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_07;
+import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 
 /**
  * 为远程客户端提供粗粒度的调用接口
@@ -52,14 +60,30 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
 public class InnerDictController extends InnerController implements DictCommandApi, DictQueryApi {
 
+	private final DictCommandService dictCommandService;
+	private final DictQueryService dictQueryService;
+	private final DictAppAssembler dictAppAssembler;
+
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(
+				version = V2022_07,
+				content = "主要修改了配置信息的接口查询",
+				date = "2022-07-01 17:11:55"),
+			@Update(
+				version = V2022_08,
+				content = "主要修改了配置信息的接口查询08",
+				date = "2022-07-01 17:11:55")
+		})
 	@Override
 	@Operation(summary = "添加部门", description = "添加部门")
 	@RequestLogger
 	@Idempotent(perFix = "findByCode")
 	@Limit(key = "limitTest", period = 10, count = 3)
 	@SentinelResource("findByCode")
-	public Response<DictQueryApiResponse> create(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
-		if ("sd".equals(dictQueryApiRequest.getBizNo())) {
+	public Response<DictApiResponse> create(@Valid @RequestBody Request<CreateDictApiCommad> request ) {
+		if ("sd".equals(request.getBizNo())) {
 			throw new BusinessException("我出错了");
 			// try {
 			//	Thread.sleep(100000000000L);
@@ -70,53 +94,32 @@ public class InnerDictController extends InnerController implements DictCommandA
 		LogUtils.info("xxxxxxxxxxxxxxxxxxxxx");
 		//		DictPO dictPo = dictService.findByCode(code);
 		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return Response.from(DictQueryApiResponseBuilder.builder().build());
-	}
-
-	private final DictCommandService dictCommandService;
-
-	//	@TLogAspect(value = {"code"}, pattern = "{{}}", joint = ",", str = "nihao")
-	@Operation(summary = "测试部门", description = "测试部门")
-	@Override
-	@RequestLogger
-	@NotAuth
-	@Idempotent(perFix = "test")
-	@Limit(key = "limitTest", period = 10, count = 3)
-	@GuavaLimit
-	@SentinelResource("test")
-	public Response<DictQueryApiResponse> test(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
-		LogUtils.info("sldfkslfdjalsdfkjalsfdjl");
-		//		Dict dict = service().findByCode(id);
-		//
-		//		Future<Dict> asyncByCode = service().findAsyncByCode(id);
-		//
-		//		Dict dict1;
-		//		try {
-		//			dict1 = asyncByCode.get();
-		//		} catch (InterruptedException | ExecutionException e) {
-		//			throw new RuntimeException(e);
-		//		}
-		//
-		//		LogUtils.info("我在等待你");
-
-		return null;
-		// return IDictMapStruct.INSTANCE.dictToFeignDictRes(dict);
+		return Response.from(null);
 	}
 
 
 
-
+	@ApiInfo(
+		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
+		update = {
+			@Update(
+				version = V2022_07,
+				content = "主要修改了配置信息的接口查询",
+				date = "2022-07-01 17:11:55"),
+			@Update(
+				version = V2022_08,
+				content = "主要修改了配置信息的接口查询08",
+				date = "2022-07-01 17:11:55")
+		})
 	@Operation(summary = "根据code查询", description = "根据code查询")
 	@Override
 	@RequestLogger
-	public Response<DictQueryApiResponse> queryByCode(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
-		return null;
+	@NotAuth
+	public Response<DictApiResponse> queryByCode(@Valid @RequestBody Request<DictApiQuery> request ) {
+		DictApiQuery order = request.getOrder();
+		DictQueryResult result = dictQueryService.queryByCode(order.code());
+		return Response.from(dictAppAssembler.toResponse(result));
 	}
 
-	@Operation(summary = "测试测试", description = "测试测试")
-	@Override
-	@RequestLogger
-	public Response<DictQueryApiResponse> queryTest(@Valid @RequestBody Request<DictApiQuery> dictQueryApiRequest ) {
-		return null;
-	}
+
 }

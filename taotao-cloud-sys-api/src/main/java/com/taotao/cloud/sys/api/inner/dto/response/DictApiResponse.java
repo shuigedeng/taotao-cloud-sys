@@ -23,40 +23,27 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serial;
 
 /**
- * 公司查询对象
+ * 公司查询VO
  *
+ * @param dictName    字典名称
+ * @param dictCode    字典编码
+ * @param description 描述
+ * @param sortNum     排序值
+ * @param remark      备注信息
  * @author shuigedeng
  * @version 2021.10
  * @since 2021-10-09 16:31:52
  */
 @RecordBuilder
-@Schema(description = "公司查询响应对象")
-public record CompanyQueryApiResponse(	@Schema(description = "租户id")
-	String tenantId,
-	@Schema(description = "租户密钥")
-	String tenantSecret,
-	@Schema(description = "公司名称")
-	String name,
-	@Schema(description = "企业全称")
-	String fullName,
-	@Schema(description = "信用代码")
-	String creditCode,
-	@Schema(description = "邮箱")
-	String email,
-	@Schema(description = "联系人")
-	String username,
-	@Schema(description = "联系人手机号")
-	String phone,
-	@Schema(description = "联系人地址")
-	String address,
-	@Schema(description = "请求域名")
-	String domain,
-	@Schema(description = "公司网址")
-	String webSite,
-	@Schema(description = "所在地区")
-	String regionInfo,
-	@Schema(description = "公司类型")
-	Integer type)implements MarkerResponse {
+@Schema(description = "字典查询响应对象")
+public record DictApiResponse(
+	Long id,
+	String dictName,
+	String dictCode,
+	String description,
+	Integer sortNum,
+	String remark
+) implements MarkerResponse {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;
