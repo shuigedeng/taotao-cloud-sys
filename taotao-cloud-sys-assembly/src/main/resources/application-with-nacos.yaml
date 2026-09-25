@@ -1,7 +1,7 @@
 server:
   port: 33331
 
-ttcVersion: 2026.10
+ttcVersion: 2026.11
 
 spring:
   application:
