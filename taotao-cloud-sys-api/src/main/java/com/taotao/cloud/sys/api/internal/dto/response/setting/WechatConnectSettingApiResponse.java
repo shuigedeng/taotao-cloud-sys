@@ -14,24 +14,37 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-/**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
- */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+import java.util.List;
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
+/** 微信设置 */
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class WechatConnectSettingApiResponse {
 
-	DictApiResponse toResponse(DictQueryResult source);
+    /** 微信联合登陆配置 */
+    List<WechatConnectSettingItemVO> wechatConnectSettingItemVOS;
 
+    /** 微信设置 */
+    @Setter
+    @Getter
+    @ToString
+    public static class WechatConnectSettingItemVO {
+
+        /**
+         * @See ClientType
+         */
+        private String clientType;
+
+        private String appId;
+
+        private String appSecret;
+    }
 }

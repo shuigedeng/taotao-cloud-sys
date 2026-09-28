@@ -14,24 +14,27 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-/**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
- */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+import java.io.Serializable;
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
+/** 秒杀活动设置 */
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class SeckillSettingApiResponse implements Serializable {
 
-	DictApiResponse toResponse(DictQueryResult source);
+    /** 开启几点场 例如：6,8,12 */
+    @NotNull(message = "活动时间段不能为空")
+    private String hours;
 
+    /** 秒杀规则 */
+    @NotNull(message = "秒杀规则不能为空")
+    private String seckillRule;
 }

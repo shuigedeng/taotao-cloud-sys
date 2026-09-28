@@ -4,7 +4,7 @@
 
 | 项 | 值 |
 | --- | --- |
-| Controller | `InnerDictController` |
+| Controller | `DictApiController` |
 | 源码文件 | `taotao-cloud-sys-interfaces\src\main\java\com\taotao\cloud\sys\interfaces\controller\inner\DictInnerApiController.java` |
 | 请求前缀 | `(无类级前缀)` |
 | 实现接口 | `DictCommandApi`, `DictQueryApi` |

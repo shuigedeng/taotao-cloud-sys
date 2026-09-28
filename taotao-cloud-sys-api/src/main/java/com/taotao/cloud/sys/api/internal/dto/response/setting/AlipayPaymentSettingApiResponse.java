@@ -14,24 +14,31 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-/**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
- */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+/** 支付宝支付设置 */
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class AlipayPaymentSettingApiResponse {
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
+    /** 应用id */
+    private String appId;
 
-	DictApiResponse toResponse(DictQueryResult source);
+    /** 私钥 */
+    private String privateKey;
 
+    /** 应用证书 */
+    private String certPath;
+
+    /** 支付宝公钥 */
+    private String alipayPublicCertPath;
+
+    /** 支付宝根证书 */
+    private String rootCertPath;
 }

@@ -14,24 +14,30 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.command;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import com.taotao.boot.common.model.ddd.types.Command;
+import com.taotao.boot.common.model.ddd.types.Query;
+import io.soabase.recordbuilder.core.RecordBuilder;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.io.Serial;
 
 /**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
+ * 公司查询对象
+ *
+ * @author shuigedeng
+ * @version 2021.10
+ * @since 2021-10-09 16:31:52
  */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+@RecordBuilder
+@Schema(description = "字典查询对象")
+public record CreateDictApiCommad(
+	@Schema(description = "code")
+	String code
+) implements Command {
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
-
-	DictApiResponse toResponse(DictQueryResult source);
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
 }

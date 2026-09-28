@@ -14,24 +14,20 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.response;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
+import io.soabase.recordbuilder.core.RecordBuilder;
 
 /**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
+ * LogsApiResponse
+ *
+ * @author shuigedeng
+ * @version 2026.04
+ * @since 2025-12-19 09:30:45
  */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+@RecordBuilder
+public record LogsApiResponse(Long id) implements MarkerResponse {
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
-
-	DictApiResponse toResponse(DictQueryResult source);
 
 }

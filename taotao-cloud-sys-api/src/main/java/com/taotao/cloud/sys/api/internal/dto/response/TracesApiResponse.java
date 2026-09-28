@@ -14,24 +14,27 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.application.assembler;
+package com.taotao.cloud.sys.api.internal.dto.response;
 
-import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.factory.Mappers;
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
+import io.soabase.recordbuilder.core.RecordBuilder;
+
+import java.io.Serial;
+import java.util.List;
+import java.util.Map;
 
 /**
- * @author
- * @version 0.0.1
- * @since 2022/11/23 00:45
+ * 物流信息
+ *
+ * @param shipper 物流公司
+ * @param logisticCode 物流单号
+ * @param traces 物流详细信息
  */
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface DictAppAssembler {
+@RecordBuilder
+public record TracesApiResponse(String shipper, String logisticCode, List<Map<String, Object>> traces)implements
+	MarkerResponse {
 
-	DictAppAssembler INSTANCE = Mappers.getMapper(DictAppAssembler.class);
-
-	DictApiResponse toResponse(DictQueryResult source);
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
 
 }

@@ -13,7 +13,7 @@
 | 模块 | Controller | 接口数 | 文档 |
 | --- | --- | --- | --- |
 | buyer | `DictBuyerController` | **2** | [DictBuyerController.md](buyer/DictBuyerController.md) |
-| inner | `InnerDictController` | **4** | [DictInnerApiController.md](inner/DictInnerApiController.md) |
+| inner | `DictApiController` | **4** | [DictInnerApiController.md](inner/DictInnerApiController.md) |
 | manager | `AdminAliPayController` | 0 | [AliPayManagerController.md](manager/AliPayManagerController.md) |
 | manager | `AdminAppController` | 0 | [AppManagerController.md](manager/AppManagerController.md) |
 | manager | `AdminDataVersionLogController` | 0 | [DataVersionLogManagerController.md](manager/DataVersionLogManagerController.md) |
