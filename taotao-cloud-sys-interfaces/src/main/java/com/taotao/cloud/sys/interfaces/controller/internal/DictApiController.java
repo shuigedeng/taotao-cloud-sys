@@ -28,7 +28,7 @@ import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.Limit;
 import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
-import com.taotao.boot.webagg.controller.InnerController;
+import com.taotao.boot.webagg.controller.InternalController;
 import com.taotao.cloud.sys.api.internal.command.DictCommandApi;
 import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommad;
 import com.taotao.cloud.sys.api.internal.dto.query.DictApiQuery;
@@ -57,7 +57,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 @RestController
 @RequestMapping
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
-public class DictApiController extends InnerController implements DictCommandApi, DictQueryApi {
+public class DictApiController extends InternalController implements DictCommandApi, DictQueryApi {
 
 	private final DictCommandService dictCommandService;
 	private final DictQueryService dictQueryService;

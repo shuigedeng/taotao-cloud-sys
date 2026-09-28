@@ -17,7 +17,6 @@
 package com.taotao.cloud.sys.api.internal.query;
 
 import com.taotao.boot.common.model.result.Result;
-import com.taotao.cloud.sys.api.inner.dto.response.setting.*;
 import com.taotao.cloud.sys.api.internal.dto.response.setting.*;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;

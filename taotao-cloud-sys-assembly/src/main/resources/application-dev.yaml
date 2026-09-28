@@ -1104,7 +1104,7 @@ taotao:
       title: 系统管理模块
       packages-to-scan:
         - com.taotao.cloud.sys.interfaces.controller.buyer
-        - com.taotao.cloud.sys.interfaces.controller.inner
+        - com.taotao.cloud.sys.interfaces.controller.internal
         - com.taotao.cloud.sys.interfaces.controller.manager
         - com.taotao.cloud.sys.interfaces.controller.seller
         - com.taotao.cloud.sys.interfaces.controller.test
