@@ -16,11 +16,16 @@
 
 package com.taotao.cloud.sys.api.internal.query;
 
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.model.result.Result;
+import com.taotao.cloud.sys.api.internal.dto.query.SettingApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.setting.*;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 
 /**
  * 远程调用后台配置模块
@@ -39,11 +44,11 @@ public interface SettingQueryApi {
      * @return 配置信息
      * @since 2022-03-25 14:10:22
      */
-    @GetExchange("/internal/sys/tools/setting")
-    SettingApiResponse get(@RequestParam(value = "key") String key);
+    @PostExchange("/internal/sys/tools/setting")
+	Response<SettingApiResponse> query(@RequestBody Request<SettingApiQuery> request) ;
 
-    @GetExchange("/internal/sys/tools/setting/base")
-    BaseSettingApiResponse getBaseSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/base")
+	Response<BaseSettingApiResponse> querySetting(@RequestBody Request<SettingApiQuery> request);
 
     /**
      * 获得商品设置
@@ -52,33 +57,30 @@ public interface SettingQueryApi {
      * @return {@link Result }<{@link GoodsSettingApiResponse }>
      * @since 2022-04-25 16:47:40
      */
-    @GetExchange("/internal/sys/tools/setting/goods")
-    GoodsSettingApiResponse getGoodsSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/goods")
+	Response<GoodsSettingApiResponse> queryGoodsSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/order")
-    OrderSettingApiResponse getOrderSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/order")
+	Response<OrderSettingApiResponse> queryOrderSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/experience")
-    ExperienceSettingApiResponse getExperienceSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/experience")
+	Response<ExperienceSettingApiResponse> queryExperienceSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/point")
-    PointSettingApiResponse getPointSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/point")
+	Response<PointSettingApiResponse> queryPointSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/qq/connect")
-    QQConnectSettingApiResponse getQQConnectSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/qq/connect")
+	Response<QQConnectSettingApiResponse> queryQQConnectSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/wechat/connect")
-    WechatConnectSettingApiResponse getWechatConnectSetting(
-            @RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/wechat/connect")
+	Response<WechatConnectSettingApiResponse> queryWechatConnectSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/seckill")
-    SeckillSettingApiResponse getSeckillSetting(@RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/seckill")
+	Response<SeckillSettingApiResponse> querySeckillSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/ali")
-    AlipayPaymentSettingApiResponse getAlipayPaymentSetting(
-            @RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/ali")
+	Response< AlipayPaymentSettingApiResponse> queryAlipayPaymentSetting(@RequestBody Request<SettingApiQuery> request);
 
-    @GetExchange("/internal/sys/tools/setting/wechat")
-    WechatPaymentSettingApiResponse getWechatPaymentSetting(
-            @RequestParam(value = "name") String name);
+    @PostExchange("/internal/sys/tools/setting/wechat")
+	Response<WechatPaymentSettingApiResponse> queryWechatPaymentSetting(@RequestBody Request<SettingApiQuery> request);
 }

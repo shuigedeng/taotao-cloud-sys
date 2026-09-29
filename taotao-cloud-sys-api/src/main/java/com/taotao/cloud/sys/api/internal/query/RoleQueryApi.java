@@ -16,10 +16,16 @@
 
 package com.taotao.cloud.sys.api.internal.query;
 
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.BatchResponse;
+import com.taotao.boot.common.model.response.Response;
+import com.taotao.cloud.sys.api.internal.dto.query.RoleApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.RoleQueryApiResponse;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 
 import java.util.List;
 
@@ -40,6 +46,6 @@ public interface RoleQueryApi {
      * @return 角色列表
      * @since 2020/10/21 15:13
      */
-    @GetExchange("/internal/sys/role/info/userId")
-    List<RoleQueryApiResponse> findRoleByUserId(@RequestParam(value = "userId") Long userId);
+    @PostExchange("/internal/sys/role/info")
+	Response<BatchResponse<RoleQueryApiResponse>> query(@RequestBody Request<RoleApiQuery> request);
 }

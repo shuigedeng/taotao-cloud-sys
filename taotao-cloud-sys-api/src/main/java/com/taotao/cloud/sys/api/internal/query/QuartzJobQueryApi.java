@@ -17,6 +17,10 @@
 package com.taotao.cloud.sys.api.internal.query;
 
 import com.taotao.boot.common.constant.ServiceNameConstants;
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.EmptyResponse;
+import com.taotao.boot.common.model.response.Response;
+import com.taotao.cloud.sys.api.internal.dto.query.QuartzApiQuery;
 import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,14 +36,14 @@ import org.springframework.web.service.annotation.PostExchange;
 @HttpExchange
 public interface QuartzJobQueryApi {
 
-    /**
-     * 添加
-     *
-     * @param quartzJobDTO quartzJobDTO
-     * @return 是否成功
-     * @since 2022.03
-     */
-    @PostExchange("/internal/job/addQuartzJobDTOTestSeata")
-    public Boolean addQuartzJobDTOTestSeata( @Valid @RequestBody Long quartzJobDTO);
+	/**
+	 * 添加
+	 *
+	 * @param quartzJobDTO quartzJobDTO
+	 * @return 是否成功
+	 * @since 2022.03
+	 */
+	@PostExchange("/internal/job/query")
+	Response<EmptyResponse> query(@RequestBody Request<QuartzApiQuery> request);
 }
 

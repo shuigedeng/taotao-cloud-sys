@@ -21,6 +21,7 @@ import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
+import com.taotao.cloud.sys.api.internal.dto.command.CreateDeptApiCommand;
 import com.taotao.cloud.sys.api.internal.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,21 +47,8 @@ public interface DeptCommandApi {
      * @return {@link DictApiResponse }
      * @since 2022-06-29 21:40:21
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
     @PostExchange("/internal/sys/dict/code")
-    Response<DictApiResponse> findByCode(
-             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
+    Response<DictApiResponse> createDept(@RequestBody Request<CreateDeptApiCommand> request);
 
     /**
      * 字典列表code查询
@@ -69,19 +57,6 @@ public interface DeptCommandApi {
      * @return {@link DictApiResponse }
      * @since 2022-06-29 21:40:21
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
     @PostExchange("/internal/sys/dict/test")
-    Response<DictApiResponse> test(
-             @RequestBody Request<DictApiQuery> dictQueryApiRequest);
+    Response<DictApiResponse> test(@RequestBody Request<CreateDeptApiCommand> request);
 }

@@ -33,7 +33,8 @@ import java.util.Set;
  */
 @RecordBuilder
 @Schema(description = "用户查询响应对象")
-public record UserQueryApiResponse(	@Schema(description = "id")
+public record UserQueryApiResponse(
+	@Schema(description = "id")
 	Long id,
 	@Schema(description = "昵称")
 	String nickname,
@@ -60,8 +61,8 @@ public record UserQueryApiResponse(	@Schema(description = "id")
 	@Schema(description = "创建时间")
 	LocalDateTime createTime,
 	@Schema(description = "最后修改时间")
-	LocalDateTime lastModifiedTime)  implements
-	MarkerResponse {
+	LocalDateTime lastModifiedTime
+) implements MarkerResponse {
 
 	@Serial
 	private static final long serialVersionUID = 5126530068827085130L;

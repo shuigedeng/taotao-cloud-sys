@@ -16,7 +16,9 @@
 
 package com.taotao.cloud.sys.api.rpc.query;
 
+import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
+import com.taotao.cloud.sys.api.rpc.dto.query.FileRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.FileRpcResponse;
 
 /**
@@ -35,5 +37,5 @@ public interface FileQueryRpcService {
      * @return {@link FileRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-    Response<FileRpcResponse> findByCode(Integer code);
+    Response<FileRpcResponse> query(Request<FileRpcQuery> request);
 }

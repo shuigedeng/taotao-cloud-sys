@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -27,7 +28,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class WechatConnectSettingApiResponse {
+public class WechatConnectSettingApiResponse implements MarkerResponse {
 
     /** 微信联合登陆配置 */
     List<WechatConnectSettingItemVO> wechatConnectSettingItemVOS;

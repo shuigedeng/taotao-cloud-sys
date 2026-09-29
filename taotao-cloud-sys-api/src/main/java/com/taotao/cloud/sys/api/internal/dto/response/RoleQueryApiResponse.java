@@ -32,7 +32,8 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "角色查询对象")
-public record RoleQueryApiResponse(	@Schema(description = "id")
+public record RoleQueryApiResponse(
+	@Schema(description = "id")
 	Long id,
 	@Schema(description = "角色名称")
 	String name,
@@ -43,8 +44,8 @@ public record RoleQueryApiResponse(	@Schema(description = "id")
 	@Schema(description = "创建时间")
 	LocalDateTime createTime,
 	@Schema(description = "最后修改时间")
-	LocalDateTime lastModifiedTime)  implements
-	MarkerResponse {
+	LocalDateTime lastModifiedTime
+) implements MarkerResponse {
 
 	@Serial
 	private static final long serialVersionUID = 5126530068827085130L;

@@ -23,17 +23,18 @@ import io.swagger.v3.oas.annotations.media.Schema;
 /**
  * <p>社会化登录用户 </p>
  *
- * @param uuid JustAuth中的关键词 以下内容了解后，将会使你更容易地上手JustAuth。
- * <p>
- * source JustAuth支持的第三方平台，比如：GITHUB、GITEE等 uuid 一般为第三方平台的用户ID。以下几个平台需特别注意： 钉钉、抖音：uuid 为用户的 unionid
- * 微信公众平台登录、京东、酷家乐、美团：uuid 为用户的 openId 微信开放平台登录、QQ：uuid 为用户的 openId，平台支持获取unionid， unionid 在 AuthToken
- * 中（如果支持），在登录完成后，可以通过 response.getData().getToken().getUnionId() 获取 Google：uuid 为用户的
- * sub，sub为Google的所有账户体系中用户唯一的身份标识符，详见：OpenID Connect (opens new window) 注：建议通过uuid +
- * source的方式唯一确定一个用户，这样可以解决用户身份归属的问题。因为 单个用户ID 在某一平台中是唯一的，但不能保证在所有平台中都是唯一的。
+ * @param uuid   JustAuth中的关键词 以下内容了解后，将会使你更容易地上手JustAuth。
+ *               <p>
+ *               source JustAuth支持的第三方平台，比如：GITHUB、GITEE等 uuid 一般为第三方平台的用户ID。以下几个平台需特别注意： 钉钉、抖音：uuid 为用户的 unionid
+ *               微信公众平台登录、京东、酷家乐、美团：uuid 为用户的 openId 微信开放平台登录、QQ：uuid 为用户的 openId，平台支持获取unionid， unionid 在 AuthToken
+ *               中（如果支持），在登录完成后，可以通过 response.getData().getToken().getUnionId() 获取 Google：uuid 为用户的
+ *               sub，sub为Google的所有账户体系中用户唯一的身份标识符，详见：OpenID Connect (opens new window) 注：建议通过uuid +
+ *               source的方式唯一确定一个用户，这样可以解决用户身份归属的问题。因为 单个用户ID 在某一平台中是唯一的，但不能保证在所有平台中都是唯一的。
  * @param gender 性别
  */
 @RecordBuilder
-public record SocialUserApiResponse(Long id,
+public record SocialUserApiResponse(
+	Long id,
 	@Schema(title = "社会用户ID")
 	String socialId,
 	@Schema(title = "用户第三方系统的唯一id", description = "在调用方集成该组件时，可以用uuid + source唯一确定一个用")
@@ -81,7 +82,7 @@ public record SocialUserApiResponse(Long id,
 	@Schema(title = "小程序Appid", description = "部分平台可能没有")
 	String appId,
 	@Schema(title = "手机号码", description = "部分平台可能没有")
-	String phoneNumber) implements
-	MarkerResponse {
+	String phoneNumber
+) implements MarkerResponse {
 
 }

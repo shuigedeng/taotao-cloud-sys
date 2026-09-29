@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -25,7 +26,8 @@ import lombok.experimental.Accessors;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class AlipayPaymentSettingApiResponse {
+public class AlipayPaymentSettingApiResponse  implements
+	MarkerResponse {
 
     /** 应用id */
     private String appId;

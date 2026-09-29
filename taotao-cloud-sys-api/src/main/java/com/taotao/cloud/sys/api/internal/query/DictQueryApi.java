@@ -43,6 +43,6 @@ public interface DictQueryApi {
 	 * @return {@link DictApiResponse }
 	 * @since 2022-06-29 21:40:21
 	 */
-	@PostExchange("/internal/sys/dict/query/code")
-	Response<DictApiResponse> queryByCode(@RequestBody Request<DictApiQuery> request);
+	@PostExchange("/internal/sys/dict/query")
+	Response<DictApiResponse> query(@RequestBody Request<DictApiQuery> request);
 }

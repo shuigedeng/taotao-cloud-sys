@@ -18,7 +18,7 @@ package com.taotao.cloud.sys.api.internal.command;
 
 import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
-import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommad;
+import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommand;
 import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.service.annotation.HttpExchange;
@@ -42,7 +42,7 @@ public interface DictCommandApi {
 	 * @since 2022-06-29 21:40:21
 	 */
 	@PostExchange("/internal/sys/dict/command/create")
-	Response<DictApiResponse> create(@RequestBody Request<CreateDictApiCommad> request);
+	Response<DictApiResponse> create(@RequestBody Request<CreateDictApiCommand> request);
 
 
 }

@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -27,7 +28,8 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SettingApiResponse {
+public class SettingApiResponse implements
+	MarkerResponse {
 
     private String settingValue;
     private String id;

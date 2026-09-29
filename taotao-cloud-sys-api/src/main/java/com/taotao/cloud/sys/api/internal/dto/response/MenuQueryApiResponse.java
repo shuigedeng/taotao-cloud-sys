@@ -32,7 +32,8 @@ import java.time.LocalDateTime;
  */
 @RecordBuilder
 @Schema(description = "菜单查询对象")
-public record MenuQueryApiResponse(	@Schema(description = "id")
+public record MenuQueryApiResponse(
+	@Schema(description = "id")
 	Long id,
 	@Schema(description = "菜单名称")
 	String name,
@@ -63,8 +64,8 @@ public record MenuQueryApiResponse(	@Schema(description = "id")
 	@Schema(description = "创建时间")
 	LocalDateTime createTime,
 	@Schema(description = "最后修改时间")
-	LocalDateTime lastModifiedTime)  implements
-	MarkerResponse {
+	LocalDateTime lastModifiedTime
+) implements MarkerResponse {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.rpc.query;
 
+import com.taotao.boot.common.model.request.Request;
 import com.taotao.boot.common.model.response.Response;
 import com.taotao.cloud.sys.api.rpc.dto.query.LogsRpcQuery;
 import com.taotao.cloud.sys.api.rpc.dto.response.LogsRpcResponse;
@@ -36,5 +37,5 @@ public interface LogsQueryRpcService {
      * @return {@link LogsRpcResponse }
      * @since 2022-04-28 09:21:20
      */
-    Response<LogsRpcResponse> query( LogsRpcQuery request);
+    Response<LogsRpcResponse> query( Request<LogsRpcQuery> request);
 }

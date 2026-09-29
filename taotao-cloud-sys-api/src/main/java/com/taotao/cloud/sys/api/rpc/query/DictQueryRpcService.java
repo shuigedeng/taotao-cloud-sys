@@ -37,5 +37,5 @@ public interface DictQueryRpcService {
      * @return {@link DictRpcResponse }
      * @since 2022-06-29 21:45:44
      */
-    Response<DictRpcResponse> findByCode(Request<DictRpcQuery> request);
+    Response<DictRpcResponse> query(Request<DictRpcQuery> request);
 }

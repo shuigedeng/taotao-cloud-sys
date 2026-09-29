@@ -27,7 +27,9 @@ import io.soabase.recordbuilder.core.RecordBuilder;
  * @since 2025-12-19 09:30:45
  */
 @RecordBuilder
-public record LogsApiResponse(Long id) implements MarkerResponse {
+public record LogsApiResponse(
+	Long id
+) implements MarkerResponse {
 
 
 }

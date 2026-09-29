@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -28,7 +29,7 @@ import java.io.Serializable;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SeckillSettingApiResponse implements Serializable {
+public class SeckillSettingApiResponse implements MarkerResponse {
 
     /** 开启几点场 例如：6,8,12 */
     @NotNull(message = "活动时间段不能为空")

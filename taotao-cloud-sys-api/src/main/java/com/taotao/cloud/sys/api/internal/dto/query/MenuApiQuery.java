@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.internal.dto.command;
+package com.taotao.cloud.sys.api.internal.dto.query;
 
-import com.taotao.boot.common.model.ddd.types.Command;
 import com.taotao.boot.common.model.ddd.types.Query;
 import io.soabase.recordbuilder.core.RecordBuilder;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serial;
+import java.util.Set;
 
 /**
  * 公司查询对象
@@ -31,11 +31,11 @@ import java.io.Serial;
  * @since 2021-10-09 16:31:52
  */
 @RecordBuilder
-@Schema(description = "字典查询对象")
-public record CreateDictApiCommad(
-	@Schema(description = "code")
-	String code
-) implements Command {
+@Schema(description = "公司查询对象")
+public record MenuApiQuery(
+	Set<String> codes
+
+) implements Query {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;

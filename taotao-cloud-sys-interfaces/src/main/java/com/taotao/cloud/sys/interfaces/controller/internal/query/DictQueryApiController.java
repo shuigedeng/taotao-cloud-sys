@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.interfaces.controller.internal;
+package com.taotao.cloud.sys.interfaces.controller.internal.query;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.taotao.boot.common.exception.BusinessException;
@@ -30,7 +30,7 @@ import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InternalController;
 import com.taotao.cloud.sys.api.internal.command.DictCommandApi;
-import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommad;
+import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommand;
 import com.taotao.cloud.sys.api.internal.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
 import com.taotao.cloud.sys.api.internal.query.DictQueryApi;
@@ -57,44 +57,11 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 @RestController
 @RequestMapping
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
-public class DictApiController extends InternalController implements DictCommandApi, DictQueryApi {
+public class DictQueryApiController extends InternalController implements  DictQueryApi {
 
 	private final DictCommandService dictCommandService;
 	private final DictQueryService dictQueryService;
 	private final DictAppAssembler dictAppAssembler;
-
-	@ApiInfo(
-		create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-		update = {
-			@Update(
-				version = V2022_07,
-				content = "主要修改了配置信息的接口查询",
-				date = "2022-07-01 17:11:55"),
-			@Update(
-				version = V2022_08,
-				content = "主要修改了配置信息的接口查询08",
-				date = "2022-07-01 17:11:55")
-		})
-	@Override
-	@Operation(summary = "添加部门", description = "添加部门")
-	@RequestLogger
-	@Idempotent(perFix = "findByCode")
-	@Limit(key = "limitTest", period = 10, count = 3)
-	@SentinelResource("findByCode")
-	public Response<DictApiResponse> create(@Valid @RequestBody Request<CreateDictApiCommad> request ) {
-		if ("sd".equals(request.getBizNo())) {
-			throw new BusinessException("我出错了");
-			// try {
-			//	Thread.sleep(100000000000L);
-			// } catch (InterruptedException e) {
-			//	throw new RuntimeException(e);
-			// }
-		}
-		LogUtils.info("xxxxxxxxxxxxxxxxxxxxx");
-		//		DictPO dictPo = dictService.findByCode(code);
-		//		return DictAssembler.INSTANCE.convert(dictPo);
-		return Response.from(null);
-	}
 
 
 
@@ -114,7 +81,7 @@ public class DictApiController extends InternalController implements DictCommand
 	@Override
 	@RequestLogger
 	@NotAuth
-	public Response<DictApiResponse> queryByCode(@Valid @RequestBody Request<DictApiQuery> request ) {
+	public Response<DictApiResponse> query(@Valid @RequestBody Request<DictApiQuery> request ) {
 		DictApiQuery order = request.getOrder();
 		DictQueryResult result = dictQueryService.queryByCode(order.code());
 		return Response.from(dictAppAssembler.toResponse(result));

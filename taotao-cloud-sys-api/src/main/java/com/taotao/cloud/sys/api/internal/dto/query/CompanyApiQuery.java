@@ -32,7 +32,8 @@ import java.io.Serial;
  */
 @RecordBuilder
 @Schema(description = "公司查询对象")
-public record CompanyApiQuery(	@Schema(description = "租户id")
+public record CompanyApiQuery(
+	@Schema(description = "租户id")
 	String tenantId,
 	@Schema(description = "租户密钥")
 	String tenantSecret,

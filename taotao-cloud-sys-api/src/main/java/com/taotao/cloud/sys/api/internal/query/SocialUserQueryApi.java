@@ -16,9 +16,12 @@
 
 package com.taotao.cloud.sys.api.internal.query;
 
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.support.info.ApiInfo;
 import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
+import com.taotao.cloud.sys.api.internal.dto.query.SocialUserApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.SocialUserApiResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,20 +48,8 @@ public interface SocialUserQueryApi {
      * @return 用户信息
      * @since 2020/10/21 15:06
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
     @PostExchange(value = "/internal/sys/social-user")
-    SocialUserApiResponse saveAndFlush(@RequestBody SocialUserApiResponse socialUserApiResponse);
+	Response<SocialUserApiResponse> query(@RequestBody Request<SocialUserApiQuery> request);
 
     /**
      * 获取用户信息
@@ -67,20 +58,8 @@ public interface SocialUserQueryApi {
      * @return 用户信息
      * @since 2020/10/21 15:06
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @GetExchange(value = "/internal/sys/social-user/info/username")
-    SocialUserApiResponse findUserInfoByUsername(@RequestParam(value = "username") String username);
+    @PostExchange(value = "/internal/sys/social-user/info/username")
+	Response<SocialUserApiResponse> queryUsername(@RequestBody Request<SocialUserApiQuery> request);
 
     /**
      * 通过第三方查询用户包括角色权限等
@@ -90,23 +69,9 @@ public interface SocialUserQueryApi {
      * @return 系统用户信息
      * @since 2020/4/29 17:47
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @GetExchange(
-            value = "/internal/sys/social-user/info/social/{social}")
-    SocialUserApiResponse getUserInfoBySocial(
-            @RequestParam("providerId") String providerId,
-            @RequestParam("providerUserId") int providerUserId);
+
+    @PostExchange(value = "/internal/sys/social-user/info/social")
+	Response<SocialUserApiResponse> querySocial(@RequestBody Request<SocialUserApiQuery> request);
 
     /**
      * 通过用户名查询用户包括角色权限等
@@ -115,20 +80,6 @@ public interface SocialUserQueryApi {
      * @return 系统用户信息
      * @since 2020/4/29 17:48
      */
-    @ApiInfo(
-            create = @Create(version = V2022_07, date = "2022-07-01 17:11:55"),
-            update = {
-                @Update(
-                        version = V2022_07,
-                        content = "主要修改了配置信息的接口查询",
-                        date = "2022-07-01 17:11:55"),
-                @Update(
-                        version = V2022_08,
-                        content = "主要修改了配置信息的接口查询08",
-                        date = "2022-07-01 17:11:55")
-            })
-    @GetExchange(value = "/internal/sys/social-user/info/security")
-    SocialUserApiResponse getSysSecurityUser(
-            @RequestParam(value = "nicknameOrUserNameOrPhoneOrEmail")
-                    String nicknameOrUserNameOrPhoneOrEmail);
+    @PostExchange(value = "/internal/sys/social-user/info/security")
+	Response<SocialUserApiResponse> querySysSecurityUser(@RequestBody Request<SocialUserApiQuery> request);
 }

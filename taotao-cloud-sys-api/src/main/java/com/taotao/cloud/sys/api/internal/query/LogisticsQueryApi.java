@@ -16,12 +16,18 @@
 
 package com.taotao.cloud.sys.api.internal.query;
 
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.BatchResponse;
+import com.taotao.boot.common.model.response.Response;
 import com.taotao.boot.common.model.result.Result;
+import com.taotao.cloud.sys.api.internal.dto.query.LogisticsApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.LogisticsApiResponse;
 import com.taotao.cloud.sys.api.internal.dto.response.TracesApiResponse;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 
 import java.util.List;
 
@@ -42,8 +48,8 @@ public interface LogisticsQueryApi {
      * @return {@link Result }<{@link LogisticsApiResponse }>
      * @since 2022-04-25 16:47:29
      */
-    @GetExchange("/internal/sys/logistic/codes")
-    LogisticsApiResponse getById(@RequestParam(value = "logisticsId") Long logisticsId);
+    @PostExchange("/internal/sys/logistic/codes")
+	Response<LogisticsApiResponse> query(@RequestBody Request<LogisticsApiQuery> request);
 
     /**
      * 得到物流
@@ -53,11 +59,9 @@ public interface LogisticsQueryApi {
      * @return {@link Result }<{@link TracesApiResponse }>
      * @since 2022-04-25 16:47:32
      */
-    @GetExchange("/internal/sys/logistic/info")
-    TracesApiResponse getLogistic(
-            @RequestParam(value = "logisticsId") Long logisticsId,
-            @RequestParam(value = "logisticsNo") String logisticsNo);
+    @PostExchange("/internal/sys/logistic/info")
+	Response<TracesApiResponse> queryInfo(@RequestBody Request<LogisticsApiQuery> request);
 
-    @GetExchange("/internal/sys/logistic/list")
-    List<LogisticsApiResponse> list();
+    @PostExchange("/internal/sys/logistic/list")
+	Response<BatchResponse<LogisticsApiResponse>> queryList(@RequestBody Request<LogisticsApiQuery> request);
 }

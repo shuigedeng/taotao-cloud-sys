@@ -14,21 +14,29 @@
  * limitations under the License.
  */
 
-package com.taotao.cloud.sys.api.rpc.query;
+package com.taotao.cloud.sys.api.internal.dto.command;
 
-import com.taotao.boot.common.model.request.Request;
-import com.taotao.boot.common.model.response.Response;
-import com.taotao.cloud.sys.api.rpc.dto.query.DeptRpcQuery;
-import com.taotao.cloud.sys.api.rpc.dto.response.DeptRpcResponse;
+import com.taotao.boot.common.model.ddd.types.Command;
+import io.soabase.recordbuilder.core.RecordBuilder;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import java.io.Serial;
 
 /**
- * 后台部门表服务接口
+ * 公司查询对象
  *
  * @author shuigedeng
- * @version 2022.03
- * @since 2022-03-25 14:22:32
+ * @version 2021.10
+ * @since 2021-10-09 16:31:52
  */
-public interface DeptQueryRpcService {
+@RecordBuilder
+@Schema(description = "字典查询对象")
+public record CreateDeptApiCommand(
+	@Schema(description = "code")
+	String code
+) implements Command {
 
-    Response<DeptRpcResponse> queryDept(Request<DeptRpcQuery> request);
+	@Serial
+	private static final long serialVersionUID = -4132785717179910025L;
+
 }

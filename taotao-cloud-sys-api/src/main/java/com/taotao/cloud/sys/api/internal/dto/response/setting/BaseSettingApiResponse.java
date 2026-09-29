@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +28,8 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-public class BaseSettingApiResponse implements Serializable {
+public class BaseSettingApiResponse implements
+	MarkerResponse {
 
     private static final long serialVersionUID = -3138023944444671722L;
 

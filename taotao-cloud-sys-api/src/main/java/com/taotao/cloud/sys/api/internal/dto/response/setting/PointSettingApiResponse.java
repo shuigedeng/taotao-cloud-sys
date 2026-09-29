@@ -16,6 +16,7 @@
 
 package com.taotao.cloud.sys.api.internal.dto.response.setting;
 
+import com.taotao.boot.common.model.ddd.types.MarkerResponse;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -31,7 +32,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class PointSettingApiResponse implements Serializable {
+public class PointSettingApiResponse implements MarkerResponse {
 
     @Serial private static final long serialVersionUID = -4261856614779031745L;
 

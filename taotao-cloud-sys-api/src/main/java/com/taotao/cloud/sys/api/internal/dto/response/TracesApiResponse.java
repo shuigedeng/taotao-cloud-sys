@@ -26,12 +26,13 @@ import java.util.Map;
 /**
  * 物流信息
  *
- * @param shipper 物流公司
+ * @param shipper      物流公司
  * @param logisticCode 物流单号
- * @param traces 物流详细信息
+ * @param traces       物流详细信息
  */
 @RecordBuilder
-public record TracesApiResponse(String shipper, String logisticCode, List<Map<String, Object>> traces)implements
+public record TracesApiResponse(
+	String shipper, String logisticCode, List<Map<String, Object>> traces) implements
 	MarkerResponse {
 
 	@Serial

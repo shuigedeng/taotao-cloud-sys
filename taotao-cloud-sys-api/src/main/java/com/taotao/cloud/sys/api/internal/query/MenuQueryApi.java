@@ -16,10 +16,16 @@
 
 package com.taotao.cloud.sys.api.internal.query;
 
+import com.taotao.boot.common.model.request.Request;
+import com.taotao.boot.common.model.response.BatchResponse;
+import com.taotao.boot.common.model.response.Response;
+import com.taotao.cloud.sys.api.internal.dto.query.MenuApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.MenuQueryApiResponse;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
+import org.springframework.web.service.annotation.PostExchange;
 
 import java.util.List;
 import java.util.Set;
@@ -41,7 +47,6 @@ public interface MenuQueryApi {
      * @return 角色列表
      * @since 2020/10/21 15:24
      */
-    @GetExchange("/internal/sys/menu/info/codes")
-    List<MenuQueryApiResponse> findResourceByCodes(
-            @RequestParam(value = "codes") Set<String> codes);
+    @PostExchange("/internal/sys/menu/info/codes")
+	Response<BatchResponse<MenuQueryApiResponse>> query(@RequestBody Request<MenuApiQuery> request);
 }

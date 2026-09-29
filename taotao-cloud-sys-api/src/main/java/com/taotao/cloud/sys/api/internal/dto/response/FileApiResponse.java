@@ -25,19 +25,21 @@ import java.io.Serial;
 /**
  * 公司查询VO
  *
- * @param dictName 字典名称
- * @param dictCode 字典编码
+ * @param dictName    字典名称
+ * @param dictCode    字典编码
  * @param description 描述
- * @param sortNum 排序值
- * @param remark 备注信息
+ * @param sortNum     排序值
+ * @param remark      备注信息
  * @author shuigedeng
  * @version 2021.10
  * @since 2021-10-09 16:31:52
  */
 @RecordBuilder
 @Schema(description = "公司查询响应对象")
-public record FileApiResponse(Long id, String dictName, String dictCode, String description, Integer sortNum,
-							  String remark) implements MarkerResponse {
+public record FileApiResponse(
+	Long id, String dictName, String dictCode, String description, Integer sortNum,
+	String remark
+) implements MarkerResponse {
 
 	@Serial
 	private static final long serialVersionUID = -4132785717179910025L;
