@@ -100,7 +100,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 	//	private final UserManager userManager;
 	//
 	//	@Override
-	//	@Transactional(rollbackFor = Exception.class)
+
 	//	public User saveUser(User sysUser) {
 	//		if (Objects.nonNull(sysUser.getId())) {
 	//			throw new BusinessException("不允许存在id值");
@@ -128,7 +128,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 	//	}
 	//
 	//	@Override
-	//	@Transactional(rollbackFor = Exception.class)
+
 	//	public User updateUser(User user) {
 	//		if (Objects.isNull(user.getId())) {
 	//			throw new BusinessException("id不能为空");
@@ -152,7 +152,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 	//	}
 	//
 	//	@Override
-	//	@Transactional(rollbackFor = Exception.class)
+
 	//	public Boolean restPass(Long userId, RestPasswordUserDTO restPasswordDTO) {
 	//		String restPasswordPhone = restPasswordDTO.getPhone();
 	//		User sysUser = getById(userId);
@@ -191,7 +191,7 @@ public class UserCommandServiceImpl implements UserCommandService {
 	//
 	//
 	//	@Override
-	//	@Transactional(rollbackFor = Exception.class)
+
 	//	public Boolean updateUserRoles(Long userId, Set<Long> roleIds) {
 	//		return userRelationService.saveUserRoles(userId, roleIds);
 	//	}

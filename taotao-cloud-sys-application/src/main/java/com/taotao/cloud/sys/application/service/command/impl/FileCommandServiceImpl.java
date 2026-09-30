@@ -38,12 +38,12 @@ public class FileCommandServiceImpl implements FileCommandService {
     ////    private StandardOssClient standardOssClient;
     //
     //    private final TenantServiceApi tenantServiceApi;
-    //    private final IFeignQuartzJobApi feignQuartzJobApi;
+    //    private final AclServiceQuartzJobApi feignQuartzJobApi;
     //    private final ISeataTccService seataTccService;
     //
     //
     //    @Override
-    //	@Transactional(rollbackFor = Exception.class)
+
     //    @GlobalTransactional(rollbackFor = Exception.class)
     //    public boolean testSeata() {
     //        File file = new File();
@@ -128,7 +128,6 @@ public class FileCommandServiceImpl implements FileCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional
     //    public File findFileById(Long id) {
     //
     //        // 添加文件

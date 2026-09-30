@@ -40,7 +40,7 @@ public class DictCommandServiceImpl implements DictCommandService {
     //	private final OrderSpecifier<LocalDateTime> CREATE_TIME_DESC = DICT.createTime.desc();
     //
     //	@Override
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	public Dict saveDict(Dict dict) {
     //		String dictCode = dict.getDictCode();
     //		if (cr().existsByDictCode(dictCode)) {
@@ -69,7 +69,7 @@ public class DictCommandServiceImpl implements DictCommandService {
     //	}
     //
     //	@Override
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	public Boolean removeById(Long id) {
     //		Optional<Dict> optionalDict = cr().findById(id);
     //		optionalDict.orElseThrow(() -> new BusinessException(ResultEnum.DICT_NOT_EXIST));
@@ -79,7 +79,7 @@ public class DictCommandServiceImpl implements DictCommandService {
     //	}
     //
     //	@Override
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	public Boolean deleteByCode(String code) {
     //		Dict dict = findByCode(code);
     //		cr().delete(dict);
@@ -173,7 +173,7 @@ public class DictCommandServiceImpl implements DictCommandService {
     //	@Override
     //	// @GlobalTransactional(name = "sys-dict-global-transactional-2", rollbackFor =
     // Exception.class)
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	public Boolean add1() {
     //
     //		String s1 = RandomUtils.randomChar(6);

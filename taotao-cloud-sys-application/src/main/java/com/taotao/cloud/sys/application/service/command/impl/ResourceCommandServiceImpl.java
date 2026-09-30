@@ -136,7 +136,7 @@ public class ResourceCommandServiceImpl implements ResourceCommandService {
     //	}
 
     // @Override
-    // @Transactional(rollbackFor = Exception.class)
+
     // @GlobalTransactional(name = "testSeata", rollbackFor = Exception.class)
     // public Boolean testSeata() {
     //	//try {

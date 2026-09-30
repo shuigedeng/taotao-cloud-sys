@@ -35,5 +35,4 @@ import org.springframework.transaction.annotation.Transactional;
  */
 // @CacheConfig(cacheNames = "alipayConfig")
 @Service
-@Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class AlipayConfigCommandServiceImpl implements AlipayConfigCommandService {}

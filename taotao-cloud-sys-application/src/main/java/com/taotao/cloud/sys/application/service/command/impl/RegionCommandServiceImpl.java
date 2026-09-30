@@ -218,7 +218,7 @@ public class RegionCommandServiceImpl implements RegionCommandService {
     //		}
     //	}
     //
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	@Override
     //	@SuppressWarnings("unchecked")
     //	public void synchronizationData(String url) {

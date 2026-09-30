@@ -73,7 +73,7 @@ public class LogCommandServiceImpl implements LogCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public void save(String username, String ip, ProceedingJoinPoint joinPoint, Log log, Long
     // uid) {
     //        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -149,13 +149,13 @@ public class LogCommandServiceImpl implements LogCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public void delAllByError() {
     //        this.baseMapper.deleteByLogType("ERROR");
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public void delAllByInfo() {
     //        this.baseMapper.deleteByLogType("INFO");
     //    }

@@ -36,7 +36,7 @@ public class UserRelationCommandServiceImpl implements UserRelationCommandServic
     //	private static final QUserRelation USER_RELATION = QUserRelation.userRelation;
     //
     //	@Override
-    //	@Transactional(rollbackFor = Exception.class)
+
     //	public Boolean saveUserRoles(Long userId, Set<Long> roleIds) {
     //		BooleanExpression expression = USER_RELATION.userId.eq(userId);
     //		List<UserRelation> userRoles = cr().fetch(expression);

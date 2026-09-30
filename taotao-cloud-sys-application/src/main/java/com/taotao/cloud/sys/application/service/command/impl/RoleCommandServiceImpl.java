@@ -42,7 +42,7 @@ public class RoleCommandServiceImpl implements RoleCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public Boolean saveRoleMenus(Long roleId, Set<Long> menuIds) {
     //        return roleResourceService.saveRoleMenu(roleId, menuIds);
     //    }

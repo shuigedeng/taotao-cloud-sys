@@ -39,14 +39,14 @@ public class DictItemCommandServiceImpl implements DictItemCommandService {
     // DICT_ITEM.createTime.desc();
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public Boolean deleteByDictId(Long dictId) {
     //        cr().deleteById(dictId);
     //        return true;
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public DictItem save(DictItemDTO dictItemDTO) {
     //        DictItem item = DictItem.builder().build();
     //        BeanUtils.copyIgnoredNull(dictItemDTO, item);
@@ -54,7 +54,7 @@ public class DictItemCommandServiceImpl implements DictItemCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public DictItem updateById(Long id, DictItemDTO dictItemDTO) {
     //        Optional<DictItem> optionalDictItem = cr().findById(id);
     //        DictItem item = optionalDictItem.orElseThrow(() -> new BusinessException("字典项数据不存在"));
@@ -63,7 +63,7 @@ public class DictItemCommandServiceImpl implements DictItemCommandService {
     //    }
     //
     //    @Override
-    //    @Transactional(rollbackFor = Exception.class)
+    
     //    public Boolean deleteById(Long id) {
     //        cr().deleteById(id);
     //        return true;
