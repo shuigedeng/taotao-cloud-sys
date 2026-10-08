@@ -26,16 +26,12 @@ import com.taotao.boot.common.support.info.Update;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.annotation.Idempotent;
 import com.taotao.boot.ratelimit.ratelimitguava.Limit;
-import com.taotao.boot.security.spring.annotation.NotAuth;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InternalController;
 import com.taotao.cloud.sys.api.internal.command.DictCommandApi;
 import com.taotao.cloud.sys.api.internal.dto.command.CreateDictApiCommand;
-import com.taotao.cloud.sys.api.internal.dto.query.DictApiQuery;
 import com.taotao.cloud.sys.api.internal.dto.response.DictApiResponse;
-import com.taotao.cloud.sys.api.internal.query.DictQueryApi;
 import com.taotao.cloud.sys.application.assembler.DictAppAssembler;
-import com.taotao.cloud.sys.application.dto.dict.result.DictQueryResult;
 import com.taotao.cloud.sys.application.service.command.DictCommandService;
 //import com.yomahub.tlog.core.annotation.TLogAspect;
 import com.taotao.cloud.sys.application.service.query.DictQueryService;
@@ -57,7 +53,7 @@ import static com.taotao.boot.common.support.info.ApiVersionEnum.V2022_08;
 @RestController
 @RequestMapping
 @Tag(name = "内部端-字典API", description = "内部端-字典API")
-public class DictCommanndApiController extends InternalController implements DictCommandApi {
+public class DictCommandApiController extends InternalController implements DictCommandApi {
 
 	private final DictCommandService dictCommandService;
 	private final DictQueryService dictQueryService;
