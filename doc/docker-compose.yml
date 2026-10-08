@@ -463,6 +463,17 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.200
 
+  cloudflare:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare
+    hostname: cloudflare
+    restart: no
+    command: tunnel --no-autoupdate run --token {{TOKEN}}
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      taotao-cluster-network:
+        ipv4_address: 172.11.0.201
 
 ####################################################
 
