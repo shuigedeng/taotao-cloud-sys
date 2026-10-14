@@ -25,7 +25,7 @@ import com.taotao.boot.common.support.info.Create;
 import com.taotao.boot.common.support.info.Update;
 import com.taotao.boot.common.utils.log.LogUtils;
 import com.taotao.boot.idempotent.standard.annotation.Idempotent;
-import com.taotao.boot.ratelimit.ratelimitguava.Limit;
+import com.taotao.boot.ratelimit.guava.Limit;
 import com.taotao.boot.web.request.annotation.RequestLogger;
 import com.taotao.boot.webagg.controller.InternalController;
 import com.taotao.cloud.sys.api.internal.command.DictCommandApi;
