@@ -51,9 +51,9 @@ services:
       taotao-cluster-network:
         ipv4_address: 172.11.0.12
 
-  nacos-3.2.3:
-    image: nacos/nacos-server:v3.2.3
-    container_name: nacos-3.2.3
+  nacos-3.3.0:
+    image: nacos/nacos-server:v3.3.0
+    container_name: nacos-3.3.0
     restart: no
     privileged: true
     ports:
@@ -68,7 +68,7 @@ services:
       MYSQL_SERVICE_PORT: 3306
       MYSQL_SERVICE_USER: root
       MYSQL_SERVICE_PASSWORD: 123456
-      MYSQL_SERVICE_DB_NAME: "nacos_3.2.3"
+      MYSQL_SERVICE_DB_NAME: "nacos_3.3.0"
       MYSQL_SERVICE_DB_PARAM: "characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true"
       JVM_XMS: 256m
       JVM_XMX: 512m

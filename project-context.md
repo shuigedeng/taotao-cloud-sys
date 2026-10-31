@@ -48,7 +48,7 @@ assembly → facade, interfaces, infrastructure
 | 技术 | 版本 |
 |------|------|
 | JDK | **25**（启用 `--enable-preview` 预览特性） |
-| Gradle | **9.8.0** |
+| Gradle | **9.8.2** |
 | Spring Boot | **4.1.2** |
 | Spring Cloud | **2025.1.1** |
 | Spring Cloud Alibaba | **2025.1.0.0-preview** |
