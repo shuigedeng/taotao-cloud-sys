@@ -13,7 +13,7 @@ import static com.taotao.cloud.sys.common.constant.SysConstants.SERVER_NAME;
  * 权限聚合根
  * 封装权限相关的业务规则和一致性边界
  *
- * @author ouyucheng
+ * @author shuigedeng
  * @date 2025/12/31
  */
 @Data

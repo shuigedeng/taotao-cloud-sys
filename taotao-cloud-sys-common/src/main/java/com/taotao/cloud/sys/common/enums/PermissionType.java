@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * 权限类型枚举
  *
- * @author ouyucheng
+ * @author shuigedeng
  * @date 2025/12/31
  */
 @Getter

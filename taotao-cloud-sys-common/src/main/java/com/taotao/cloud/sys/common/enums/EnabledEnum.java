@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 管理员状态枚举
  *
- * @author ouyucheng
+ * @author shuigedeng
  * @date 2025/12/31
  */
 @Getter

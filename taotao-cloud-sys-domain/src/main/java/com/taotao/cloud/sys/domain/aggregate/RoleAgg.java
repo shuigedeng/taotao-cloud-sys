@@ -21,7 +21,7 @@ import static com.taotao.cloud.sys.common.constant.SysConstants.SERVER_NAME;
 /**
  * 角色聚合根 封装角色相关的业务规则和一致性边界
  *
- * @author ouyucheng
+ * @author shuigedeng
  * @date 2025/12/31
  */
 @Data

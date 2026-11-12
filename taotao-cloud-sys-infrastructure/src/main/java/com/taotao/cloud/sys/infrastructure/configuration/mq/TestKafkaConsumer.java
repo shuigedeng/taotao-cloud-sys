@@ -13,7 +13,7 @@ package com.taotao.cloud.sys.infrastructure.configuration.mq;//package com.taota
 //import org.springframework.stereotype.Component;
 //
 ///**
-// * @author woodwhales on 2025-07-24 22:52
+// * @author shuigedeng on 2025-07-24 22:52
 // */
 //@Slf4j
 //@Component
